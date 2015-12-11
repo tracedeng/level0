@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         self.url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        self.url = [url stringByAddingPercentEncodingWithAllowedCharacters:NSUTF8StringEncoding];
         self.method = method;
     }
     return self;

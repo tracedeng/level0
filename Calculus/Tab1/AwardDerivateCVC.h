@@ -1,5 +1,5 @@
 //
-//  MyAwardCell.h
+//  AwardDerivateCVC.h
 //  Calculus
 //
 //  Created by tracedeng on 15/12/10.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyAwardCell : UITableViewCell
-@property (nonatomic, retain) NSDictionary *awardInfo;
+@interface AwardDerivateCVC : UICollectionViewController
+
 @end

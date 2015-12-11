@@ -27,4 +27,10 @@
     // Configure the view for the selected state
 }
 
+- (void)setAwardInfo:(NSDictionary *)awardInfo {
+    self.merchant_name_label.text = @"StarBucks";
+    self.total_award_label.text = @"10000";
+    self.merchant_logo_image.image = [UIImage imageNamed:@"icon-mcd"];
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+}
 @end

@@ -1,33 +1,18 @@
 //
-//  MyAwardTVC.m
+//  MeTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/10.
+//  Created by tracedeng on 15/12/11.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-/*
- 1 判断登录
- 2 未登录
-    2.1 cache中有积分列表，展示
-    2.2 cache中没有积分列表，展示缺省
- 3 已经登录
-    3.1 网络状况良好，拉取用户所有积分
-    3.2 网络状况差或者无网络
-        3.2.1 cache中有积分列表，展示
-        3.2.2 cache中没有积分列表，不展示缺省
-        3.2.3 无网络则提示，网络差依旧发起网络请求
- 4 监听登录状态发生变化，执行相应的动作
- */
+#import "MeTVC.h"
 
-#import "MyAwardTVC.h"
-#import "MyAwardCell.h"
-
-@interface MyAwardTVC ()
+@interface MeTVC ()
 
 @end
 
-@implementation MyAwardTVC
+@implementation MeTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,8 +22,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,27 +32,46 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    NSInteger rows = 0;
+    switch (section) {
+        case 0:
+            rows = 1;
+            break;
+        case 1:
+            rows = 2;
+            break;
+        case 2:
+            rows = 1;
+            break;
+        case 3:
+            rows = 2;
+            break;
+        default:
+            break;
+    }
+    return rows;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MyAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyAwardCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.awardInfo = @{};
-    
-    return cell;
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+////    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+//    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+//    // Configure the cell...
+//    
+//    return cell;
+//}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0f;
+    if (0 == indexPath.section) {
+        return 60.0f;
+    }
+    return 44.0f;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
