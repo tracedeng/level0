@@ -245,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="1261" y="1070.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--SettingTVC-->
         <scene sceneID="DxR-Gl-nOi">
             <objects>
-                <tableViewController id="vRD-Af-wj1" sceneMemberID="viewController">
+                <tableViewController id="vRD-Af-wj1" customClass="SettingTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Q1N-Ia-SYu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,7 +339,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JD0-Fk-lpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="1092"/>
+            <point key="canvasLocation" x="1974" y="1070.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="xAl-WV-S73">

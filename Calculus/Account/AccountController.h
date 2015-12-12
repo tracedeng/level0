@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AccountController : UIViewController
+@property (nonatomic, retain) NSString *userMode;
 
 @end
