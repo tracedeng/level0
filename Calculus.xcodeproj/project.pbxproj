@@ -32,6 +32,7 @@
 		193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37AD1C1C23D90017CC9C /* DiscountNavigationController.m */; };
 		193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B01C1C24170017CC9C /* DiscountTVC.m */; };
 		193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B31C1C254C0017CC9C /* DiscountCell.m */; };
+		193C37D71C1C654D0017CC9C /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37CE1C1C654D0017CC9C /* NSString+Md5.m */; };
 		1942C36C1BE89F6700C2DCF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36B1BE89F6700C2DCF4 /* main.m */; };
 		1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36E1BE89F6700C2DCF4 /* AppDelegate.m */; };
 		1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */; };
@@ -91,6 +92,8 @@
 		193C37B01C1C24170017CC9C /* DiscountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountTVC.m; sourceTree = "<group>"; };
 		193C37B21C1C254C0017CC9C /* DiscountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountCell.h; sourceTree = "<group>"; };
 		193C37B31C1C254C0017CC9C /* DiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCell.m; sourceTree = "<group>"; };
+		193C37CD1C1C654D0017CC9C /* NSString+Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Md5.h"; sourceTree = "<group>"; };
+		193C37CE1C1C654D0017CC9C /* NSString+Md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Md5.m"; sourceTree = "<group>"; };
 		1942C3671BE89F6700C2DCF4 /* Calculus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942C36B1BE89F6700C2DCF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1942C36D1BE89F6700C2DCF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -285,6 +288,15 @@
 			name = Tab3;
 			sourceTree = "<group>";
 		};
+		193C37C81C1C654D0017CC9C /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				193C37CD1C1C654D0017CC9C /* NSString+Md5.h */,
+				193C37CE1C1C654D0017CC9C /* NSString+Md5.m */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
 		1942C35E1BE89F6700C2DCF4 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +318,7 @@
 		1942C3691BE89F6700C2DCF4 /* Calculus */ = {
 			isa = PBXGroup;
 			children = (
+				193C37C81C1C654D0017CC9C /* Catalog */,
 				193C37811C1BE8510017CC9C /* Bootstrap */,
 				1961F6E11C19C1E5000928D3 /* Networking */,
 				193C37191C1B0D5A0017CC9C /* Account */,
@@ -464,6 +477,7 @@
 				193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
+				193C37D71C1C654D0017CC9C /* NSString+Md5.m in Sources */,
 				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37731C1BE2B70017CC9C /* MyAwardController.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,

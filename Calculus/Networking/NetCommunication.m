@@ -44,9 +44,7 @@
              }];
     }else if ([self.method isEqual: @"post"]){
         //post请求，json格式传输数据
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        
-        
+//        manager.requestSerializer = [AFJSONRequestSerializer serializer];
         [manager POST:self.url parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
             //call代理post请求成功
             

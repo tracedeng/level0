@@ -10,16 +10,16 @@
 #define Constance_h
 
 #ifdef DEBUG
-#define ACCOUNTURL @"http://172.13.0.199:8000/account"
-#define CONSUMERURL @"http://locolhost/consumer"
-#define MERCHANTURL @"http://locolhost/merchant"
-#define CREDITURL @"http://locolhost/credit"
-#define FLOWTURL @"http://locolhost/flow"
+#define ACCOUNTURL @"http://localhost:8000/account"
+#define CONSUMERURL @"http://localhost:8000/consumer"
+#define MERCHANTURL @"http://localhost:8000/merchant"
+#define CREDITURL @"http://localhost:8000/credit"
+#define FLOWTURL @"http://localhost:8000/flow"
 #else
-#define CONSUMERURL @"http://locolhost/consumer"
-#define MERCHANTURL @"http://locolhost/merchant"
-#define CREDITURL @"http://locolhost/credit"
-#define FLOWTURL @"http://locolhost/flow"
+#define CONSUMERURL @"http://localhost/consumer"
+#define MERCHANTURL @"http://localhost/merchant"
+#define CREDITURL @"http://localhost/credit"
+#define FLOWTURL @"http://localhost/flow"
 #endif
 
 #endif /* Constance_h */

@@ -22,13 +22,13 @@
 
 
 - (void)viewDidLoad {
-    self.userMode = @"consumer";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
 //    self.accountStack.layer.borderWidth = 1.0f;
 //    self.accountStack.layer.borderColor = [[UIColor redColor] CGColor];
 //    self.accountStack.backgroundColor = [UIColor clearColor];
+    self.userMode = @"consumer";
 }
 
 - (void)didReceiveMemoryWarning {
