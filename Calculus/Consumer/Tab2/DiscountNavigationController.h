@@ -1,5 +1,5 @@
 //
-//  AwardDerivateCVC.h
+//  DiscountNavigationController.h
 //  Calculus
 //
 //  Created by tracedeng on 15/12/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AwardDerivateCVC : UICollectionViewController
+@interface DiscountNavigationController : UINavigationController
 
 @end
