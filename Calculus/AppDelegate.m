@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, retain) UIViewController *consumerRoot;
+@property (nonatomic, retain) UIViewController *merchantRoot;
+@property (nonatomic, retain) UIViewController *bootstrapRoot;
 @end
 
 @implementation AppDelegate
@@ -17,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self loadBoard];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initRootWindow:) name:@"initWindow" object:nil];
+    self.bootstrapRoot = self.window.rootViewController;
+    
     return YES;
 }
 
@@ -40,6 +48,32 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)initRootWindow:(NSNotification *)notification {
+    NSString *destine = [[notification userInfo] objectForKey:@"destine"];
+    if ([destine isEqualToString:@"gotoConsumer"]) {
+        self.window.rootViewController = self.consumerRoot;
+    }else if ([destine isEqualToString:@"gotoMerchant"]) {
+        self.window.rootViewController = self.merchantRoot;
+    }else if ([destine isEqualToString:@"gotoBootstrap"]) {
+        //退出，需要重置mainStoryboard，否则退出后再登录不会执行ViewDidLoad，无法以新登录用户身份登录
+        //        UIStoryboard *mainStoryBoard = self.window.rootViewController.storyboard;
+        //        for (UIView *viewn self.window.subviews) {
+        //            [view removeFromSuperview];
+        //        }
+        //        self.rootMainController = [mainStoryBoard instantiateInitialViewController];
+        self.window.rootViewController = self.bootstrapRoot;
+    }
+}
+
+- (void)loadBoard {
+    UIStoryboard *consumerBoard = [UIStoryboard storyboardWithName:@"Consumer" bundle:[NSBundle mainBundle]];
+    UIStoryboard *merchantBoard = [UIStoryboard storyboardWithName:@"Merchant" bundle:[NSBundle mainBundle]];
+    
+    self.consumerRoot = [consumerBoard instantiateInitialViewController];
+    self.merchantRoot = [merchantBoard instantiateInitialViewController];
+    
 }
 
 @end

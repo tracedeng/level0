@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		193C37141C1B007C0017CC9C /* MeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37131C1B007C0017CC9C /* MeNavigationController.m */; };
-		193C37171C1B017D0017CC9C /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37161C1B017D0017CC9C /* MeController.m */; };
 		193C371C1C1B0D800017CC9C /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C371B1C1B0D800017CC9C /* AccountController.m */; };
 		193C371F1C1B12270017CC9C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C371E1C1B12270017CC9C /* Account.storyboard */; };
+		193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37211C1B16C60017CC9C /* ActionAccount.m */; };
+		193C376F1C1BE2B70017CC9C /* AwardDerivateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C375B1C1BE2B70017CC9C /* AwardDerivateCell.m */; };
+		193C37701C1BE2B70017CC9C /* AwardDerivateCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C375D1C1BE2B70017CC9C /* AwardDerivateCVC.m */; };
+		193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37601C1BE2B70017CC9C /* ActionCredit.m */; };
+		193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37621C1BE2B70017CC9C /* MyAwardCell.m */; };
+		193C37731C1BE2B70017CC9C /* MyAwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37641C1BE2B70017CC9C /* MyAwardController.m */; };
+		193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37661C1BE2B70017CC9C /* MyAwardTVC.m */; };
+		193C37751C1BE2B70017CC9C /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C376A1C1BE2B70017CC9C /* MeController.m */; };
+		193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C376C1C1BE2B70017CC9C /* MeNavigationController.m */; };
+		193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C376E1C1BE2B70017CC9C /* MeTVC.m */; };
+		193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */; };
+		193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37831C1BE8510017CC9C /* BootstrapController.m */; };
+		193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37861C1BE8B40017CC9C /* MerchantMain.m */; };
+		193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37881C1BE9CA0017CC9C /* Merchant.storyboard */; };
 		1942C36C1BE89F6700C2DCF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36B1BE89F6700C2DCF4 /* main.m */; };
 		1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36E1BE89F6700C2DCF4 /* AppDelegate.m */; };
-		1942C3751BE89F6700C2DCF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Main.storyboard */; };
+		1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */; };
 		1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3761BE89F6700C2DCF4 /* Assets.xcassets */; };
 		1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */; };
-		1961F6DD1C19B778000928D3 /* MyAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6DC1C19B778000928D3 /* MyAwardTVC.m */; };
-		1961F6E01C19B7D8000928D3 /* MyAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6DF1C19B7D8000928D3 /* MyAwardCell.m */; };
 		1961F6E41C19C1E5000928D3 /* NetCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6E31C19C1E5000928D3 /* NetCommunication.m */; };
-		1961F6ED1C19C48D000928D3 /* ActionCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6E81C19C48D000928D3 /* ActionCredit.m */; };
-		1961F6F31C19CD11000928D3 /* AwardDerivateCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6F21C19CD11000928D3 /* AwardDerivateCVC.m */; };
-		1961F6F61C19CD2C000928D3 /* AwardDerivateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6F51C19CD2C000928D3 /* AwardDerivateCell.m */; };
-		1961F6F91C19CE10000928D3 /* MyAwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6F81C19CE10000928D3 /* MyAwardController.m */; };
-		1961F7051C1A9CCF000928D3 /* MeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F7041C1A9CCF000928D3 /* MeTVC.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -31,38 +36,46 @@
 /* Begin PBXFileReference section */
 		06E1593861243261B9CF8DAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		0E77514A77D3C896A8E7F09D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		193C37121C1B007C0017CC9C /* MeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeNavigationController.h; path = Tab3/MeNavigationController.h; sourceTree = "<group>"; };
-		193C37131C1B007C0017CC9C /* MeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeNavigationController.m; path = Tab3/MeNavigationController.m; sourceTree = "<group>"; };
-		193C37151C1B017D0017CC9C /* MeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeController.h; path = Tab3/MeController.h; sourceTree = "<group>"; };
-		193C37161C1B017D0017CC9C /* MeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeController.m; path = Tab3/MeController.m; sourceTree = "<group>"; };
 		193C371A1C1B0D800017CC9C /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = Account/AccountController.h; sourceTree = "<group>"; };
 		193C371B1C1B0D800017CC9C /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = Account/AccountController.m; sourceTree = "<group>"; };
 		193C371E1C1B12270017CC9C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Account.storyboard; path = Account/Account.storyboard; sourceTree = "<group>"; };
+		193C37201C1B16C60017CC9C /* ActionAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionAccount.h; path = Account/Model/ActionAccount.h; sourceTree = "<group>"; };
+		193C37211C1B16C60017CC9C /* ActionAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionAccount.m; path = Account/Model/ActionAccount.m; sourceTree = "<group>"; };
+		193C375A1C1BE2B70017CC9C /* AwardDerivateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardDerivateCell.h; sourceTree = "<group>"; };
+		193C375B1C1BE2B70017CC9C /* AwardDerivateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardDerivateCell.m; sourceTree = "<group>"; };
+		193C375C1C1BE2B70017CC9C /* AwardDerivateCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardDerivateCVC.h; sourceTree = "<group>"; };
+		193C375D1C1BE2B70017CC9C /* AwardDerivateCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardDerivateCVC.m; sourceTree = "<group>"; };
+		193C375F1C1BE2B70017CC9C /* ActionCredit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionCredit.h; sourceTree = "<group>"; };
+		193C37601C1BE2B70017CC9C /* ActionCredit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionCredit.m; sourceTree = "<group>"; };
+		193C37611C1BE2B70017CC9C /* MyAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardCell.h; sourceTree = "<group>"; };
+		193C37621C1BE2B70017CC9C /* MyAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardCell.m; sourceTree = "<group>"; };
+		193C37631C1BE2B70017CC9C /* MyAwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardController.h; sourceTree = "<group>"; };
+		193C37641C1BE2B70017CC9C /* MyAwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardController.m; sourceTree = "<group>"; };
+		193C37651C1BE2B70017CC9C /* MyAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardTVC.h; sourceTree = "<group>"; };
+		193C37661C1BE2B70017CC9C /* MyAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardTVC.m; sourceTree = "<group>"; };
+		193C37691C1BE2B70017CC9C /* MeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeController.h; sourceTree = "<group>"; };
+		193C376A1C1BE2B70017CC9C /* MeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeController.m; sourceTree = "<group>"; };
+		193C376B1C1BE2B70017CC9C /* MeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNavigationController.h; sourceTree = "<group>"; };
+		193C376C1C1BE2B70017CC9C /* MeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNavigationController.m; sourceTree = "<group>"; };
+		193C376D1C1BE2B70017CC9C /* MeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTVC.h; sourceTree = "<group>"; };
+		193C376E1C1BE2B70017CC9C /* MeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTVC.m; sourceTree = "<group>"; };
+		193C37791C1BE3EA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bootstrap.storyboard; sourceTree = "<group>"; };
+		193C37821C1BE8510017CC9C /* BootstrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BootstrapController.h; sourceTree = "<group>"; };
+		193C37831C1BE8510017CC9C /* BootstrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BootstrapController.m; sourceTree = "<group>"; };
+		193C37851C1BE8B40017CC9C /* MerchantMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantMain.h; path = Merchant/MerchantMain.h; sourceTree = "<group>"; };
+		193C37861C1BE8B40017CC9C /* MerchantMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantMain.m; path = Merchant/MerchantMain.m; sourceTree = "<group>"; };
+		193C37891C1BE9CA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Merchant.storyboard; sourceTree = "<group>"; };
 		1942C3671BE89F6700C2DCF4 /* Calculus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942C36B1BE89F6700C2DCF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1942C36D1BE89F6700C2DCF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1942C36E1BE89F6700C2DCF4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1942C3741BE89F6700C2DCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1942C3741BE89F6700C2DCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Consumer.storyboard; sourceTree = "<group>"; };
 		1942C3761BE89F6700C2DCF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1942C3791BE89F6700C2DCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1942C37B1BE89F6700C2DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1961F6DB1C19B778000928D3 /* MyAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAwardTVC.h; path = Tab1/MyAwardTVC.h; sourceTree = "<group>"; };
-		1961F6DC1C19B778000928D3 /* MyAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAwardTVC.m; path = Tab1/MyAwardTVC.m; sourceTree = "<group>"; };
-		1961F6DE1C19B7D8000928D3 /* MyAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAwardCell.h; path = Tab1/MyAwardCell.h; sourceTree = "<group>"; };
-		1961F6DF1C19B7D8000928D3 /* MyAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAwardCell.m; path = Tab1/MyAwardCell.m; sourceTree = "<group>"; };
 		1961F6E21C19C1E5000928D3 /* NetCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCommunication.h; sourceTree = "<group>"; };
 		1961F6E31C19C1E5000928D3 /* NetCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCommunication.m; sourceTree = "<group>"; };
-		1961F6E71C19C48D000928D3 /* ActionCredit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionCredit.h; sourceTree = "<group>"; };
-		1961F6E81C19C48D000928D3 /* ActionCredit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionCredit.m; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
-		1961F6F11C19CD11000928D3 /* AwardDerivateCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwardDerivateCVC.h; path = Tab1/AwardDerivateCVC.h; sourceTree = "<group>"; };
-		1961F6F21C19CD11000928D3 /* AwardDerivateCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwardDerivateCVC.m; path = Tab1/AwardDerivateCVC.m; sourceTree = "<group>"; };
-		1961F6F41C19CD2C000928D3 /* AwardDerivateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwardDerivateCell.h; path = Tab1/AwardDerivateCell.h; sourceTree = "<group>"; };
-		1961F6F51C19CD2C000928D3 /* AwardDerivateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwardDerivateCell.m; path = Tab1/AwardDerivateCell.m; sourceTree = "<group>"; };
-		1961F6F71C19CE10000928D3 /* MyAwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAwardController.h; path = Tab1/MyAwardController.h; sourceTree = "<group>"; };
-		1961F6F81C19CE10000928D3 /* MyAwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAwardController.m; path = Tab1/MyAwardController.m; sourceTree = "<group>"; };
-		1961F7031C1A9CCF000928D3 /* MeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeTVC.h; path = Tab3/MeTVC.h; sourceTree = "<group>"; };
-		1961F7041C1A9CCF000928D3 /* MeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeTVC.m; path = Tab3/MeTVC.m; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,11 +104,10 @@
 		193C37181C1B02200017CC9C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				1942C3731BE89F6700C2DCF4 /* Main.storyboard */,
-				193C37121C1B007C0017CC9C /* MeNavigationController.h */,
-				193C37131C1B007C0017CC9C /* MeNavigationController.m */,
+				1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */,
 			);
 			name = Main;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		193C37191C1B0D5A0017CC9C /* Account */ = {
@@ -112,8 +124,89 @@
 		193C371D1C1B0E270017CC9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				193C37201C1B16C60017CC9C /* ActionAccount.h */,
+				193C37211C1B16C60017CC9C /* ActionAccount.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		193C37581C1BE2B70017CC9C /* Consumer */ = {
+			isa = PBXGroup;
+			children = (
+				193C37181C1B02200017CC9C /* Main */,
+				193C37591C1BE2B70017CC9C /* Tab1 */,
+				193C37671C1BE2B70017CC9C /* Tab2 */,
+				193C37681C1BE2B70017CC9C /* Tab3 */,
+			);
+			path = Consumer;
+			sourceTree = "<group>";
+		};
+		193C37591C1BE2B70017CC9C /* Tab1 */ = {
+			isa = PBXGroup;
+			children = (
+				193C375E1C1BE2B70017CC9C /* Model */,
+				193C375A1C1BE2B70017CC9C /* AwardDerivateCell.h */,
+				193C375B1C1BE2B70017CC9C /* AwardDerivateCell.m */,
+				193C375C1C1BE2B70017CC9C /* AwardDerivateCVC.h */,
+				193C375D1C1BE2B70017CC9C /* AwardDerivateCVC.m */,
+				193C37611C1BE2B70017CC9C /* MyAwardCell.h */,
+				193C37621C1BE2B70017CC9C /* MyAwardCell.m */,
+				193C37631C1BE2B70017CC9C /* MyAwardController.h */,
+				193C37641C1BE2B70017CC9C /* MyAwardController.m */,
+				193C37651C1BE2B70017CC9C /* MyAwardTVC.h */,
+				193C37661C1BE2B70017CC9C /* MyAwardTVC.m */,
+			);
+			path = Tab1;
+			sourceTree = "<group>";
+		};
+		193C375E1C1BE2B70017CC9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				193C375F1C1BE2B70017CC9C /* ActionCredit.h */,
+				193C37601C1BE2B70017CC9C /* ActionCredit.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		193C37671C1BE2B70017CC9C /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tab2;
+			sourceTree = "<group>";
+		};
+		193C37681C1BE2B70017CC9C /* Tab3 */ = {
+			isa = PBXGroup;
+			children = (
+				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
+				193C37691C1BE2B70017CC9C /* MeController.h */,
+				193C376A1C1BE2B70017CC9C /* MeController.m */,
+				193C376B1C1BE2B70017CC9C /* MeNavigationController.h */,
+				193C376C1C1BE2B70017CC9C /* MeNavigationController.m */,
+				193C376D1C1BE2B70017CC9C /* MeTVC.h */,
+				193C376E1C1BE2B70017CC9C /* MeTVC.m */,
+			);
+			path = Tab3;
+			sourceTree = "<group>";
+		};
+		193C377E1C1BE6200017CC9C /* Merchant */ = {
+			isa = PBXGroup;
+			children = (
+				193C37881C1BE9CA0017CC9C /* Merchant.storyboard */,
+				193C37851C1BE8B40017CC9C /* MerchantMain.h */,
+				193C37861C1BE8B40017CC9C /* MerchantMain.m */,
+			);
+			name = Merchant;
+			sourceTree = "<group>";
+		};
+		193C37811C1BE8510017CC9C /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */,
+				193C37821C1BE8510017CC9C /* BootstrapController.h */,
+				193C37831C1BE8510017CC9C /* BootstrapController.m */,
+			);
+			path = Bootstrap;
 			sourceTree = "<group>";
 		};
 		1942C35E1BE89F6700C2DCF4 = {
@@ -137,14 +230,11 @@
 		1942C3691BE89F6700C2DCF4 /* Calculus */ = {
 			isa = PBXGroup;
 			children = (
-				193C37191C1B0D5A0017CC9C /* Account */,
-				193C37181C1B02200017CC9C /* Main */,
+				193C37811C1BE8510017CC9C /* Bootstrap */,
 				1961F6E11C19C1E5000928D3 /* Networking */,
-				1961F6DA1C19B71F000928D3 /* Tab1 */,
-				1942C3811BE8AEA100C2DCF4 /* Tab2 */,
-				1961F6E51C19C3C2000928D3 /* Tab3 */,
-				1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */,
-				1942C3761BE89F6700C2DCF4 /* Assets.xcassets */,
+				193C37191C1B0D5A0017CC9C /* Account */,
+				193C37581C1BE2B70017CC9C /* Consumer */,
+				193C377E1C1BE6200017CC9C /* Merchant */,
 				1942C36A1BE89F6700C2DCF4 /* Supporting Files */,
 			);
 			path = Calculus;
@@ -153,6 +243,8 @@
 		1942C36A1BE89F6700C2DCF4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1942C3761BE89F6700C2DCF4 /* Assets.xcassets */,
+				1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */,
 				1942C36D1BE89F6700C2DCF4 /* AppDelegate.h */,
 				1942C36E1BE89F6700C2DCF4 /* AppDelegate.m */,
 				1942C37B1BE89F6700C2DCF4 /* Info.plist */,
@@ -162,31 +254,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1942C3811BE8AEA100C2DCF4 /* Tab2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Tab2;
-			sourceTree = "<group>";
-		};
-		1961F6DA1C19B71F000928D3 /* Tab1 */ = {
-			isa = PBXGroup;
-			children = (
-				1961F6E61C19C48D000928D3 /* Model */,
-				1961F6DB1C19B778000928D3 /* MyAwardTVC.h */,
-				1961F6DC1C19B778000928D3 /* MyAwardTVC.m */,
-				1961F6DE1C19B7D8000928D3 /* MyAwardCell.h */,
-				1961F6DF1C19B7D8000928D3 /* MyAwardCell.m */,
-				1961F6F11C19CD11000928D3 /* AwardDerivateCVC.h */,
-				1961F6F21C19CD11000928D3 /* AwardDerivateCVC.m */,
-				1961F6F41C19CD2C000928D3 /* AwardDerivateCell.h */,
-				1961F6F51C19CD2C000928D3 /* AwardDerivateCell.m */,
-				1961F6F71C19CE10000928D3 /* MyAwardController.h */,
-				1961F6F81C19CE10000928D3 /* MyAwardController.m */,
-			);
-			name = Tab1;
-			sourceTree = "<group>";
-		};
 		1961F6E11C19C1E5000928D3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,28 +261,6 @@
 				1961F6E31C19C1E5000928D3 /* NetCommunication.m */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		1961F6E51C19C3C2000928D3 /* Tab3 */ = {
-			isa = PBXGroup;
-			children = (
-				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
-				1961F7031C1A9CCF000928D3 /* MeTVC.h */,
-				1961F7041C1A9CCF000928D3 /* MeTVC.m */,
-				193C37151C1B017D0017CC9C /* MeController.h */,
-				193C37161C1B017D0017CC9C /* MeController.m */,
-			);
-			name = Tab3;
-			sourceTree = "<group>";
-		};
-		1961F6E61C19C48D000928D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1961F6E71C19C48D000928D3 /* ActionCredit.h */,
-				1961F6E81C19C48D000928D3 /* ActionCredit.m */,
-			);
-			name = Model;
-			path = Tab1/Model;
 			sourceTree = "<group>";
 		};
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
@@ -287,9 +332,11 @@
 			files = (
 				1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */,
 				1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */,
+				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
-				1942C3751BE89F6700C2DCF4 /* Main.storyboard in Resources */,
+				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
+				193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,31 +380,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
+				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
+				193C37731C1BE2B70017CC9C /* MyAwardController.m in Sources */,
+				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
+				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
 				1961F6E41C19C1E5000928D3 /* NetCommunication.m in Sources */,
-				1961F6F61C19CD2C000928D3 /* AwardDerivateCell.m in Sources */,
+				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
+				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
+				193C37701C1BE2B70017CC9C /* AwardDerivateCVC.m in Sources */,
+				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
+				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
-				1961F6ED1C19C48D000928D3 /* ActionCredit.m in Sources */,
-				193C37141C1B007C0017CC9C /* MeNavigationController.m in Sources */,
-				1961F6F31C19CD11000928D3 /* AwardDerivateCVC.m in Sources */,
-				1961F7051C1A9CCF000928D3 /* MeTVC.m in Sources */,
-				193C37171C1B017D0017CC9C /* MeController.m in Sources */,
-				1961F6DD1C19B778000928D3 /* MyAwardTVC.m in Sources */,
-				1961F6F91C19CE10000928D3 /* MyAwardController.m in Sources */,
-				1961F6E01C19B7D8000928D3 /* MyAwardCell.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
+				193C376F1C1BE2B70017CC9C /* AwardDerivateCell.m in Sources */,
+				193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1942C3731BE89F6700C2DCF4 /* Main.storyboard */ = {
+		193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				193C37791C1BE3EA0017CC9C /* Base */,
+			);
+			name = Bootstrap.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		193C37881C1BE9CA0017CC9C /* Merchant.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				193C37891C1BE9CA0017CC9C /* Base */,
+			);
+			name = Merchant.storyboard;
+			sourceTree = "<group>";
+		};
+		1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1942C3741BE89F6700C2DCF4 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Consumer.storyboard;
 			sourceTree = "<group>";
 		};
 		1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */ = {
@@ -374,6 +441,7 @@
 				19ED4C8C1C1AA77F00FE4341 /* Base */,
 			);
 			name = Me.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

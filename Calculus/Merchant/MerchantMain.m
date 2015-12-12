@@ -1,29 +1,23 @@
 //
-//  AccountController.m
+//  MerchantMain.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/11.
+//  Created by tracedeng on 15/12/12.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "AccountController.h"
+#import "MerchantMain.h"
 
-@interface AccountController ()
-@property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTField;
-@property (weak, nonatomic) IBOutlet UIStackView *accountStack;
+@interface MerchantMain ()
+- (IBAction)toBootstrap:(id)sender;
 
 @end
 
-@implementation AccountController
+@implementation MerchantMain
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-//    self.accountStack.layer.borderWidth = 1.0f;
-//    self.accountStack.layer.borderColor = [[UIColor redColor] CGColor];
-//    self.accountStack.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,4 +35,7 @@
 }
 */
 
+- (IBAction)toBootstrap:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoBootstrap", @"destine", nil]];
+}
 @end

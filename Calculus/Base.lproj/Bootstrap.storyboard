@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wiF-FO-2C8">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Bootstrap Controller-->
+        <scene sceneID="B9n-VR-Tio">
+            <objects>
+                <viewController id="wiF-FO-2C8" customClass="BootstrapController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0AC-an-hWl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xt2-vJ-XsY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="49h-Xd-GC0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="AQT-nF-USn">
+                                <rect key="frame" x="50" y="250" width="500" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzY-J6-4Ou">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
+                                        <state key="normal" title="客户"/>
+                                        <connections>
+                                            <action selector="EnterAsConsumer:" destination="wiF-FO-2C8" eventType="touchUpInside" id="tsm-i8-qRM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubd-Y2-tg4">
+                                        <rect key="frame" x="0.0" y="70" width="500" height="30"/>
+                                        <state key="normal" title="商家"/>
+                                        <connections>
+                                            <action selector="EnterAsMerchant:" destination="wiF-FO-2C8" eventType="touchUpInside" id="Hyv-X7-L4o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AQT-nF-USn" firstAttribute="centerX" secondItem="49h-Xd-GC0" secondAttribute="centerX" id="BOT-FJ-waF"/>
+                            <constraint firstItem="AQT-nF-USn" firstAttribute="top" secondItem="0AC-an-hWl" secondAttribute="bottom" constant="150" id="QrK-5D-XJ8"/>
+                            <constraint firstItem="AQT-nF-USn" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" constant="50" id="UHB-Y3-hE3"/>
+                            <constraint firstItem="AQT-nF-USn" firstAttribute="centerY" secondItem="49h-Xd-GC0" secondAttribute="centerY" id="XfD-ng-Rio"/>
+                            <constraint firstAttribute="trailing" secondItem="AQT-nF-USn" secondAttribute="trailing" constant="50" id="pGJ-G4-bdr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QrK-5D-XJ8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3p6-f3-7aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331" y="443"/>
+        </scene>
+    </scenes>
+</document>
