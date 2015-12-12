@@ -1,28 +1,23 @@
 //
-//  MeNavigationController.m
+//  MMeController.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/11.
+//  Created by tracedeng on 15/12/12.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "MeNavigationController.h"
-#import "MeController.h"
+#import "MMeController.h"
 
-@interface MeNavigationController ()
+@interface MMeController ()
+- (IBAction)EditMerchantMaterial:(id)sender;
 
 @end
 
-@implementation MeNavigationController
+@implementation MMeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Me" bundle:nil];
-    MeController *meRoot =[board instantiateViewControllerWithIdentifier:@"MeRoot"];
-    
-    [self pushViewController:meRoot animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,4 +35,7 @@
 }
 */
 
+- (IBAction)EditMerchantMaterial:(id)sender {
+    [self performSegueWithIdentifier:@"MerchantMaterial" sender:self];
+}
 @end

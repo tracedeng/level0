@@ -1,26 +1,26 @@
 //
-//  MeNavigationController.m
+//  MMeNavigationController.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/11.
+//  Created by tracedeng on 15/12/12.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "MeNavigationController.h"
-#import "MeController.h"
+#import "MMeNavigationController.h"
+#import "MMeController.h"
 
-@interface MeNavigationController ()
+@interface MMeNavigationController ()
 
 @end
 
-@implementation MeNavigationController
+@implementation MMeNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Me" bundle:nil];
-    MeController *meRoot =[board instantiateViewControllerWithIdentifier:@"MeRoot"];
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"MMe" bundle:nil];
+    MMeController *meRoot =[board instantiateViewControllerWithIdentifier:@"MMeRoot"];
     
     [self pushViewController:meRoot animated:YES];
 }

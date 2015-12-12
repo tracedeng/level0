@@ -1,40 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gXI-Pe-jiB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b5c-WK-RYL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Merchant Main-->
-        <scene sceneID="qRM-bh-1Aw">
+        <!--Tab Bar Controller-->
+        <scene sceneID="OtC-oE-ZvC">
             <objects>
-                <viewController id="gXI-Pe-jiB" customClass="MerchantMain" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MGT-aO-ioj"/>
-                        <viewControllerLayoutGuide type="bottom" id="ySY-La-bnk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BfV-oA-7yx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZy-MG-6ft">
-                                <rect key="frame" x="270" y="285" width="60" height="30"/>
-                                <state key="normal" title="切换版本"/>
-                                <connections>
-                                    <action selector="toBootstrap:" destination="gXI-Pe-jiB" eventType="touchUpInside" id="5dz-IZ-7O5"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lZy-MG-6ft" firstAttribute="centerY" secondItem="BfV-oA-7yx" secondAttribute="centerY" id="j6d-Vn-Fj7"/>
-                            <constraint firstItem="lZy-MG-6ft" firstAttribute="centerX" secondItem="BfV-oA-7yx" secondAttribute="centerX" id="mZn-xE-Wf8"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GAn-7D-3aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="b5c-WK-RYL" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wea-1k-DS2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="d0P-ho-5YA" kind="relationship" relationship="viewControllers" id="0kx-Vq-Gpy"/>
+                        <segue destination="INu-b0-NMY" kind="relationship" relationship="viewControllers" id="jF1-c8-qJV"/>
+                        <segue destination="eA0-ep-WNZ" kind="relationship" relationship="viewControllers" id="ZGN-On-cGs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCW-bx-5dK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426" y="423"/>
+            <point key="canvasLocation" x="-812" y="-189"/>
+        </scene>
+        <!--积分-->
+        <scene sceneID="P5Z-XR-WJD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d0P-ho-5YA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="积分" image="icon-calculus" id="62X-e6-PtN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yf1-YI-wPp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIy-K9-kGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="-520"/>
+        </scene>
+        <!--活动-->
+        <scene sceneID="5OK-C8-ieD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="INu-b0-NMY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="活动" image="icon-find" id="SUW-0i-71b"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6eo-oV-tr2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ReL-Yw-zMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="141"/>
+        </scene>
+        <!--商家中心-->
+        <scene sceneID="HtH-aq-zhf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eA0-ep-WNZ" customClass="MMeNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="商家中心" image="icon-me" id="aM3-T2-k5d"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PXf-xr-s5a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hq9-Yp-jEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="1012"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-calculus" width="64" height="64"/>
+        <image name="icon-find" width="64" height="64"/>
+        <image name="icon-me" width="64" height="64"/>
+    </resources>
 </document>

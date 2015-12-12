@@ -23,6 +23,11 @@
 		193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37831C1BE8510017CC9C /* BootstrapController.m */; };
 		193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37861C1BE8B40017CC9C /* MerchantMain.m */; };
 		193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37881C1BE9CA0017CC9C /* Merchant.storyboard */; };
+		193C378D1C1BED3C0017CC9C /* SettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C378C1C1BED3C0017CC9C /* SettingTVC.m */; };
+		193C37931C1BFF560017CC9C /* MMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37921C1BFF560017CC9C /* MMe.storyboard */; };
+		193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */; };
+		193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C379E1C1C0BD70017CC9C /* MMeController.m */; };
+		193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37A11C1C0DE20017CC9C /* MSettingTVC.m */; };
 		1942C36C1BE89F6700C2DCF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36B1BE89F6700C2DCF4 /* main.m */; };
 		1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36E1BE89F6700C2DCF4 /* AppDelegate.m */; };
 		1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */; };
@@ -65,6 +70,15 @@
 		193C37851C1BE8B40017CC9C /* MerchantMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantMain.h; path = Merchant/MerchantMain.h; sourceTree = "<group>"; };
 		193C37861C1BE8B40017CC9C /* MerchantMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantMain.m; path = Merchant/MerchantMain.m; sourceTree = "<group>"; };
 		193C37891C1BE9CA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Merchant.storyboard; sourceTree = "<group>"; };
+		193C378B1C1BED3C0017CC9C /* SettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTVC.h; sourceTree = "<group>"; };
+		193C378C1C1BED3C0017CC9C /* SettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTVC.m; sourceTree = "<group>"; };
+		193C37921C1BFF560017CC9C /* MMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MMe.storyboard; path = Merchant/Tab3/MMe.storyboard; sourceTree = "<group>"; };
+		193C37971C1C0B7A0017CC9C /* MMeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeNavigationController.h; path = Merchant/Tab3/MMeNavigationController.h; sourceTree = "<group>"; };
+		193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeNavigationController.m; path = Merchant/Tab3/MMeNavigationController.m; sourceTree = "<group>"; };
+		193C379D1C1C0BD70017CC9C /* MMeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeController.h; path = Merchant/Tab3/MMeController.h; sourceTree = "<group>"; };
+		193C379E1C1C0BD70017CC9C /* MMeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeController.m; path = Merchant/Tab3/MMeController.m; sourceTree = "<group>"; };
+		193C37A01C1C0DE20017CC9C /* MSettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSettingTVC.h; path = Merchant/Tab3/MSettingTVC.h; sourceTree = "<group>"; };
+		193C37A11C1C0DE20017CC9C /* MSettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSettingTVC.m; path = Merchant/Tab3/MSettingTVC.m; sourceTree = "<group>"; };
 		1942C3671BE89F6700C2DCF4 /* Calculus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942C36B1BE89F6700C2DCF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1942C36D1BE89F6700C2DCF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -185,6 +199,8 @@
 				193C376C1C1BE2B70017CC9C /* MeNavigationController.m */,
 				193C376D1C1BE2B70017CC9C /* MeTVC.h */,
 				193C376E1C1BE2B70017CC9C /* MeTVC.m */,
+				193C378B1C1BED3C0017CC9C /* SettingTVC.h */,
+				193C378C1C1BED3C0017CC9C /* SettingTVC.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -192,9 +208,10 @@
 		193C377E1C1BE6200017CC9C /* Merchant */ = {
 			isa = PBXGroup;
 			children = (
-				193C37881C1BE9CA0017CC9C /* Merchant.storyboard */,
-				193C37851C1BE8B40017CC9C /* MerchantMain.h */,
-				193C37861C1BE8B40017CC9C /* MerchantMain.m */,
+				193C378F1C1BF5360017CC9C /* Main */,
+				193C378E1C1BF52E0017CC9C /* Tab1 */,
+				193C37901C1BF6CD0017CC9C /* Tab2 */,
+				193C37911C1BF6D70017CC9C /* Tab3 */,
 			);
 			name = Merchant;
 			sourceTree = "<group>";
@@ -207,6 +224,44 @@
 				193C37831C1BE8510017CC9C /* BootstrapController.m */,
 			);
 			path = Bootstrap;
+			sourceTree = "<group>";
+		};
+		193C378E1C1BF52E0017CC9C /* Tab1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tab1;
+			sourceTree = "<group>";
+		};
+		193C378F1C1BF5360017CC9C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				193C37881C1BE9CA0017CC9C /* Merchant.storyboard */,
+				193C37851C1BE8B40017CC9C /* MerchantMain.h */,
+				193C37861C1BE8B40017CC9C /* MerchantMain.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		193C37901C1BF6CD0017CC9C /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tab2;
+			sourceTree = "<group>";
+		};
+		193C37911C1BF6D70017CC9C /* Tab3 */ = {
+			isa = PBXGroup;
+			children = (
+				193C37921C1BFF560017CC9C /* MMe.storyboard */,
+				193C37971C1C0B7A0017CC9C /* MMeNavigationController.h */,
+				193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */,
+				193C379D1C1C0BD70017CC9C /* MMeController.h */,
+				193C379E1C1C0BD70017CC9C /* MMeController.m */,
+				193C37A01C1C0DE20017CC9C /* MSettingTVC.h */,
+				193C37A11C1C0DE20017CC9C /* MSettingTVC.m */,
+			);
+			name = Tab3;
 			sourceTree = "<group>";
 		};
 		1942C35E1BE89F6700C2DCF4 = {
@@ -337,6 +392,7 @@
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
 				193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */,
+				193C37931C1BFF560017CC9C /* MMe.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +441,8 @@
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				193C37731C1BE2B70017CC9C /* MyAwardController.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
+				193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */,
+				193C378D1C1BED3C0017CC9C /* SettingTVC.m in Sources */,
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
 				1961F6E41C19C1E5000928D3 /* NetCommunication.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
@@ -394,6 +452,8 @@
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
+				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
+				193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */,
 				193C376F1C1BE2B70017CC9C /* AwardDerivateCell.m in Sources */,
 				193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */,
 			);
