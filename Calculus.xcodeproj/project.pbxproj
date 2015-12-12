@@ -40,6 +40,7 @@
 		1961F6E41C19C1E5000928D3 /* NetCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6E31C19C1E5000928D3 /* NetCommunication.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
+		B5E7F0161C1C427600D08F74 /* ClickableStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7F0151C1C427600D08F74 /* ClickableStackView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,8 @@
 		1961F6E31C19C1E5000928D3 /* NetCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCommunication.m; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
+		B5E7F0141C1C427600D08F74 /* ClickableStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableStackView.h; sourceTree = "<group>"; };
+		B5E7F0151C1C427600D08F74 /* ClickableStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableStackView.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -309,6 +312,8 @@
 				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C377E1C1BE6200017CC9C /* Merchant */,
 				1942C36A1BE89F6700C2DCF4 /* Supporting Files */,
+				B5E7F0141C1C427600D08F74 /* ClickableStackView.h */,
+				B5E7F0151C1C427600D08F74 /* ClickableStackView.m */,
 			);
 			path = Calculus;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E7F0161C1C427600D08F74 /* ClickableStackView.m in Sources */,
 				193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,

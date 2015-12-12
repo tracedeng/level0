@@ -20,7 +20,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.net = [[NetCommunication alloc] initWithHttpUrl:CREDITURL httpMethod:@"post"];
+        self.net = [[NetCommunication alloc] initWithHttpUrl:ACCOUNTURL httpMethod:@"post"];
         self.net.delegate = self;
     }
     return self;
@@ -40,6 +40,14 @@
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doAccountLogin:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 kind:(NSString *)kind{
+    self.type = EACCOUNTLOGIN;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", kind, @"kind", passwordMD5, @"password_md5", nil];
+    NSLog(@"%@", postData);
+    [self.net requestHttpWithData:postData];
+}
+
+
 
 #pragma mark -NetCommunication Delegate
 
@@ -56,6 +64,16 @@
                 }
                 break;
             }
+            case EACCOUNTLOGIN:
+            {
+                NSString *location = [responseObject objectForKey:@"location"];
+                if (self.afterAccountLogin) {
+                    self.afterAccountLogin(location);
+                }
+                break;
+
+                
+            }
             default:
                 break;
         }
@@ -71,7 +89,7 @@
     }
 }
 
-//@optional http请求失败返回
+//@optional http请求失败返回或没网
 - (void)postFailResponseWith:(AFHTTPRequestOperation *)requestOperation responseError:(NSError *)responseError {
     NSLog(@"%@", [responseError domain]);
     NSLog(@"%ld", (long)[responseError code]);

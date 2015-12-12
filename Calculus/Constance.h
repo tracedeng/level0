@@ -10,6 +10,7 @@
 #define Constance_h
 
 #ifdef DEBUG
+#define ACCOUNTURL @"http://172.13.0.199:8000/account"
 #define CONSUMERURL @"http://locolhost/consumer"
 #define MERCHANTURL @"http://locolhost/merchant"
 #define CREDITURL @"http://locolhost/credit"

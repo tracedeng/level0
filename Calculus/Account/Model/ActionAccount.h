@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, EACCOUNTOPTYPE) {
 };
 
 - (void)doGetSMSCode:(NSString *)numbers kind:(NSString *)kind;
+- (void)doAccountLogin:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 kind:(NSString *)kind;
 
 @property (nonatomic, copy) void (^afterGetSMSCode)(NSString *location);
+@property (nonatomic, copy) void (^afterAccountLogin)(NSString *location);
+
 @end
