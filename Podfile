@@ -1,6 +1,7 @@
 platform :ios, '7.0'
 #pod 'JBChartView', '~> 2.8.10'
 pod 'AFNetworking', '~> 2.4.1'
+pod 'MWPhotoBrowser'
 #pod 'AMap2DMap'  #2D地图SDK
 #pod 'AMapSearch'
 #pod 'JSCustomBadge', '~> 1.0.1'

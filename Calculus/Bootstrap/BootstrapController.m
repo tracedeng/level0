@@ -7,6 +7,7 @@
 //
 
 #import "BootstrapController.h"
+#import "RoleManager.h"
 
 @interface BootstrapController ()
 - (IBAction)EnterAsConsumer:(id)sender;
@@ -19,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,11 +40,13 @@
 */
 
 - (IBAction)EnterAsConsumer:(id)sender {
+    [RoleManager changeCurrentRoleWith:@"consumer"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoConsumer", @"destine", nil]];
 
 }
 
 - (IBAction)EnterAsMerchant:(id)sender {
+    [RoleManager changeCurrentRoleWith:@"merchant"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchant", @"destine", nil]];
 
 }

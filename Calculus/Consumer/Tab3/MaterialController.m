@@ -1,18 +1,19 @@
 //
-//  MeTVC.m
+//  MaterialController.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/11.
+//  Created by tracedeng on 15/12/13.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "MeTVC.h"
+#import "MaterialController.h"
+#import "ImageListCVC.h"
 
-@interface MeTVC ()
+@interface MaterialController ()
 
 @end
 
-@implementation MeTVC
+@implementation MaterialController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,55 +33,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger rows = 0;
-    switch (section) {
-        case 0:
-            rows = 1;
-            break;
-        case 1:
-            rows = 2;
-            break;
-        case 2:
-            rows = 1;
-            break;
-        case 3:
-            rows = 2;
-            break;
-        default:
-            break;
-    }
-    return rows;
-}
-
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-////    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-//    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-//    // Configure the cell...
-//    
-//    return cell;
-//}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (0 == indexPath.section) {
-        return 60.0f;
-    }
-    return 44.0f;
+    return 5;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
+            // 更新头像
+            UIStoryboard *board = [UIStoryboard storyboardWithName:@"Album" bundle:[NSBundle mainBundle]];
+            ImageListCVC *album = [board instantiateInitialViewController];
+            album.bMultiChecked = NO;
+            album.checkableCount = 1;
+            [self.navigationController pushViewController:album animated:YES];
         }else if (1 == indexPath.row) {
             
         }
     }
 }
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.

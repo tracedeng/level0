@@ -33,6 +33,18 @@
 		193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B01C1C24170017CC9C /* DiscountTVC.m */; };
 		193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B31C1C254C0017CC9C /* DiscountCell.m */; };
 		193C37D71C1C654D0017CC9C /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37CE1C1C654D0017CC9C /* NSString+Md5.m */; };
+		193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37E41C1D4A070017CC9C /* RoleManager.m */; };
+		193C37ED1C1D7C7F0017CC9C /* ImageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37E81C1D7C7F0017CC9C /* ImageListCell.m */; };
+		193C37EE1C1D7C7F0017CC9C /* ImageListCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37EA1C1D7C7F0017CC9C /* ImageListCVC.m */; };
+		193C37EF1C1D7C7F0017CC9C /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37EC1C1D7C7F0017CC9C /* PhotoAlbum.m */; };
+		193C37F11C1D7C930017CC9C /* Album.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37F01C1D7C930017CC9C /* Album.storyboard */; };
+		193C37F61C1D7D480017CC9C /* ImageCheckableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37F31C1D7D480017CC9C /* ImageCheckableCell.m */; };
+		193C37F71C1D7D480017CC9C /* ImageFullscreenSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37F51C1D7D480017CC9C /* ImageFullscreenSVC.m */; };
+		193C37FA1C1D7FF20017CC9C /* AlbumTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37F91C1D7FF20017CC9C /* AlbumTestController.m */; };
+		193C37FD1C1D83530017CC9C /* CircleImageCVLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37FC1C1D83530017CC9C /* CircleImageCVLayout.m */; };
+		193C38021C1D8D9E0017CC9C /* ClickableStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38011C1D8D9E0017CC9C /* ClickableStackView.m */; };
+		193C38051C1D8DC20017CC9C /* ClickableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38041C1D8DC20017CC9C /* ClickableImageView.m */; };
+		193C38081C1D90500017CC9C /* MaterialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38071C1D90500017CC9C /* MaterialController.m */; };
 		1942C36C1BE89F6700C2DCF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36B1BE89F6700C2DCF4 /* main.m */; };
 		1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36E1BE89F6700C2DCF4 /* AppDelegate.m */; };
 		1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */; };
@@ -41,7 +53,6 @@
 		1961F6E41C19C1E5000928D3 /* NetCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 1961F6E31C19C1E5000928D3 /* NetCommunication.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
-		B5E7F0161C1C427600D08F74 /* ClickableStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E7F0151C1C427600D08F74 /* ClickableStackView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +105,29 @@
 		193C37B31C1C254C0017CC9C /* DiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCell.m; sourceTree = "<group>"; };
 		193C37CD1C1C654D0017CC9C /* NSString+Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Md5.h"; sourceTree = "<group>"; };
 		193C37CE1C1C654D0017CC9C /* NSString+Md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Md5.m"; sourceTree = "<group>"; };
+		193C37E31C1D4A070017CC9C /* RoleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleManager.h; sourceTree = "<group>"; };
+		193C37E41C1D4A070017CC9C /* RoleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleManager.m; sourceTree = "<group>"; };
+		193C37E71C1D7C7F0017CC9C /* ImageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageListCell.h; sourceTree = "<group>"; };
+		193C37E81C1D7C7F0017CC9C /* ImageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageListCell.m; sourceTree = "<group>"; };
+		193C37E91C1D7C7F0017CC9C /* ImageListCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageListCVC.h; sourceTree = "<group>"; };
+		193C37EA1C1D7C7F0017CC9C /* ImageListCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageListCVC.m; sourceTree = "<group>"; };
+		193C37EB1C1D7C7F0017CC9C /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
+		193C37EC1C1D7C7F0017CC9C /* PhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbum.m; sourceTree = "<group>"; };
+		193C37F01C1D7C930017CC9C /* Album.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Album.storyboard; sourceTree = "<group>"; };
+		193C37F21C1D7D480017CC9C /* ImageCheckableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCheckableCell.h; sourceTree = "<group>"; };
+		193C37F31C1D7D480017CC9C /* ImageCheckableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCheckableCell.m; sourceTree = "<group>"; };
+		193C37F41C1D7D480017CC9C /* ImageFullscreenSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFullscreenSVC.h; sourceTree = "<group>"; };
+		193C37F51C1D7D480017CC9C /* ImageFullscreenSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFullscreenSVC.m; sourceTree = "<group>"; };
+		193C37F81C1D7FF20017CC9C /* AlbumTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTestController.h; sourceTree = "<group>"; };
+		193C37F91C1D7FF20017CC9C /* AlbumTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTestController.m; sourceTree = "<group>"; };
+		193C37FB1C1D83530017CC9C /* CircleImageCVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleImageCVLayout.h; sourceTree = "<group>"; };
+		193C37FC1C1D83530017CC9C /* CircleImageCVLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleImageCVLayout.m; sourceTree = "<group>"; };
+		193C38001C1D8D9E0017CC9C /* ClickableStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableStackView.h; sourceTree = "<group>"; };
+		193C38011C1D8D9E0017CC9C /* ClickableStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableStackView.m; sourceTree = "<group>"; };
+		193C38031C1D8DC20017CC9C /* ClickableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableImageView.h; sourceTree = "<group>"; };
+		193C38041C1D8DC20017CC9C /* ClickableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableImageView.m; sourceTree = "<group>"; };
+		193C38061C1D90500017CC9C /* MaterialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialController.h; sourceTree = "<group>"; };
+		193C38071C1D90500017CC9C /* MaterialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialController.m; sourceTree = "<group>"; };
 		1942C3671BE89F6700C2DCF4 /* Calculus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942C36B1BE89F6700C2DCF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1942C36D1BE89F6700C2DCF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,8 +140,6 @@
 		1961F6E31C19C1E5000928D3 /* NetCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCommunication.m; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
-		B5E7F0141C1C427600D08F74 /* ClickableStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableStackView.h; sourceTree = "<group>"; };
-		B5E7F0151C1C427600D08F74 /* ClickableStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableStackView.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,14 +249,16 @@
 			isa = PBXGroup;
 			children = (
 				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
-				193C37691C1BE2B70017CC9C /* MeController.h */,
-				193C376A1C1BE2B70017CC9C /* MeController.m */,
 				193C376B1C1BE2B70017CC9C /* MeNavigationController.h */,
 				193C376C1C1BE2B70017CC9C /* MeNavigationController.m */,
+				193C37691C1BE2B70017CC9C /* MeController.h */,
+				193C376A1C1BE2B70017CC9C /* MeController.m */,
 				193C376D1C1BE2B70017CC9C /* MeTVC.h */,
 				193C376E1C1BE2B70017CC9C /* MeTVC.m */,
 				193C378B1C1BED3C0017CC9C /* SettingTVC.h */,
 				193C378C1C1BED3C0017CC9C /* SettingTVC.m */,
+				193C38061C1D90500017CC9C /* MaterialController.h */,
+				193C38071C1D90500017CC9C /* MaterialController.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -246,6 +280,8 @@
 				193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */,
 				193C37821C1BE8510017CC9C /* BootstrapController.h */,
 				193C37831C1BE8510017CC9C /* BootstrapController.m */,
+				193C37E31C1D4A070017CC9C /* RoleManager.h */,
+				193C37E41C1D4A070017CC9C /* RoleManager.m */,
 			);
 			path = Bootstrap;
 			sourceTree = "<group>";
@@ -297,6 +333,39 @@
 			path = Catalog;
 			sourceTree = "<group>";
 		};
+		193C37E61C1D7C7F0017CC9C /* PhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				193C37F01C1D7C930017CC9C /* Album.storyboard */,
+				193C37FB1C1D83530017CC9C /* CircleImageCVLayout.h */,
+				193C37FC1C1D83530017CC9C /* CircleImageCVLayout.m */,
+				193C37F21C1D7D480017CC9C /* ImageCheckableCell.h */,
+				193C37F31C1D7D480017CC9C /* ImageCheckableCell.m */,
+				193C37F41C1D7D480017CC9C /* ImageFullscreenSVC.h */,
+				193C37F51C1D7D480017CC9C /* ImageFullscreenSVC.m */,
+				193C37E71C1D7C7F0017CC9C /* ImageListCell.h */,
+				193C37E81C1D7C7F0017CC9C /* ImageListCell.m */,
+				193C37E91C1D7C7F0017CC9C /* ImageListCVC.h */,
+				193C37EA1C1D7C7F0017CC9C /* ImageListCVC.m */,
+				193C37EB1C1D7C7F0017CC9C /* PhotoAlbum.h */,
+				193C37EC1C1D7C7F0017CC9C /* PhotoAlbum.m */,
+				193C37F81C1D7FF20017CC9C /* AlbumTestController.h */,
+				193C37F91C1D7FF20017CC9C /* AlbumTestController.m */,
+			);
+			path = PhotoAlbum;
+			sourceTree = "<group>";
+		};
+		193C37FF1C1D8D9E0017CC9C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				193C38001C1D8D9E0017CC9C /* ClickableStackView.h */,
+				193C38011C1D8D9E0017CC9C /* ClickableStackView.m */,
+				193C38031C1D8DC20017CC9C /* ClickableImageView.h */,
+				193C38041C1D8DC20017CC9C /* ClickableImageView.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		1942C35E1BE89F6700C2DCF4 = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +387,8 @@
 		1942C3691BE89F6700C2DCF4 /* Calculus */ = {
 			isa = PBXGroup;
 			children = (
+				193C37FF1C1D8D9E0017CC9C /* Common */,
+				193C37E61C1D7C7F0017CC9C /* PhotoAlbum */,
 				193C37C81C1C654D0017CC9C /* Catalog */,
 				193C37811C1BE8510017CC9C /* Bootstrap */,
 				1961F6E11C19C1E5000928D3 /* Networking */,
@@ -325,8 +396,6 @@
 				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C377E1C1BE6200017CC9C /* Merchant */,
 				1942C36A1BE89F6700C2DCF4 /* Supporting Files */,
-				B5E7F0141C1C427600D08F74 /* ClickableStackView.h */,
-				B5E7F0151C1C427600D08F74 /* ClickableStackView.m */,
 			);
 			path = Calculus;
 			sourceTree = "<group>";
@@ -425,6 +494,7 @@
 				1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */,
 				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
+				193C37F11C1D7C930017CC9C /* Album.storyboard in Resources */,
 				193C37AB1C1C23460017CC9C /* Discount.storyboard in Resources */,
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
@@ -473,24 +543,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E7F0161C1C427600D08F74 /* ClickableStackView.m in Sources */,
 				193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				193C37D71C1C654D0017CC9C /* NSString+Md5.m in Sources */,
+				193C37FA1C1D7FF20017CC9C /* AlbumTestController.m in Sources */,
 				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37731C1BE2B70017CC9C /* MyAwardController.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
 				193C37A81C1C19240017CC9C /* AwardDerivateCell.m in Sources */,
+				193C37EF1C1D7C7F0017CC9C /* PhotoAlbum.m in Sources */,
+				193C37ED1C1D7C7F0017CC9C /* ImageListCell.m in Sources */,
+				193C38051C1D8DC20017CC9C /* ClickableImageView.m in Sources */,
+				193C38021C1D8D9E0017CC9C /* ClickableStackView.m in Sources */,
+				193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */,
 				193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */,
 				193C378D1C1BED3C0017CC9C /* SettingTVC.m in Sources */,
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
+				193C37FD1C1D83530017CC9C /* CircleImageCVLayout.m in Sources */,
 				193C37A51C1C17870017CC9C /* AwardDerivateCVC.m in Sources */,
+				193C37F61C1D7D480017CC9C /* ImageCheckableCell.m in Sources */,
 				1961F6E41C19C1E5000928D3 /* NetCommunication.m in Sources */,
+				193C37F71C1D7D480017CC9C /* ImageFullscreenSVC.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
 				193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */,
 				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
+				193C38081C1D90500017CC9C /* MaterialController.m in Sources */,
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
+				193C37EE1C1D7C7F0017CC9C /* ImageListCVC.m in Sources */,
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
@@ -642,6 +722,7 @@
 			baseConfigurationReference = 06E1593861243261B9CF8DAE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Calculus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.www.Calculus;
@@ -654,6 +735,7 @@
 			baseConfigurationReference = D01A48679F486AF32B41B766 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Calculus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.www.Calculus;

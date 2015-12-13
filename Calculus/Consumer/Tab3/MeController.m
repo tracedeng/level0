@@ -8,10 +8,12 @@
 
 #import "MeController.h"
 #import "AccountController.h"
+#import "ClickableStackView.h"
 
 @interface MeController ()
 - (IBAction)touchBackgroundToEditMaterial:(id)sender;
 
+@property (weak, nonatomic) IBOutlet ClickableStackView *consumerBasicMaterial;
 @end
 
 @implementation MeController
@@ -21,6 +23,9 @@
     // Do any additional setup after loading the view.
     
     self.title = @"用户中心";
+    self.consumerBasicMaterial.afterClickStackView = ^(id sender) {
+        [self performSegueWithIdentifier:@"ConsumerMaterial" sender:self];
+    };
 }
 
 - (void)didReceiveMemoryWarning {

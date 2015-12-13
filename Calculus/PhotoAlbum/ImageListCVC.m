@@ -60,7 +60,7 @@ static NSString * const reuseIdentifier = @"ImageListCell";
         }else{
             self.rightBarButtonDone.enabled = YES;
             //单选时，不提示具体数量
-            self.rightBarButtonDone.title = self.bMultiChecked ? [NSString stringWithFormat:@"完成(%d/%d)", _checkedCount, self.checkableCount] : [NSString stringWithFormat:@"完成"];
+            self.rightBarButtonDone.title = self.bMultiChecked ? [NSString stringWithFormat:@"完成(%ld/%ld)", (long)_checkedCount, (long)self.checkableCount] : [NSString stringWithFormat:@"完成"];
         }
     }
 }

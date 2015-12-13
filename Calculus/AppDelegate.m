@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RoleManager.h"
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UIViewController *consumerRoot;
@@ -20,11 +21,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    self.bootstrapRoot = self.window.rootViewController;
     [self loadBoard];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initRootWindow:) name:@"initWindow" object:nil];
-    self.bootstrapRoot = self.window.rootViewController;
     
+    
+//    NSString * role = [RoleManager currentRole];
+//    if ([role isEqualToString:@"consumer"]) {
+//        self.window.rootViewController = self.consumerRoot;
+//    }else if ([role isEqualToString:@"merchant"]) {
+//        self.window.rootViewController = self.merchantRoot;
+//    }else if ([role isEqualToString:@"bootstrap"]) {
+//        self.window.rootViewController = self.bootstrapRoot;
+//    }
+//    
     return YES;
 }
 

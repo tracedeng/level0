@@ -36,14 +36,12 @@
 - (void)doGetSMSCode:(NSString *)numbers kind:(NSString *)kind {
     self.type = EACCOUNTGETSMSCODE;
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"get_sms_code", @"type", numbers, @"numbers", kind, @"kind", nil];
-    NSLog(@"%@", postData);
     [self.net requestHttpWithData:postData];
 }
 
 - (void)doAccountLogin:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 kind:(NSString *)kind{
     self.type = EACCOUNTLOGIN;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", kind, @"kind", passwordMD5, @"passwordmd5", nil];
-//    NSLog(@"%@", postData);
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", kind, @"kind", passwordMD5, @"password_md5", nil];
     [self.net requestHttpWithData:postData];
 }
 

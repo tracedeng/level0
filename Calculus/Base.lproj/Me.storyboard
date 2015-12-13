@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pq2-63-LZE" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-d4-N12">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-d4-N12" customClass="ClickableStackView">
                                                 <rect key="frame" x="221.5" y="5" width="157" height="140"/>
                                                 <subviews>
                                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="eV5-zD-sAG">
@@ -118,6 +118,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="consumerBasicMaterial" destination="jLN-d4-N12" id="Dj2-ih-0wq"/>
                         <segue destination="XJb-ao-w2A" kind="show" identifier="ConsumerMaterial" id="ny9-d9-QDR"/>
                     </connections>
                 </viewController>
@@ -344,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="1974" y="1070.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Material Controller-->
         <scene sceneID="xAl-WV-S73">
             <objects>
-                <tableViewController id="XJb-ao-w2A" sceneMemberID="viewController">
+                <tableViewController id="XJb-ao-w2A" customClass="MaterialController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="IpG-ku-pwe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
