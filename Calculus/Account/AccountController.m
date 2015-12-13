@@ -8,11 +8,17 @@
 
 #import "AccountController.h"
 #import "ActionAccount.h"
+#import "NSString+Md5.h"
+#import "GTMBase64.h"
 
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTField;
 @property (weak, nonatomic) IBOutlet UIStackView *accountStack;
+@property (nonatomic, retain) NSUserDefaults *cookie;   //登录态
+@property (nonatomic, retain) NSString *phoneNumber;
+@property (nonatomic, retain) NSString *passwordMD5;
+
 - (IBAction)accountLogin:(UIButton *)sender;
 
 
@@ -29,6 +35,8 @@
 //    self.accountStack.layer.borderColor = [[UIColor redColor] CGColor];
 //    self.accountStack.backgroundColor = [UIColor clearColor];
     self.userMode = @"consumer";
+    self.cookie = [NSUserDefaults standardUserDefaults];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,14 +125,27 @@
 //    点击登录提交
 // 
 - (IBAction)accountLogin:(UIButton *)sender {
+    
     [self.accountNumberTField resignFirstResponder];
     [self.passwordTField resignFirstResponder];
+    NSString *phoneNumber = self.accountNumberTField.text;
+    NSString *password = self.passwordTField.text;
     
+    NSString *password_MD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
+    
+    NSData *passwordData = [password_MD5 dataUsingEncoding:NSUTF8StringEncoding];
+    passwordData = [GTMBase64 encodeData:passwordData];
+    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+      
     ActionAccount *login = [[ActionAccount alloc] init];
     login.afterAccountLogin = ^(NSString *location) {
-    //TODO 登录成功后保存用户类型、手机号码、密码MD5
+    //TODO 登录成功后保存用户类型、手机号码、密码MD5、SKEY
+        [self.cookie setObject:self.phoneNumber forKey:@"user"];
+        [self.cookie setObject:self.passwordMD5 forKey:@"password"];
+        
+        NSLog(@"After login do this step");
     };
-    [login doAccountLogin:self.accountNumberTField.text passwordMD5:self.passwordTField.text kind:self.userMode];
+    [login doAccountLogin:self.accountNumberTField.text passwordMD5:password_MD5 kind:self.userMode];
     
 }
 @end
