@@ -431,6 +431,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B51C0AFE1C1D2011006F344F /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C0AFF1C1D2054006F344F /* GTMBase64.h */,
+				B51C0B001C1D2054006F344F /* GTMBase64.m */,
+				B51C0B021C1D245B006F344F /* GTMDefines.h */,
+			);
+			name = GTMBase64;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -576,6 +586,7 @@
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
 				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
+				B51C0B011C1D2054006F344F /* GTMBase64.m in Sources */,
 				193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */,
 				193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */,
 			);
