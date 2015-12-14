@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 #import "RoleManager.h"
+#import "ActionAccount.h"
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UIViewController *consumerRoot;
 @property (nonatomic, retain) UIViewController *merchantRoot;
 @property (nonatomic, retain) UIViewController *bootstrapRoot;
+@property (nonatomic, retain) UIViewController *accountRoot;
 @end
 
 @implementation AppDelegate
@@ -26,16 +28,21 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initRootWindow:) name:@"initWindow" object:nil];
     
-    
-//    NSString * role = [RoleManager currentRole];
-//    if ([role isEqualToString:@"consumer"]) {
-//        self.window.rootViewController = self.consumerRoot;
-//    }else if ([role isEqualToString:@"merchant"]) {
-//        self.window.rootViewController = self.merchantRoot;
-//    }else if ([role isEqualToString:@"bootstrap"]) {
-//        self.window.rootViewController = self.bootstrapRoot;
-//    }
-//    
+    BOOL state = [ActionAccount doWeakLogin];
+    if (state) {
+        NSLog(@"weak login success");
+        NSString * role = [RoleManager currentRole];
+        if ([role isEqualToString:@"consumer"]) {
+            self.window.rootViewController = self.consumerRoot;
+        }else if ([role isEqualToString:@"merchant"]) {
+            self.window.rootViewController = self.merchantRoot;
+        }else if ([role isEqualToString:@"bootstrap"]) {
+            self.window.rootViewController = self.bootstrapRoot;
+        }
+    }else{
+        NSLog(@"weak login failed");
+        self.window.rootViewController = self.accountRoot;
+    }
     return YES;
 }
 
@@ -81,10 +88,11 @@
 - (void)loadBoard {
     UIStoryboard *consumerBoard = [UIStoryboard storyboardWithName:@"Consumer" bundle:[NSBundle mainBundle]];
     UIStoryboard *merchantBoard = [UIStoryboard storyboardWithName:@"Merchant" bundle:[NSBundle mainBundle]];
+    UIStoryboard *accountBoard = [UIStoryboard storyboardWithName:@"Account" bundle:[NSBundle mainBundle]];
     
     self.consumerRoot = [consumerBoard instantiateInitialViewController];
     self.merchantRoot = [merchantBoard instantiateInitialViewController];
-    
+    self.accountRoot = [accountBoard instantiateInitialViewController];
 }
 
 @end

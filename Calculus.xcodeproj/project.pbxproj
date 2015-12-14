@@ -52,6 +52,7 @@
 		193C38411C1D95920017CC9C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C383A1C1D95920017CC9C /* GTMBase64.m */; };
 		193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C383E1C1D95920017CC9C /* ClickableImageView.m */; };
 		193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38401C1D95920017CC9C /* ClickableStackView.m */; };
+		193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38451C1EEDF30017CC9C /* SyncHttp.m */; };
 		1942C36C1BE89F6700C2DCF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36B1BE89F6700C2DCF4 /* main.m */; };
 		1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942C36E1BE89F6700C2DCF4 /* AppDelegate.m */; };
 		1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */; };
@@ -149,6 +150,8 @@
 		193C383E1C1D95920017CC9C /* ClickableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableImageView.m; sourceTree = "<group>"; };
 		193C383F1C1D95920017CC9C /* ClickableStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableStackView.h; sourceTree = "<group>"; };
 		193C38401C1D95920017CC9C /* ClickableStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableStackView.m; sourceTree = "<group>"; };
+		193C38441C1EEDF30017CC9C /* SyncHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncHttp.h; sourceTree = "<group>"; };
+		193C38451C1EEDF30017CC9C /* SyncHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncHttp.m; sourceTree = "<group>"; };
 		1942C3671BE89F6700C2DCF4 /* Calculus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942C36B1BE89F6700C2DCF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1942C36D1BE89F6700C2DCF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 			children = (
 				193C38171C1D94DE0017CC9C /* NetCommunication.h */,
 				193C38181C1D94DE0017CC9C /* NetCommunication.m */,
+				193C38441C1EEDF30017CC9C /* SyncHttp.h */,
+				193C38451C1EEDF30017CC9C /* SyncHttp.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -621,6 +626,7 @@
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
+				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,

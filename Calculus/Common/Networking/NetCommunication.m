@@ -44,7 +44,7 @@
              }];
     }else if ([self.method isEqual: @"post"]){
         //post请求，json格式传输数据
-//        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//        manager.requestSerializer = [AFJSONRequestSerializer serializer]; //tornador不支持
         [manager POST:self.url parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
             //call代理post请求成功
             
@@ -73,10 +73,6 @@
 
 //多文件上传http请求
 - (void)uploadHttpRequest:(NSDictionary *)data nsdatas:(NSMutableArray *)nsdatas {
-    
-
-    
-
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:self.url parameters:data constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         for (NSDictionary *nsdata in nsdatas) {
             [formData appendPartWithFileData:[nsdata valueForKey:@"nsdata"] name:[nsdata valueForKey:@"name"] fileName:[nsdata valueForKey:@"fileName"] mimeType:[nsdata valueForKey:@"mimeType"]];

@@ -131,21 +131,21 @@
     NSString *phoneNumber = self.accountNumberTField.text;
     NSString *password = self.passwordTField.text;
     
-    NSString *password_MD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
+    NSString *passwordMD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
     
-    NSData *passwordData = [password_MD5 dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *passwordData = [passwordMD5 dataUsingEncoding:NSUTF8StringEncoding];
     passwordData = [GTMBase64 encodeData:passwordData];
-    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+    passwordMD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
       
     ActionAccount *login = [[ActionAccount alloc] init];
     login.afterAccountLogin = ^(NSString *location) {
-    //TODO 登录成功后保存用户类型、手机号码、密码MD5、SKEY
-        [self.cookie setObject:self.phoneNumber forKey:@"user"];
-        [self.cookie setObject:self.passwordMD5 forKey:@"password"];
+        //TODO 登录成功后保存手机号码、密码MD5、SKEY
+        [self.cookie setObject:phoneNumber forKey:@"account"];
+        [self.cookie setObject:passwordMD5 forKey:@"password"];
         
         NSLog(@"After login do this step");
     };
-    [login doAccountLogin:self.accountNumberTField.text passwordMD5:password_MD5 kind:self.userMode];
+    [login doAccountLogin:phoneNumber passwordMD5:passwordMD5];
     
 }
 @end

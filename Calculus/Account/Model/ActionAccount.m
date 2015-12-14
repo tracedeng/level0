@@ -8,6 +8,7 @@
 
 #import "ActionAccount.h"
 #import "Constance.h"
+#import "SyncHttp.h"
 
 @interface ActionAccount ()
 //@property (nonatomic, retain) NSDictionary *state;  //登录态
@@ -41,9 +42,9 @@
     [self.net requestHttpWithData:postData];
 }
 
-- (void)doAccountLogin:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 kind:(NSString *)kind{
+- (void)doAccountLogin:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 {
     self.type = EACCOUNTLOGIN;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", kind, @"kind", passwordMD5, @"password_md5", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", passwordMD5, @"password_md5", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -66,9 +67,9 @@
             }
             case EACCOUNTLOGIN:
             {
-                NSString *location = [responseObject objectForKey:@"location"];
+                NSString *skey = [responseObject objectForKey:@"r"];
                 if (self.afterAccountLogin) {
-                    self.afterAccountLogin(location);
+                    self.afterAccountLogin(skey);
                 }
                 break;
 
@@ -123,5 +124,23 @@
     NSLog(@"%ld", (long)[responseError code]);
     NSLog(@"%@", [responseError localizedDescription]);
 }
+
+
++ (BOOL)doWeakLogin {
+    NSString *numbers = [[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    
+    if (!numbers || !password) {
+        return false;
+    }
+
+    // 同步登陆请求
+    return [SyncHttp syncPost:ACCOUNTURL data:[[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", password, @"password_md5", nil]];
+}
+
++ (BOOL)doLogout {
+    return true;
+}
+
 
 @end
