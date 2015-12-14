@@ -322,6 +322,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLW-Nz-MVD">
                                                     <rect key="frame" x="30" y="7" width="540" height="30"/>
                                                     <state key="normal" title="退出"/>
+                                                    <connections>
+                                                        <action selector="logoutAction:" destination="vRD-Af-wj1" eventType="touchUpInside" id="lxK-zd-hLw"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

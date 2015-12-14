@@ -1,5 +1,5 @@
 //
-//  SyncHttp.h
+//  SKeyManager.h
 //  Calculus
 //
 //  Created by tracedeng on 15/12/14.
@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SyncHttp : NSObject
-+ (NSString *)syncPost:(NSString *)url data:(NSDictionary *)data;
+@interface SKeyManager : NSObject
++ (NSString *)getSkey;      //当前skey
++ (void)changeSkey:(NSString *)skey;    // 设置当前skey
 @end

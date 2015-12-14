@@ -40,6 +40,7 @@
             self.window.rootViewController = self.bootstrapRoot;
         }
     }else{
+//        弱登录失败不清除cache，可能没连网络原因
         NSLog(@"weak login failed");
         self.window.rootViewController = self.accountRoot;
     }
@@ -75,14 +76,18 @@
     }else if ([destine isEqualToString:@"gotoMerchant"]) {
         self.window.rootViewController = self.merchantRoot;
     }else if ([destine isEqualToString:@"gotoBootstrap"]) {
-        //退出，需要重置mainStoryboard，否则退出后再登录不会执行ViewDidLoad，无法以新登录用户身份登录
-        //        UIStoryboard *mainStoryBoard = self.window.rootViewController.storyboard;
-        //        for (UIView *viewn self.window.subviews) {
-        //            [view removeFromSuperview];
-        //        }
-        //        self.rootMainController = [mainStoryBoard instantiateInitialViewController];
         self.window.rootViewController = self.bootstrapRoot;
+    }else if ([destine isEqualToString:@"gotoAccount"]) {
+        //退出，需要重置mainStoryboard，否则退出后再登录不会执行ViewDidLoad，无法以新登录用户身份登录
+//        UIStoryboard *mainStoryBoard = self.window.rootViewController.storyboard;
+//        for (UIView *view in self.accountRoot.) {
+//            [view removeFromSuperview];
+//        }
+//        UIStoryboard *accountBoard = [UIStoryboard storyboardWithName:@"Account" bundle:[NSBundle mainBundle]];
+//        self.accountRoot = [accountBoard instantiateInitialViewController];
+        self.window.rootViewController = self.accountRoot;
     }
+
 }
 
 - (void)loadBoard {

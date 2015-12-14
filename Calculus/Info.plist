@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>UIMainStoryboardFile</key>
-	<string>Account</string>
+	<string>Bootstrap</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

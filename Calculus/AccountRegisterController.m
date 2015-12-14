@@ -18,8 +18,7 @@
 
 - (IBAction)accountRegister:(UIButton *)sender;
 - (IBAction)getSMSCode:(UIButton *)sender;
-@property (nonatomic, retain) NSMutableDictionary *cookie;   //登录态
-
+- (IBAction)touchBackgroundToHideKeyboard:(id)sender;
 @end
 
 @implementation AccountRegisterController
@@ -31,7 +30,6 @@
     //    self.accountStack.layer.borderWidth = 1.0f;
     //    self.accountStack.layer.borderColor = [[UIColor redColor] CGColor];
     //    self.accountStack.backgroundColor = [UIColor clearColor];
-    self.cookie = [[NSMutableDictionary alloc] init];
     
 }
 
@@ -76,15 +74,18 @@
     
     ActionAccount *registe = [[ActionAccount alloc] init];
     registe.afterAccountRegister = ^(NSString *result){
-        //注册成功后保存用户类型、手机号码、md5、skey
-        //TODO 登录成功后保存用户类型、手机号码、密码MD5、SKEY
-        [self.cookie setObject:phoneNumber forKey:@"user"];
-        [self.cookie setObject:password_MD5 forKey:@"password"];
-        [self.cookie setObject:self.userMode forKey:@"kind"];
-        [self.cookie setObject:result forKey:@"skey"];
+        //注册成功后只保存手机号码
+        [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
         
-        NSHTTPCookie *newcookie = [[NSHTTPCookie alloc] initWithProperties:self.cookie];
-        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newcookie];
+        //跳转到登录界面
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
+//        [self.cookie setObject:phoneNumber forKey:@"user"];
+//        [self.cookie setObject:password_MD5 forKey:@"password"];
+//        [self.cookie setObject:self.userMode forKey:@"kind"];
+//        [self.cookie setObject:result forKey:@"skey"];
+        
+//        NSHTTPCookie *newcookie = [[NSHTTPCookie alloc] initWithProperties:self.cookie];
+//        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newcookie];
     };
     [registe doAccountRegister:phoneNumber passwordMD5:password_MD5 kind:self.userMode code:code];
     

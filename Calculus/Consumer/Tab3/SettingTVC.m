@@ -7,8 +7,10 @@
 //
 
 #import "SettingTVC.h"
+#import "ActionAccount.h"
 
 @interface SettingTVC ()
+- (IBAction)logoutAction:(id)sender;
 
 @end
 
@@ -54,7 +56,8 @@
         }
     }else if(1 == indexPath.section) {
         //登出
-        
+        [ActionAccount doLogout];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
     }
 }
 
@@ -112,4 +115,8 @@
 }
 */
 
+- (IBAction)logoutAction:(id)sender {
+    [ActionAccount doLogout];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
+}
 @end

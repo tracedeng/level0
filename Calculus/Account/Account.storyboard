@@ -347,7 +347,7 @@
                         <viewControllerLayoutGuide type="top" id="zjX-CJ-OBr"/>
                         <viewControllerLayoutGuide type="bottom" id="3fo-UK-cS4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="74G-Dr-RfG">
+                    <view key="view" contentMode="scaleToFill" id="74G-Dr-RfG" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -479,6 +479,9 @@
                             <constraint firstItem="jp5-J0-nyr" firstAttribute="top" secondItem="N52-Te-UpO" secondAttribute="bottom" constant="32" id="xGn-sP-RuI"/>
                             <constraint firstAttribute="trailing" secondItem="jp5-J0-nyr" secondAttribute="trailing" constant="30" id="zAw-6W-duc"/>
                         </constraints>
+                        <connections>
+                            <action selector="touchBackgroundToHideKeyboard:" destination="5v9-2l-wbL" eventType="valueChanged" id="cPu-9m-1NS"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="accountTXT" destination="8yz-7l-1PG" id="2Qx-K4-cFY"/>

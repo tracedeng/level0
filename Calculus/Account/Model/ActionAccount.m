@@ -9,6 +9,7 @@
 #import "ActionAccount.h"
 #import "Constance.h"
 #import "SyncHttp.h"
+#import "SKeyManager.h"
 
 @interface ActionAccount ()
 //@property (nonatomic, retain) NSDictionary *state;  //登录态
@@ -144,10 +145,19 @@
     }
 
     // 同步登陆请求
-    return [SyncHttp syncPost:ACCOUNTURL data:[[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", password, @"password_md5", nil]];
+    NSString *skey = [SyncHttp syncPost:ACCOUNTURL data:[[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", password, @"password_md5", nil]];
+    [SKeyManager changeSkey:skey];
+    
+    if (skey) {
+        return true;
+    }else{
+        return false;
+    }
 }
 
 + (BOOL)doLogout {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
+    [SKeyManager changeSkey:nil];
     return true;
 }
 

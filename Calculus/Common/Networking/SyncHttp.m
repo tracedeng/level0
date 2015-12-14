@@ -11,7 +11,7 @@
 
 @implementation SyncHttp
 
-+ (BOOL)syncPost:(NSString *)url data:(NSDictionary *)data {
++ (NSString *)syncPost:(NSString *)url data:(NSDictionary *)data {
     //创建请求
     NSLog(@"%@", data);
     
@@ -37,10 +37,11 @@
     NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:nil];
     NSLog(@"%@", responseJson);
     
+    //  请求成功，返回结果，TODO 以后可参考异步接口封装
     if (1 == [[responseJson objectForKey:@"c"] integerValue]) {
-        return true;
+        return [responseJson objectForKey:@"r"];
     }
     
-    return false;
+    return nil;
 }
 @end

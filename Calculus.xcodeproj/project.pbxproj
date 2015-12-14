@@ -59,6 +59,7 @@
 		1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3761BE89F6700C2DCF4 /* Assets.xcassets */; };
 		1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
+		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
@@ -164,6 +165,8 @@
 		1942C37B1BE89F6700C2DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
+		19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKeyManager.h; path = Account/SKeyManager.h; sourceTree = "<group>"; };
+		19FC0FC01C1F1E89008157E3 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/SKeyManager.m; sourceTree = "<group>"; };
 		B51C0B031C1DB530006F344F /* AccountRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountRegisterController.h; sourceTree = "<group>"; };
 		B51C0B041C1DB530006F344F /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRegisterController.m; sourceTree = "<group>"; };
 		B51C0B061C1F0F85006F344F /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPassword.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				B51C0B041C1DB530006F344F /* AccountRegisterController.m */,
 				B51C0B061C1F0F85006F344F /* AccountResetPassword.h */,
 				B51C0B071C1F0F85006F344F /* AccountResetPassword.m */,
+				19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */,
+				19FC0FC01C1F1E89008157E3 /* SKeyManager.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
 				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
+				19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
 				193C38411C1D95920017CC9C /* GTMBase64.m in Sources */,

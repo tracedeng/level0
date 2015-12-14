@@ -580,6 +580,9 @@
                                                     <state key="normal" title="退出">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="logoutAction:" destination="ygN-iY-3Fb" eventType="touchUpInside" id="Z8S-TT-UkL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

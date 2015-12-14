@@ -29,4 +29,5 @@ typedef NS_ENUM(NSInteger, EACCOUNTOPTYPE) {
 @property (nonatomic, copy) void (^afterAccountRegister)(NSString *skey);
 
 + (BOOL)doWeakLogin;
++ (BOOL)doLogout;
 @end

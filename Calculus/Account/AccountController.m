@@ -11,12 +11,13 @@
 #import "NSString+Md5.h"
 #import "GTMBase64.h"
 #import "AccountRegisterController.h"
+#import "RoleManager.h"
+#import "SKeyManager.h"
 
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTField;
 @property (weak, nonatomic) IBOutlet UIStackView *accountStack;
-@property (nonatomic, retain) NSMutableDictionary *cookie;   //登录态
 
 
 - (IBAction)accountLogin:(UIButton *)sender;
@@ -31,10 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.userMode = @"consumer";
-    self.cookie = [[NSMutableDictionary alloc] init];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +40,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // 如果用户cache还存在，帮用户填好
+    NSString *account = [[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
+    if (account) {
+        self.accountNumberTField.text = account;
+    }else{
+        self.accountNumberTField.text = @"";
+    }
+    
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    if (password) {
+        // 此处password已经是3次md5后的密码
+        self.passwordTField.text = password;
+    }else{
+        self.passwordTField.text = @"";
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -87,30 +104,40 @@
    
     [self.accountNumberTField resignFirstResponder];
     [self.passwordTField resignFirstResponder];
+    
     NSString *phoneNumber = self.accountNumberTField.text;
     NSString *password = self.passwordTField.text;
     
     NSString *passwordMD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
-    
-    NSData *passwordData = [passwordMD5 dataUsingEncoding:NSUTF8StringEncoding];
-    passwordData = [GTMBase64 encodeData:passwordData];
-    passwordMD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+    NSData *passwordData = [GTMBase64 encodeData:[passwordMD5 dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *passwordMd5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
       
     ActionAccount *login = [[ActionAccount alloc] init];
-    login.afterAccountLogin = ^(NSString *location) {
-        //TODO 登录成功后保存手机号码、密码MD5、SKEY
-        [self.cookie setObject:phoneNumber forKey:@"account"];
-        [self.cookie setObject:passwordMD5 forKey:@"password"];
+    login.afterAccountLogin = ^(NSString *skey) {
+//        登录成功后手机号码、密码MD5存入cache
+        [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
+        [[NSUserDefaults standardUserDefaults] setObject:passwordMd5 forKey:@"password"];
+
+//        保存skey
+        [SKeyManager changeSkey:skey];
         
-        NSLog(@"After login do this step");
+//        根据用户最近角色判断
+        NSString * role = [RoleManager currentRole];
+        if ([role isEqualToString:@"consumer"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoConsumer", @"destine", nil]];
+        }else if ([role isEqualToString:@"merchant"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchant", @"destine", nil]];
+        }else if ([role isEqualToString:@"bootstrap"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoBootstrap", @"destine", nil]];
+        }
+        
     };
-    [login doAccountLogin:phoneNumber passwordMD5:passwordMD5];
+    [login doAccountLogin:phoneNumber passwordMD5:passwordMd5];
     
 }
 
 - (IBAction)accountRegister:(UIButton *)sender {
     //[self performSegueWithIdentifier:@"accountregister" sender:self]; //这个方法。跳转页面。
-    ;
 }
 
 
@@ -118,8 +145,8 @@
 #pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"accountregister"]){
-        [segue.destinationViewController setValue:self.userMode forKey:@"userMode"];
-    }
+//    if([segue.identifier isEqualToString:@"accountregister"]){
+//        [segue.destinationViewController setValue:self.userMode forKey:@"userMode"];
+//    }
 }
 @end
