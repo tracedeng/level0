@@ -10,16 +10,17 @@
 #import "ActionAccount.h"
 #import "NSString+Md5.h"
 #import "GTMBase64.h"
+#import "AccountRegisterController.h"
 
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTField;
 @property (weak, nonatomic) IBOutlet UIStackView *accountStack;
-@property (nonatomic, retain) NSUserDefaults *cookie;   //登录态
-@property (nonatomic, retain) NSString *phoneNumber;
-@property (nonatomic, retain) NSString *passwordMD5;
+@property (nonatomic, retain) NSMutableDictionary *cookie;   //登录态
+
 
 - (IBAction)accountLogin:(UIButton *)sender;
+- (IBAction)accountRegister:(UIButton *)sender;
 
 
 @end
@@ -30,12 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-//    self.accountStack.layer.borderWidth = 1.0f;
-//    self.accountStack.layer.borderColor = [[UIColor redColor] CGColor];
-//    self.accountStack.backgroundColor = [UIColor clearColor];
+
     self.userMode = @"consumer";
-    self.cookie = [NSUserDefaults standardUserDefaults];
+    self.cookie = [[NSMutableDictionary alloc] init];
 
 }
 
@@ -54,28 +52,10 @@
 }
 */
 
-
-/**
- *  隐藏键盘
- *
- *  @param sender 空白
- */
 - (IBAction)touchBackgroundToHideKeyboard:(id)sender {
     [self.accountNumberTField resignFirstResponder];
     [self.passwordTField resignFirstResponder];
 }
-
-
-
-- (IBAction)submitLogin:(UIButton *)sender {
-  }
-
-
-//   检查手机号和验证码等UITextField输入，并且发起验证验证码请求
-//   @param textField <#textField description#>
-//   @param range     <#range description#>
-//   @param string    <#string description#>
-//   @return <#return value description#>
 
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -99,33 +79,12 @@
 - (BOOL) verifyInfomation{
     NSString *phoneNumber = self.passwordTField.text;
     NSString *password = self.accountNumberTField.text;
-    
-    if (!self.userMode) {
-        NSLog(@"EMPTY USER MODE");
-        return true;
-    }
-    if (phoneNumber) {
-        if (phoneNumber.length != 11) {
-            NSLog(@"EMPTY USER MODE");
-            
-        }
-    }
-    else{
-        NSLog(@"EMPTY USER MODE");
-        return false;
-    }
-    
-    if (!self.userMode) {
-        NSLog(@"EMPTY USER MODE");
-        return false;
-    }
+
     return true;
 }
-//
-//    点击登录提交
-// 
+
 - (IBAction)accountLogin:(UIButton *)sender {
-    
+   
     [self.accountNumberTField resignFirstResponder];
     [self.passwordTField resignFirstResponder];
     NSString *phoneNumber = self.accountNumberTField.text;
@@ -147,5 +106,20 @@
     };
     [login doAccountLogin:phoneNumber passwordMD5:passwordMD5];
     
+}
+
+- (IBAction)accountRegister:(UIButton *)sender {
+    //[self performSegueWithIdentifier:@"accountregister" sender:self]; //这个方法。跳转页面。
+    ;
+}
+
+
+
+#pragma mark - Segue Methods
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier compare:@"accountregister"]==NO){
+        [segue.destinationViewController setValue:self.userMode forKey:@"userMode"];
+    }
 }
 @end
