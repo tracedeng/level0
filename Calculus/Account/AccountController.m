@@ -77,8 +77,8 @@
 
 
 - (BOOL) verifyInfomation{
-    NSString *phoneNumber = self.passwordTField.text;
-    NSString *password = self.accountNumberTField.text;
+//    NSString *phoneNumber = self.passwordTField.text;
+//    NSString *password = self.accountNumberTField.text;
 
     return true;
 }
@@ -118,7 +118,7 @@
 #pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier compare:@"accountregister"]==NO){
+    if([segue.identifier isEqualToString:@"accountregister"]){
         [segue.destinationViewController setValue:self.userMode forKey:@"userMode"];
     }
 }
