@@ -47,6 +47,12 @@
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doAccountRegister:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 kind:(NSString *)kind code:(NSString *)code{
+    self.type = EACCOUNTREGISTER;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"register", @"type", numbers, @"numbers", kind, @"kind", passwordMD5, @"password_md5",code,@"sms_code", nil];
+    [self.net requestHttpWithData:postData];
+
+}
 
 
 #pragma mark -NetCommunication Delegate
@@ -58,17 +64,17 @@
         switch (self.type) {
             case EACCOUNTGETSMSCODE:
             {
-                NSString *location = [responseObject objectForKey:@"location"];
+                NSString *result = [responseObject objectForKey:@"r"];
                 if (self.afterGetSMSCode) {
-                    self.afterGetSMSCode(location);
+                    self.afterGetSMSCode(result);
                 }
                 break;
             }
             case EACCOUNTLOGIN:
             {
-                NSString *location = [responseObject objectForKey:@"location"];
+                NSString *result = [responseObject objectForKey:@"r"];
                 if (self.afterAccountLogin) {
-                    self.afterAccountLogin(location);
+                    self.afterAccountLogin(result);
                 }
                 break;
 
@@ -81,7 +87,10 @@
             }
             case EACCOUNTREGISTER:
             {
-                //TODO 执行注册成功后操作
+                NSString *result = [responseObject objectForKey:@"r"];
+                if (self.afterAccountRegister) {
+                    self.afterAccountRegister(result);
+                }
                 break;
             }
 
