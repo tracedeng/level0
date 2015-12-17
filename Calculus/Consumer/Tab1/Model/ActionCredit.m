@@ -7,12 +7,16 @@
 //
 
 #import "ActionCredit.h"
+#import "SKeyManager.h"
 #import "Constance.h"
 
 @interface ActionCredit ()
-@property (nonatomic, retain) NSDictionary *state;  //登录态
 @property (nonatomic, retain) NetCommunication *net;
 @property (nonatomic, assign) ECREDITOPTYPE type;     //用户资料操作类型
+
+@property (nonatomic, retain) NSDictionary *state;  //登录态 {"accout": @"18688982240", "skey": @"_Rjdifjwe7234876sdfD"}
+@property (nonatomic, retain) NSString *account;
+@property (nonatomic, retain) NSString *skey;
 @end
 
 @implementation ActionCredit
@@ -20,6 +24,9 @@
 - (id)init {
     self = [super init];
     if (self) {
+        self.state = [SKeyManager getSkey];
+        self.account = [self.state objectForKey:@"account"];
+        self.skey = [self.state objectForKey:@"skey"];
         self.net = [[NetCommunication alloc] initWithHttpUrl:CREDITURL httpMethod:@"post"];
         self.net.delegate = self;
     }
@@ -35,8 +42,7 @@
  */
 - (void)doConsumerQueryAllCredit {
     self.type = ECONSUMERQUERYALLCREDIT;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list", @"type", @"18688982240", @"numbers", @"", @"session_key", nil];
-    NSLog(@"%@", postData);
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -45,14 +51,14 @@
 
 //@optional http请求成功返回
 - (void)postSuccessResponseWith:(AFHTTPRequestOperation *)requestOperation responseObject:(id)responseObject {
-    NSInteger errorCode = [[responseObject objectForKey:@"e"] integerValue];
+    NSInteger errorCode = [[responseObject objectForKey:@"c"] integerValue];
     if (1 == errorCode) {
         switch (self.type) {
             case ECONSUMERQUERYALLCREDIT:
             {
-                NSString *location = [responseObject objectForKey:@"location"];
+                NSArray *creditList = [responseObject objectForKey:@"r"];
                 if (self.afterConsumerQueryAllCredit) {
-                    self.afterConsumerQueryAllCredit(location);
+                    self.afterConsumerQueryAllCredit(creditList);
                 }
                 break;
             }
@@ -63,6 +69,10 @@
         switch (self.type) {
             case ECONSUMERQUERYALLCREDIT:
             {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterConsumerQueryAllCreditFailed) {
+                    self.afterConsumerQueryAllCreditFailed(message);
+                }
                 break;
             }
             default:

@@ -106,7 +106,7 @@
                     <navigationItem key="navigationItem" id="2Uu-Qs-xdy">
                         <barButtonItem key="rightBarButtonItem" title="完成" id="NY8-2G-oGz">
                             <connections>
-                                <segue destination="w56-mZ-188" kind="unwind" unwindAction="unwindToReleaseVC:" id="oKI-VH-xrE"/>
+                                <segue destination="w56-mZ-188" kind="unwind" unwindAction="unwindForUpdateMaterial:" id="oKI-VH-xrE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -117,11 +117,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Qa-oh-5um" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="w56-mZ-188" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="Bf1-Zi-fgj">
-                    <connections>
-                        <segue destination="wlm-sU-CMB" kind="show" identifier="ShowFullscreen" id="cDc-2h-Lxo"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Bf1-Zi-fgj"/>
             </objects>
             <point key="canvasLocation" x="3227" y="2117"/>
         </scene>

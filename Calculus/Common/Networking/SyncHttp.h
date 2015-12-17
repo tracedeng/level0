@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface SyncHttp : NSObject
-+ (NSString *)syncPost:(NSString *)url data:(NSDictionary *)data;
++ (NSDictionary *)syncPost:(NSString *)url data:(NSDictionary *)data;
 @end

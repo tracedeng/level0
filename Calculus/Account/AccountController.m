@@ -8,11 +8,11 @@
 
 #import "AccountController.h"
 #import "ActionAccount.h"
-#import "NSString+Md5.h"
-#import "GTMBase64.h"
+
 #import "AccountRegisterController.h"
 #import "RoleManager.h"
 #import "SKeyManager.h"
+#import "MaterialManager.h"
 
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
@@ -107,19 +107,17 @@
     
     NSString *phoneNumber = self.accountNumberTField.text;
     NSString *password = self.passwordTField.text;
-    
-    NSString *passwordMD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
-    NSData *passwordData = [GTMBase64 encodeData:[passwordMD5 dataUsingEncoding:NSUTF8StringEncoding]];
-    NSString *passwordMd5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
-      
+         
     ActionAccount *login = [[ActionAccount alloc] init];
-    login.afterAccountLogin = ^(NSString *skey) {
+    login.afterAccountLogin = ^(NSDictionary *material) {
 //        登录成功后手机号码、密码MD5存入cache
         [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
-        [[NSUserDefaults standardUserDefaults] setObject:passwordMd5 forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
 
 //        保存skey
-        [SKeyManager changeSkey:skey];
+        NSString *skey = [material objectForKey:@"sk"];
+        [SKeyManager changeSkey:skey ofAccount:phoneNumber];
+        [MaterialManager setMaterial:material];
         
 //        根据用户最近角色判断
         NSString * role = [RoleManager currentRole];
@@ -132,7 +130,7 @@
         }
         
     };
-    [login doAccountLogin:phoneNumber passwordMD5:passwordMd5];
+    [login doAccountLogin:phoneNumber password:password];
     
 }
 

@@ -11,7 +11,7 @@
 
 @implementation SyncHttp
 
-+ (NSString *)syncPost:(NSString *)url data:(NSDictionary *)data {
++ (NSDictionary *)syncPost:(NSString *)url data:(NSDictionary *)data {
     //创建请求
     NSLog(@"%@", data);
     
@@ -34,6 +34,11 @@
     
     //连接服务器
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    if (!response) {
+//        无回包
+        return nil;
+    }
     NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:nil];
     NSLog(@"%@", responseJson);
     

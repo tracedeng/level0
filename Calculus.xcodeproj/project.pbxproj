@@ -33,7 +33,7 @@
 		193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B01C1C24170017CC9C /* DiscountTVC.m */; };
 		193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B31C1C254C0017CC9C /* DiscountCell.m */; };
 		193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37E41C1D4A070017CC9C /* RoleManager.m */; };
-		193C38081C1D90500017CC9C /* MaterialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38071C1D90500017CC9C /* MaterialController.m */; };
+		193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38071C1D90500017CC9C /* MaterialTVC.m */; };
 		193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380B1C1D94DE0017CC9C /* MKMapView+MapViewUtil.m */; };
 		193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380D1C1D94DE0017CC9C /* NSDate+Helpers.m */; };
 		193C382B1C1D94DE0017CC9C /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380F1C1D94DE0017CC9C /* NSString+Md5.m */; };
@@ -58,6 +58,9 @@
 		1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */; };
 		1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3761BE89F6700C2DCF4 /* Assets.xcassets */; };
 		1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */; };
+		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
+		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
+		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
@@ -115,8 +118,8 @@
 		193C37B31C1C254C0017CC9C /* DiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCell.m; sourceTree = "<group>"; };
 		193C37E31C1D4A070017CC9C /* RoleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleManager.h; sourceTree = "<group>"; };
 		193C37E41C1D4A070017CC9C /* RoleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleManager.m; sourceTree = "<group>"; };
-		193C38061C1D90500017CC9C /* MaterialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialController.h; sourceTree = "<group>"; };
-		193C38071C1D90500017CC9C /* MaterialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialController.m; sourceTree = "<group>"; };
+		193C38061C1D90500017CC9C /* MaterialTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTVC.h; sourceTree = "<group>"; };
+		193C38071C1D90500017CC9C /* MaterialTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialTVC.m; sourceTree = "<group>"; };
 		193C380A1C1D94DE0017CC9C /* MKMapView+MapViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+MapViewUtil.h"; sourceTree = "<group>"; };
 		193C380B1C1D94DE0017CC9C /* MKMapView+MapViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+MapViewUtil.m"; sourceTree = "<group>"; };
 		193C380C1C1D94DE0017CC9C /* NSDate+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helpers.h"; sourceTree = "<group>"; };
@@ -164,6 +167,11 @@
 		1942C3791BE89F6700C2DCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1942C37B1BE89F6700C2DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
+		19CBBBF61C21A62F002A920E /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/MaterialManager.h; sourceTree = "<group>"; };
+		19CBBBF71C21A62F002A920E /* MaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialManager.m; path = Account/MaterialManager.m; sourceTree = "<group>"; };
+		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
+		19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMaterial.m; path = Model/ActionMaterial.m; sourceTree = "<group>"; };
+		19CBBBFD1C21BE13002A920E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKeyManager.h; path = Account/SKeyManager.h; sourceTree = "<group>"; };
 		19FC0FC01C1F1E89008157E3 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/SKeyManager.m; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */,
 				9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +226,8 @@
 				B51C0B071C1F0F85006F344F /* AccountResetPassword.m */,
 				19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */,
 				19FC0FC01C1F1E89008157E3 /* SKeyManager.m */,
+				19CBBBF61C21A62F002A920E /* MaterialManager.h */,
+				19CBBBF71C21A62F002A920E /* MaterialManager.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -251,10 +262,10 @@
 				193C37A41C1C17870017CC9C /* AwardDerivateCVC.m */,
 				193C37611C1BE2B70017CC9C /* MyAwardCell.h */,
 				193C37621C1BE2B70017CC9C /* MyAwardCell.m */,
-				193C37631C1BE2B70017CC9C /* MyAwardController.h */,
-				193C37641C1BE2B70017CC9C /* MyAwardController.m */,
 				193C37651C1BE2B70017CC9C /* MyAwardTVC.h */,
 				193C37661C1BE2B70017CC9C /* MyAwardTVC.m */,
+				193C37631C1BE2B70017CC9C /* MyAwardController.h */,
+				193C37641C1BE2B70017CC9C /* MyAwardController.m */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -285,6 +296,7 @@
 		193C37681C1BE2B70017CC9C /* Tab3 */ = {
 			isa = PBXGroup;
 			children = (
+				19CBBBF91C21B4B9002A920E /* Model */,
 				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
 				193C376B1C1BE2B70017CC9C /* MeNavigationController.h */,
 				193C376C1C1BE2B70017CC9C /* MeNavigationController.m */,
@@ -294,8 +306,8 @@
 				193C376E1C1BE2B70017CC9C /* MeTVC.m */,
 				193C378B1C1BED3C0017CC9C /* SettingTVC.h */,
 				193C378C1C1BED3C0017CC9C /* SettingTVC.m */,
-				193C38061C1D90500017CC9C /* MaterialController.h */,
-				193C38071C1D90500017CC9C /* MaterialController.m */,
+				193C38061C1D90500017CC9C /* MaterialTVC.h */,
+				193C38071C1D90500017CC9C /* MaterialTVC.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -407,18 +419,18 @@
 			isa = PBXGroup;
 			children = (
 				193C381A1C1D94DE0017CC9C /* Album.storyboard */,
-				193C381B1C1D94DE0017CC9C /* AlbumTestController.h */,
-				193C381C1C1D94DE0017CC9C /* AlbumTestController.m */,
-				193C381D1C1D94DE0017CC9C /* CircleImageCVLayout.h */,
-				193C381E1C1D94DE0017CC9C /* CircleImageCVLayout.m */,
-				193C381F1C1D94DE0017CC9C /* ImageCheckableCell.h */,
-				193C38201C1D94DE0017CC9C /* ImageCheckableCell.m */,
 				193C38211C1D94DE0017CC9C /* ImageFullscreenSVC.h */,
 				193C38221C1D94DE0017CC9C /* ImageFullscreenSVC.m */,
+				193C381B1C1D94DE0017CC9C /* AlbumTestController.h */,
+				193C381C1C1D94DE0017CC9C /* AlbumTestController.m */,
+				193C381F1C1D94DE0017CC9C /* ImageCheckableCell.h */,
+				193C38201C1D94DE0017CC9C /* ImageCheckableCell.m */,
 				193C38231C1D94DE0017CC9C /* ImageListCell.h */,
 				193C38241C1D94DE0017CC9C /* ImageListCell.m */,
 				193C38251C1D94DE0017CC9C /* ImageListCVC.h */,
 				193C38261C1D94DE0017CC9C /* ImageListCVC.m */,
+				193C381D1C1D94DE0017CC9C /* CircleImageCVLayout.h */,
+				193C381E1C1D94DE0017CC9C /* CircleImageCVLayout.m */,
 				193C38271C1D94DE0017CC9C /* PhotoAlbum.h */,
 				193C38281C1D94DE0017CC9C /* PhotoAlbum.m */,
 			);
@@ -468,8 +480,8 @@
 			isa = PBXGroup;
 			children = (
 				193C37FF1C1D8D9E0017CC9C /* Common */,
-				193C37811C1BE8510017CC9C /* Bootstrap */,
 				193C37191C1B0D5A0017CC9C /* Account */,
+				193C37811C1BE8510017CC9C /* Bootstrap */,
 				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C377E1C1BE6200017CC9C /* Merchant */,
 				1942C36A1BE89F6700C2DCF4 /* Supporting Files */,
@@ -491,9 +503,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		19CBBBF91C21B4B9002A920E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */,
+				19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19CBBBFD1C21BE13002A920E /* libz.tbd */,
 				0E77514A77D3C896A8E7F09D /* libPods.a */,
 			);
 			name = Frameworks;
@@ -649,10 +671,11 @@
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
 				193C37A51C1C17870017CC9C /* AwardDerivateCVC.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
+				19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */,
 				193C38351C1D94DE0017CC9C /* ImageListCell.m in Sources */,
 				193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */,
 				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
-				193C38081C1D90500017CC9C /* MaterialController.m in Sources */,
+				193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */,
 				193C38331C1D94DE0017CC9C /* ImageCheckableCell.m in Sources */,
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
@@ -661,6 +684,7 @@
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
+				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,

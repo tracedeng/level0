@@ -9,8 +9,7 @@
 #import "ImageListCVC.h"
 #import "ImageCheckableCell.h"
 #import "PhotoAlbum.h"
-#import "ImageFullscreenSVC.h"
-#import "PhotoAlbum.h"
+//#import "ImageFullscreenSVC.h"
 
 #import "MWPhotoBrowser.h"
 
@@ -87,13 +86,13 @@ static NSString * const reuseIdentifier = @"ImageListCell";
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"ShowFullscreen"]) {
-        if([segue.destinationViewController isKindOfClass:[ImageFullscreenSVC class]]) {
-            NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
-            ImageFullscreenSVC *fullscreenController = (ImageFullscreenSVC *)segue.destinationViewController;
-            fullscreenController.totalImageCount = [self.photoAlbum.photoAlbumImages count];
-            fullscreenController.currentImageCount = indexPath.row + 1; //row 从0开始
-            fullscreenController.photoAlbum = self.photoAlbum;
-        }
+//        if([segue.destinationViewController isKindOfClass:[ImageFullscreenSVC class]]) {
+//            NSIndexPath *indexPath = [self.collectionView indexPathForCell:(UICollectionViewCell *)sender];
+//            ImageFullscreenSVC *fullscreenController = (ImageFullscreenSVC *)segue.destinationViewController;
+//            fullscreenController.totalImageCount = [self.photoAlbum.photoAlbumImages count];
+//            fullscreenController.currentImageCount = indexPath.row + 1; //row 从0开始
+//            fullscreenController.photoAlbum = self.photoAlbum;
+//        }
     }
 }
 

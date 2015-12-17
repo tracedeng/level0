@@ -10,12 +10,14 @@
 #import "Constance.h"
 #import "SyncHttp.h"
 #import "SKeyManager.h"
+#import "MaterialManager.h"
+#import "NSString+Md5.h"
+#import "GTMBase64.h"
 
 @interface ActionAccount ()
 //@property (nonatomic, retain) NSDictionary *state;  //登录态
 @property (nonatomic, retain) NetCommunication *net;
 @property (nonatomic, assign) EACCOUNTOPTYPE type;     //用户资料操作类型
-
 
 @end
 
@@ -43,9 +45,12 @@
     [self.net requestHttpWithData:postData];
 }
 
-- (void)doAccountLogin:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 {
+- (void)doAccountLogin:(NSString *)numbers password:(NSString *)password {
     self.type = EACCOUNTLOGIN;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", passwordMD5, @"password_md5", nil];
+    
+    NSString *passwordMd5 =[[NSString alloc] initWithData:[GTMBase64 encodeData:[[[[[password md5HexDigest] md5HexDigest] stringByAppendingString:numbers] md5HexDigest] dataUsingEncoding:NSUTF8StringEncoding]] encoding:NSUTF8StringEncoding];
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", passwordMd5, @"password_md5", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -74,9 +79,9 @@
             }
             case EACCOUNTLOGIN:
             {
-                NSString *skey = [responseObject objectForKey:@"r"];
+                NSDictionary *material = [responseObject objectForKey:@"r"];
                 if (self.afterAccountLogin) {
-                    self.afterAccountLogin(skey);
+                    self.afterAccountLogin(material);
                 }
                 break;
 
@@ -143,21 +148,27 @@
     if (!numbers || !password) {
         return false;
     }
+    
+    // 加密
+    NSString *passwordMd5 =[[NSString alloc] initWithData:[GTMBase64 encodeData:[[[[[password md5HexDigest] md5HexDigest] stringByAppendingString:numbers] md5HexDigest] dataUsingEncoding:NSUTF8StringEncoding]] encoding:NSUTF8StringEncoding];
 
     // 同步登陆请求
-    NSString *skey = [SyncHttp syncPost:ACCOUNTURL data:[[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", password, @"password_md5", nil]];
-    [SKeyManager changeSkey:skey];
+    NSDictionary *result = [SyncHttp syncPost:ACCOUNTURL data:[[NSDictionary alloc] initWithObjectsAndKeys:@"login", @"type", numbers, @"numbers", passwordMd5, @"password_md5", nil]];
     
-    if (skey) {
-        return true;
-    }else{
+    if (!result) {
         return false;
     }
+    
+    NSString *skey = [result objectForKey:@"sk"];
+    [SKeyManager changeSkey:skey ofAccount:numbers];
+    [MaterialManager setMaterial:result];
+
+    return skey ? true : false;
 }
 
 + (BOOL)doLogout {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
-    [SKeyManager changeSkey:nil];
+    [SKeyManager clearSkey];
     return true;
 }
 

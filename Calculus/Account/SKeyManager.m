@@ -9,10 +9,19 @@
 #import "SKeyManager.h"
 
 @interface SKeyManager ()
-@property (nonatomic, retain) NSString *currentSkey;    //当前skey，失效－nil
+@property (nonatomic, retain) NSMutableDictionary *currentSkey;    //当前skey，失效－nil
 @end
 
 @implementation SKeyManager
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.currentSkey = [[NSMutableDictionary alloc] init];
+    }
+    
+    return self;
+}
 
 + (SKeyManager *)shareSkeyManager {
     static SKeyManager *skeyManager = nil;
@@ -25,14 +34,16 @@
     return skeyManager;
 }
 
-+ (NSString *)getSkey {
++ (NSDictionary *)getSkey {
     return [SKeyManager shareSkeyManager].currentSkey;
 }
 
-+ (void)changeSkey:(NSString *)skey {
-    if (![skey isEqualToString:[SKeyManager shareSkeyManager].currentSkey]) {
-        [SKeyManager shareSkeyManager].currentSkey = skey;
-    }
++ (void)changeSkey:(NSString *)skey ofAccount:(NSString *)number {
+    [[SKeyManager shareSkeyManager].currentSkey setObject:number forKey:@"account"];
+    [[SKeyManager shareSkeyManager].currentSkey setObject:skey forKey:@"skey"];
 }
 
++ (void)clearSkey {
+    [[SKeyManager shareSkeyManager].currentSkey setObject:@"" forKey:@"skey"];
+}
 @end

@@ -1,5 +1,5 @@
 //
-//  MaterialController.h
+//  MaterialTVC.h
 //  Calculus
 //
 //  Created by tracedeng on 15/12/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MaterialController : UITableViewController
-
+@interface MaterialTVC : UITableViewController
+@property (nonatomic, retain) NSMutableDictionary *material;
 @end
