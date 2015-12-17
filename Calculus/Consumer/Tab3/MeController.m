@@ -32,12 +32,17 @@
     // Do any additional setup after loading the view.
     
     self.title = @"用户中心";
+    
     self.consumerBasicMaterial.afterClickStackView = ^(id sender) {
         [self performSegueWithIdentifier:@"ConsumerMaterial" sender:self];
     };
     
     self.material = [NSMutableDictionary dictionaryWithDictionary:[MaterialManager getMaterial]];
-//    self.material = [MaterialManager getMaterial];
+    
+//    圆角
+    self.avatarImageView.clipsToBounds = YES;
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.height / 2.0;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,9 +57,10 @@
         self.nicknameLabel.text = [material objectForKey:@"ni"];
         self.locationLabel.text = [material objectForKey:@"lo"];
         
-        NSString *path = [NSString stringWithFormat:@"%@/%@", QINIUURL, [material objectForKey:@"ava"]];
-        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
-//        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
+        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"ava"]];
+//        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
+//        NSString *path = [NSString stringWithFormat:@"%@/%@", QINIUURL, [material objectForKey:@"ava"]];
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
     }
 }
 
@@ -73,6 +79,17 @@
     }
 }
 
+- (IBAction)unwindMeUpdateMaterial:(UIStoryboardSegue *)segue {
+    if ([segue.sourceViewController isKindOfClass:[MaterialTVC class]]) {
+        MaterialTVC *source = (MaterialTVC *)segue.sourceViewController;
+        if (source.updateMaterialTypeMask & MATERIALTYPEAVATAR) {
+            //同时更新头像
+            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [source.material objectForKey:@"ava"]];
+            [self.material setObject:[source.material objectForKey:@"ava"] forKey:@"ava"];
+            [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
+        }
+    }
+}
 
 - (IBAction)touchBackgroundToEditMaterial:(id)sender {
     // 已登录，跳转到资料编辑；未登录，跳转到登录页面

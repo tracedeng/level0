@@ -13,9 +13,11 @@
 #import "ImageListCVC.h"
 #import "QiniuSDK.h"
 #import "Constance.h"
+#import "ActionQiniu.h"
 
 @interface MaterialTVC ()
 @property (nonatomic, retain) NSString *uploadToken;
+@property (nonatomic, retain) NSString *path;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
@@ -31,7 +33,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self prepareQiniuToken];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,21 +43,28 @@
 //获取7牛上传token，做好准备
 - (void)prepareQiniuToken {
     ActionMaterial *action = [[ActionMaterial alloc] init];
-    action.afterModifyAvatar = ^(NSString *token) {
-        self.uploadToken = token;
+    action.afterQueryUploadToken = ^(NSDictionary *result) {
+        self.uploadToken = [result objectForKey:@"tok"];
+        self.path = [result objectForKey:@"path"];
     };
-    [action doModifyAvatar];
+    [action doQueryUploadToken];
 }
 
-- (void)doQiniuUpload {
-    QNUploadManager *upManager = [[QNUploadManager alloc] init];
-    NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
-    [upManager putData:data key:@"c/avatar/18688982240" token:self.uploadToken complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-        NSLog(@"%@", info);
-        NSLog(@"%@", resp);
-    } option:nil];
-    
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        [self performSegueWithIdentifier:@"unwindMeUpdateMaterial" sender:nil];
+    }
 }
+
+
+//- (void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+//        [self performSegueWithIdentifier:@"unwindMeUpdateMaterial" sender:self];
+//    }
+//}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -75,15 +83,9 @@
             ImageListCVC *album = [board instantiateInitialViewController];
             album.bMultiChecked = NO;
             album.checkableCount = 1;
+            // 先准备token
+            [self prepareQiniuToken];
             [self.navigationController pushViewController:album animated:YES];
-            
-//            QNUploadManager *upManager = [[QNUploadManager alloc] init];
-//            NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
-//            [upManager putData:data key:@"hello" token:token
-//                      complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-//                          NSLog(@"%@", info);
-//                          NSLog(@"%@", resp);
-//                      } option:nil];
         }else if (1 == indexPath.row) {
             
         }
@@ -100,8 +102,8 @@
             case 0:
             {
                 //头像，right detail，修改accessory图标
-                NSString *path = [NSString stringWithFormat:@"%@/%@", QINIUURL, [self.material objectForKey:@"ava"]];
-                [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
+                NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.material objectForKey:@"ava"]];
+                [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
                 break;
             }
             case 1:
@@ -187,13 +189,21 @@
 }
 */
 
-- (IBAction)unwindForUpdateMaterial:(UIStoryboardSegue *)segue {
+- (IBAction)unwindUpdateMaterial:(UIStoryboardSegue *)segue {
     if ([segue.sourceViewController isKindOfClass:[ImageListCVC class]]) {
-//        ImageListCVC *imageList = (ImageListCVC *)segue.sourceViewController;
+        ImageListCVC *imageList = (ImageListCVC *)segue.sourceViewController;
         //保存已选择的头像图片
-//        self.checkedHeadImage = [imageList.currentCheckedImages objectAtIndex:0];
-//        [self updateHeadImage:self.checkedHeadImage];
-        [self doQiniuUpload];
+        NSDictionary *photo = [imageList.currentCheckedImages objectAtIndex:0];
+        ActionQiniu *action = [[ActionQiniu alloc] init];
+        action.afterQiniuUpload = ^(NSString *path) {
+            [self.material setObject:path forKey:@"ava"];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+//            更新用户头像资料
+            ActionMaterial *action2 = [[ActionMaterial alloc] init];
+            [action2 doModifyAvatar:path];
+            self.updateMaterialTypeMask |= MATERIALTYPEAVATAR;
+        };
+        [action doQiniuUpload:photo token:self.uploadToken path:self.path];
     }
 //    if ([segue.sourceViewController isKindOfClass:[ class]]) {
 //        EditNicknameIntroduce *edit = (EditNicknameIntroduce *)segue.sourceViewController;

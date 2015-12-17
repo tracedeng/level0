@@ -13,7 +13,8 @@
 @interface ActionMaterial : NSObject <NetCommunicationDelegate>
 
 typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
-    EUPDATEAVATAR = 1,                //修改用户资料
+    EQUERYUPLOADTOKEN = 1,            //获取7牛token
+    EUPDATEAVATAR,                //修改用户资料
 //    EUPDATENICKNAME,
 //    EUPDATESEX,
 //    EUPDATEINTRODUCE,
@@ -28,7 +29,8 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 //- (void)doModifyNickname:(NSString *)nickname;
 //- (void)doModifyIntroduce:(NSString *)introduce;
 //- (void)doModifySex:(NSInteger)sex;
-- (void)doModifyAvatar;
+- (void)doQueryUploadToken;
+- (void)doModifyAvatar:(NSString *)avatar;
 //- (void)doModifyLocation:(NSString *)location;
 //- (void)doReport:(NSString *)message;
 //
@@ -38,7 +40,8 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 //@property (nonatomic, copy) void (^afterModifyNickname)(NSString *nickname);
 //@property (nonatomic, copy) void (^afterModifyIntroduce)(NSString *introduce);
 //@property (nonatomic, copy) void (^afterModifySex)(NSInteger sex);
-@property (nonatomic, copy) void (^afterModifyAvatar)(NSString *token);
+@property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
+@property (nonatomic, copy) void (^afterModifyAvatar)(NSDictionary *token);
 //@property (nonatomic, copy) void (^afterModifyLocation)(NSString *location);
 
 

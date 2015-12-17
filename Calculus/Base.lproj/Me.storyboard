@@ -27,7 +27,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-d4-N12" customClass="ClickableStackView">
                                                 <rect key="frame" x="222" y="5" width="157" height="140"/>
                                                 <subviews>
-                                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="eV5-zD-sAG">
+                                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="eV5-zD-sAG">
                                                         <rect key="frame" x="29" y="0.0" width="100" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="eV5-zD-sAG" secondAttribute="height" multiplier="1:1" id="AIf-Gc-OWN"/>
@@ -506,9 +506,11 @@
                         <outlet property="avatarImageView" destination="5EJ-vT-UZJ" id="vPf-rO-1PI"/>
                         <outlet property="locationLabel" destination="v5M-dc-ekh" id="LIK-yK-oaN"/>
                         <outlet property="nicknameLabel" destination="gF4-w9-d0d" id="5lj-wA-tVD"/>
+                        <segue destination="p6v-QS-sgg" kind="unwind" identifier="unwindMeUpdateMaterial" unwindAction="unwindMeUpdateMaterial:" id="f0i-yj-AMu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6v-3h-Bfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="p6v-QS-sgg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2075" y="360"/>
         </scene>
