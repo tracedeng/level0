@@ -36,9 +36,22 @@
     return self;
 }
 
-- (void)doModifyAvatar {
-    self.type = EUPDATEAVATAR;
+- (void)doQueryUploadToken {
+    self.type = EQUERYUPLOADTOKEN;
+    
+#ifdef DEBUG
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"c_avatar", @"resource", @"debug", @"debug", self.account, @"numbers", self.skey, @"session_key", nil];
+#else
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"c_avatar", @"resource", self.account, @"numbers", self.skey, @"session_key", nil];
+#endif
+    [self.net requestHttpWithData:postData];
+}
+
+- (void)doModifyAvatar:(NSString *)avatar {
+    self.type = EUPDATEAVATAR;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", avatar, @"avatar", self.account, @"numbers", self.skey, @"session_key", nil];
+
     [self.net requestHttpWithData:postData];
 }
 
@@ -47,13 +60,18 @@
 - (void)postSuccessResponseWith:(AFHTTPRequestOperation *)requestOperation responseObject:(id)responseObject {
     if (0 == [[responseObject objectForKey:@"errcode"] integerValue]) {
         switch (self.type) {
-            case EUPDATEAVATAR:
+            case EQUERYUPLOADTOKEN:
             {
                 //更新用户头像，上传文件代理调用uploadSuccessResponseWith
-                NSString *token = [responseObject objectForKey:@"r"];
-                if (self.afterModifyAvatar) {
-                    self.afterModifyAvatar(token);
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterQueryUploadToken) {
+                    self.afterQueryUploadToken(result);
                 }
+                break;
+            }
+            case EUPDATEAVATAR:
+            {
+                break;
             }
             default:
                 break;

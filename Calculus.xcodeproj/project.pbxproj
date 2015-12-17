@@ -61,6 +61,7 @@
 		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
+		19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBC041C228D16002A920E /* ActionQiniu.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
@@ -172,6 +173,8 @@
 		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
 		19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMaterial.m; path = Model/ActionMaterial.m; sourceTree = "<group>"; };
 		19CBBBFD1C21BE13002A920E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		19CBBC031C228D16002A920E /* ActionQiniu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionQiniu.h; path = Model/ActionQiniu.h; sourceTree = "<group>"; };
+		19CBBC041C228D16002A920E /* ActionQiniu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionQiniu.m; path = Model/ActionQiniu.m; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKeyManager.h; path = Account/SKeyManager.h; sourceTree = "<group>"; };
 		19FC0FC01C1F1E89008157E3 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/SKeyManager.m; sourceTree = "<group>"; };
@@ -418,6 +421,7 @@
 		193C38191C1D94DE0017CC9C /* PhotoAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				19CBBC021C228CF9002A920E /* Model */,
 				193C381A1C1D94DE0017CC9C /* Album.storyboard */,
 				193C38211C1D94DE0017CC9C /* ImageFullscreenSVC.h */,
 				193C38221C1D94DE0017CC9C /* ImageFullscreenSVC.m */,
@@ -508,6 +512,15 @@
 			children = (
 				19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */,
 				19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		19CBBC021C228CF9002A920E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19CBBC031C228D16002A920E /* ActionQiniu.h */,
+				19CBBC041C228D16002A920E /* ActionQiniu.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -682,6 +695,7 @@
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
+				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,

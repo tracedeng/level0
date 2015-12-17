@@ -106,7 +106,7 @@
                     <navigationItem key="navigationItem" id="2Uu-Qs-xdy">
                         <barButtonItem key="rightBarButtonItem" title="完成" id="NY8-2G-oGz">
                             <connections>
-                                <segue destination="w56-mZ-188" kind="unwind" unwindAction="unwindForUpdateMaterial:" id="oKI-VH-xrE"/>
+                                <segue destination="w56-mZ-188" kind="unwind" unwindAction="unwindUpdateMaterial:" id="NQ3-3u-c49"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
