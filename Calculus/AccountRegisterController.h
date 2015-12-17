@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AccountRegisterController : UIViewController
-@property (nonatomic, retain) NSString *userMode;
-@property (strong, nonatomic) NSString *paramx;
 
 @end

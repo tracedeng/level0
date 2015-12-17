@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bi9-nE-FSZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bi9-nE-FSZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -177,13 +177,10 @@
                         <viewControllerLayoutGuide type="top" id="9CV-x8-aBm"/>
                         <viewControllerLayoutGuide type="bottom" id="bnC-4f-2YO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CxJ-oC-J8g">
+                    <view key="view" contentMode="scaleToFill" id="CxJ-oC-J8g" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="0KF-9C-YkO">
-                                <rect key="frame" x="253" y="115" width="70" height="61"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="k6m-LT-HJW">
                                 <rect key="frame" x="20" y="264" width="560" height="36"/>
                                 <subviews>
@@ -293,6 +290,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncb-pH-yN2">
                                         <rect key="frame" x="485" y="3" width="75" height="30"/>
                                         <state key="normal" title="获取验证码"/>
+                                        <connections>
+                                            <action selector="getSMSCode:" destination="XbT-t8-KdW" eventType="touchUpInside" id="1K9-5p-kA1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -305,7 +305,17 @@
                                 <state key="normal" title="重置密码">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="accountResetPassword:" destination="XbT-t8-KdW" eventType="touchUpInside" id="zNh-he-4jJ"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="0KF-9C-YkO">
+                                <rect key="frame" x="290" y="115" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="cHC-ud-2RU"/>
+                                    <constraint firstAttribute="height" constant="48" id="xzw-Ha-6cL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -324,16 +334,24 @@
                             <constraint firstItem="Wbl-vr-aJr" firstAttribute="top" secondItem="9CV-x8-aBm" secondAttribute="bottom" constant="320" id="h66-WP-ftj"/>
                             <constraint firstItem="0KF-9C-YkO" firstAttribute="top" secondItem="9CV-x8-aBm" secondAttribute="bottom" constant="51" id="quI-4E-jcc"/>
                             <constraint firstItem="Nkg-s5-xFq" firstAttribute="top" secondItem="9CV-x8-aBm" secondAttribute="bottom" constant="260" id="rF7-vJ-tfW"/>
+                            <constraint firstItem="0KF-9C-YkO" firstAttribute="leading" secondItem="CxJ-oC-J8g" secondAttribute="leading" constant="290" id="sUY-Qg-icu"/>
                             <constraint firstAttribute="trailing" secondItem="k6m-LT-HJW" secondAttribute="trailing" constant="20" id="uLr-Sr-YDn"/>
                             <constraint firstAttribute="trailing" secondItem="Wbl-vr-aJr" secondAttribute="trailing" constant="20" id="xjn-jj-god"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="44i-bW-ood"/>
+                                <exclude reference="5hV-M0-TXJ"/>
                                 <exclude reference="Ix1-nS-3iV"/>
                                 <exclude reference="LF6-tv-OnP"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="accountTXT" destination="EIn-XJ-rmV" id="XM7-Fy-qwX"/>
+                        <outlet property="codeTXT" destination="Qo3-YR-IxQ" id="BvT-28-XUR"/>
+                        <outlet property="passwordTXT" destination="Ma6-eN-lYM" id="UfL-5B-Klt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eL9-Zi-2TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

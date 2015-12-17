@@ -37,9 +37,9 @@
  *  @param nickname <#nickname description#>
  *  type/numbers
  */
-- (void)doGetSMSCode:(NSString *)numbers kind:(NSString *)kind {
+- (void)doGetSMSCode:(NSString *)numbers {
     self.type = EACCOUNTGETSMSCODE;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"get_sms_code", @"type", numbers, @"numbers", kind, @"kind", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"get_sms_code", @"type", numbers, @"numbers", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -49,11 +49,17 @@
     [self.net requestHttpWithData:postData];
 }
 
-- (void)doAccountRegister:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 kind:(NSString *)kind code:(NSString *)code{
+- (void)doAccountRegister:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 code:(NSString *)code{
     self.type = EACCOUNTREGISTER;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"register", @"type", numbers, @"numbers", kind, @"kind", passwordMD5, @"password_md5",code,@"sms_code", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"register", @"type", numbers, @"numbers", passwordMD5, @"password_md5",code,@"sms_code", nil];
     [self.net requestHttpWithData:postData];
 
+}
+
+- (void)doAccountResetPassword:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 code:(NSString *)code{
+    self.type = EACCOUNTCHANGEPASSWORD;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"change_password", @"type", numbers, @"numbers", passwordMD5, @"password_md5",code,@"sms_code",  nil];
+    [self.net requestHttpWithData:postData];
 }
 
 
@@ -84,7 +90,10 @@
             }
             case EACCOUNTCHANGEPASSWORD:
             {
-                //TODO 执行修改密码成功后操作
+                NSString *result = [responseObject objectForKey:@"r"];
+                if (self.afterAccountResetPassword) {
+                    self.afterAccountResetPassword(result);
+                }
                 break;
             }
             case EACCOUNTREGISTER:

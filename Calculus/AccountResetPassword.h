@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AccountResetPassword : UIViewController
-@property (nonatomic, retain) NSString *userMode;
 
 @end

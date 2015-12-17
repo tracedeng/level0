@@ -87,7 +87,7 @@
 //        NSHTTPCookie *newcookie = [[NSHTTPCookie alloc] initWithProperties:self.cookie];
 //        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newcookie];
     };
-    [registe doAccountRegister:phoneNumber passwordMD5:password_MD5 kind:self.userMode code:code];
+    [registe doAccountRegister:phoneNumber passwordMD5:password_MD5 code:code];
     
 }
 
@@ -100,7 +100,7 @@
     ActionAccount *code = [[ActionAccount alloc] init];
     code.afterGetSMSCode = ^(NSString *result){
     };
-    [code doGetSMSCode:phoneNumber kind:self.userMode];
+    [code doGetSMSCode:phoneNumber];
 
 }
 @end
