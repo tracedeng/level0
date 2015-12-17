@@ -67,10 +67,10 @@
     NSString *phoneNumber = self.accountTXT.text;
     NSString *password = self.passwordTXT.text;
     NSString *code = self.codeTXT.text;
-    NSString *password_MD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
-    NSData *passwordData = [password_MD5 dataUsingEncoding:NSUTF8StringEncoding];
-    passwordData = [GTMBase64 encodeData:passwordData];
-    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+//    NSString *password_MD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
+//    NSData *passwordData = [password_MD5 dataUsingEncoding:NSUTF8StringEncoding];
+//    passwordData = [GTMBase64 encodeData:passwordData];
+//    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
     
     ActionAccount *registe = [[ActionAccount alloc] init];
     registe.afterAccountRegister = ^(NSString *result){
@@ -87,7 +87,7 @@
 //        NSHTTPCookie *newcookie = [[NSHTTPCookie alloc] initWithProperties:self.cookie];
 //        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newcookie];
     };
-    [registe doAccountRegister:phoneNumber passwordMD5:password_MD5 code:code];
+    [registe doAccountRegister:phoneNumber password:password code:code];
     
 }
 
