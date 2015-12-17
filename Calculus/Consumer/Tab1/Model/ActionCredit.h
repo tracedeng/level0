@@ -18,5 +18,8 @@ typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
 
 - (void)doConsumerQueryAllCredit;
 
-@property (nonatomic, copy) void (^afterConsumerQueryAllCredit)(NSString *location);
+@property (nonatomic, copy) void (^afterConsumerQueryAllCredit)(NSArray *creditList);
+
+@property (nonatomic, copy) void (^afterConsumerQueryAllCreditFailed)(NSString *message);
+
 @end

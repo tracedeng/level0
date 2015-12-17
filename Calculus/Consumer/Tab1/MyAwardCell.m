@@ -28,9 +28,9 @@
 }
 
 - (void)setAwardInfo:(NSDictionary *)awardInfo {
-    self.merchant_name_label.text = @"StarBucks";
-    self.total_award_label.text = @"10000";
+    self.merchant_name_label.text = [awardInfo objectForKey:@"t"];
+    self.total_award_label.text = [NSString stringWithFormat:@"%d",[[awardInfo objectForKey:@"a"] integerValue]];
     self.merchant_logo_image.image = [UIImage imageNamed:@"icon-mcd"];
-    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 @end

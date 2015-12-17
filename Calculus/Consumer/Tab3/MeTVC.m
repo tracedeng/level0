@@ -9,7 +9,6 @@
 #import "MeTVC.h"
 
 @interface MeTVC ()
-
 @end
 
 @implementation MeTVC
@@ -22,7 +21,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -32,20 +33,20 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger rows = 0;
     switch (section) {
         case 0:
-            rows = 1;
-            break;
-        case 1:
             rows = 2;
             break;
-        case 2:
+        case 1:
             rows = 1;
+            break;
+        case 2:
+            rows = 2;
             break;
         case 3:
             rows = 2;
@@ -66,12 +67,12 @@
 //}
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (0 == indexPath.section) {
-        return 60.0f;
-    }
-    return 44.0f;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (0 == indexPath.section) {
+//        return 60.0f;
+//    }
+//    return 44.0f;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
@@ -80,6 +81,13 @@
             
         }
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (0 == section) {
+        return 0.01f;
+    }
+    return 0.0f;
 }
 
 /*

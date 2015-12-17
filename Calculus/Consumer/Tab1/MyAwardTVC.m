@@ -22,9 +22,11 @@
 
 #import "MyAwardTVC.h"
 #import "MyAwardCell.h"
+#import "ActionCredit.h"
+#import "SVProgressHUD.h"
 
 @interface MyAwardTVC ()
-
+@property (nonatomic, retain) NSMutableArray *creditList;
 @end
 
 @implementation MyAwardTVC
@@ -38,12 +40,44 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.creditList = [[NSMutableArray alloc] init];
 
+    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+    
+    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    [self loadCreditList:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)loadCreditList:(id)sender {
+    ActionCredit *credit = [[ActionCredit alloc] init];
+    credit.afterConsumerQueryAllCredit = ^(NSArray *creditList) {
+        [self.creditList removeAllObjects];
+        [self.creditList addObjectsFromArray:creditList];
+        [self.tableView reloadData];
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+    };
+    credit.afterConsumerQueryAllCreditFailed = ^(NSString *message) {
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        //        TODO...错误提示
+    };
+    [credit doConsumerQueryAllCredit];
+
 }
 
 #pragma mark - Table view data source
@@ -53,7 +87,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.creditList.count;
 }
 
 
@@ -61,13 +95,17 @@
     MyAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyAwardCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.awardInfo = @{};
+    cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.01f;
 }
 
 

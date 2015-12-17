@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SKeyManager : NSObject
-+ (NSString *)getSkey;      //当前skey
-+ (void)changeSkey:(NSString *)skey;    // 设置当前skey
++ (NSDictionary *)getSkey;      //当前skey
++ (void)changeSkey:(NSString *)skey ofAccount:(NSString *)number;    // 设置当前skey
++ (void)clearSkey;      //logout时清楚skey
 @end
