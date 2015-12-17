@@ -78,14 +78,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
         
         //跳转到登录界面
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
-//        [self.cookie setObject:phoneNumber forKey:@"user"];
-//        [self.cookie setObject:password_MD5 forKey:@"password"];
-//        [self.cookie setObject:self.userMode forKey:@"kind"];
-//        [self.cookie setObject:result forKey:@"skey"];
-        
-//        NSHTTPCookie *newcookie = [[NSHTTPCookie alloc] initWithProperties:self.cookie];
-//        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newcookie];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     };
     [registe doAccountRegister:phoneNumber password:password code:code];
     

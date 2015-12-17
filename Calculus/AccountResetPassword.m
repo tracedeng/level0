@@ -56,10 +56,6 @@
     NSString *phoneNumber = self.accountTXT.text;
     NSString *password = self.passwordTXT.text;
     NSString *code = self.codeTXT.text;
-    NSString *password_MD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
-    NSData *passwordData = [password_MD5 dataUsingEncoding:NSUTF8StringEncoding];
-    passwordData = [GTMBase64 encodeData:passwordData];
-    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
     
     ActionAccount *resetpassword = [[ActionAccount alloc] init];
     resetpassword.afterAccountResetPassword = ^(NSString *result){
@@ -68,10 +64,11 @@
         [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
 
         //跳转到登录界面
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
     };
 
-    [resetpassword doAccountResetPassword:phoneNumber passwordMD5:password_MD5 code:code];
+    [resetpassword doAccountResetPassword:phoneNumber password:password code:code];
     
     
 }

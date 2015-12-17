@@ -54,6 +54,13 @@
 
     [self.net requestHttpWithData:postData];
 }
+- (void)doModifyGender:(NSString *)gender{
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", gender, @"gender", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+
+}
 
 #pragma mark -NetCommunication Delegate
 //@optional http请求成功返回
@@ -71,6 +78,16 @@
             }
             case EUPDATEAVATAR:
             {
+                
+                break;
+            }
+            case EUPDATEGENDER:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyGender) {
+                    self.afterModifyGender(result);
+                }
+
                 break;
             }
             default:

@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+
 @end
 
 @implementation MaterialTVC
@@ -33,6 +34,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,6 +90,40 @@
             [self.navigationController pushViewController:album animated:YES];
         }else if (1 == indexPath.row) {
             
+        }else if (3 == indexPath.row) {
+            NSString *selectButtonMaleTitle = NSLocalizedString(@"男", nil);
+            NSString *selectButtonFemaleTitle = NSLocalizedString(@"女", nil);
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            // Create the actions.
+            UIAlertAction *maleAction = [UIAlertAction actionWithTitle:selectButtonMaleTitle style:UIAlertViewStyleSecureTextInput handler:^(UIAlertAction *action) {
+                NSLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
+               
+                ActionMaterial *gender = [[ActionMaterial alloc] init];
+                gender.afterModifyGender = ^(NSDictionary *materail){
+                    
+                };
+                [gender doModifyGender:@"male"];
+                
+            }];
+            
+            UIAlertAction *femaleAction = [UIAlertAction actionWithTitle:selectButtonFemaleTitle style:UIAlertControllerStyleActionSheet handler:^(UIAlertAction *action) {
+                NSLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
+                
+                ActionMaterial *gender = [[ActionMaterial alloc] init];
+                gender.afterModifyGender = ^(NSDictionary *materail){
+                    
+                };
+                [gender doModifyGender:@"female"];
+
+            }];
+            
+            // Add the actions.
+            [alertController addAction:maleAction];
+            [alertController addAction:femaleAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
         }
     }
 }

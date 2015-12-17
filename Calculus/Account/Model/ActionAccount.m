@@ -58,7 +58,7 @@
     self.type = EACCOUNTREGISTER;
     NSString *passwordMd5 =[[NSString alloc] initWithData:[GTMBase64 encodeData:[[[[[password md5HexDigest] md5HexDigest] stringByAppendingString:numbers] md5HexDigest] dataUsingEncoding:NSUTF8StringEncoding]] encoding:NSUTF8StringEncoding];
 
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"register", @"type", numbers, @"numbers", passwordMd5, @"password_md5",code,@"sms_code", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"register", @"type", numbers, @"numbers", password, @"password", passwordMd5, @"password_md5", code, @"sms_code", nil];
     [self.net requestHttpWithData:postData];
 
 }
@@ -67,7 +67,7 @@
     self.type = EACCOUNTCHANGEPASSWORD;
     NSString *passwordMd5 =[[NSString alloc] initWithData:[GTMBase64 encodeData:[[[[[password md5HexDigest] md5HexDigest] stringByAppendingString:numbers] md5HexDigest] dataUsingEncoding:NSUTF8StringEncoding]] encoding:NSUTF8StringEncoding];
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"change_password", @"type", numbers, @"numbers", passwordMd5, @"password_md5",code,@"sms_code",  nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"change_password", @"type", numbers, @"numbers", passwordMd5, @"password_md5", password, @"password", code,@"sms_code",  nil];
     [self.net requestHttpWithData:postData];
 }
 
