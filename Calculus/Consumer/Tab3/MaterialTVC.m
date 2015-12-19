@@ -212,18 +212,6 @@
                 }else if ([[self.material objectForKey:@"gender"]  isEqual:@"female"]){
                     cell.detailTextLabel.text = NSLocalizedString(@"女", nil);
                 }
-                
-                //                //TODO...性别，right detail，修改accessory图标
-                //                //                cell.detailTextLabel.text = (self.lastSex == 1) ? @"男" : @"女";
-                //                cell.imageView.image = [UIImage imageNamed:@"icon-sexy"];
-                //                //                cell.textLabel.text = @"性别";
-                //                if (self.lastSex == 2) {
-                //                    self.sexyImage.image = self.sexy;
-                //                }else{
-                //                    self.sexyImage.image = (self.lastSex == 1) ? self.male : self.female;
-                //                }
-                
-
                 break;
             }
             case 4:

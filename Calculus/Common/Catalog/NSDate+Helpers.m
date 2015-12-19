@@ -92,12 +92,12 @@
     NSInteger yearInterval = interval / (365 * 24 * 3600);
 //    NSInteger yearInterval = [[NSDate date] getYear] - [self getYear];
     if (yearInterval > 0) {
-        return [NSString stringWithFormat:@"%d年前", yearInterval];
+        return [NSString stringWithFormat:@"%ld年前", (long)yearInterval];
     }
     NSInteger monthInterval = interval / (30 * 24 * 3600);
 //    NSInteger monthInterval  = [[NSDate date] getMonth] - [self getMonth];
     if (monthInterval > 0) {
-        return [NSString stringWithFormat:@"%d月前", monthInterval];
+        return [NSString stringWithFormat:@"%ld月前", (long)monthInterval];
     }
     
     NSInteger dayInterval = interval / (24 * 3600);
@@ -106,17 +106,17 @@
         if (1 == dayInterval) {
             return @"昨天";
         }
-        return [NSString stringWithFormat:@"%d天前",dayInterval];
+        return [NSString stringWithFormat:@"%ld天前",(long)dayInterval];
     }
     NSInteger hourInterval = interval / 3600;
 //    NSInteger hourInterval = [[NSDate date] getHour] - [self getHour];
     if (hourInterval > 0) {
-        return [NSString stringWithFormat:@"%d小时前", hourInterval];
+        return [NSString stringWithFormat:@"%ld小时前", (long)hourInterval];
     }
     NSInteger minuteInterval = interval / 60;
 //    NSInteger minuteInterval = [[NSDate date] getMinute] - [self getMinute];
     if (minuteInterval > 0) {
-        return [NSString stringWithFormat:@"%d分钟前", minuteInterval];
+        return [NSString stringWithFormat:@"%ld分钟前", (long)minuteInterval];
     }
     return [NSString stringWithFormat:@"刚才"];
 }

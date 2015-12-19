@@ -85,9 +85,9 @@
 - (void)setCurrentImageCount:(NSInteger)currentImageCount {
     
     _currentImageCount = currentImageCount +1;
-    NSLog(@"%d",_currentImageCount);
+    NSLog(@"%ld",(long)_currentImageCount);
     
-    self.title = [NSString stringWithFormat:@"%d/%d", _currentImageCount, self.totalImageCount];
+    self.title = [NSString stringWithFormat:@"%ld/%ld", (long)_currentImageCount, (long)self.totalImageCount];
     
     //prepareSegue时布局还未设定，所以在viewWillAppear重新设置一次
     if ((self.view.window) && (nil == [self.photoAlbumImageViews objectForKey:[NSNumber numberWithInteger:_currentImageCount]])) {
@@ -106,7 +106,7 @@
  */
 - (void)setTotalImageCount:(NSInteger)totalImageCount {
     _totalImageCount = totalImageCount;
-    self.title = [NSString stringWithFormat:@"%d/%d", self.currentImageCount, _totalImageCount];
+    self.title = [NSString stringWithFormat:@"%ld/%ld", (long)self.currentImageCount, (long)_totalImageCount];
 }
 
 
