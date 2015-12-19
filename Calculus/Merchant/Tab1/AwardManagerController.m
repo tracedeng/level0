@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [RoleManager changeCurrentRoleWith:@"merchant"];
+//    [RoleManager changeCurrentRoleWith:@"merchant"];
 }
 
 - (void)didReceiveMemoryWarning {

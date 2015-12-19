@@ -34,22 +34,11 @@
     if (state) {
         NSLog(@"weak login success");
         NSString * role = [RoleManager currentRole];
+        NSLog(@"role %@", role);
         if ([role isEqualToString:@"consumer"]) {
             self.window.rootViewController = self.consumerRoot;
         }else if ([role isEqualToString:@"merchant"]) {
             self.window.rootViewController = self.merchantRoot;
-//            ActionMMaterial *action = [[ActionMMaterial alloc] init];
-//            action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
-//                if (material) {
-//                    //保存
-//                    [MMaterialManager setMaterial:material];
-//                    self.window.rootViewController = self.merchantRoot;
-//                }else{
-//                    // 没有商家，如果已经选择为商家则该商家一定已存在，
-//                    // 不可能到这
-//                }
-//            };
-//            [action doQueryMerchantOfAccount];
         }else if ([role isEqualToString:@"bootstrap"]) {
             self.window.rootViewController = self.bootstrapRoot;
         }
@@ -87,31 +76,22 @@
     NSString *destine = [[notification userInfo] objectForKey:@"destine"];
     if ([destine isEqualToString:@"gotoConsumer"]) {
         self.window.rootViewController = self.consumerRoot;
+        [RoleManager changeCurrentRoleWith:@"consumer"];
     }else if ([destine isEqualToString:@"gotoMerchant"]) {
-        //提前准备好商家资料，也可在商家tab3中做，前提是将商家资料存入cookie
-//        ActionMMaterial *action = [[ActionMMaterial alloc] init];
-//        action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
-//            if (material) {
-//                //保存
-//                [MMaterialManager setMaterial:material];
-//                self.window.rootViewController = self.merchantRoot;
-//            }else{
-//                // 没有商家，如果已经选择为商家则该商家一定已存在，
-//                // 不可能到这
-//            }
-//        };
-//        [action doQueryMerchantOfAccount];
         self.window.rootViewController = self.merchantRoot;
+        [RoleManager changeCurrentRoleWith:@"merchant"];
     }else if ([destine isEqualToString:@"gotoBootstrap"]) {
         self.window.rootViewController = self.bootstrapRoot;
+    }else if ([destine isEqualToString:@"gotoMerchantAfterCreate"]) {
+        //创建商家->切换版本，boostrap停留在创建商家页面，需重置storyboard
+        UIStoryboard *bootstrapBoard = [UIStoryboard storyboardWithName:@"Bootstrap" bundle:[NSBundle mainBundle]];
+        self.bootstrapRoot = [bootstrapBoard instantiateInitialViewController];
+
+        self.window.rootViewController = self.merchantRoot;
+        [RoleManager changeCurrentRoleWith:@"merchant"];
     }else if ([destine isEqualToString:@"gotoAccount"]) {
-        //退出，需要重置mainStoryboard，否则退出后再登录不会执行ViewDidLoad，无法以新登录用户身份登录
-//        UIStoryboard *mainStoryBoard = self.window.rootViewController.storyboard;
-//        for (UIView *view in self.accountRoot.) {
-//            [view removeFromSuperview];
-//        }
-//        UIStoryboard *accountBoard = [UIStoryboard storyboardWithName:@"Account" bundle:[NSBundle mainBundle]];
-//        self.accountRoot = [accountBoard instantiateInitialViewController];
+        //退出，需要重置Storyboard，否则退出后再登录不会执行ViewDidLoad，无法以新登录用户身份登录
+        [self loadBoard];
         self.window.rootViewController = self.accountRoot;
     }
 

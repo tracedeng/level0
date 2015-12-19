@@ -166,8 +166,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="IbN-7q-ynt"/>
                                                     <exclude reference="0d4-kw-ph8"/>
+                                                    <exclude reference="IbN-7q-ynt"/>
                                                 </mask>
                                             </variation>
                                         </stackView>

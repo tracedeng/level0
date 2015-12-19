@@ -79,14 +79,19 @@
             case EQUERYMERCHANT:
             {
                 NSArray *result = [responseObject objectForKey:@"r"];
-                NSDictionary *material = [result objectAtIndex:0];
+//                NSDictionary *material = [result objectAtIndex:0];
                 if (self.afterQueryMerchantOfAccount) {
+                    NSDictionary *material = [result count] > 0 ? [result objectAtIndex:0] : nil;
                     self.afterQueryMerchantOfAccount(material);
                 }
                 break;
             }
             case ECREATEMERCHNAT:
             {
+                NSString *merchant = [responseObject objectForKey:@"r"];
+                if (self.afterCreateMerchantOfAccount) {
+                    self.afterCreateMerchantOfAccount(merchant);
+                }
                 break;
             }
             case EQUERYUPLOADTOKEN:

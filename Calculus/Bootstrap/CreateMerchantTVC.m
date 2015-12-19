@@ -7,9 +7,18 @@
 //
 
 #import "CreateMerchantTVC.h"
+#import "ImageListCVC.h"
+#import "ActionMMaterial.h"
+#import "ActionQiniu.h"
+#import "UIImageView+WebCache.h"
+#import "Constance.h"
 
 @interface CreateMerchantTVC ()
-
+@property (nonatomic, retain) NSString *uploadToken;
+@property (nonatomic, retain) NSString *path;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+- (IBAction)createMerchantAction:(id)sender;
 @end
 
 @implementation CreateMerchantTVC
@@ -22,6 +31,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //    圆角
+    self.logoImageView.clipsToBounds = YES;
+    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,11 +46,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 0 == section ? 2 : 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -44,30 +58,66 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (0 == indexPath.row) {
+    if ((0 == indexPath.row) && (0 == indexPath.section)) {
         return 100.0f;
     }
     return 44.0f;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
     // Configure the cell...
+    if (indexPath.section == 0) {
+        if (0 == indexPath.row) {
+            //头像，right detail，修改accessory图标
+            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
+            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-alipay"]];
+        }
+    }
     
     return cell;
 }
-*/
+
+//获取7牛上传token，做好准备
+- (void)prepareQiniuToken {
+    ActionMMaterial *action = [[ActionMMaterial alloc] init];
+    action.afterQueryUploadToken = ^(NSDictionary *result) {
+        self.uploadToken = [result objectForKey:@"tok"];
+        self.path = [result objectForKey:@"path"];
+    };
+    [action doQueryUploadToken:@"dummy"];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
             // 商家logo
+            UIStoryboard *board = [UIStoryboard storyboardWithName:@"Album" bundle:[NSBundle mainBundle]];
+            ImageListCVC *album = [board instantiateInitialViewController];
+            album.bMultiChecked = NO;
+            album.checkableCount = 1;
+            // 先准备token
+            [self prepareQiniuToken];
+            [self.navigationController pushViewController:album animated:YES];
         }else if (1 == indexPath.row) {
-            //切换版本
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoBootstrap", @"destine", nil]];
+            //商家名称
         }
+    }else if (1 == indexPath.section) {
+        // 创建商家
+//        NSString *name = self.nameField.text;
+//        if (name.length == 0) {
+//            //至少需要商家名称
+//        }else{
+//            ActionMMaterial *action = [[ActionMMaterial alloc] init];
+//            action.afterCreateMerchantOfAccount = ^(NSString *merchant) {
+//                //进入商家主页
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchant", @"destine", nil]];
+//            };
+//            [action doCreateMerchantOfAccount:name logo:self.path];
+//        }
+        [self createMerchantAction:nil];
     }
 }
 
@@ -115,4 +165,32 @@
 }
 */
 
+- (IBAction)unwindUpdateMaterial:(UIStoryboardSegue *)segue {
+    if ([segue.sourceViewController isKindOfClass:[ImageListCVC class]]) {
+        ImageListCVC *imageList = (ImageListCVC *)segue.sourceViewController;
+        //保存已选择的头像图片
+        NSDictionary *photo = [imageList.currentCheckedImages objectAtIndex:0];
+        ActionQiniu *action = [[ActionQiniu alloc] init];
+        action.afterQiniuUpload = ^(NSString *path) {
+//            [self.material setObject:path forKey:@"logo"];
+            self.path = path;
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        };
+        [action doQiniuUpload:photo token:self.uploadToken path:self.path];
+    }
+}
+- (IBAction)createMerchantAction:(id)sender {
+    // 创建商家
+    NSString *name = self.nameField.text;
+    if (name.length == 0) {
+        //至少需要商家名称
+    }else{
+        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+        action.afterCreateMerchantOfAccount = ^(NSString *merchant) {
+            //进入商家主页
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchantAfterCreate", @"destine", nil]];
+        };
+        [action doCreateMerchantOfAccount:name logo:self.path];
+    }
+}
 @end

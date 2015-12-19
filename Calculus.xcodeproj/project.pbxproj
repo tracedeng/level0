@@ -286,8 +286,7 @@
 				193C37671C1BE2B70017CC9C /* Tab2 */,
 				193C37681C1BE2B70017CC9C /* Tab3 */,
 			);
-			name = Consumer;
-			path = ../Consumer;
+			path = Consumer;
 			sourceTree = "<group>";
 		};
 		193C37591C1BE2B70017CC9C /* Tab1 */ = {
@@ -364,7 +363,6 @@
 		193C37811C1BE8510017CC9C /* Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */,
 				193C37821C1BE8510017CC9C /* BootstrapController.h */,
 				193C37831C1BE8510017CC9C /* BootstrapController.m */,
@@ -532,6 +530,7 @@
 				193C37FF1C1D8D9E0017CC9C /* Common */,
 				193C37191C1B0D5A0017CC9C /* Account */,
 				193C37811C1BE8510017CC9C /* Bootstrap */,
+				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C377E1C1BE6200017CC9C /* Merchant */,
 				1942C36A1BE89F6700C2DCF4 /* Supporting Files */,
 			);
