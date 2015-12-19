@@ -67,6 +67,8 @@
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
+		B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B4A1C246B36006F344F /* YMUtils.m */; };
+		B51C0B4D1C246B3E006F344F /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = B51C0B4C1C246B3E006F344F /* zh_CN.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +184,9 @@
 		B51C0B041C1DB530006F344F /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRegisterController.m; sourceTree = "<group>"; };
 		B51C0B061C1F0F85006F344F /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPassword.h; sourceTree = "<group>"; };
 		B51C0B071C1F0F85006F344F /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPassword.m; sourceTree = "<group>"; };
+		B51C0B491C246B36006F344F /* YMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMUtils.h; sourceTree = "<group>"; };
+		B51C0B4A1C246B36006F344F /* YMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMUtils.m; sourceTree = "<group>"; };
+		B51C0B4C1C246B3E006F344F /* zh_CN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zh_CN.json; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,7 +257,8 @@
 				193C37671C1BE2B70017CC9C /* Tab2 */,
 				193C37681C1BE2B70017CC9C /* Tab3 */,
 			);
-			path = Consumer;
+			name = Consumer;
+			path = ../Consumer;
 			sourceTree = "<group>";
 		};
 		193C37591C1BE2B70017CC9C /* Tab1 */ = {
@@ -329,6 +335,7 @@
 		193C37811C1BE8510017CC9C /* Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */,
 				193C37821C1BE8510017CC9C /* BootstrapController.h */,
 				193C37831C1BE8510017CC9C /* BootstrapController.m */,
@@ -379,6 +386,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B51C0B481C246AFF006F344F /* CityList */,
 				193C38381C1D95920017CC9C /* Base64 */,
 				193C383C1C1D95920017CC9C /* ClickableView */,
 				193C38091C1D94DE0017CC9C /* Catalog */,
@@ -486,7 +494,6 @@
 				193C37FF1C1D8D9E0017CC9C /* Common */,
 				193C37191C1B0D5A0017CC9C /* Account */,
 				193C37811C1BE8510017CC9C /* Bootstrap */,
-				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C377E1C1BE6200017CC9C /* Merchant */,
 				1942C36A1BE89F6700C2DCF4 /* Supporting Files */,
 			);
@@ -532,6 +539,16 @@
 				0E77514A77D3C896A8E7F09D /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B51C0B481C246AFF006F344F /* CityList */ = {
+			isa = PBXGroup;
+			children = (
+				B51C0B4C1C246B3E006F344F /* zh_CN.json */,
+				B51C0B491C246B36006F344F /* YMUtils.h */,
+				B51C0B4A1C246B36006F344F /* YMUtils.m */,
+			);
+			name = CityList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,6 +616,7 @@
 				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
 				193C38301C1D94DE0017CC9C /* Album.storyboard in Resources */,
+				B51C0B4D1C246B3E006F344F /* zh_CN.json in Resources */,
 				193C37AB1C1C23460017CC9C /* Discount.storyboard in Resources */,
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
@@ -696,6 +714,7 @@
 				B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
+				B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,

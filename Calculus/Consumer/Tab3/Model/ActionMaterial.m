@@ -55,6 +55,7 @@
     [self.net requestHttpWithData:postData];
 }
 - (void)doModifyGender:(NSString *)gender{
+    self.type = EUPDATEGENDER;
     
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", gender, @"gender", self.account, @"numbers", self.skey, @"session_key", nil];
     
