@@ -1,5 +1,5 @@
 //
-//  MyAwardController.h
+//  AwardManagerController.h
 //  Calculus
 //
 //  Created by tracedeng on 15/12/18.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyAwardController : UIViewController
+@interface AwardManagerController : UIViewController
 
 @end

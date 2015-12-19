@@ -7,7 +7,9 @@
 //
 
 #import "BootstrapController.h"
-#import "RoleManager.h"
+//#import "RoleManager.h"
+#import "ActionMMaterial.h"
+#import "MMaterialManager.h"
 
 @interface BootstrapController ()
 - (IBAction)EnterAsConsumer:(id)sender;
@@ -40,14 +42,25 @@
 */
 
 - (IBAction)EnterAsConsumer:(id)sender {
-    [RoleManager changeCurrentRoleWith:@"consumer"];
+//    [RoleManager changeCurrentRoleWith:@"consumer"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoConsumer", @"destine", nil]];
 
 }
 
 - (IBAction)EnterAsMerchant:(id)sender {
-    [RoleManager changeCurrentRoleWith:@"merchant"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchant", @"destine", nil]];
+//    [RoleManager changeCurrentRoleWith:@"merchant"];
+    ActionMMaterial *action = [[ActionMMaterial alloc] init];
+    action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
+        if (material) {
+            //保存
+            [MMaterialManager setMaterial:material];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchant", @"destine", nil]];
+        }else{
+            //没有商家，跳转到创建商家页面
+            [self performSegueWithIdentifier:@"CreateMerchant" sender:self];
+        }
+    };
+    [action doQueryMerchantOfAccount];
 
 }
 @end

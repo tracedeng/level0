@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="88f-RX-Csc">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="88f-RX-Csc">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5W-kh-tsQ" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g6g-so-BY4">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g6g-so-BY4" customClass="ClickableStackView">
                                                 <rect key="frame" x="250" y="5" width="100" height="140"/>
                                                 <subviews>
-                                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-mcd" translatesAutoresizingMaskIntoConstraints="NO" id="ZBp-XR-Kyf">
+                                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZBp-XR-Kyf" customClass="ClickableImageView">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ZBp-XR-Kyf" secondAttribute="height" multiplier="1:1" id="KyJ-Sg-CgF"/>
@@ -35,8 +35,8 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星巴克" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nh3-qv-ZMr">
-                                                        <rect key="frame" x="24" y="115" width="51" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="28" y="105" width="45" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -55,7 +55,7 @@
                                         </connections>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PB-jK-Rkm">
-                                        <rect key="frame" x="0.0" y="157" width="600" height="379"/>
+                                        <rect key="frame" x="0.0" y="150" width="600" height="386"/>
                                         <connections>
                                             <segue destination="pbd-ig-0wp" kind="embed" id="jgX-aP-GSf"/>
                                         </connections>
@@ -73,6 +73,9 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="logoImageView" destination="ZBp-XR-Kyf" id="Cwd-9e-iCP"/>
+                        <outlet property="merchantBasicMaterial" destination="g6g-so-BY4" id="CZ0-gX-TFs"/>
+                        <outlet property="nameLabel" destination="nh3-qv-ZMr" id="fCo-X4-9yK"/>
                         <segue destination="3Uq-DM-AfX" kind="show" identifier="MerchantMaterial" id="WDh-7E-1d3"/>
                     </connections>
                 </viewController>
@@ -80,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1261" y="360"/>
         </scene>
-        <!--Table View Controller-->
+        <!--MaterialTVC-->
         <scene sceneID="01v-dE-h2t">
             <objects>
-                <tableViewController id="3Uq-DM-AfX" sceneMemberID="viewController">
+                <tableViewController id="3Uq-DM-AfX" customClass="MMaterialTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="RJ3-JO-vyc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,17 +313,22 @@
                             <outlet property="delegate" destination="3Uq-DM-AfX" id="OSG-fr-HLE"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="logoImageView" destination="Njl-lk-bQ9" id="f6m-5f-Li3"/>
+                        <segue destination="iH8-RA-OgS" kind="unwind" identifier="unwindMMeUpdateMaterial" unwindAction="unwindMMeUpdateMaterial:" id="ujh-Zc-Gfh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgS-wZ-DNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iH8-RA-OgS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2060" y="1128"/>
         </scene>
-        <!--Table View Controller-->
+        <!--MeTVC-->
         <scene sceneID="6dJ-7W-2cg">
             <objects>
-                <tableViewController id="pbd-ig-0wp" sceneMemberID="viewController">
+                <tableViewController id="pbd-ig-0wp" customClass="MMeTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hs0-dO-dUr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -509,7 +517,7 @@
             <objects>
                 <tableViewController id="ygN-iY-3Fb" customClass="MSettingTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hHb-i7-AKE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -553,7 +561,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="客户版" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KOD-Fb-Agx">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="商家版" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KOD-Fb-Agx">
                                                     <rect key="frame" x="537" y="12" width="48" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>

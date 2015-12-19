@@ -71,7 +71,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"ConsumerMaterial"]) {
-        //编辑昵称
         if ([segue.destinationViewController isKindOfClass:[MaterialTVC class]]) {
             MaterialTVC *destination = (MaterialTVC *)segue.destinationViewController;
             destination.material = self.material;
@@ -92,7 +91,7 @@
 }
 
 - (IBAction)touchBackgroundToEditMaterial:(id)sender {
-    // 已登录，跳转到资料编辑；未登录，跳转到登录页面
+    // 跳转到资料编辑
     [self performSegueWithIdentifier:@"ConsumerMaterial" sender:self];
     
 //    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Account" bundle:nil];

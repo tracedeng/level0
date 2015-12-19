@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wiF-FO-2C8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IOv-JK-gNx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -18,11 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XTi-wx-wgP">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XTi-wx-wgP">
                                 <rect key="frame" x="0.0" y="20" width="600" height="400"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-cu" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-do-dTw">
-                                        <rect key="frame" x="268" y="0.0" width="64" height="195"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="195"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="leK-mY-GTP">
                                         <rect key="frame" x="30" y="205" width="540" height="195"/>
@@ -59,7 +60,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="EnterAsMerchant:" destination="wiF-FO-2C8" eventType="touchUpInside" id="Hyv-X7-L4o"/>
+                                                    <action selector="EnterAsMerchant:" destination="wiF-FO-2C8" eventType="touchUpInside" id="P1L-i1-t4V"/>
+                                                    <segue destination="eoP-Z7-3l1" kind="show" identifier="CreateMerchant" id="V6Q-5i-SKQ"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-zi-kZE">
@@ -86,13 +88,142 @@
                             <constraint firstItem="XTi-wx-wgP" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" id="rfl-Yb-bWK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QPy-TZ-Zb5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3p6-f3-7aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1265" y="433"/>
+        </scene>
+        <!--Create MerchantTVC-->
+        <scene sceneID="prh-iK-FeO">
+            <objects>
+                <tableViewController id="h9h-JQ-jwn" customClass="CreateMerchantTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="cne-lH-SVD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Hjv-Ww-j39">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="yld-lE-0Md">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yld-lE-0Md" id="T8P-aN-NvD">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="OVB-ay-6MF">
+                                                    <rect key="frame" x="260" y="10" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="ABo-KA-JcN"/>
+                                                        <constraint firstAttribute="height" constant="80" id="WTE-TI-ybp"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OVB-ay-6MF" firstAttribute="centerY" secondItem="T8P-aN-NvD" secondAttribute="centerY" id="6uc-D3-3ma"/>
+                                                <constraint firstItem="OVB-ay-6MF" firstAttribute="centerX" secondItem="T8P-aN-NvD" secondAttribute="centerX" id="voz-v6-KEX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="E6R-XL-fb1">
+                                        <rect key="frame" x="0.0" y="135" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E6R-XL-fb1" id="Tji-bl-Wk2">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-oB-bP3">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cHh-oB-bP3" firstAttribute="leading" secondItem="Tji-bl-Wk2" secondAttribute="leadingMargin" id="4gj-bn-5fq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cHh-oB-bP3" secondAttribute="trailing" id="Y9a-Ba-sYl"/>
+                                                <constraint firstAttribute="topMargin" secondItem="cHh-oB-bP3" secondAttribute="top" id="l5r-Cc-0c6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cHh-oB-bP3" secondAttribute="bottom" id="nHn-dt-iPV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="h9h-JQ-jwn" id="Lla-0O-uJ9"/>
+                            <outlet property="delegate" destination="h9h-JQ-jwn" id="8qr-54-p8E"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k6V-0U-rzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2823" y="433"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c3T-uH-6D0">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eoP-Z7-3l1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V4M-Wk-dn5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ARg-m5-xnf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AnN-vL-VvT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-cL-4W4">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <connections>
+                                    <segue destination="h9h-JQ-jwn" kind="embed" id="ePP-3F-KK8"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STD-gq-K3R">
+                                <rect key="frame" x="10" y="547" width="580" height="33"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="创建商家">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ARg-m5-xnf" firstAttribute="top" secondItem="4LJ-cL-4W4" secondAttribute="bottom" id="3Ne-6n-lYh"/>
+                            <constraint firstItem="ARg-m5-xnf" firstAttribute="top" secondItem="STD-gq-K3R" secondAttribute="bottom" constant="20" id="Ffv-I4-dPD"/>
+                            <constraint firstItem="4LJ-cL-4W4" firstAttribute="leading" secondItem="AnN-vL-VvT" secondAttribute="leading" id="XVR-t2-3G9"/>
+                            <constraint firstItem="STD-gq-K3R" firstAttribute="leading" secondItem="AnN-vL-VvT" secondAttribute="leading" constant="10" id="Zsy-CR-jW4"/>
+                            <constraint firstAttribute="trailing" secondItem="4LJ-cL-4W4" secondAttribute="trailing" id="eu3-49-6nf"/>
+                            <constraint firstAttribute="trailing" secondItem="STD-gq-K3R" secondAttribute="trailing" constant="10" id="h7U-L5-0YC"/>
+                            <constraint firstItem="4LJ-cL-4W4" firstAttribute="top" secondItem="V4M-Wk-dn5" secondAttribute="bottom" id="yLl-7p-E7c"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Xc-9d-oST" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025" y="433"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yye-Fj-KF9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IOv-JK-gNx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RG5-YP-UtI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wiF-FO-2C8" kind="relationship" relationship="rootViewController" id="9c4-4E-zCd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggz-yU-R7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="453" y="433"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icon-alipay" width="64" height="64"/>
         <image name="icon-cu" width="800" height="200"/>
     </resources>
 </document>

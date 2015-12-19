@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "RoleManager.h"
 #import "ActionAccount.h"
+//#import "ActionMMaterial.h"
+//#import "MMaterialManager.h"
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UIViewController *consumerRoot;
@@ -36,6 +38,18 @@
             self.window.rootViewController = self.consumerRoot;
         }else if ([role isEqualToString:@"merchant"]) {
             self.window.rootViewController = self.merchantRoot;
+//            ActionMMaterial *action = [[ActionMMaterial alloc] init];
+//            action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
+//                if (material) {
+//                    //保存
+//                    [MMaterialManager setMaterial:material];
+//                    self.window.rootViewController = self.merchantRoot;
+//                }else{
+//                    // 没有商家，如果已经选择为商家则该商家一定已存在，
+//                    // 不可能到这
+//                }
+//            };
+//            [action doQueryMerchantOfAccount];
         }else if ([role isEqualToString:@"bootstrap"]) {
             self.window.rootViewController = self.bootstrapRoot;
         }
@@ -74,6 +88,19 @@
     if ([destine isEqualToString:@"gotoConsumer"]) {
         self.window.rootViewController = self.consumerRoot;
     }else if ([destine isEqualToString:@"gotoMerchant"]) {
+        //提前准备好商家资料，也可在商家tab3中做，前提是将商家资料存入cookie
+//        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+//        action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
+//            if (material) {
+//                //保存
+//                [MMaterialManager setMaterial:material];
+//                self.window.rootViewController = self.merchantRoot;
+//            }else{
+//                // 没有商家，如果已经选择为商家则该商家一定已存在，
+//                // 不可能到这
+//            }
+//        };
+//        [action doQueryMerchantOfAccount];
         self.window.rootViewController = self.merchantRoot;
     }else if ([destine isEqualToString:@"gotoBootstrap"]) {
         self.window.rootViewController = self.bootstrapRoot;

@@ -1,25 +1,25 @@
 //
-//  MyAwardController.m
+//  AwardManagerController.m
 //  Calculus
 //
 //  Created by tracedeng on 15/12/18.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "MyAwardController.h"
+#import "AwardManagerController.h"
 #import "RoleManager.h"
 
-@interface MyAwardController ()
+@interface AwardManagerController ()
 
 @end
 
-@implementation MyAwardController
+@implementation AwardManagerController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [RoleManager changeCurrentRoleWith:@"consumer"];
+    [RoleManager changeCurrentRoleWith:@"merchant"];
 }
 
 - (void)didReceiveMemoryWarning {
