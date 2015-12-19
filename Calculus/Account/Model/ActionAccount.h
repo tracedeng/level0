@@ -19,13 +19,16 @@ typedef NS_ENUM(NSInteger, EACCOUNTOPTYPE) {
     EACCOUNTOPTYPEMAX,
 };
 
-- (void)doGetSMSCode:(NSString *)numbers kind:(NSString *)kind;
+- (void)doGetSMSCode:(NSString *)numbers;
 - (void)doAccountLogin:(NSString *)numbers password:(NSString *)password;
-- (void)doAccountRegister:(NSString *)numbers passwordMD5:(NSString *)passwordMD5 kind:(NSString *)kind code:(NSString *)code;
+- (void)doAccountRegister:(NSString *)numbers password:(NSString *)password  code:(NSString *)code;
+- (BOOL)doWeakLogin;
+- (void)doAccountResetPassword:(NSString *)numbers password:(NSString *)password code:(NSString *)code;
 
-@property (nonatomic, copy) void (^afterGetSMSCode)(NSString *location);
+@property (nonatomic, copy) void (^afterGetSMSCode)(NSString *result);
 @property (nonatomic, copy) void (^afterAccountLogin)(NSDictionary *material);
-@property (nonatomic, copy) void (^afterAccountRegister)(NSString *skey);
+@property (nonatomic, copy) void (^afterAccountRegister)(NSString *result);
+@property (nonatomic, copy) void (^afterAccountResetPassword)(NSString *result);
 
 + (BOOL)doWeakLogin;
 + (BOOL)doLogout;

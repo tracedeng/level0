@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MaterialTVC : UITableViewController
+@interface MaterialTVC : UITableViewController<UIPickerViewDataSource,UIPickerViewDelegate>
 
 #define MATERIALTYPEAVATAR  0x1
 #define MATERIALTYPENICKNAME  0x2
@@ -16,4 +16,9 @@
 
 @property (nonatomic, assign) NSInteger updateMaterialTypeMask;
 @property (nonatomic, retain) NSMutableDictionary *material;
+@property (nonatomic ,strong) UIPickerView *cityPicker;
+@property (nonatomic ,strong) UILabel *cityLabel;
+@property (nonatomic ,strong) UILabel *selectok;
+@property (nonatomic ,strong) UILabel *selectcancel;
+
 @end

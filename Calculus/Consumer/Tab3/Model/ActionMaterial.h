@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
     EQUERYUPLOADTOKEN = 1,            //获取7牛token
     EUPDATEAVATAR,                //修改用户资料
 //    EUPDATENICKNAME,
-//    EUPDATESEX,
+    EUPDATEGENDER,
 //    EUPDATEINTRODUCE,
 //    EUPDATELOCATION,
 //    EUPDATEREPORT = 20,     //举报
@@ -33,7 +33,9 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 - (void)doModifyAvatar:(NSString *)avatar;
 //- (void)doModifyLocation:(NSString *)location;
 //- (void)doReport:(NSString *)message;
+- (void)doModifyGender:(NSString *)gender;
 //
+
 ////操作成功后回调Blcok
 //@property (nonatomic, copy) void (^afterQueryMaterial)(NSDictionary *material);
 //@property (nonatomic, copy) void (^afterBatchQueryMaterial)(NSArray *material);
@@ -43,6 +45,7 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 @property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyAvatar)(NSDictionary *token);
 //@property (nonatomic, copy) void (^afterModifyLocation)(NSString *location);
+@property (nonatomic, copy) void (^afterModifyGender)(NSDictionary *token);
 
 
 @end

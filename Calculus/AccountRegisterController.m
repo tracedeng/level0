@@ -67,10 +67,10 @@
     NSString *phoneNumber = self.accountTXT.text;
     NSString *password = self.passwordTXT.text;
     NSString *code = self.codeTXT.text;
-    NSString *password_MD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
-    NSData *passwordData = [password_MD5 dataUsingEncoding:NSUTF8StringEncoding];
-    passwordData = [GTMBase64 encodeData:passwordData];
-    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+//    NSString *password_MD5 = [[[[password md5HexDigest] md5HexDigest] stringByAppendingString:phoneNumber] md5HexDigest];
+//    NSData *passwordData = [password_MD5 dataUsingEncoding:NSUTF8StringEncoding];
+//    passwordData = [GTMBase64 encodeData:passwordData];
+//    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
     
     ActionAccount *registe = [[ActionAccount alloc] init];
     registe.afterAccountRegister = ^(NSString *result){
@@ -78,16 +78,9 @@
         [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
         
         //跳转到登录界面
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
-//        [self.cookie setObject:phoneNumber forKey:@"user"];
-//        [self.cookie setObject:password_MD5 forKey:@"password"];
-//        [self.cookie setObject:self.userMode forKey:@"kind"];
-//        [self.cookie setObject:result forKey:@"skey"];
-        
-//        NSHTTPCookie *newcookie = [[NSHTTPCookie alloc] initWithProperties:self.cookie];
-//        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newcookie];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     };
-    [registe doAccountRegister:phoneNumber passwordMD5:password_MD5 kind:self.userMode code:code];
+    [registe doAccountRegister:phoneNumber password:password code:code];
     
 }
 
@@ -100,7 +93,7 @@
     ActionAccount *code = [[ActionAccount alloc] init];
     code.afterGetSMSCode = ^(NSString *result){
     };
-    [code doGetSMSCode:phoneNumber kind:self.userMode];
+    [code doGetSMSCode:phoneNumber];
 
 }
 @end
