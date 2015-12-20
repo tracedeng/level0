@@ -43,6 +43,15 @@
 
 }
 
+- (void)doQueryMerchantOfIdentity:(NSString *)identity {
+    self.type = EQUERYMERCHANTOFIDENTITY;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"retrieve", @"type", identity, @"merchant",self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+    
+}
+
 - (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo {
     self.type = ECREATEMERCHNAT;
     
@@ -83,6 +92,16 @@
                 if (self.afterQueryMerchantOfAccount) {
                     NSDictionary *material = [result count] > 0 ? [result objectAtIndex:0] : nil;
                     self.afterQueryMerchantOfAccount(material);
+                }
+                break;
+            }
+            case EQUERYMERCHANTOFIDENTITY:
+            {
+                NSArray *result = [responseObject objectForKey:@"r"];
+                //                NSDictionary *material = [result objectAtIndex:0];
+                if (self.afterQueryMerchantOfIdentity) {
+                    NSDictionary *material = [result count] > 0 ? [result objectAtIndex:0] : nil;
+                    self.afterQueryMerchantOfIdentity(material);
                 }
                 break;
             }

@@ -49,7 +49,7 @@
             //call代理post请求成功
             
             NSLog(@"http post request success");
-            NSLog(@"%@", operation.response);
+//            NSLog(@"%@", operation.response);
             NSLog(@"%@", responseObject);
             
             if ([self.delegate respondsToSelector:@selector(postSuccessResponseWith:responseObject:)]) {

@@ -46,6 +46,20 @@
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doConsumerQueryOneCredit:(NSString *)merchant {
+    self.type = ECONSUMERQUERYONECREDIT;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_of_merchant", @"type", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+
+}
+
+- (void)doConsumerCreateConsumption:(NSString *)merchant money:(NSInteger)money {
+    self.type = ECONSUMERCREATECONSUMPTION;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"consumption", @"type", [NSString stringWithFormat:@"%ld", money], @"sums", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+}
 
 #pragma mark -NetCommunication Delegate
 
@@ -62,6 +76,23 @@
                 }
                 break;
             }
+            case ECONSUMERQUERYONECREDIT:
+            {
+                NSArray *creditList = [responseObject valueForKeyPath:@"r.c"];
+                if (self.afterConsumerQueryOneCredit) {
+                    self.afterConsumerQueryOneCredit(creditList);
+                }
+                break;
+            }
+            case ECONSUMERCREATECONSUMPTION:
+            {
+                NSString *credit = [responseObject objectForKey:@"r"];
+                NSLog(@"credit id %@", credit);
+                if (self.afterConsumerCreateConsumption) {
+                    self.afterConsumerCreateConsumption();
+                }
+                break;
+            }
             default:
                 break;
         }
@@ -72,6 +103,14 @@
                 NSString *message = [responseObject objectForKey:@"m"];
                 if (self.afterConsumerQueryAllCreditFailed) {
                     self.afterConsumerQueryAllCreditFailed(message);
+                }
+                break;
+            }
+            case ECONSUMERQUERYONECREDIT:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterConsumerQueryOneCreditFailed) {
+                    self.afterConsumerQueryOneCreditFailed(message);
                 }
                 break;
             }

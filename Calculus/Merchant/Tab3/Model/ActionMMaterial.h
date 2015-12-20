@@ -13,6 +13,7 @@
 
 typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
     EQUERYMERCHANT = 1,      //查询账号是否有管理的商家
+    EQUERYMERCHANTOFIDENTITY,      //商家ID查询商家
     ECREATEMERCHNAT,            //新增商家
     EQUERYUPLOADTOKEN,          //获取上传token
     EUPDATELOGO,                //修改商家头像
@@ -31,6 +32,7 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 //- (void)doModifyIntroduce:(NSString *)introduce;
 //- (void)doModifySex:(NSInteger)sex;
 - (void)doQueryMerchantOfAccount;
+- (void)doQueryMerchantOfIdentity:(NSString *)identity;
 - (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo;
 - (void)doQueryUploadToken:(NSString *)merchant;
 - (void)doModifyLogo:(NSString *)logo merchant:(NSString *)merchant;
@@ -44,6 +46,7 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 //@property (nonatomic, copy) void (^afterModifyIntroduce)(NSString *introduce);
 //@property (nonatomic, copy) void (^afterModifySex)(NSInteger sex);
 @property (nonatomic, copy) void (^afterQueryMerchantOfAccount)(NSDictionary *material);
+@property (nonatomic, copy) void (^afterQueryMerchantOfIdentity)(NSDictionary *material);
 @property (nonatomic, copy) void (^afterCreateMerchantOfAccount)(NSString *merchant);
 @property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyLogo)();

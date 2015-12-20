@@ -14,6 +14,10 @@
 		19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339ADE1C23E86F00791A9E /* MyAwardController.m */; };
 		19339AE21C257F1200791A9E /* MMaterialTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AE11C257F1200791A9E /* MMaterialTVC.m */; };
 		19339AE51C258AB500791A9E /* MMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AE41C258AB500791A9E /* MMeTVC.m */; };
+		19339AEB1C26773400791A9E /* ScanMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AEA1C26773400791A9E /* ScanMerchantController.m */; };
+		19339AEE1C26782D00791A9E /* ApplyCreditTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AED1C26782D00791A9E /* ApplyCreditTVC.m */; };
+		19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AF01C269BD500791A9E /* MyOneAwardTVC.m */; };
+		19339AF41C269D0400791A9E /* MyOneAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AF31C269D0400791A9E /* MyOneAwardCell.m */; };
 		193C371C1C1B0D800017CC9C /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C371B1C1B0D800017CC9C /* AccountController.m */; };
 		193C371F1C1B12270017CC9C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C371E1C1B12270017CC9C /* Account.storyboard */; };
 		193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37211C1B16C60017CC9C /* ActionAccount.m */; };
@@ -94,6 +98,14 @@
 		19339AE11C257F1200791A9E /* MMaterialTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMaterialTVC.m; path = Merchant/Tab3/MMaterialTVC.m; sourceTree = "<group>"; };
 		19339AE31C258AB500791A9E /* MMeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeTVC.h; path = Merchant/Tab3/MMeTVC.h; sourceTree = "<group>"; };
 		19339AE41C258AB500791A9E /* MMeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeTVC.m; path = Merchant/Tab3/MMeTVC.m; sourceTree = "<group>"; };
+		19339AE91C26773400791A9E /* ScanMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanMerchantController.h; sourceTree = "<group>"; };
+		19339AEA1C26773400791A9E /* ScanMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanMerchantController.m; sourceTree = "<group>"; };
+		19339AEC1C26782D00791A9E /* ApplyCreditTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyCreditTVC.h; sourceTree = "<group>"; };
+		19339AED1C26782D00791A9E /* ApplyCreditTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyCreditTVC.m; sourceTree = "<group>"; };
+		19339AEF1C269BD500791A9E /* MyOneAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneAwardTVC.h; sourceTree = "<group>"; };
+		19339AF01C269BD500791A9E /* MyOneAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneAwardTVC.m; sourceTree = "<group>"; };
+		19339AF21C269D0400791A9E /* MyOneAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneAwardCell.h; sourceTree = "<group>"; };
+		19339AF31C269D0400791A9E /* MyOneAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneAwardCell.m; sourceTree = "<group>"; };
 		193C371A1C1B0D800017CC9C /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = Account/AccountController.h; sourceTree = "<group>"; };
 		193C371B1C1B0D800017CC9C /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = Account/AccountController.m; sourceTree = "<group>"; };
 		193C371E1C1B12270017CC9C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Account.storyboard; path = Account/Account.storyboard; sourceTree = "<group>"; };
@@ -303,6 +315,14 @@
 				193C37661C1BE2B70017CC9C /* MyAwardTVC.m */,
 				19339ADD1C23E86F00791A9E /* MyAwardController.h */,
 				19339ADE1C23E86F00791A9E /* MyAwardController.m */,
+				19339AE91C26773400791A9E /* ScanMerchantController.h */,
+				19339AEA1C26773400791A9E /* ScanMerchantController.m */,
+				19339AEC1C26782D00791A9E /* ApplyCreditTVC.h */,
+				19339AED1C26782D00791A9E /* ApplyCreditTVC.m */,
+				19339AEF1C269BD500791A9E /* MyOneAwardTVC.h */,
+				19339AF01C269BD500791A9E /* MyOneAwardTVC.m */,
+				19339AF21C269D0400791A9E /* MyOneAwardCell.h */,
+				19339AF31C269D0400791A9E /* MyOneAwardCell.m */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -723,9 +743,11 @@
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				193C38361C1D94DE0017CC9C /* ImageListCVC.m in Sources */,
+				19339AEB1C26773400791A9E /* ScanMerchantController.m in Sources */,
 				193C38371C1D94DE0017CC9C /* PhotoAlbum.m in Sources */,
 				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
+				19339AEE1C26782D00791A9E /* ApplyCreditTVC.m in Sources */,
 				193C37A81C1C19240017CC9C /* AwardDerivateCell.m in Sources */,
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,
@@ -751,8 +773,10 @@
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */,
+				19339AF41C269D0400791A9E /* MyOneAwardCell.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
+				19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */,
 				B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,

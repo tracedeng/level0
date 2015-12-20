@@ -1,37 +1,22 @@
 //
-//  MyAwardTVC.m
+//  MyOneAwardTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/10.
+//  Created by tracedeng on 15/12/20.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-/*
- 1 判断登录
- 2 未登录
-    2.1 cache中有积分列表，展示
-    2.2 cache中没有积分列表，展示缺省
- 3 已经登录
-    3.1 网络状况良好，拉取用户所有积分
-    3.2 网络状况差或者无网络
-        3.2.1 cache中有积分列表，展示
-        3.2.2 cache中没有积分列表，不展示缺省
-        3.2.3 无网络则提示，网络差依旧发起网络请求
- 4 监听登录状态发生变化，执行相应的动作
- */
-
-#import "MyAwardTVC.h"
-#import "MyAwardCell.h"
+#import "MyOneAwardTVC.h"
+#import "MyOneAwardCell.h"
 #import "ActionCredit.h"
 #import "SVProgressHUD.h"
-#import "MyOneAwardTVC.h"
 
-@interface MyAwardTVC ()
+
+@interface MyOneAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
-@property (nonatomic, assign) NSInteger checkedRow;
 @end
 
-@implementation MyAwardTVC
+@implementation MyOneAwardTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,12 +27,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.title = self.name;
     self.creditList = [[NSMutableArray alloc] init];
-
+    
     [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadCreditList:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,10 +42,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)loadCreditList:(id)sender {
     ActionCredit *credit = [[ActionCredit alloc] init];
-    credit.afterConsumerQueryAllCredit = ^(NSArray *creditList) {
+    credit.afterConsumerQueryOneCredit = ^(NSArray *creditList) {
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
@@ -69,7 +55,7 @@
             [SVProgressHUD dismiss];
         }
     };
-    credit.afterConsumerQueryAllCreditFailed = ^(NSString *message) {
+    credit.afterConsumerQueryOneCreditFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -78,8 +64,8 @@
         }
         //        TODO...错误提示
     };
-    [credit doConsumerQueryAllCredit];
-
+    [credit doConsumerQueryOneCredit:self.merchant];
+    
 }
 
 #pragma mark - Table view data source
@@ -94,18 +80,12 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MyAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyAwardCell" forIndexPath:indexPath];
+    MyOneAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyOneAwardCell" forIndexPath:indexPath];
     
     // Configure the cell...
     cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
     
     return cell;
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.checkedRow = indexPath.row;
-    [self performSegueWithIdentifier:@"OneAward" sender:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -115,6 +95,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 0.01f;
 }
+
 
 
 /*
@@ -151,21 +132,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"OneAward"]) {
-        if ([segue.destinationViewController isKindOfClass:[MyOneAwardTVC class]]) {
-            MyOneAwardTVC *destination = (MyOneAwardTVC *)segue.destinationViewController;
-            destination.merchant = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"i"];
-            destination.name = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"t"];
-        }
-    }
 }
-
+*/
 
 @end
