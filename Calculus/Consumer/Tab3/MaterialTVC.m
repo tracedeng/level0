@@ -17,6 +17,7 @@
 #import "Constance.h"
 #import "ActionQiniu.h"
 #import "YMUtils.h"
+#import "MeNickNameVC.h"
 
 
 
@@ -84,7 +85,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 4;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -101,7 +102,7 @@
             [self.navigationController pushViewController:album animated:YES];
         }else if (1 == indexPath.row) {
             
-        }else if (3 == indexPath.row) {
+        }else if (2 == indexPath.row) {
             NSString *selectButtonMaleTitle = NSLocalizedString(@"男", nil);
             NSString *selectButtonFemaleTitle = NSLocalizedString(@"女", nil);
             
@@ -113,7 +114,7 @@
                
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
-                    [self.material setObject:@"male" forKey:@"gender"];
+                    [self.material setObject:@"male" forKey:@"sex"];
                     NSIndexPath *cell=[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
                     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:cell,nil] withRowAnimation:UITableViewRowAnimationNone];
                 };
@@ -126,7 +127,7 @@
                 
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
-                    [self.material setObject:@"female" forKey:@"gender"];
+                    [self.material setObject:@"female" forKey:@"sex"];
                     
                     NSIndexPath *cell=[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
                     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:cell,nil] withRowAnimation:UITableViewRowAnimationNone];
@@ -142,8 +143,7 @@
             [alertController addAction:femaleAction];
             
             [self presentViewController:alertController animated:YES completion:nil];
-            
-        }else if (4 == indexPath.row) {
+        }else if (3 == indexPath.row) {
             
             
             //Citylist
@@ -157,12 +157,6 @@
             self.cityPicker.showsSelectionIndicator = YES;
             [self.view addSubview:self.cityPicker];
             self.cityPicker.backgroundColor = [UIColor grayColor];
-            
-            self.cityLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, HEIGHT/2, WIDTH, 40)];
-            self.cityLabel.textAlignment = NSTextAlignmentCenter;
-            self.cityLabel.backgroundColor = [UIColor whiteColor];
-            self.cityLabel.text = @"dfadafdafd";
-//
 
             self.selectcancel = [[UILabel alloc]initWithFrame:CGRectMake(0, HEIGHT/2, WIDTH/4, 30)];
             self.selectcancel.textAlignment = NSTextAlignmentCenter;
@@ -175,8 +169,6 @@
             self.selectok.backgroundColor = [UIColor whiteColor];
             self.selectok.text = NSLocalizedString(@"完成", nil);;
             [self.view addSubview:self.selectok];
-            
-            
         }
     }
 }
@@ -192,7 +184,7 @@
             {
                 //头像，right detail，修改accessory图标
                 NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.material objectForKey:@"ava"]];
-                [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
+                [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
                 break;
             }
             case 1:
@@ -201,23 +193,27 @@
                 cell.detailTextLabel.text = [self.material objectForKey:@"ni"];
                 break;
             }
+
             case 2:
             {
-                         break;
+                NSString *sex = [self.material objectForKey:@"sex"];
+                if ([ sex isEqual: @"male"]) {
+                    cell.detailTextLabel.text = NSLocalizedString(@"男", nil);
+                }else if ([sex  isEqual:@"female"]){
+                    cell.detailTextLabel.text = NSLocalizedString(@"女", nil);
+                }else{
+                    cell.detailTextLabel.text = @"";
+                }
+                break;
             }
             case 3:
             {
-                if ([[self.material objectForKey:@"gender"]  isEqual: @"male"]) {
-                    cell.detailTextLabel.text = NSLocalizedString(@"男", nil);
-                }else if ([[self.material objectForKey:@"gender"]  isEqual:@"female"]){
-                    cell.detailTextLabel.text = NSLocalizedString(@"女", nil);
-                }
+                //TODO...地区，right detail，是否用用户位置定位
+                cell.detailTextLabel.text = [self.material objectForKey:@"lo"];
                 break;
             }
             case 4:
             {
-                //TODO...地区，right detail，是否用用户位置定位
-                cell.detailTextLabel.text = [self.material objectForKey:@"lo"];
                 break;
             }
             default:
@@ -289,6 +285,21 @@
         };
         [action doQiniuUpload:photo token:self.uploadToken path:self.path];
     }
+    else if([segue.sourceViewController isKindOfClass:[MeNickNameVC class]]){
+        MeNickNameVC *nicknamevc = (MeNickNameVC *)segue.sourceViewController;
+        ActionMaterial *action = [[ActionMaterial alloc] init];
+        action.afterModifyNickName = ^(NSDictionary *materail){
+            [self.material setObject:nicknamevc.nickName forKey:@"ni"];
+            //[self.navigationController popViewControllerAnimated:YES];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+
+            self.updateMaterialTypeMask |= MATERIALTYPENICKNAME;
+
+        };
+        [action doModifyNickName:nicknamevc.nickName];
+        
+    }
+    NSLog(@"here....");
 //    if ([segue.sourceViewController isKindOfClass:[ class]]) {
 //        EditNicknameIntroduce *edit = (EditNicknameIntroduce *)segue.sourceViewController;
 //        switch (edit.type) {
@@ -401,5 +412,15 @@
     return titleLabel;
 
     
+}
+
+#pragma mark - Segue Methods
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+        if([segue.identifier isEqualToString:@"gonickname"]){
+           // [segue.destinationViewController setValue:self.material forKey:@"material"];
+            [segue.destinationViewController setValue:[self.material objectForKey:@"ni"] forKey:@"nickName"];
+        }
 }
 @end

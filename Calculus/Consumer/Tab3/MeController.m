@@ -87,6 +87,10 @@
             [self.material setObject:[source.material objectForKey:@"ava"] forKey:@"ava"];
             [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
         }
+        else if(source.updateMaterialTypeMask & MATERIALTYPENICKNAME){
+            [self.material setObject:[source.material objectForKey:@"ni"] forKey:@"ni"];
+            self.nicknameLabel.text = [self.material objectForKey:@"ni"];
+        }
     }
 }
 
