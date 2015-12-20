@@ -62,6 +62,11 @@
     [self.net requestHttpWithData:postData];
 
 }
+- (void)doModifyNickName:(NSString *)nickname{
+    self.type = EUPDATENICKNAME;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", nickname, @"nickname", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+}
 
 #pragma mark -NetCommunication Delegate
 //@optional http请求成功返回
@@ -90,6 +95,13 @@
                 }
 
                 break;
+            }
+            case EUPDATENICKNAME:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyNickName) {
+                    self.afterModifyNickName(result);
+                }
             }
             default:
                 break;
