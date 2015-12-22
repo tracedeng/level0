@@ -87,7 +87,7 @@
             case ECONSUMERCREATECONSUMPTION:
             {
                 NSString *credit = [responseObject objectForKey:@"r"];
-                NSLog(@"credit id %@", credit);
+                DLog(@"credit id %@", credit);
                 if (self.afterConsumerCreateConsumption) {
                     self.afterConsumerCreateConsumption();
                 }
@@ -122,9 +122,9 @@
 
 //@optional http请求失败返回
 - (void)postFailResponseWith:(AFHTTPRequestOperation *)requestOperation responseError:(NSError *)responseError {
-    NSLog(@"%@", [responseError domain]);
-    NSLog(@"%ld", (long)[responseError code]);
-    NSLog(@"%@", [responseError localizedDescription]);
+    DLog(@"%@", [responseError domain]);
+    DLog(@"%ld", (long)[responseError code]);
+    DLog(@"%@", [responseError localizedDescription]);
 }
 
 @end

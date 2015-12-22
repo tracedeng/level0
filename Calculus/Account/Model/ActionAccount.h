@@ -22,7 +22,6 @@ typedef NS_ENUM(NSInteger, EACCOUNTOPTYPE) {
 - (void)doGetSMSCode:(NSString *)numbers;
 - (void)doAccountLogin:(NSString *)numbers password:(NSString *)password;
 - (void)doAccountRegister:(NSString *)numbers password:(NSString *)password  code:(NSString *)code;
-- (BOOL)doWeakLogin;
 - (void)doAccountResetPassword:(NSString *)numbers password:(NSString *)password code:(NSString *)code;
 
 @property (nonatomic, copy) void (^afterGetSMSCode)(NSString *result);

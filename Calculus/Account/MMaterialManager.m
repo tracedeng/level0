@@ -33,6 +33,10 @@
     return materialManager;
 }
 
+//+ (NSString *)getMaterialOfKey:(NSString *)key {
+//    return [[MMaterialManager shareMaterialManager].currentMaterial objectForKey:@"key"];
+//}
+
 + (NSDictionary *)getMaterial {
     return [MMaterialManager shareMaterialManager].currentMaterial;
 }

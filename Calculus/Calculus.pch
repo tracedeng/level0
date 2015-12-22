@@ -1,0 +1,23 @@
+//
+//  Calculus.pch
+//  Calculus
+//
+//  Created by tracedeng on 15/12/22.
+//  Copyright © 2015年 tracedeng. All rights reserved.
+//
+
+#ifndef Calculus_pch
+#define Calculus_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG
+//# define DLog(fmt, ...) NSLog((@"[%s:%s:%d]" fmt), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+# define DLog(fmt, ...) NSLog((@"%s [%d] " fmt), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
+
+
+#endif /* Calculus_pch */

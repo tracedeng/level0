@@ -138,8 +138,8 @@
 
 //@optional http请求失败返回
 - (void)postFailResponseWith:(AFHTTPRequestOperation *)requestOperation responseError:(NSError *)responseError {
-    NSLog(@"%@", [responseError domain]);
-    NSLog(@"%ld", (long)[responseError code]);
-    NSLog(@"%@", [responseError localizedDescription]);
+    DLog(@"%@", [responseError domain]);
+    DLog(@"%ld", (long)[responseError code]);
+    DLog(@"%@", [responseError localizedDescription]);
 }
 @end

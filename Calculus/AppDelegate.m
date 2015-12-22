@@ -32,9 +32,9 @@
     
     BOOL state = [ActionAccount doWeakLogin];
     if (state) {
-        NSLog(@"weak login success");
+        DLog(@"weak login success");
         NSString * role = [RoleManager currentRole];
-        NSLog(@"role %@", role);
+        DLog(@"role %@", role);
         if ([role isEqualToString:@"consumer"]) {
             self.window.rootViewController = self.consumerRoot;
         }else if ([role isEqualToString:@"merchant"]) {
@@ -44,7 +44,7 @@
         }
     }else{
 //        弱登录失败不清除cache，可能没连网络原因
-        NSLog(@"weak login failed");
+        DLog(@"weak login failed");
         self.window.rootViewController = self.accountRoot;
     }
     return YES;

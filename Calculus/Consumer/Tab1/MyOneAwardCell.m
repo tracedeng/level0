@@ -30,7 +30,7 @@
 }
 
 - (void)setAwardInfo:(NSDictionary *)awardInfo {
-//    NSLog(@"%@", awardInfo);
+//    DLog(@"%@", awardInfo);
     BOOL exchanged = [[awardInfo objectForKey:@"e"] boolValue];
     if (exchanged) {
         self.titleLabel.text = @"积分券";
