@@ -46,7 +46,7 @@
         }
     } failureBlock:^(NSError *error) {
         //
-        NSLog(@"%@", error.localizedDescription);
+        DLog(@"%@", error.localizedDescription);
     }];
 }
 

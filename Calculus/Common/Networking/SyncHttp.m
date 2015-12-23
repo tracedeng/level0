@@ -13,7 +13,7 @@
 
 + (NSDictionary *)syncPost:(NSString *)url data:(NSDictionary *)data {
     //创建请求
-    NSLog(@"%@", data);
+    DLog(@"%@", data);
     
     // 因为tornado不支持jsonserialize
     NSMutableArray *dataArray = [[NSMutableArray alloc] init];
@@ -40,7 +40,7 @@
         return nil;
     }
     NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:nil];
-    NSLog(@"%@", responseJson);
+    DLog(@"%@", responseJson);
     
     //  请求成功，返回结果，TODO 以后可参考异步接口封装
     if (1 == [[responseJson objectForKey:@"c"] integerValue]) {

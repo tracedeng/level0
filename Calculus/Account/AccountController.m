@@ -13,6 +13,7 @@
 #import "RoleManager.h"
 #import "SKeyManager.h"
 #import "MaterialManager.h"
+#import "MMaterialManager.h"
 
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
@@ -118,6 +119,7 @@
         NSString *skey = [material objectForKey:@"sk"];
         [SKeyManager changeSkey:skey ofAccount:phoneNumber];
         [MaterialManager setMaterial:material];
+        [MMaterialManager changeMaterialOfKey:@"identity" withValue:[material objectForKey:@"mid"]];
         
 //        根据用户最近角色判断
         NSString * role = [RoleManager currentRole];

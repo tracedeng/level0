@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [RoleManager changeCurrentRoleWith:@"merchant"];
+    self.title = @"积分";
 }
 
 - (void)didReceiveMemoryWarning {

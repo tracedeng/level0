@@ -1,28 +1,22 @@
 //
-//  ApplyCreditTVC.m
+//  MAwardApplyTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/20.
+//  Created by tracedeng on 15/12/22.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "ApplyCreditTVC.h"
-#import "ActionMMaterial.h"
-#import "ActionCredit.h"
-#import "ClickableImageView.h"
-#import "UIImageView+WebCache.h"
-#import "Constance.h"
+#import "MAwardApplyTVC.h"
+#import "MAwardApplyCell.h"
+#import "SVProgressHUD.h"
+#import "ActionMCredit.h"
 
-@interface ApplyCreditTVC ()
-@property (nonatomic, retain) NSDictionary *material;
-@property (weak, nonatomic) IBOutlet ClickableImageView *logoImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *moneyField;
-
-- (IBAction)ApplyCreditAction:(id)sender;
+@interface MAwardApplyTVC ()
+@property (nonatomic, retain) NSMutableArray *creditList;
+@property (nonatomic, assign) NSInteger checkedRow;
 @end
 
-@implementation ApplyCreditTVC
+@implementation MAwardApplyTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,23 +26,15 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    if (self.money) {
-        self.moneyField.text = [NSString stringWithFormat:@"%ld", (long)self.money];
-        self.moneyField.enabled = NO;
-    }
     
-    //    圆角
-    self.logoImageView.clipsToBounds = YES;
-    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
+    self.title = @"积分申请";
+
+    self.creditList = [[NSMutableArray alloc] init];
     
-    ActionMMaterial *material = [[ActionMMaterial alloc] init];
-    material.afterQueryMerchantOfIdentity = ^(NSDictionary *material) {
-        self.material = material;
-        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [material objectForKey:@"logo"]];
-        [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
-        self.nameLabel.text = [material objectForKey:@"n"];
-    };
-    [material doQueryMerchantOfIdentity:self.merchant];
+    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+    
+    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    [self loadCreditList:nil];
 
 }
 
@@ -57,6 +43,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)loadCreditList:(id)sender {
+    ActionMCredit *credit = [[ActionMCredit alloc] init];
+    credit.afterMerchantQueryApplyCredit = ^(NSArray *creditList) {
+        [self.creditList removeAllObjects];
+        [self.creditList addObjectsFromArray:creditList];
+        [self.tableView reloadData];
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+    };
+    credit.afterMerchantQueryApplyCreditFailed = ^(NSString *message) {
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        //        TODO...错误提示
+    };
+    [credit doMerchantQueryApplyCredit];
+    
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -64,24 +76,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.creditList.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (0 == section) {
-        return 0.01f;
-    }
-    return 0.0f;
-}
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    MAwardApplyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MAwardApplyCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
+    cell.tableView = tableView;
+    cell.afterConfirmAction = ^(BOOL result, NSIndexPath *lastIndexPath) {
+        if (result) {
+            //确认成功
+            [self.creditList removeObjectAtIndex:lastIndexPath.row];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:lastIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }else{
+            //
+        }
+    };
     
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.01f;
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -127,12 +152,4 @@
 }
 */
 
-- (IBAction)ApplyCreditAction:(id)sender {
-    NSInteger money = [self.moneyField.text integerValue];
-    ActionCredit *action = [[ActionCredit alloc] init];
-    action.afterConsumerCreateConsumption = ^() {
-        DLog(@"Apply credit %ld done", (long)money);
-    };
-    [action doConsumerCreateConsumption:self.merchant money:money];
-}
 @end

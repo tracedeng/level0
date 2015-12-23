@@ -85,7 +85,7 @@
 - (void)setCurrentImageCount:(NSInteger)currentImageCount {
     
     _currentImageCount = currentImageCount +1;
-    NSLog(@"%ld",(long)_currentImageCount);
+    DLog(@"%ld",(long)_currentImageCount);
     
     self.title = [NSString stringWithFormat:@"%ld/%ld", (long)_currentImageCount, (long)self.totalImageCount];
     
@@ -122,14 +122,14 @@
  *  @param sender <#sender description#>
  */
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-    NSLog(@"%f",sender.contentOffset.x);
+    DLog(@"%f",sender.contentOffset.x);
     NSInteger page = (sender.contentOffset.x) / [UIScreen mainScreen].bounds.size.width;
 
     [self setCurrentImageCount:page];
 }
 
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
-    NSLog(@"adc");
+//    DLog(@"adc");
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

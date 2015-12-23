@@ -11,6 +11,7 @@
 #import "SyncHttp.h"
 #import "SKeyManager.h"
 #import "MaterialManager.h"
+#import "MMaterialManager.h"
 #import "NSString+Md5.h"
 #import "GTMBase64.h"
 
@@ -148,9 +149,9 @@
 
 //@optional http请求失败返回或没网
 - (void)postFailResponseWith:(AFHTTPRequestOperation *)requestOperation responseError:(NSError *)responseError {
-    NSLog(@"%@", [responseError domain]);
-    NSLog(@"%ld", (long)[responseError code]);
-    NSLog(@"%@", [responseError localizedDescription]);
+    DLog(@"%@", [responseError domain]);
+    DLog(@"%ld", (long)[responseError code]);
+    DLog(@"%@", [responseError localizedDescription]);
 }
 
 
@@ -171,11 +172,12 @@
     if (!result) {
         return false;
     }
-    
+//
     NSString *skey = [result objectForKey:@"sk"];
     [SKeyManager changeSkey:skey ofAccount:numbers];
     [MaterialManager setMaterial:result];
-
+    [MMaterialManager changeMaterialOfKey:@"identity" withValue:[result objectForKey:@"mid"]];
+//
     return skey ? true : false;
 }
 
@@ -184,6 +186,5 @@
     [SKeyManager clearSkey];
     return true;
 }
-
 
 @end

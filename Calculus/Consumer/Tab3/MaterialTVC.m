@@ -110,7 +110,7 @@
             
             // Create the actions.
             UIAlertAction *maleAction = [UIAlertAction actionWithTitle:selectButtonMaleTitle style:UIAlertViewStyleSecureTextInput handler:^(UIAlertAction *action) {
-                NSLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
+                DLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
                
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
@@ -123,7 +123,7 @@
             }];
             
             UIAlertAction *femaleAction = [UIAlertAction actionWithTitle:selectButtonFemaleTitle style:UIAlertControllerStyleActionSheet handler:^(UIAlertAction *action) {
-                NSLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
+                DLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
                 
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
@@ -299,7 +299,7 @@
         [action doModifyNickName:nicknamevc.nickName];
         
     }
-    NSLog(@"here....");
+//    DLog(@"here....");
 //    if ([segue.sourceViewController isKindOfClass:[ class]]) {
 //        EditNicknameIntroduce *edit = (EditNicknameIntroduce *)segue.sourceViewController;
 //        switch (edit.type) {

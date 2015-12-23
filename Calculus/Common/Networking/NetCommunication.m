@@ -21,7 +21,7 @@
 }
 
 - (void)requestHttpWithData:(NSDictionary *)data {
-    NSLog(@"%@", data);
+    DLog(@"%@", data);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
 //    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
@@ -31,13 +31,13 @@
         [manager GET:self.url parameters:data
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                  //call代理get请求成功
-                 NSLog(@"http get request success");
+                 DLog(@"http get request success");
                  if ([self.delegate respondsToSelector:@selector(getSuccessResponseWith:responseObject:)]) {
                      [self.delegate getSuccessResponseWith:operation responseObject:responseObject];
                  }
              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  //call代理get请求失败
-                 NSLog(@"http get request failed");
+                 DLog(@"http get request failed");
                  if ([self.delegate respondsToSelector:@selector(getFailResponseWith:responseError:)]) {
                      [self.delegate getFailResponseWith:operation responseError:error];
                  }
@@ -48,9 +48,9 @@
         [manager POST:self.url parameters:data success:^(AFHTTPRequestOperation *operation, id responseObject) {
             //call代理post请求成功
             
-            NSLog(@"http post request success");
-//            NSLog(@"%@", operation.response);
-            NSLog(@"%@", responseObject);
+//            DLog(@"http post request success");
+//            DLog(@"%@", operation.response);
+            DLog(@"%@", responseObject);
             
             if ([self.delegate respondsToSelector:@selector(postSuccessResponseWith:responseObject:)]) {
                 [self.delegate postSuccessResponseWith:operation responseObject:responseObject];
@@ -59,9 +59,9 @@
             //call代理post请求失败
             
             
-            NSLog(@"%@", operation.request);
-            NSLog(@"%@", operation.response);
-            NSLog(@"http post request failed%@",error);
+            DLog(@"%@", operation.request);
+            DLog(@"%@", operation.response);
+            DLog(@"http post request failed%@",error);
             if ([self.delegate respondsToSelector:@selector(postFailResponseWith:responseError:)]) {
                 [self.delegate postFailResponseWith:operation responseError:error];
             }
@@ -89,13 +89,13 @@
     
     NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
-            NSLog(@"%@", error);
+            DLog(@"%@", error);
             if ([self.delegate respondsToSelector:@selector(uploadFailResponseWith:responseError:)]) {
                 [self.delegate uploadFailResponseWith:response responseError:error];
             }
         } else {
-            NSLog(@"http upload request success");
-            NSLog(@"%@\n%@", response, responseObject);
+            DLog(@"http upload request success");
+            DLog(@"%@\n%@", response, responseObject);
             if ([self.delegate respondsToSelector:@selector(uploadSuccessResponseWith:responseObject:)]) {
                 [self.delegate uploadSuccessResponseWith:response responseObject:responseObject];
             }
