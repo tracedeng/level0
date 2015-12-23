@@ -23,6 +23,8 @@
 		19339AFF1C2950BD00791A9E /* MAwardApplyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AFE1C2950BD00791A9E /* MAwardApplyTVC.m */; };
 		19339B021C2950FA00791A9E /* MAwardApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B011C2950FA00791A9E /* MAwardApplyCell.m */; };
 		19339B061C2954C000791A9E /* ActionMCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B051C2954C000791A9E /* ActionMCredit.m */; };
+		19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B081C2ABDFF00791A9E /* ConsumerAwardTVC.m */; };
+		19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B0B1C2ABEA000791A9E /* ConsumerAwardCell.m */; };
 		193C371C1C1B0D800017CC9C /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C371B1C1B0D800017CC9C /* AccountController.m */; };
 		193C371F1C1B12270017CC9C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C371E1C1B12270017CC9C /* Account.storyboard */; };
 		193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37211C1B16C60017CC9C /* ActionAccount.m */; };
@@ -123,6 +125,10 @@
 		19339B011C2950FA00791A9E /* MAwardApplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAwardApplyCell.m; path = Merchant/Tab1/MAwardApplyCell.m; sourceTree = "<group>"; };
 		19339B041C2954C000791A9E /* ActionMCredit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMCredit.h; path = Merchant/Tab1/Model/ActionMCredit.h; sourceTree = "<group>"; };
 		19339B051C2954C000791A9E /* ActionMCredit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMCredit.m; path = Merchant/Tab1/Model/ActionMCredit.m; sourceTree = "<group>"; };
+		19339B071C2ABDFF00791A9E /* ConsumerAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsumerAwardTVC.h; path = Merchant/Tab1/ConsumerAwardTVC.h; sourceTree = "<group>"; };
+		19339B081C2ABDFF00791A9E /* ConsumerAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsumerAwardTVC.m; path = Merchant/Tab1/ConsumerAwardTVC.m; sourceTree = "<group>"; };
+		19339B0A1C2ABEA000791A9E /* ConsumerAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsumerAwardCell.h; path = Merchant/Tab1/ConsumerAwardCell.h; sourceTree = "<group>"; };
+		19339B0B1C2ABEA000791A9E /* ConsumerAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsumerAwardCell.m; path = Merchant/Tab1/ConsumerAwardCell.m; sourceTree = "<group>"; };
 		193C371A1C1B0D800017CC9C /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = Account/AccountController.h; sourceTree = "<group>"; };
 		193C371B1C1B0D800017CC9C /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = Account/AccountController.m; sourceTree = "<group>"; };
 		193C371E1C1B12270017CC9C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Account.storyboard; path = Account/Account.storyboard; sourceTree = "<group>"; };
@@ -438,6 +444,10 @@
 				19339AFE1C2950BD00791A9E /* MAwardApplyTVC.m */,
 				19339B001C2950FA00791A9E /* MAwardApplyCell.h */,
 				19339B011C2950FA00791A9E /* MAwardApplyCell.m */,
+				19339B071C2ABDFF00791A9E /* ConsumerAwardTVC.h */,
+				19339B081C2ABDFF00791A9E /* ConsumerAwardTVC.m */,
+				19339B0A1C2ABEA000791A9E /* ConsumerAwardCell.h */,
+				19339B0B1C2ABEA000791A9E /* ConsumerAwardCell.m */,
 			);
 			name = Tab1;
 			sourceTree = "<group>";
@@ -802,6 +812,7 @@
 				193C38341C1D94DE0017CC9C /* ImageFullscreenSVC.m in Sources */,
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
 				193C37A51C1C17870017CC9C /* AwardDerivateCVC.m in Sources */,
+				19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
 				19339AE51C258AB500791A9E /* MMeTVC.m in Sources */,
 				19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */,
@@ -837,6 +848,7 @@
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
+				19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,
 				193C38411C1D95920017CC9C /* GTMBase64.m in Sources */,
 				193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */,

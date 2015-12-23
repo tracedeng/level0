@@ -12,20 +12,24 @@
 @interface ActionMCredit : NSObject <NetCommunicationDelegate>
 //操作类型
 typedef NS_ENUM(NSInteger, EMCREDITOPTYPE) {
-    EMERCHANTQUERYAPPLYCREDIT = 1,              //商家查询积分申请
+    EQUERYCONSUMERCREDIT = 1,                   //商家查询用户拥有的积分
+    EMERCHANTQUERYAPPLYCREDIT,                  //商家查询积分申请
     ECONFIRMAPPLYCREDIT,                        //商家确认积分申请
     EREFUSEAPPLYCREDIT,                         //商家拒绝积分申请
     EMCREDITOPTYPEMAX,
 };
 
+- (void)doQueryConsumerCredit;
 - (void)doMerchantQueryApplyCredit;
 - (void)doConfirmApplyCredit:(NSString *)identity sums:(NSInteger)sums;
 - (void)doRefuseApplyCredit:(NSString *)identity reason:(NSString *)reason;
 
+@property (nonatomic, copy) void (^afterQueryConsumerCredit)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterMerchantQueryApplyCredit)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterConfirmApplyCredit)();
 @property (nonatomic, copy) void (^afterRefuseApplyCredit)();
 
+@property (nonatomic, copy) void (^afterQueryConsumerCreditFailed)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterMerchantQueryApplyCreditFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConfirmApplyCreditFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterRefuseApplyCreditFailed)(NSString *message);

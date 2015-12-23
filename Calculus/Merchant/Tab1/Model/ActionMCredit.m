@@ -36,6 +36,12 @@
     return self;
 }
 
+- (void)doQueryConsumerCredit {
+    self.type = EQUERYCONSUMERCREDIT;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_m", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+}
+
 
 - (void)doMerchantQueryApplyCredit {
     self.type = EMERCHANTQUERYAPPLYCREDIT;

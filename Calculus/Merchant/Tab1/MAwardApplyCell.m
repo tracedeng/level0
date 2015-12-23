@@ -51,6 +51,7 @@
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
 
 }
+
 - (IBAction)refuseApplyAction:(id)sender {
 }
 
