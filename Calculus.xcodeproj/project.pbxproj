@@ -87,6 +87,7 @@
 		B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B4A1C246B36006F344F /* YMUtils.m */; };
 		B51C0B4D1C246B3E006F344F /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = B51C0B4C1C246B3E006F344F /* zh_CN.json */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
+		B5EDC3021C2853E3002E2833 /* CreditExchangeInTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3011C2853E3002E2833 /* CreditExchangeInTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +243,8 @@
 		B51C0B4C1C246B3E006F344F /* zh_CN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zh_CN.json; sourceTree = "<group>"; };
 		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
 		B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
+		B5EDC3001C2853E3002E2833 /* CreditExchangeInTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeInTVC.h; sourceTree = "<group>"; };
+		B5EDC3011C2853E3002E2833 /* CreditExchangeInTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeInTVC.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -291,7 +294,7 @@
 				1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */,
 			);
 			name = Main;
-			path = ..;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		193C37191C1B0D5A0017CC9C /* Account */ = {
@@ -327,7 +330,6 @@
 		193C37581C1BE2B70017CC9C /* Consumer */ = {
 			isa = PBXGroup;
 			children = (
-				193C37181C1B02200017CC9C /* Main */,
 				193C37591C1BE2B70017CC9C /* Tab1 */,
 				193C37671C1BE2B70017CC9C /* Tab2 */,
 				193C37681C1BE2B70017CC9C /* Tab3 */,
@@ -338,6 +340,7 @@
 		193C37591C1BE2B70017CC9C /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
+				193C37181C1B02200017CC9C /* Main */,
 				193C375E1C1BE2B70017CC9C /* Model */,
 				193C37A61C1C19240017CC9C /* AwardDerivateCell.h */,
 				193C37A71C1C19240017CC9C /* AwardDerivateCell.m */,
@@ -357,6 +360,8 @@
 				19339AF01C269BD500791A9E /* MyOneAwardTVC.m */,
 				19339AF21C269D0400791A9E /* MyOneAwardCell.h */,
 				19339AF31C269D0400791A9E /* MyOneAwardCell.m */,
+				B5EDC3001C2853E3002E2833 /* CreditExchangeInTVC.h */,
+				B5EDC3011C2853E3002E2833 /* CreditExchangeInTVC.m */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -821,6 +826,7 @@
 				193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */,
 				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
 				193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */,
+				B5EDC3021C2853E3002E2833 /* CreditExchangeInTVC.m in Sources */,
 				19339ADC1C23E74F00791A9E /* MMaterialManager.m in Sources */,
 				193C38331C1D94DE0017CC9C /* ImageCheckableCell.m in Sources */,
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
