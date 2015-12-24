@@ -1,22 +1,21 @@
 //
-//  MAwardApplyTVC.m
+//  COneAwardTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/22.
+//  Created by tracedeng on 15/12/24.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "MAwardApplyTVC.h"
-#import "MAwardApplyCell.h"
+#import "COneAwardTVC.h"
 #import "SVProgressHUD.h"
 #import "ActionMCredit.h"
+#import "COneAwardCell.h"
 
-@interface MAwardApplyTVC ()
+@interface COneAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
-@property (nonatomic, assign) NSInteger checkedRow;
 @end
 
-@implementation MAwardApplyTVC
+@implementation COneAwardTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,15 +26,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.title = @"积分申请";
-
+    
     self.creditList = [[NSMutableArray alloc] init];
     
     [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadCreditList:nil];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,12 +40,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)loadCreditList:(id)sender {
     ActionMCredit *credit = [[ActionMCredit alloc] init];
-    credit.afterMerchantQueryApplyCredit = ^(NSArray *creditList) {
+    credit.afterQueryConsumerCredit = ^(NSArray *creditList) {
         [self.creditList removeAllObjects];
-        [self.creditList addObjectsFromArray:creditList];
+        if (creditList.count) {
+            [self.creditList addObjectsFromArray:creditList];
+        }
         [self.tableView reloadData];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
@@ -57,7 +55,7 @@
             [SVProgressHUD dismiss];
         }
     };
-    credit.afterMerchantQueryApplyCreditFailed = ^(NSString *message) {
+    credit.afterQueryConsumerCreditFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -66,9 +64,10 @@
         }
         //        TODO...错误提示
     };
-    [credit doMerchantQueryApplyCredit];
+    [credit doQueryConsumerCredit];
     
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -79,44 +78,22 @@
     return self.creditList.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MAwardApplyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MAwardApplyCell" forIndexPath:indexPath];
+    COneAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"COneAwardCell" forIndexPath:indexPath];
     
     // Configure the cell...
     cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
-    cell.tableView = tableView;
-    cell.afterConfirmAction = ^(BOOL result, NSIndexPath *lastIndexPath) {
-        if (result) {
-            //确认成功
-            [self.creditList removeObjectAtIndex:lastIndexPath.row];
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:lastIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        }else{
-            //
-        }
-    };
-    cell.afterRefuseAction = ^(BOOL result, NSIndexPath *lastIndexPath) {
-        if (result) {
-            //拒绝成功
-            [self.creditList removeObjectAtIndex:lastIndexPath.row];
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:lastIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        }else{
-            //
-        }
-    };
-
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0f;
+    return 50.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 0.01f;
 }
-
 
 /*
 // Override to support conditional editing of the table view.

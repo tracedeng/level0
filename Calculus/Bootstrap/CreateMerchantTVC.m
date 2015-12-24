@@ -11,6 +11,7 @@
 #import "ActionMMaterial.h"
 #import "ActionQiniu.h"
 #import "UIImageView+WebCache.h"
+#import "MMaterialManager.h"
 #import "Constance.h"
 
 @interface CreateMerchantTVC ()
@@ -187,6 +188,7 @@
     }else{
         ActionMMaterial *action = [[ActionMMaterial alloc] init];
         action.afterCreateMerchantOfAccount = ^(NSString *merchant) {
+            [MMaterialManager changeMaterialOfKey:@"id" withValue:merchant];
             //进入商家主页
             [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchantAfterCreate", @"destine", nil]];
         };

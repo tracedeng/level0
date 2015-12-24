@@ -53,6 +53,29 @@
 }
 
 - (IBAction)refuseApplyAction:(id)sender {
+    UIAlertController *denyAlert = [UIAlertController alertControllerWithTitle:@"拒绝" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [denyAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [denyAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        ActionMCredit *refuseAction = [[ActionMCredit alloc] init];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:self];
+        refuseAction.afterRefuseApplyCredit = ^() {
+            if (self.afterRefuseAction) {
+                self.afterRefuseAction(YES, indexPath);
+            }
+        };
+        refuseAction.afterRefuseApplyCreditFailed = ^(NSString *message) {
+            if (self.afterRefuseAction) {
+                self.afterRefuseAction(NO, indexPath);
+            };
+        };
+        NSString *reason = denyAlert.textFields.firstObject.text;
+        [refuseAction doRefuseApplyCredit:self.identity reason:reason];
+
+    }]];
+    [denyAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"拒绝理由";
+    }];
+    [(UITableViewController *)(self.tableView.dataSource) presentViewController:denyAlert animated:YES completion:nil];
 }
 
 - (IBAction)confirmApplyAction:(id)sender {

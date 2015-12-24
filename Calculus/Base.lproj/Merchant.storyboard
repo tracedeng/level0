@@ -191,7 +191,6 @@
         <!--Award ApplyTVC-->
         <scene sceneID="ytd-Xr-WZR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C4p-Ts-NoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="KfD-qH-Xa6" customClass="MAwardApplyTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="6Hv-2Z-RvM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -363,6 +362,7 @@
                         </attributedString>
                     </refreshControl>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4p-Ts-NoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2445" y="-505"/>
         </scene>
@@ -421,9 +421,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="merchant_logo_image" destination="qTK-B6-eN9" id="LDs-Jd-igN"/>
-                                    <outlet property="merchant_name_label" destination="I4v-YI-gk3" id="TG9-HY-ZmZ"/>
-                                    <outlet property="total_award_label" destination="uOf-Sc-VZ2" id="YwF-h0-1f4"/>
+                                    <outlet property="avatarImageView" destination="qTK-B6-eN9" id="YOH-YL-Fe2"/>
+                                    <outlet property="nicknameLabel" destination="I4v-YI-gk3" id="rpp-ZC-356"/>
+                                    <outlet property="totalAwardLabel" destination="uOf-Sc-VZ2" id="H5D-yF-LsF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -450,10 +450,95 @@
                             </fragment>
                         </attributedString>
                     </refreshControl>
+                    <connections>
+                        <segue destination="cRP-la-Hap" kind="show" identifier="COneAward" id="QBA-21-YkQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5i-Uo-NYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="-169.5"/>
+            <point key="canvasLocation" x="1615" y="180.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Ynj-lL-5tf">
+            <objects>
+                <tableViewController id="cRP-la-Hap" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="EVg-Xv-gYM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="405"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COneAwardCell" rowHeight="60" id="B2x-qD-Gti">
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2x-qD-Gti" id="qad-ku-BcU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Re8-Mc-QEb">
+                                            <rect key="frame" x="15" y="12" width="570" height="36"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="fyH-WS-Dea">
+                                                    <rect key="frame" x="0.0" y="0.0" width="541.5" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积分券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhS-DO-bkf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AzU-Aw-aJg">
+                                                            <rect key="frame" x="0.0" y="19" width="131.5" height="17"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有效期至" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yh2-Dr-aui">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="56" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-11-11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQx-cq-907">
+                                                                    <rect key="frame" x="61" y="0.0" width="70.5" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-1R-qU6">
+                                                    <rect key="frame" x="541.5" y="8" width="28.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fyH-WS-Dea" secondAttribute="trailing" id="iLd-QX-fAk"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="iLd-QX-fAk"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Re8-Mc-QEb" firstAttribute="leading" secondItem="qad-ku-BcU" secondAttribute="leading" constant="15" id="4QA-SI-Hoo"/>
+                                        <constraint firstItem="Re8-Mc-QEb" firstAttribute="centerY" secondItem="qad-ku-BcU" secondAttribute="centerY" id="KXq-5z-Q3M"/>
+                                        <constraint firstAttribute="trailing" secondItem="Re8-Mc-QEb" secondAttribute="trailing" constant="15" id="PLm-Oe-bkI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cRP-la-Hap" id="xfW-pR-crB"/>
+                            <outlet property="delegate" destination="cRP-la-Hap" id="pnA-Oy-2n6"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAu-fw-PiF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="180.5"/>
         </scene>
     </scenes>
     <resources>

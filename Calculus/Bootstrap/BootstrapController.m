@@ -40,13 +40,11 @@
 */
 
 - (IBAction)EnterAsConsumer:(id)sender {
-//    [RoleManager changeCurrentRoleWith:@"consumer"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoConsumer", @"destine", nil]];
 
 }
 
 - (IBAction)EnterAsMerchant:(id)sender {
-//    [RoleManager changeCurrentRoleWith:@"merchant"];
     ActionMMaterial *action = [[ActionMMaterial alloc] init];
     action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
         if (material) {

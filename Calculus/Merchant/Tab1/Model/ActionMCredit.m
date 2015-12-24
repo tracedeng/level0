@@ -27,7 +27,7 @@
     self = [super init];
     if (self) {
         self.state = [SKeyManager getSkey];
-        self.merchant = [[MMaterialManager getMaterial] objectForKey:@"identity"];
+        self.merchant = [[MMaterialManager getMaterial] objectForKey:@"id"];
         self.account = [self.state objectForKey:@"account"];
         self.skey = [self.state objectForKey:@"skey"];
         self.net = [[NetCommunication alloc] initWithHttpUrl:CREDITURL httpMethod:@"post"];
@@ -38,10 +38,15 @@
 
 - (void)doQueryConsumerCredit {
     self.type = EQUERYCONSUMERCREDIT;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_m", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_m", @"type", self.merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doQueryOneConsumerCredit  {
+    self.type = EQUERYONECONSUMERCREDIT;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_m_of_consumer", @"type", self.merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+}
 
 - (void)doMerchantQueryApplyCredit {
     self.type = EMERCHANTQUERYAPPLYCREDIT;
@@ -57,7 +62,7 @@
 
 - (void)doRefuseApplyCredit:(NSString *)identity reason:(NSString *)reason {
     self.type = EREFUSEAPPLYCREDIT;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"refuse", @"type", identity, @"credit", reason, @"reason", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"refuse", @"type", self.merchant, @"merchant", identity, @"credit", reason, @"reason", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -68,6 +73,22 @@
     NSInteger errorCode = [[responseObject objectForKey:@"c"] integerValue];
     if (1 == errorCode) {
         switch (self.type) {
+            case EQUERYCONSUMERCREDIT:
+            {
+                NSArray *creditList = [responseObject objectForKey:@"r"];
+                if (self.afterQueryConsumerCredit) {
+                    self.afterQueryConsumerCredit(creditList);
+                }
+                break;
+            }
+            case EQUERYONECONSUMERCREDIT:
+            {
+                NSArray *creditList = [responseObject objectForKey:@"r"];
+                if (self.afterQueryOneConsumerCredit) {
+                    self.afterQueryOneConsumerCredit(creditList);
+                }
+                break;
+            }
             case EMERCHANTQUERYAPPLYCREDIT:
             {
                 NSArray *creditList = [responseObject objectForKey:@"r"];
@@ -98,6 +119,22 @@
         }
     }else{
         switch (self.type) {
+            case EQUERYCONSUMERCREDIT:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryConsumerCreditFailed) {
+                    self.afterQueryConsumerCreditFailed(message);
+                }
+                break;
+            }
+            case EQUERYONECONSUMERCREDIT:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryOneConsumerCreditFailed) {
+                    self.afterQueryOneConsumerCreditFailed(message);
+                }
+                break;
+            }
             case EMERCHANTQUERYAPPLYCREDIT:
             {
                 NSString *message = [responseObject objectForKey:@"m"];

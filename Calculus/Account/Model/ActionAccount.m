@@ -176,7 +176,7 @@
     NSString *skey = [result objectForKey:@"sk"];
     [SKeyManager changeSkey:skey ofAccount:numbers];
     [MaterialManager setMaterial:result];
-    [MMaterialManager changeMaterialOfKey:@"identity" withValue:[result objectForKey:@"mid"]];
+    [MMaterialManager changeMaterialOfKey:@"id" withValue:[result objectForKey:@"mid"]];
 //
     return skey ? true : false;
 }

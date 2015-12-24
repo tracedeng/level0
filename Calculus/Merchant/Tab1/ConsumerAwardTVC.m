@@ -32,7 +32,7 @@
     [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
-//    [self loadCreditList:nil];
+    [self loadCreditList:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,9 +42,11 @@
 
 - (void)loadCreditList:(id)sender {
     ActionMCredit *credit = [[ActionMCredit alloc] init];
-    credit.afterMerchantQueryApplyCredit = ^(NSArray *creditList) {
+    credit.afterQueryConsumerCredit = ^(NSArray *creditList) {
         [self.creditList removeAllObjects];
-        [self.creditList addObjectsFromArray:creditList];
+        if (creditList.count) {
+            [self.creditList addObjectsFromArray:creditList];
+        }
         [self.tableView reloadData];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
@@ -53,7 +55,7 @@
             [SVProgressHUD dismiss];
         }
     };
-    credit.afterMerchantQueryApplyCreditFailed = ^(NSString *message) {
+    credit.afterQueryConsumerCreditFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -62,7 +64,7 @@
         }
         //        TODO...错误提示
     };
-    [credit doMerchantQueryApplyCredit];
+    [credit doQueryConsumerCredit];
     
 }
 
@@ -73,31 +75,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.creditList.count;
-    return 2;
+    return self.creditList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ConsumerAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ConsumerAwardCell" forIndexPath:indexPath];
     
     // Configure the cell...
-//    cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
-//    cell.tableView = tableView;
-//    cell.afterConfirmAction = ^(BOOL result, NSIndexPath *lastIndexPath) {
-//        if (result) {
-//            //确认成功
-//            [self.creditList removeObjectAtIndex:lastIndexPath.row];
-//            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:lastIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        }else{
-//            //
-//        }
-//    };
+    cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0f;
+    return 60.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
