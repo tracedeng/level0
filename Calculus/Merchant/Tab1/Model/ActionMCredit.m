@@ -42,7 +42,7 @@
     [self.net requestHttpWithData:postData];
 }
 
-- (void)doQueryOneConsumerCredit  {
+- (void)doQueryOneConsumerCredit:(NSString *)numbers {
     self.type = EQUERYONECONSUMERCREDIT;
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_m_of_consumer", @"type", self.merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];

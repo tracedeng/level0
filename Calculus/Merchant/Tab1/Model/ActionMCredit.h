@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, EMCREDITOPTYPE) {
 };
 
 - (void)doQueryConsumerCredit;
-- (void)doQueryOneConsumerCredit;
+- (void)doQueryOneConsumerCredit:(NSString *)numbers;
 - (void)doMerchantQueryApplyCredit;
 - (void)doConfirmApplyCredit:(NSString *)identity sums:(NSInteger)sums;
 - (void)doRefuseApplyCredit:(NSString *)identity reason:(NSString *)reason;

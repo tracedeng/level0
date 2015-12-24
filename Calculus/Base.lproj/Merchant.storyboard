@@ -458,16 +458,16 @@
             </objects>
             <point key="canvasLocation" x="1615" y="180.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--One AwardTVC-->
         <scene sceneID="Ynj-lL-5tf">
             <objects>
-                <tableViewController id="cRP-la-Hap" sceneMemberID="viewController">
+                <tableViewController id="cRP-la-Hap" customClass="COneAwardTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="EVg-Xv-gYM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COneAwardCell" rowHeight="60" id="B2x-qD-Gti">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COneAwardCell" rowHeight="60" id="B2x-qD-Gti" customClass="COneAwardCell">
                                 <rect key="frame" x="0.0" y="49.5" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2x-qD-Gti" id="qad-ku-BcU">
@@ -528,6 +528,10 @@
                                         <constraint firstAttribute="trailing" secondItem="Re8-Mc-QEb" secondAttribute="trailing" constant="15" id="PLm-Oe-bkI"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="expireTimeLabel" destination="xQx-cq-907" id="Sgn-4h-XuO"/>
+                                    <outlet property="totalAwardLabel" destination="4XL-1R-qU6" id="aJQ-ru-hX6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

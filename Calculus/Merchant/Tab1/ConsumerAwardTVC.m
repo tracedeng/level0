@@ -10,9 +10,11 @@
 #import "ConsumerAwardCell.h"
 #import "SVProgressHUD.h"
 #import "ActionMCredit.h"
+#import "COneAwardTVC.h"
 
 @interface ConsumerAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
+@property (nonatomic, assign) NSInteger checkedRow;
 
 @end
 
@@ -95,6 +97,10 @@
     return 0.01f;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.checkedRow = indexPath.row;
+    [self performSegueWithIdentifier:@"COneAward" sender:nil];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -129,14 +135,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"COneAward"]) {
+        if ([segue.destinationViewController isKindOfClass:[COneAwardTVC class]]) {
+            COneAwardTVC *destination = (COneAwardTVC *)segue.destinationViewController;
+            destination.numbers = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"nu"];
+            destination.nickname = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"ni"];
+        }
+    }
 }
-*/
+
 
 @end

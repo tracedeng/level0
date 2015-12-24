@@ -25,7 +25,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.title = self.nickname;
     
     self.creditList = [[NSMutableArray alloc] init];
     
@@ -42,7 +42,7 @@
 
 - (void)loadCreditList:(id)sender {
     ActionMCredit *credit = [[ActionMCredit alloc] init];
-    credit.afterQueryConsumerCredit = ^(NSArray *creditList) {
+    credit.afterQueryOneConsumerCredit = ^(NSArray *creditList) {
         [self.creditList removeAllObjects];
         if (creditList.count) {
             [self.creditList addObjectsFromArray:creditList];
@@ -55,7 +55,7 @@
             [SVProgressHUD dismiss];
         }
     };
-    credit.afterQueryConsumerCreditFailed = ^(NSString *message) {
+    credit.afterQueryOneConsumerCreditFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -64,7 +64,7 @@
         }
         //        TODO...错误提示
     };
-    [credit doQueryConsumerCredit];
+    [credit doQueryOneConsumerCredit:self.numbers];
     
 }
 

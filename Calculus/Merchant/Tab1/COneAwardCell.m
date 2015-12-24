@@ -8,6 +8,12 @@
 
 #import "COneAwardCell.h"
 
+@interface COneAwardCell ()
+@property (weak, nonatomic) IBOutlet UILabel *expireTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalAwardLabel;
+
+@end
+
 @implementation COneAwardCell
 
 - (void)awakeFromNib {
@@ -21,17 +27,11 @@
 }
 
 - (void)setAwardInfo:(NSDictionary *)awardInfo {
-//    self.nicknameLabel.text = [awardInfo objectForKey:@"ni"];
-//    self.totalAwardLabel.text = [[awardInfo objectForKey:@"a"] stringValue];
-//    //    self.identity = [awardInfo objectForKey:@"id"];
-//    
-//    //    圆角
-//    self.avatarImageView.clipsToBounds = YES;
-//    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.height / 2.0;
-//    
-//    NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [awardInfo objectForKey:@"ava"]];
-//    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
-    
+    if (awardInfo) {
+        _awardInfo = awardInfo;
+        self.expireTimeLabel.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
+        self.totalAwardLabel.text = [[awardInfo objectForKey:@"qu"] stringValue];
+    }
 }
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface COneAwardTVC : UITableViewController
-
+@property (nonatomic, retain) NSString *nickname;   //用户昵称
+@property (nonatomic, retain) NSString *numbers;    //用户号码
 @end
