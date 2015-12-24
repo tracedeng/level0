@@ -1,22 +1,22 @@
 //
-//  ConsumerAwardTVC.m
+//  CreditExchangeTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/23.
+//  Created by ben on 15/12/24.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "ConsumerAwardTVC.h"
-#import "ConsumerAwardCell.h"
+#import "CreditExchangeTVC.h"
+#import "ActionCredit.h"
 #import "SVProgressHUD.h"
-#import "ActionMCredit.h"
+#import "CreditExchangeCell.h"
 
-@interface ConsumerAwardTVC ()
+
+@interface CreditExchangeTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
-
 @end
 
-@implementation ConsumerAwardTVC
+@implementation CreditExchangeTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,11 +28,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.creditList = [[NSMutableArray alloc] init];
-    
-//    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
-    
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    //
+    //    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+    //
+    //    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadCreditList:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,13 +41,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void)loadCreditList:(id)sender {
-    ActionMCredit *credit = [[ActionMCredit alloc] init];
-    credit.afterQueryConsumerCredit = ^(NSArray *creditList) {
+    ActionCredit *credit = [[ActionCredit alloc] init];
+    credit.afterConsumerQueryOtherCreditList = ^(NSArray *creditList) {
         [self.creditList removeAllObjects];
-        if (creditList.count) {
-            [self.creditList addObjectsFromArray:creditList];
-        }
+        [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
@@ -55,7 +55,7 @@
             [SVProgressHUD dismiss];
         }
     };
-    credit.afterQueryConsumerCreditFailed = ^(NSString *message) {
+    credit.afterConsumerQueryOtherCreditListFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -64,36 +64,44 @@
         }
         //        TODO...错误提示
     };
-    [credit doQueryConsumerCredit];
-    
+    [credit doConsumerQueryOtherCreditList:self.merchant];
 }
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.creditList count];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.creditList.count;
+    return [[[self.creditList objectAtIndex:section] objectForKey:@"cr"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ConsumerAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ConsumerAwardCell" forIndexPath:indexPath];
-    
+    CreditExchangeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];
     // Configure the cell...
-    cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
+    cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+
     
     return cell;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0;
+    return 60.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 0.01f;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CreditExchangeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];
+    //cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+    
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.

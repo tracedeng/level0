@@ -1,22 +1,22 @@
 //
-//  ConsumerAwardTVC.m
+//  MerchantSelectTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/23.
+//  Created by ben on 15/12/24.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "ConsumerAwardTVC.h"
-#import "ConsumerAwardCell.h"
+#import "MerchantSelectTVC.h"
+#import "ActionMerchant.h"
 #import "SVProgressHUD.h"
-#import "ActionMCredit.h"
+#import "MerchantSelectCell.h"
 
-@interface ConsumerAwardTVC ()
-@property (nonatomic, retain) NSMutableArray *creditList;
+@interface MerchantSelectTVC ()
+@property (nonatomic, retain) NSMutableArray *merchantList;
 
 @end
 
-@implementation ConsumerAwardTVC
+@implementation MerchantSelectTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,26 +27,24 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.creditList = [[NSMutableArray alloc] init];
-    
-//    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
-    
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
-    [self loadCreditList:nil];
+    self.merchantList = [[NSMutableArray alloc] init];
+    //
+    //    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+    //
+    //    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    [self loadMerchantList:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)loadCreditList:(id)sender {
-    ActionMCredit *credit = [[ActionMCredit alloc] init];
-    credit.afterQueryConsumerCredit = ^(NSArray *creditList) {
-        [self.creditList removeAllObjects];
-        if (creditList.count) {
-            [self.creditList addObjectsFromArray:creditList];
-        }
+- (void)loadMerchantList:(id)sender {
+    ActionMerchant *merchant = [[ActionMerchant alloc] init];
+    merchant.afterConsumerQueryOtherMerchantList = ^(NSArray *merchantList) {
+        [self.merchantList removeAllObjects];
+        [self.merchantList  addObjectsFromArray:merchantList];
         [self.tableView reloadData];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
@@ -55,7 +53,7 @@
             [SVProgressHUD dismiss];
         }
     };
-    credit.afterQueryConsumerCreditFailed = ^(NSString *message) {
+    merchant.afterConsumerQueryOtherMerchantListFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -64,9 +62,10 @@
         }
         //        TODO...错误提示
     };
-    [credit doQueryConsumerCredit];
-    
+    [merchant doConsumerQueryOtherMerchantList:self.merchant];
 }
+
+
 
 #pragma mark - Table view data source
 
@@ -75,20 +74,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.creditList.count;
+    return [self.merchantList count];
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ConsumerAwardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ConsumerAwardCell" forIndexPath:indexPath];
-    
+    MerchantSelectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MerchantSelect" forIndexPath:indexPath];
     // Configure the cell...
-    cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
+    //    cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+    
     
     return cell;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0;
+    return 70.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

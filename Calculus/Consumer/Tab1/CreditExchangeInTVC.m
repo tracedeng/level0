@@ -41,7 +41,7 @@
 
 - (void)loadCreditList:(id)sender {
     ActionCredit *credit = [[ActionCredit alloc] init];
-    credit.afterConsumerQueryOneCredit = ^(NSArray *creditList) {
+    credit.afterConsumerQueryOtherCreditList = ^(NSArray *creditList) {
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
@@ -52,7 +52,7 @@
             [SVProgressHUD dismiss];
         }
     };
-    credit.afterConsumerQueryOneCreditFailed = ^(NSString *message) {
+    credit.afterConsumerQueryOtherCreditListFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -61,7 +61,7 @@
         }
         //        TODO...错误提示
     };
-    [credit doConsumerQueryOneCredit:self.merchant];
+    [credit doConsumerQueryOtherCreditList:self.merchant];
 }
 
 
