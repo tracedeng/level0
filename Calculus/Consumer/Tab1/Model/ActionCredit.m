@@ -60,6 +60,20 @@
     
     [self.net requestHttpWithData:postData];
 }
+- (void)doConsumerQueryOtherCreditList:(NSString *)merchant {
+    self.type = ECONSUMERQUERYOTHERCREDITLIST;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_detail", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+- (void)doConsumerQueryOtherMerchantList:(NSString *)merchant{
+    self.type = ECONSUMERQUERYMERCHANTLIST;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"verified_merchant", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+}
 
 #pragma mark -NetCommunication Delegate
 
@@ -93,6 +107,24 @@
                 }
                 break;
             }
+            case ECONSUMERQUERYOTHERCREDITLIST:
+            {
+                NSArray *creditList = [responseObject objectForKey:@"r"];
+                DLog(@"credit id %@", creditList);
+                if (self.afterConsumerQueryOtherCreditList) {
+                    self.afterConsumerQueryOtherCreditList(creditList);
+                }
+                break;
+            }
+            case ECONSUMERQUERYMERCHANTLIST:
+            {
+                NSArray *merchantList = [responseObject objectForKey:@"r"];
+                DLog(@"credit id %@", merchantList);
+                if (self.afterConsumerQueryOtherMerchantList) {
+                    self.afterConsumerQueryOtherMerchantList(merchantList);
+                }
+                break;
+            }
             default:
                 break;
         }
@@ -111,6 +143,22 @@
                 NSString *message = [responseObject objectForKey:@"m"];
                 if (self.afterConsumerQueryOneCreditFailed) {
                     self.afterConsumerQueryOneCreditFailed(message);
+                }
+                break;
+            }
+            case ECONSUMERQUERYOTHERCREDITLIST:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterConsumerQueryOtherCreditListFailed) {
+                    self.afterConsumerQueryOtherCreditListFailed(message);
+                }
+                break;
+            }
+            case ECONSUMERQUERYMERCHANTLIST:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterConsumerQueryOtherMerchantListFailed) {
+                    self.afterConsumerQueryOtherMerchantListFailed(message);
                 }
                 break;
             }

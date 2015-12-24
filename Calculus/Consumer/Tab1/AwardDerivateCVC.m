@@ -69,6 +69,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.row) {
         [self performSegueWithIdentifier:@"ScanQrcode" sender:nil];
+    }else if (1 == indexPath.row) {
+        [self performSegueWithIdentifier:@"goCreditExchange" sender:nil];
     }
 }
 
