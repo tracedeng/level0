@@ -80,6 +80,37 @@
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doModifyMerchantName:(NSString *)merchantname merchant:(NSString *)merchant{
+    self.type = EUPDATEMERCHANTNAME;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", merchantname, @"name", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+- (void)doModifyMerchantEmail:(NSString *)merchantemil merchant:(NSString *)merchant{
+    self.type = EUPDATEMERCHANTEMAIL;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", merchantemil, @"email", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+- (void)doModifyMerchantContactNumber:(NSString *)merchantcontactnumber merchant:(NSString *)merchant{
+    self.type = EUPDATEMERCHANTCONTACTNUMBER;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", merchantcontactnumber, @"contact_number", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+- (void)doModifyMerchantAddress:(NSString *)merchantaddress merchant:(NSString *)merchant{
+    self.type = EUPDATEMERCHANTADDRESS;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", merchantaddress, @"location", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+- (void)doModifyMerchantExchangeRate:(NSString *)exchangerate merchant:(NSString *)merchant{
+    self.type = EUPDATEMERCHANTEXCHANTRATE;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", exchangerate, @"exchange_rate", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+
 #pragma mark -NetCommunication Delegate
 //@optional http请求成功返回
 - (void)postSuccessResponseWith:(AFHTTPRequestOperation *)requestOperation responseObject:(id)responseObject {
@@ -127,6 +158,46 @@
 //                NSString *result = [responseObject objectForKey:@"r"];
                 if (self.afterModifyLogo) {
                     self.afterModifyLogo();
+                }
+                break;
+            }
+            case EUPDATEMERCHANTNAME:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyMerchantName) {
+                    self.afterModifyMerchantName(result);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTEMAIL:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyMerchantEmail) {
+                    self.afterModifyMerchantEmail(result);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTCONTACTNUMBER:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyMerchantContactNumber) {
+                    self.afterModifyMerchantContactNumber(result);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTADDRESS:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyMerchantAddress) {
+                    self.afterModifyMerchantAddress(result);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTEXCHANTRATE:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyMerchantExchangeRate) {
+                    self.afterModifyMerchantExchangeRate(result);
                 }
                 break;
             }

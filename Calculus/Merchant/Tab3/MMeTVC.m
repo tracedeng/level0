@@ -7,8 +7,13 @@
 //
 
 #import "MMeTVC.h"
+#import "MMeExchangeRateVC.h"
+#import "ActionMMaterial.h"
 
 @interface MMeTVC ()
+#define MMATERIALEXCHANGERATE  0x1
+@property (weak, nonatomic) IBOutlet UILabel *merchantCreditAmountLBL;
+@property (weak, nonatomic) IBOutlet UILabel *exchangeRateLBL;
 
 @end
 
@@ -22,7 +27,42 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self loadMerchantInfo];
 }
+- (void)loadMerchantInfo{
+    //TODO 获取最新数据
+    self.exchangeRateLBL.text = @"1:1(TODO...)";
+
+//    ActionMMaterial *action = [[ActionMMaterial alloc] init];
+//    action.afterModifyMerchantExchangeRate
+//    
+//    ActionMCredit *credit = [[ActionMCredit alloc] init];
+//    credit.afterMerchantQueryApplyCredit = ^(NSArray *creditList) {
+//        [self.creditList removeAllObjects];
+//        [self.creditList addObjectsFromArray:creditList];
+//        [self.tableView reloadData];
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+//        if ([SVProgressHUD isVisible]) {
+//            [SVProgressHUD dismiss];
+//        }
+//    };
+//    credit.afterMerchantQueryApplyCreditFailed = ^(NSString *message) {
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+//        if ([SVProgressHUD isVisible]) {
+//            [SVProgressHUD dismiss];
+//        }
+//        //        TODO...错误提示
+//    };
+//    [credit doMerchantQueryApplyCredit];
+//
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -32,7 +72,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -116,6 +156,25 @@
 }
 */
 
+- (IBAction)unwindUpdateMaterial:(UIStoryboardSegue *)segue {
+    if([segue.sourceViewController isKindOfClass:[MMeExchangeRateVC class]]){
+        MMeExchangeRateVC *merchantvc = (MMeExchangeRateVC *)segue.sourceViewController;
+        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+        action.afterModifyMerchantExchangeRate = ^(NSDictionary *materail){
+            [self.material setObject:merchantvc.exchangeRate forKey:@"er"];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+            
+            self.updateMMaterialTypeMask |= MMATERIALEXCHANGERATE;
+        };
+        [action doModifyMerchantExchangeRate:merchantvc.exchangeRate merchant:[self.material objectForKey:@"id"]];
+        
+    }
+    
+    
+    
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -125,5 +184,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

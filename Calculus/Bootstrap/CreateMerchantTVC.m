@@ -16,6 +16,7 @@
 
 @interface CreateMerchantTVC ()
 @property (nonatomic, retain) NSString *uploadToken;
+@property (nonatomic, retain) NSString *prepath;
 @property (nonatomic, retain) NSString *path;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
@@ -34,6 +35,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //    圆角
+//    self.prepath = @"m/logo/15216768674/Dec2715161647";
+    self.path = @"default";
     self.logoImageView.clipsToBounds = YES;
     self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
 
@@ -86,7 +89,7 @@
     ActionMMaterial *action = [[ActionMMaterial alloc] init];
     action.afterQueryUploadToken = ^(NSDictionary *result) {
         self.uploadToken = [result objectForKey:@"tok"];
-        self.path = [result objectForKey:@"path"];
+        self.prepath = [result objectForKey:@"path"];
     };
     [action doQueryUploadToken:@"dummy"];
 }
@@ -118,6 +121,7 @@
 //            };
 //            [action doCreateMerchantOfAccount:name logo:self.path];
 //        }
+//        self.path = self.prepath;
         [self createMerchantAction:nil];
     }
 }
@@ -177,7 +181,7 @@
             self.path = path;
             [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
         };
-        [action doQiniuUpload:photo token:self.uploadToken path:self.path];
+        [action doQiniuUpload:photo token:self.uploadToken path:self.prepath];
     }
 }
 - (IBAction)createMerchantAction:(id)sender {
