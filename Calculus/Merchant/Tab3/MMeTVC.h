@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MMeTVC : UITableViewController
+#define MMATERIALTYPELOGO  0x1
 
+@property (nonatomic, assign) NSInteger updateMMaterialTypeMask;
+@property (nonatomic, retain) NSMutableDictionary *material;
 @end

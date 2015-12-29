@@ -1,20 +1,18 @@
 //
-//  MSettingTVC.m
+//  MerchantVerifiedInfoTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/12.
+//  Created by ben on 15/12/28.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "MSettingTVC.h"
-#import "ActionAccount.h"
+#import "MerchantVerifiedInfoTVC.h"
 
-@interface MSettingTVC ()
-- (IBAction)logoutAction:(id)sender;
+@interface MerchantVerifiedInfoTVC ()
 
 @end
 
-@implementation MSettingTVC
+@implementation MerchantVerifiedInfoTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,9 +22,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSString * path = [NSHomeDirectory() stringByAppendingString:@"/Library/Caches/ImageCaches"];
-    NSDictionary * dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
-    NSLog(@"%@",[dict objectForKey:NSFileSize]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,35 +31,19 @@
 
 #pragma mark - Table view data source
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (0 == section) {
-        return 2;
-    }else if (1 == section) {
-        return 1;
+    if (section == 0) {
+        return 4;
+    }else if (section == 1){
+        return 5;
     }
     return 0;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (0 == indexPath.section) {
-        if (0 == indexPath.row) {
-            //clear cache
-        }else if (1 == indexPath.row) {
-            //切换版本
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoBootstrap", @"destine", nil]];
-        }
-    }else if(1 == indexPath.section) {
-        //登出
-        [ActionAccount doLogout];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
-    }
-}
-
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -120,9 +99,4 @@
 }
 */
 
-- (IBAction)logoutAction:(id)sender {
-    //登出
-    [ActionAccount doLogout];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
-}
 @end

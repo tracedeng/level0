@@ -12,6 +12,11 @@
 #import "ActionMMaterial.h"
 #import "ActionQiniu.h"
 #import "Constance.h"
+#import "MerchantNameVC.h"
+#import "MerchantEmailVC.h"
+#import "MerchantContactNumberVC.h"
+#import "MerchantAddressVC.h"
+#import "MMeExchangeRateVC.h"
 
 @interface MMaterialTVC ()
 @property (nonatomic, retain) NSString *uploadToken;
@@ -84,6 +89,10 @@
             {
                 //名称，right detail
                 cell.detailTextLabel.text = [self.material objectForKey:@"n"];
+                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+                    cell.userInteractionEnabled = FALSE;
+                
+                }
                 break;
             }
             case 1:
@@ -212,6 +221,75 @@
             self.updateMMaterialTypeMask |= MMATERIALTYPELOGO;
         };
         [action doQiniuUpload:photo token:self.uploadToken path:self.path];
+    }else if([segue.sourceViewController isKindOfClass:[MerchantNameVC class]]){
+        MerchantNameVC *merchantnamevc = (MerchantNameVC *)segue.sourceViewController;
+        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+        action.afterModifyMerchantName = ^(NSDictionary *materail){
+            [self.material setObject:merchantnamevc.merchantName forKey:@"n"];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+            
+            self.updateMMaterialTypeMask |= MMATERIALTYPENAME;
+        };
+        [action doModifyMerchantName:merchantnamevc.merchantName merchant:[self.material objectForKey:@"id"]];
+        
+    }else if([segue.sourceViewController isKindOfClass:[MerchantContactNumberVC class]]){
+        MerchantContactNumberVC *merchantvc = (MerchantContactNumberVC *)segue.sourceViewController;
+        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+        action.afterModifyMerchantContactNumber = ^(NSDictionary *materail){
+            [self.material setObject:merchantvc.merchantContactNumber forKey:@"con"];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:3 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+            
+            self.updateMMaterialTypeMask |= MMATERIALTYPECONTRACT;
+        };
+        [action doModifyMerchantContactNumber:merchantvc.merchantContactNumber merchant:[self.material objectForKey:@"id"]];
+        
+    }else if([segue.sourceViewController isKindOfClass:[MerchantEmailVC class]]){
+        MerchantEmailVC *merchantvc = (MerchantEmailVC *)segue.sourceViewController;
+        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+        action.afterModifyMerchantEmail = ^(NSDictionary *materail){
+            [self.material setObject:merchantvc.merchantEmail forKey:@"em"];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:4 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+            
+            self.updateMMaterialTypeMask |= MMATERIALTYPEEMAIL;
+        };
+        [action doModifyMerchantEmail:merchantvc.merchantEmail merchant:[self.material objectForKey:@"id"]];
+        
+    }else if([segue.sourceViewController isKindOfClass:[MerchantAddressVC class]]){
+        MerchantAddressVC *merchantvc = (MerchantAddressVC *)segue.sourceViewController;
+        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+        action.afterModifyMerchantAddress = ^(NSDictionary *materail){
+            [self.material setObject:merchantvc.merchantAddress forKey:@"lo"];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:5 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+            
+            self.updateMMaterialTypeMask |= MMATERIALTYPELOCATION;
+        };
+        [action doModifyMerchantAddress:merchantvc.merchantAddress merchant:[self.material objectForKey:@"id"]];
     }
+
+
+
 }
+
+#pragma mark - Segue Methods
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"gomerchantname"]){
+        //TODO 认证商户提示不可修改姓名
+        [segue.destinationViewController setValue:[self.material objectForKey:@"n"] forKey:@"merchantName"];
+        
+    } else if([segue.identifier isEqualToString:@"gomerchantemail"]){
+        [segue.destinationViewController setValue:[self.material objectForKey:@"em"] forKey:@"merchantEmail"];
+        
+    } else if([segue.identifier isEqualToString:@"gocontactnumber"]){
+        [segue.destinationViewController setValue:[self.material objectForKey:@"con"] forKey:@"merchantContactNumber"];
+        
+    } else if([segue.identifier isEqualToString:@"gomerchantaddress"]){
+        [segue.destinationViewController setValue:[self.material objectForKey:@"lo"] forKey:@"merchantAddress"];
+        
+    }
+        
+    
+}
+
 @end

@@ -97,6 +97,12 @@
 		B5EDC3171C2C24EB002E2833 /* MerchantSelectTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3161C2C24EB002E2833 /* MerchantSelectTVC.m */; };
 		B5EDC31A1C2C251F002E2833 /* MerchantSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3191C2C251F002E2833 /* MerchantSelectCell.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
+		B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */; };
+		B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3221C2ED516002E2833 /* MerchantEmailVC.m */; };
+		B5EDC3261C2ED53E002E2833 /* MerchantContactNumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */; };
+		B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */; };
+		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
+		B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -272,6 +278,18 @@
 		B5EDC3191C2C251F002E2833 /* MerchantSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantSelectCell.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
+		B5EDC31E1C2D8F85002E2833 /* MerchantNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantNameVC.h; sourceTree = "<group>"; };
+		B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantNameVC.m; sourceTree = "<group>"; };
+		B5EDC3211C2ED516002E2833 /* MerchantEmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantEmailVC.h; sourceTree = "<group>"; };
+		B5EDC3221C2ED516002E2833 /* MerchantEmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantEmailVC.m; sourceTree = "<group>"; };
+		B5EDC3241C2ED53E002E2833 /* MerchantContactNumberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantContactNumberVC.h; sourceTree = "<group>"; };
+		B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantContactNumberVC.m; sourceTree = "<group>"; };
+		B5EDC3271C2ED556002E2833 /* MerchantAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantAddressVC.h; sourceTree = "<group>"; };
+		B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantAddressVC.m; sourceTree = "<group>"; };
+		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
+		B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeExchangeRateVC.m; path = Merchant/Tab3/MMeExchangeRateVC.m; sourceTree = "<group>"; };
+		B5EDC3331C314C32002E2833 /* MerchantVerifiedInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantVerifiedInfoTVC.h; path = Merchant/Tab3/MerchantVerifiedInfoTVC.h; sourceTree = "<group>"; };
+		B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantVerifiedInfoTVC.m; path = Merchant/Tab3/MerchantVerifiedInfoTVC.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -534,6 +552,18 @@
 				19339AE11C257F1200791A9E /* MMaterialTVC.m */,
 				19339AE31C258AB500791A9E /* MMeTVC.h */,
 				19339AE41C258AB500791A9E /* MMeTVC.m */,
+				B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */,
+				B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */,
+				B5EDC31E1C2D8F85002E2833 /* MerchantNameVC.h */,
+				B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */,
+				B5EDC3211C2ED516002E2833 /* MerchantEmailVC.h */,
+				B5EDC3221C2ED516002E2833 /* MerchantEmailVC.m */,
+				B5EDC3241C2ED53E002E2833 /* MerchantContactNumberVC.h */,
+				B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */,
+				B5EDC3271C2ED556002E2833 /* MerchantAddressVC.h */,
+				B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */,
+				B5EDC3331C314C32002E2833 /* MerchantVerifiedInfoTVC.h */,
+				B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */,
 			);
 			name = Tab3;
 			sourceTree = "<group>";
@@ -852,17 +882,20 @@
 				B5EDC3111C2BE25E002E2833 /* CreditExchangeTVC.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				19339AEE1C26782D00791A9E /* ApplyCreditTVC.m in Sources */,
+				B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */,
 				193C37A81C1C19240017CC9C /* AwardDerivateCell.m in Sources */,
 				19339B1B1C3013F800791A9E /* InterchangeController.m in Sources */,
 				19339AFF1C2950BD00791A9E /* MAwardApplyTVC.m in Sources */,
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,
 				193C38321C1D94DE0017CC9C /* CircleImageCVLayout.m in Sources */,
+				B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */,
 				193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */,
 				193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */,
 				193C378D1C1BED3C0017CC9C /* SettingTVC.m in Sources */,
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
 				193C38341C1D94DE0017CC9C /* ImageFullscreenSVC.m in Sources */,
+				B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */,
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
 				193C37A51C1C17870017CC9C /* AwardDerivateCVC.m in Sources */,
 				19339B121C2C343700791A9E /* COneAwardTVC.m in Sources */,
@@ -877,6 +910,7 @@
 				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
 				B5EDC30E1C2BD7D5002E2833 /* CreditExchangeInCell.m in Sources */,
 				193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */,
+				B5EDC3261C2ED53E002E2833 /* MerchantContactNumberVC.m in Sources */,
 				B5EDC3021C2853E3002E2833 /* CreditExchangeInTVC.m in Sources */,
 				19339ADC1C23E74F00791A9E /* MMaterialManager.m in Sources */,
 				193C38331C1D94DE0017CC9C /* ImageCheckableCell.m in Sources */,
@@ -892,6 +926,7 @@
 				B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
+				B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */,
 				19339B021C2950FA00791A9E /* MAwardApplyCell.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
@@ -914,6 +949,7 @@
 				B5EDC3171C2C24EB002E2833 /* MerchantSelectTVC.m in Sources */,
 				193C382B1C1D94DE0017CC9C /* NSString+Md5.m in Sources */,
 				193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */,
+				B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

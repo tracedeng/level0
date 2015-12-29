@@ -23,6 +23,11 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
     //    EUPDATELOCATION,
     //    EUPDATEREPORT = 20,     //举报
     EMMATERIALOPTYPEMAX,
+    EUPDATEMERCHANTNAME,    //商户名称
+    EUPDATEMERCHANTEMAIL,    //商户邮箱
+    EUPDATEMERCHANTCONTACTNUMBER,    //商户联系电话
+    EUPDATEMERCHANTADDRESS,    //商户
+    EUPDATEMERCHANTEXCHANTRATE,    //商户
 };
 
 //- (void)doQueryMaterial;
@@ -36,6 +41,12 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 - (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo;
 - (void)doQueryUploadToken:(NSString *)merchant;
 - (void)doModifyLogo:(NSString *)logo merchant:(NSString *)merchant;
+- (void)doModifyMerchantName:(NSString *)merchantname merchant:(NSString *)merchant;
+- (void)doModifyMerchantEmail:(NSString *)merchantemil merchant:(NSString *)merchant;
+- (void)doModifyMerchantContactNumber:(NSString *)merchantcontactnumber merchant:(NSString *)merchant;
+- (void)doModifyMerchantAddress:(NSString *)merchantaddress merchant:(NSString *)merchant;
+- (void)doModifyMerchantExchangeRate:(NSString *)exchangerate merchant:(NSString *)merchant;
+
 //- (void)doModifyLocation:(NSString *)location;
 //- (void)doReport:(NSString *)message;
 //
@@ -50,6 +61,12 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 @property (nonatomic, copy) void (^afterCreateMerchantOfAccount)(NSString *merchant);
 @property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyLogo)();
+@property (nonatomic, copy) void (^afterModifyMerchantName)(NSDictionary *material);
+@property (nonatomic, copy) void (^afterModifyMerchantEmail)(NSDictionary *material);
+@property (nonatomic, copy) void (^afterModifyMerchantContactNumber)(NSDictionary *material);
+@property (nonatomic, copy) void (^afterModifyMerchantAddress)(NSDictionary *material);
+@property (nonatomic, copy) void (^afterModifyMerchantExchangeRate)(NSDictionary *material);
+
 //@property (nonatomic, copy) void (^afterModifyLocation)(NSString *location);
 
 

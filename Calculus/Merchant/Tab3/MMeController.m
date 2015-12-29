@@ -92,6 +92,9 @@
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [source.material objectForKey:@"logo"]];
             [self.material setObject:[source.material objectForKey:@"logo"] forKey:@"logo"];
             [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path]];
+        }else if(source.updateMMaterialTypeMask & MMATERIALTYPENAME){
+            [self.material setObject:[source.material objectForKey:@"n"] forKey:@"n"];
+            self.nameLabel.text = [source.material objectForKey:@"n"];
         }
     }
 }
