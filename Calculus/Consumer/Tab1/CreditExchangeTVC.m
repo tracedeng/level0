@@ -10,10 +10,14 @@
 #import "ActionCredit.h"
 #import "SVProgressHUD.h"
 #import "CreditExchangeCell.h"
+#import "MerchantSelectTVC.h"
 
 
 @interface CreditExchangeTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
+@property (nonatomic, retain) NSIndexPath *lastCheckedIndex;  //nil表示没有cell被选中
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
 @end
 
 @implementation CreditExchangeTVC
@@ -26,12 +30,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.title = @"积分汇率";
     self.creditList = [[NSMutableArray alloc] init];
-    //
-    //    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
-    //
-    //    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    
+    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+    
+    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadCreditList:nil];
 
 }
@@ -79,28 +83,57 @@
     return [[[self.creditList objectAtIndex:section] objectForKey:@"cr"] count];
 }
 
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[self.creditList objectAtIndex:section] objectForKey:@"t"];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CreditExchangeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];
+    
     // Configure the cell...
     cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
-
+    cell.tableView = tableView;
+    
+    __block CreditExchangeCell *_cell = cell;
+    cell.afterToggleAction = ^(BOOL checked, NSIndexPath *indexPath) {
+        if (self.lastCheckedIndex == indexPath) {
+            //toggle同一cell
+            self.lastCheckedIndex = !checked ? indexPath : nil;
+            [_cell toggle];
+            self.nextstep.enabled = !checked ? YES : NO;
+        }else{
+            //toggle上一次选择的row
+            if (self.lastCheckedIndex) {
+                CreditExchangeCell *lastCell = (CreditExchangeCell *)[tableView cellForRowAtIndexPath:self.lastCheckedIndex];
+                [lastCell toggle];
+            }
+            self.lastCheckedIndex = indexPath;
+            [_cell toggle];
+            self.nextstep.enabled = YES;
+        }
+    };
     
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40.0f;
+}
+
+//必须，否则第二个section head上面包含footer的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.01f;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    CreditExchangeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];
-    //cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
-    
-}
-
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    CreditExchangeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];
+//    cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+//    
+//}
 
 
 /*
@@ -137,14 +170,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ChooseMerchantIn"]) {
+        if ([segue.destinationViewController isKindOfClass:[MerchantSelectTVC class]]) {
+            MerchantSelectTVC *destination = (MerchantSelectTVC *)segue.destinationViewController;
+            NSDictionary *oneMCredit =[self.creditList objectAtIndex:self.lastCheckedIndex.section];
+            NSDictionary *oneCredit = [[oneMCredit objectForKey:@"cr"] objectAtIndex:self.lastCheckedIndex.row];
+            destination.merchantOut = @{@"name": [oneMCredit objectForKey:@"t"], @"logo": [oneMCredit objectForKey:@"l"], @"mIdentity": [oneMCredit objectForKey:@"i"], @"cIdentity": [oneCredit objectForKey:@"id"], @"quantity": [oneCredit objectForKey:@"qu"], @"expire": [oneCredit objectForKey:@"et"]};
+        }
+    }
 }
-*/
+
 
 @end

@@ -27,6 +27,7 @@
 		19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B0B1C2ABEA000791A9E /* ConsumerAwardCell.m */; };
 		19339B0F1C2C340900791A9E /* COneAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B0E1C2C340900791A9E /* COneAwardCell.m */; };
 		19339B121C2C343700791A9E /* COneAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B111C2C343700791A9E /* COneAwardTVC.m */; };
+		19339B1B1C3013F800791A9E /* InterchangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B1A1C3013F800791A9E /* InterchangeController.m */; };
 		193C371C1C1B0D800017CC9C /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C371B1C1B0D800017CC9C /* AccountController.m */; };
 		193C371F1C1B12270017CC9C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C371E1C1B12270017CC9C /* Account.storyboard */; };
 		193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37211C1B16C60017CC9C /* ActionAccount.m */; };
@@ -142,6 +143,8 @@
 		19339B0E1C2C340900791A9E /* COneAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COneAwardCell.m; path = Merchant/Tab1/COneAwardCell.m; sourceTree = "<group>"; };
 		19339B101C2C343700791A9E /* COneAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COneAwardTVC.h; path = Merchant/Tab1/COneAwardTVC.h; sourceTree = "<group>"; };
 		19339B111C2C343700791A9E /* COneAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COneAwardTVC.m; path = Merchant/Tab1/COneAwardTVC.m; sourceTree = "<group>"; };
+		19339B191C3013F800791A9E /* InterchangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterchangeController.h; sourceTree = "<group>"; };
+		19339B1A1C3013F800791A9E /* InterchangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterchangeController.m; sourceTree = "<group>"; };
 		193C371A1C1B0D800017CC9C /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = Account/AccountController.h; sourceTree = "<group>"; };
 		193C371B1C1B0D800017CC9C /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = Account/AccountController.m; sourceTree = "<group>"; };
 		193C371E1C1B12270017CC9C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Account.storyboard; path = Account/Account.storyboard; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				B5EDC3161C2C24EB002E2833 /* MerchantSelectTVC.m */,
 				B5EDC3181C2C251F002E2833 /* MerchantSelectCell.h */,
 				B5EDC3191C2C251F002E2833 /* MerchantSelectCell.m */,
+				19339B191C3013F800791A9E /* InterchangeController.h */,
+				19339B1A1C3013F800791A9E /* InterchangeController.m */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -848,6 +853,7 @@
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				19339AEE1C26782D00791A9E /* ApplyCreditTVC.m in Sources */,
 				193C37A81C1C19240017CC9C /* AwardDerivateCell.m in Sources */,
+				19339B1B1C3013F800791A9E /* InterchangeController.m in Sources */,
 				19339AFF1C2950BD00791A9E /* MAwardApplyTVC.m in Sources */,
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,

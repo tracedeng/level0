@@ -7,10 +7,21 @@
 //
 
 #import "MerchantSelectCell.h"
+#import "ClickableImageView.h"
+#import "UIImageView+WebCache.h"
+#import "Constance.h"
+
+
 @interface MerchantSelectCell()
 @property (weak, nonatomic) IBOutlet UILabel *merchantLBL;
-@property (weak, nonatomic) IBOutlet UILabel *rateLBL;
-@property (weak, nonatomic) IBOutlet UILabel *amountLBL;
+//@property (weak, nonatomic) IBOutlet UILabel *rateLBL;
+//@property (weak, nonatomic) IBOutlet UILabel *amountLBL;
+@property (weak, nonatomic) IBOutlet ClickableImageView *checkImageView;
+@property (weak, nonatomic) IBOutlet ClickableImageView *logoImageView;
+
+@property (nonatomic, assign) BOOL checked;     // toggle时上一个状态
+@property (nonatomic, retain) UIImage *checkedImage;
+@property (nonatomic, retain) UIImage *uncheckedImage;
 
 @end
 
@@ -25,21 +36,31 @@
 
     // Configure the view for the selected state
 }
-- (void)setAwardInfo:(NSDictionary *)awardInfo {
-    self.merchantLBL.text = [awardInfo objectForKey:@"n"];
-    //self.rateLBL.text = [awardInfo objectForKey:@"et"];
-    //self.amountLBL.text = [NSString stringWithFormat:@"%d",[[awardInfo objectForKey:@"qu"] integerValue]];
-    
-    //    self.merchant_name_label.text = [awardInfo objectForKey:@"t"];
-    //    self.total_award_label.text = [NSString stringWithFormat:@"%ld",[[awardInfo objectForKey:@"a"] integerValue]];
-    //    //    self.merchant_logo_image.image = [UIImage imageNamed:@"icon-mcd"];
-    //    //    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    //
-    //    //圆角
-    //    self.merchant_logo_image.clipsToBounds = YES;
-    //    self.merchant_logo_image.layer.cornerRadius = self.merchant_logo_image.frame.size.height / 2.0;
-    //
-    //    NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [awardInfo objectForKey:@"l"]];
-    //    [self.merchant_logo_image sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
+
+- (void)setMerchantInfo:(NSDictionary *)merchantInfo {
+    if (merchantInfo) {
+        self.checkedImage = [UIImage imageNamed:@"icon-radio-checked"];
+        self.uncheckedImage = [UIImage imageNamed:@"icon-radio"];
+
+        _merchantInfo = merchantInfo;
+        self.merchantLBL.text = [merchantInfo objectForKey:@"n"];
+        
+        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [merchantInfo objectForKey:@"logo"]];
+        [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
+        self.logoImageView.clipsToBounds = YES;
+        self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
+        
+        self.checkImageView.afterClickImageView = ^(id sender) {
+            if (self.afterToggleAction) {
+                self.afterToggleAction(self.checked, [self.tableView indexPathForCell:self]);
+            }
+        };
+    }
 }
+
+- (void)toggle {
+    self.checkImageView.image = self.checked ? self.uncheckedImage : self.checkedImage;
+    self.checked = !self.checked;
+}
+
 @end

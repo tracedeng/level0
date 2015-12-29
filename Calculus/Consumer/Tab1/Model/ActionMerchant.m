@@ -35,7 +35,7 @@
 - (void)doConsumerQueryOtherMerchantList:(NSString *)merchant{
     self.type = ECONSUMERQUERYMERCHANTLIST;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"verified_merchant", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"verified_merchant", @"type", @"both", @"verified",self.account, @"numbers", self.skey, @"session_key", nil];
     
     [self.net requestHttpWithData:postData];
 }

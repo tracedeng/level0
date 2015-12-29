@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MyOneAwardTVC : UITableViewController
-@property (nonatomic, retain) NSString *merchant;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *merchant;   //商家ID
+@property (nonatomic, retain) NSString *name;       //商家名称
+@property (nonatomic, retain) NSString *logo;       //商家logo
 @end

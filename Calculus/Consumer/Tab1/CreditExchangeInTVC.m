@@ -7,29 +7,30 @@
 //
 
 #import "CreditExchangeInTVC.h"
-#import "AwardDerivateCell.h"
+#import "CreditExchangeInCell.h"
 #import "ActionCredit.h"
+#import "InterchangeController.h"
 #import "SVProgressHUD.h"
 
 
 @interface CreditExchangeInTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
+@property (nonatomic, retain) NSIndexPath *lastCheckedIndex;  //nil表示没有cell被选中
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
 @end
 
 @implementation CreditExchangeInTVC
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.creditList = [[NSMutableArray alloc] init];
-//
-//    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
-//    
-//    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
-    [self loadCreditList:nil];
 
-    
+    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+
+    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    [self loadCreditList:nil];
 }
 
 
@@ -65,140 +66,88 @@
 }
 
 
-/*
- #pragma mark - Navigation
+#pragma mark - Table view data source delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.creditList count];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[[self.creditList objectAtIndex:section] objectForKey:@"cr"] count];
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[self.creditList objectAtIndex:section] objectForKey:@"t"];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CreditExchangeInCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeInCell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+    cell.tableView = tableView;
+    
+    __block CreditExchangeInCell *_cell = cell;
+    cell.afterToggleAction = ^(BOOL checked, NSIndexPath *indexPath) {
+        if (self.lastCheckedIndex == indexPath) {
+            //toggle同一cell
+            self.lastCheckedIndex = !checked ? indexPath : nil;
+            [_cell toggle];
+            self.nextstep.enabled = !checked ? YES : NO;
+        }else{
+            //toggle上一次选择的row
+            if (self.lastCheckedIndex) {
+                CreditExchangeInCell *lastCell = (CreditExchangeInCell *)[tableView cellForRowAtIndexPath:self.lastCheckedIndex];
+                [lastCell toggle];
+            }
+            self.lastCheckedIndex = indexPath;
+            [_cell toggle];
+            self.nextstep.enabled = YES;
+        }
+    };
+    
+    return cell;
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40.0f;
+}
+
+//必须，否则第二个section head上面包含footer的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+////    CreditExchangeInCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];
+//    //cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+//    
+//}
+
+
+#pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
- }
- */
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
-
-
-#pragma mark - Table view data source delegate
-//返回分组数
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-//返回总行数
--(NSInteger ) tableView:(UITableView *)tableView
-  numberOfRowsInSection:(NSInteger )section
-{
-    
-    return [self.creditList count];
-}
-
-// 添加每一行的信息
-- (UITableViewCell *) tableView:(UITableView *)tableView
-          cellForRowAtIndexPath:(NSIndexPath *)indexPath
-
-{
-    
-    NSString *tag=@"tag";
-    
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tag];
-    
-    if (cell==nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:tag];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.showsReorderControl = YES;
-    }
-    
-    NSUInteger row=[indexPath row];
-    
-    NSMutableDictionary *details = [[NSMutableDictionary alloc] init];
-    details = [self.creditList objectAtIndex:row];
-    cell.textLabel.text = [details objectForKey:@"et"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",[details objectForKey:@"s"]];
-    
-    
-    
-    //cell.text =[listData objectAtIndex :row];
-    //选中后的颜色又不发生改变，进行下面的设置
-    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //不需要分割线
-    //tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-
-    
-    
-    return cell;
-    
-}
-
-#pragma mark 第section组显示的头部标题
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-        if (section == 0) return self.name;
-        if (section == 1) return @"湖南";
-        if (section == 2) return @"湖北";
-        if (section == 3) return @"广西";
-        if (section == 4) return @"浙江";
-        if (section == 5) return @"安徽";
-    return @"non";
-    
-//    NSDictionary *province = _allProvinces[section];
-//    
-//    return province[kHeader];
-}
-//#pragma mark 第section组显示的尾部标题
-//- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-//{
-//        if (section == 0) return @"广东好";
-//        if (section == 1) return @"湖南也好";
-//        if (section == 2) return @"湖北更好";
-//        if (section == 3) return @"广西一般般";
-//        if (section == 4) return @"浙江应该可以吧";
-//        if (section == 5) return @"安徽确实有点坑爹";
-//    return @"non";
-//
-////    return _allProvinces[section][kFooter];
-//}
-
-
-
-#pragma mark - Table view data delegate
-
-//响应用户单击事件
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    self.nextPageTitle = [self.listData objectAtIndex:indexPath.row];
-//    self.nextPageContent = [self.listContent objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"gocreditexchangeinconfirm" sender:self]; //这个方法。跳转页面。
-    
-    
-}
-
-
-
-
-
-
-#pragma mark - Segue Methods
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-//    
-//    NSString *data = self.nextPageTitle;
-//    NSString *content = self.nextPageContent;
-//    
-//    newsDetailsViewController *detailsview = segue.destinationViewController;
-//    if ([detailsview respondsToSelector:@selector(setParamx:)]) {
-//        [detailsview setValue:data forKey:@"paramx"];
-//    }
-//    if ([detailsview respondsToSelector:@selector(setParamy:)]) {
-//        [detailsview setValue:content forKey:@"paramy"];
-//    }
-    
-    
+     if ([segue.identifier isEqualToString:@"ShowInterchange"]) {
+         if ([segue.destinationViewController isKindOfClass:[InterchangeController class]]) {
+             InterchangeController *destination = (InterchangeController *)segue.destinationViewController;
+             
+             NSDictionary *oneMCredit =[self.creditList objectAtIndex:self.lastCheckedIndex.section];
+             NSDictionary *oneCredit = [[oneMCredit objectForKey:@"cr"] objectAtIndex:self.lastCheckedIndex.row];
+             destination.merchantOut = @{@"name": [oneMCredit objectForKey:@"t"], @"logo": [oneMCredit objectForKey:@"l"], @"mIdentity": [oneMCredit objectForKey:@"i"], @"cIdentity": [oneCredit objectForKey:@"id"], @"quantity": [oneCredit objectForKey:@"qu"], @"expire": [oneCredit objectForKey:@"et"]};
+             
+             destination.merchantIn = @{@"name": self.name, @"logo": self.logo, @"identity": self.merchant};
+         }
+     }
 }
 
 

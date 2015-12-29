@@ -7,6 +7,19 @@
 //
 
 #import "CreditExchangeInCell.h"
+#import "ClickableImageView.h"
+
+@interface CreditExchangeInCell ()
+@property (weak, nonatomic) IBOutlet UILabel *creditDueLBL;
+@property (weak, nonatomic) IBOutlet UILabel *creditAmountLBL;
+@property (weak, nonatomic) IBOutlet ClickableImageView *checkImageView;
+
+@property (nonatomic, assign) BOOL checked;     // toggle时上一个状态
+@property (nonatomic, retain) UIImage *checkedImage;
+@property (nonatomic, retain) UIImage *uncheckedImage;
+
+@end
+
 
 @implementation CreditExchangeInCell
 
@@ -18,6 +31,28 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setAwardInfo:(NSDictionary *)awardInfo {
+    if (awardInfo) {
+        _awardInfo = awardInfo;
+        
+        self.checkedImage = [UIImage imageNamed:@"icon-radio-checked"];
+        self.uncheckedImage = [UIImage imageNamed:@"icon-radio"];
+        
+        self.creditDueLBL.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
+        self.creditAmountLBL.text = [[awardInfo objectForKey:@"qu"] stringValue];
+        self.checkImageView.afterClickImageView = ^(id sender) {
+            if (self.afterToggleAction) {
+                self.afterToggleAction(self.checked, [self.tableView indexPathForCell:self]);
+            }
+        };
+    }
+}
+
+- (void)toggle {
+    self.checkImageView.image = self.checked ? self.uncheckedImage : self.checkedImage;
+    self.checked = !self.checked;
 }
 
 @end

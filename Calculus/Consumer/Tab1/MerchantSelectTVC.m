@@ -10,9 +10,13 @@
 #import "ActionMerchant.h"
 #import "SVProgressHUD.h"
 #import "MerchantSelectCell.h"
+#import "InterchangeController.h"
 
 @interface MerchantSelectTVC ()
 @property (nonatomic, retain) NSMutableArray *merchantList;
+@property (nonatomic, retain) NSIndexPath *lastCheckedIndex; //nil表示没有cell被选中
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
 
 @end
 
@@ -28,10 +32,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.merchantList = [[NSMutableArray alloc] init];
-    //
-    //    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
-    //
-    //    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    
+    [self.refreshControl addTarget:self action:@selector(loadMerchantList:) forControlEvents:UIControlEventValueChanged];
+    
+    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadMerchantList:nil];
 
 }
@@ -40,6 +44,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)loadMerchantList:(id)sender {
     ActionMerchant *merchant = [[ActionMerchant alloc] init];
     merchant.afterConsumerQueryOtherMerchantList = ^(NSArray *merchantList) {
@@ -76,16 +81,38 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.merchantList count];
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MerchantSelectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MerchantSelect" forIndexPath:indexPath];
+
     // Configure the cell...
-    //    cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+    cell.merchantInfo = [self.merchantList objectAtIndex:indexPath.row];
+    cell.tableView = tableView;
     
+    __block MerchantSelectCell *_cell = cell;
+    cell.afterToggleAction = ^(BOOL checked, NSIndexPath *indexPath) {
+        if (self.lastCheckedIndex == indexPath) {
+            //toggle同一cell
+            self.lastCheckedIndex = !checked ? indexPath : nil;
+            [_cell toggle];
+            self.nextstep.enabled = !checked ? YES : NO;
+        }else{
+            //toggle上一次选择的row
+            if (self.lastCheckedIndex) {
+                MerchantSelectCell *lastCell = (MerchantSelectCell *)[tableView cellForRowAtIndexPath:self.lastCheckedIndex];
+                [lastCell toggle];
+            }
+            self.lastCheckedIndex = indexPath;
+            [_cell toggle];
+            self.nextstep.enabled = YES;
+        }
+    };
     
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70.0f;
+    return 44.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -126,14 +153,23 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowInterchange"]) {
+        if ([segue.destinationViewController isKindOfClass:[InterchangeController class]]) {
+            InterchangeController *destination = (InterchangeController *)segue.destinationViewController;
+            
+            destination.merchantOut = self.merchantOut;
+            
+            NSDictionary *merchant =[self.merchantList objectAtIndex:self.lastCheckedIndex.row];
+            destination.merchantIn = @{@"name": [merchant objectForKey:@"n"], @"logo": [merchant objectForKey:@"logo"], @"identity": [merchant objectForKey:@"id"]};
+        }
+    }
 }
-*/
 
 @end

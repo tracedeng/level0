@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CreditExchangeInCell : UITableViewCell
+@property (nonatomic, retain) NSDictionary *awardInfo;
+@property (nonatomic, retain) UITableView *tableView;
 
+- (void)toggle;
+
+@property (nonatomic, copy) void (^afterToggleAction)(BOOL checked, NSIndexPath *indexPath);
 @end

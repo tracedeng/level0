@@ -11,5 +11,5 @@
 @interface CreditExchangeInTVC : UITableViewController
 @property (nonatomic, retain) NSString *merchant;
 @property (nonatomic, retain) NSString *name;
-
+@property (nonatomic, retain) NSString *logo;
 @end

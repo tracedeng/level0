@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MerchantSelectTVC : UITableViewController
+@property (nonatomic, retain) NSDictionary *merchantOut;
 @property (nonatomic, retain) NSString *merchant;
-@property (nonatomic, retain) NSString *name;
 @end

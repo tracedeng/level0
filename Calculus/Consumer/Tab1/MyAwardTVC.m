@@ -163,6 +163,7 @@
             MyOneAwardTVC *destination = (MyOneAwardTVC *)segue.destinationViewController;
             destination.merchant = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"i"];
             destination.name = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"t"];
+            destination.logo = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"l"];
         }
     }
 }

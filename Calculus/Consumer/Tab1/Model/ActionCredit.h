@@ -18,7 +18,8 @@ typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
     ECONSUMERHANDLETYPEMAX,
     ECONSUMERQUERYOTHERCREDITLIST,          //查询所有积分列表
     ECONSUMERQUERYMERCHANTLIST,             //查询商户列表
-    
+    ECREDITINTERCHANGE,                     //积分互换
+    ECREDITOPTYPEMAX,
 };
 
 - (void)doConsumerQueryAllCredit;
@@ -26,18 +27,19 @@ typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
 - (void)doConsumerCreateConsumption:(NSString *)merchant money:(NSInteger)money;
 - (void)doConsumerQueryOtherCreditList:(NSString *)merchant;
 - (void)doConsumerQueryOtherMerchantList:(NSString *)merchant;
-
+- (void)doCreditInterchange:(NSString *)credit from_merchant:(NSString *)from quantity:(NSInteger)quantity to_merchant:(NSString *)to exec_exchange:(BOOL)exec;
 
 @property (nonatomic, copy) void (^afterConsumerQueryAllCredit)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterConsumerQueryOneCredit)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterConsumerCreateConsumption)();
 @property (nonatomic, copy) void (^afterConsumerQueryOtherCreditList)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantList)(NSArray *merchantList);
+@property (nonatomic, copy) void (^afterCreditInterchange)(NSInteger quantity, NSInteger fee);
 
 
 @property (nonatomic, copy) void (^afterConsumerQueryAllCreditFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConsumerQueryOneCreditFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConsumerQueryOtherCreditListFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantListFailed)(NSString *message);
-
+@property (nonatomic, copy) void (^afterCreditInterchangeFailed)(NSString *message);
 @end

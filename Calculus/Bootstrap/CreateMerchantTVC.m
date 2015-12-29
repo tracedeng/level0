@@ -180,6 +180,7 @@
         [action doQiniuUpload:photo token:self.uploadToken path:self.path];
     }
 }
+
 - (IBAction)createMerchantAction:(id)sender {
     // 创建商家
     NSString *name = self.nameField.text;

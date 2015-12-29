@@ -7,13 +7,16 @@
 //
 
 #import "CreditExchangeCell.h"
+#import "ClickableImageView.h"
+
 @interface CreditExchangeCell ()
 @property (weak, nonatomic) IBOutlet UILabel *creditDueLBL;
 @property (weak, nonatomic) IBOutlet UILabel *creditAmountLBL;
-@property (weak, nonatomic) IBOutlet UIImageView *raionIMG;
+@property (weak, nonatomic) IBOutlet ClickableImageView *checkImageView;
 
-@property (nonatomic, assign) BOOL rowselected;
-
+@property (nonatomic, assign) BOOL checked;     // toggle时上一个状态
+@property (nonatomic, retain) UIImage *checkedImage;
+@property (nonatomic, retain) UIImage *uncheckedImage;
 
 @end
 
@@ -31,24 +34,20 @@
 }
 
 - (void)setAwardInfo:(NSDictionary *)awardInfo {
-    self.creditDueLBL.text = [awardInfo objectForKey:@"et"];
-    self.creditAmountLBL.text = [NSString stringWithFormat:@"%d",[[awardInfo objectForKey:@"qu"] integerValue]];
-
-//    self.merchant_name_label.text = [awardInfo objectForKey:@"t"];
-//    self.total_award_label.text = [NSString stringWithFormat:@"%ld",[[awardInfo objectForKey:@"a"] integerValue]];
-//    //    self.merchant_logo_image.image = [UIImage imageNamed:@"icon-mcd"];
-//    //    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    
-//    //圆角
-//    self.merchant_logo_image.clipsToBounds = YES;
-//    self.merchant_logo_image.layer.cornerRadius = self.merchant_logo_image.frame.size.height / 2.0;
-//    
-//    NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [awardInfo objectForKey:@"l"]];
-//    [self.merchant_logo_image sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
-}
--(void) setRaionIMG:(UIImageView *)raionIMG {
-    self.raionIMG.image = [UIImage imageNamed:@"icon-radio-selected"];
-
+    self.checkedImage = [UIImage imageNamed:@"icon-radio-checked"];
+    self.uncheckedImage = [UIImage imageNamed:@"icon-radio"];
+    
+    self.creditDueLBL.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
+    self.creditAmountLBL.text = [[awardInfo objectForKey:@"qu"] stringValue];
+    self.checkImageView.afterClickImageView = ^(id sender) {
+        if (self.afterToggleAction) {
+            self.afterToggleAction(self.checked, [self.tableView indexPathForCell:self]);
+        }
+    };
 }
 
+- (void)toggle {
+    self.checkImageView.image = self.checked ? self.uncheckedImage : self.checkedImage;
+    self.checked = !self.checked;
+}
 @end

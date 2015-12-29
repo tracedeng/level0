@@ -75,6 +75,14 @@
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doCreditInterchange:(NSString *)credit from_merchant:(NSString *)from quantity:(NSInteger)quantity to_merchant:(NSString *)to exec_exchange:(BOOL)exec  {
+    self.type = ECREDITINTERCHANGE;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"interchange", @"type", credit, @"credit", from, @"from", to, @"to", [NSString stringWithFormat:@"%ld", (long)quantity], @"quantity", [NSString stringWithFormat:@"%d", exec], @"exec_interchange", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+
 #pragma mark -NetCommunication Delegate
 
 //@optional http请求成功返回
@@ -125,6 +133,15 @@
                 }
                 break;
             }
+            case ECREDITINTERCHANGE:
+            {
+                NSInteger quantity = [[responseObject valueForKeyPath:@"r.quantity"] integerValue];
+                NSInteger fee = [[responseObject valueForKeyPath:@"r.fee"] integerValue];
+                if (self.afterCreditInterchange) {
+                    self.afterCreditInterchange(quantity, fee);
+                }
+                break;
+            }
             default:
                 break;
         }
@@ -159,6 +176,14 @@
                 NSString *message = [responseObject objectForKey:@"m"];
                 if (self.afterConsumerQueryOtherMerchantListFailed) {
                     self.afterConsumerQueryOtherMerchantListFailed(message);
+                }
+                break;
+            }
+            case ECREDITINTERCHANGE:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterCreditInterchangeFailed) {
+                    self.afterCreditInterchangeFailed(message);
                 }
                 break;
             }
