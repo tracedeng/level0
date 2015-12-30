@@ -36,4 +36,22 @@
 }
 */
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    //TODO 判断各种按键是否正常
+    if (string.length == 0){
+        self.exchangeRate = [self.exchangeRateTXT.text substringToIndex:[self.exchangeRateTXT.text length] -1];
+        return YES;     //支持已经输满长度按退格键删除
+    }
+    if (textField == self.exchangeRateTXT) {
+        if (textField.text.length > 15) {
+            return NO;
+        }
+    }
+    self.exchangeRate = [self.exchangeRateTXT.text stringByAppendingString:string];
+    return YES;
+}
+
+
+
 @end

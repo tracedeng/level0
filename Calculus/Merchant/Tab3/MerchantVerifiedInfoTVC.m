@@ -9,6 +9,10 @@
 #import "MerchantVerifiedInfoTVC.h"
 
 @interface MerchantVerifiedInfoTVC ()
+@property (weak, nonatomic) IBOutlet UILabel *bondLBL;
+@property (weak, nonatomic) IBOutlet UILabel *businessAllLBL;
+@property (weak, nonatomic) IBOutlet UILabel *businessRestLBL;
+@property (weak, nonatomic) IBOutlet UILabel *brtLBL;
 
 @end
 
@@ -16,6 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.bondLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bo"]] stringByAppendingString:@"元"];
+    self.businessAllLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bal"]] stringByAppendingString:@"积分"];
+    self.businessRestLBL.text = @"TODO...";
+    self.brtLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"brt"]] stringByAppendingString:@" : 1"];
+
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

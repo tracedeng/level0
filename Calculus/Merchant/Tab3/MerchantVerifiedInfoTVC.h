@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MerchantVerifiedInfoTVC : UITableViewController
+@property (nonatomic, retain) NSMutableDictionary *business;
 
 @end

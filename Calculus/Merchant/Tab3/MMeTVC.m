@@ -8,12 +8,16 @@
 
 #import "MMeTVC.h"
 #import "MMeExchangeRateVC.h"
+#import "ActionBusiness.h"
 #import "ActionMMaterial.h"
+#import "MMaterialManager.h"
+
 
 @interface MMeTVC ()
 #define MMATERIALEXCHANGERATE  0x1
 @property (weak, nonatomic) IBOutlet UILabel *merchantCreditAmountLBL;
 @property (weak, nonatomic) IBOutlet UILabel *exchangeRateLBL;
+
 
 @end
 
@@ -27,41 +31,27 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self loadMerchantInfo];
+    
+    self.material = [NSMutableDictionary dictionaryWithDictionary:[MMaterialManager getMaterial]];
+
+    if (self.material) {
+        ActionBusiness *action = [[ActionBusiness alloc] init];
+        action.afterQueryBusinessParameters = ^(NSDictionary *business){
+            if(business){
+                self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
+
+                self.business = [NSMutableDictionary dictionaryWithDictionary:business];
+            }
+        };
+        [action doQueryBusinessParameters:[self.material objectForKey:@"id"]];
+    }
+    
+    
+    
+    
+ 
+    
 }
-- (void)loadMerchantInfo{
-    //TODO 获取最新数据
-    self.exchangeRateLBL.text = @"1:1(TODO...)";
-
-//    ActionMMaterial *action = [[ActionMMaterial alloc] init];
-//    action.afterModifyMerchantExchangeRate
-//    
-//    ActionMCredit *credit = [[ActionMCredit alloc] init];
-//    credit.afterMerchantQueryApplyCredit = ^(NSArray *creditList) {
-//        [self.creditList removeAllObjects];
-//        [self.creditList addObjectsFromArray:creditList];
-//        [self.tableView reloadData];
-//        if ([self.refreshControl isRefreshing]) {
-//            [self.refreshControl endRefreshing];
-//        }
-//        if ([SVProgressHUD isVisible]) {
-//            [SVProgressHUD dismiss];
-//        }
-//    };
-//    credit.afterMerchantQueryApplyCreditFailed = ^(NSString *message) {
-//        if ([self.refreshControl isRefreshing]) {
-//            [self.refreshControl endRefreshing];
-//        }
-//        if ([SVProgressHUD isVisible]) {
-//            [SVProgressHUD dismiss];
-//        }
-//        //        TODO...错误提示
-//    };
-//    [credit doMerchantQueryApplyCredit];
-//
-}
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -159,14 +149,13 @@
 - (IBAction)unwindUpdateMaterial:(UIStoryboardSegue *)segue {
     if([segue.sourceViewController isKindOfClass:[MMeExchangeRateVC class]]){
         MMeExchangeRateVC *merchantvc = (MMeExchangeRateVC *)segue.sourceViewController;
-        ActionMMaterial *action = [[ActionMMaterial alloc] init];
-        action.afterModifyMerchantExchangeRate = ^(NSDictionary *materail){
-            [self.material setObject:merchantvc.exchangeRate forKey:@"er"];
-            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
-            
-            self.updateMMaterialTypeMask |= MMATERIALEXCHANGERATE;
+        ActionBusiness *action = [[ActionBusiness alloc] init];
+        action.afterModifyConsumptionRatio = ^(NSDictionary *result){
+            [self.business setObject:merchantvc.exchangeRate forKey:@"crt"];
+            self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]];
+            self.updateMMaterialTypeMask |= MBUSINESSTYPECONSUMPTIONRATIO;
         };
-        [action doModifyMerchantExchangeRate:merchantvc.exchangeRate merchant:[self.material objectForKey:@"id"]];
+        [action doModifyConsumptionRatio:merchantvc.exchangeRate merchant:[self.material objectForKey:@"id"]];
         
     }
     
@@ -175,16 +164,21 @@
 }
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Segue Methods
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"goupdatecrt"]){
+        [segue.destinationViewController setValue:[NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]] forKey:@"exchangeRate"];
+        
+    }else if([segue.identifier isEqualToString:@"goverifiedinfo"]){
+        [segue.destinationViewController setValue:self.business forKey:@"business"];
+        
+    }
+    
+    
 }
-*/
-
 
 
 @end
