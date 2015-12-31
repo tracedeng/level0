@@ -104,12 +104,6 @@
     
     [self.net requestHttpWithData:postData];
 }
-- (void)doModifyMerchantExchangeRate:(NSString *)exchangerate merchant:(NSString *)merchant{
-    self.type = EUPDATEMERCHANTEXCHANTRATE;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", exchangerate, @"exchange_rate", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
-    
-    [self.net requestHttpWithData:postData];
-}
 
 #pragma mark -NetCommunication Delegate
 //@optional http请求成功返回
@@ -193,15 +187,7 @@
                 }
                 break;
             }
-            case EUPDATEMERCHANTEXCHANTRATE:
-            {
-                NSDictionary *result = [responseObject objectForKey:@"r"];
-                if (self.afterModifyMerchantExchangeRate) {
-                    self.afterModifyMerchantExchangeRate(result);
-                }
-                break;
-            }
-            default:
+                       default:
                 break;
         }
     }

@@ -16,6 +16,7 @@
 #define CREDITURL @"http://localhost:8000/credit"
 #define FLOWTURL @"http://localhost:8000/flow"
 #define QINIUURL @"http://7xor5x.com1.z0.glb.clouddn.com"
+#define BUSINESSURL @"http://localhost:8000/business"
 #else
 #define CONSUMERURL @"http://localhost/consumer"
 #define MERCHANTURL @"http://localhost/merchant"

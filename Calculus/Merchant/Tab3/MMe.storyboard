@@ -348,30 +348,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mfp-CX-ExN">
+                                <rect key="frame" x="15" y="74" width="570" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="兑换比例" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yID-yi-LfP">
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="kYl-LI-StI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=":  1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA9-Im-m3h">
+                                        <rect key="frame" x="285" y="0.0" width="285" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="l4d-Aa-Vwv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gam-i0-GyV">
-                                <rect key="frame" x="20" y="109" width="560" height="1"/>
+                                <rect key="frame" x="15" y="109" width="570" height="1"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="UEq-Rc-23k"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="兑换比例" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yID-yi-LfP">
-                                <rect key="frame" x="20" y="74" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="kYl-LI-StI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yID-yi-LfP" firstAttribute="leading" secondItem="Xng-0X-zYQ" secondAttribute="leading" constant="20" id="4CG-Go-utz"/>
-                            <constraint firstItem="yID-yi-LfP" firstAttribute="top" secondItem="PhU-tk-rrL" secondAttribute="bottom" constant="30" id="5FX-gN-9Pl"/>
-                            <constraint firstItem="Gam-i0-GyV" firstAttribute="leading" secondItem="yID-yi-LfP" secondAttribute="leading" id="ept-10-OQk"/>
-                            <constraint firstItem="Gam-i0-GyV" firstAttribute="top" secondItem="yID-yi-LfP" secondAttribute="top" constant="35" id="hEO-WQ-enT"/>
-                            <constraint firstAttribute="trailing" secondItem="yID-yi-LfP" secondAttribute="trailing" constant="20" id="o6m-fm-L7Z"/>
-                            <constraint firstItem="Gam-i0-GyV" firstAttribute="trailing" secondItem="yID-yi-LfP" secondAttribute="trailing" id="v4H-qE-mSq"/>
+                            <constraint firstItem="Gam-i0-GyV" firstAttribute="top" secondItem="mfp-CX-ExN" secondAttribute="top" constant="35" id="7V7-uc-n5X"/>
+                            <constraint firstItem="Gam-i0-GyV" firstAttribute="trailing" secondItem="mfp-CX-ExN" secondAttribute="trailing" id="AhT-mH-aAL"/>
+                            <constraint firstItem="Gam-i0-GyV" firstAttribute="leading" secondItem="mfp-CX-ExN" secondAttribute="leading" id="dsL-dT-Gmp"/>
+                            <constraint firstAttribute="trailing" secondItem="mfp-CX-ExN" secondAttribute="trailing" constant="15" id="dyn-So-MUI"/>
+                            <constraint firstItem="mfp-CX-ExN" firstAttribute="top" secondItem="PhU-tk-rrL" secondAttribute="bottom" constant="30" id="hTh-Bm-pmb"/>
+                            <constraint firstItem="mfp-CX-ExN" firstAttribute="leading" secondItem="Xng-0X-zYQ" secondAttribute="leading" constant="15" id="jAt-SE-4gx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="兑换比例" id="mNf-zq-9Yv">
@@ -843,6 +857,12 @@
                             <outlet property="delegate" destination="a7F-p1-Zhf" id="uGU-Tu-dmD"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bondLBL" destination="rmv-BC-hkh" id="zoY-Sc-pJg"/>
+                        <outlet property="brtLBL" destination="oa5-Sv-cHF" id="r9m-6c-ufI"/>
+                        <outlet property="businessAllLBL" destination="neM-4k-wqB" id="tAm-ol-pFJ"/>
+                        <outlet property="businessRestLBL" destination="lSC-qm-AAq" id="bkg-L8-q3a"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAx-HA-TW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -907,7 +927,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="GR0-t0-1e6" kind="show" id="VEg-1H-Zi7"/>
+                                            <segue destination="GR0-t0-1e6" kind="show" identifier="goupdatecrt" id="VEg-1H-Zi7"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="X4T-Jh-bwr" detailTextLabel="LSc-eL-lAo" style="IBUITableViewCellStyleValue1" id="36t-qi-0hs">
@@ -934,7 +954,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="a7F-p1-Zhf" kind="show" id="i4u-EU-EId"/>
+                                            <segue destination="a7F-p1-Zhf" kind="show" identifier="goverifiedinfo" id="i4u-EU-EId"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

@@ -103,6 +103,7 @@
 		B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */; };
+		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -290,6 +291,8 @@
 		B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeExchangeRateVC.m; path = Merchant/Tab3/MMeExchangeRateVC.m; sourceTree = "<group>"; };
 		B5EDC3331C314C32002E2833 /* MerchantVerifiedInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantVerifiedInfoTVC.h; path = Merchant/Tab3/MerchantVerifiedInfoTVC.h; sourceTree = "<group>"; };
 		B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantVerifiedInfoTVC.m; path = Merchant/Tab3/MerchantVerifiedInfoTVC.m; sourceTree = "<group>"; };
+		B5EDC3751C326C9F002E2833 /* ActionBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionBusiness.h; path = Merchant/Tab3/Model/ActionBusiness.h; sourceTree = "<group>"; };
+		B5EDC3761C326C9F002E2833 /* ActionBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionBusiness.m; path = Merchant/Tab3/Model/ActionBusiness.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,6 +323,8 @@
 			children = (
 				19339AD41C23DEF800791A9E /* ActionMMaterial.h */,
 				19339AD51C23DEF800791A9E /* ActionMMaterial.m */,
+				B5EDC3751C326C9F002E2833 /* ActionBusiness.h */,
+				B5EDC3761C326C9F002E2833 /* ActionBusiness.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -554,6 +559,8 @@
 				19339AE41C258AB500791A9E /* MMeTVC.m */,
 				B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */,
 				B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */,
+				B5EDC3331C314C32002E2833 /* MerchantVerifiedInfoTVC.h */,
+				B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */,
 				B5EDC31E1C2D8F85002E2833 /* MerchantNameVC.h */,
 				B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */,
 				B5EDC3211C2ED516002E2833 /* MerchantEmailVC.h */,
@@ -562,8 +569,6 @@
 				B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */,
 				B5EDC3271C2ED556002E2833 /* MerchantAddressVC.h */,
 				B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */,
-				B5EDC3331C314C32002E2833 /* MerchantVerifiedInfoTVC.h */,
-				B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */,
 			);
 			name = Tab3;
 			sourceTree = "<group>";
@@ -924,6 +929,7 @@
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
 				19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */,
 				B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */,
+				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */,
