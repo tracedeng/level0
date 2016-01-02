@@ -104,6 +104,7 @@
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
+		B5EDC37D1C3430BE002E2833 /* ActionFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC37C1C3430BE002E2833 /* ActionFlow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -293,6 +294,8 @@
 		B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantVerifiedInfoTVC.m; path = Merchant/Tab3/MerchantVerifiedInfoTVC.m; sourceTree = "<group>"; };
 		B5EDC3751C326C9F002E2833 /* ActionBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionBusiness.h; path = Merchant/Tab3/Model/ActionBusiness.h; sourceTree = "<group>"; };
 		B5EDC3761C326C9F002E2833 /* ActionBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionBusiness.m; path = Merchant/Tab3/Model/ActionBusiness.m; sourceTree = "<group>"; };
+		B5EDC37B1C3430BE002E2833 /* ActionFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionFlow.h; path = Merchant/Tab3/Model/ActionFlow.h; sourceTree = "<group>"; };
+		B5EDC37C1C3430BE002E2833 /* ActionFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionFlow.m; path = Merchant/Tab3/Model/ActionFlow.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,6 +328,8 @@
 				19339AD51C23DEF800791A9E /* ActionMMaterial.m */,
 				B5EDC3751C326C9F002E2833 /* ActionBusiness.h */,
 				B5EDC3761C326C9F002E2833 /* ActionBusiness.m */,
+				B5EDC37B1C3430BE002E2833 /* ActionFlow.h */,
+				B5EDC37C1C3430BE002E2833 /* ActionFlow.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -881,6 +886,7 @@
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				193C38361C1D94DE0017CC9C /* ImageListCVC.m in Sources */,
 				19339AEB1C26773400791A9E /* ScanMerchantController.m in Sources */,
+				B5EDC37D1C3430BE002E2833 /* ActionFlow.m in Sources */,
 				193C38371C1D94DE0017CC9C /* PhotoAlbum.m in Sources */,
 				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,

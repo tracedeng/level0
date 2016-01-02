@@ -11,12 +11,13 @@
 #import "ActionBusiness.h"
 #import "ActionMMaterial.h"
 #import "MMaterialManager.h"
+#import "ActionFlow.h"
 
 
 @interface MMeTVC ()
 #define MMATERIALEXCHANGERATE  0x1
-@property (weak, nonatomic) IBOutlet UILabel *merchantCreditAmountLBL;
 @property (weak, nonatomic) IBOutlet UILabel *exchangeRateLBL;
+@property (weak, nonatomic) IBOutlet UILabel *merchantCreditAmountLBL;
 
 
 @end
@@ -41,9 +42,23 @@
                 self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
 
                 self.business = [NSMutableDictionary dictionaryWithDictionary:business];
+                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+
             }
         };
         [action doQueryBusinessParameters:[self.material objectForKey:@"id"]];
+    
+        ActionFlow *action2 = [[ActionFlow alloc] init];
+        action2.afterQqueryFlow = ^(NSDictionary *flow){
+            if (flow) {
+          
+                self.merchantCreditAmountLBL.text = [ [[NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]] stringByAppendingString:@" / "] stringByAppendingString:  [NSString stringWithFormat:@"%@",[flow objectForKey:@"is"]]];
+
+//                self.merchantCreditAmountLBL.text = [NSString stringWithFormat:@"%@", [flow objectForKey:@"up"]] ;
+                self.flow = [NSMutableDictionary dictionaryWithDictionary:flow];
+            }
+        };
+        [action2 doQueryFlow:[self.material objectForKey:@"id"]];
     }
     
     
@@ -102,15 +117,49 @@
     return 0.0f;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
     // Configure the cell...
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                break;
+            }
+            case 1:
+            {
+                if ([self.business objectForKey:@"crt"]  == nil) {
+                    cell.userInteractionEnabled = FALSE;
+                } else{
+                    cell.userInteractionEnabled = TRUE;
+                }
+                break;
+            }
+            case 2:
+            {
+//TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
+//                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+//                    cell.userInteractionEnabled = TRUE;
+//                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+//                    cell.userInteractionEnabled = FALSE;
+//                }
+                break;
+            }
+            default:
+                break;
+        }
+
+       }else if (indexPath.section == 1){
+        
+       }else if (indexPath.section == 2){
+        //管理员，right detail
+        //        cell.detailTextLabel.text = [self.material objectForKey:@"lo"];
+    }
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -152,7 +201,7 @@
         ActionBusiness *action = [[ActionBusiness alloc] init];
         action.afterModifyConsumptionRatio = ^(NSDictionary *result){
             [self.business setObject:merchantvc.exchangeRate forKey:@"crt"];
-            self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]];
+            self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
             self.updateMMaterialTypeMask |= MBUSINESSTYPECONSUMPTIONRATIO;
         };
         [action doModifyConsumptionRatio:merchantvc.exchangeRate merchant:[self.material objectForKey:@"id"]];
@@ -174,6 +223,7 @@
         
     }else if([segue.identifier isEqualToString:@"goverifiedinfo"]){
         [segue.destinationViewController setValue:self.business forKey:@"business"];
+        [segue.destinationViewController setValue:self.flow forKey:@"flow"];
         
     }
     

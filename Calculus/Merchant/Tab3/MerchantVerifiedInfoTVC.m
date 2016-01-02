@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *businessAllLBL;
 @property (weak, nonatomic) IBOutlet UILabel *businessRestLBL;
 @property (weak, nonatomic) IBOutlet UILabel *brtLBL;
+@property (weak, nonatomic) IBOutlet UILabel *balanceLBL;
 
 @end
 
@@ -22,10 +23,12 @@
     [super viewDidLoad];
 
     self.bondLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bo"]] stringByAppendingString:@"元"];
-    self.businessAllLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bal"]] stringByAppendingString:@"积分"];
-    self.businessRestLBL.text = @"TODO...";
+    self.businessAllLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"up"]] stringByAppendingString:@"积分"];
+    self.businessRestLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"mi"]] stringByAppendingString:@"积分"];
     self.brtLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"brt"]] stringByAppendingString:@" : 1"];
+    self.balanceLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bal"]] stringByAppendingString:@"元"];
 
+    
     
     
     // Uncomment the following line to preserve selection between presentations.
