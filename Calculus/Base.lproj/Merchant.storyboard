@@ -48,7 +48,7 @@
         <!--活动-->
         <scene sceneID="5OK-C8-ieD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="INu-b0-NMY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="INu-b0-NMY" customClass="MActivityNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="活动" image="icon-find" id="SUW-0i-71b"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6eo-oV-tr2">
