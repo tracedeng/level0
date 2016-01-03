@@ -109,7 +109,8 @@
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
             
             // Create the actions.
-            UIAlertAction *maleAction = [UIAlertAction actionWithTitle:selectButtonMaleTitle style:UIAlertViewStyleSecureTextInput handler:^(UIAlertAction *action) {
+            UIAlertAction *maleAction = [UIAlertAction actionWithTitle:selectButtonMaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
                 DLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
                
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
@@ -122,7 +123,7 @@
                 
             }];
             
-            UIAlertAction *femaleAction = [UIAlertAction actionWithTitle:selectButtonFemaleTitle style:UIAlertControllerStyleActionSheet handler:^(UIAlertAction *action) {
+            UIAlertAction *femaleAction = [UIAlertAction actionWithTitle:selectButtonFemaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 DLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
                 
                 ActionMaterial *gender = [[ActionMaterial alloc] init];

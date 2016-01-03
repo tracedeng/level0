@@ -15,5 +15,7 @@
 @property (nonatomic, assign) NSInteger updateMMaterialTypeMask;
 @property (nonatomic, retain) NSMutableDictionary *material;
 @property (nonatomic, retain) NSMutableDictionary *business;
+@property (nonatomic, retain) NSMutableDictionary *flow;
+
 
 @end
