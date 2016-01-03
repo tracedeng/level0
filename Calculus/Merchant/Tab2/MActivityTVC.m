@@ -2,12 +2,20 @@
 //  MActivityTVC.m
 //  Calculus
 //
+<<<<<<< HEAD
 //  Created by ben on 16/1/2.
 //  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
 #import "MActivityTVC.h"
 #import "MActivityCell.h"
+=======
+//  Created by tracedeng on 15/12/31.
+//  Copyright © 2015年 tracedeng. All rights reserved.
+//
+
+#import "MActivityTVC.h"
+>>>>>>> 589c93d5bc4177a3bdf99d925d3f3e35abf2c5c1
 
 @interface MActivityTVC ()
 
@@ -34,11 +42,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
+<<<<<<< HEAD
     return 1;
+=======
+    return 0;
+>>>>>>> 589c93d5bc4177a3bdf99d925d3f3e35abf2c5c1
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
+<<<<<<< HEAD
     return 5;
 }
 
@@ -46,12 +59,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MAcitivityCell" forIndexPath:indexPath];
   //  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+=======
+    return 0;
+}
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+>>>>>>> 589c93d5bc4177a3bdf99d925d3f3e35abf2c5c1
     
     // Configure the cell...
     
     return cell;
 }
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> 589c93d5bc4177a3bdf99d925d3f3e35abf2c5c1
 
 /*
 // Override to support conditional editing of the table view.
@@ -61,7 +86,11 @@
 }
 */
 
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> 589c93d5bc4177a3bdf99d925d3f3e35abf2c5c1
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -71,7 +100,11 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> 589c93d5bc4177a3bdf99d925d3f3e35abf2c5c1
 
 /*
 // Override to support rearranging the table view.

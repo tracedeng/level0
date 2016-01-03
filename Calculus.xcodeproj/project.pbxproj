@@ -78,6 +78,10 @@
 		1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */; };
 		1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3761BE89F6700C2DCF4 /* Assets.xcassets */; };
 		1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */; };
+		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
+		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
+		19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */; };
+		19CAA8E21C354E5200010F68 /* MActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E11C354E5200010F68 /* MActivityTVC.m */; };
 		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
@@ -251,6 +255,13 @@
 		1942C3791BE89F6700C2DCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1942C37B1BE89F6700C2DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
+		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
+		19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityNavigationController.h; path = Merchant/Tab2/MActivityNavigationController.h; sourceTree = "<group>"; };
+		19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityNavigationController.m; path = Merchant/Tab2/MActivityNavigationController.m; sourceTree = "<group>"; };
+		19CAA8DC1C354E1B00010F68 /* ActionMActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMActivity.h; path = Merchant/Tab2/Model/ActionMActivity.h; sourceTree = "<group>"; };
+		19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMActivity.m; path = Merchant/Tab2/Model/ActionMActivity.m; sourceTree = "<group>"; };
+		19CAA8E01C354E5200010F68 /* MActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityTVC.h; path = Merchant/Tab2/MActivityTVC.h; sourceTree = "<group>"; };
+		19CAA8E11C354E5200010F68 /* MActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityTVC.m; path = Merchant/Tab2/MActivityTVC.m; sourceTree = "<group>"; };
 		19CBBBF61C21A62F002A920E /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/MaterialManager.h; sourceTree = "<group>"; };
 		19CBBBF71C21A62F002A920E /* MaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialManager.m; path = Account/MaterialManager.m; sourceTree = "<group>"; };
 		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
@@ -551,6 +562,19 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		193C37901C1BF6CD0017CC9C /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				19CAA8DF1C354E2300010F68 /* Model */,
+				19CAA8D71C354D2F00010F68 /* MActivity.storyboard */,
+				19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */,
+				19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */,
+				19CAA8E01C354E5200010F68 /* MActivityTVC.h */,
+				19CAA8E11C354E5200010F68 /* MActivityTVC.m */,
+			);
+			name = Tab2;
+			sourceTree = "<group>";
+		};
 		193C37911C1BF6D70017CC9C /* Tab3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +739,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		19CAA8DF1C354E2300010F68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19CAA8DC1C354E1B00010F68 /* ActionMActivity.h */,
+				19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		19CBBBF91C21B4B9002A920E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +861,7 @@
 			files = (
 				1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */,
 				B5EDC38B1C38182A002E2833 /* MActivity.storyboard in Resources */,
+				/*19CAA8D81C354D2F00010F68 *//* MActivity.storyboard in Resources */,
 				1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */,
 				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
@@ -897,6 +931,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */,
+				19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */,
 				193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */,
 				B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */,
 				193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */,
@@ -940,6 +975,7 @@
 				193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */,
 				B5EDC3911C381971002E2833 /* MActivityTVC.m in Sources */,
 				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
+				19CAA8E21C354E5200010F68 /* MActivityTVC.m in Sources */,
 				B5EDC30E1C2BD7D5002E2833 /* CreditExchangeInCell.m in Sources */,
 				193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */,
 				B5EDC3261C2ED53E002E2833 /* MerchantContactNumberVC.m in Sources */,
@@ -979,6 +1015,7 @@
 				19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,
 				193C38411C1D95920017CC9C /* GTMBase64.m in Sources */,
+				19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */,
 				193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */,
 				B5EDC3171C2C24EB002E2833 /* MerchantSelectTVC.m in Sources */,
 				193C382B1C1D94DE0017CC9C /* NSString+Md5.m in Sources */,
