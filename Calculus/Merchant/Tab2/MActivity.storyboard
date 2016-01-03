@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--活动-->
+        <scene sceneID="5T6-WC-xh7">
+            <objects>
+                <tableViewController storyboardIdentifier="MActivityRoot" id="pTO-c3-cqL" customClass="MActivityTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1uG-Tt-nXz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="jCG-VN-XlZ">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jCG-VN-XlZ" id="Fwe-JT-fVK">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4q-5J-FOh">
+                                            <rect key="frame" x="8" y="4" width="38" height="35"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活动名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xH-2Y-7XU">
+                                            <rect key="frame" x="54" y="11" width="68" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pTO-c3-cqL" id="kta-7e-5Yc"/>
+                            <outlet property="delegate" destination="pTO-c3-cqL" id="Gl9-TP-qvU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="活动" id="zzR-OY-NZh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cAu-99-CSn">
+                            <connections>
+                                <segue destination="l4q-KN-GXN" kind="show" id="lAD-24-VRc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHT-VF-pGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="427"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XdF-2x-9bx">
+            <objects>
+                <viewController id="l4q-KN-GXN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OEx-yp-0k7"/>
+                        <viewControllerLayoutGuide type="bottom" id="FWx-U3-z9K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TjN-Ft-xdK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-3a-7qR">
+                                <rect key="frame" x="15" y="74" width="570" height="148"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SxR-8w-JI8">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="148"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-ap-8n2">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="6Vx-Kq-6ph"/>
+                                                    <constraint firstAttribute="width" constant="120" id="s3g-um-vMn"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="w9w-Cr-2qU">
+                                                <rect key="frame" x="0.0" y="130" width="120" height="18"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="100积分享受此活动" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTx-iF-v4d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="15"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyK-Ey-BUm">
+                                                        <rect key="frame" x="0.0" y="17" width="120" height="1"/>
+                                                        <color key="backgroundColor" red="1" green="0.74509803919999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="Q8l-CG-YXH"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="148" id="Ia3-CW-l2J"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zmo-ib-JPd">
+                                        <rect key="frame" x="130" y="0.0" width="440" height="148"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="KIg-2T-XQ6">
+                                                <rect key="frame" x="0.0" y="0.0" width="440" height="20"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="活动标题" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uxf-Wt-8ee">
+                                                        <rect key="frame" x="0.0" y="0.0" width="440" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-zy-JNl">
+                                                        <rect key="frame" x="0.0" y="19" width="440" height="1"/>
+                                                        <color key="backgroundColor" red="1" green="0.74509803919999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="Jiz-tF-mfi"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="活动介绍" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kir-jY-kxz">
+                                                <rect key="frame" x="0.0" y="30" width="440" height="118"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Zmo-ib-JPd" firstAttribute="bottom" secondItem="SxR-8w-JI8" secondAttribute="bottom" id="kqI-Qf-eK8"/>
+                                </constraints>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SV5-EU-RD5">
+                                <rect key="frame" x="0.0" y="222" width="600" height="378"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SV5-EU-RD5" firstAttribute="leading" secondItem="TjN-Ft-xdK" secondAttribute="leadingMargin" constant="-20" id="28Z-Yp-bB8"/>
+                            <constraint firstItem="MXY-3a-7qR" firstAttribute="top" secondItem="OEx-yp-0k7" secondAttribute="bottom" constant="10" id="5HM-lE-B4P"/>
+                            <constraint firstItem="FWx-U3-z9K" firstAttribute="top" secondItem="SV5-EU-RD5" secondAttribute="bottom" id="9OG-2U-9T7"/>
+                            <constraint firstItem="MXY-3a-7qR" firstAttribute="leading" secondItem="TjN-Ft-xdK" secondAttribute="leading" constant="15" id="JJJ-LX-dUy"/>
+                            <constraint firstAttribute="trailing" secondItem="MXY-3a-7qR" secondAttribute="trailing" constant="15" id="LbA-BJ-dwU"/>
+                            <constraint firstItem="SV5-EU-RD5" firstAttribute="top" secondItem="MXY-3a-7qR" secondAttribute="bottom" id="NVz-Oi-P8u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SV5-EU-RD5" secondAttribute="trailing" constant="-20" id="uPB-MA-pFV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ck-Z2-wvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="427"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-alipay" width="64" height="64"/>
+    </resources>
+</document>

@@ -334,7 +334,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgS-wZ-DNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="iH8-RA-OgS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="1152"/>
+            <point key="canvasLocation" x="1261" y="1151"/>
         </scene>
         <!--兑换比例-->
         <scene sceneID="YoR-jr-n4o">
@@ -351,7 +351,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mfp-CX-ExN">
                                 <rect key="frame" x="15" y="74" width="570" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="兑换比例" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yID-yi-LfP">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="兑换比例" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yID-yi-LfP">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="kYl-LI-StI"/>
@@ -359,7 +359,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=":  1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA9-Im-m3h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":  1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA9-Im-m3h">
                                         <rect key="frame" x="285" y="0.0" width="285" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="l4d-Aa-Vwv"/>
