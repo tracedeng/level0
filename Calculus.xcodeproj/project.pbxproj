@@ -113,7 +113,6 @@
 		B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC39A1C3A05CD002E2833 /* MActivityCreateTVC.m */; };
 		B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */; };
 		B5EDC3A71C3C08FA002E2833 /* MActivityUpdateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */; };
-		B5EDC3AD1C3D3618002E2833 /* MActivityExpireUpdateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3AC1C3D3618002E2833 /* MActivityExpireUpdateVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -320,8 +319,6 @@
 		B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityExpireVC.m; path = Merchant/Tab2/MActivityExpireVC.m; sourceTree = "<group>"; };
 		B5EDC3A51C3C08FA002E2833 /* MActivityUpdateTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityUpdateTVC.h; path = Merchant/Tab2/MActivityUpdateTVC.h; sourceTree = "<group>"; };
 		B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityUpdateTVC.m; path = Merchant/Tab2/MActivityUpdateTVC.m; sourceTree = "<group>"; };
-		B5EDC3AB1C3D3618002E2833 /* MActivityExpireUpdateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityExpireUpdateVC.h; path = Merchant/Tab2/MActivityExpireUpdateVC.h; sourceTree = "<group>"; };
-		B5EDC3AC1C3D3618002E2833 /* MActivityExpireUpdateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityExpireUpdateVC.m; path = Merchant/Tab2/MActivityExpireUpdateVC.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -583,8 +580,6 @@
 				B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */,
 				B5EDC3A21C3B9BC9002E2833 /* MActivityExpireVC.h */,
 				B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */,
-				B5EDC3AB1C3D3618002E2833 /* MActivityExpireUpdateVC.h */,
-				B5EDC3AC1C3D3618002E2833 /* MActivityExpireUpdateVC.m */,
 			);
 			name = Tab2;
 			sourceTree = "<group>";
@@ -996,7 +991,6 @@
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
-				B5EDC3AD1C3D3618002E2833 /* MActivityExpireUpdateVC.m in Sources */,
 				B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */,
 				19339B021C2950FA00791A9E /* MAwardApplyCell.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
