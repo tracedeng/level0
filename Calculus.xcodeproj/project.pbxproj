@@ -81,7 +81,6 @@
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
 		19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */; };
-		19CAA8E21C354E5200010F68 /* MActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E11C354E5200010F68 /* MActivityTVC.m */; };
 		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
@@ -113,6 +112,7 @@
 		B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC39A1C3A05CD002E2833 /* MActivityCreateTVC.m */; };
 		B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */; };
 		B5EDC3A71C3C08FA002E2833 /* MActivityUpdateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */; };
+		B5EDC3B31C3E348F002E2833 /* MerchantActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -260,8 +260,6 @@
 		19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityNavigationController.m; path = Merchant/Tab2/MActivityNavigationController.m; sourceTree = "<group>"; };
 		19CAA8DC1C354E1B00010F68 /* ActionMActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMActivity.h; path = Merchant/Tab2/Model/ActionMActivity.h; sourceTree = "<group>"; };
 		19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMActivity.m; path = Merchant/Tab2/Model/ActionMActivity.m; sourceTree = "<group>"; };
-		19CAA8E01C354E5200010F68 /* MActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityTVC.h; path = Merchant/Tab2/MActivityTVC.h; sourceTree = "<group>"; };
-		19CAA8E11C354E5200010F68 /* MActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityTVC.m; path = Merchant/Tab2/MActivityTVC.m; sourceTree = "<group>"; };
 		19CBBBF61C21A62F002A920E /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/MaterialManager.h; sourceTree = "<group>"; };
 		19CBBBF71C21A62F002A920E /* MaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialManager.m; path = Account/MaterialManager.m; sourceTree = "<group>"; };
 		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
@@ -319,6 +317,8 @@
 		B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityExpireVC.m; path = Merchant/Tab2/MActivityExpireVC.m; sourceTree = "<group>"; };
 		B5EDC3A51C3C08FA002E2833 /* MActivityUpdateTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityUpdateTVC.h; path = Merchant/Tab2/MActivityUpdateTVC.h; sourceTree = "<group>"; };
 		B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityUpdateTVC.m; path = Merchant/Tab2/MActivityUpdateTVC.m; sourceTree = "<group>"; };
+		B5EDC3B11C3E348F002E2833 /* MerchantActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantActivityTVC.h; path = Merchant/Tab2/MerchantActivityTVC.h; sourceTree = "<group>"; };
+		B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantActivityTVC.m; path = Merchant/Tab2/MerchantActivityTVC.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -507,7 +507,7 @@
 			children = (
 				193C378F1C1BF5360017CC9C /* Main */,
 				193C378E1C1BF52E0017CC9C /* Tab1 */,
-				B5EDC3951C3821B4002E2833 /* Tab2 */,
+				193C37901C1BF6CD0017CC9C /* Tab2 */,
 				193C37911C1BF6D70017CC9C /* Tab3 */,
 			);
 			name = Merchant;
@@ -570,8 +570,6 @@
 				19CAA8D71C354D2F00010F68 /* MActivity.storyboard */,
 				19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */,
 				19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */,
-				19CAA8E01C354E5200010F68 /* MActivityTVC.h */,
-				19CAA8E11C354E5200010F68 /* MActivityTVC.m */,
 				B5EDC3961C3921EC002E2833 /* MActivityCell.h */,
 				B5EDC3971C3921EC002E2833 /* MActivityCell.m */,
 				B5EDC3991C3A05CD002E2833 /* MActivityCreateTVC.h */,
@@ -580,6 +578,8 @@
 				B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */,
 				B5EDC3A21C3B9BC9002E2833 /* MActivityExpireVC.h */,
 				B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */,
+				B5EDC3B11C3E348F002E2833 /* MerchantActivityTVC.h */,
+				B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */,
 			);
 			name = Tab2;
 			sourceTree = "<group>";
@@ -794,20 +794,6 @@
 			name = CityList;
 			sourceTree = "<group>";
 		};
-		B5EDC3951C3821B4002E2833 /* Tab2 */ = {
-			isa = PBXGroup;
-			children = (
-				B5EDC38A1C38182A002E2833 /* MActivity.storyboard */,
-				B5EDC38C1C3818F5002E2833 /* MActivityNavigationController.h */,
-				B5EDC38D1C3818F6002E2833 /* MActivityNavigationController.m */,
-				B5EDC38F1C381971002E2833 /* MActivityTVC.h */,
-				B5EDC3901C381971002E2833 /* MActivityTVC.m */,
-				B5EDC3921C381EDE002E2833 /* MActivityCell.h */,
-				B5EDC3931C381EDE002E2833 /* MActivityCell.m */,
-			);
-			name = Tab2;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -869,8 +855,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */,
-				B5EDC38B1C38182A002E2833 /* MActivity.storyboard in Resources */,
-				/*19CAA8D81C354D2F00010F68 *//* MActivity.storyboard in Resources */,
+				19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */,
 				1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */,
 				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
@@ -969,7 +954,6 @@
 				193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */,
 				193C378D1C1BED3C0017CC9C /* SettingTVC.m in Sources */,
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
-				B5EDC38E1C3818F6002E2833 /* MActivityNavigationController.m in Sources */,
 				193C38341C1D94DE0017CC9C /* ImageFullscreenSVC.m in Sources */,
 				B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */,
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
@@ -984,9 +968,8 @@
 				19339AD21C23DC6100791A9E /* CreateMerchantTVC.m in Sources */,
 				193C38351C1D94DE0017CC9C /* ImageListCell.m in Sources */,
 				193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */,
-				B5EDC3911C381971002E2833 /* MActivityTVC.m in Sources */,
 				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
-				19CAA8E21C354E5200010F68 /* MActivityTVC.m in Sources */,
+				B5EDC3B31C3E348F002E2833 /* MerchantActivityTVC.m in Sources */,
 				B5EDC30E1C2BD7D5002E2833 /* CreditExchangeInCell.m in Sources */,
 				193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */,
 				B5EDC3261C2ED53E002E2833 /* MerchantContactNumberVC.m in Sources */,
@@ -1005,7 +988,6 @@
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
 				19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */,
 				B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */,
-				B5EDC3941C381EDE002E2833 /* MActivityCell.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,

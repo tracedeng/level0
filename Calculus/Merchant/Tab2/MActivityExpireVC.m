@@ -9,7 +9,7 @@
 #import "MActivityExpireVC.h"
 
 @interface MActivityExpireVC ()
-- (IBAction)dateExpirePicker:(UIDatePicker *)sender;
+- (IBAction)expirePicker:(UIDatePicker *)sender;
 
 @end
 
@@ -35,7 +35,8 @@
 }
 */
 
-- (IBAction)dateExpirePicker:(UIDatePicker *)sender {
+
+- (IBAction)expirePicker:(UIDatePicker *)sender {
     NSDate *select  = [sender date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];

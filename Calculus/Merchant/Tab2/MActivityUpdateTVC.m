@@ -8,7 +8,7 @@
 
 #import "MActivityUpdateTVC.h"
 #import "MActivityExpireVC.h"
-#import "MActivityTVC.h"
+#import "MerchantActivityTVC.h"
 
 @interface MActivityUpdateTVC ()
 @property (weak, nonatomic) IBOutlet UITextField *atitleTXT;
