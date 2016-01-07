@@ -1,21 +1,47 @@
 //
-//  MActivityTVC.m
+//  MActivityUpdateTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 15/12/31.
-//  Copyright © 2015年 tracedeng. All rights reserved.
+//  Created by ben on 16/1/5.
+//  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
-#import "MActivityTVC.h"
+#import "MActivityUpdateTVC.h"
+#import "MActivityExpireVC.h"
+#import "MerchantActivityTVC.h"
 
-@interface MActivityTVC ()
+@interface MActivityUpdateTVC ()
+@property (weak, nonatomic) IBOutlet UITextField *atitleTXT;
+@property (weak, nonatomic) IBOutlet UITextField *acreditTXT;
+@property (weak, nonatomic) IBOutlet UILabel *aexpireTXT;
+@property (weak, nonatomic) IBOutlet UITextView *aintroduceTXT;
 
 @end
 
-@implementation MActivityTVC
+@implementation MActivityUpdateTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.atitle = [self.activity objectForKey:@"t"];
+    self.acredit = [NSString stringWithFormat:@"%@",[self.activity objectForKey:@"cr"] ];
+    self.aintroduce = [self.activity objectForKey:@"in"];
+    self.aexpire_time = [self.activity objectForKey:@"et"];
+    self.aposter = @"TODO POSTER";
+    self.id = [self.activity objectForKey:@"id"];
+    
+    
+    
+    self.atitleTXT.text = self.atitle;
+    self.acreditTXT.text = self.acredit;
+    self.aintroduceTXT.text = self.aintroduce;
+    self.aexpireTXT.text = self.aexpire_time;
+    
+    self.atitleTXT.delegate = self;
+    self.acreditTXT.delegate = self;
+    self.aintroduceTXT.delegate = self;
+
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,13 +58,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 5;
 }
 
 /*
@@ -94,5 +118,54 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+- (IBAction)unwindUpdateExpire:(UIStoryboardSegue *)segue {
+    if([segue.sourceViewController isKindOfClass:[MActivityExpireVC class]]){
+        MActivityExpireVC *activitytvc = (MActivityExpireVC *)segue.sourceViewController;
+        
+        self.aexpire_time = activitytvc.aexpire;
+        self.aexpireTXT.text = activitytvc.aexpire;
+    }
+    
+    
+    
+}
+
+
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    //TODO 判断各种按键是否正常
+    if (string.length == 0){
+        //TODO 退格触发问题无法赋值
+        //        textField.text = [textField.text substringToIndex:[textField.text length] -1];
+        //self.exchangeRate = [self.exchangeRateTXT.text substringToIndex:[self.exchangeRateTXT.text length] -1];
+        return YES;     //支持已经输满长度按退格键删除
+    }
+    if (textField == self.atitleTXT) {
+        if (textField.text.length > 15) {
+            return NO;
+        }else{
+            self.atitle = [self.atitleTXT.text stringByAppendingString:string];
+            
+        }
+    }else if (textField == self.acreditTXT){
+        if (textField.text.length > 15) {
+            return NO;
+        }else{
+            self.acredit = [self.acreditTXT.text stringByAppendingString:string];
+            
+        }
+    }
+    return YES;
+    
+}
+-(void)textViewDidChange:(UITextView *)textView{
+    self.aintroduce = textView.text;
+}
+
 
 @end

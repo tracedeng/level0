@@ -1,28 +1,23 @@
 //
-//  MActivityNavigationController.m
+//  MActivityExpireVC.m
 //  Calculus
 //
-//  Created by ben on 16/1/2.
+//  Created by ben on 16/1/5.
 //  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
-#import "MActivityNavigationController.h"
-#import "MerchantActivityTVC.h"
+#import "MActivityExpireVC.h"
 
-@interface MActivityNavigationController ()
+@interface MActivityExpireVC ()
+- (IBAction)expirePicker:(UIDatePicker *)sender;
 
 @end
 
-@implementation MActivityNavigationController
+@implementation MActivityExpireVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"MActivity" bundle:nil];
-    MerchantActivityTVC *activityRoot =[board instantiateViewControllerWithIdentifier:@"MActivityRoot"];
-    
-    [self pushViewController:activityRoot animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,4 +35,12 @@
 }
 */
 
+
+- (IBAction)expirePicker:(UIDatePicker *)sender {
+    NSDate *select  = [sender date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    self.aexpire = [dateFormatter stringFromDate:select];
+
+}
 @end

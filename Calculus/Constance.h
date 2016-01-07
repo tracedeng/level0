@@ -19,6 +19,7 @@
 #define BUSINESSURL @"http://localhost:8000/business"
 #define FLOWURL @"http://localhost:8000/flow"
 #define DISCOUNTURL @"http://localhost:8000/activity"
+#define ACTIVITYURL @"http://localhost:8000/activity"
 #else
 #define CONSUMERURL @"http://localhost/consumer"
 #define MERCHANTURL @"http://localhost/merchant"

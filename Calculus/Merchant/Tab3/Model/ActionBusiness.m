@@ -53,7 +53,7 @@
         switch (self.type) {
             case EQUERYBUSINESSPARAMETERS:
             {
-                NSArray *result = [responseObject objectForKey:@"r"];
+                NSDictionary *result = [responseObject objectForKey:@"r"];
                 //                NSDictionary *material = [result objectAtIndex:0];
                 if (self.afterQueryBusinessParameters) {
                     NSDictionary *business = [result count] > 0 ? [NSDictionary dictionaryWithDictionary: result] : nil;
