@@ -143,7 +143,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         self.selectRowNumber =[NSNumber numberWithInteger:indexPath.row];
-//        [self performSegueWithIdentifier:@"goupdateactivity" sender:self]; //这个方法。跳转页面。
+        [self performSegueWithIdentifier:@"goupdateactivity" sender:nil]; //这个方法。跳转页面。 nil 表示不跳转？？？
+
 
         
     }
@@ -252,13 +253,30 @@
 //        [segue.destinationViewController setValue:[self.material objectForKey:@"id"] forKey:@"merchant"];
         
     } else if([segue.identifier isEqualToString:@"goupdateactivity"]){
-//        [segue.destinationViewController setValue:[self.activityList objectAtIndex:3] forKey:@"activity"];
-        [segue.destinationViewController setValue:[self.activityList objectAtIndex:[self.selectRowNumber integerValue]] forKey:@"activity"];
-       // [segue.destinationViewController setValue:[self.material objectForKey:@"id"] forKey:@"activity"];
+//        [segue.destinationViewController setValue:[self.activityList objectAtIndex:[self.selectRowNumber integerValue]] forKey:@"activity"];
         
+            if ([segue.destinationViewController isKindOfClass:[MActivityUpdateTVC class]]) {
+                MActivityUpdateTVC *destination = (MActivityUpdateTVC *)segue.destinationViewController;
+                destination.activity = [self.activityList objectAtIndex:[self.selectRowNumber integerValue]];
+            }
+
     }
-    
-    
+
 }
+
+
+
+
+
+
+//传参不跳转方式
+//if ([segue.identifier isEqualToString:@"OneAward"]) {
+//    if ([segue.destinationViewController isKindOfClass:[MyOneAwardTVC class]]) {
+//        MyOneAwardTVC *destination = (MyOneAwardTVC *)segue.destinationViewController;
+//        destination.merchant = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"i"];
+//        destination.name = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"t"];
+//        destination.logo = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"l"];
+//    }
+//}
 
 @end
