@@ -84,7 +84,7 @@
             BuyDiscountTVC *destination = (BuyDiscountTVC *)segue.destinationViewController;
             destination.merchant = self.merchant;
             destination.needQuantity = [[self.discountInfo objectForKey:@"cr"] integerValue];
-//            self.buyDiscountTVC = (BuyDiscountTVC *)segue.destinationViewController;
+            self.buyDiscountTVC = (BuyDiscountTVC *)segue.destinationViewController;
 //            self.buyDiscountTVC.merchant = self.merchant;
         }
     }
@@ -92,11 +92,27 @@
 
 
 - (IBAction)buyDiscountAction:(id)sender {
+    NSArray *credits = [self.buyDiscountTVC spendCredits];
     ActionDiscount *action = [[ActionDiscount alloc] init];
     action.afterConsumerBuyDiscount = ^(NSString *credit) {
         // 购买成功
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"购买活动成功" message:@"请到个人中心查看优惠券" preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+
     };
-    [action doConsumerBuyDiscount:[self.discountInfo objectForKey:@"id"] ofMerchant:self.merchant withCredit:nil];
+    action.afterConsumerBuyDiscountFailed = ^(NSString *message) {
+        // 购买时阿白
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"购买活动失败" message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    };
+    [action doConsumerBuyDiscount:[self.discountInfo objectForKey:@"id"] ofMerchant:self.merchant withCredit:credits];
 
 }
 @end

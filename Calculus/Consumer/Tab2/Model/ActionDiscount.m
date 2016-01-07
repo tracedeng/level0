@@ -50,9 +50,9 @@
     self.type = ECONSUMERBUYDISCOUNT;
     
     // 积分列表转换成json格式
-    NSString *creditJson = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:credits options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding];
-                        
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"buy", @"type", discount, @"discount", merchant, @"merchant", creditJson, @"credits", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSString *creditJson = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:credits options:0 error:nil] encoding:NSUTF8StringEncoding];
+//    NSString *creditJson = @"{\"identity\": \"ad\", \"quantity\": 2}";
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"buy", @"type", discount, @"discount", merchant, @"merchant", creditJson, @"spend", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
     
 }

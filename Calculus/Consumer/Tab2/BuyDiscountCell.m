@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *creditDueLBL;
 @property (weak, nonatomic) IBOutlet UILabel *creditAmountLBL;
 @property (weak, nonatomic) IBOutlet ClickableImageView *checkImageView;
-@property (weak, nonatomic) IBOutlet UITextField *creditTextField;  // 打算花费多少积分
 
 @property (nonatomic, assign) BOOL checked;     // toggle时上一个状态
 @property (nonatomic, retain) UIImage *checkedImage;
@@ -49,10 +48,9 @@
         self.creditDueLBL.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
         self.creditAmountLBL.text = [[awardInfo objectForKey:@"am"] stringValue];
         self.checkImageView.afterClickImageView = ^(id sender) {
-//            if (self.afterToggleAction) {
-//                NSInteger quantity = self.checked ? -[self.creditTextField.text integerValue] : 0;
-//                self.afterToggleAction(self.checked, quantity);
-//            }
+            if (self.afterToggleAction) {
+                self.afterToggleAction(self.checked, [self.tableView indexPathForCell:self]);
+            }
             if (self.currentNeedQuantity) {
                 NSInteger quantity = self.checked ? -[self.creditTextField.text integerValue] : 0;
                 self.effectUpperQuantity = self.currentNeedQuantity(quantity);
@@ -65,7 +63,6 @@
 //                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"abc" message:@"def" preferredStyle:UIAlertControllerStyleActionSheet];
 //                        [alert addAction:[UIAlertAction actionWithTitle:@"ljk" style:UIAlertActionStyleDefault handler:nil]];
 //                        [self presentViewController:alert animated:YES completion:nil];
-//                        self.checked = !self.checked;
                         return ;
                     }else{
                         self.creditTextField.text =[NSString stringWithFormat:@"%ld", self.effectUpperQuantity];

@@ -14,6 +14,7 @@
 @interface BuyDiscountTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
 @property (nonatomic, assign) NSInteger checkedQuantity;        //已选积分量
+@property (nonatomic, retain) NSMutableArray *checkedIndexPath;        //cell选中indexpath
 @end
 
 @implementation BuyDiscountTVC
@@ -28,6 +29,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.creditList = [[NSMutableArray alloc] init];
+    self.checkedIndexPath = [[NSMutableArray alloc] init];
     
     [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
     
@@ -66,6 +68,19 @@
     [credit doConsumerQueryOneCredit:self.merchant];
 }
 
+- (NSArray *)spendCredits {
+    NSMutableArray *credits = [[NSMutableArray alloc] init];
+    for (NSIndexPath *indexPath in self.checkedIndexPath) {
+        BuyDiscountCell *cell = (BuyDiscountCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        NSString *creditQuantity = cell.creditTextField.text;
+        NSString *creditIdentity = [cell.awardInfo objectForKey:@"i"];
+        
+        [credits addObject:@{@"quantity": creditQuantity, @"identity": creditIdentity}];
+    }
+    
+    return credits;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -81,17 +96,17 @@
     
     // Configure the cell...
     cell.awardInfo = [self.creditList objectAtIndex:indexPath.row];
-//    cell.tableView = tableView;
+    cell.tableView = tableView;
     
 //    __block BuyDiscountCell *_cell = cell;
-//    cell.afterToggleAction = ^(BOOL checked, NSInteger quantity) {
-//        self.checkedQuantity += quantity;
-////        if (!checked) {
-//            self.checkedQuantity += [_cell updateQuantity:(self.needQuantity - self.checkedQuantity)];
-////        }
-//        //      CreditExchangeCell *lastCell = (CreditExchangeCell *)[tableView cellForRowAtIndexPath:self.lastCheckedIndex];
-//
-//    };
+    cell.afterToggleAction = ^(BOOL checked, NSIndexPath *indexPath) {
+        //CreditExchangeCell *lastCell = (CreditExchangeCell *)[tableView cellForRowAtIndexPath:self.lastCheckedIndex];
+        if (checked) {
+            [self.checkedIndexPath removeObject:indexPath];
+        }else{
+            [self.checkedIndexPath addObject:indexPath];
+        }
+    };
     cell.currentNeedQuantity = ^(NSInteger quantity) {
         self.checkedQuantity += quantity;
         
