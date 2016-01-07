@@ -82,6 +82,11 @@
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
 		19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */; };
 		19CAA8E21C354E5200010F68 /* MActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E11C354E5200010F68 /* MActivityTVC.m */; };
+		19CAA8E51C39454A00010F68 /* ActionDiscount.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E41C39454A00010F68 /* ActionDiscount.m */; };
+		19CAA8E91C3A3B0C00010F68 /* BuyDiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */; };
+		19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */; };
+		19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */; };
+		19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */; };
 		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
@@ -258,6 +263,16 @@
 		19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMActivity.m; path = Merchant/Tab2/Model/ActionMActivity.m; sourceTree = "<group>"; };
 		19CAA8E01C354E5200010F68 /* MActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityTVC.h; path = Merchant/Tab2/MActivityTVC.h; sourceTree = "<group>"; };
 		19CAA8E11C354E5200010F68 /* MActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityTVC.m; path = Merchant/Tab2/MActivityTVC.m; sourceTree = "<group>"; };
+		19CAA8E31C39454A00010F68 /* ActionDiscount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionDiscount.h; path = Model/ActionDiscount.h; sourceTree = "<group>"; };
+		19CAA8E41C39454A00010F68 /* ActionDiscount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionDiscount.m; path = Model/ActionDiscount.m; sourceTree = "<group>"; };
+		19CAA8E71C3A3B0C00010F68 /* BuyDiscountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountTVC.h; sourceTree = "<group>"; };
+		19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountTVC.m; sourceTree = "<group>"; };
+		19CAA8EA1C3A3B2200010F68 /* BuyDiscountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountCell.h; sourceTree = "<group>"; };
+		19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountCell.m; sourceTree = "<group>"; };
+		19CAA8ED1C3BA28700010F68 /* DiscountIntroduceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountIntroduceController.h; sourceTree = "<group>"; };
+		19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountIntroduceController.m; sourceTree = "<group>"; };
+		19CAA8F01C3BA9B700010F68 /* BuyDiscountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountController.h; sourceTree = "<group>"; };
+		19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountController.m; sourceTree = "<group>"; };
 		19CBBBF61C21A62F002A920E /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/MaterialManager.h; sourceTree = "<group>"; };
 		19CBBBF71C21A62F002A920E /* MaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialManager.m; path = Account/MaterialManager.m; sourceTree = "<group>"; };
 		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
@@ -458,6 +473,7 @@
 		193C37671C1BE2B70017CC9C /* Tab2 */ = {
 			isa = PBXGroup;
 			children = (
+				19CAA8E61C39455000010F68 /* Model */,
 				193C37A91C1C23460017CC9C /* Discount.storyboard */,
 				193C37AC1C1C23D90017CC9C /* DiscountNavigationController.h */,
 				193C37AD1C1C23D90017CC9C /* DiscountNavigationController.m */,
@@ -465,6 +481,14 @@
 				193C37B01C1C24170017CC9C /* DiscountTVC.m */,
 				193C37B21C1C254C0017CC9C /* DiscountCell.h */,
 				193C37B31C1C254C0017CC9C /* DiscountCell.m */,
+				19CAA8ED1C3BA28700010F68 /* DiscountIntroduceController.h */,
+				19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */,
+				19CAA8F01C3BA9B700010F68 /* BuyDiscountController.h */,
+				19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */,
+				19CAA8E71C3A3B0C00010F68 /* BuyDiscountTVC.h */,
+				19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */,
+				19CAA8EA1C3A3B2200010F68 /* BuyDiscountCell.h */,
+				19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -737,6 +761,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		19CAA8E61C39455000010F68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19CAA8E31C39454A00010F68 /* ActionDiscount.h */,
+				19CAA8E41C39454A00010F68 /* ActionDiscount.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		19CBBBF91C21B4B9002A920E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +952,7 @@
 				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
 				B5EDC3111C2BE25E002E2833 /* CreditExchangeTVC.m in Sources */,
+				19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				19339AEE1C26782D00791A9E /* ApplyCreditTVC.m in Sources */,
 				B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */,
@@ -966,9 +1000,11 @@
 				B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
+				19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */,
 				19339B021C2950FA00791A9E /* MAwardApplyCell.m in Sources */,
+				19CAA8E91C3A3B0C00010F68 /* BuyDiscountTVC.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
 				B5EDC31A1C2C251F002E2833 /* MerchantSelectCell.m in Sources */,
@@ -980,6 +1016,7 @@
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
 				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
 				19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */,
+				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
@@ -990,6 +1027,7 @@
 				193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */,
 				B5EDC3171C2C24EB002E2833 /* MerchantSelectTVC.m in Sources */,
 				193C382B1C1D94DE0017CC9C /* NSString+Md5.m in Sources */,
+				19CAA8E51C39454A00010F68 /* ActionDiscount.m in Sources */,
 				193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */,
 				B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */,
 			);

@@ -13,9 +13,8 @@
 //操作类型
 typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
     ECONSUMERQUERYALLCREDIT = 1,              //客户查询积分列表
-    ECONSUMERQUERYONECREDIT,              //客户查询积分列表
+    ECONSUMERQUERYONECREDIT,                //客户查询拥有某商家积分列表
     ECONSUMERCREATECONSUMPTION,               //客户消费创建消费记录
-    ECONSUMERHANDLETYPEMAX,
     ECONSUMERQUERYOTHERCREDITLIST,          //查询所有积分列表
     ECONSUMERQUERYMERCHANTLIST,             //查询商户列表
     ECREDITINTERCHANGE,                     //积分互换

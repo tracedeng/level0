@@ -18,6 +18,7 @@
 #define QINIUURL @"http://7xor5x.com1.z0.glb.clouddn.com"
 #define BUSINESSURL @"http://localhost:8000/business"
 #define FLOWURL @"http://localhost:8000/flow"
+#define DISCOUNTURL @"http://localhost:8000/activity"
 #else
 #define CONSUMERURL @"http://localhost/consumer"
 #define MERCHANTURL @"http://localhost/merchant"
