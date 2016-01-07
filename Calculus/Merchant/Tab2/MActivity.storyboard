@@ -582,52 +582,6 @@
             </objects>
             <point key="canvasLocation" x="1146" y="929"/>
         </scene>
-        <!--到期时间-->
-        <scene sceneID="jwG-Wl-b0D">
-            <objects>
-                <viewController id="xGJ-tJ-lfW" customClass="MActivityExpireUpdateVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gmi-FB-JRl"/>
-                        <viewControllerLayoutGuide type="bottom" id="dDH-8W-mUD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ssh-4p-S6H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="C3U-qx-g5J">
-                                <rect key="frame" x="15" y="79" width="570" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="473507499.747446">
-                                    <!--2016-01-03 09:51:39 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="zh-Hans"/>
-                                <connections>
-                                    <action selector="expirePicker:" destination="xGJ-tJ-lfW" eventType="valueChanged" id="jtc-gj-UaT"/>
-                                </connections>
-                            </datePicker>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="C3U-qx-g5J" secondAttribute="trailing" constant="15" id="HVa-6p-oZh"/>
-                            <constraint firstItem="C3U-qx-g5J" firstAttribute="leading" secondItem="Ssh-4p-S6H" secondAttribute="leading" constant="15" id="RS7-SP-NgH"/>
-                            <constraint firstItem="C3U-qx-g5J" firstAttribute="top" secondItem="Gmi-FB-JRl" secondAttribute="bottom" constant="15" id="UGg-s7-hRv"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="到期时间" id="SDx-K2-O5W">
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="aUu-SX-7GX">
-                            <connections>
-                                <segue destination="e5h-Nb-97B" kind="unwind" unwindAction="unwindUpdateExpire:" id="NK1-6X-Zjp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="expirePicker" destination="C3U-qx-g5J" id="zcS-kg-7vF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DDI-hh-HxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="e5h-Nb-97B" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2797" y="809"/>
-        </scene>
     </scenes>
     <resources>
         <image name="icon-alipay" width="64" height="64"/>
