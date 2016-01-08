@@ -81,12 +81,14 @@
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
 		19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */; };
-		19CAA8E21C354E5200010F68 /* MActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E11C354E5200010F68 /* MActivityTVC.m */; };
 		19CAA8E51C39454A00010F68 /* ActionDiscount.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E41C39454A00010F68 /* ActionDiscount.m */; };
 		19CAA8E91C3A3B0C00010F68 /* BuyDiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */; };
 		19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */; };
 		19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */; };
 		19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */; };
+		19CAA8F51C3F5BB300010F68 /* VoucherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F41C3F5BB300010F68 /* VoucherTVC.m */; };
+		19CAA8F81C3F5BCA00010F68 /* VoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */; };
+		19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */; };
 		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
@@ -266,8 +268,6 @@
 		19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityNavigationController.m; path = Merchant/Tab2/MActivityNavigationController.m; sourceTree = "<group>"; };
 		19CAA8DC1C354E1B00010F68 /* ActionMActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMActivity.h; path = Merchant/Tab2/Model/ActionMActivity.h; sourceTree = "<group>"; };
 		19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMActivity.m; path = Merchant/Tab2/Model/ActionMActivity.m; sourceTree = "<group>"; };
-		19CAA8E01C354E5200010F68 /* MActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityTVC.h; path = Merchant/Tab2/MActivityTVC.h; sourceTree = "<group>"; };
-		19CAA8E11C354E5200010F68 /* MActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityTVC.m; path = Merchant/Tab2/MActivityTVC.m; sourceTree = "<group>"; };
 		19CAA8E31C39454A00010F68 /* ActionDiscount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionDiscount.h; path = Model/ActionDiscount.h; sourceTree = "<group>"; };
 		19CAA8E41C39454A00010F68 /* ActionDiscount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionDiscount.m; path = Model/ActionDiscount.m; sourceTree = "<group>"; };
 		19CAA8E71C3A3B0C00010F68 /* BuyDiscountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountTVC.h; sourceTree = "<group>"; };
@@ -278,6 +278,12 @@
 		19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountIntroduceController.m; sourceTree = "<group>"; };
 		19CAA8F01C3BA9B700010F68 /* BuyDiscountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountController.h; sourceTree = "<group>"; };
 		19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountController.m; sourceTree = "<group>"; };
+		19CAA8F31C3F5BB300010F68 /* VoucherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherTVC.h; sourceTree = "<group>"; };
+		19CAA8F41C3F5BB300010F68 /* VoucherTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherTVC.m; sourceTree = "<group>"; };
+		19CAA8F61C3F5BCA00010F68 /* VoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherCell.h; sourceTree = "<group>"; };
+		19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherCell.m; sourceTree = "<group>"; };
+		19CAA8F91C3F5E1A00010F68 /* ActionVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionVoucher.h; path = Model/ActionVoucher.h; sourceTree = "<group>"; };
+		19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionVoucher.m; path = Model/ActionVoucher.m; sourceTree = "<group>"; };
 		19CBBBF61C21A62F002A920E /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/MaterialManager.h; sourceTree = "<group>"; };
 		19CBBBF71C21A62F002A920E /* MaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialManager.m; path = Account/MaterialManager.m; sourceTree = "<group>"; };
 		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
@@ -525,6 +531,10 @@
 				193C378C1C1BED3C0017CC9C /* SettingTVC.m */,
 				193C38061C1D90500017CC9C /* MaterialTVC.h */,
 				193C38071C1D90500017CC9C /* MaterialTVC.m */,
+				19CAA8F31C3F5BB300010F68 /* VoucherTVC.h */,
+				19CAA8F41C3F5BB300010F68 /* VoucherTVC.m */,
+				19CAA8F61C3F5BCA00010F68 /* VoucherCell.h */,
+				19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -798,6 +808,8 @@
 			children = (
 				19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */,
 				19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */,
+				19CAA8F91C3F5E1A00010F68 /* ActionVoucher.h */,
+				19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -978,6 +990,7 @@
 				B5EDC3111C2BE25E002E2833 /* CreditExchangeTVC.m in Sources */,
 				19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
+				19CAA8F81C3F5BCA00010F68 /* VoucherCell.m in Sources */,
 				19339AEE1C26782D00791A9E /* ApplyCreditTVC.m in Sources */,
 				B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */,
 				193C37A81C1C19240017CC9C /* AwardDerivateCell.m in Sources */,
@@ -999,6 +1012,7 @@
 				19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */,
 				B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
+				19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */,
 				19339AE51C258AB500791A9E /* MMeTVC.m in Sources */,
 				19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */,
 				B5EDC3981C3921EC002E2833 /* MActivityCell.m in Sources */,
@@ -1042,6 +1056,7 @@
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
 				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
+				19CAA8F51C3F5BB300010F68 /* VoucherTVC.m in Sources */,
 				19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */,
 				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,

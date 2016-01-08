@@ -20,6 +20,7 @@
 #define FLOWURL @"http://localhost:8000/flow"
 #define DISCOUNTURL @"http://localhost:8000/activity"
 #define ACTIVITYURL @"http://localhost:8000/activity"
+#define VOUCHERURL @"http://localhost:8000/voucher"
 #else
 #define CONSUMERURL @"http://localhost/consumer"
 #define MERCHANTURL @"http://localhost/merchant"
