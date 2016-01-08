@@ -120,6 +120,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         self.selectRowNumber =[NSNumber numberWithInteger:indexPath.row];
+        [self performSegueWithIdentifier:@"goupdateactivity" sender:nil];
+
     }
 }
 - (IBAction)unwindUpdateActivity:(UIStoryboardSegue *)segue {
@@ -177,16 +179,6 @@
             
             
             //            //TODO 更新新的活动内容，本页更新， 可传递过来 ,新增返回内容为id
-            //            if (activitytvc.atitle && activitytvc.aintroduce && activitytvc.acredit && activitytvc.aposter && activitytvc.aexpire_time) {
-            //
-            //                [[self.activityList objectAtIndex:[self.selectRowNumber integerValue]]  setObject:activitytvc.atitle forKey:@"t"];
-            //                [[self.activityList objectAtIndex:[self.selectRowNumber integerValue]]  setObject:activitytvc.aintroduce forKey:@"in"];
-            //                [[self.activityList objectAtIndex:[self.selectRowNumber integerValue]]  setObject:activitytvc.acredit forKey:@"cr"];
-            //                [[self.activityList objectAtIndex:[self.selectRowNumber integerValue]]  setObject:activitytvc.aposter forKey:@"po"];
-            //                [[self.activityList objectAtIndex:[self.selectRowNumber integerValue]]  setObject:activitytvc.aexpire_time forKey:@"et"];
-            //                }
-            //
-            //            [self.activityList addObject:newactivity];
             //考虑更新后，首页活动列表更新
             [self.tableView reloadData];
             
@@ -222,10 +214,10 @@
         //        [segue.destinationViewController setValue:[self.material objectForKey:@"id"] forKey:@"merchant"];
         
     } else if([segue.identifier isEqualToString:@"goupdateactivity"]){
-        //        [segue.destinationViewController setValue:[self.activityList objectAtIndex:3] forKey:@"activity"];
-        [segue.destinationViewController setValue:[self.activityList objectAtIndex:[self.selectRowNumber integerValue]] forKey:@"activity"];
-        // [segue.destinationViewController setValue:[self.material objectForKey:@"id"] forKey:@"activity"];
-        
+        if ([segue.destinationViewController isKindOfClass:[MActivityUpdateTVC class]]) {
+            MActivityUpdateTVC *destination = (MActivityUpdateTVC *)segue.destinationViewController;
+            destination.activity = [self.activityList objectAtIndex:[self.selectRowNumber integerValue]];
+        }
     }
     
     
