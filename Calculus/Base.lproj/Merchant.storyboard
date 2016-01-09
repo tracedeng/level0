@@ -101,7 +101,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="383-YV-IU1">
                                 <rect key="frame" x="0.0" y="146" width="600" height="405"/>
                                 <connections>
-                                    <segue destination="Gqx-hm-b7a" kind="embed" id="7IV-q3-BoR"/>
+                                    <segue destination="Gqx-hm-b7a" kind="embed" id="aKI-M2-8km"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -119,6 +119,7 @@
                     <navigationItem key="navigationItem" id="zdk-rT-Jjl"/>
                     <connections>
                         <segue destination="KfD-qH-Xa6" kind="show" identifier="MApplyCredit" id="WhJ-A8-kt5"/>
+                        <segue destination="th2-FK-ZjX" kind="show" id="mNW-4K-5hT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ig-5E-f2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,11 +183,12 @@
                     </collectionView>
                     <connections>
                         <segue destination="KfD-qH-Xa6" kind="show" identifier="MApplyCredit" id="fy0-wT-4ok"/>
+                        <segue destination="th2-FK-ZjX" kind="show" identifier="MCouponList" id="6OD-BQ-nw3"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hR-wU-KXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="-764"/>
+            <point key="canvasLocation" x="1010" y="-947"/>
         </scene>
         <!--Award ApplyTVC-->
         <scene sceneID="ytd-Xr-WZR">
@@ -364,7 +366,45 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4p-Ts-NoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="-505"/>
+            <point key="canvasLocation" x="1858" y="-1348"/>
+        </scene>
+        <!--CouponTVC-->
+        <scene sceneID="0cm-a2-MUY">
+            <objects>
+                <tableViewController id="th2-FK-ZjX" customClass="MCouponTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SFx-QI-cyg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dcA-XA-YTO" customClass="MCounponCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcA-XA-YTO" id="QG2-wB-BsN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="jjjjjjhjhjk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmK-ud-bZX">
+                                            <rect key="frame" x="89" y="8" width="59" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="th2-FK-ZjX" id="nlH-8x-o1X"/>
+                            <outlet property="delegate" destination="th2-FK-ZjX" id="ApX-Ih-EPa"/>
+                        </connections>
+                    </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i2K-Ji-ZBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="-699"/>
         </scene>
         <!--Consumer AwardTVC-->
         <scene sceneID="WkP-Io-W67">
@@ -553,5 +593,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WhJ-A8-kt5"/>
+        <segue reference="mNW-4K-5hT"/>
     </inferredMetricsTieBreakers>
 </document>
