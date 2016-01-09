@@ -15,18 +15,26 @@ typedef NS_ENUM(NSInteger, EMACTIVITYOPTYPE) {
     EDELETEMERCHANTACTIVITY,
     EUPDATEMERCHANTACTIVITY,
     EADDMERCHANTACTIVITY,
+    EQUERYUPLOADTOKEN,          //获取上传活动海报7牛token
+    EMACTIVITYOPTYPEMAX,
 };
 
 - (void)doQueryMerchantActivity:(NSString *)merchant;
 - (void)doDeleteMerchantActivity:(NSString *)merchant activity:(NSString *)activity;
 - (void)doUpdateMerchantActivity:(NSString *)merchant  activity:(NSString *)activity title:(NSString *)title introduce:(NSString *)introduce credit:(NSString *)credit poster:(NSString *)poster expire_time:(NSString *)expire_time;
-- (void)doAddMerchantActivity:(NSString *)merchant title:(NSString *)title introduce:(NSString *)introduce credit:(NSString *)credit poster:(NSString *)poster expire_time:(NSString *)expire_time;
+- (void)doAddMerchantActivity:(NSString *)title introduce:(NSString *)introduce credit:(NSString *)credit poster:(NSString *)poster expire_time:(NSString *)expire_time;
+- (void)doQueryUploadToken:(NSString *)merchant;
 
 
-@property (nonatomic, copy) void (^afterQqueryMerchantActivity)(NSMutableArray *activity);
+@property (nonatomic, copy) void (^afterQueryMerchantActivity)(NSMutableArray *activity);
 @property (nonatomic, copy) void (^afterDeleteMerchantActivity)(NSString *result);
 @property (nonatomic, copy) void (^afterUpdateMerchantActivity)(NSString *result);
-@property (nonatomic, copy) void (^afterAddMerchantActivity)(NSString *result);
+@property (nonatomic, copy) void (^afterAddMerchantActivity)(NSString *activity);
+@property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
+
+@property (nonatomic, copy) void (^afterQueryMerchantActivityFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterAddMerchantActivityFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterQueryUploadTokenFailed)(NSString *message);
 
 @end
 

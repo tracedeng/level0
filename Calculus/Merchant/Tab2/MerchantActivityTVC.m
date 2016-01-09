@@ -14,6 +14,8 @@
 #import "MMaterialManager.h"
 #import "MActivityCreateTVC.h"
 #import "MActivityUpdateTVC.h"
+#import "SVProgressHUD.h"
+
 
 @interface MerchantActivityTVC ()
 
@@ -26,27 +28,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+//    self.title = self.nickname;
     
     self.activityList = [[NSMutableArray alloc] init];
-    self.material = [NSMutableDictionary dictionaryWithDictionary:[MMaterialManager getMaterial]];
-    
-    if (self.material) {
-        ActionMActivity *action = [[ActionMActivity alloc] init];
-        action.afterQqueryMerchantActivity = ^(NSMutableArray *activity){
-            if(activity){
-                self.activityList = activity;
-                [self.tableView reloadData];
-                
-            }
-        };
-        [action doQueryMerchantActivity:[self.material objectForKey:@"id"]];
-        
-    }
+    self.material = [MMaterialManager getMaterial];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshNewActivity:) name:@"refreshNewActivity" object:nil];
+    
+    [self.refreshControl addTarget:self action:@selector(loadActivityList:) forControlEvents:UIControlEventValueChanged];
+    
+    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    [self loadActivityList:nil];
+}
+
+- (void)loadActivityList:(id)sender {
+    ActionMActivity *activity = [[ActionMActivity alloc] init];
+    activity.afterQueryMerchantActivity = ^(NSArray *activityList) {
+        [self.activityList removeAllObjects];
+        if (activityList.count) {
+            [self.activityList addObjectsFromArray:activityList];
+        }
+        [self.tableView reloadData];
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+    };
+    activity.afterQueryMerchantActivityFailed = ^(NSString *message) {
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        //        TODO...错误提示
+    };
+    [activity doQueryMerchantActivity:[self.material objectForKey:@"id"]];
+    
+}
+
+// 新增活动后刷新
+- (void)refreshNewActivity:(NSNotification *)notification {
+    NSDictionary *activity = [notification userInfo];
+    [self.activityList insertObject:activity atIndex:0];
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +102,14 @@
     // Configure the cell...
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 101.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.01f;
 }
 
 /*
@@ -125,36 +163,10 @@
     }
 }
 - (IBAction)unwindUpdateActivity:(UIStoryboardSegue *)segue {
-    if([segue.sourceViewController isKindOfClass:[MActivityCreateTVC class]]){
-        MActivityCreateTVC *activitytvc = (MActivityCreateTVC *)segue.sourceViewController;
-        ActionMActivity *action = [[ActionMActivity alloc] init];
-        action.afterAddMerchantActivity = ^(NSString *result){
-            //TODO 获取新的活动内容，本页更新， 可传递过来 ,新增返回内容为id
-            NSMutableDictionary *newactivity = [NSMutableDictionary dictionaryWithCapacity:5];
-            if (activitytvc.atitle && activitytvc.aintroduce && activitytvc.acredit && activitytvc.aposter && activitytvc.aexpire_time) {
-                [newactivity setObject:activitytvc.atitle forKey:@"t"];
-                [newactivity setObject:activitytvc.aintroduce forKey:@"in"];
-                [newactivity setObject:activitytvc.acredit forKey:@"cr"];
-                [newactivity setObject:activitytvc.aposter forKey:@"po"];
-                [newactivity setObject:activitytvc.aexpire_time forKey:@"et"];
-            }
-            
-            
-            [self.activityList addObject:newactivity];
-            //考虑更新后，首页活动列表更新
-            [self.tableView reloadData];
-        };
-        [action doAddMerchantActivity:[self.material objectForKey:@"id"] title:activitytvc.atitle introduce:activitytvc.aintroduce credit:activitytvc.acredit poster:activitytvc.aposter expire_time:activitytvc.aexpire_time];
-        
-    }else if ([segue.sourceViewController isKindOfClass:[MActivityUpdateTVC class]]){
-        
-        
+    if ([segue.sourceViewController isKindOfClass:[MActivityUpdateTVC class]]){
         MActivityUpdateTVC *activitytvc = (MActivityUpdateTVC *)segue.sourceViewController;
         ActionMActivity *action = [[ActionMActivity alloc] init];
         action.afterUpdateMerchantActivity = ^(NSString *result){
-            
-            
-            
             NSMutableDictionary *newactivity = [NSMutableDictionary dictionaryWithCapacity:6];
             if (activitytvc.atitle && activitytvc.aintroduce && activitytvc.acredit && activitytvc.aposter && activitytvc.aexpire_time) {
                 [newactivity setObject:activitytvc.atitle forKey:@"t"];
@@ -168,29 +180,15 @@
             NSMutableArray *showac = [[NSMutableArray alloc] initWithArray:self.activityList];
             [showac removeObjectAtIndex:[self.selectRowNumber integerValue]];
             
-            
             self.activityList = [[NSMutableArray alloc] init];
             self.activityList = showac;
-            
-            
-            
-            
-            
-            
-            
+                        
             //            //TODO 更新新的活动内容，本页更新， 可传递过来 ,新增返回内容为id
             //考虑更新后，首页活动列表更新
             [self.tableView reloadData];
-            
-            
         };
-        
         [action doUpdateMerchantActivity:[self.material objectForKey:@"id"] activity:@"id" title:activitytvc.atitle introduce:activitytvc.aintroduce credit:activitytvc.acredit poster:activitytvc.aposter expire_time:activitytvc.aexpire_time];
-        
     }
-    
-    
-    
 }
 
 /*
