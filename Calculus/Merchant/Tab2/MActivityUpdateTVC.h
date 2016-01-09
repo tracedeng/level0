@@ -17,5 +17,4 @@
 @property (nonatomic ,strong) NSString *aexpire_time;
 @property (nonatomic ,strong) NSString *id;
 
-
 @end

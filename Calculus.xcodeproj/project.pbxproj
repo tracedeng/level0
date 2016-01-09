@@ -609,14 +609,14 @@
 				19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */,
 				B5EDC3961C3921EC002E2833 /* MActivityCell.h */,
 				B5EDC3971C3921EC002E2833 /* MActivityCell.m */,
+				B5EDC3B11C3E348F002E2833 /* MerchantActivityTVC.h */,
+				B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */,
 				B5EDC3991C3A05CD002E2833 /* MActivityCreateTVC.h */,
 				B5EDC39A1C3A05CD002E2833 /* MActivityCreateTVC.m */,
 				B5EDC3A51C3C08FA002E2833 /* MActivityUpdateTVC.h */,
 				B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */,
 				B5EDC3A21C3B9BC9002E2833 /* MActivityExpireVC.h */,
 				B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */,
-				B5EDC3B11C3E348F002E2833 /* MerchantActivityTVC.h */,
-				B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */,
 			);
 			name = Tab2;
 			sourceTree = "<group>";

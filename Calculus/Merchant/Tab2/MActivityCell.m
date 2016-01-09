@@ -7,6 +7,8 @@
 //
 
 #import "MActivityCell.h"
+#import "UIImageView+WebCache.h"
+#import "Constance.h"
 
 @interface MActivityCell()
 @property (weak, nonatomic) IBOutlet UIImageView *activityPosterIMG;
@@ -16,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *activityIntroduceLBL;
 
 @end
+
 
 @implementation MActivityCell
 
@@ -31,15 +34,16 @@
 - (void)setActivityInfo:(NSMutableDictionary *)activityInfo {
     if (activityInfo) {
         _activityInfo = activityInfo;
-        self.activityTitleLBL.text = [activityInfo objectForKey:@"t"];
-        //TODO 活动海报显示
-//        self.activityPosterIMG.image = [activityInfo objectForKey:@"po"];
-        self.activityMerchantLBL.text = [activityInfo objectForKey:@"id"];
-        self.activityCreditLBL.text = [activityInfo objectForKey:@"100"];
-        self.activityIntroduceLBL.text = [activityInfo objectForKey:@"in"];
-
-
+        self.activityPosterIMG.clipsToBounds = YES;
+        self.activityPosterIMG.layer.cornerRadius = self.activityPosterIMG.frame.size.width / 2.0f;
         
+        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [activityInfo objectForKey:@"po"]];
+        [self.activityPosterIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
+        
+        self.activityTitleLBL.text = [activityInfo objectForKey:@"t"];
+        self.activityMerchantLBL.text = [activityInfo objectForKey:@"id"];
+        self.activityCreditLBL.text = [NSString stringWithFormat:@"%ld", [[activityInfo objectForKey:@"cr"] integerValue]];
+        self.activityIntroduceLBL.text = [activityInfo objectForKey:@"in"];
     }
 }
 @end
