@@ -96,8 +96,7 @@
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
-		B517E9BF1C40D1A900DD66B2 /* MCouponTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9BE1C40D1A900DD66B2 /* MCouponTVC.m */; };
-		B517E9C21C40D1EE00DD66B2 /* MCounponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9C11C40D1EE00DD66B2 /* MCounponCell.m */; };
+		B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9C41C4147DE00DD66B2 /* MCouponVC.m */; };
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
 		B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B4A1C246B36006F344F /* YMUtils.m */; };
@@ -296,10 +295,8 @@
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKeyManager.h; path = Account/SKeyManager.h; sourceTree = "<group>"; };
 		19FC0FC01C1F1E89008157E3 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/SKeyManager.m; sourceTree = "<group>"; };
-		B517E9BD1C40D1A900DD66B2 /* MCouponTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCouponTVC.h; path = Merchant/Tab1/MCouponTVC.h; sourceTree = "<group>"; };
-		B517E9BE1C40D1A900DD66B2 /* MCouponTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCouponTVC.m; path = Merchant/Tab1/MCouponTVC.m; sourceTree = "<group>"; };
-		B517E9C01C40D1EE00DD66B2 /* MCounponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCounponCell.h; path = Merchant/Tab1/MCounponCell.h; sourceTree = "<group>"; };
-		B517E9C11C40D1EE00DD66B2 /* MCounponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCounponCell.m; path = Merchant/Tab1/MCounponCell.m; sourceTree = "<group>"; };
+		B517E9C31C4147DE00DD66B2 /* MCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCouponVC.h; path = Merchant/Tab1/MCouponVC.h; sourceTree = "<group>"; };
+		B517E9C41C4147DE00DD66B2 /* MCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCouponVC.m; path = Merchant/Tab1/MCouponVC.m; sourceTree = "<group>"; };
 		B51C0B031C1DB530006F344F /* AccountRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountRegisterController.h; sourceTree = "<group>"; };
 		B51C0B041C1DB530006F344F /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRegisterController.m; sourceTree = "<group>"; };
 		B51C0B061C1F0F85006F344F /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPassword.h; sourceTree = "<group>"; };
@@ -592,10 +589,8 @@
 				19339B0E1C2C340900791A9E /* COneAwardCell.m */,
 				19339B101C2C343700791A9E /* COneAwardTVC.h */,
 				19339B111C2C343700791A9E /* COneAwardTVC.m */,
-				B517E9BD1C40D1A900DD66B2 /* MCouponTVC.h */,
-				B517E9BE1C40D1A900DD66B2 /* MCouponTVC.m */,
-				B517E9C01C40D1EE00DD66B2 /* MCounponCell.h */,
-				B517E9C11C40D1EE00DD66B2 /* MCounponCell.m */,
+				B517E9C31C4147DE00DD66B2 /* MCouponVC.h */,
+				B517E9C41C4147DE00DD66B2 /* MCouponVC.m */,
 			);
 			name = Tab1;
 			sourceTree = "<group>";
@@ -1000,6 +995,7 @@
 				B5EDC3111C2BE25E002E2833 /* CreditExchangeTVC.m in Sources */,
 				19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
+				B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */,
 				19CAA8F81C3F5BCA00010F68 /* VoucherCell.m in Sources */,
 				19339AEE1C26782D00791A9E /* ApplyCreditTVC.m in Sources */,
 				B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */,
@@ -1064,7 +1060,6 @@
 				19339AD91C23E4C000791A9E /* AwardManagerController.m in Sources */,
 				19339AE21C257F1200791A9E /* MMaterialTVC.m in Sources */,
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
-				B517E9C21C40D1EE00DD66B2 /* MCounponCell.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
 				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
 				19CAA8F51C3F5BB300010F68 /* VoucherTVC.m in Sources */,
@@ -1074,7 +1069,6 @@
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
 				19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */,
-				B517E9BF1C40D1A900DD66B2 /* MCouponTVC.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,
 				193C38411C1D95920017CC9C /* GTMBase64.m in Sources */,
 				19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */,

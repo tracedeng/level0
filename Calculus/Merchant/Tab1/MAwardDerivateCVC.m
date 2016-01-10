@@ -70,7 +70,7 @@ static NSString * const reuseIdentifier = @"Cell";
     if (0 == indexPath.row) {
         [self performSegueWithIdentifier:@"MApplyCredit" sender:nil];
     }else if (1 == indexPath.row) {
-        [self performSegueWithIdentifier:@"MCouponList" sender:nil];
+        [self performSegueWithIdentifier:@"MApplyCoupon" sender:nil];
     }
 }
 
