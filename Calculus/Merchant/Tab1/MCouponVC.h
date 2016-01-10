@@ -1,5 +1,5 @@
 //
-//  MCouponTVC.h
+//  MCouponVC.h
 //  Calculus
 //
 //  Created by ben on 16/1/9.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCouponTVC : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface MCouponVC : UIViewController
+@property (nonatomic, retain) NSDictionary *material;
 
 @end
