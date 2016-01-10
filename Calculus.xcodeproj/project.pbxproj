@@ -120,7 +120,6 @@
 		B5EDC3981C3921EC002E2833 /* MActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3971C3921EC002E2833 /* MActivityCell.m */; };
 		B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC39A1C3A05CD002E2833 /* MActivityCreateTVC.m */; };
 		B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */; };
-		B5EDC3A71C3C08FA002E2833 /* MActivityUpdateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */; };
 		B5EDC3B31C3E348F002E2833 /* MerchantActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */; };
 /* End PBXBuildFile section */
 
@@ -342,8 +341,6 @@
 		B5EDC39A1C3A05CD002E2833 /* MActivityCreateTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityCreateTVC.m; path = Merchant/Tab2/MActivityCreateTVC.m; sourceTree = "<group>"; };
 		B5EDC3A21C3B9BC9002E2833 /* MActivityExpireVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityExpireVC.h; path = Merchant/Tab2/MActivityExpireVC.h; sourceTree = "<group>"; };
 		B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityExpireVC.m; path = Merchant/Tab2/MActivityExpireVC.m; sourceTree = "<group>"; };
-		B5EDC3A51C3C08FA002E2833 /* MActivityUpdateTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityUpdateTVC.h; path = Merchant/Tab2/MActivityUpdateTVC.h; sourceTree = "<group>"; };
-		B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityUpdateTVC.m; path = Merchant/Tab2/MActivityUpdateTVC.m; sourceTree = "<group>"; };
 		B5EDC3B11C3E348F002E2833 /* MerchantActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantActivityTVC.h; path = Merchant/Tab2/MerchantActivityTVC.h; sourceTree = "<group>"; };
 		B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantActivityTVC.m; path = Merchant/Tab2/MerchantActivityTVC.m; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -618,8 +615,6 @@
 				B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */,
 				B5EDC3991C3A05CD002E2833 /* MActivityCreateTVC.h */,
 				B5EDC39A1C3A05CD002E2833 /* MActivityCreateTVC.m */,
-				B5EDC3A51C3C08FA002E2833 /* MActivityUpdateTVC.h */,
-				B5EDC3A61C3C08FA002E2833 /* MActivityUpdateTVC.m */,
 				B5EDC3A21C3B9BC9002E2833 /* MActivityExpireVC.h */,
 				B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */,
 			);
@@ -1038,7 +1033,6 @@
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */,
-				B5EDC3A71C3C08FA002E2833 /* MActivityUpdateTVC.m in Sources */,
 				19339AF91C29403400791A9E /* MAwardDerivateCVC.m in Sources */,
 				19339AF41C269D0400791A9E /* MyOneAwardCell.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
