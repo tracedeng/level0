@@ -13,15 +13,12 @@
 #import "ActionMActivity.h"
 #import "MMaterialManager.h"
 #import "MActivityCreateTVC.h"
-//#import "MActivityUpdateTVC.h"
 #import "SVProgressHUD.h"
 
 
 @interface MerchantActivityTVC ()
-
 @property (nonatomic, retain) NSMutableArray *activityList;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
-
 @end
 
 @implementation MerchantActivityTVC

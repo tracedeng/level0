@@ -55,6 +55,7 @@
 //    self.aexpireTXT.text = [dateFormatter stringFromDate:currentDate];
     
     if (self.bUpdateActivity) {
+        self.title = @"编辑活动";
         // 展示活动内容
         self.submitButton.enabled = YES;
         self.submitButton.title = @"编辑";
