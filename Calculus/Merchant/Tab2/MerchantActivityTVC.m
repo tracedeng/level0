@@ -13,14 +13,14 @@
 #import "ActionMActivity.h"
 #import "MMaterialManager.h"
 #import "MActivityCreateTVC.h"
-#import "MActivityUpdateTVC.h"
+//#import "MActivityUpdateTVC.h"
 #import "SVProgressHUD.h"
 
 
 @interface MerchantActivityTVC ()
 
 @property (nonatomic, retain) NSMutableArray *activityList;
-@property (nonatomic, retain) NSNumber *selectRowNumber;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 
 @end
 
@@ -28,8 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    self.title = self.nickname;
     
     self.activityList = [[NSMutableArray alloc] init];
     self.material = [MMaterialManager getMaterial];
@@ -73,10 +71,18 @@
 // 新增活动后刷新
 - (void)refreshNewActivity:(NSNotification *)notification {
     NSDictionary *activity = [notification userInfo];
-    [self.activityList insertObject:activity atIndex:0];
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView endUpdates];
+    NSString *mode = [activity objectForKey:@"mode"];
+    
+    if ([mode isEqualToString:@"create"]) {
+        [self.activityList insertObject:activity atIndex:0];
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView endUpdates];
+    }else if([mode isEqualToString:@"update"]){
+        [self.activityList replaceObjectAtIndex:self.selectedIndexPath.row withObject:activity];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,10 +102,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MActivityCell" forIndexPath:indexPath];
-    
-    cell.activityInfo = [self.activityList objectAtIndex:indexPath.row];
-    
+
     // Configure the cell...
+    cell.activityInfo = [self.activityList objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -110,6 +115,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 0.01f;
+}
+
+- (nullable NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedIndexPath = indexPath;
+    return indexPath;
 }
 
 /*
@@ -146,48 +156,24 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (0 == indexPath.section) {
-        self.selectRowNumber =[NSNumber numberWithInteger:indexPath.row];
-        [self performSegueWithIdentifier:@"goupdateactivity" sender:nil];
-
-    }
-}
-- (IBAction)unwindUpdateActivity:(UIStoryboardSegue *)segue {
-    if ([segue.sourceViewController isKindOfClass:[MActivityUpdateTVC class]]){
-        MActivityUpdateTVC *activitytvc = (MActivityUpdateTVC *)segue.sourceViewController;
-        ActionMActivity *action = [[ActionMActivity alloc] init];
-        action.afterUpdateMerchantActivity = ^(NSString *result){
-            NSMutableDictionary *newactivity = [NSMutableDictionary dictionaryWithCapacity:6];
-            if (activitytvc.atitle && activitytvc.aintroduce && activitytvc.acredit && activitytvc.aposter && activitytvc.aexpire_time) {
-                [newactivity setObject:activitytvc.atitle forKey:@"t"];
-                [newactivity setObject:activitytvc.aintroduce forKey:@"in"];
-                [newactivity setObject:activitytvc.acredit forKey:@"cr"];
-                [newactivity setObject:activitytvc.aposter forKey:@"po"];
-                [newactivity setObject:activitytvc.aexpire_time forKey:@"et"];
-                [newactivity setObject:activitytvc.id forKey:@"id"];
-                
-            }
-            NSMutableArray *showac = [[NSMutableArray alloc] initWithArray:self.activityList];
-            [showac removeObjectAtIndex:[self.selectRowNumber integerValue]];
-            
-            self.activityList = [[NSMutableArray alloc] init];
-            self.activityList = showac;
-                        
-            //            //TODO 更新新的活动内容，本页更新， 可传递过来 ,新增返回内容为id
-            //考虑更新后，首页活动列表更新
-            [self.tableView reloadData];
-        };
-        [action doUpdateMerchantActivity:[self.material objectForKey:@"id"] activity:@"id" title:activitytvc.atitle introduce:activitytvc.aintroduce credit:activitytvc.acredit poster:activitytvc.aposter expire_time:activitytvc.aexpire_time];
+    if([segue.identifier isEqualToString:@"CreateActivity"]){
+        if ([segue.destinationViewController isKindOfClass:[MActivityCreateTVC class]]) {
+            MActivityCreateTVC *destination = (MActivityCreateTVC *)segue.destinationViewController;
+            destination.bUpdateActivity = NO;
+        }
+    } else if([segue.identifier isEqualToString:@"UpdateActivity"]){
+        if ([segue.destinationViewController isKindOfClass:[MActivityCreateTVC class]]) {
+            MActivityCreateTVC *destination = (MActivityCreateTVC *)segue.destinationViewController;
+            destination.bUpdateActivity = YES;
+            destination.activityInfo = [self.activityList objectAtIndex:self.selectedIndexPath.row];
+        }
     }
 }
 
@@ -204,22 +190,5 @@
  return YES;
  }
  */
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    if([segue.identifier isEqualToString:@"gocreateactivity"]){
-        //        [segue.destinationViewController setValue:[self.material objectForKey:@"id"] forKey:@"merchant"];
-        
-    } else if([segue.identifier isEqualToString:@"goupdateactivity"]){
-        if ([segue.destinationViewController isKindOfClass:[MActivityUpdateTVC class]]) {
-            MActivityUpdateTVC *destination = (MActivityUpdateTVC *)segue.destinationViewController;
-            destination.activity = [self.activityList objectAtIndex:[self.selectRowNumber integerValue]];
-        }
-    }
-    
-    
-}
-
 
 @end

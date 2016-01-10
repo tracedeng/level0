@@ -51,10 +51,10 @@
     
 }
 
-- (void)doUpdateMerchantActivity:(NSString *)merchant  activity:(NSString *)activity title:(NSString *)title introduce:(NSString *)introduce credit:(NSNumber *)credit poster:(NSString *)poster expire_time:(NSString *)expire_time{
+- (void)doUpdateMerchantActivity:(NSString *)activity title:(NSString *)title introduce:(NSString *)introduce credit:(NSNumber *)credit poster:(NSString *)poster expire_time:(NSString *)expire_time {
     self.type = EUPDATEMERCHANTACTIVITY;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"create", @"type", self.account, @"numbers",merchant, @"merchant", self.skey, @"session_key", activity, @"activity", title, @"title", introduce, @"introduce", credit, @"credit", poster, @"poster", expire_time, @"expire", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", self.account, @"numbers", self.merchant, @"merchant", self.skey, @"session_key", activity, @"activity", title, @"title", introduce, @"introduce", credit, @"credit", poster, @"poster", expire_time, @"expire", nil];
     [self.net requestHttpWithData:postData];
     
 }
@@ -86,7 +86,6 @@
             case EQUERYMERCHANTACTIVITY:
             {
                 NSMutableArray *result = [responseObject objectForKey:@"r"];
-                //                NSDictionary *material = [result objectAtIndex:0];
                 if (self.afterQueryMerchantActivity) {
                     NSMutableArray *activity = [result count] > 0 ? result : nil;
                     self.afterQueryMerchantActivity(activity);
@@ -95,24 +94,15 @@
             }
             case EDELETEMERCHANTACTIVITY:
             {
-                NSString *result = [responseObject objectForKey:@"r"];
-                //                NSDictionary *material = [result objectAtIndex:0];
                 if (self.afterDeleteMerchantActivity) {
-                    
-                   
-                    //                  NSDictionary *flow = [result count] > 0 ? [NSDictionary dictionaryWithDictionary: result] : nil;
-                    self.afterDeleteMerchantActivity(result);
+                    self.afterDeleteMerchantActivity();
                 }
                 break;
             }
             case EUPDATEMERCHANTACTIVITY:
             {
-                NSString *result = [responseObject objectForKey:@"r"];
-                //                NSDictionary *material = [result objectAtIndex:0];
                 if (self.afterUpdateMerchantActivity) {
-//                    NSMutableArray *activity = [result count] > 0 ? [result objectAtIndex:0] : nil;
-                    //                  NSDictionary *flow = [result count] > 0 ? [NSDictionary dictionaryWithDictionary: result] : nil;
-                    self.afterUpdateMerchantActivity(result);
+                    self.afterUpdateMerchantActivity();
                 }
                 break;
             }
@@ -146,30 +136,22 @@
                 }
                 break;
             }
-//            case EMERCHANTQUERYAPPLYCREDIT:
-//            {
-//                NSString *message = [responseObject objectForKey:@"m"];
-//                if (self.afterMerchantQueryApplyCreditFailed) {
-//                    self.afterMerchantQueryApplyCreditFailed(message);
-//                }
-//                break;
-//            }
-//            case ECONFIRMAPPLYCREDIT:
-//            {
-//                NSString *message = [responseObject objectForKey:@"m"];
-//                if (self.afterConfirmApplyCreditFailed) {
-//                    self.afterConfirmApplyCreditFailed(message);
-//                }
-//                break;
-//            }
-//            case EREFUSEAPPLYCREDIT:
-//            {
-//                NSString *message = [responseObject objectForKey:@"m"];
-//                if (self.afterRefuseApplyCreditFailed) {
-//                    self.afterRefuseApplyCreditFailed(message);
-//                }
-//                break;
-//            }
+            case EDELETEMERCHANTACTIVITY:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterDeleteMerchantActivityFailed) {
+                    self.afterDeleteMerchantActivityFailed(message);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTACTIVITY:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterUpdateMerchantActivityFailed) {
+                    self.afterUpdateMerchantActivityFailed(message);
+                }
+                break;
+            }
             case EADDMERCHANTACTIVITY:
             {
                 NSString *message = [responseObject objectForKey:@"m"];

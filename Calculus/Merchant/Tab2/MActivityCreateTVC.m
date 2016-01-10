@@ -15,11 +15,14 @@
 #import "UIImageView+WebCache.h"
 #import "Constance.h"
 
-// 填写完所有资料时才可发布活动
+// 填写完所有资料时才可发布活动，
+// bit0-poster，bit1-标题，bit2-活动介绍，bit3-需要积分量，bit4-有效期，bit5-编辑状态
 #define CANSUBMITMASK 0x1F
+#define CANUPDATEMASK 0x3F
 
 @interface MActivityCreateTVC ()
 @property (nonatomic, assign) NSInteger canSubmitMask;
+@property (nonatomic, assign) BOOL bEditState;
 
 @property (nonatomic, retain) NSString *uploadToken;
 @property (nonatomic, retain) NSString *path;
@@ -32,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *aexpireTXT;
 @property (weak, nonatomic) IBOutlet UILabel *adetailsTXTPlaceHolder;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *submitButton;
+
 - (IBAction)submitActivity:(id)sender;
 @end
 
@@ -39,11 +43,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-//    self.atittleTXT.delegate = self;
-    self.acreditTXT.delegate = self;
-    self.adetailsTXT.delegate = self;
-    self.aexpireTXT.delegate = self;
     
     // poster圆角
     self.path = @"default";
@@ -54,6 +53,28 @@
 //    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
 //    self.aexpire_time = [dateFormatter stringFromDate:currentDate];
 //    self.aexpireTXT.text = [dateFormatter stringFromDate:currentDate];
+    
+    if (self.bUpdateActivity) {
+        // 展示活动内容
+        self.submitButton.enabled = YES;
+        self.submitButton.title = @"编辑";
+        
+        self.atittleTXT.text = [self.activityInfo objectForKey:@"t"];
+        self.acreditTXT.text = [NSString stringWithFormat:@"%@",[self.activityInfo objectForKey:@"cr"] ];
+        self.adetailsTXTPlaceHolder.text = @"";
+        self.adetailsTXT.text = [self.activityInfo objectForKey:@"in"];
+        self.aexpireTXT.text = [self.activityInfo objectForKey:@"et"];
+        self.path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.activityInfo objectForKey:@"po"]];
+        [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:self.path] placeholderImage:[UIImage imageNamed:@"icon-alipay"]];
+        [self toggleEnable:NO];
+    }
+}
+
+- (void)toggleEnable:(BOOL)enable {
+    self.atittleTXT.enabled = enable;
+    self.acreditTXT.enabled = enable;
+    self.aexpireTXT.enabled = enable;
+    self.adetailsTXT.editable = enable;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +103,9 @@
                 self.canSubmitMask &= 0xf7;
             }
         }
+        if (self.bUpdateActivity) {
+            self.canSubmitMask |= 0x20;
+        }
         return YES;     //支持已经输满长度按退格键删除
     }
     
@@ -98,8 +122,12 @@
     }else if (textField == self.aexpireTXT) {
         self.canSubmitMask |= 0x10;
     }
+    
+    if (self.bUpdateActivity) {
+        self.canSubmitMask |= 0x20;
+    }
+    
     return YES;
-
 }
 
 // 实现UITextView的placeholder
@@ -116,35 +144,80 @@
         self.adetailsTXTPlaceHolder.text = @"";
         self.canSubmitMask |= 0x4;
     }
+    
+    if (self.bUpdateActivity) {
+        self.canSubmitMask |= 0x20;
+    }
 }
 
 - (void)setCanSubmitMask:(NSInteger)canSubmitMask {
     _canSubmitMask = canSubmitMask;
     if ((_canSubmitMask & CANSUBMITMASK) == CANSUBMITMASK) {
         self.submitButton.enabled = YES;
+        if (self.bUpdateActivity) {
+            if ((_canSubmitMask & CANUPDATEMASK) != CANUPDATEMASK) {
+                self.submitButton.enabled = NO;
+            }
+        }
     }else{
         self.submitButton.enabled = NO;
     }
 }
 
 - (IBAction)submitActivity:(id)sender {
+    if (self.bUpdateActivity) {
+        if (self.canSubmitMask & 0x20) {
+            // 编辑完成更新
+            [self updateActivity];
+        }else{
+            // 变成编辑状态
+            self.bEditState = YES;
+            [self toggleEnable:YES];
+            self.submitButton.enabled = NO;
+            self.submitButton.title = @"发布";
+            self.canSubmitMask = CANSUBMITMASK;
+        }
+    }else{
+        [self createActivity];
+    }
+}
+
+- (void)createActivity {
     ActionMActivity *action = [[ActionMActivity alloc] init];
     action.afterAddMerchantActivity = ^(NSString *activity){
         // 购买成功
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发布活动成功" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:self.atittleTXT.text, @"t", self.adetailsTXT.text, @"in", self.acreditTXT.text, @"cr", self.path, @"po", self.aexpireTXT.text, @"et", activity, @"id", nil];
+            NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:self.atittleTXT.text, @"t", self.adetailsTXT.text, @"in", self.acreditTXT.text, @"cr", self.path, @"po", self.aexpireTXT.text, @"et", activity, @"id", "update", @"mode", nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshNewActivity" object:nil userInfo:newActivity];
             [self.navigationController popToRootViewControllerAnimated:YES];
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     };
     action.afterAddMerchantActivityFailed = ^(NSString *message) {
-        
+        // TODO...
     };
     [action doAddMerchantActivity:self.atittleTXT.text introduce:self.adetailsTXT.text credit:self.acreditTXT.text poster:self.path expire_time:self.aexpireTXT.text];
 }
 
+- (void)updateActivity {
+    NSString *activity = [self.activityInfo objectForKey:@"id"];
+    ActionMActivity *action = [[ActionMActivity alloc] init];
+    action.afterUpdateMerchantActivity = ^(){
+        // 更新活动成功
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更新活动成功" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:self.atittleTXT.text, @"t", self.adetailsTXT.text, @"in", self.acreditTXT.text, @"cr", self.path, @"po", self.aexpireTXT.text, @"et", activity, @"id", @"update", @"mode", nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshNewActivity" object:nil userInfo:newActivity];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    };
+    action.afterUpdateMerchantActivityFailed = ^(NSString *message) {
+        // TODO...
+    };
+    [action doUpdateMerchantActivity:activity title:self.atittleTXT.text introduce:self.adetailsTXT.text credit:self.acreditTXT.text poster:self.path expire_time:self.aexpireTXT.text];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -197,8 +270,11 @@
     return 0.01f;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.bUpdateActivity && !self.bEditState)  {
+        // 点击编辑按钮之前，不支持修改图片
+        return;
+    }
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
             // 商家logo
@@ -227,16 +303,17 @@
 //        }
 //    }
 //}
+//
+//- (IBAction)unwindUpdateExpire:(UIStoryboardSegue *)segue {
+//    if([segue.sourceViewController isKindOfClass:[MActivityExpireVC class]]){
+//        MActivityExpireVC *activitytvc = (MActivityExpireVC *)segue.sourceViewController;
+//        
+//        self.aexpire_time = activitytvc.aexpire;
+//        self.aexpireTXT.text = activitytvc.aexpire;
+//    }
+//}
 
-- (IBAction)unwindUpdateExpire:(UIStoryboardSegue *)segue {
-    if([segue.sourceViewController isKindOfClass:[MActivityExpireVC class]]){
-        MActivityExpireVC *activitytvc = (MActivityExpireVC *)segue.sourceViewController;
-        
-        self.aexpire_time = activitytvc.aexpire;
-        self.aexpireTXT.text = activitytvc.aexpire;
-    }
-}
-
+// poster 海报
 - (IBAction)unwindUpdateMaterial:(UIStoryboardSegue *)segue {
     if ([segue.sourceViewController isKindOfClass:[ImageListCVC class]]) {
         ImageListCVC *imageList = (ImageListCVC *)segue.sourceViewController;
@@ -245,6 +322,9 @@
         ActionQiniu *action = [[ActionQiniu alloc] init];
         action.afterQiniuUpload = ^(NSString *path) {
             self.canSubmitMask |= 0x1;
+            if (self.bUpdateActivity) {
+                self.canSubmitMask |= 0x20;
+            }
             self.path = path;
             [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
         };
