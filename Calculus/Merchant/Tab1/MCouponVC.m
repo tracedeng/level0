@@ -13,7 +13,6 @@
 @interface MCouponVC ()
 @property (weak, nonatomic) IBOutlet UITextField *couponApplyTXT;
 @property (weak, nonatomic) IBOutlet UITextField *consumerIdTXT;
-@property (weak, nonatomic) IBOutlet UIProgressView *applyCouponProcessPV;
 
 - (IBAction)couponApplyBtn:(UIButton *)sender;
 
@@ -45,18 +44,8 @@
 }
 */
 
--(void)updateProgress{
-
-}
 
 - (IBAction)couponApplyBtn:(UIButton *)sender {
-    
-    
-    
-    [self.couponApplyTXT removeFromSuperview];
-    [self.consumerIdTXT removeFromSuperview];
-    [self.applyCouponProcessPV setProgress:0.1];
-    [self updateProgress];
     
     ActionVoucher *action = [[ActionVoucher alloc] init];
     action.afterConfirmVoucher = ^(NSString *message){
@@ -65,6 +54,8 @@
         NSString *applyResultMessage = NSLocalizedString(@"优惠券已经发放，个人中心，优惠券查询", nil);
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:applyResultTitle message:applyResultMessage preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+
         }];
         [alertController addAction:okAction];
         [self presentViewController:alertController animated:YES completion:nil];

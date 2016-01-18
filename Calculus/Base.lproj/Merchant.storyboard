@@ -380,9 +380,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-Od-Zlv">
-                                <rect key="frame" x="29" y="201" width="284" height="2"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-Ct-jIr">
                                 <rect key="frame" x="13" y="285" width="306" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -413,7 +410,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="applyCouponProcessPV" destination="LeD-Od-Zlv" id="VTZ-1B-ODv"/>
                         <outlet property="consumerIdTXT" destination="sBF-0T-01R" id="8Qe-aH-D8B"/>
                         <outlet property="couponApplyTXT" destination="jLt-Vu-Oyr" id="a5M-QL-m26"/>
                     </connections>
