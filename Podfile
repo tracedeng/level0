@@ -3,6 +3,7 @@ pod 'AFNetworking', '~> 2.4.1'
 pod 'MWPhotoBrowser'
 pod 'SVProgressHUD'
 pod 'Qiniu'
+pod 'IQKeyboardManager'
 =begin
 pod 'AMap2DMap'  2D地图SDK
 pod 'AMapSearch'

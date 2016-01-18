@@ -195,9 +195,20 @@
 
 //@optional http请求失败返回
 - (void)postFailResponseWith:(AFHTTPRequestOperation *)requestOperation responseError:(NSError *)responseError {
-    DLog(@"%@", [responseError domain]);
+//    DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
-    DLog(@"%@", [responseError localizedDescription]);
+//    DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case ECONSUMERQUERYALLCREDIT:
+        {
+            if (self.afterConsumerQueryAllCreditFailed) {
+                self.afterConsumerQueryAllCreditFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

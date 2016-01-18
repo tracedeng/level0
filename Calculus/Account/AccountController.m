@@ -14,6 +14,7 @@
 #import "SKeyManager.h"
 #import "MaterialManager.h"
 #import "MMaterialManager.h"
+#import <IQKeyboardManager/IQKeyboardReturnKeyHandler.h>
 
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
@@ -24,7 +25,7 @@
 - (IBAction)accountLogin:(UIButton *)sender;
 - (IBAction)accountRegister:(UIButton *)sender;
 
-
+@property (nonatomic, strong) IQKeyboardReturnKeyHandler *returnKeyHandler;
 @end
 
 @implementation AccountController
@@ -34,6 +35,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
+    self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyDone;
+    self.returnKeyHandler.toolbarManageBehaviour = IQAutoToolbarBySubviews;
 }
 
 - (void)didReceiveMemoryWarning {

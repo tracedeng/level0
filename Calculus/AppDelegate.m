@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "RoleManager.h"
 #import "ActionAccount.h"
-//#import "ActionMMaterial.h"
-//#import "MMaterialManager.h"
+#import <IQKeyboardManager.h>
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UIViewController *consumerRoot;
@@ -24,6 +23,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
     
     self.bootstrapRoot = self.window.rootViewController;
     [self loadBoard];
