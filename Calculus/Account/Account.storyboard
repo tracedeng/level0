@@ -198,7 +198,7 @@
                                     <constraint firstAttribute="width" constant="120" id="uw8-oT-HTe"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2S8-fX-NwV">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2S8-fX-NwV">
                                 <rect key="frame" x="20" y="268" width="560" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7T-we-dNs">
@@ -237,7 +237,7 @@
                                             <constraint firstAttribute="trailing" secondItem="k6m-LT-HJW" secondAttribute="trailing" constant="8" id="otH-k0-Owg"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4g-iu-QYo">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4g-iu-QYo">
                                         <rect key="frame" x="0.0" y="60" width="560" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wbl-vr-aJr">
@@ -283,13 +283,13 @@
                                             <constraint firstItem="Wbl-vr-aJr" firstAttribute="centerY" secondItem="t4g-iu-QYo" secondAttribute="centerY" id="oUn-ux-Cq4"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-GB-T8g">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-GB-T8g">
                                         <rect key="frame" x="0.0" y="120" width="560" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nkg-s5-xFq">
                                                 <rect key="frame" x="8" y="10" width="544" height="20"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="07A-ta-Mhk">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-lock" translatesAutoresizingMaskIntoConstraints="NO" id="07A-ta-Mhk">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="7pW-Zi-bbN"/>
@@ -355,8 +355,13 @@
                     </view>
                     <connections>
                         <outlet property="accountTXT" destination="EIn-XJ-rmV" id="XM7-Fy-qwX"/>
+                        <outlet property="accountView" destination="k7T-we-dNs" id="ntc-fb-Tr9"/>
                         <outlet property="codeTXT" destination="Qo3-YR-IxQ" id="BvT-28-XUR"/>
+                        <outlet property="logoImageView" destination="0KF-9C-YkO" id="jWu-lr-ILP"/>
                         <outlet property="passwordTXT" destination="Ma6-eN-lYM" id="UfL-5B-Klt"/>
+                        <outlet property="passwordView" destination="rNs-GB-T8g" id="WfH-Rf-1Qc"/>
+                        <outlet property="resetButton" destination="gtZ-FD-5Z3" id="wKO-QW-Pei"/>
+                        <outlet property="smsView" destination="t4g-iu-QYo" id="2xA-dw-v1V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eL9-Zi-2TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -474,7 +479,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mT5-pb-B9i">
                                                 <rect key="frame" x="8" y="10" width="544" height="20"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="e8S-PC-gOt">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-lock" translatesAutoresizingMaskIntoConstraints="NO" id="e8S-PC-gOt">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="e8S-PC-gOt" secondAttribute="height" multiplier="1:1" id="giq-nP-OAn"/>
@@ -578,7 +583,6 @@
     </scenes>
     <resources>
         <image name="icon-lock" width="20" height="20"/>
-        <image name="icon-password" width="134" height="134"/>
         <image name="icon-sms" width="20" height="20"/>
         <image name="icon-user" width="20" height="20"/>
         <image name="logo" width="134" height="134"/>

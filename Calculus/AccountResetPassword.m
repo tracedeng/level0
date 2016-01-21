@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *accountView;
 @property (weak, nonatomic) IBOutlet UIView *smsView;
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
-@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 - (IBAction)getSMSCode:(UIButton *)sender;
@@ -32,6 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.accountView.layer.cornerRadius = 4.0f;
+    self.smsView.layer.cornerRadius = 4.0f;
+    self.passwordView.layer.cornerRadius = 4.0f;
+    self.resetButton.layer.cornerRadius = 4.0f;
     
     self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.width / 2.0f;
     self.logoImageView.layer.borderWidth = 1.0f;
