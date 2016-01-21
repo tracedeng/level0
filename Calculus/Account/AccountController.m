@@ -8,8 +8,8 @@
 
 #import "AccountController.h"
 #import "ActionAccount.h"
-
 #import "AccountRegisterController.h"
+#import "UIColor+Extension.h"
 #import "RoleManager.h"
 #import "SKeyManager.h"
 #import "MaterialManager.h"
@@ -23,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *accountView;
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 - (IBAction)accountLogin:(UIButton *)sender;
 - (IBAction)accountRegister:(UIButton *)sender;
@@ -42,6 +43,10 @@
 //    self.accountView.clipsToBounds = YES;
     self.passwordView.layer.cornerRadius = 4.0f;
     self.loginButton.layer.cornerRadius = 4.0f;
+    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.width / 2.0f;
+    self.logoImageView.layer.borderWidth = 1.0f;
+    self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
+    self.logoImageView.clipsToBounds = YES;
     
     self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
     self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyDone;
@@ -73,6 +78,12 @@
     }else{
         self.passwordTField.text = @"";
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 /*
 #pragma mark - Navigation
