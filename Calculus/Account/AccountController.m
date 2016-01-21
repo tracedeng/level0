@@ -19,11 +19,14 @@
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTField;
-@property (weak, nonatomic) IBOutlet UIStackView *accountStack;
+//@property (weak, nonatomic) IBOutlet UIStackView *accountStack;
 
+@property (weak, nonatomic) IBOutlet UIView *accountView;
+@property (weak, nonatomic) IBOutlet UIView *passwordView;
 
 - (IBAction)accountLogin:(UIButton *)sender;
 - (IBAction)accountRegister:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @property (nonatomic, strong) IQKeyboardReturnKeyHandler *returnKeyHandler;
 @end
@@ -34,6 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.accountView.layer.cornerRadius = 4.0f;
+//    self.accountView.clipsToBounds = YES;
+    self.passwordView.layer.cornerRadius = 4.0f;
+    self.loginButton.layer.cornerRadius = 4.0f;
     
     self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
     self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyDone;
@@ -47,6 +55,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     // 如果用户cache还存在，帮用户填好
     NSString *account = [[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
