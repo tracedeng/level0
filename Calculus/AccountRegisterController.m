@@ -9,12 +9,19 @@
 #import "AccountRegisterController.h"
 #import "ActionAccount.h"
 #import "NSString+Md5.h"
+#import "UIColor+Extension.h"
 #import "GTMBase64.h"
 
 @interface AccountRegisterController()
 @property (weak, nonatomic) IBOutlet UITextField *accountTXT;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTXT;
 @property (weak, nonatomic) IBOutlet UITextField *codeTXT;
+
+@property (weak, nonatomic) IBOutlet UIView *accountView;
+@property (weak, nonatomic) IBOutlet UIView *smsView;
+@property (weak, nonatomic) IBOutlet UIView *passwordView;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 - (IBAction)accountRegister:(UIButton *)sender;
 - (IBAction)getSMSCode:(UIButton *)sender;
@@ -27,10 +34,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //    self.accountStack.layer.borderWidth = 1.0f;
-    //    self.accountStack.layer.borderColor = [[UIColor redColor] CGColor];
-    //    self.accountStack.backgroundColor = [UIColor clearColor];
+    self.accountView.layer.cornerRadius = 4.0f;
+    self.smsView.layer.cornerRadius = 4.0f;
+    self.passwordView.layer.cornerRadius = 4.0f;
+    self.registerButton.layer.cornerRadius = 4.0f;
     
+    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.width / 2.0f;
+    self.logoImageView.layer.borderWidth = 1.0f;
+    self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
+    self.logoImageView.clipsToBounds = YES;
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,14 +9,21 @@
 #import "AccountResetPassword.h"
 #import "ActionAccount.h"
 #import "NSString+Md5.h"
+#import "UIColor+Extension.h"
 #import "GTMBase64.h"
 
 @interface AccountResetPassword()
 @property (weak, nonatomic) IBOutlet UITextField *accountTXT;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTXT;
 @property (weak, nonatomic) IBOutlet UITextField *codeTXT;
-- (IBAction)getSMSCode:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UIView *accountView;
+@property (weak, nonatomic) IBOutlet UIView *smsView;
+@property (weak, nonatomic) IBOutlet UIView *passwordView;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+
+- (IBAction)getSMSCode:(UIButton *)sender;
 - (IBAction)accountResetPassword:(UIButton *)sender;
 
 @end
@@ -25,7 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.width / 2.0f;
+    self.logoImageView.layer.borderWidth = 1.0f;
+    self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
+    self.logoImageView.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {
