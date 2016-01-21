@@ -48,9 +48,9 @@
     self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
     self.logoImageView.clipsToBounds = YES;
     
-    self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
-    self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyDone;
-    self.returnKeyHandler.toolbarManageBehaviour = IQAutoToolbarBySubviews;
+//    self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
+//    self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyDone;
+//    self.returnKeyHandler.toolbarManageBehaviour = IQAutoToolbarBySubviews;
 }
 
 - (void)didReceiveMemoryWarning {
