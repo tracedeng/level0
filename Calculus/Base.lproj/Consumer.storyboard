@@ -134,36 +134,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-6i-fxV">
-                                <rect key="frame" x="20" y="211" width="45" height="30"/>
-                                <state key="normal" title="扫商家"/>
-                                <connections>
-                                    <action selector="MerchantQrcode:" destination="QEV-4w-Hbb" eventType="touchUpInside" id="y23-wq-wp5"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="56758873dab7dffec8fe7b2c" borderStyle="roundedRect" placeholder="商家" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ivh-jf-RHn">
-                                <rect key="frame" x="20" y="96" width="97" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onb-Pw-VsV">
+                                <rect key="frame" x="85" y="128" width="429" height="428.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Onb-Pw-VsV" secondAttribute="height" multiplier="1:1" id="00o-El-uAW"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将商家或者小票二维码放入框内" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE7-Fn-QpN">
+                                <rect key="frame" x="202" y="561.5" width="196" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="消费金额" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JKg-vv-iAb">
-                                <rect key="frame" x="20" y="151" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHm-Ad-TQq">
-                                <rect key="frame" x="20" y="277" width="45" height="30"/>
-                                <state key="normal" title="扫小票"/>
-                                <connections>
-                                    <action selector="ConsumptionQrcode:" destination="QEV-4w-Hbb" eventType="touchUpInside" id="UPY-hm-dd4"/>
-                                </connections>
-                            </button>
+                                <color key="textColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Onb-Pw-VsV" firstAttribute="centerX" secondItem="cHa-Hs-hxN" secondAttribute="centerX" id="JsI-Ca-CmN"/>
+                            <constraint firstItem="xE7-Fn-QpN" firstAttribute="top" secondItem="Onb-Pw-VsV" secondAttribute="bottom" constant="5" id="QIV-Cy-XWg"/>
+                            <constraint firstItem="xE7-Fn-QpN" firstAttribute="centerX" secondItem="cHa-Hs-hxN" secondAttribute="centerX" id="oAE-Fr-ccb"/>
+                            <constraint firstItem="Onb-Pw-VsV" firstAttribute="top" secondItem="F80-tW-Y5I" secondAttribute="bottom" constant="64" id="p4o-Z0-Dlo"/>
+                            <constraint firstAttribute="width" secondItem="Onb-Pw-VsV" secondAttribute="width" multiplier="7:5" id="qbF-Ac-Jgr"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="merchantField" destination="Ivh-jf-RHn" id="qd0-r9-wOe"/>
-                        <outlet property="moneyField" destination="JKg-vv-iAb" id="LoT-B4-5wK"/>
                         <segue destination="8gX-Co-Uib" kind="show" identifier="ApplyCredit" id="XmR-IY-PhW"/>
                     </connections>
                 </viewController>
@@ -1341,7 +1335,7 @@
                                                                     <constraint firstAttribute="height" constant="25" id="GET-xV-2ox"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="麦当劳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-Fv-s82">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="麦当劳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-Fv-s82">
                                                                 <rect key="frame" x="30" y="2" width="51" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
