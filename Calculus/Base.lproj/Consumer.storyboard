@@ -1257,7 +1257,7 @@
         <scene sceneID="AYw-I3-0hQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OOb-Rt-zQm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="积分" image="icon-calculus" id="nWm-o0-IKG"/>
+                    <tabBarItem key="tabBarItem" title="积分" image="icon-credit" id="nWm-o0-IKG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PpI-Za-WvD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1276,7 +1276,7 @@
         <scene sceneID="vKh-hq-JGz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gDA-N4-fMJ" customClass="DiscountNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="活动" image="icon-find" id="GST-oz-6k4"/>
+                    <tabBarItem key="tabBarItem" title="活动" image="icon-activity" id="GST-oz-6k4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hs8-tb-ejD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1292,7 +1292,7 @@
         <scene sceneID="gXY-8D-DSa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eQn-JE-tXj" customClass="MeNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="icon-me" id="YfT-Nm-8iW"/>
+                    <tabBarItem key="tabBarItem" title="我" image="icon-center" id="YfT-Nm-8iW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PSH-Ea-hXQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1527,14 +1527,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon-activity" width="30" height="30"/>
         <image name="icon-alipay" width="64" height="64"/>
-        <image name="icon-calculus" width="64" height="64"/>
+        <image name="icon-center" width="30" height="30"/>
         <image name="icon-checkbox" width="64" height="64"/>
+        <image name="icon-credit" width="30" height="30"/>
         <image name="icon-exchange" width="64" height="64"/>
-        <image name="icon-find" width="64" height="64"/>
         <image name="icon-interchange" width="64" height="64"/>
         <image name="icon-mcd" width="64" height="64"/>
-        <image name="icon-me" width="64" height="64"/>
         <image name="icon-radio" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
