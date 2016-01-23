@@ -65,6 +65,7 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 @property (nonatomic, copy) void (^afterModifyMerchantAddress)(NSDictionary *material);
 
 //@property (nonatomic, copy) void (^afterModifyLocation)(NSString *location);
+@property (nonatomic, copy) void (^afterQueryMerchantOfIdentityFailed)(NSString *message);
 
 
 @end

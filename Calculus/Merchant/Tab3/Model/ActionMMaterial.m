@@ -190,6 +190,20 @@
                        default:
                 break;
         }
+    }else{
+        switch (self.type) {
+            case EQUERYMERCHANTOFIDENTITY:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryMerchantOfIdentityFailed) {
+                    self.afterQueryMerchantOfIdentityFailed(message);
+                }
+                break;
+            }
+                
+            default:
+                break;
+        }
     }
 }
 
