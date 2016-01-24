@@ -18,11 +18,11 @@
     switch (row) {
         case 0:
             self.name.text = @"积分申请";
-            self.icon.image = [UIImage imageNamed:@"icon-alipay"];
+            self.icon.image = [UIImage imageNamed:@"icon-apply"];
             break;
         case 1:
             self.name.text = @"客户优惠券";
-            self.icon.image = [UIImage imageNamed:@"icon-alipay"];
+            self.icon.image = [UIImage imageNamed:@"icon-coupon"];
             break;
         case 2:
         case 3:

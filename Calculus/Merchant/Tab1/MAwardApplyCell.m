@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "ActionMCredit.h"
 #import "Constance.h"
+#import "UIColor+Extension.h"
+
 
 @interface MAwardApplyCell ()
 @property (nonatomic, retain) NSString *identity;   //积分ID
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (weak, nonatomic) IBOutlet UIButton *refuseButton;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+@property (weak, nonatomic) IBOutlet UIView *cellBackgroundView;
 
 - (IBAction)refuseApplyAction:(id)sender;
 - (IBAction)confirmApplyAction:(id)sender;
@@ -30,6 +33,11 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+
+//- (void)setFrame:(CGRect)frame{
+//    frame.size.height += 50;
+//    [super setFrame:frame];
+//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -45,7 +53,15 @@
     
     //    圆角
     self.avatarImageView.clipsToBounds = YES;
-    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.height / 2.0;
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2.0f;
+    self.avatarImageView.layer.borderWidth = 1.0f;
+    self.avatarImageView.layer.borderColor = [[UIColor colorWithHex:0xC9C9C9] CGColor];
+    
+    self.cellBackgroundView.clipsToBounds = YES;
+    self.cellBackgroundView.layer.cornerRadius = 5.0f;
+    self.cellBackgroundView.layer.borderWidth = 1.0f;
+    self.cellBackgroundView.layer.borderColor = [[UIColor colorWithHex:0x63B8FF] CGColor];
+    
     
     NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [awardInfo objectForKey:@"ava"]];
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
