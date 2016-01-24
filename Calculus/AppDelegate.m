@@ -38,6 +38,8 @@
     
     self.bootstrapRoot = self.window.rootViewController;
     [self loadBoard];
+//    self.window.rootViewController = self.consumerRoot;
+//    return YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initRootWindow:) name:@"initWindow" object:nil];
     
