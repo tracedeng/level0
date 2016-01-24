@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Me Controller-->
@@ -199,8 +200,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="。。。" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3TY-rv-RNo">
-                                                    <rect key="frame" x="517" y="12" width="48" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3TY-rv-RNo">
+                                                    <rect key="frame" x="523.5" y="12" width="41.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,6 +209,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="u6f-ad-H67" kind="show" identifier="gomerchantqrcode" id="Tul-0R-I1K"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="a65-Xb-p1Z" detailTextLabel="s7Z-iE-yuW" style="IBUITableViewCellStyleValue1" id="GvP-7a-w2U">
                                         <rect key="frame" x="0.0" y="327" width="600" height="44"/>
@@ -1505,9 +1509,53 @@
             </objects>
             <point key="canvasLocation" x="3097" y="1165"/>
         </scene>
+        <!--Merchant QrcodeVC-->
+        <scene sceneID="bcC-bs-sBf">
+            <objects>
+                <viewController id="u6f-ad-H67" customClass="MerchantQrcodeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rVQ-1e-FAF"/>
+                        <viewControllerLayoutGuide type="bottom" id="8BB-ak-2Wz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QTM-Zp-11f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="Cf4-O9-evf" customClass="ClickableImageView">
+                                <rect key="frame" x="85" y="128" width="429" height="428.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cf4-O9-evf" secondAttribute="height" multiplier="1:1" id="9ki-sc-yrL"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家二维码，用户扫描后申请积分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UW-La-4pH">
+                                <rect key="frame" x="187.5" y="566.5" width="225" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cf4-O9-evf" firstAttribute="top" secondItem="rVQ-1e-FAF" secondAttribute="bottom" constant="64" id="4xi-uZ-Oib"/>
+                            <constraint firstItem="Cf4-O9-evf" firstAttribute="centerX" secondItem="QTM-Zp-11f" secondAttribute="centerX" id="C5t-Lz-Pea"/>
+                            <constraint firstItem="4UW-La-4pH" firstAttribute="centerX" secondItem="QTM-Zp-11f" secondAttribute="centerX" id="DHx-YB-TVM"/>
+                            <constraint firstItem="Cf4-O9-evf" firstAttribute="width" secondItem="QTM-Zp-11f" secondAttribute="width" multiplier="5:7" id="HQp-r0-A6v"/>
+                            <constraint firstItem="4UW-La-4pH" firstAttribute="top" secondItem="Cf4-O9-evf" secondAttribute="bottom" constant="10" id="NOc-AR-pSd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noticeLabel" destination="4UW-La-4pH" id="1Yk-Oj-DbM"/>
+                        <outlet property="qrcodeImageView" destination="Cf4-O9-evf" id="7fE-wC-AwC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bul-Xr-HgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2884" y="1985"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon-alipay" width="64" height="64"/>
         <image name="icon-mcd" width="64" height="64"/>
+        <image name="icon-qrcode" width="64" height="64"/>
     </resources>
 </document>

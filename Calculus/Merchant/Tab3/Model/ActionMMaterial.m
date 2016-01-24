@@ -61,21 +61,41 @@
 
 }
 
-- (void)doQueryUploadToken:(NSString *)merchant {
+- (void)doQueryUploadToken:(NSString *)merchant ofResource:(NSString *)resource {
     self.type = EQUERYUPLOADTOKEN;
     
 #ifdef DEBUG
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"m_logo", @"resource", merchant, @"merchant", @"debug", @"debug", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", resource, @"resource", merchant, @"merchant", @"debug", @"debug", self.account, @"numbers", self.skey, @"session_key", nil];
 #else
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"m_logo", @"resource", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", resource, @"resource", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
 #endif
     [self.net requestHttpWithData:postData];
 }
+
+//- (void)doQueryUploadTokenOfQrcode:(NSString *)merchant {
+//    self.type = EQUERYUPLOADTOKEN;
+//    
+//#ifdef DEBUG
+//    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"m_qrcode", @"resource", merchant, @"merchant", @"debug", @"debug", self.account, @"numbers", self.skey, @"session_key", nil];
+//#else
+//    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"m_qrcode", @"resource", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+//#endif
+//    [self.net requestHttpWithData:postData];
+//}
+
 
 - (void)doModifyLogo:(NSString *)logo merchant:(NSString *)merchant {
     self.type = EUPDATELOGO;
     
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", logo, @"logo", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+
+- (void)doModifyQrcode:(NSString *)qrcode merchant:(NSString *)merchant {
+    self.type = EUPDATEQRCODE;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", qrcode, @"qrcode", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
     
     [self.net requestHttpWithData:postData];
 }
@@ -152,6 +172,14 @@
 //                NSString *result = [responseObject objectForKey:@"r"];
                 if (self.afterModifyLogo) {
                     self.afterModifyLogo();
+                }
+                break;
+            }
+            case EUPDATEQRCODE:
+            {
+                //                NSString *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyQrcode) {
+                    self.afterModifyQrcode();
                 }
                 break;
             }

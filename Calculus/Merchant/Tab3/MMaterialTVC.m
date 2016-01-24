@@ -13,6 +13,7 @@
 #import "ActionQiniu.h"
 #import "Constance.h"
 #import "MerchantNameVC.h"
+#import "MerchantQrcodeVC.h"
 #import "MerchantEmailVC.h"
 #import "MerchantContactNumberVC.h"
 #import "MerchantAddressVC.h"
@@ -104,7 +105,7 @@
             case 2:
             {
                 //二维码
-                cell.detailTextLabel.text = [self.material objectForKey:@"qr"];
+//                cell.detailTextLabel.text = [self.material objectForKey:@"qr"];
                 break;
             }
             case 3:
@@ -143,7 +144,7 @@
         self.uploadToken = [result objectForKey:@"tok"];
         self.path = [result objectForKey:@"path"];
     };
-    [action doQueryUploadToken:[self.material objectForKey:@"id"]];
+    [action doQueryUploadToken:[self.material objectForKey:@"id"] ofResource:@"m_logo"];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -221,6 +222,18 @@
             self.updateMMaterialTypeMask |= MMATERIALTYPELOGO;
         };
         [action doQiniuUpload:photo token:self.uploadToken path:self.path];
+    }else if([segue.sourceViewController isKindOfClass:[MerchantQrcodeVC class]]){
+        MerchantQrcodeVC *merchantqrcodevc = (MerchantQrcodeVC *)segue.sourceViewController;
+//        ActionMMaterial *action = [[ActionMMaterial alloc] init];
+//        action.afterModifyMerchantName = ^(NSDictionary *materail){
+//            [self.material setObject:merchantnamevc.merchantName forKey:@"n"];
+//            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+//            
+//            self.updateMMaterialTypeMask |= MMATERIALTYPENAME;
+//        };
+//        [action doModifyMerchantName:merchantnamevc.merchantName merchant:[self.material objectForKey:@"id"]];
+        [self.material setObject:merchantqrcodevc.merchantQrcode forKey:@"qr"];
+
     }else if([segue.sourceViewController isKindOfClass:[MerchantNameVC class]]){
         MerchantNameVC *merchantnamevc = (MerchantNameVC *)segue.sourceViewController;
         ActionMMaterial *action = [[ActionMMaterial alloc] init];
@@ -265,9 +278,6 @@
         };
         [action doModifyMerchantAddress:merchantvc.merchantAddress merchant:[self.material objectForKey:@"id"]];
     }
-
-
-
 }
 
 #pragma mark - Segue Methods
@@ -286,6 +296,10 @@
         
     } else if([segue.identifier isEqualToString:@"gomerchantaddress"]){
         [segue.destinationViewController setValue:[self.material objectForKey:@"lo"] forKey:@"merchantAddress"];
+        
+    }else if([segue.identifier isEqualToString:@"gomerchantqrcode"]){
+        [segue.destinationViewController setValue:[self.material objectForKey:@"qr"] forKey:@"merchantQrcode"];
+        [segue.destinationViewController setValue:[self.material objectForKey:@"id"] forKey:@"merchant"];
         
     }
         

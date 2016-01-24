@@ -28,4 +28,21 @@
     } option:nil];
 }
 
+- (void)doQiniuUploadImage:(UIImage *)image token:(NSString *)token path:(NSString *)path {
+    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    //    NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
+//    ALAsset *asset = [photo objectForKey:@"asset"];
+//    NSData *data = UIImageJPEGRepresentation([[UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]] fixOrientation:(UIImageOrientation)[asset defaultRepresentation].orientation], 0.0);
+    NSData *data = UIImageJPEGRepresentation(image, 0.0);
+    
+    [upManager putData:data key:path token:token complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        //        DLog(@"%@", info);
+        DLog(@"%@", resp);
+        if (self.afterQiniuUpload) {
+            self.afterQiniuUpload([resp objectForKey:@"key"]);
+        }
+    } option:nil];
+}
+
+
 @end

@@ -10,17 +10,17 @@
 #define Constance_h
 
 #ifdef DEBUG
-#define ACCOUNTURL @"http://192.168.1.2:8000/account"
-#define CONSUMERURL @"http://192.168.1.2:8000/consumer"
-#define MERCHANTURL @"http://192.168.1.2:8000/merchant"
-#define CREDITURL @"http://192.168.1.2:8000/credit"
-#define FLOWTURL @"http://192.168.1.2:8000/flow"
+#define ACCOUNTURL @"http://192.168.1.3:8000/account"
+#define CONSUMERURL @"http://192.168.1.3:8000/consumer"
+#define MERCHANTURL @"http://192.168.1.3:8000/merchant"
+#define CREDITURL @"http://192.168.1.3:8000/credit"
+#define FLOWTURL @"http://192.168.1.3:8000/flow"
 #define QINIUURL @"http://7xor5x.com1.z0.glb.clouddn.com"
-#define BUSINESSURL @"http://192.168.1.2:8000/business"
-#define FLOWURL @"http://192.168.1.2:8000/flow"
-#define DISCOUNTURL @"http://192.168.1.2:8000/activity"
-#define ACTIVITYURL @"http://192.168.1.2:8000/activity"
-#define VOUCHERURL @"http://192.168.1.2:8000/voucher"
+#define BUSINESSURL @"http://192.168.1.3:8000/business"
+#define FLOWURL @"http://192.168.1.3:8000/flow"
+#define DISCOUNTURL @"http://192.168.1.3:8000/activity"
+#define ACTIVITYURL @"http://192.168.1.3:8000/activity"
+#define VOUCHERURL @"http://192.168.1.3:8000/voucher"
 #else
 #define CONSUMERURL @"http://www.weijifen.me:8000/consumer"
 #define MERCHANTURL @"http://www.weijifen.me:8000/merchant"
