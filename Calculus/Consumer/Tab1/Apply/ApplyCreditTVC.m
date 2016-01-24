@@ -45,7 +45,7 @@
         self.moneyField.text = [NSString stringWithFormat:@"%f", self.money];
         self.moneyField.enabled = NO;
     }
-    
+     
     self.applyButton.layer.cornerRadius = 4.0f;
 }
 
