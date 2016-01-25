@@ -17,29 +17,21 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
     ECREATEMERCHNAT,            //新增商家
     EQUERYUPLOADTOKEN,          //获取上传token
     EUPDATELOGO,                //修改商家头像
-    //    EUPDATENICKNAME,
-    //    EUPDATESEX,
-    //    EUPDATEINTRODUCE,
-    //    EUPDATELOCATION,
-    //    EUPDATEREPORT = 20,     //举报
-    EMMATERIALOPTYPEMAX,
+    EUPDATEQRCODE,                //修改商家二维码
     EUPDATEMERCHANTNAME,    //商户名称
     EUPDATEMERCHANTEMAIL,    //商户邮箱
     EUPDATEMERCHANTCONTACTNUMBER,    //商户联系电话
     EUPDATEMERCHANTADDRESS,    //商户
+    EMMATERIALOPTYPEMAX,
 };
 
-//- (void)doQueryMaterial;
-//- (void)doQueryMaterialWithPhoneNumber:(NSString *)phoneNumber;
-//- (void)doBatchQueryMaterialWithPhoneNumber:(NSArray *)phoneNumbers;
-//- (void)doModifyNickname:(NSString *)nickname;
-//- (void)doModifyIntroduce:(NSString *)introduce;
-//- (void)doModifySex:(NSInteger)sex;
 - (void)doQueryMerchantOfAccount;
 - (void)doQueryMerchantOfIdentity:(NSString *)identity;
 - (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo;
-- (void)doQueryUploadToken:(NSString *)merchant;
+//- (void)doQueryUploadToken:(NSString *)merchant;
+- (void)doQueryUploadToken:(NSString *)merchant ofResource:(NSString *)resource;
 - (void)doModifyLogo:(NSString *)logo merchant:(NSString *)merchant;
+- (void)doModifyQrcode:(NSString *)qrcode merchant:(NSString *)merchant;
 - (void)doModifyMerchantName:(NSString *)merchantname merchant:(NSString *)merchant;
 - (void)doModifyMerchantEmail:(NSString *)merchantemil merchant:(NSString *)merchant;
 - (void)doModifyMerchantContactNumber:(NSString *)merchantcontactnumber merchant:(NSString *)merchant;
@@ -59,6 +51,7 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 @property (nonatomic, copy) void (^afterCreateMerchantOfAccount)(NSString *merchant);
 @property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyLogo)();
+@property (nonatomic, copy) void (^afterModifyQrcode)();
 @property (nonatomic, copy) void (^afterModifyMerchantName)(NSDictionary *material);
 @property (nonatomic, copy) void (^afterModifyMerchantEmail)(NSDictionary *material);
 @property (nonatomic, copy) void (^afterModifyMerchantContactNumber)(NSDictionary *material);

@@ -84,6 +84,10 @@
 		195A12C51C537297008E7945 /* MerchantSelectTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12C01C537297008E7945 /* MerchantSelectTVC.m */; };
 		195A12CB1C53BFFA008E7945 /* ApplyCreditTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12C81C53BFFA008E7945 /* ApplyCreditTVC.m */; };
 		195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12CA1C53BFFA008E7945 /* ScanMerchantController.m */; };
+		195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12CF1C55259A008E7945 /* GenerateQrcode.m */; };
+		195A12D41C5526E8008E7945 /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D21C5526E8008E7945 /* YMUtils.m */; };
+		195A12D51C5526E8008E7945 /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = 195A12D31C5526E8008E7945 /* zh_CN.json */; };
+		195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */; };
 		19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */; };
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
@@ -106,8 +110,6 @@
 		B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9C41C4147DE00DD66B2 /* MCouponVC.m */; };
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
-		B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B4A1C246B36006F344F /* YMUtils.m */; };
-		B51C0B4D1C246B3E006F344F /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = B51C0B4C1C246B3E006F344F /* zh_CN.json */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */; };
@@ -275,6 +277,13 @@
 		195A12C81C53BFFA008E7945 /* ApplyCreditTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyCreditTVC.m; sourceTree = "<group>"; };
 		195A12C91C53BFFA008E7945 /* ScanMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanMerchantController.h; sourceTree = "<group>"; };
 		195A12CA1C53BFFA008E7945 /* ScanMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanMerchantController.m; sourceTree = "<group>"; };
+		195A12CE1C55259A008E7945 /* GenerateQrcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenerateQrcode.h; path = Qrcode/GenerateQrcode.h; sourceTree = "<group>"; };
+		195A12CF1C55259A008E7945 /* GenerateQrcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenerateQrcode.m; path = Qrcode/GenerateQrcode.m; sourceTree = "<group>"; };
+		195A12D11C5526E8008E7945 /* YMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMUtils.h; path = CityList/YMUtils.h; sourceTree = "<group>"; };
+		195A12D21C5526E8008E7945 /* YMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMUtils.m; path = CityList/YMUtils.m; sourceTree = "<group>"; };
+		195A12D31C5526E8008E7945 /* zh_CN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zh_CN.json; path = CityList/zh_CN.json; sourceTree = "<group>"; };
+		195A12D61C55290F008E7945 /* MerchantQrcodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantQrcodeVC.h; path = Merchant/Tab3/MerchantQrcodeVC.h; sourceTree = "<group>"; };
+		195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantQrcodeVC.m; path = Merchant/Tab3/MerchantQrcodeVC.m; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
@@ -314,9 +323,6 @@
 		B51C0B041C1DB530006F344F /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRegisterController.m; sourceTree = "<group>"; };
 		B51C0B061C1F0F85006F344F /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPassword.h; sourceTree = "<group>"; };
 		B51C0B071C1F0F85006F344F /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPassword.m; sourceTree = "<group>"; };
-		B51C0B491C246B36006F344F /* YMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMUtils.h; sourceTree = "<group>"; };
-		B51C0B4A1C246B36006F344F /* YMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMUtils.m; sourceTree = "<group>"; };
-		B51C0B4C1C246B3E006F344F /* zh_CN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zh_CN.json; sourceTree = "<group>"; };
 		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
 		B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
@@ -633,6 +639,8 @@
 				B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */,
 				B5EDC3271C2ED556002E2833 /* MerchantAddressVC.h */,
 				B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */,
+				195A12D61C55290F008E7945 /* MerchantQrcodeVC.h */,
+				195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */,
 			);
 			name = Tab3;
 			sourceTree = "<group>";
@@ -640,6 +648,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				195A12CD1C552560008E7945 /* Qrcode */,
 				B51C0B481C246AFF006F344F /* CityList */,
 				193C38381C1D95920017CC9C /* Base64 */,
 				193C383C1C1D95920017CC9C /* ClickableView */,
@@ -820,6 +829,15 @@
 			path = Apply;
 			sourceTree = "<group>";
 		};
+		195A12CD1C552560008E7945 /* Qrcode */ = {
+			isa = PBXGroup;
+			children = (
+				195A12CE1C55259A008E7945 /* GenerateQrcode.h */,
+				195A12CF1C55259A008E7945 /* GenerateQrcode.m */,
+			);
+			name = Qrcode;
+			sourceTree = "<group>";
+		};
 		19CAA8DF1C354E2300010F68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,9 +889,9 @@
 		B51C0B481C246AFF006F344F /* CityList */ = {
 			isa = PBXGroup;
 			children = (
-				B51C0B4C1C246B3E006F344F /* zh_CN.json */,
-				B51C0B491C246B36006F344F /* YMUtils.h */,
-				B51C0B4A1C246B36006F344F /* YMUtils.m */,
+				195A12D11C5526E8008E7945 /* YMUtils.h */,
+				195A12D21C5526E8008E7945 /* YMUtils.m */,
+				195A12D31C5526E8008E7945 /* zh_CN.json */,
 			);
 			name = CityList;
 			sourceTree = "<group>";
@@ -938,13 +956,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				195A12D51C5526E8008E7945 /* zh_CN.json in Resources */,
 				1942C37A1BE89F6700C2DCF4 /* LaunchScreen.storyboard in Resources */,
 				19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */,
 				1942C3771BE89F6700C2DCF4 /* Assets.xcassets in Resources */,
 				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
 				193C38301C1D94DE0017CC9C /* Album.storyboard in Resources */,
-				B51C0B4D1C246B3E006F344F /* zh_CN.json in Resources */,
 				193C37AB1C1C23460017CC9C /* Discount.storyboard in Resources */,
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
@@ -1046,6 +1064,7 @@
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
 				19339B121C2C343700791A9E /* COneAwardTVC.m in Sources */,
 				19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */,
+				195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */,
 				B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
 				19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */,
@@ -1070,12 +1089,12 @@
 				B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */,
 				195A12C51C537297008E7945 /* MerchantSelectTVC.m in Sources */,
 				19339AF91C29403400791A9E /* MAwardDerivateCVC.m in Sources */,
+				195A12D41C5526E8008E7945 /* YMUtils.m in Sources */,
 				19339AF41C269D0400791A9E /* MyOneAwardCell.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
 				19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */,
 				195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */,
-				B51C0B4B1C246B36006F344F /* YMUtils.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */,
@@ -1098,6 +1117,7 @@
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
+				195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
 				19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,

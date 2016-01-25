@@ -91,7 +91,7 @@
         self.uploadToken = [result objectForKey:@"tok"];
         self.prepath = [result objectForKey:@"path"];
     };
-    [action doQueryUploadToken:@"dummy"];
+    [action doQueryUploadToken:@"dummy" ofResource:@"m_logo"];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
