@@ -34,14 +34,14 @@
 - (void)setActivityInfo:(NSMutableDictionary *)activityInfo {
     if (activityInfo) {
         _activityInfo = activityInfo;
-        self.activityPosterIMG.clipsToBounds = YES;
-        self.activityPosterIMG.layer.cornerRadius = self.activityPosterIMG.frame.size.width / 2.0f;
+//        self.activityPosterIMG.clipsToBounds = YES;
+//        self.activityPosterIMG.layer.cornerRadius = self.activityPosterIMG.frame.size.width / 2.0f;
         
         NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [activityInfo objectForKey:@"po"]];
         [self.activityPosterIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
         
         self.activityTitleLBL.text = [activityInfo objectForKey:@"t"];
-        self.activityMerchantLBL.text = [activityInfo objectForKey:@"id"];
+        self.activityMerchantLBL.text = [activityInfo objectForKey:@"et"];
         self.activityCreditLBL.text = [NSString stringWithFormat:@"%ld", [[activityInfo objectForKey:@"cr"] integerValue]];
         self.activityIntroduceLBL.text = [activityInfo objectForKey:@"in"];
     }

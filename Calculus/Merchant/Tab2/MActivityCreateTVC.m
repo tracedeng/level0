@@ -46,8 +46,8 @@
     
     // poster圆角
     self.path = @"default";
-    self.posterImageView.clipsToBounds = YES;
-    self.posterImageView.layer.cornerRadius = self.posterImageView.frame.size.height / 2.0;
+//    self.posterImageView.clipsToBounds = YES;
+//    self.posterImageView.layer.cornerRadius = self.posterImageView.frame.size.height / 2.0;
 //    NSDate *currentDate = [NSDate date];//获取当前时间，日期
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 //    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
@@ -66,7 +66,7 @@
         self.adetailsTXT.text = [self.activityInfo objectForKey:@"in"];
         self.aexpireTXT.text = [self.activityInfo objectForKey:@"et"];
         self.path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.activityInfo objectForKey:@"po"]];
-        [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:self.path] placeholderImage:[UIImage imageNamed:@"icon-alipay"]];
+        [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:self.path] placeholderImage:[UIImage imageNamed:@"icon-activitytest"]];
         [self toggleEnable:NO];
     }
 }
@@ -236,7 +236,7 @@
         if (0 == indexPath.row) {
             //活动海报
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
-            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-alipay"]];
+            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activitytest"]];
         }
     }
     
@@ -305,14 +305,14 @@
 //    }
 //}
 //
-//- (IBAction)unwindUpdateExpire:(UIStoryboardSegue *)segue {
-//    if([segue.sourceViewController isKindOfClass:[MActivityExpireVC class]]){
-//        MActivityExpireVC *activitytvc = (MActivityExpireVC *)segue.sourceViewController;
-//        
+- (IBAction)unwindUpdateExpire:(UIStoryboardSegue *)segue {
+    if([segue.sourceViewController isKindOfClass:[MActivityExpireVC class]]){
+        MActivityExpireVC *activitytvc = (MActivityExpireVC *)segue.sourceViewController;
+        
 //        self.aexpire_time = activitytvc.aexpire;
-//        self.aexpireTXT.text = activitytvc.aexpire;
-//    }
-//}
+        self.aexpireTXT.text = activitytvc.aexpire;
+    }
+}
 
 // poster 海报
 - (IBAction)unwindUpdateMaterial:(UIStoryboardSegue *)segue {
