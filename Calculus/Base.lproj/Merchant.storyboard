@@ -648,7 +648,7 @@
         <image name="icon-alipay" width="64" height="64"/>
         <image name="icon-center" width="30" height="30"/>
         <image name="icon-credit" width="30" height="30"/>
-        <image name="icon-credit-logo" width="20" height="20"/>
+        <image name="icon-credit-logo" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WhJ-A8-kt5"/>

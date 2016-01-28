@@ -32,7 +32,7 @@
 - (void)setDiscountInfo:(NSDictionary *)discountInfo {
     if (discountInfo) {
         _discountInfo = discountInfo;
-        self.poster.image = [UIImage imageNamed:@"icon-me"];
+        self.poster.image = [UIImage imageNamed:@"icon-activitytest"];
         self.title.text = [discountInfo objectForKey:@"t"];
         self.name.text = [discountInfo objectForKey:@"na"];
         self.expireTime.text = [discountInfo objectForKey:@"et"];

@@ -108,6 +108,7 @@
 		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 		B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9C41C4147DE00DD66B2 /* MCouponVC.m */; };
+		B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */; };
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
@@ -319,6 +320,8 @@
 		19FC0FC01C1F1E89008157E3 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/SKeyManager.m; sourceTree = "<group>"; };
 		B517E9C31C4147DE00DD66B2 /* MCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCouponVC.h; path = Merchant/Tab1/MCouponVC.h; sourceTree = "<group>"; };
 		B517E9C41C4147DE00DD66B2 /* MCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCouponVC.m; path = Merchant/Tab1/MCouponVC.m; sourceTree = "<group>"; };
+		B517E9DA1C59144F00DD66B2 /* DiscountDetailsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountDetailsTVC.h; sourceTree = "<group>"; };
+		B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountDetailsTVC.m; sourceTree = "<group>"; };
 		B51C0B031C1DB530006F344F /* AccountRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountRegisterController.h; sourceTree = "<group>"; };
 		B51C0B041C1DB530006F344F /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRegisterController.m; sourceTree = "<group>"; };
 		B51C0B061C1F0F85006F344F /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPassword.h; sourceTree = "<group>"; };
@@ -501,6 +504,8 @@
 				19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */,
 				19CAA8EA1C3A3B2200010F68 /* BuyDiscountCell.h */,
 				19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */,
+				B517E9DA1C59144F00DD66B2 /* DiscountDetailsTVC.h */,
+				B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -1115,6 +1120,7 @@
 				19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */,
 				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
+				B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
 				195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */,

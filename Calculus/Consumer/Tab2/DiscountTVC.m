@@ -11,6 +11,7 @@
 #import "DiscountIntroduceController.h"
 #import "ActionDiscount.h"
 #import "SVProgressHUD.h"
+#import "DiscountDetailsTVC.h"
 
 @interface DiscountTVC ()
 @property (nonatomic, retain) NSMutableArray *discountList;
@@ -90,11 +91,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90.0f;
+    return 110.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.01f;
+    return 10.0f;
 }
 
 - (nullable NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,7 +153,15 @@
             DiscountIntroduceController *destination = (DiscountIntroduceController *)segue.destinationViewController;
             destination.discountInfo = [self.discountList objectAtIndex:self.checkedIndexPath.row];
         }
+    }else  if ([segue.identifier isEqualToString:@"DiscountDetails"]) {
+        if ([segue.destinationViewController isKindOfClass:[DiscountDetailsTVC class]]) {
+            DiscountDetailsTVC *destination = (DiscountDetailsTVC *)segue.destinationViewController;
+            destination.discountInfo = [self.discountList objectAtIndex:self.checkedIndexPath.row];
+        }
     }
+
+        
+        
 }
 
 
