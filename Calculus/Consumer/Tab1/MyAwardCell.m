@@ -38,7 +38,8 @@
     
     //圆角
     self.merchant_logo_image.clipsToBounds = YES;
-    self.merchant_logo_image.layer.cornerRadius = self.merchant_logo_image.frame.size.height / 2.0;
+    self.merchant_logo_image.layer.cornerRadius = 4.0f;
+//    self.merchant_logo_image.layer.cornerRadius = self.merchant_logo_image.frame.size.height / 2.0;
 
     NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [awardInfo objectForKey:@"l"]];
     [self.merchant_logo_image sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];

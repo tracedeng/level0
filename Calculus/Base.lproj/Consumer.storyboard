@@ -528,8 +528,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="57.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Gh-Ub-g87">
-                                            <rect key="frame" x="15" y="4" width="502" height="50"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Gh-Ub-g87">
+                                            <rect key="frame" x="15" y="4" width="552" height="50"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="22w-n9-Nt5">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -538,20 +538,32 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="egu-SQ-zOl">
-                                                    <rect key="frame" x="55" y="0.0" width="447" height="50"/>
+                                                    <rect key="frame" x="60" y="0.0" width="492" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB7-Hr-uSI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="447" height="33"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="492" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="积分总量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gs-aw-bjt">
-                                                            <rect key="frame" x="0.0" y="33" width="447" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="nAl-el-1dM">
+                                                            <rect key="frame" x="0.0" y="20.5" width="492" height="29.5"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="r1s-3Y-uMp">
+                                                                    <rect key="frame" x="0.0" y="7" width="16" height="16"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="16" id="jmI-We-iid"/>
+                                                                        <constraint firstAttribute="width" secondItem="r1s-3Y-uMp" secondAttribute="height" multiplier="1:1" id="zHI-dp-xJc"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="积分总量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gs-aw-bjt">
+                                                                    <rect key="frame" x="19" y="6.5" width="473" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -562,7 +574,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4Gh-Ub-g87" firstAttribute="centerY" secondItem="ZAW-Id-0mn" secondAttribute="centerY" id="Bnh-0E-c6i"/>
-                                        <constraint firstAttribute="trailing" secondItem="4Gh-Ub-g87" secondAttribute="trailing" constant="50" id="fcL-GL-Qpp"/>
+                                        <constraint firstAttribute="trailing" secondItem="4Gh-Ub-g87" secondAttribute="trailing" id="fcL-GL-Qpp"/>
                                         <constraint firstItem="4Gh-Ub-g87" firstAttribute="leading" secondItem="ZAW-Id-0mn" secondAttribute="leading" constant="15" id="ode-O2-ZS1"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1141,6 +1153,7 @@
         <image name="icon-alipay" width="64" height="64"/>
         <image name="icon-center" width="30" height="30"/>
         <image name="icon-credit" width="30" height="30"/>
+        <image name="icon-credit-select" width="30" height="30"/>
         <image name="icon-interchange" width="64" height="64"/>
         <image name="icon-radio" width="30" height="30"/>
     </resources>
