@@ -11,6 +11,9 @@
 
 @interface MyAwardController ()
 
+@property (weak, nonatomic) IBOutlet UIView *creditListView;
+@property (weak, nonatomic) IBOutlet UIView *noCreditListView;
+
 @end
 
 @implementation MyAwardController
@@ -19,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleAwardView:) name:@"toggleAwardView" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +30,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+// 显示积分列表或者无积分列表缺省view
+- (void)toggleAwardView:(NSNotification *)notification {
+    NSString *award = [[notification userInfo] objectForKey:@"award"];
+    if ([award isEqualToString:@"award"]) {
+        self.creditListView.hidden = NO;
+        self.noCreditListView.hidden = YES;
+    }else{
+        self.creditListView.hidden = YES;
+        self.noCreditListView.hidden = NO;
+    }
+    
+}
 /*
 #pragma mark - Navigation
 

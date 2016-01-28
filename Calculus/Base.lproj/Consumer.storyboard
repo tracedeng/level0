@@ -36,20 +36,43 @@
                                     <segue destination="ysD-Sv-WqD" kind="embed" id="jMA-zg-wOH"/>
                                 </connections>
                             </containerView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvF-fI-SsV">
+                                <rect key="frame" x="0.0" y="146" width="600" height="405"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xpK-J1-yM7" customClass="ClickableImageView">
+                                        <rect key="frame" x="199" y="101.5" width="202.5" height="202.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xpK-J1-yM7" secondAttribute="height" multiplier="1:1" id="pIO-fJ-OEb"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xpK-J1-yM7" firstAttribute="centerX" secondItem="wvF-fI-SsV" secondAttribute="centerX" id="aOh-al-9zi"/>
+                                    <constraint firstItem="xpK-J1-yM7" firstAttribute="width" secondItem="wvF-fI-SsV" secondAttribute="height" multiplier="1:2" id="gDH-TM-r6r"/>
+                                    <constraint firstItem="xpK-J1-yM7" firstAttribute="centerY" secondItem="wvF-fI-SsV" secondAttribute="centerY" id="qbb-xd-WRT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wz4-df-u8V" firstAttribute="leading" secondItem="r3Y-Mz-2nh" secondAttribute="leading" id="9Cc-oa-8Ph"/>
                             <constraint firstItem="QxW-qW-ozN" firstAttribute="trailing" secondItem="r3Y-Mz-2nh" secondAttribute="trailing" id="TFH-kt-LVR"/>
                             <constraint firstItem="QxW-qW-ozN" firstAttribute="top" secondItem="3ty-uI-o2R" secondAttribute="bottom" id="Vbf-Wc-Fxy"/>
+                            <constraint firstItem="wvF-fI-SsV" firstAttribute="trailing" secondItem="wz4-df-u8V" secondAttribute="trailing" id="XMU-M7-42z"/>
                             <constraint firstItem="wz4-df-u8V" firstAttribute="bottom" secondItem="3dL-eJ-Omf" secondAttribute="top" id="dZu-Wx-yS7"/>
+                            <constraint firstItem="wvF-fI-SsV" firstAttribute="top" secondItem="wz4-df-u8V" secondAttribute="top" id="iL7-2f-tQo"/>
                             <constraint firstItem="QxW-qW-ozN" firstAttribute="leading" secondItem="r3Y-Mz-2nh" secondAttribute="leading" id="iOi-XG-ua7"/>
                             <constraint firstItem="wz4-df-u8V" firstAttribute="trailing" secondItem="r3Y-Mz-2nh" secondAttribute="trailing" id="k15-F8-FLr"/>
+                            <constraint firstItem="wvF-fI-SsV" firstAttribute="leading" secondItem="wz4-df-u8V" secondAttribute="leading" id="mbg-A2-EJv"/>
                             <constraint firstItem="wz4-df-u8V" firstAttribute="top" secondItem="QxW-qW-ozN" secondAttribute="bottom" id="mrq-Eb-dFv"/>
+                            <constraint firstItem="wvF-fI-SsV" firstAttribute="bottom" secondItem="wz4-df-u8V" secondAttribute="bottom" id="uEg-wu-GH0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的积分" id="MR7-dD-paa"/>
                     <connections>
+                        <outlet property="creditListView" destination="wz4-df-u8V" id="K3g-Au-zpb"/>
+                        <outlet property="noCreditListView" destination="wvF-fI-SsV" id="W3V-qz-8ie"/>
                         <segue destination="QEV-4w-Hbb" kind="show" identifier="ScanQrcode" id="UrU-Bu-h26"/>
                         <segue destination="QDS-gV-Fm2" kind="show" id="Rdx-qK-x6Q"/>
                     </connections>
@@ -1156,6 +1179,7 @@
         <image name="icon-credit-select" width="30" height="30"/>
         <image name="icon-interchange" width="64" height="64"/>
         <image name="icon-radio" width="30" height="30"/>
+        <image name="logo" width="134" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UrU-Bu-h26"/>

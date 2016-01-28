@@ -55,10 +55,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    // 提供一个重新获取积分列表的机会
+    if ([self.creditList count] == 0) {
+        [self loadCreditList:nil];
+    }
+}
 
 - (void)loadCreditList:(id)sender {
     ActionCredit *credit = [[ActionCredit alloc] init];
     credit.afterConsumerQueryAllCredit = ^(NSArray *creditList) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"toggleAwardView" object:nil userInfo:@{@"award": ([creditList count] == 0) ? @"noaward" : @"award"}];
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
