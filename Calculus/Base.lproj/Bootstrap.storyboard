@@ -3,8 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Bootstrap Controller-->
@@ -19,82 +19,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XTi-wx-wgP">
-                                <rect key="frame" x="0.0" y="20" width="600" height="400"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-cu" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-do-dTw">
-                                        <rect key="frame" x="292" y="0.0" width="16" height="195"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="leK-mY-GTP">
-                                        <rect key="frame" x="30" y="205" width="540" height="195"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nv-RM-RAe">
-                                                <rect key="frame" x="0.0" y="0.0" width="540" height="1"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="J6Z-Yu-mv2"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzY-J6-4Ou">
-                                                <rect key="frame" x="0.0" y="36" width="540" height="44"/>
-                                                <color key="backgroundColor" red="0.96626138689999996" green="0.54144687199999997" blue="0.13216331449999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="mjo-Xr-3xW"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="客户">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="EnterAsConsumer:" destination="wiF-FO-2C8" eventType="touchUpInside" id="tsm-i8-qRM"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubd-Y2-tg4">
-                                                <rect key="frame" x="0.0" y="115" width="540" height="44"/>
-                                                <color key="backgroundColor" red="0.96626138689999996" green="0.54144687199999997" blue="0.13216331449999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="KVo-Cr-XzY"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="商家">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="EnterAsMerchant:" destination="wiF-FO-2C8" eventType="touchUpInside" id="P1L-i1-t4V"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-zi-kZE">
-                                                <rect key="frame" x="0.0" y="194" width="540" height="1"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="gjt-5f-UFk"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-cu" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-do-dTw">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
                                 <constraints>
-                                    <constraint firstItem="leK-mY-GTP" firstAttribute="leading" secondItem="XTi-wx-wgP" secondAttribute="leading" constant="30" id="dYr-I6-fmD"/>
-                                    <constraint firstAttribute="trailing" secondItem="leK-mY-GTP" secondAttribute="trailing" constant="30" id="gKL-aE-eph"/>
+                                    <constraint firstAttribute="width" secondItem="4lh-do-dTw" secondAttribute="height" multiplier="3:1" id="6TP-tz-hIk"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzY-J6-4Ou">
+                                <rect key="frame" x="20" y="352" width="560" height="36"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="mjo-Xr-3xW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="客户">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="EnterAsConsumer:" destination="wiF-FO-2C8" eventType="touchUpInside" id="tsm-i8-qRM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubd-Y2-tg4">
+                                <rect key="frame" x="20" y="410" width="560" height="36"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="KVo-Cr-XzY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="商家">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="EnterAsMerchant:" destination="wiF-FO-2C8" eventType="touchUpInside" id="P1L-i1-t4V"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="XTi-wx-wgP" secondAttribute="trailing" id="Cln-5E-ccl"/>
-                            <constraint firstItem="XTi-wx-wgP" firstAttribute="top" secondItem="0AC-an-hWl" secondAttribute="bottom" id="mB3-Ay-f9u"/>
-                            <constraint firstAttribute="height" secondItem="XTi-wx-wgP" secondAttribute="height" multiplier="1.5" id="poT-7S-oeU"/>
-                            <constraint firstItem="XTi-wx-wgP" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" id="rfl-Yb-bWK"/>
+                            <constraint firstItem="Ubd-Y2-tg4" firstAttribute="trailing" secondItem="MzY-J6-4Ou" secondAttribute="trailing" id="9UQ-fh-rd1"/>
+                            <constraint firstItem="Ubd-Y2-tg4" firstAttribute="leading" secondItem="MzY-J6-4Ou" secondAttribute="leading" id="B6t-J1-9Bh"/>
+                            <constraint firstAttribute="trailing" secondItem="4lh-do-dTw" secondAttribute="trailing" id="Leo-Ug-WGX"/>
+                            <constraint firstItem="4lh-do-dTw" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" id="SCN-Zu-lPB"/>
+                            <constraint firstItem="4lh-do-dTw" firstAttribute="top" secondItem="0AC-an-hWl" secondAttribute="bottom" id="VCh-IM-NZm"/>
+                            <constraint firstItem="MzY-J6-4Ou" firstAttribute="top" secondItem="4lh-do-dTw" secondAttribute="bottom" constant="88" id="aNh-uC-b3o"/>
+                            <constraint firstItem="MzY-J6-4Ou" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" constant="20" id="iuD-6a-6LL"/>
+                            <constraint firstAttribute="trailing" secondItem="MzY-J6-4Ou" secondAttribute="trailing" constant="20" id="ouI-Lr-cM6"/>
+                            <constraint firstItem="Ubd-Y2-tg4" firstAttribute="top" secondItem="MzY-J6-4Ou" secondAttribute="bottom" constant="22" id="uT9-MP-gxY"/>
+                            <constraint firstItem="MzY-J6-4Ou" firstAttribute="centerY" secondItem="49h-Xd-GC0" secondAttribute="centerY" id="yV5-qD-ik9"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yV5-qD-ik9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="QPy-TZ-Zb5"/>
                     <connections>
+                        <outlet property="consumerButton" destination="MzY-J6-4Ou" id="UBN-8i-0Ba"/>
+                        <outlet property="merchantButton" destination="Ubd-Y2-tg4" id="1fQ-RB-AB6"/>
                         <segue destination="eoP-Z7-3l1" kind="show" identifier="CreateMerchant" id="bu8-ra-IxU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3p6-f3-7aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="433"/>
+            <point key="canvasLocation" x="1247" y="433"/>
         </scene>
         <!--Create MerchantTVC-->
         <scene sceneID="prh-iK-FeO">
@@ -236,6 +224,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RG5-YP-UtI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.10980392160000001" green="0.52549019610000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -15,6 +15,8 @@
 - (IBAction)EnterAsConsumer:(id)sender;
 - (IBAction)EnterAsMerchant:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *consumerButton;
+@property (weak, nonatomic) IBOutlet UIButton *merchantButton;
 @end
 
 @implementation BootstrapController
@@ -22,6 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.consumerButton.layer.cornerRadius = 4.0f;
+    self.merchantButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
