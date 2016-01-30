@@ -11,7 +11,7 @@
 @interface MyOneAwardCell ()
 //@property (weak, nonatomic) IBOutlet UILabel *merchant_name_label;
 //@property (weak, nonatomic) IBOutlet UILabel *total_award_label;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expireLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 
@@ -33,11 +33,11 @@
 //    DLog(@"%@", awardInfo);
     BOOL exchanged = [[awardInfo objectForKey:@"e"] boolValue];
     if (exchanged) {
-        self.titleLabel.text = @"积分券";
+//        self.titleLabel.text = @"积分券";
         self.quantityLabel.text = [[awardInfo objectForKey:@"am"] stringValue];
         self.expireLabel.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
     }else{
-        self.titleLabel.text = @"待兑换券";
+//        self.titleLabel.text = @"待兑换券";
         self.quantityLabel.text = [[awardInfo objectForKey:@"s"] stringValue];
         self.expireLabel.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
     }
