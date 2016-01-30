@@ -11,11 +11,13 @@
 #import "ActionCredit.h"
 #import "InterchangeController.h"
 #import "SVProgressHUD.h"
+#import "UIColor+Extension.h"
 
 
 @interface CreditExchangeInTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
 @property (nonatomic, retain) NSIndexPath *lastCheckedIndex;  //nil表示没有cell被选中
+@property (weak, nonatomic) IBOutlet UIImageView *logoIMG;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
 @end
@@ -111,7 +113,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0f;
+    return 80.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
