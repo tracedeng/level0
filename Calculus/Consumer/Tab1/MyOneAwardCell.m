@@ -7,6 +7,8 @@
 //
 
 #import "MyOneAwardCell.h"
+#import "UIColor+Extension.h"
+
 
 @interface MyOneAwardCell ()
 //@property (weak, nonatomic) IBOutlet UILabel *merchant_name_label;
@@ -14,6 +16,9 @@
 //@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expireLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *creditSymbleIMG;
+@property (weak, nonatomic) IBOutlet UIImageView *creditBackgroundIMG;
+
 
 @end
 
@@ -36,6 +41,11 @@
 //        self.titleLabel.text = @"积分券";
         self.quantityLabel.text = [[awardInfo objectForKey:@"am"] stringValue];
         self.expireLabel.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
+        self.quantityLabel.textColor = [UIColor colorWithHex:0x1C86EE];
+        self.creditBackgroundIMG.image = [UIImage imageNamed:@"bg-credit-coupon"];
+        self.creditSymbleIMG.image = [UIImage imageNamed:@"icon-credit-smb"];
+
+        
     }else{
 //        self.titleLabel.text = @"待兑换券";
         self.quantityLabel.text = [[awardInfo objectForKey:@"s"] stringValue];
