@@ -10,6 +10,7 @@
 
 @interface CreditExchangeCell : UITableViewCell
 @property (nonatomic, retain) NSDictionary *awardInfo;
+@property (nonatomic, retain) NSString *logoPath;
 @property (nonatomic, retain) UITableView *tableView;
 
 - (void)toggle;

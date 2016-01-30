@@ -30,7 +30,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = @"积分汇率";
+    self.title = @"选择转出积分";
     self.creditList = [[NSMutableArray alloc] init];
     
     [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
@@ -92,6 +92,7 @@
     
     // Configure the cell...
     cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+    cell.logoPath = [[self.creditList objectAtIndex:indexPath.section] objectForKey:@"l"];
     cell.tableView = tableView;
     
     __block CreditExchangeCell *_cell = cell;
