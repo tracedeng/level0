@@ -24,8 +24,8 @@ typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
 - (void)doConsumerQueryAllCredit;
 - (void)doConsumerQueryOneCredit:(NSString *)merchant;
 - (void)doConsumerCreateConsumption:(NSString *)merchant money:(NSInteger)money;
-- (void)doConsumerQueryOtherCreditList:(NSString *)merchant;
-- (void)doConsumerQueryOtherMerchantList:(NSString *)merchant;
+- (void)doConsumerQueryCreditListWithout:(NSString *)merchant;
+- (void)doConsumerQueryMerchantListWithout:(NSString *)merchant;
 - (void)doCreditInterchange:(NSString *)credit from_merchant:(NSString *)from quantity:(NSInteger)quantity to_merchant:(NSString *)to exec_exchange:(BOOL)exec;
 
 @property (nonatomic, copy) void (^afterConsumerQueryAllCredit)(NSArray *creditList);

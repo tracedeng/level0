@@ -60,14 +60,14 @@
     
     [self.net requestHttpWithData:postData];
 }
-- (void)doConsumerQueryOtherCreditList:(NSString *)merchant {
+- (void)doConsumerQueryCreditListWithout:(NSString *)merchant {
     self.type = ECONSUMERQUERYOTHERCREDITLIST;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_detail", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"credit_list_detail", @"type", self.account, @"numbers", self.skey, @"session_key", merchant, @"merchant", nil];
     
     [self.net requestHttpWithData:postData];
 }
-- (void)doConsumerQueryOtherMerchantList:(NSString *)merchant{
+- (void)doConsumerQueryMerchantListWithout:(NSString *)merchant {
     self.type = ECONSUMERQUERYMERCHANTLIST;
     
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"verified_merchant", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
@@ -203,6 +203,13 @@
         {
             if (self.afterConsumerQueryAllCreditFailed) {
                 self.afterConsumerQueryAllCreditFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case ECONSUMERQUERYONECREDIT:
+        {
+            if (self.afterConsumerQueryOneCreditFailed) {
+                self.afterConsumerQueryOneCreditFailed([responseError localizedDescription]);
             }
             break;
         }

@@ -68,7 +68,7 @@
         }
         //        TODO...错误提示
     };
-    [credit doConsumerQueryOtherCreditList:self.merchant];
+    [credit doConsumerQueryCreditListWithout:self.merchant];
 }
 
 
