@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aDm-bs-ptl">
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -735,6 +735,7 @@
                                     <outlet property="creditBackgroundIMG" destination="smF-UE-KC2" id="cUU-xM-cYs"/>
                                     <outlet property="creditSymbleIMG" destination="A6G-ku-wAC" id="O7y-Ub-BFb"/>
                                     <outlet property="expireLabel" destination="0W6-Oo-G0a" id="9NP-Gn-6MP"/>
+                                    <outlet property="expireTitleLabel" destination="Tzr-G9-rlV" id="1CH-m2-x0Q"/>
                                     <outlet property="quantityLabel" destination="rMq-CH-aCx" id="biT-hq-X9I"/>
                                 </connections>
                             </tableViewCell>

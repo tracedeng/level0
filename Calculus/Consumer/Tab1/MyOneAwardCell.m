@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *creditSymbleIMG;
 @property (weak, nonatomic) IBOutlet UIImageView *creditBackgroundIMG;
+@property (weak, nonatomic) IBOutlet UILabel *expireTitleLabel;
 
 
 @end
@@ -44,6 +45,8 @@
         self.quantityLabel.textColor = [UIColor colorWithHex:0x1C86EE];
         self.creditBackgroundIMG.image = [UIImage imageNamed:@"bg-credit-coupon"];
         self.creditSymbleIMG.image = [UIImage imageNamed:@"icon-credit-smb"];
+        self.expireLabel.textColor = [UIColor colorWithHex:0x1C86EE];
+        self.expireTitleLabel.textColor = [UIColor colorWithHex:0x1C86EE];
 
         
     }else{
