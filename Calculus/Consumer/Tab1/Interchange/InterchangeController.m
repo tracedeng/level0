@@ -33,6 +33,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"积分互换";
+    
     // source
     self.sourceCreditView.clipsToBounds = YES;
     self.sourceCreditView.layer.cornerRadius = self.sourceCreditView.frame.size.height / 2.0f;

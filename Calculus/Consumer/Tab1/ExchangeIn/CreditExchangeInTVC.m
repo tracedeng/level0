@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"选择转出积分";
     self.creditList = [[NSMutableArray alloc] init];
 
     [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
@@ -87,6 +88,7 @@
     
     // Configure the cell...
     cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
+    cell.logoPath = [[self.creditList objectAtIndex:indexPath.section] objectForKey:@"l"];
     cell.tableView = tableView;
     
     __block CreditExchangeInCell *_cell = cell;
@@ -113,7 +115,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80.0f;
+    return 60.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

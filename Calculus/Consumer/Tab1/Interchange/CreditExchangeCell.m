@@ -60,8 +60,6 @@
         self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
         NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, _logoPath];
         [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
-        
-
     }
 }
 

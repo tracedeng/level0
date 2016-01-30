@@ -798,10 +798,10 @@
 		195A12AC1C5370DD008E7945 /* ExchangeIn */ = {
 			isa = PBXGroup;
 			children = (
-				195A12AD1C5370DD008E7945 /* CreditExchangeInCell.h */,
-				195A12AE1C5370DD008E7945 /* CreditExchangeInCell.m */,
 				195A12AF1C5370DD008E7945 /* CreditExchangeInTVC.h */,
 				195A12B01C5370DE008E7945 /* CreditExchangeInTVC.m */,
+				195A12AD1C5370DD008E7945 /* CreditExchangeInCell.h */,
+				195A12AE1C5370DD008E7945 /* CreditExchangeInCell.m */,
 			);
 			path = ExchangeIn;
 			sourceTree = "<group>";
@@ -813,12 +813,12 @@
 				195A12BA1C537297008E7945 /* CreditExchangeTVC.m */,
 				195A12B71C537297008E7945 /* CreditExchangeCell.h */,
 				195A12B81C537297008E7945 /* CreditExchangeCell.m */,
-				195A12BB1C537297008E7945 /* InterchangeController.h */,
-				195A12BC1C537297008E7945 /* InterchangeController.m */,
 				195A12BF1C537297008E7945 /* MerchantSelectTVC.h */,
 				195A12C01C537297008E7945 /* MerchantSelectTVC.m */,
 				195A12BD1C537297008E7945 /* MerchantSelectCell.h */,
 				195A12BE1C537297008E7945 /* MerchantSelectCell.m */,
+				195A12BB1C537297008E7945 /* InterchangeController.h */,
+				195A12BC1C537297008E7945 /* InterchangeController.m */,
 			);
 			path = Interchange;
 			sourceTree = "<group>";
