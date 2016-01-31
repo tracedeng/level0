@@ -551,36 +551,36 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-H3-G7X">
-                                            <rect key="frame" x="15" y="15" width="69" height="30"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-H3-G7X">
+                                            <rect key="frame" x="15" y="15" width="77" height="30"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="g40-mA-pBs">
-                                                    <rect key="frame" x="0.0" y="18" width="12" height="12"/>
+                                                    <rect key="frame" x="0.0" y="10" width="20" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="12" id="1WQ-89-5eQ"/>
-                                                        <constraint firstAttribute="height" constant="12" id="6qh-uq-EJM"/>
+                                                        <constraint firstAttribute="width" constant="20" id="1WQ-89-5eQ"/>
+                                                        <constraint firstAttribute="height" constant="20" id="6qh-uq-EJM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-1R-qU6">
-                                                    <rect key="frame" x="14" y="0.0" width="55" height="39"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-1R-qU6">
+                                                    <rect key="frame" x="22" y="0.0" width="55" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="AzU-Aw-aJg">
-                                            <rect key="frame" x="465" y="22" width="112" height="15"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="AzU-Aw-aJg">
+                                            <rect key="frame" x="465" y="22" width="104" height="14"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有效期至" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yh2-Dr-aui">
-                                                    <rect key="frame" x="0.0" y="0.0" width="48" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2015-11-11" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQx-cq-907">
-                                                    <rect key="frame" x="50" y="0.0" width="62" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="46" y="0.0" width="58" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
