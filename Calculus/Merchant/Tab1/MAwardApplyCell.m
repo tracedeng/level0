@@ -47,7 +47,7 @@
 
 - (void)setAwardInfo:(NSDictionary *)awardInfo {
     self.nicknameLabel.text = [awardInfo objectForKey:@"ni"];
-    self.applyDateLabel.text = [awardInfo objectForKey:@"ct"];
+    self.applyDateLabel.text = [[awardInfo objectForKey:@"ct"] substringToIndex:10];
     self.moneyLabel.text = [[awardInfo objectForKey:@"sums"] stringValue];
     self.identity = [awardInfo objectForKey:@"id"];
     
