@@ -51,17 +51,22 @@
     self.moneyLabel.text = [[awardInfo objectForKey:@"sums"] stringValue];
     self.identity = [awardInfo objectForKey:@"id"];
     
-    //    圆角
+      //    圆角
     self.avatarImageView.clipsToBounds = YES;
-    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2.0f;
+    self.avatarImageView.layer.cornerRadius = 4.0f; //self.avatarImageView.frame.size.width / 2.0f;
     self.avatarImageView.layer.borderWidth = 1.0f;
     self.avatarImageView.layer.borderColor = [[UIColor colorWithHex:0xC9C9C9] CGColor];
     
     self.cellBackgroundView.clipsToBounds = YES;
-    self.cellBackgroundView.layer.cornerRadius = 5.0f;
-    self.cellBackgroundView.layer.borderWidth = 1.0f;
-    self.cellBackgroundView.layer.borderColor = [[UIColor colorWithHex:0x63B8FF] CGColor];
+    self.cellBackgroundView.layer.cornerRadius = 4.0f;
+//    self.cellBackgroundView.layer.borderWidth = 1.0f;
+//    self.cellBackgroundView.layer.borderColor = [[UIColor colorWithHex:0x63B8FF] CGColor];
     
+    self.refuseButton.clipsToBounds = YES;
+    self.refuseButton.layer.cornerRadius = 2.0f;
+    
+    self.confirmButton.clipsToBounds = YES;
+    self.confirmButton.layer.cornerRadius = 2.0f;
     
     NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [awardInfo objectForKey:@"ava"]];
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
