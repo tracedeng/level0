@@ -119,6 +119,18 @@
     return 0.01f;
 }
 
+
+//TODO ... 分组索引
+#pragma mark 返回每组标题索引
+//-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+//    NSLog(@"生成组索引");
+//    NSMutableArray *indexs=[[NSMutableArray alloc]init];
+//    for(KCContactGroup *group in _contacts){
+//        [indexs addObject:group.name];
+//    }
+//    return indexs;
+//}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

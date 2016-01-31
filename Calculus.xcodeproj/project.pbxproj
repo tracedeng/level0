@@ -105,6 +105,7 @@
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
 		19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBC041C228D16002A920E /* ActionQiniu.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
+		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
 		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 		B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9C41C4147DE00DD66B2 /* MCouponVC.m */; };
@@ -316,6 +317,8 @@
 		19CBBC031C228D16002A920E /* ActionQiniu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionQiniu.h; path = Model/ActionQiniu.h; sourceTree = "<group>"; };
 		19CBBC041C228D16002A920E /* ActionQiniu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionQiniu.m; path = Model/ActionQiniu.m; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
+		19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeSessionHeader.h; sourceTree = "<group>"; };
+		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
 		19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKeyManager.h; path = Account/SKeyManager.h; sourceTree = "<group>"; };
 		19FC0FC01C1F1E89008157E3 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/SKeyManager.m; sourceTree = "<group>"; };
 		B517E9C31C4147DE00DD66B2 /* MCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCouponVC.h; path = Merchant/Tab1/MCouponVC.h; sourceTree = "<group>"; };
@@ -552,10 +555,10 @@
 				193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */,
 				193C37821C1BE8510017CC9C /* BootstrapController.h */,
 				193C37831C1BE8510017CC9C /* BootstrapController.m */,
-				193C37E31C1D4A070017CC9C /* RoleManager.h */,
-				193C37E41C1D4A070017CC9C /* RoleManager.m */,
 				19339AD01C23DC6100791A9E /* CreateMerchantTVC.h */,
 				19339AD11C23DC6100791A9E /* CreateMerchantTVC.m */,
+				193C37E31C1D4A070017CC9C /* RoleManager.h */,
+				193C37E41C1D4A070017CC9C /* RoleManager.m */,
 			);
 			path = Bootstrap;
 			sourceTree = "<group>";
@@ -813,6 +816,8 @@
 				195A12BA1C537297008E7945 /* CreditExchangeTVC.m */,
 				195A12B71C537297008E7945 /* CreditExchangeCell.h */,
 				195A12B81C537297008E7945 /* CreditExchangeCell.m */,
+				19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */,
+				19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */,
 				195A12BF1C537297008E7945 /* MerchantSelectTVC.h */,
 				195A12C01C537297008E7945 /* MerchantSelectTVC.m */,
 				195A12BD1C537297008E7945 /* MerchantSelectCell.h */,
@@ -1091,6 +1096,7 @@
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
+				19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */,
 				195A12C31C537297008E7945 /* InterchangeController.m in Sources */,
 				B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */,
 				195A12C51C537297008E7945 /* MerchantSelectTVC.m in Sources */,

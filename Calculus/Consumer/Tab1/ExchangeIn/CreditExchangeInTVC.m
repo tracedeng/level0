@@ -12,12 +12,13 @@
 #import "InterchangeController.h"
 #import "SVProgressHUD.h"
 #import "UIColor+Extension.h"
+#import "CreditExchangeSessionHeader.h"
 
 
 @interface CreditExchangeInTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
 @property (nonatomic, retain) NSIndexPath *lastCheckedIndex;  //nil表示没有cell被选中
-@property (weak, nonatomic) IBOutlet UIImageView *logoIMG;
+//@property (weak, nonatomic) IBOutlet UIImageView *logoIMG;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
 @end
@@ -88,7 +89,7 @@
     
     // Configure the cell...
     cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
-    cell.logoPath = [[self.creditList objectAtIndex:indexPath.section] objectForKey:@"l"];
+//    cell.logoPath = [[self.creditList objectAtIndex:indexPath.section] objectForKey:@"l"];
     cell.tableView = tableView;
     
     __block CreditExchangeInCell *_cell = cell;
@@ -114,6 +115,15 @@
 
 }
 
+-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CreditExchangeSessionHeader *header = [tableView dequeueReusableCellWithIdentifier: @"CreditExchangeSessionHeader"];
+    
+    header.name = [[self.creditList objectAtIndex:section] objectForKey:@"t"];
+    header.logoPath = [[self.creditList objectAtIndex:section] objectForKey:@"l"];
+    
+    return header;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60.0f;
 }
@@ -124,9 +134,8 @@
 
 //必须，否则第二个section head上面包含footer的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01f;
+    return 15.01f;
 }
-
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 ////    CreditExchangeInCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];

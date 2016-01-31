@@ -21,7 +21,7 @@
 @property (nonatomic, assign) BOOL checked;     // toggle时上一个状态
 @property (nonatomic, retain) UIImage *checkedImage;
 @property (nonatomic, retain) UIImage *uncheckedImage;
-@property (weak, nonatomic) IBOutlet UIImageView *logoIMG;
+//@property (weak, nonatomic) IBOutlet UIImageView *logoIMG;
 
 @end
 
@@ -59,19 +59,19 @@
         };
     }
 }
-
-- (void)setLogoPath:(NSString *)logoPath {
-    if (logoPath) {
-        _logoPath = logoPath;
-        
-        //圆角
-        self.logoIMG.clipsToBounds = YES;
-        //        self.logoImageView.layer.cornerRadius = 4.0f;
-        self.logoIMG.layer.cornerRadius = self.logoIMG.frame.size.height / 2.0;
-        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, _logoPath];
-        [self.logoIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
-    }
-}
+//
+//- (void)setLogoPath:(NSString *)logoPath {
+//    if (logoPath) {
+//        _logoPath = logoPath;
+//        
+//        //圆角
+//        self.logoIMG.clipsToBounds = YES;
+//        //        self.logoImageView.layer.cornerRadius = 4.0f;
+//        self.logoIMG.layer.cornerRadius = self.logoIMG.frame.size.height / 2.0;
+//        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, _logoPath];
+//        [self.logoIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
+//    }
+//}
 
 - (void)toggle {
     self.checkImageView.image = self.checked ? self.uncheckedImage : self.checkedImage;

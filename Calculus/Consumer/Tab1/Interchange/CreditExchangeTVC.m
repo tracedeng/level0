@@ -11,6 +11,7 @@
 #import "SVProgressHUD.h"
 #import "CreditExchangeCell.h"
 #import "MerchantSelectTVC.h"
+#import "CreditExchangeSessionHeader.h"
 
 
 @interface CreditExchangeTVC ()
@@ -18,6 +19,8 @@
 @property (nonatomic, retain) NSIndexPath *lastCheckedIndex;  //nil表示没有cell被选中
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
+@property (weak, nonatomic) IBOutlet UIImageView *logo;
+//@property (weak, nonatomic) IBOutlet UILabel *name;
 @end
 
 @implementation CreditExchangeTVC
@@ -92,7 +95,7 @@
     
     // Configure the cell...
     cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
-    cell.logoPath = [[self.creditList objectAtIndex:indexPath.section] objectForKey:@"l"];
+//    cell.logoPath = [[self.creditList objectAtIndex:indexPath.section] objectForKey:@"l"];
     cell.tableView = tableView;
     
     __block CreditExchangeCell *_cell = cell;
@@ -117,6 +120,16 @@
     return cell;
 }
 
+
+-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CreditExchangeSessionHeader *header = [tableView dequeueReusableCellWithIdentifier: @"CreditExchangeSessionHeader"];
+    
+    header.name = [[self.creditList objectAtIndex:section] objectForKey:@"t"];
+    header.logoPath = [[self.creditList objectAtIndex:section] objectForKey:@"l"];
+    
+    return header;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60.0f;
 }
@@ -127,14 +140,8 @@
 
 //必须，否则第二个section head上面包含footer的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01f;
+    return 15.01f;
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    CreditExchangeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CreditExchangeCell" forIndexPath:indexPath];
-//    cell.awardInfo = [[[self.creditList objectAtIndex:indexPath.section] objectForKey:@"cr"] objectAtIndex:indexPath.row];
-//    
-//}
 
 
 /*
