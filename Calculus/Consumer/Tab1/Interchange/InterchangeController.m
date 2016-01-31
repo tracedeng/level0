@@ -51,7 +51,7 @@
 
     // dest
     self.destCreditView.clipsToBounds = YES;
-    self.destCreditView.layer.cornerRadius = self.destCreditView.frame.size.height / 2.0f;
+    self.destCreditView.layer.cornerRadius = self.destCreditView.frame.size.width / 2.0f;
     self.destCreditView.layer.borderWidth = 1.0f;
     self.destCreditView.layer.borderColor = [[UIColor yellowColor] CGColor];
     
@@ -64,9 +64,12 @@
   
     //fee
     self.feeView.clipsToBounds = YES;
-    self.feeView.layer.cornerRadius = self.feeView.frame.size.height / 2.0f;
+    self.feeView.layer.cornerRadius = self.feeView.frame.size.width / 2.0f;
     self.feeView.layer.borderWidth = 1.0f;
     self.feeView.layer.borderColor = [[UIColor yellowColor] CGColor];
+    
+    //button
+    self.interchangeButton.layer.cornerRadius = 4.0f;
     
     ActionCredit *action = [[ActionCredit alloc] init];
     action.afterCreditInterchange = ^(NSInteger quantity, NSInteger fee) {
