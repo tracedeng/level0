@@ -42,11 +42,11 @@
 //        self.titleLabel.text = @"积分券";
         self.quantityLabel.text = [[awardInfo objectForKey:@"am"] stringValue];
         self.expireLabel.text = [[awardInfo objectForKey:@"et"] substringToIndex:10];
-        self.quantityLabel.textColor = [UIColor colorWithHex:0x1C86EE];
+        self.quantityLabel.textColor = [UIColor colorWithHex:0x14bc9a];
         self.creditBackgroundIMG.image = [UIImage imageNamed:@"bg-credit-coupon"];
-        self.creditSymbleIMG.image = [UIImage imageNamed:@"icon-credit-smb"];
-        self.expireLabel.textColor = [UIColor colorWithHex:0x1C86EE];
-        self.expireTitleLabel.textColor = [UIColor colorWithHex:0x1C86EE];
+        self.creditSymbleIMG.image = [UIImage imageNamed:@"icon-credit-green"];
+        self.expireLabel.textColor = [UIColor colorWithHex:0xFFFFFF];
+        self.expireTitleLabel.textColor = [UIColor colorWithHex:0xFFFFFF];
 
         
     }else{
