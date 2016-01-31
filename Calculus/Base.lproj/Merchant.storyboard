@@ -207,12 +207,12 @@
             <objects>
                 <tableViewController id="KfD-qH-Xa6" customClass="MAwardApplyTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="6Hv-2Z-RvM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MAwardApplyCell" rowHeight="120" id="WUC-8z-deE" customClass="MAwardApplyCell">
-                                <rect key="frame" x="0.0" y="114" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" tableViewCell="WUC-8z-deE" id="3Fy-3j-iTG">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
@@ -389,7 +389,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ViP-ES-7uc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a93-kD-rU0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-Ct-jIr">
@@ -621,7 +621,7 @@
         <image name="icon-renminbi-gray" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WhJ-A8-kt5"/>
-        <segue reference="kgL-70-gt8"/>
+        <segue reference="G8f-XL-Kbc"/>
+        <segue reference="fy0-wT-4ok"/>
     </inferredMetricsTieBreakers>
 </document>
