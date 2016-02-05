@@ -202,6 +202,24 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case ECONSUMERQUERYDISCOUNT:
+        {
+            if (self.afterConsumerQueryDiscountFailed) {
+                self.afterConsumerQueryDiscountFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case ECONSUMERBUYDISCOUNT:
+        {
+            if (self.afterConsumerBuyDiscountFailed) {
+                self.afterConsumerBuyDiscountFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

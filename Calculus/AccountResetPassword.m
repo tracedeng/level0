@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.accountTXT.delegate = self;
     
     self.accountView.layer.cornerRadius = 4.0f;
     self.smsView.layer.cornerRadius = 4.0f;

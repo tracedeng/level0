@@ -180,6 +180,50 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case EQUERYMERCHANTACTIVITY:
+        {
+            if (self.afterQueryMerchantActivityFailed) {
+                self.afterQueryMerchantActivityFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EDELETEMERCHANTACTIVITY:
+        {
+            if (self.afterDeleteMerchantActivityFailed) {
+                self.afterDeleteMerchantActivityFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EUPDATEMERCHANTACTIVITY:
+        {
+            if (self.afterUpdateMerchantActivityFailed) {
+                self.afterUpdateMerchantActivityFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EADDMERCHANTACTIVITY:
+        {
+            if (self.afterAddMerchantActivityFailed) {
+                self.afterAddMerchantActivityFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EQUERYUPLOADTOKEN:
+        {
+            if (self.afterQueryUploadTokenFailed) {
+                self.afterQueryUploadTokenFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
+
 }
 
 @end

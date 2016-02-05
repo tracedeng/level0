@@ -80,6 +80,18 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case ECONSUMERQUERYMERCHANTLIST:
+        {
+            if (self.afterConsumerQueryOtherMerchantListFailed) {
+                self.afterConsumerQueryOtherMerchantListFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        default:
+            break;
+    }
+
 }
 
 

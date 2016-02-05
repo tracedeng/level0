@@ -128,6 +128,36 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case EQUERYVOUCHER:
+        {
+            //七牛token失败操作
+            if (self.afterQueryVoucherFailed) {
+                self.afterQueryVoucherFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EMERCHANTQUERYVOUCHER:
+        {
+            //修改头像失败操作
+            if (self.afterMerchantQueryVoucherFailed) {
+                self.afterMerchantQueryVoucherFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case ECONFIRMVOUCHER:
+        {
+            //修改昵称失败操作
+            if (self.afterConfirmVoucherFailed) {
+                self.afterConfirmVoucherFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+                   
+        default:
+            break;
+    }
 }
 
 @end

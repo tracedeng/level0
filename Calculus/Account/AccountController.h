@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountController : UIViewController
+@interface AccountController : UIViewController <UITextFieldDelegate>
 //@property (nonatomic, retain) NSString *userMode;     //第一版本不支持这个需求
 
 @end

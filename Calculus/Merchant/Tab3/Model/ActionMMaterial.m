@@ -240,5 +240,88 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case EQUERYMERCHANT:
+        {
+            if (self.afterQueryMerchantOfAccountFailed) {
+                self.afterQueryMerchantOfAccountFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EQUERYMERCHANTOFIDENTITY:
+        {
+            if (self.afterQueryMerchantOfIdentityFailed) {
+                self.afterQueryMerchantOfIdentityFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case ECREATEMERCHNAT:
+        {
+            if (self.afterCreateMerchantOfAccountFailed) {
+                self.afterCreateMerchantOfAccountFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EQUERYUPLOADTOKEN:
+        {
+            if (self.afterQueryUploadTokenFailed) {
+                self.afterQueryUploadTokenFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EUPDATELOGO:
+        {
+            if (self.afterModifyLogoFailed) {
+                self.afterModifyLogoFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EUPDATEQRCODE:
+        {
+            if (self.afterModifyQrcodeFailed) {
+                self.afterModifyQrcodeFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EUPDATEMERCHANTNAME:
+        {
+            if (self.afterModifyMerchantNameFailed) {
+                self.afterModifyMerchantNameFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EUPDATEMERCHANTEMAIL:
+        {
+            if (self.afterModifyMerchantEmailFailed) {
+                self.afterModifyMerchantEmailFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EUPDATEMERCHANTCONTACTNUMBER:
+        {
+            if (self.afterModifyMerchantContactNumberFailed) {
+                self.afterModifyMerchantContactNumberFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EUPDATEMERCHANTADDRESS:
+        {
+            if (self.afterModifyMerchantAddressFailed) {
+                self.afterModifyMerchantAddressFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
 @end

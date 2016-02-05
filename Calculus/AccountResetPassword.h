@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountResetPassword : UIViewController
+@interface AccountResetPassword : UIViewController<UITextFieldDelegate>
 
 @end

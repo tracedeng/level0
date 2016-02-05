@@ -57,8 +57,16 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 @property (nonatomic, copy) void (^afterModifyMerchantContactNumber)(NSDictionary *material);
 @property (nonatomic, copy) void (^afterModifyMerchantAddress)(NSDictionary *material);
 
-//@property (nonatomic, copy) void (^afterModifyLocation)(NSString *location);
+@property (nonatomic, copy) void (^afterQueryMerchantOfAccountFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterQueryMerchantOfIdentityFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterCreateMerchantOfAccountFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterQueryUploadTokenFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterModifyLogoFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterModifyQrcodeFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterModifyMerchantNameFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterModifyMerchantEmailFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterModifyMerchantContactNumberFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterModifyMerchantAddressFailed)(NSString *message);
 
 
 @end

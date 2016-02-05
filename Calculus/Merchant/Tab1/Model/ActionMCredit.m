@@ -170,6 +170,51 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case EQUERYCONSUMERCREDIT:
+        {
+            if (self.afterQueryConsumerCreditFailed) {
+                self.afterQueryConsumerCreditFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EQUERYONECONSUMERCREDIT:
+        {
+            if (self.afterQueryOneConsumerCreditFailed) {
+                self.afterQueryOneConsumerCreditFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EMERCHANTQUERYAPPLYCREDIT:
+        {
+            if (self.afterMerchantQueryApplyCreditFailed) {
+                self.afterMerchantQueryApplyCreditFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case ECONFIRMAPPLYCREDIT:
+        {
+            if (self.afterConfirmApplyCreditFailed) {
+                self.afterConfirmApplyCreditFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+        case EREFUSEAPPLYCREDIT:
+        {
+            if (self.afterRefuseApplyCreditFailed) {
+                self.afterRefuseApplyCreditFailed([responseError localizedDescription]);
+            }
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
+
+    
 }
 
 @end

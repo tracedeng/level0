@@ -114,6 +114,46 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case EQUERYUPLOADTOKEN:
+        {
+            //七牛token失败操作
+            if (self.afterQueryUploadTokenFailed) {
+                self.afterQueryUploadTokenFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EUPDATEAVATAR:
+        {
+            //修改头像失败操作
+            if (self.afterModifyAvatarFailed) {
+                self.afterModifyAvatarFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EUPDATENICKNAME:
+        {
+            //修改昵称失败操作
+            if (self.afterModifyGenderFailed) {
+                self.afterModifyGenderFailed([responseError localizedDescription]);
+            }
+
+            break;
+        }
+        case EUPDATEGENDER:
+        {
+            //修改性别失败操作
+            if (self.afterModifyNickNameFailed) {
+                self.afterModifyNickNameFailed([responseError localizedDescription]);
+            }
+
+            break;
+        }
+            
+        default:
+            break;
+    }
+
 }
 
 @end

@@ -19,17 +19,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-cu" translatesAutoresizingMaskIntoConstraints="NO" id="qWv-tp-Eet">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-cu" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-do-dTw">
-                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="4lh-do-dTw" secondAttribute="height" multiplier="3:1" id="6TP-tz-hIk"/>
+                                    <constraint firstAttribute="width" secondItem="4lh-do-dTw" secondAttribute="height" multiplier="5:2" id="6TP-tz-hIk"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzY-J6-4Ou">
-                                <rect key="frame" x="20" y="352" width="560" height="36"/>
-                                <color key="backgroundColor" red="0.10980392156862745" green="0.52549019607843139" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="364" width="560" height="42"/>
+                                <color key="backgroundColor" red="0.32549019607843138" green="0.792156862745098" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="mjo-Xr-3xW"/>
+                                    <constraint firstAttribute="height" constant="42" id="mjo-Xr-3xW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="客      户">
@@ -39,11 +43,14 @@
                                     <action selector="EnterAsConsumer:" destination="wiF-FO-2C8" eventType="touchUpInside" id="tsm-i8-qRM"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bootbackground-c" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-J2-ZlK">
+                                <rect key="frame" x="20" y="364" width="560" height="42"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubd-Y2-tg4">
-                                <rect key="frame" x="20" y="418" width="560" height="36"/>
-                                <color key="backgroundColor" red="0.10980392160000001" green="0.52549019610000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="436" width="560" height="42"/>
+                                <color key="backgroundColor" red="0.32549019607843138" green="0.792156862745098" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="KVo-Cr-XzY"/>
+                                    <constraint firstAttribute="height" constant="42" id="KVo-Cr-XzY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="我是商家">
@@ -53,24 +60,33 @@
                                     <action selector="EnterAsMerchant:" destination="wiF-FO-2C8" eventType="touchUpInside" id="P1L-i1-t4V"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qP0-t8-UDd">
-                                <rect key="frame" x="220" y="352" width="42" height="36"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16S-ob-88R">
-                                <rect key="frame" x="220" y="418" width="42" height="36"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bootbackground-m" translatesAutoresizingMaskIntoConstraints="NO" id="xzZ-Wx-Iyb">
+                                <rect key="frame" x="20" y="436" width="560" height="42"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="ANr-J2-ZlK" firstAttribute="bottom" secondItem="MzY-J6-4Ou" secondAttribute="bottom" id="7Rb-hJ-WtF"/>
+                            <constraint firstItem="qWv-tp-Eet" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" id="7ux-9A-sog"/>
                             <constraint firstItem="Ubd-Y2-tg4" firstAttribute="trailing" secondItem="MzY-J6-4Ou" secondAttribute="trailing" id="9UQ-fh-rd1"/>
                             <constraint firstItem="Ubd-Y2-tg4" firstAttribute="leading" secondItem="MzY-J6-4Ou" secondAttribute="leading" id="B6t-J1-9Bh"/>
                             <constraint firstAttribute="trailing" secondItem="4lh-do-dTw" secondAttribute="trailing" id="Leo-Ug-WGX"/>
+                            <constraint firstItem="xzZ-Wx-Iyb" firstAttribute="top" secondItem="Ubd-Y2-tg4" secondAttribute="top" id="NLp-t4-O8x"/>
+                            <constraint firstItem="qWv-tp-Eet" firstAttribute="top" secondItem="0AC-an-hWl" secondAttribute="bottom" id="R1r-3b-LW5"/>
                             <constraint firstItem="4lh-do-dTw" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" id="SCN-Zu-lPB"/>
                             <constraint firstItem="4lh-do-dTw" firstAttribute="top" secondItem="0AC-an-hWl" secondAttribute="bottom" id="VCh-IM-NZm"/>
-                            <constraint firstItem="MzY-J6-4Ou" firstAttribute="top" secondItem="4lh-do-dTw" secondAttribute="bottom" constant="88" id="aNh-uC-b3o"/>
+                            <constraint firstItem="ANr-J2-ZlK" firstAttribute="top" secondItem="MzY-J6-4Ou" secondAttribute="top" id="Woa-Pw-Hfm"/>
+                            <constraint firstItem="xzZ-Wx-Iyb" firstAttribute="bottom" secondItem="Ubd-Y2-tg4" secondAttribute="bottom" id="YWy-HP-ngZ"/>
+                            <constraint firstItem="MzY-J6-4Ou" firstAttribute="top" secondItem="4lh-do-dTw" secondAttribute="bottom" constant="60" id="aNh-uC-b3o"/>
+                            <constraint firstItem="Xt2-vJ-XsY" firstAttribute="top" secondItem="qWv-tp-Eet" secondAttribute="bottom" id="b2B-aq-Fst"/>
+                            <constraint firstItem="ANr-J2-ZlK" firstAttribute="leading" secondItem="MzY-J6-4Ou" secondAttribute="leading" id="cWj-7t-QyP"/>
+                            <constraint firstItem="xzZ-Wx-Iyb" firstAttribute="trailing" secondItem="Ubd-Y2-tg4" secondAttribute="trailing" id="hSV-XQ-THB"/>
                             <constraint firstItem="MzY-J6-4Ou" firstAttribute="leading" secondItem="49h-Xd-GC0" secondAttribute="leading" constant="20" id="iuD-6a-6LL"/>
+                            <constraint firstItem="xzZ-Wx-Iyb" firstAttribute="leading" secondItem="Ubd-Y2-tg4" secondAttribute="leading" id="muO-mZ-RVC"/>
                             <constraint firstAttribute="trailing" secondItem="MzY-J6-4Ou" secondAttribute="trailing" constant="20" id="ouI-Lr-cM6"/>
                             <constraint firstItem="Ubd-Y2-tg4" firstAttribute="top" secondItem="MzY-J6-4Ou" secondAttribute="bottom" constant="30" id="uT9-MP-gxY"/>
+                            <constraint firstItem="ANr-J2-ZlK" firstAttribute="trailing" secondItem="MzY-J6-4Ou" secondAttribute="trailing" id="vZW-ya-DNb"/>
+                            <constraint firstAttribute="trailing" secondItem="qWv-tp-Eet" secondAttribute="trailing" id="vrA-6C-kNL"/>
                             <constraint firstItem="MzY-J6-4Ou" firstAttribute="centerY" secondItem="49h-Xd-GC0" secondAttribute="centerY" id="yV5-qD-ik9"/>
                         </constraints>
                         <variation key="default">
@@ -243,7 +259,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bootbackground-c" width="317" height="55"/>
+        <image name="bootbackground-m" width="316" height="55"/>
         <image name="icon-alipay" width="64" height="64"/>
-        <image name="icon-cu" width="800" height="200"/>
+        <image name="icon-cu" width="540" height="216"/>
     </resources>
 </document>
