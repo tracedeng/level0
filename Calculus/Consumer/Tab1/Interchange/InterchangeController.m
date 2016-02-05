@@ -38,8 +38,8 @@
     // source
     self.sourceCreditView.clipsToBounds = YES;
     self.sourceCreditView.layer.cornerRadius = self.sourceCreditView.frame.size.height / 2.0f;
-    self.sourceCreditView.layer.borderWidth = 1.0f;
-    self.sourceCreditView.layer.borderColor = [[UIColor yellowColor] CGColor];
+//    self.sourceCreditView.layer.borderWidth = 1.0f;
+//    self.sourceCreditView.layer.borderColor = [[UIColor yellowColor] CGColor];
     
     self.merchantOutImageView.clipsToBounds = YES;
     self.merchantOutImageView.layer.cornerRadius = self.merchantOutImageView.frame.size.height / 2.0f;
@@ -52,8 +52,8 @@
     // dest
     self.destCreditView.clipsToBounds = YES;
     self.destCreditView.layer.cornerRadius = self.destCreditView.frame.size.width / 2.0f;
-    self.destCreditView.layer.borderWidth = 1.0f;
-    self.destCreditView.layer.borderColor = [[UIColor yellowColor] CGColor];
+//    self.destCreditView.layer.borderWidth = 1.0f;
+//    self.destCreditView.layer.borderColor = [[UIColor yellowColor] CGColor];
     
     self.merchantInImageView.clipsToBounds = YES;
     self.merchantInImageView.layer.cornerRadius = self.merchantInImageView.frame.size.height / 2.0f;
@@ -65,8 +65,8 @@
     //fee
     self.feeView.clipsToBounds = YES;
     self.feeView.layer.cornerRadius = self.feeView.frame.size.width / 2.0f;
-    self.feeView.layer.borderWidth = 1.0f;
-    self.feeView.layer.borderColor = [[UIColor yellowColor] CGColor];
+//    self.feeView.layer.borderWidth = 1.0f;
+//    self.feeView.layer.borderColor = [[UIColor yellowColor] CGColor];
     
     //button
     self.interchangeButton.layer.cornerRadius = 4.0f;

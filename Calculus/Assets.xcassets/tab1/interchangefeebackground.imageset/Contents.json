@@ -6,12 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "creditbackground-exchanged@3x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "creditbackground-exchanged@3x-1.png",
+      "filename" : "interchangefeebackground@3x.png",
       "scale" : "3x"
     }
   ],
