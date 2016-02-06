@@ -207,12 +207,12 @@
             <objects>
                 <tableViewController id="KfD-qH-Xa6" customClass="MAwardApplyTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="6Hv-2Z-RvM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MAwardApplyCell" rowHeight="120" id="WUC-8z-deE" customClass="MAwardApplyCell">
-                                <rect key="frame" x="0.0" y="50" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" tableViewCell="WUC-8z-deE" id="3Fy-3j-iTG">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
@@ -262,6 +262,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="958" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epu-VG-8xD">
                                                                             <rect key="frame" x="18" y="0.0" width="64" height="42"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </label>
                                                                     </subviews>
@@ -290,13 +291,14 @@
                                                             <subviews>
                                                                 <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7m-mn-Du2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="80" id="KBj-9C-agc"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                    <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
                                                                     <state key="normal" title="拒 绝">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <color key="titleColor" red="0.078431372549019607" green="0.60784313725490191" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="refuseApplyAction:" destination="WUC-8z-deE" eventType="touchUpInside" id="eap-NC-XjR"/>
@@ -304,11 +306,11 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-TY-1tL">
                                                                     <rect key="frame" x="90" y="0.0" width="80" height="30"/>
-                                                                    <color key="backgroundColor" red="0.63404635499999995" green="0.82868211430000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" red="0.078431372549019607" green="0.60784313725490191" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="80" id="Otf-x4-Irp"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                     <state key="normal" title="确 认">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
@@ -389,7 +391,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ViP-ES-7uc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a93-kD-rU0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-Ct-jIr">
@@ -621,7 +623,7 @@
         <image name="icon-renminbi-gray" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G8f-XL-Kbc"/>
-        <segue reference="fy0-wT-4ok"/>
+        <segue reference="kgL-70-gt8"/>
+        <segue reference="WhJ-A8-kt5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -38,7 +38,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvF-fI-SsV">
                                 <rect key="frame" x="0.0" y="146" width="600" height="405"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xpK-J1-yM7" customClass="ClickableImageView">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nocreditlogo" translatesAutoresizingMaskIntoConstraints="NO" id="xpK-J1-yM7" customClass="ClickableImageView">
                                         <rect key="frame" x="199" y="101" width="203" height="203"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xpK-J1-yM7" secondAttribute="height" multiplier="1:1" id="pIO-fJ-OEb"/>
@@ -216,7 +216,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bQP-vw-Ps4">
                                                     <rect key="frame" x="0.0" y="0.0" width="535" height="44"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mSb-v7-aeN">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mSb-v7-aeN">
                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="82P-FP-L31">
@@ -226,7 +226,7 @@
                                                                         <constraint firstAttribute="width" constant="16" id="f25-Ty-SRp"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoh-Ni-C6H">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoh-Ni-C6H">
                                                                     <rect key="frame" x="18" y="0.0" width="52" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -926,7 +926,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KG-00-MaH">
                                                     <rect key="frame" x="0.0" y="0.0" width="535" height="44"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TCd-DB-eAD">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TCd-DB-eAD">
                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="Eu9-NA-KNC">
@@ -936,7 +936,7 @@
                                                                         <constraint firstAttribute="height" constant="16" id="uAR-ga-pLN"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-pm-mPP">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-pm-mPP">
                                                                     <rect key="frame" x="18" y="0.0" width="52" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1367,9 +1367,9 @@
                             <mask key="constraints">
                                 <exclude reference="1ax-Ol-UV9"/>
                                 <exclude reference="3eh-HQ-Xtu"/>
+                                <exclude reference="8OS-5x-j6i"/>
                                 <exclude reference="BXO-q4-SaD"/>
                                 <exclude reference="gSF-59-F9Z"/>
-                                <exclude reference="8OS-5x-j6i"/>
                             </mask>
                         </variation>
                     </view>
@@ -1432,7 +1432,7 @@
         <image name="interchangebackground" width="120" height="120"/>
         <image name="interchangedestbackground" width="120" height="120"/>
         <image name="interchangefeebackground" width="120" height="120"/>
-        <image name="logo" width="134" height="134"/>
+        <image name="nocreditlogo" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UrU-Bu-h26"/>

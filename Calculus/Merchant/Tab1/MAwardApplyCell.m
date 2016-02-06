@@ -64,9 +64,21 @@
     
     self.refuseButton.clipsToBounds = YES;
     self.refuseButton.layer.cornerRadius = 2.0f;
-    
+    self.refuseButton.layer.borderWidth = 1.0f;
+    self.refuseButton.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
+    self.refuseButton.layer.shadowOffset = CGSizeMake(1, 1);
+    self.refuseButton.layer.shadowOpacity = 0.8;
+    self.refuseButton.layer.shadowColor =[[UIColor colorWithHex:0xDDDDDD] CGColor];
+
     self.confirmButton.clipsToBounds = YES;
     self.confirmButton.layer.cornerRadius = 2.0f;
+    self.confirmButton.layer.borderWidth = 1.0f;
+    self.confirmButton.layer.borderColor = [[UIColor colorWithHex:0x149BFF] CGColor];
+    self.confirmButton.layer.shadowOffset = CGSizeMake(1, 1);
+    self.confirmButton.layer.shadowOpacity = 0.8;
+    self.confirmButton.layer.shadowColor =[[UIColor colorWithHex:0x149BFF] CGColor];
+    
+    
     
     NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [awardInfo objectForKey:@"ava"]];
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
