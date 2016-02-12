@@ -112,6 +112,7 @@
 		B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */; };
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
+		B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */; };
@@ -329,6 +330,8 @@
 		B51C0B041C1DB530006F344F /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRegisterController.m; sourceTree = "<group>"; };
 		B51C0B061C1F0F85006F344F /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPassword.h; sourceTree = "<group>"; };
 		B51C0B071C1F0F85006F344F /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPassword.m; sourceTree = "<group>"; };
+		B53D37631C6D742400AA9A93 /* FullscreenImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenImageVC.h; sourceTree = "<group>"; };
+		B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenImageVC.m; sourceTree = "<group>"; };
 		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
 		B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
@@ -509,6 +512,8 @@
 				19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */,
 				B517E9DA1C59144F00DD66B2 /* DiscountDetailsTVC.h */,
 				B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */,
+				B53D37631C6D742400AA9A93 /* FullscreenImageVC.h */,
+				B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -1059,6 +1064,7 @@
 				B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */,
 				19CAA8F81C3F5BCA00010F68 /* VoucherCell.m in Sources */,
 				B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */,
+				B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */,
 				19339AFF1C2950BD00791A9E /* MAwardApplyTVC.m in Sources */,
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				195A12AB1C5370D1008E7945 /* AwardDerivateCell.m in Sources */,
