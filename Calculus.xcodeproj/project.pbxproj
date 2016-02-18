@@ -88,6 +88,7 @@
 		195A12D41C5526E8008E7945 /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D21C5526E8008E7945 /* YMUtils.m */; };
 		195A12D51C5526E8008E7945 /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = 195A12D31C5526E8008E7945 /* zh_CN.json */; };
 		195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */; };
+		197491171C759BCC00784D09 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491161C759BCC00784D09 /* FeedbackController.m */; };
 		19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */; };
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
@@ -288,6 +289,8 @@
 		195A12D61C55290F008E7945 /* MerchantQrcodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantQrcodeVC.h; path = Merchant/Tab3/MerchantQrcodeVC.h; sourceTree = "<group>"; };
 		195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantQrcodeVC.m; path = Merchant/Tab3/MerchantQrcodeVC.m; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
+		197491151C759BCC00784D09 /* FeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackController.h; sourceTree = "<group>"; };
+		197491161C759BCC00784D09 /* FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackController.m; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
 		19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityNavigationController.h; path = Merchant/Tab2/MActivityNavigationController.h; sourceTree = "<group>"; };
@@ -539,6 +542,8 @@
 				19CAA8F41C3F5BB300010F68 /* VoucherTVC.m */,
 				19CAA8F61C3F5BCA00010F68 /* VoucherCell.h */,
 				19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */,
+				197491151C759BCC00784D09 /* FeedbackController.h */,
+				197491161C759BCC00784D09 /* FeedbackController.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -1128,6 +1133,7 @@
 				19339AE21C257F1200791A9E /* MMaterialTVC.m in Sources */,
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
+				197491171C759BCC00784D09 /* FeedbackController.m in Sources */,
 				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
 				19CAA8F51C3F5BB300010F68 /* VoucherTVC.m in Sources */,
 				19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */,
@@ -1297,7 +1303,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1353,7 +1359,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
