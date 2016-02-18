@@ -165,4 +165,16 @@
     [ActionAccount doLogout];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoAccount", @"destine", nil]];
 }
+
+// 当用户点击非picker区域时,退出
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = touches.anyObject;
+    CGPoint point = [touch locationInView:self.view];
+    
+//    if (CGRectContainsPoint(self.picker.frame, point)) {
+//        
+//    }else{
+//        [_picker hide];
+//    }
+}
 @end
