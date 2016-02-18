@@ -19,7 +19,7 @@
 - (void)setAssetImage:(UIImage *)assetImage {
     [super setAssetImage:assetImage];
     [self.checkButton setBackgroundImage:[UIImage imageNamed:@"photo-uncheck"] forState:UIControlStateNormal];
-    self.checkButton.alpha = 0.2;
+    self.checkButton.alpha = 0.5;
 }
 
 - (void)switchCheckState {
@@ -31,7 +31,7 @@
     }else{
         //未选中状态
         [self.checkButton setBackgroundImage:[UIImage imageNamed:@"photo-uncheck"] forState:UIControlStateNormal];
-        self.checkButton.alpha = 0.2;
+        self.checkButton.alpha = 0.5;
     }
 }
 
