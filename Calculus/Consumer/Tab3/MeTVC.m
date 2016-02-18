@@ -33,7 +33,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -49,7 +49,7 @@
             rows = 2;
             break;
         case 3:
-            rows = 2;
+            rows = 1;
             break;
         default:
             break;
