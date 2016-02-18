@@ -7,8 +7,19 @@
 //
 
 #import "MeTVC.h"
+#import "MaterialManager.h"
+#import "Constance.h"
+#import "UIImageView+WebCache.h"
+#import "MaterialTVC.h"
+
 
 @interface MeTVC ()
+@property (nonatomic, retain) NSMutableDictionary *material;
+
+@property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numbersLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+
 @end
 
 @implementation MeTVC
@@ -21,7 +32,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"个人中心";
     
+    self.material = [NSMutableDictionary dictionaryWithDictionary:[MaterialManager getMaterial]];
+    
+    //    圆角
+    self.avatarImageView.clipsToBounds = YES;
+//    self.avatarImageView.layer.cornerRadius = 4.0f;
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.height / 2.0;
 }
 
 
@@ -30,10 +48,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setMaterial:(NSMutableDictionary *)material {
+    if (material) {
+        _material = material;
+        self.nicknameLabel.text = [material objectForKey:@"ni"];
+        self.numbersLabel.text = [material objectForKey:@"lo"];
+        
+        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"ava"]];
+        //        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
+        //        NSString *path = [NSString stringWithFormat:@"%@/%@", QINIUURL, [material objectForKey:@"ava"]];
+        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -43,13 +74,13 @@
             rows = 1;
             break;
         case 1:
-            rows = 2;
+            rows = 1;
             break;
         case 2:
             rows = 2;
             break;
         case 3:
-            rows = 1;
+            rows = 2;
             break;
         default:
             break;
@@ -67,12 +98,12 @@
 //}
 
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (0 == indexPath.section) {
-//        return 60.0f;
-//    }
-//    return 44.0f;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (0 == indexPath.section) {
+        return 120.0f;
+    }
+    return 44.0f;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
@@ -80,7 +111,7 @@
         }else if (1 == indexPath.row) {
             
         }
-    } else if(1 == indexPath.section) {
+    } else if(2 == indexPath.section) {
         if (0 == indexPath.row) {
         }else if (1 == indexPath.row) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps ://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
@@ -91,6 +122,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (0 == section) {
+        return 0.01f;
+    }else if (1 == section) {
         return 0.01f;
     }
     return 0.0f;
@@ -130,14 +163,31 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ConsumerMaterial"]) {
+        if ([segue.destinationViewController isKindOfClass:[MaterialTVC class]]) {
+            MaterialTVC *destination = (MaterialTVC *)segue.destinationViewController;
+            destination.material = self.material;
+        }
+    }
 }
-*/
+
+- (IBAction)unwindMeUpdateMaterial:(UIStoryboardSegue *)segue {
+    if ([segue.sourceViewController isKindOfClass:[MaterialTVC class]]) {
+        MaterialTVC *source = (MaterialTVC *)segue.sourceViewController;
+        if (source.updateMaterialTypeMask & MATERIALTYPEAVATAR) {
+            //同时更新头像
+            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [source.material objectForKey:@"ava"]];
+            [self.material setObject:[source.material objectForKey:@"ava"] forKey:@"ava"];
+            [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
+        }
+        else if(source.updateMaterialTypeMask & MATERIALTYPENICKNAME){
+            [self.material setObject:[source.material objectForKey:@"ni"] forKey:@"ni"];
+            self.nicknameLabel.text = [self.material objectForKey:@"ni"];
+        }
+    }
+}
 
 @end
