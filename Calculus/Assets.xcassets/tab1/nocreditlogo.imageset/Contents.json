@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "nocreditlogo@2x.png",
+      "filename" : "nocredit@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "nocreditlogo@3x.png",
+      "filename" : "nocredit@3x.png",
       "scale" : "3x"
     }
   ],
