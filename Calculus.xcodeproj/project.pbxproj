@@ -114,6 +114,7 @@
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
 		B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */; };
+		B53D37681C76047600AA9A93 /* AssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37671C76047600AA9A93 /* AssistanceTVC.m */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */; };
@@ -335,6 +336,8 @@
 		B51C0B071C1F0F85006F344F /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPassword.m; sourceTree = "<group>"; };
 		B53D37631C6D742400AA9A93 /* FullscreenImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenImageVC.h; sourceTree = "<group>"; };
 		B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenImageVC.m; sourceTree = "<group>"; };
+		B53D37661C76047600AA9A93 /* AssistanceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceTVC.h; sourceTree = "<group>"; };
+		B53D37671C76047600AA9A93 /* AssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceTVC.m; sourceTree = "<group>"; };
 		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
 		B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
@@ -544,6 +547,8 @@
 				19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */,
 				197491151C759BCC00784D09 /* FeedbackController.h */,
 				197491161C759BCC00784D09 /* FeedbackController.m */,
+				B53D37661C76047600AA9A93 /* AssistanceTVC.h */,
+				B53D37671C76047600AA9A93 /* AssistanceTVC.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -1105,6 +1110,7 @@
 				B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */,
 				193C38331C1D94DE0017CC9C /* ImageCheckableCell.m in Sources */,
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
+				B53D37681C76047600AA9A93 /* AssistanceTVC.m in Sources */,
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */,

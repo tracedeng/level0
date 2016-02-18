@@ -40,6 +40,8 @@
     self.avatarImageView.clipsToBounds = YES;
 //    self.avatarImageView.layer.cornerRadius = 4.0f;
     self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.height / 2.0;
+    
+
 }
 
 
@@ -47,6 +49,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    
+//    [self.navigationController setNavigationBarHidden:YES];
+//    
+//    [UIApplication sharedApplication].statusBarHidden = YES;
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    
+//    [self.navigationController setNavigationBarHidden:NO];
+//}
+
+
 
 - (void)setMaterial:(NSMutableDictionary *)material {
     if (material) {
@@ -114,7 +133,8 @@
     } else if(2 == indexPath.section) {
         if (0 == indexPath.row) {
         }else if (1 == indexPath.row) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps ://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps ://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
         }
     }
     
