@@ -89,6 +89,7 @@
 		195A12D51C5526E8008E7945 /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = 195A12D31C5526E8008E7945 /* zh_CN.json */; };
 		195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */; };
 		197491171C759BCC00784D09 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491161C759BCC00784D09 /* FeedbackController.m */; };
+		1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911A1C75F5D300784D09 /* ActionStatistic.m */; };
 		19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */; };
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
@@ -292,6 +293,8 @@
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
 		197491151C759BCC00784D09 /* FeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackController.h; sourceTree = "<group>"; };
 		197491161C759BCC00784D09 /* FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackController.m; sourceTree = "<group>"; };
+		197491191C75F5D300784D09 /* ActionStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionStatistic.h; path = Statistic/ActionStatistic.h; sourceTree = "<group>"; };
+		1974911A1C75F5D300784D09 /* ActionStatistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionStatistic.m; path = Statistic/ActionStatistic.m; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
 		19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityNavigationController.h; path = Merchant/Tab2/MActivityNavigationController.h; sourceTree = "<group>"; };
@@ -777,6 +780,7 @@
 		1942C3691BE89F6700C2DCF4 /* Calculus */ = {
 			isa = PBXGroup;
 			children = (
+				197491181C75F59100784D09 /* Statistic */,
 				193C37FF1C1D8D9E0017CC9C /* Common */,
 				193C37191C1B0D5A0017CC9C /* Account */,
 				193C37811C1BE8510017CC9C /* Bootstrap */,
@@ -861,6 +865,15 @@
 				195A12CF1C55259A008E7945 /* GenerateQrcode.m */,
 			);
 			name = Qrcode;
+			sourceTree = "<group>";
+		};
+		197491181C75F59100784D09 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				197491191C75F5D300784D09 /* ActionStatistic.h */,
+				1974911A1C75F5D300784D09 /* ActionStatistic.m */,
+			);
+			name = Statistic;
 			sourceTree = "<group>";
 		};
 		19CAA8DF1C354E2300010F68 /* Model */ = {
@@ -1060,6 +1073,7 @@
 				B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */,
 				193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */,
 				19339B0F1C2C340900791A9E /* COneAwardCell.m in Sources */,
+				1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */,

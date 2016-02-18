@@ -40,6 +40,7 @@
 #define FLOWTURL @"http://www.weijifen.me:8000/flow"
 #endif
 
+#define VERSION @"v1.0"
 #endif /* Constance_h */
 
 
