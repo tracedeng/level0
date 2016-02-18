@@ -80,7 +80,13 @@
         }else if (1 == indexPath.row) {
             
         }
+    } else if(1 == indexPath.section) {
+        if (0 == indexPath.row) {
+        }else if (1 == indexPath.row) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps ://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
+        }
     }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

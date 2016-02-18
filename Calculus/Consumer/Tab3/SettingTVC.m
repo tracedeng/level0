@@ -8,9 +8,12 @@
 
 #import "SettingTVC.h"
 #import "ActionAccount.h"
+#import "UIImageView+WebCache.h"
 
 @interface SettingTVC ()
 - (IBAction)logoutAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *cacheSizeLabel;
+@property (nonatomic, assign) NSInteger cacheSize;
 
 @end
 
@@ -24,11 +27,31 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    self.cacheSize.text = [NSString stringWithFormat:@"%lu", (unsigned long)[[SDImageCache sharedImageCache] getSize]];
+//    self.cacheSize.
+    self.cacheSize = [[SDImageCache sharedImageCache] getSize];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setCacheSize:(NSInteger)cacheSize {
+    if (cacheSize == 0) {
+        self.cacheSizeLabel.text = @"0";
+        
+    }else{
+        
+        _cacheSize = cacheSize / 1024 /1024;
+        if (_cacheSize < 1) {
+            self.cacheSizeLabel.text = @"1M";
+        }else{
+            self.cacheSizeLabel.text = [NSString stringWithFormat:@"%ldM", (long)_cacheSize];
+        }
+
+    }
+    _cacheSize = cacheSize;
 }
 
 #pragma mark - Table view data source
@@ -50,6 +73,29 @@
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
             //clear cache
+            NSString *selectButtonOKTitle = NSLocalizedString(@"确定", nil);
+            NSString *selectButtonCancelTitle = NSLocalizedString(@"取消", nil);
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+                [[SDImageCache sharedImageCache] clearDisk];
+                self.cacheSize = [[SDImageCache sharedImageCache] getSize];
+
+
+               
+            }];
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:selectButtonCancelTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+            }];
+            [alertController addAction:okAction];
+            [alertController addAction:cancelAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+
+            
         }else if (1 == indexPath.row) {
             //切换版本
             [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoBootstrap", @"destine", nil]];
