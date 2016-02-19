@@ -111,7 +111,6 @@
             // Create the actions.
             UIAlertAction *maleAction = [UIAlertAction actionWithTitle:selectButtonMaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 
-                DLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
                
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
@@ -124,7 +123,6 @@
             }];
             
             UIAlertAction *femaleAction = [UIAlertAction actionWithTitle:selectButtonFemaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                DLog(@"The \"Okay/Cancel\" alert action sheet's cancel action occured.");
                 
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
@@ -143,7 +141,16 @@
             [alertController addAction:maleAction];
             [alertController addAction:femaleAction];
             
-            [self presentViewController:alertController animated:YES completion:nil];
+//            [self presentViewController:alertController animated:YES completion:nil];
+            [self presentViewController: alertController
+                               animated: YES
+                             completion:^{
+                                 alertController.view.superview.userInteractionEnabled = YES;
+                                 [alertController.view.superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(alertControllerBackgroundTapped)]];
+                             }];
+
+            
+            
         }else if (3 == indexPath.row) {
             
             
@@ -172,6 +179,13 @@
             [self.view addSubview:self.selectok];
         }
     }
+}
+
+
+- (void)alertControllerBackgroundTapped
+{
+    [self dismissViewControllerAnimated: YES
+                             completion: nil];
 }
 
 

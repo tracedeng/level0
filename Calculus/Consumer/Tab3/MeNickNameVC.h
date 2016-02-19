@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeNickNameVC : UIViewController<UITextFieldDelegate>
+@interface MeNickNameVC : UIViewController<UITextFieldDelegate,UITextViewDelegate>
 @property (nonatomic ,strong) NSString *nickName;
 @property (nonatomic, retain) NSMutableDictionary *material;
 

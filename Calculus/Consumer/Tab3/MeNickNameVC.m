@@ -12,6 +12,9 @@
 
 @interface MeNickNameVC()
 @property (weak, nonatomic) IBOutlet UITextField *nickNameTXT;
+@property (weak, nonatomic) IBOutlet UITextView *nickNameTextView;
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLBL;
+
 - (IBAction)doUpdateNickName:(UIBarButtonItem *)sender;
 
 @end
@@ -29,6 +32,14 @@
     
     self.nickNameTXT.text = self.nickName;
     self.nickNameTXT.delegate = self;
+    self.nickNameTextView.text = self.nickName;
+    
+    if (self.nickName.length == 0 ) {
+        //
+    }else{
+        self.nickNameLBL.text = @"";
+    }
+    
     
     
 }
@@ -49,7 +60,19 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)doUpdateNickName:(UIBarButtonItem *)sender {
-       
+    
 
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+    if (textView.text.length == 0 ) {
+        self.nickNameLBL.text = @"请输入昵称";
+        //        self.canSub21mitMask &= 0xfb;
+        //        [textView resignFirstResponder];
+    }else{
+        self.nickNameLBL.text = @"";
+        //        self.canSubmitMask |= 0x4;
+    }
+        self.nickName = self.nickNameTextView.text;
 }
 @end
