@@ -42,8 +42,17 @@
 //    self.avatarImageView.layer.cornerRadius = 4.0f;
     self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.height / 2.0;
     
+//    [MeTVC hideEmptySeparators:self.tableView];
 
 }
+//
+//+ (void)hideEmptySeparators:(UITableView *)tableView
+//{
+//    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+//    [tableView setTableFooterView:v];
+//    [tableView setTableHeaderView:v];
+//
+//}
 
 
 - (void)didReceiveMemoryWarning {
@@ -209,15 +218,7 @@
             self.nicknameLabel.text = [self.material objectForKey:@"ni"];
         }
     }else if ([segue.sourceViewController isKindOfClass:[FeedbackController class]]){
-        // 提交反馈
-        FeedbackController *feedbackcontroller = (FeedbackController *)segue.sourceViewController;
-        ActionStatistic *action = [[ActionStatistic alloc] init];
-        action.afterFeedback = ^(){
-            //提示修改陈功？？？是否放到feedback中操作提交？？
-        };
-        [action doFeedback:@"TODO -GETVERSION" feedback:feedbackcontroller.feedbackContnt];
-        
-        
+              
         
     }
 }
