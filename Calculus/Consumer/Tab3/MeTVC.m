@@ -11,7 +11,8 @@
 #import "Constance.h"
 #import "UIImageView+WebCache.h"
 #import "MaterialTVC.h"
-
+#import "FeedbackController.h"
+#import "ActionStatistic.h"
 
 @interface MeTVC ()
 @property (nonatomic, retain) NSMutableDictionary *material;
@@ -207,6 +208,17 @@
             [self.material setObject:[source.material objectForKey:@"ni"] forKey:@"ni"];
             self.nicknameLabel.text = [self.material objectForKey:@"ni"];
         }
+    }else if ([segue.sourceViewController isKindOfClass:[FeedbackController class]]){
+        // 提交反馈
+        FeedbackController *feedbackcontroller = (FeedbackController *)segue.sourceViewController;
+        ActionStatistic *action = [[ActionStatistic alloc] init];
+        action.afterFeedback = ^(){
+            //提示修改陈功？？？是否放到feedback中操作提交？？
+        };
+        [action doFeedback:@"TODO -GETVERSION" feedback:feedbackcontroller.feedbackContnt];
+        
+        
+        
     }
 }
 

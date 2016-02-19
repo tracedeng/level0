@@ -47,5 +47,7 @@
         self.feedbackPlaceholder.text = @"";
 //        self.canSubmitMask |= 0x4;
     }
+    self.feedbackContnt = textView.text;
+    
 }
 @end

@@ -73,6 +73,11 @@
         self.nickNameLBL.text = @"";
         //        self.canSubmitMask |= 0x4;
     }
-        self.nickName = self.nickNameTextView.text;
+    if (textView.text.length > 15) {
+        
+        self.nickNameTextView.text = [self.nickNameTextView.text substringToIndex:15];
+    }
+    self.nickName = self.nickNameTextView.text;
+
 }
 @end
