@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "42182CB96BAC8BC2B795A597F4B940AEFE5DA28B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5D4C0DF2D32442EBDA4481486379663347749A66" : 0,
+    "42182CB96BAC8BC2B795A597F4B940AEFE5DA28B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ECB4D4F8-7630-4323-BA74-65B896527489",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5D4C0DF2D32442EBDA4481486379663347749A66" : "..\/Downloads\/danshili_DatePick",
+    "42182CB96BAC8BC2B795A597F4B940AEFE5DA28B" : "Calculus\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Calculus",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Calculus.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:tracedeng\/level0.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42182CB96BAC8BC2B795A597F4B940AEFE5DA28B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.1.155:\/media\/danshili_DatePick.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5D4C0DF2D32442EBDA4481486379663347749A66"
+    }
+  ]
+}
