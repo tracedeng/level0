@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
     EUPDATENICKNAME,
     EUPDATEGENDER,
 //    EUPDATEINTRODUCE,
-//    EUPDATELOCATION,
+    EUPDATELOCATION,
 //    EUPDATEREPORT = 20,     //举报
     EMATERIALOPTYPEMAX,
 };
@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 - (void)doModifyAvatar:(NSString *)avatar;
 //- (void)doModifyLocation:(NSString *)location;
 //- (void)doReport:(NSString *)message;
+- (void)doModifyLocation:(NSString *)location;
 - (void)doModifyGender:(NSString *)gender;
 - (void)doModifyNickName:(NSString *)nickname;
 //
@@ -45,7 +46,7 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 //@property (nonatomic, copy) void (^afterModifySex)(NSInteger sex);
 @property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyAvatar)(NSDictionary *token);
-//@property (nonatomic, copy) void (^afterModifyLocation)(NSString *location);
+@property (nonatomic, copy) void (^afterModifyLocation)(NSDictionary *location);
 @property (nonatomic, copy) void (^afterModifyGender)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyNickName)(NSDictionary *token);
 
@@ -53,7 +54,7 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 //操作失败回调
 @property (nonatomic, copy) void (^afterQueryUploadTokenFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterModifyAvatarFailed)(NSString *message);
-//@property (nonatomic, copy) void (^afterModifyLocation)(NSString *location);
+@property (nonatomic, copy) void (^afterModifyLocationFailed)(NSString *location);
 @property (nonatomic, copy) void (^afterModifyGenderFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterModifyNickNameFailed)(NSString *message);
 @end

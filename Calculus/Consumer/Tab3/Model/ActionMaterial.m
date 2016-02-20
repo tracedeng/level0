@@ -68,6 +68,13 @@
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doModifyLocation:(NSString *)location{
+    self.type = EUPDATELOCATION;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", location, @"location", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+}
+
+
 #pragma mark -NetCommunication Delegate
 //@optional http请求成功返回
 - (void)postSuccessResponseWith:(AFHTTPRequestOperation *)requestOperation responseObject:(id)responseObject {
@@ -103,6 +110,15 @@
                     self.afterModifyNickName(result);
                 }
             }
+            case EUPDATELOCATION:
+            {
+                NSDictionary *result = [responseObject objectForKey:@"r"];
+                if (self.afterModifyLocation) {
+                    self.afterModifyLocation(result);
+                }
+            }
+                
+                
             default:
                 break;
         }
@@ -149,7 +165,15 @@
 
             break;
         }
+        case EUPDATELOCATION:
+        {
+            //修改区域失败操作
+            if (self.afterModifyLocationFailed) {
+                self.afterModifyLocationFailed([responseError localizedDescription]);
+            }
             
+            break;
+        }
         default:
             break;
     }

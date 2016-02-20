@@ -19,20 +19,80 @@
 #import "YMUtils.h"
 #import "MeNickNameVC.h"
 
+#import "TYBPickView.h"
 
 
-@interface MaterialTVC ()
+@interface MaterialTVC ()<TYBPickViewDelegate>
 @property (nonatomic, retain) NSString *uploadToken;
 @property (nonatomic, retain) NSString *path;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
+@property (nonatomic, strong) TYBPickView *picker;
+@property (nonatomic, strong) NSArray *cities;
+
 @end
 
 @implementation MaterialTVC{
     NSInteger row1;
     NSInteger row2;
+}
+
+
+- (NSArray *)cities{
+    if (_cities == nil) {
+        _cities = @[@[@"111",@"222",@"333",@"444",@"555"],@[@"上海",@"北京",@"广州",@"深圳"]];
+    }
+    return _cities;
+}
+
+
+
+// 当用户点击非picker区域时,退出
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = touches.anyObject;
+    CGPoint point = [touch locationInView:self.view];
+    if (CGRectContainsPoint(self.picker.frame, point)) {
+        
+    }else{
+        [_picker hide];
+    }
+}
+
+- (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
+    
+    if (self.picker.pickerMode == TYBPickViewTypeCustom) {
+        NSLog(@"%@",data);
+        
+        
+        
+        
+        NSString *location = [data[0] stringByAppendingString:data[1]];;
+
+        ActionMaterial *actionlocation = [[ActionMaterial alloc] init];
+        actionlocation.afterModifyLocation = ^(NSDictionary *materail){
+            [self.material setObject:location forKey:@"lo"];
+            self.locationLabel.text = location;
+            
+
+        };
+        [actionlocation doModifyLocation:location];
+
+        
+        
+//        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:3 inSection:0];
+//        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+//        
+//        
+//        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
+//        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+//        
+//        
+    }else{
+        NSLog(@"%@",data);
+    }
+    
 }
 
 - (void)viewDidLoad {
@@ -154,29 +214,46 @@
         }else if (3 == indexPath.row) {
             
             
-            //Citylist
-            row1 = 0;
-            row2 = 0;
-            self.cityPicker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, HEIGHT/2  , WIDTH, HEIGHT/2)];
-            self.cityPicker.tag = 0;
             
-            self.cityPicker.delegate = self;
-            self.cityPicker.dataSource = self;
-            self.cityPicker.showsSelectionIndicator = YES;
-            [self.view addSubview:self.cityPicker];
-            self.cityPicker.backgroundColor = [UIColor grayColor];
+            
+            self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCustom target:self title:@"城市选择"];
+            //    _picker.maskViewColor = [UIColor redColor];
+            _picker.pickerData = self.cities;
+            
+            [self.view addSubview:_picker];
+            [_picker show];
 
-            self.selectcancel = [[UILabel alloc]initWithFrame:CGRectMake(0, HEIGHT/2, WIDTH/4, 30)];
-            self.selectcancel.textAlignment = NSTextAlignmentCenter;
-            self.selectcancel.backgroundColor = [UIColor whiteColor];
-            self.selectcancel.text = NSLocalizedString(@"取消", nil);
-            [self.view addSubview:self.selectcancel];
             
-            self.selectok = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH*3/4, HEIGHT/2, WIDTH/4, 30)];
-            self.selectok.textAlignment = NSTextAlignmentCenter;
-            self.selectok.backgroundColor = [UIColor whiteColor];
-            self.selectok.text = NSLocalizedString(@"完成", nil);;
-            [self.view addSubview:self.selectok];
+            
+            
+            
+//            //Citylist
+//            row1 = 0;
+//            row2 = 0;
+//            self.cityPicker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, HEIGHT/2  , WIDTH, HEIGHT/2)];
+//            self.cityPicker.tag = 0;
+//            
+//            self.cityPicker.delegate = self;
+//            self.cityPicker.dataSource = self;
+//            self.cityPicker.showsSelectionIndicator = YES;
+//            [self.view addSubview:self.cityPicker];
+//            self.cityPicker.backgroundColor = [UIColor grayColor];
+//
+//            self.selectcancel = [[UILabel alloc]initWithFrame:CGRectMake(0, HEIGHT/2, WIDTH/4, 30)];
+//            self.selectcancel.textAlignment = NSTextAlignmentCenter;
+//            self.selectcancel.backgroundColor = [UIColor whiteColor];
+//            self.selectcancel.text = NSLocalizedString(@"取消", nil);
+//            [self.view addSubview:self.selectcancel];
+//            
+//            self.selectok = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH*3/4, HEIGHT/2, WIDTH/4, 30)];
+//            self.selectok.textAlignment = NSTextAlignmentCenter;
+//            self.selectok.backgroundColor = [UIColor whiteColor];
+//            self.selectok.text = NSLocalizedString(@"完成", nil);;
+//            [self.view addSubview:self.selectok];
+            
+            
+            
+            
         }
     }
 }

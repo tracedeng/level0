@@ -117,6 +117,8 @@
 		B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */; };
 		B53D37681C76047600AA9A93 /* AssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37671C76047600AA9A93 /* AssistanceTVC.m */; };
 		B53D376B1C77056300AA9A93 /* VoucherDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D376A1C77056300AA9A93 /* VoucherDetailsVC.m */; };
+		B53D37901C781E6600AA9A93 /* TYBPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D378D1C781E6600AA9A93 /* TYBPickView.m */; };
+		B53D37911C781E6600AA9A93 /* TYBPickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53D378E1C781E6600AA9A93 /* TYBPickView.xib */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */; };
@@ -344,6 +346,9 @@
 		B53D37671C76047600AA9A93 /* AssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceTVC.m; sourceTree = "<group>"; };
 		B53D37691C77056300AA9A93 /* VoucherDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherDetailsVC.h; sourceTree = "<group>"; };
 		B53D376A1C77056300AA9A93 /* VoucherDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherDetailsVC.m; sourceTree = "<group>"; };
+		B53D378C1C781E6600AA9A93 /* TYBPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBPickView.h; sourceTree = "<group>"; };
+		B53D378D1C781E6600AA9A93 /* TYBPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBPickView.m; sourceTree = "<group>"; };
+		B53D378E1C781E6600AA9A93 /* TYBPickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TYBPickView.xib; sourceTree = "<group>"; };
 		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
 		B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
@@ -679,6 +684,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B53D378F1C781E6600AA9A93 /* TYBDatePicker */,
 				195A12CD1C552560008E7945 /* Qrcode */,
 				B51C0B481C246AFF006F344F /* CityList */,
 				193C38381C1D95920017CC9C /* Base64 */,
@@ -939,6 +945,17 @@
 			name = CityList;
 			sourceTree = "<group>";
 		};
+		B53D378F1C781E6600AA9A93 /* TYBDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B53D378C1C781E6600AA9A93 /* TYBPickView.h */,
+				B53D378D1C781E6600AA9A93 /* TYBPickView.m */,
+				B53D378E1C781E6600AA9A93 /* TYBPickView.xib */,
+			);
+			name = TYBDatePicker;
+			path = ../../../../Downloads/danshili_DatePick/TYBDatePickerDemo/TYBDatePickerDemo/TYBDatePicker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1007,6 +1024,7 @@
 				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
 				193C38301C1D94DE0017CC9C /* Album.storyboard in Resources */,
+				B53D37911C781E6600AA9A93 /* TYBPickView.xib in Resources */,
 				193C37AB1C1C23460017CC9C /* Discount.storyboard in Resources */,
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
@@ -1169,6 +1187,7 @@
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
 				195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */,
+				B53D37901C781E6600AA9A93 /* TYBPickView.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
 				19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,
