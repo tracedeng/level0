@@ -12,6 +12,10 @@
 #import "ActionMMaterial.h"
 #import "MMaterialManager.h"
 #import "ActionFlow.h"
+#import "UIImageView+WebCache.h"
+
+#import "Constance.h"
+#import "MMaterialTVC.h"
 
 
 @interface MMeTVC ()
@@ -19,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *exchangeRateLBL;
 @property (weak, nonatomic) IBOutlet UILabel *merchantCreditAmountLBL;
 @property (weak, nonatomic) IBOutlet UIImageView *merchantAvatarIMG;
+@property (weak, nonatomic) IBOutlet UILabel *merchantNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *merchantContactNumberLabel;
 
 
 @end
@@ -41,6 +47,33 @@
     //    self.avatarImageView.layer.cornerRadius = 4.0f;
     self.merchantAvatarIMG.layer.cornerRadius = self.merchantAvatarIMG.frame.size.height / 2.0;
 
+    
+    
+    
+    
+    
+    ///////
+    
+    ActionMMaterial *action = [[ActionMMaterial alloc] init];
+    action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
+        if (material) {
+            self.merchantNameLabel.text = [material objectForKey:@"n"];
+            self.merchantContactNumberLabel.text = [material objectForKey:@"con"];
+            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"logo"]];
+            [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
+            
+            //保存
+            [MMaterialManager setMaterial:material];
+            self.material = [NSMutableDictionary dictionaryWithDictionary:material];
+        }
+    };
+    [action doQueryMerchantOfAccount];
+    /////
+    
+    
+    
+    
+    
     
     if (self.material) {
         ActionBusiness *action = [[ActionBusiness alloc] init];
@@ -277,8 +310,14 @@
         [segue.destinationViewController setValue:self.business forKey:@"business"];
         [segue.destinationViewController setValue:self.flow forKey:@"flow"];
         
+    }else if ([segue.identifier isEqualToString:@"MerchantMaterialUpdate"]){
+        MMaterialTVC *destination = (MMaterialTVC *)segue.destinationViewController;
+        destination.material = self.material;
     }
+    
 }
+
+
 
 
 @end

@@ -360,6 +360,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GR0-t0-1e6" id="D4T-Gk-6cs"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消费兑换积分比例" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqy-9N-gO8">
                                 <rect key="frame" x="6" y="82" width="120" height="18"/>
@@ -381,7 +384,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="保存" id="zJd-bZ-tM0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="pHE-a0-xte" kind="unwind" unwindAction="unwindUpdateMaterial:" id="P9t-GN-NWj"/>
+                                <segue destination="pHE-a0-xte" kind="unwind" identifier="unwindUpdateMExchangeRate" unwindAction="unwindUpdateMaterial:" id="P9t-GN-NWj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -916,7 +919,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="3Uq-DM-AfX" kind="show" id="BVv-lD-wfU"/>
+                                            <segue destination="3Uq-DM-AfX" kind="show" identifier="MerchantMaterialUpdate" id="BVv-lD-wfU"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1225,7 +1228,9 @@
                     <connections>
                         <outlet property="exchangeRateLBL" destination="nKO-gC-6tm" id="3bb-iz-uws"/>
                         <outlet property="merchantAvatarIMG" destination="hef-uu-8WX" id="TIc-1l-RfP"/>
+                        <outlet property="merchantContactNumberLabel" destination="aZR-Gs-zVU" id="MQc-kN-TAK"/>
                         <outlet property="merchantCreditAmountLBL" destination="5e7-Jg-A3F" id="YTZ-D3-OVo"/>
+                        <outlet property="merchantNameLabel" destination="nQi-sR-vIB" id="80z-Pi-6cb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIp-qN-LJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1340,7 +1345,7 @@
         <!--商户名称-->
         <scene sceneID="stw-ww-H7k">
             <objects>
-                <viewController id="o9Y-CV-6gz" customClass="MerchantNameVC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="o9Y-CV-6gz" customClass="MerchantNameVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="htu-9B-yIA"/>
                         <viewControllerLayoutGuide type="bottom" id="hV4-ok-7YN"/>
@@ -1349,41 +1354,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商户名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tR-mV-1pT">
-                                <rect key="frame" x="20" y="94" width="560" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8tC-l4-pd9">
+                                <rect key="frame" x="0.0" y="74" width="600" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ab0-Ph-oPA"/>
+                                    <constraint firstAttribute="height" constant="30" id="uiK-uI-mjU"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="o9Y-CV-6gz" id="Qo9-5e-MuF"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商户名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80R-77-jwn">
+                                <rect key="frame" x="6" y="82" width="56" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wf0-71-Mf0">
-                                <rect key="frame" x="20" y="132" width="560" height="1"/>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="N8f-yB-5mf"/>
-                                </constraints>
-                            </view>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Wf0-71-Mf0" firstAttribute="leading" secondItem="6tR-mV-1pT" secondAttribute="leading" id="5wS-L4-aDT"/>
-                            <constraint firstItem="6tR-mV-1pT" firstAttribute="top" secondItem="htu-9B-yIA" secondAttribute="bottom" constant="30" id="CyH-IT-pel"/>
-                            <constraint firstItem="Wf0-71-Mf0" firstAttribute="top" secondItem="6tR-mV-1pT" secondAttribute="bottom" constant="8" symbolic="YES" id="VLP-aj-ufZ"/>
-                            <constraint firstItem="Wf0-71-Mf0" firstAttribute="trailing" secondItem="6tR-mV-1pT" secondAttribute="trailing" id="Wgk-F1-fLh"/>
-                            <constraint firstAttribute="trailing" secondItem="6tR-mV-1pT" secondAttribute="trailing" constant="20" id="XPj-OO-Ygb"/>
-                            <constraint firstItem="6tR-mV-1pT" firstAttribute="leading" secondItem="p8U-Wb-1HP" secondAttribute="leading" constant="20" id="mfy-7c-qhU"/>
+                            <constraint firstItem="8tC-l4-pd9" firstAttribute="top" secondItem="htu-9B-yIA" secondAttribute="bottom" constant="30" id="5Wv-YE-WlC"/>
+                            <constraint firstItem="80R-77-jwn" firstAttribute="leading" secondItem="8tC-l4-pd9" secondAttribute="leading" constant="6" id="8Mt-n9-cIf"/>
+                            <constraint firstItem="8tC-l4-pd9" firstAttribute="leading" secondItem="p8U-Wb-1HP" secondAttribute="leading" id="FH0-as-uuw"/>
+                            <constraint firstItem="80R-77-jwn" firstAttribute="top" secondItem="8tC-l4-pd9" secondAttribute="top" constant="8" id="ZVM-HD-8PY"/>
+                            <constraint firstAttribute="trailing" secondItem="8tC-l4-pd9" secondAttribute="trailing" id="lWm-au-R76"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="商户名称" id="QaA-oH-XYP">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="xkq-5s-eNG">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="保存" id="xkq-5s-eNG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="p4L-nr-K1z" kind="unwind" unwindAction="unwindUpdateMaterial:" id="2Pl-ah-JCk"/>
+                                <segue destination="p4L-nr-K1z" kind="unwind" identifier="unwindUpdateMMeterialMerchantName" unwindAction="unwindUpdateMaterial:" id="2Pl-ah-JCk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="merchantNameTXT" destination="6tR-mV-1pT" id="blK-6v-d24"/>
+                        <outlet property="contentTextView" destination="8tC-l4-pd9" id="ipM-Cf-hGU"/>
+                        <outlet property="placeholderLabel" destination="80R-77-jwn" id="ufR-cw-vuq"/>
+                        <outlet property="saveButton" destination="xkq-5s-eNG" id="sFe-qf-rku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frA-c9-iwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1394,7 +1404,7 @@
         <!--联系电话-->
         <scene sceneID="qnl-8g-1fU">
             <objects>
-                <viewController id="1FI-5I-tBU" customClass="MerchantContactNumberVC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1FI-5I-tBU" customClass="MerchantContactNumberVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tks-Ga-1LF"/>
                         <viewControllerLayoutGuide type="bottom" id="9DU-tE-ZqL"/>
@@ -1403,41 +1413,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="424-yF-Z7j">
-                                <rect key="frame" x="20" y="129" width="560" height="1"/>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-0l-hhk">
+                                <rect key="frame" x="0.0" y="74" width="600" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="6Jo-h8-6Ys"/>
+                                    <constraint firstAttribute="height" constant="30" id="ApG-ga-w6C"/>
                                 </constraints>
-                            </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="联系电话" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rrn-wN-2L4">
-                                <rect key="frame" x="20" y="91" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="g8b-Ix-7gv"/>
-                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1FI-5I-tBU" id="YRf-fe-oWY"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCJ-H9-twK">
+                                <rect key="frame" x="6" y="82" width="56" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="424-yF-Z7j" firstAttribute="top" secondItem="Rrn-wN-2L4" secondAttribute="bottom" constant="8" symbolic="YES" id="PYP-9F-USy"/>
-                            <constraint firstItem="Rrn-wN-2L4" firstAttribute="top" secondItem="Tks-Ga-1LF" secondAttribute="bottom" constant="27" id="QTM-p5-DD8"/>
-                            <constraint firstAttribute="trailing" secondItem="Rrn-wN-2L4" secondAttribute="trailing" constant="20" id="XhS-QC-4nd"/>
-                            <constraint firstItem="Rrn-wN-2L4" firstAttribute="leading" secondItem="iOz-4M-q7m" secondAttribute="leading" constant="20" id="cak-lX-uzu"/>
-                            <constraint firstItem="424-yF-Z7j" firstAttribute="trailing" secondItem="Rrn-wN-2L4" secondAttribute="trailing" id="uwz-SM-sDZ"/>
-                            <constraint firstItem="424-yF-Z7j" firstAttribute="leading" secondItem="Rrn-wN-2L4" secondAttribute="leading" id="wOp-VQ-2m2"/>
+                            <constraint firstItem="hsp-0l-hhk" firstAttribute="leading" secondItem="iOz-4M-q7m" secondAttribute="leading" id="LAP-Iq-gi7"/>
+                            <constraint firstItem="GCJ-H9-twK" firstAttribute="leading" secondItem="hsp-0l-hhk" secondAttribute="leading" constant="6" id="ND0-YL-xcu"/>
+                            <constraint firstItem="hsp-0l-hhk" firstAttribute="top" secondItem="Tks-Ga-1LF" secondAttribute="bottom" constant="30" id="ftl-aF-hhO"/>
+                            <constraint firstAttribute="trailing" secondItem="hsp-0l-hhk" secondAttribute="trailing" id="gTn-nU-c4S"/>
+                            <constraint firstItem="GCJ-H9-twK" firstAttribute="top" secondItem="hsp-0l-hhk" secondAttribute="top" constant="8" id="u6w-Vz-hCR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="联系电话" id="c3W-yM-ijB">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="jpE-kj-zp5">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="保存" id="jpE-kj-zp5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="cU8-yJ-v9r" kind="unwind" unwindAction="unwindUpdateMaterial:" id="VuV-8B-TJo"/>
+                                <segue destination="cU8-yJ-v9r" kind="unwind" identifier="unwindUpdateMMeterialMerchantContactNumber" unwindAction="unwindUpdateMaterial:" id="VuV-8B-TJo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="merchantContactNumberTXT" destination="Rrn-wN-2L4" id="RU4-5m-LHT"/>
+                        <outlet property="contentTextView" destination="hsp-0l-hhk" id="aKw-92-EVi"/>
+                        <outlet property="placeholderLabel" destination="GCJ-H9-twK" id="re5-yV-L2Z"/>
+                        <outlet property="saveButton" destination="jpE-kj-zp5" id="OVx-xJ-nah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wba-uH-7Kw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1448,7 +1463,7 @@
         <!--修改邮箱-->
         <scene sceneID="Cgw-Dd-jez">
             <objects>
-                <viewController id="eH2-YY-Hsn" customClass="MerchantEmailVC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eH2-YY-Hsn" customClass="MerchantEmailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DI9-Mo-3y8"/>
                         <viewControllerLayoutGuide type="bottom" id="TMb-1b-bJq"/>
@@ -1457,41 +1472,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cos-dR-rLC">
-                                <rect key="frame" x="20" y="94" width="560" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9oI-Dm-YHj">
+                                <rect key="frame" x="0.0" y="74" width="600" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="nuk-qa-E5y"/>
+                                    <constraint firstAttribute="height" constant="30" id="74I-xG-MaP"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eH2-YY-Hsn" id="ri1-6j-uKu"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="428-R6-50e">
+                                <rect key="frame" x="13" y="78" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOG-9r-SFA">
-                                <rect key="frame" x="20" y="132" width="560" height="1"/>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="yQf-Sk-xys"/>
-                                </constraints>
-                            </view>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="kOG-9r-SFA" firstAttribute="top" secondItem="Cos-dR-rLC" secondAttribute="bottom" constant="8" symbolic="YES" id="Jdd-TE-0UA"/>
-                            <constraint firstItem="Cos-dR-rLC" firstAttribute="top" secondItem="DI9-Mo-3y8" secondAttribute="bottom" constant="30" id="V0r-MW-R5g"/>
-                            <constraint firstItem="kOG-9r-SFA" firstAttribute="leading" secondItem="Cos-dR-rLC" secondAttribute="leading" id="j8G-Ag-lFD"/>
-                            <constraint firstItem="kOG-9r-SFA" firstAttribute="width" secondItem="Cos-dR-rLC" secondAttribute="width" id="lCh-dL-ARl"/>
-                            <constraint firstItem="Cos-dR-rLC" firstAttribute="leading" secondItem="fnD-6b-TUR" secondAttribute="leading" constant="20" id="oKy-7b-1nr"/>
-                            <constraint firstAttribute="trailing" secondItem="Cos-dR-rLC" secondAttribute="trailing" constant="20" id="xd4-XI-Wpx"/>
+                            <constraint firstAttribute="trailing" secondItem="9oI-Dm-YHj" secondAttribute="trailing" id="2PU-CR-RWu"/>
+                            <constraint firstItem="9oI-Dm-YHj" firstAttribute="leading" secondItem="fnD-6b-TUR" secondAttribute="leading" id="bVa-nv-a3W"/>
+                            <constraint firstItem="428-R6-50e" firstAttribute="top" secondItem="9oI-Dm-YHj" secondAttribute="top" constant="8" id="gVE-Ea-Oww"/>
+                            <constraint firstItem="428-R6-50e" firstAttribute="leading" secondItem="9oI-Dm-YHj" secondAttribute="leading" constant="6" id="lMA-S5-neB"/>
+                            <constraint firstItem="9oI-Dm-YHj" firstAttribute="top" secondItem="DI9-Mo-3y8" secondAttribute="bottom" constant="30" id="sfP-Mc-GJ5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="修改邮箱" id="cqi-dt-ll9">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="eRG-Fp-ZsY">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="保存" id="eRG-Fp-ZsY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="0RM-jc-WYQ" kind="unwind" unwindAction="unwindUpdateMaterial:" id="mIL-i4-vWg"/>
+                                <segue destination="0RM-jc-WYQ" kind="unwind" identifier="unwindUpdateMMeterialMerchantEmail" unwindAction="unwindUpdateMaterial:" id="mIL-i4-vWg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="merchantEmailTXT" destination="Cos-dR-rLC" id="8aU-89-Bau"/>
+                        <outlet property="contentTextView" destination="9oI-Dm-YHj" id="OOX-wd-8FT"/>
+                        <outlet property="placeholderLabel" destination="428-R6-50e" id="doR-pf-vlG"/>
+                        <outlet property="saveButton" destination="eRG-Fp-ZsY" id="Gtt-Bx-KKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="No8-wf-47b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1502,7 +1522,7 @@
         <!--修改地址-->
         <scene sceneID="Y0K-fy-A78">
             <objects>
-                <viewController id="PfT-Q2-UN2" customClass="MerchantAddressVC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="PfT-Q2-UN2" customClass="MerchantAddressVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DRH-Yw-Q8c"/>
                         <viewControllerLayoutGuide type="bottom" id="v4o-6h-zBV"/>
@@ -1511,41 +1531,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTD-yg-WOL">
-                                <rect key="frame" x="20" y="99" width="560" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="S09-sv-ab6">
+                                <rect key="frame" x="0.0" y="74" width="600" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="RED-Fi-HEI"/>
+                                    <constraint firstAttribute="width" constant="240" id="0nY-uN-JJX"/>
+                                    <constraint firstAttribute="height" constant="30" id="zQs-al-d2k"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0nY-uN-JJX"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="PfT-Q2-UN2" id="Llq-GW-Rlc"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vz-S0-NYc">
+                                <rect key="frame" x="6" y="82" width="28" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MP4-qq-ANT">
-                                <rect key="frame" x="20" y="137" width="560" height="1"/>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="ats-Rf-hHG"/>
-                                </constraints>
-                            </view>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="MP4-qq-ANT" firstAttribute="top" secondItem="eTD-yg-WOL" secondAttribute="bottom" constant="8" symbolic="YES" id="DI5-ZX-jND"/>
-                            <constraint firstItem="eTD-yg-WOL" firstAttribute="top" secondItem="DRH-Yw-Q8c" secondAttribute="bottom" constant="35" id="EOE-8E-8pc"/>
-                            <constraint firstItem="MP4-qq-ANT" firstAttribute="leading" secondItem="eTD-yg-WOL" secondAttribute="leading" id="Ypr-gO-DlE"/>
-                            <constraint firstItem="MP4-qq-ANT" firstAttribute="width" secondItem="eTD-yg-WOL" secondAttribute="width" id="dFv-qh-DI5"/>
-                            <constraint firstItem="MP4-qq-ANT" firstAttribute="leading" secondItem="lbE-ZW-lDa" secondAttribute="leadingMargin" id="sPA-gi-Jb6"/>
-                            <constraint firstItem="eTD-yg-WOL" firstAttribute="trailing" secondItem="lbE-ZW-lDa" secondAttribute="trailingMargin" id="sxC-KQ-g9l"/>
+                            <constraint firstItem="S09-sv-ab6" firstAttribute="top" secondItem="DRH-Yw-Q8c" secondAttribute="bottom" constant="30" id="2pg-yu-qj8"/>
+                            <constraint firstItem="7Vz-S0-NYc" firstAttribute="leading" secondItem="S09-sv-ab6" secondAttribute="leading" constant="6" id="Do4-Hv-REo"/>
+                            <constraint firstAttribute="trailing" secondItem="S09-sv-ab6" secondAttribute="trailing" id="N8s-iM-VIq"/>
+                            <constraint firstItem="S09-sv-ab6" firstAttribute="leading" secondItem="lbE-ZW-lDa" secondAttribute="leading" id="d3n-Q2-FWZ"/>
+                            <constraint firstItem="7Vz-S0-NYc" firstAttribute="top" secondItem="S09-sv-ab6" secondAttribute="top" constant="8" id="h2c-NB-LHb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="修改地址" id="cIP-rB-At5">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="P44-8j-tyh">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="保存" id="P44-8j-tyh">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="kgG-l5-dBY" kind="unwind" unwindAction="unwindUpdateMaterial:" id="igp-io-68e"/>
+                                <segue destination="kgG-l5-dBY" kind="unwind" identifier="unwindUpdateMMeterialMerchantAddress" unwindAction="unwindUpdateMaterial:" id="igp-io-68e"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="merchantAddressTXT" destination="eTD-yg-WOL" id="8ch-Jf-JVc"/>
+                        <outlet property="contentTextView" destination="S09-sv-ab6" id="A7o-9C-wh3"/>
+                        <outlet property="placeholderLabel" destination="7Vz-S0-NYc" id="kXC-WY-aL0"/>
+                        <outlet property="saveButton" destination="P44-8j-tyh" id="FQf-h7-P0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYv-1G-WNG" userLabel="First Responder" sceneMemberID="firstResponder"/>

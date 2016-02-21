@@ -32,11 +32,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //TODO
+    
+    
+    //    圆角
+    self.logoImageView.clipsToBounds = YES;
+    self.logoImageView.layer.cornerRadius = 4.0f;
+//    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
