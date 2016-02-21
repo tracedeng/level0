@@ -34,65 +34,13 @@
 
 @end
 
-@implementation MaterialTVC{
-    NSInteger row1;
-    NSInteger row2;
-}
-
+@implementation MaterialTVC
 
 - (NSArray *)cities{
     if (_cities == nil) {
         _cities = @[@[@"111",@"222",@"333",@"444",@"555"],@[@"上海",@"北京",@"广州",@"深圳"]];
     }
     return _cities;
-}
-
-
-
-// 当用户点击非picker区域时,退出
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = touches.anyObject;
-    CGPoint point = [touch locationInView:self.view];
-    if (CGRectContainsPoint(self.picker.frame, point)) {
-        
-    }else{
-        [_picker hide];
-    }
-}
-
-- (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
-    
-    if (self.picker.pickerMode == TYBPickViewTypeCustom) {
-        NSLog(@"%@",data);
-        
-        
-        
-        
-        NSString *location = [data[0] stringByAppendingString:data[1]];;
-
-        ActionMaterial *actionlocation = [[ActionMaterial alloc] init];
-        actionlocation.afterModifyLocation = ^(NSDictionary *materail){
-            [self.material setObject:location forKey:@"lo"];
-            self.locationLabel.text = location;
-            
-
-        };
-        [actionlocation doModifyLocation:location];
-
-        
-        
-//        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:3 inSection:0];
-//        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-//        
-//        
-//        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
-//        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-//        
-//        
-    }else{
-        NSLog(@"%@",data);
-    }
-    
 }
 
 - (void)viewDidLoad {
@@ -103,8 +51,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-
 
 }
 
@@ -170,8 +116,6 @@
             
             // Create the actions.
             UIAlertAction *maleAction = [UIAlertAction actionWithTitle:selectButtonMaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                
-               
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
                     [self.material setObject:@"male" forKey:@"sex"];
@@ -179,11 +123,9 @@
                     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:cell,nil] withRowAnimation:UITableViewRowAnimationNone];
                 };
                 [gender doModifyGender:@"male"];
-                
             }];
             
             UIAlertAction *femaleAction = [UIAlertAction actionWithTitle:selectButtonFemaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
                     [self.material setObject:@"female" forKey:@"sex"];
@@ -191,10 +133,8 @@
                     NSIndexPath *cell=[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
                     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:cell,nil] withRowAnimation:UITableViewRowAnimationNone];
 
-                    
                 };
                 [gender doModifyGender:@"female"];
-
             }];
             
             // Add the actions.
@@ -202,15 +142,10 @@
             [alertController addAction:femaleAction];
             
 //            [self presentViewController:alertController animated:YES completion:nil];
-            [self presentViewController: alertController
-                               animated: YES
-                             completion:^{
-                                 alertController.view.superview.userInteractionEnabled = YES;
-                                 [alertController.view.superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(alertControllerBackgroundTapped)]];
-                             }];
-
-            
-            
+            [self presentViewController: alertController animated: YES completion:^{
+                alertController.view.superview.userInteractionEnabled = YES;
+                [alertController.view.superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(alertControllerBackgroundTapped)]];
+                }];
         }else if (3 == indexPath.row) {
             self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCustom target:self title:nil];
 //            _picker.maskViewColor = [UIColor redColor];
@@ -218,44 +153,9 @@
             
             [self.view addSubview:_picker];
             [_picker show];
-            
-//            //Citylist
-//            row1 = 0;
-//            row2 = 0;
-//            self.cityPicker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, HEIGHT/2  , WIDTH, HEIGHT/2)];
-//            self.cityPicker.tag = 0;
-//            
-//            self.cityPicker.delegate = self;
-//            self.cityPicker.dataSource = self;
-//            self.cityPicker.showsSelectionIndicator = YES;
-//            [self.view addSubview:self.cityPicker];
-//            self.cityPicker.backgroundColor = [UIColor grayColor];
-//
-//            self.selectcancel = [[UILabel alloc]initWithFrame:CGRectMake(0, HEIGHT/2, WIDTH/4, 30)];
-//            self.selectcancel.textAlignment = NSTextAlignmentCenter;
-//            self.selectcancel.backgroundColor = [UIColor whiteColor];
-//            self.selectcancel.text = NSLocalizedString(@"取消", nil);
-//            [self.view addSubview:self.selectcancel];
-//            
-//            self.selectok = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH*3/4, HEIGHT/2, WIDTH/4, 30)];
-//            self.selectok.textAlignment = NSTextAlignmentCenter;
-//            self.selectok.backgroundColor = [UIColor whiteColor];
-//            self.selectok.text = NSLocalizedString(@"完成", nil);;
-//            [self.view addSubview:self.selectok];
-            
-            
-            
-            
         }
     }
 }
-
-
-- (void)alertControllerBackgroundTapped
-{
-    [self dismissViewControllerAnimated: YES completion: nil];
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -309,6 +209,39 @@
     return cell;
 }
 
+- (void)alertControllerBackgroundTapped
+{
+    [self dismissViewControllerAnimated: YES completion: nil];
+}
+
+
+// 当用户点击非picker区域时,退出
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = touches.anyObject;
+    CGPoint point = [touch locationInView:self.view];
+    if (CGRectContainsPoint(self.picker.frame, point)) {
+        
+    }else{
+        [_picker hide];
+    }
+}
+
+- (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
+    if (self.picker.pickerMode == TYBPickViewTypeCustom) {
+        DLog(@"%@", data);
+        NSString *location = [data[0] stringByAppendingString:data[1]];;
+        
+        ActionMaterial *actionlocation = [[ActionMaterial alloc] init];
+        actionlocation.afterModifyLocation = ^(NSDictionary *materail){
+            [self.material setObject:location forKey:@"lo"];
+            self.locationLabel.text = location;
+        };
+        [actionlocation doModifyLocation:location];
+        
+    }else{
+        DLog(@"%@",data);
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -384,119 +317,8 @@
         [action doModifyNickName:nicknamevc.nickName];
         
     }
-//    DLog(@"here....");
-//    if ([segue.sourceViewController isKindOfClass:[ class]]) {
-//        EditNicknameIntroduce *edit = (EditNicknameIntroduce *)segue.sourceViewController;
-//        switch (edit.type) {
-//            case EEDITTYPENICKNAME:
-//                [self updateNickname:edit.info];
-//                break;
-//            case EEDITTYPEINTRODUCE:
-//                [self updateIntroduce:edit.info];
-//                break;
-//            default:
-//                break;
-//        }
-//    }else if ([segue.sourceViewController isKindOfClass:[EditCityTVC class]]){
-//        EditCityTVC *edit = (EditCityTVC *)segue.sourceViewController;
-//        [self updateLocation:@"CN" province:edit.checkedProvince city:edit.checkedCity];
-//    }
 }
 
-
-//返回显示的列数
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    if (pickerView == self.cityPicker) {
-        return 2;
-    }
-    else
-        return 1;
-}
-
-//返回当前列显示的行数
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
-
-    if (component == 0) {
-        return [YMUtils getCityData].count;
-        
-    }
-    else if (component == 1) {
-        NSArray *array = [YMUtils getCityData][row1][@"children"];
-        if ((NSNull*)array != [NSNull null]) {
-            return array.count;
-        }
-        return 0;
-    }
-    else {
-        NSArray *array = [YMUtils getCityData][row1][@"children"];
-        if ((NSNull*)array != [NSNull null]) {
-            NSArray *array1 = [YMUtils getCityData][row1][@"children"][row2][@"children"];
-            if ((NSNull*)array1 != [NSNull null]) {
-                return array1.count;
-            }
-            return 0;
-        }
-        return 0;
-    }
-}
-//设置当前行的内容
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    if(component == 0) {
-        return [YMUtils getCityData][row][@"name"];
-    }
-    else if (component == 1) {
-        return [YMUtils getCityData][row1][@"children"][row][@"name"];
-    }
-    return nil;
-    
-}
-//选择的行数
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (component == 0) {
-        row1 = row;
-        row2 = 0;
-        [self.cityPicker reloadComponent:1];
-        
-    }
-    else if (component == 1){
-        row2 = row;
-    }
-    NSInteger cityRow1 = [self.cityPicker selectedRowInComponent:0];
-    NSInteger cityRow2 = [self.cityPicker selectedRowInComponent:1];
-    NSMutableString *str = [[NSMutableString alloc]init];
-    [str appendString:[YMUtils getCityData][cityRow1][@"name"]];
-    NSArray *array = [YMUtils getCityData][cityRow1][@"children"];
-    if ((NSNull*)array != [NSNull null]) {
-        [str appendString:[YMUtils getCityData][cityRow1][@"children"][cityRow2][@"name"]];
-        NSArray *array1 = [YMUtils getCityData][cityRow1][@"children"][cityRow2][@"children"];
-    }
-    self.cityLabel.text = str;
-}
-//每行显示的文字样式
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-
-{
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 107, 30)];
-    //    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textAlignment = NSTextAlignmentLeft;
-    titleLabel.font = [UIFont systemFontOfSize:14];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    if (component == 0) {
-        titleLabel.text = [YMUtils getCityData][row][@"name"];
-    }
-    else if (component == 1) {
-        titleLabel.text = [YMUtils getCityData][row1][@"children"][row][@"name"];
-    }
-    else {
-        titleLabel.text = [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
-    }
-    
-    return titleLabel;
-}
 
 #pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
