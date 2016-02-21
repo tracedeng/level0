@@ -54,6 +54,28 @@
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
             //clear cache
+            NSString *selectButtonOKTitle = NSLocalizedString(@"确定", nil);
+            NSString *selectButtonCancelTitle = NSLocalizedString(@"取消", nil);
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+                [[SDImageCache sharedImageCache] clearDisk];
+                self.cacheSize = [[SDImageCache sharedImageCache] getSize];
+                
+                
+                
+            }];
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:selectButtonCancelTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+            }];
+            [alertController addAction:okAction];
+            [alertController addAction:cancelAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            
         }else if (1 == indexPath.row) {
             //切换版本
             [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoBootstrap", @"destine", nil]];
