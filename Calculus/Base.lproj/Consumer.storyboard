@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="1900" y="-831"/>
         </scene>
-        <!--Title-->
+        <!--扫一扫-->
         <scene sceneID="MmH-Cu-pvQ">
             <objects>
                 <viewController id="QEV-4w-Hbb" customClass="ScanMerchantController" sceneMemberID="viewController">
@@ -179,8 +179,8 @@
                             <constraint firstAttribute="width" secondItem="Onb-Pw-VsV" secondAttribute="width" multiplier="7:5" id="qbF-Ac-Jgr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Xzb-Ha-lJx">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="yFQ-AD-2iK">
+                    <navigationItem key="navigationItem" title="扫一扫" id="Xzb-Ha-lJx">
+                        <barButtonItem key="rightBarButtonItem" title="测试按钮" id="yFQ-AD-2iK">
                             <connections>
                                 <segue destination="M5v-UD-9I9" kind="show" id="c40-k6-Rhr"/>
                             </connections>
