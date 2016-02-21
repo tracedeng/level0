@@ -18,6 +18,7 @@
 #define MMATERIALEXCHANGERATE  0x1
 @property (weak, nonatomic) IBOutlet UILabel *exchangeRateLBL;
 @property (weak, nonatomic) IBOutlet UILabel *merchantCreditAmountLBL;
+@property (weak, nonatomic) IBOutlet UIImageView *merchantAvatarIMG;
 
 
 @end
@@ -34,7 +35,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"商家中心";
     self.material = [NSMutableDictionary dictionaryWithDictionary:[MMaterialManager getMaterial]];
+    
+    //    圆角
+    self.merchantAvatarIMG.clipsToBounds = YES;
+    //    self.avatarImageView.layer.cornerRadius = 4.0f;
+    self.merchantAvatarIMG.layer.cornerRadius = self.merchantAvatarIMG.frame.size.height / 2.0;
 
+    
     if (self.material) {
         ActionBusiness *action = [[ActionBusiness alloc] init];
         action.afterQueryBusinessParameters = ^(NSDictionary *business){
@@ -153,6 +160,35 @@
 //    
 //    return cell;
 //}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (0 == indexPath.section) {
+        if (0 == indexPath.row) {
+        }else if (1 == indexPath.row) {
+            
+        }
+    } else if(2 == indexPath.section) {
+        if (0 == indexPath.row) {
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Me"bundle:nil];
+            UIViewController *myView = [storyboard instantiateViewControllerWithIdentifier:@"feedbackView"];
+//            self.view.window.rootViewController = myView;
+            
+            [self.navigationController pushViewController:myView animated:YES];
+//            [self.navigationController pushViewController:[self.navigationController.viewControllers objectAtIndex:2]
+//                                                  animated:YES];
+            
+            
+            
+        }else if (1 == indexPath.row) {
+            //            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps ://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
+        }
+    }
+    
+}
+
 
 
 /*
