@@ -38,7 +38,10 @@
         //主动生成商家Qrcode
         [self prepareQiniuToken];
         self.qrcodeImageView.afterClickImageView = ^(id sender) {
-            self.qrcodeImage = [GenerateQrcode createNonInterpolatedUIImageFormCIImage:[GenerateQrcode createQRForString:self.merchant] withSize:500.0f];
+//            self.imageView.image = [TYBQRCodeCreater createQRImage:[TYBQRCodeCreater createWithString:@"www.dansltech.com" qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(240, 240)] logoImage:[UIImage imageNamed:@"dsl"]];
+
+            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:self.merchant qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(240, 240)] logoImage:nil];
+//            self.qrcodeImage = [GenerateQrcode createNonInterpolatedUIImageFormCIImage:[GenerateQrcode createQRForString:self.merchant] withSize:500.0f];
             //先展示
             self.noticeLabel.hidden = NO;
             self.qrcodeImageView.image = self.qrcodeImage;
