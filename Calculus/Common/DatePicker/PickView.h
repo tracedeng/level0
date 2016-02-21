@@ -1,41 +1,41 @@
 //
-//  TYBPickView.h
-//  TYBDatePickerDemo
+//  PickView.h
+//  DatePickerDemo
 //
-//  Created by 滕跃兵 on 16/1/21.
-//  Copyright © 2016年 滕跃兵. All rights reserved.
+//  Created by tracedeng on 16/1/21.
+//  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 
 typedef enum : NSUInteger {
-    TYBPickViewTypeCustom, // 用户自定义,自己设置代理,自己设置数据源
-    TYBPickViewTypeTime, // 时间
-    TYBPickViewTypeDate, // 日期
-    TYBPickViewTypeCountDownTimer,// 显示分钟与秒
-    TYBPickViewTypeDateAndTime // 日期和时间
-} TYBPickViewType;
+    PickViewTypeCustom, // 用户自定义,自己设置代理,自己设置数据源
+    PickViewTypeTime, // 时间
+    PickViewTypeDate, // 日期
+    PickViewTypeCountDownTimer,// 显示分钟与秒
+    PickViewTypeDateAndTime // 日期和时间
+} PickViewType;
 
 
 
-@class TYBPickView;
+@class PickView;
 
-@protocol TYBPickViewDelegate <NSObject>
+@protocol PickViewDelegate <NSObject>
 
 @optional
-- (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data;
+- (void)pickView:(PickView *)pickView didClickButtonConfirm:(id)data;
 
 @end
 
 
 
-@interface TYBPickView : UIView
+@interface PickView : UIView
 
 /**
  *  设置pickerView的类型
  */
-@property (nonatomic, assign) TYBPickViewType pickerMode;
+@property (nonatomic, assign) PickViewType pickerMode;
 
 /**
  *  标题
@@ -46,7 +46,7 @@ typedef enum : NSUInteger {
 /**
  *  监听点击Confirm按钮的事件
  */
-@property (nonatomic, weak) id<TYBPickViewDelegate> confirmDelegate;
+@property (nonatomic, weak) id<PickViewDelegate> confirmDelegate;
 
 /**
  *  pickerView的数据
@@ -60,7 +60,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIColor *maskViewColor;
 
 
-- (instancetype)initWithMode:(TYBPickViewType)type target:(id<TYBPickViewDelegate>)target title:(NSString *)title;
+- (instancetype)initWithMode:(PickViewType)type target:(id<PickViewDelegate>)target title:(NSString *)title;
 
 /**
  *  弹出

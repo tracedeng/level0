@@ -1,18 +1,18 @@
 //
-//  TYBPickView.m
-//  TYBDatePickerDemo
+//  PickView.m
+//  DatePickerDemo
 //
 //  Created by 滕跃兵 on 16/1/21.
 //  Copyright © 2016年 滕跃兵. All rights reserved.
 //
 
-#import "TYBPickView.h"
+#import "PickView.h"
 
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
 
 
-@interface TYBPickView()<UIPickerViewDelegate,UIPickerViewDataSource>
+@interface PickView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datepickView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
@@ -30,7 +30,7 @@
 @end
 
 
-@implementation TYBPickView
+@implementation PickView
 
 - (UIView *)maskView {
     if (_maskView == nil) {
@@ -49,9 +49,9 @@
     return _data;
 }
 
-- (instancetype)initWithMode:(TYBPickViewType)type target:(id<TYBPickViewDelegate>)target title:(NSString *)title {
+- (instancetype)initWithMode:(PickViewType)type target:(id<PickViewDelegate>)target title:(NSString *)title {
     if (self = [super init]) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"TYBPickView" owner:nil options:nil] firstObject];
+        self = [[[NSBundle mainBundle] loadNibNamed:@"PickView" owner:nil options:nil] firstObject];
         self.height = self.pickerView.frame.origin.y - self.operationStackView.frame.origin.y + self.pickerView.frame.size.height;
         self.confirmDelegate = target;
         self.pickerMode = type;
@@ -69,22 +69,22 @@
     }
 }
 
-- (void)setPickerMode:(TYBPickViewType)pickerMode {
+- (void)setPickerMode:(PickViewType)pickerMode {
     _pickerMode = pickerMode;
     switch (pickerMode) {
-        case TYBPickViewTypeDate:
+        case PickViewTypeDate:
             self.datepickView.datePickerMode = UIDatePickerModeDate;
             break;
-        case TYBPickViewTypeTime:
+        case PickViewTypeTime:
             self.datepickView.datePickerMode = UIDatePickerModeTime;
             break;
-        case TYBPickViewTypeDateAndTime:
+        case PickViewTypeDateAndTime:
             self.datepickView.datePickerMode = UIDatePickerModeDateAndTime;
             break;
-        case TYBPickViewTypeCountDownTimer:
+        case PickViewTypeCountDownTimer:
             self.datepickView.datePickerMode = UIDatePickerModeCountDownTimer;
             break;
-        case TYBPickViewTypeCustom:
+        case PickViewTypeCustom:
             self.datepickView.hidden = YES;
             self.pickerView.hidden = NO;
             self.pickerView.delegate = self;
@@ -124,7 +124,7 @@
 
 - (IBAction)confirm:(id)sender {
     
-    if (self.pickerMode == TYBPickViewTypeCustom) {
+    if (self.pickerMode == PickViewTypeCustom) {
         
         NSMutableArray *result = [NSMutableArray array];
         for (int i = 0; i < self.pickerData.count; i++) {
@@ -147,7 +147,7 @@
 
 #pragma mark --- 用户自定义时实现可以调用的方法
 - (NSInteger)selectedRowInComponent:(NSInteger)component {
-    if(self.pickerMode == TYBPickViewTypeCustom){
+    if(self.pickerMode == PickViewTypeCustom){
         return [self.pickerView selectedRowInComponent:component];
     }else{
         return -1;
@@ -155,18 +155,18 @@
 }
 
 - (void)reloadAllComponents {
-    if(self.pickerMode == TYBPickViewTypeCustom){
+    if(self.pickerMode == PickViewTypeCustom){
          [self.pickerView reloadAllComponents];
     }
 }
 
 - (void)reloadComponent:(NSInteger)component {
-    if(self.pickerMode == TYBPickViewTypeCustom){
+    if(self.pickerMode == PickViewTypeCustom){
     [self.pickerView reloadComponent:component];
     }
 }
 - (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated{
-    if(self.pickerMode == TYBPickViewTypeCustom){
+    if(self.pickerMode == PickViewTypeCustom){
     [self.pickerView selectRow:row inComponent:component animated:animated];
     }
 }
