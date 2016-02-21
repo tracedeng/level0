@@ -26,7 +26,6 @@
     self = [super init];
     if (self) {
         self.state = [SKeyManager getSkey];
-//        self.merchant = [[MMaterialManager getMaterial] objectForKey:@"id"];
         self.account = [self.state objectForKey:@"account"];
         self.skey = [self.state objectForKey:@"skey"];
         self.net = [[NetCommunication alloc] initWithHttpUrl:STATISTICURL httpMethod:@"post"];
@@ -38,6 +37,18 @@
 - (void)doReportVersion:(NSString *)version {
     self.type = ESTATISTICVERSIONREPORT;
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"version", @"type", version, @"version", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+}
+
+- (void)doBootReport:(NSString *)version {
+    self.type = ESTATISTICVERSIONREPORT;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"boot", @"type", version, @"version", nil];
+    [self.net requestHttpWithData:postData];
+}
+
+- (void)doActiveReport {
+    self.type = ESTATISTICVERSIONREPORT;
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"active", @"type", [RoleManager currentRole], @"mode", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -63,22 +74,23 @@
                 }
                 break;
             }
-//            case EQUERYONECONSUMERCREDIT:
-//            {
+            case ESTATISTICBOOTREPORT:
+            {
 //                NSArray *creditList = [responseObject objectForKey:@"r"];
-//                if (self.afterQueryOneConsumerCredit) {
-//                    self.afterQueryOneConsumerCredit(creditList);
-//                }
-//                break;
-//            }
-//            case EMERCHANTQUERYAPPLYCREDIT:
-//            {
+                if (self.afterReportVersion) {
+                    self.afterReportVersion();
+                }
+                break;
+            }
+            case ESTATISTICACTIVEREPORT:
+            {
 //                NSArray *creditList = [responseObject objectForKey:@"r"];
-//                if (self.afterMerchantQueryApplyCredit) {
-//                    self.afterMerchantQueryApplyCredit(creditList);
-//                }
-//                break;
-//            }
+                if (self.afterActiveReport) {
+                    self.afterActiveReport();
+                }
+                break;
+                break;
+            }
             case ESTATISTICFEEDBACK:
             {
 //                NSString *result = [responseObject objectForKey:@"r"];
@@ -100,22 +112,22 @@
                 }
                 break;
             }
-//            case EQUERYONECONSUMERCREDIT:
-//            {
-//                NSString *message = [responseObject objectForKey:@"m"];
-//                if (self.afterQueryOneConsumerCreditFailed) {
-//                    self.afterQueryOneConsumerCreditFailed(message);
-//                }
-//                break;
-//            }
-//            case EMERCHANTQUERYAPPLYCREDIT:
-//            {
-//                NSString *message = [responseObject objectForKey:@"m"];
-//                if (self.afterMerchantQueryApplyCreditFailed) {
-//                    self.afterMerchantQueryApplyCreditFailed(message);
-//                }
-//                break;
-//            }
+            case ESTATISTICBOOTREPORT:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterBootReportFailed) {
+                    self.afterBootReportFailed(message);
+                }
+                break;
+            }
+            case ESTATISTICACTIVEREPORT:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterActiveReportFailed) {
+                    self.afterActiveReportFailed(message);
+                }
+                break;
+            }
             case ESTATISTICFEEDBACK:
             {
                 NSString *message = [responseObject objectForKey:@"m"];
@@ -143,21 +155,20 @@
             }
             break;
         }
-//        case EQUERYONECONSUMERCREDIT:
-//        {
-//            if (self.afterQueryOneConsumerCreditFailed) {
-//                self.afterQueryOneConsumerCreditFailed([responseError localizedDescription]);
-//            }
-//            break;
-//        }
-//        case EMERCHANTQUERYAPPLYCREDIT:
-//        {
-//            if (self.afterMerchantQueryApplyCreditFailed) {
-//                self.afterMerchantQueryApplyCreditFailed([responseError localizedDescription]);
-//            }
-//            
-//            break;
-//        }
+        case ESTATISTICBOOTREPORT:
+        {
+            if (self.afterBootReportFailed) {
+                self.afterBootReportFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case ESTATISTICACTIVEREPORT:
+        {
+            if (self.afterActiveReportFailed) {
+                self.afterActiveReportFailed([responseError localizedDescription]);
+            }
+            break;
+        }
         case ESTATISTICFEEDBACK:
         {
             if (self.afterFeedbackFailed) {
