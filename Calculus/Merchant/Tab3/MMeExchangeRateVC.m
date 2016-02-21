@@ -10,6 +10,9 @@
 
 @interface MMeExchangeRateVC ()
 @property (weak, nonatomic) IBOutlet UITextField *exchangeRateTXT;
+@property (weak, nonatomic) IBOutlet UITextView *consumptionRateTextView;
+@property (weak, nonatomic) IBOutlet UILabel *ratePlaceHolderLBL;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveBTN;
 
 @end
 
@@ -18,8 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.exchangeRateTXT.text = self.exchangeRate;
-    self.exchangeRateTXT.delegate = self;
+//    self.exchangeRateTXT.text = self.exchangeRate;
+//    self.exchangeRateTXT.delegate = self;
+
+    self.consumptionRateTextView.text = self.exchangeRate;
+    if (self.exchangeRate.length) {
+        self.ratePlaceHolderLBL.text = @"";
+    }
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,22 +45,47 @@
 }
 */
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    //TODO 判断各种按键是否正常
-    if (string.length == 0){
-        self.exchangeRate = [self.exchangeRateTXT.text substringToIndex:[self.exchangeRateTXT.text length] -1];
-        return YES;     //支持已经输满长度按退格键删除
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    //TODO 判断各种按键是否正常
+//    if (string.length == 0){
+//        self.exchangeRate = [self.exchangeRateTXT.text substringToIndex:[self.exchangeRateTXT.text length] -1];
+//        return YES;     //支持已经输满长度按退格键删除
+//    }
+//    if (textField == self.exchangeRateTXT) {
+//        if (textField.text.length > 15) {
+//            return NO;
+//        }
+//    }
+//    self.exchangeRate = [self.exchangeRateTXT.text stringByAppendingString:string];
+//    return YES;
+//}
+//
+
+
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if (text.length == 0) return YES;     //支持已经输满长度按退格键删除
+    
+    if (textView.text.length > 5) {
+        return NO;
     }
-    if (textField == self.exchangeRateTXT) {
-        if (textField.text.length > 15) {
-            return NO;
-        }
-    }
-    self.exchangeRate = [self.exchangeRateTXT.text stringByAppendingString:string];
+    
     return YES;
 }
 
+- (void)textViewDidChange:(UITextView *)textView {
+    if (textView.text.length == 0 ) {
+        self.saveBTN.enabled = NO;
+        self.ratePlaceHolderLBL.text = @"消费换积分比例";
+        //        self.canSub21mitMask &= 0xfb;
+        //        [textView resignFirstResponder];
+    }else{
+        self.saveBTN.enabled = [self.exchangeRate isEqualToString:self.consumptionRateTextView.text] ? NO : YES;
+        self.ratePlaceHolderLBL.text = @"";
+        //        self.canSubmitMask |= 0x4;
+    }
+}
 
 
 @end

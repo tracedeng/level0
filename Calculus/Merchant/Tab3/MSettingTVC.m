@@ -8,9 +8,14 @@
 
 #import "MSettingTVC.h"
 #import "ActionAccount.h"
+#import "UIImageView+WebCache.h"
+
 
 @interface MSettingTVC ()
 - (IBAction)logoutAction:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *cacheSizeLabel;
+@property (nonatomic, assign) NSInteger cacheSize;
 
 @end
 
@@ -27,6 +32,9 @@
     NSString * path = [NSHomeDirectory() stringByAppendingString:@"/Library/Caches/ImageCaches"];
     NSDictionary * dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
     NSLog(@"%@",[dict objectForKey:NSFileSize]);
+
+    self.cacheSize = [[SDImageCache sharedImageCache] getSize];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +43,23 @@
 }
 
 #pragma mark - Table view data source
+
+- (void)setCacheSize:(NSInteger)cacheSize {
+    if (cacheSize == 0) {
+        self.cacheSizeLabel.text = @"0";
+        
+    }else{
+        
+        _cacheSize = cacheSize / 1024 /1024;
+        if (_cacheSize < 1) {
+            self.cacheSizeLabel.text = @"1M";
+        }else{
+            self.cacheSizeLabel.text = [NSString stringWithFormat:@"%ldM", (long)_cacheSize];
+        }
+        
+    }
+    _cacheSize = cacheSize;
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

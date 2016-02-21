@@ -46,7 +46,8 @@
         ActionBusiness *action = [[ActionBusiness alloc] init];
         action.afterQueryBusinessParameters = ^(NSDictionary *business){
             if(business){
-                self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
+//                self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
+                self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]];
 
                 self.business = [NSMutableDictionary dictionaryWithDictionary:business];
 //                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
@@ -111,12 +112,7 @@
 //    }
 //}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (0 == section) {
-        return 0.01f;
-    }
-    return 0.0f;
-}
+
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -160,6 +156,38 @@
 //    
 //    return cell;
 //}
+
+
+
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (0 == indexPath.section) {
+        return 120.0f;
+    }
+    return 44.0f;
+}
+
+
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (0 == section) {
+        return 0.01f;
+    }else if (1 == section) {
+        return 0.01f;
+    }
+    return 0.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (0 == section) {
+        return 0.01f;
+    }
+    
+    return 0.0f;
+}
+
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
