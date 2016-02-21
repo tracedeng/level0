@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MaterialTVC : UITableViewController<UIPickerViewDataSource,UIPickerViewDelegate>
+@interface MaterialTVC : UITableViewController
 
 #define MATERIALTYPEAVATAR  0x1
 #define MATERIALTYPENICKNAME  0x2
