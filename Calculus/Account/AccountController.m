@@ -103,6 +103,9 @@
         }
     }else if (textField == self.passwordTField){
     // TODO 密码的最长位数
+        if (textField.text.length > 15) {
+            return NO;
+        }
     }
     
     return YES;

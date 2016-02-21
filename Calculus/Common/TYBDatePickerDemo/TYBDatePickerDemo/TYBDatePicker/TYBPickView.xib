@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -13,48 +13,88 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-Z3-zrd">
-                    <rect key="frame" x="0.0" y="417" width="600" height="33"/>
+                    <rect key="frame" x="0.0" y="420" width="600" height="30"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbR-nl-KUy">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-WK-aRU">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Gyf-IG-3eR"/>
                                         <constraint firstAttribute="width" secondItem="g6z-WK-aRU" secondAttribute="height" multiplier="1:1" id="THi-ZE-uZn"/>
                                     </constraints>
-                                    <state key="normal" backgroundImage="icon-picker-cancel"/>
+                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="15"/>
+                                    <state key="normal" title="    取消    ">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="THi-ZE-uZn"/>
+                                        </mask>
+                                    </variation>
                                     <connections>
                                         <action selector="cancle:" destination="Dvg-4M-WZn" eventType="touchUpInside" id="R5F-uq-lMG"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl9-gP-RYN">
-                                    <rect key="frame" x="30" y="0.0" width="540" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl9-gP-RYN">
+                                    <rect key="frame" x="70" y="0.0" width="455" height="30"/>
+                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-38-u5J">
-                                    <rect key="frame" x="570" y="0.0" width="30" height="30"/>
+                                    <rect key="frame" x="525" y="0.0" width="75" height="30"/>
+                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="S7N-Kw-gi7"/>
                                         <constraint firstAttribute="width" secondItem="jO6-38-u5J" secondAttribute="height" multiplier="1:1" id="gdQ-pL-klY"/>
                                     </constraints>
-                                    <state key="normal" backgroundImage="icon-picker-confirm"/>
+                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="15"/>
+                                    <state key="normal" title="    确定     ">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="gdQ-pL-klY"/>
+                                        </mask>
+                                    </variation>
                                     <connections>
                                         <action selector="confirm:" destination="Dvg-4M-WZn" eventType="touchUpInside" id="GFB-er-RcR"/>
                                     </connections>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="g6z-WK-aRU" firstAttribute="top" secondItem="cbR-nl-KUy" secondAttribute="top" id="EV4-WW-diL"/>
+                                <constraint firstItem="g6z-WK-aRU" firstAttribute="leading" secondItem="cbR-nl-KUy" secondAttribute="leading" constant="5" id="Xpa-JO-mL9"/>
+                                <constraint firstAttribute="trailing" secondItem="g6z-WK-aRU" secondAttribute="trailing" constant="570" id="cfn-ZN-1Zk"/>
+                                <constraint firstItem="g6z-WK-aRU" firstAttribute="leading" secondItem="cbR-nl-KUy" secondAttribute="leading" id="dDn-po-6Sh"/>
+                                <constraint firstItem="g6z-WK-aRU" firstAttribute="leading" secondItem="cbR-nl-KUy" secondAttribute="leading" constant="5" id="luK-pL-90B"/>
+                                <constraint firstAttribute="trailing" secondItem="jO6-38-u5J" secondAttribute="trailing" constant="5" id="nUV-yw-Ibz"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Xpa-JO-mL9"/>
+                                    <exclude reference="cfn-ZN-1Zk"/>
+                                    <exclude reference="dDn-po-6Sh"/>
+                                    <exclude reference="luK-pL-90B"/>
+                                    <exclude reference="nUV-yw-Ibz"/>
+                                </mask>
+                            </variation>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWW-Ty-BAC" userLabel="separator">
-                            <rect key="frame" x="0.0" y="32" width="600" height="1"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWW-Ty-BAC" userLabel="separator">
+                            <rect key="frame" x="0.0" y="30" width="600" height="0.0"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="oei-if-Si3"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="oei-if-Si3"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <constraints>
@@ -70,12 +110,14 @@
                 </stackView>
                 <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flQ-Vm-rR4">
                     <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="PEf-Jk-zdb"/>
                     </constraints>
                 </pickerView>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="llI-Ns-ymD">
                     <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="uzg-uD-3HD"/>
                     </constraints>
@@ -113,8 +155,4 @@
             <point key="canvasLocation" x="562.5" y="217.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="icon-picker-cancel" width="24" height="24"/>
-        <image name="icon-picker-confirm" width="24" height="24"/>
-    </resources>
 </document>
