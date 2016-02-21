@@ -19,17 +19,17 @@
 #import "YMUtils.h"
 #import "MeNickNameVC.h"
 
-#import "TYBPickView.h"
+#import "PickView.h"
 
 
-@interface MaterialTVC ()<TYBPickViewDelegate>
+@interface MaterialTVC ()<PickViewDelegate>
 @property (nonatomic, retain) NSString *uploadToken;
 @property (nonatomic, retain) NSString *path;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
-@property (nonatomic, strong) TYBPickView *picker;
+@property (nonatomic, strong) PickView *picker;
 @property (nonatomic, strong) NSArray *cities;
 
 @end
@@ -147,7 +147,7 @@
                 [alertController.view.superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(alertControllerBackgroundTapped)]];
                 }];
         }else if (3 == indexPath.row) {
-            self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCustom target:self title:nil];
+            self.picker = [[PickView alloc] initWithMode:PickViewTypeCustom target:self title:nil];
 //            _picker.maskViewColor = [UIColor redColor];
             _picker.pickerData = self.cities;
             
@@ -226,8 +226,8 @@
     }
 }
 
-- (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
-    if (self.picker.pickerMode == TYBPickViewTypeCustom) {
+- (void)pickView:(PickView *)pickView didClickButtonConfirm:(id)data {
+    if (self.picker.pickerMode == PickViewTypeCustom) {
         DLog(@"%@", data);
         NSString *location = [data[0] stringByAppendingString:data[1]];;
         

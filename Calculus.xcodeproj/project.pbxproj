@@ -90,6 +90,12 @@
 		195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */; };
 		197491171C759BCC00784D09 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491161C759BCC00784D09 /* FeedbackController.m */; };
 		1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911A1C75F5D300784D09 /* ActionStatistic.m */; };
+		197491201C79A25400784D09 /* PickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911E1C79A25400784D09 /* PickView.m */; };
+		197491211C79A25400784D09 /* PickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1974911F1C79A25400784D09 /* PickView.xib */; };
+		197491341C79A3D000784D09 /* QRScan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1974912D1C79A3D000784D09 /* QRScan.storyboard */; };
+		197491351C79A3D000784D09 /* QRScanToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974912E1C79A3D000784D09 /* QRScanToolView.m */; };
+		197491361C79A3D000784D09 /* QRSCanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491301C79A3D000784D09 /* QRSCanView.m */; };
+		197491371C79A3D000784D09 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491321C79A3D000784D09 /* QRScanViewController.m */; };
 		19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */; };
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
@@ -117,8 +123,6 @@
 		B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */; };
 		B53D37681C76047600AA9A93 /* AssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37671C76047600AA9A93 /* AssistanceTVC.m */; };
 		B53D376B1C77056300AA9A93 /* VoucherDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D376A1C77056300AA9A93 /* VoucherDetailsVC.m */; };
-		B53D4BE41C78BBA000AA9A93 /* TYBPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D4BE21C78BBA000AA9A93 /* TYBPickView.m */; };
-		B53D4BE51C78BBA000AA9A93 /* TYBPickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53D4BE31C78BBA000AA9A93 /* TYBPickView.xib */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */; };
@@ -298,6 +302,16 @@
 		197491161C759BCC00784D09 /* FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackController.m; sourceTree = "<group>"; };
 		197491191C75F5D300784D09 /* ActionStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionStatistic.h; path = Statistic/ActionStatistic.h; sourceTree = "<group>"; };
 		1974911A1C75F5D300784D09 /* ActionStatistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionStatistic.m; path = Statistic/ActionStatistic.m; sourceTree = "<group>"; };
+		1974911D1C79A25400784D09 /* PickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickView.h; sourceTree = "<group>"; };
+		1974911E1C79A25400784D09 /* PickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickView.m; sourceTree = "<group>"; };
+		1974911F1C79A25400784D09 /* PickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickView.xib; sourceTree = "<group>"; };
+		1974912D1C79A3D000784D09 /* QRScan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = QRScan.storyboard; path = Qrcode/QRScan.storyboard; sourceTree = "<group>"; };
+		1974912E1C79A3D000784D09 /* QRScanToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRScanToolView.m; path = Qrcode/QRScanToolView.m; sourceTree = "<group>"; };
+		1974912F1C79A3D000784D09 /* QRSCanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRSCanView.h; path = Qrcode/QRSCanView.h; sourceTree = "<group>"; };
+		197491301C79A3D000784D09 /* QRSCanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRSCanView.m; path = Qrcode/QRSCanView.m; sourceTree = "<group>"; };
+		197491311C79A3D000784D09 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRScanViewController.h; path = Qrcode/QRScanViewController.h; sourceTree = "<group>"; };
+		197491321C79A3D000784D09 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRScanViewController.m; path = Qrcode/QRScanViewController.m; sourceTree = "<group>"; };
+		197491331C79A3D000784D09 /* QRScanToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRScanToolView.h; path = Qrcode/QRScanToolView.h; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
 		19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityNavigationController.h; path = Merchant/Tab2/MActivityNavigationController.h; sourceTree = "<group>"; };
@@ -346,9 +360,6 @@
 		B53D37671C76047600AA9A93 /* AssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceTVC.m; sourceTree = "<group>"; };
 		B53D37691C77056300AA9A93 /* VoucherDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherDetailsVC.h; sourceTree = "<group>"; };
 		B53D376A1C77056300AA9A93 /* VoucherDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherDetailsVC.m; sourceTree = "<group>"; };
-		B53D4BE11C78BBA000AA9A93 /* TYBPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBPickView.h; sourceTree = "<group>"; };
-		B53D4BE21C78BBA000AA9A93 /* TYBPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBPickView.m; sourceTree = "<group>"; };
-		B53D4BE31C78BBA000AA9A93 /* TYBPickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TYBPickView.xib; sourceTree = "<group>"; };
 		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
 		B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
@@ -684,7 +695,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B53D4BDE1C78BBA000AA9A93 /* TYBDatePickerDemo */,
+				1974911C1C79A25400784D09 /* DatePicker */,
 				195A12CD1C552560008E7945 /* Qrcode */,
 				B51C0B481C246AFF006F344F /* CityList */,
 				193C38381C1D95920017CC9C /* Base64 */,
@@ -872,6 +883,13 @@
 		195A12CD1C552560008E7945 /* Qrcode */ = {
 			isa = PBXGroup;
 			children = (
+				1974912D1C79A3D000784D09 /* QRScan.storyboard */,
+				197491331C79A3D000784D09 /* QRScanToolView.h */,
+				1974912E1C79A3D000784D09 /* QRScanToolView.m */,
+				1974912F1C79A3D000784D09 /* QRSCanView.h */,
+				197491301C79A3D000784D09 /* QRSCanView.m */,
+				197491311C79A3D000784D09 /* QRScanViewController.h */,
+				197491321C79A3D000784D09 /* QRScanViewController.m */,
 				195A12CE1C55259A008E7945 /* GenerateQrcode.h */,
 				195A12CF1C55259A008E7945 /* GenerateQrcode.m */,
 			);
@@ -885,6 +903,16 @@
 				1974911A1C75F5D300784D09 /* ActionStatistic.m */,
 			);
 			name = Statistic;
+			sourceTree = "<group>";
+		};
+		1974911C1C79A25400784D09 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1974911D1C79A25400784D09 /* PickView.h */,
+				1974911E1C79A25400784D09 /* PickView.m */,
+				1974911F1C79A25400784D09 /* PickView.xib */,
+			);
+			path = DatePicker;
 			sourceTree = "<group>";
 		};
 		19CAA8DF1C354E2300010F68 /* Model */ = {
@@ -943,32 +971,6 @@
 				195A12D31C5526E8008E7945 /* zh_CN.json */,
 			);
 			name = CityList;
-			sourceTree = "<group>";
-		};
-		B53D4BDE1C78BBA000AA9A93 /* TYBDatePickerDemo */ = {
-			isa = PBXGroup;
-			children = (
-				B53D4BDF1C78BBA000AA9A93 /* TYBDatePickerDemo */,
-			);
-			path = TYBDatePickerDemo;
-			sourceTree = "<group>";
-		};
-		B53D4BDF1C78BBA000AA9A93 /* TYBDatePickerDemo */ = {
-			isa = PBXGroup;
-			children = (
-				B53D4BE01C78BBA000AA9A93 /* TYBDatePicker */,
-			);
-			path = TYBDatePickerDemo;
-			sourceTree = "<group>";
-		};
-		B53D4BE01C78BBA000AA9A93 /* TYBDatePicker */ = {
-			isa = PBXGroup;
-			children = (
-				B53D4BE11C78BBA000AA9A93 /* TYBPickView.h */,
-				B53D4BE21C78BBA000AA9A93 /* TYBPickView.m */,
-				B53D4BE31C78BBA000AA9A93 /* TYBPickView.xib */,
-			);
-			path = TYBDatePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1039,12 +1041,13 @@
 				193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */,
 				193C371F1C1B12270017CC9C /* Account.storyboard in Resources */,
 				193C38301C1D94DE0017CC9C /* Album.storyboard in Resources */,
-				B53D4BE51C78BBA000AA9A93 /* TYBPickView.xib in Resources */,
 				193C37AB1C1C23460017CC9C /* Discount.storyboard in Resources */,
+				197491341C79A3D000784D09 /* QRScan.storyboard in Resources */,
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
 				193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */,
 				193C37931C1BFF560017CC9C /* MMe.storyboard in Resources */,
+				197491211C79A25400784D09 /* PickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1116,7 @@
 				193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */,
 				19339B0F1C2C340900791A9E /* COneAwardCell.m in Sources */,
 				1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */,
+				197491371C79A3D000784D09 /* QRScanViewController.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */,
@@ -1123,6 +1127,7 @@
 				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
 				19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */,
+				197491351C79A3D000784D09 /* QRScanToolView.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */,
 				19CAA8F81C3F5BCA00010F68 /* VoucherCell.m in Sources */,
@@ -1146,6 +1151,7 @@
 				19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */,
 				195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */,
 				B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */,
+				197491361C79A3D000784D09 /* QRSCanView.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
 				19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */,
 				19339AE51C258AB500791A9E /* MMeTVC.m in Sources */,
@@ -1162,6 +1168,7 @@
 				195A12A91C5370D1008E7945 /* AwardDerivateCVC.m in Sources */,
 				B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */,
 				193C38331C1D94DE0017CC9C /* ImageCheckableCell.m in Sources */,
+				197491201C79A25400784D09 /* PickView.m in Sources */,
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
 				B53D37681C76047600AA9A93 /* AssistanceTVC.m in Sources */,
 				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
@@ -1202,7 +1209,6 @@
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
 				195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */,
-				B53D4BE41C78BBA000AA9A93 /* TYBPickView.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
 				19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,

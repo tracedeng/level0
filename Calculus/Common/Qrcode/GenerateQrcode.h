@@ -11,7 +11,7 @@
 
 
 @interface GenerateQrcode : NSObject
-+ (CIImage *)createQRForString:(NSString *)qrString;
-+ (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size;
-+ (UIImage*)imageBlackToTransparent:(UIImage*)image withRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue;
++ (UIImage *)createWithString:(NSString *)string;
++ (UIImage *)createWithString:(NSString *)string qrColor:(UIColor *)qrColor bgColor:(UIColor *)bgColor size:(CGSize)size;
++ (UIImage *)createQRImage:(UIImage *)qrImage logoImage:(UIImage *)logoImage;
 @end
