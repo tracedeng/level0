@@ -64,6 +64,22 @@
 
 
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (string.length == 0) return YES;     //支持已经输满长度按退格键删除
+    if (textField == self.accountTXT) {
+        //检查手机号输入，只能输入11个字符
+        if (textField.text.length > 10) {
+            return NO;
+        }
+    }else if (textField == self.passwordTXT){
+        // TODO 密码的最长位数
+    }
+    
+    return YES;
+}
+
+
    //隐藏键盘
  
 - (IBAction)touchBackgroundToHideKeyboard:(id)sender {
