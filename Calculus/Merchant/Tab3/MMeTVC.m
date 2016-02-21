@@ -32,7 +32,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.title = @"商家中心";
     self.material = [NSMutableDictionary dictionaryWithDictionary:[MMaterialManager getMaterial]];
 
     if (self.material) {
@@ -42,7 +42,7 @@
                 self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
 
                 self.business = [NSMutableDictionary dictionaryWithDictionary:business];
-                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+//                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 
             }
         };
@@ -60,12 +60,6 @@
         };
         [action2 doQueryFlow:[self.material objectForKey:@"id"]];
     }
-    
-    
-    
-    
- 
-    
 }
 
 
@@ -77,17 +71,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger rows = 0;
     switch (section) {
         case 0:
-            rows = 3;
+            rows = 1;
             break;
         case 1:
-            rows = 2;
+            rows = 4;
             break;
         case 2:
             rows = 2;
@@ -101,14 +95,14 @@
     return rows;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (0 == indexPath.section) {
-        if (0 == indexPath.row) {
-        }else if (1 == indexPath.row) {
-            
-        }
-    }
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (0 == indexPath.section) {
+//        if (0 == indexPath.row) {
+//        }else if (1 == indexPath.row) {
+//            
+//        }
+//    }
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (0 == section) {
@@ -117,48 +111,48 @@
     return 0.0f;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    
-    // Configure the cell...
-    if (indexPath.section == 0) {
-        switch (indexPath.row) {
-            case 0:
-            {
-                break;
-            }
-            case 1:
-            {
-                if ([self.business objectForKey:@"crt"]  == nil) {
-                    cell.userInteractionEnabled = FALSE;
-                } else{
-                    cell.userInteractionEnabled = TRUE;
-                }
-                break;
-            }
-            case 2:
-            {
-//TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
-//                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
-//                    cell.userInteractionEnabled = TRUE;
-//                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    if (indexPath.section == 0) {
+//        switch (indexPath.row) {
+//            case 0:
+//            {
+//                break;
+//            }
+//            case 1:
+//            {
+//                if ([self.business objectForKey:@"crt"]  == nil) {
 //                    cell.userInteractionEnabled = FALSE;
+//                } else{
+//                    cell.userInteractionEnabled = TRUE;
 //                }
-                break;
-            }
-            default:
-                break;
-        }
-
-       }else if (indexPath.section == 1){
-        
-       }else if (indexPath.section == 2){
-        //管理员，right detail
-        //        cell.detailTextLabel.text = [self.material objectForKey:@"lo"];
-    }
-    
-    return cell;
-}
+//                break;
+//            }
+//            case 2:
+//            {
+////TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
+////                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+////                    cell.userInteractionEnabled = TRUE;
+////                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+////                    cell.userInteractionEnabled = FALSE;
+////                }
+//                break;
+//            }
+//            default:
+//                break;
+//        }
+//
+//       }else if (indexPath.section == 1){
+//        
+//       }else if (indexPath.section == 2){
+//        //管理员，right detail
+//        //        cell.detailTextLabel.text = [self.material objectForKey:@"lo"];
+//    }
+//    
+//    return cell;
+//}
 
 
 /*
@@ -205,19 +199,13 @@
             self.updateMMaterialTypeMask |= MBUSINESSTYPECONSUMPTIONRATIO;
         };
         [action doModifyConsumptionRatio:merchantvc.exchangeRate merchant:[self.material objectForKey:@"id"]];
-        
     }
-    
-    
-    
 }
-
 
 
 #pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
     if([segue.identifier isEqualToString:@"goupdatecrt"]){
         [segue.destinationViewController setValue:[NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]] forKey:@"exchangeRate"];
         
@@ -226,8 +214,6 @@
         [segue.destinationViewController setValue:self.flow forKey:@"flow"];
         
     }
-    
-    
 }
 
 
