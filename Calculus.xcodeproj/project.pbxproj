@@ -31,14 +31,11 @@
 		193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37601C1BE2B70017CC9C /* ActionCredit.m */; };
 		193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37621C1BE2B70017CC9C /* MyAwardCell.m */; };
 		193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37661C1BE2B70017CC9C /* MyAwardTVC.m */; };
-		193C37751C1BE2B70017CC9C /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C376A1C1BE2B70017CC9C /* MeController.m */; };
-		193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C376C1C1BE2B70017CC9C /* MeNavigationController.m */; };
 		193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C376E1C1BE2B70017CC9C /* MeTVC.m */; };
 		193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */; };
 		193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37831C1BE8510017CC9C /* BootstrapController.m */; };
 		193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37861C1BE8B40017CC9C /* MerchantMain.m */; };
 		193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37881C1BE9CA0017CC9C /* Merchant.storyboard */; };
-		193C378D1C1BED3C0017CC9C /* SettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C378C1C1BED3C0017CC9C /* SettingTVC.m */; };
 		193C37931C1BFF560017CC9C /* MMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37921C1BFF560017CC9C /* MMe.storyboard */; };
 		193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */; };
 		193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C379E1C1C0BD70017CC9C /* MMeController.m */; };
@@ -88,7 +85,6 @@
 		195A12D41C5526E8008E7945 /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D21C5526E8008E7945 /* YMUtils.m */; };
 		195A12D51C5526E8008E7945 /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = 195A12D31C5526E8008E7945 /* zh_CN.json */; };
 		195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */; };
-		197491171C759BCC00784D09 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491161C759BCC00784D09 /* FeedbackController.m */; };
 		1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911A1C75F5D300784D09 /* ActionStatistic.m */; };
 		197491201C79A25400784D09 /* PickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911E1C79A25400784D09 /* PickView.m */; };
 		197491211C79A25400784D09 /* PickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1974911F1C79A25400784D09 /* PickView.xib */; };
@@ -96,6 +92,14 @@
 		197491351C79A3D000784D09 /* QRScanToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974912E1C79A3D000784D09 /* QRScanToolView.m */; };
 		197491361C79A3D000784D09 /* QRSCanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491301C79A3D000784D09 /* QRSCanView.m */; };
 		197491371C79A3D000784D09 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491321C79A3D000784D09 /* QRScanViewController.m */; };
+		197491421C79DA6300784D09 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974913D1C79DA6300784D09 /* FeedbackController.m */; };
+		197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974913F1C79DA6300784D09 /* AssistanceTVC.m */; };
+		197491441C79DA6300784D09 /* SettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491401C79DA6300784D09 /* SettingTVC.m */; };
+		197491491C79DA9E00784D09 /* MeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491451C79DA9E00784D09 /* MeController.m */; };
+		1974914A1C79DA9E00784D09 /* MeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491481C79DA9E00784D09 /* MeNavigationController.m */; };
+		197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914C1C79DAB600784D09 /* VoucherDetailsVC.m */; };
+		197491521C79DAB600784D09 /* VoucherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914D1C79DAB600784D09 /* VoucherTVC.m */; };
+		197491531C79DAB600784D09 /* VoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914F1C79DAB600784D09 /* VoucherCell.m */; };
 		19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */; };
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
@@ -105,8 +109,6 @@
 		19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */; };
 		19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */; };
 		19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */; };
-		19CAA8F51C3F5BB300010F68 /* VoucherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F41C3F5BB300010F68 /* VoucherTVC.m */; };
-		19CAA8F81C3F5BCA00010F68 /* VoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */; };
 		19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */; };
 		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
@@ -121,8 +123,6 @@
 		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
 		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
 		B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */; };
-		B53D37681C76047600AA9A93 /* AssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37671C76047600AA9A93 /* AssistanceTVC.m */; };
-		B53D376B1C77056300AA9A93 /* VoucherDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D376A1C77056300AA9A93 /* VoucherDetailsVC.m */; };
 		B53D4BE81C79B3F400AA9A93 /* MAssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D4BE71C79B3F400AA9A93 /* MAssistanceTVC.m */; };
 		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
@@ -191,10 +191,6 @@
 		193C37621C1BE2B70017CC9C /* MyAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardCell.m; sourceTree = "<group>"; };
 		193C37651C1BE2B70017CC9C /* MyAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardTVC.h; sourceTree = "<group>"; };
 		193C37661C1BE2B70017CC9C /* MyAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardTVC.m; sourceTree = "<group>"; };
-		193C37691C1BE2B70017CC9C /* MeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeController.h; sourceTree = "<group>"; };
-		193C376A1C1BE2B70017CC9C /* MeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeController.m; sourceTree = "<group>"; };
-		193C376B1C1BE2B70017CC9C /* MeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNavigationController.h; sourceTree = "<group>"; };
-		193C376C1C1BE2B70017CC9C /* MeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNavigationController.m; sourceTree = "<group>"; };
 		193C376D1C1BE2B70017CC9C /* MeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTVC.h; sourceTree = "<group>"; };
 		193C376E1C1BE2B70017CC9C /* MeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTVC.m; sourceTree = "<group>"; };
 		193C37791C1BE3EA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bootstrap.storyboard; sourceTree = "<group>"; };
@@ -203,8 +199,6 @@
 		193C37851C1BE8B40017CC9C /* MerchantMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantMain.h; path = Merchant/MerchantMain.h; sourceTree = "<group>"; };
 		193C37861C1BE8B40017CC9C /* MerchantMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantMain.m; path = Merchant/MerchantMain.m; sourceTree = "<group>"; };
 		193C37891C1BE9CA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Merchant.storyboard; sourceTree = "<group>"; };
-		193C378B1C1BED3C0017CC9C /* SettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTVC.h; sourceTree = "<group>"; };
-		193C378C1C1BED3C0017CC9C /* SettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTVC.m; sourceTree = "<group>"; };
 		193C37921C1BFF560017CC9C /* MMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MMe.storyboard; path = Merchant/Tab3/MMe.storyboard; sourceTree = "<group>"; };
 		193C37971C1C0B7A0017CC9C /* MMeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeNavigationController.h; path = Merchant/Tab3/MMeNavigationController.h; sourceTree = "<group>"; };
 		193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeNavigationController.m; path = Merchant/Tab3/MMeNavigationController.m; sourceTree = "<group>"; };
@@ -299,8 +293,6 @@
 		195A12D61C55290F008E7945 /* MerchantQrcodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantQrcodeVC.h; path = Merchant/Tab3/MerchantQrcodeVC.h; sourceTree = "<group>"; };
 		195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantQrcodeVC.m; path = Merchant/Tab3/MerchantQrcodeVC.m; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
-		197491151C759BCC00784D09 /* FeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackController.h; sourceTree = "<group>"; };
-		197491161C759BCC00784D09 /* FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackController.m; sourceTree = "<group>"; };
 		197491191C75F5D300784D09 /* ActionStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionStatistic.h; path = Statistic/ActionStatistic.h; sourceTree = "<group>"; };
 		1974911A1C75F5D300784D09 /* ActionStatistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionStatistic.m; path = Statistic/ActionStatistic.m; sourceTree = "<group>"; };
 		1974911D1C79A25400784D09 /* PickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickView.h; sourceTree = "<group>"; };
@@ -313,6 +305,22 @@
 		197491311C79A3D000784D09 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRScanViewController.h; path = Qrcode/QRScanViewController.h; sourceTree = "<group>"; };
 		197491321C79A3D000784D09 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRScanViewController.m; path = Qrcode/QRScanViewController.m; sourceTree = "<group>"; };
 		197491331C79A3D000784D09 /* QRScanToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRScanToolView.h; path = Qrcode/QRScanToolView.h; sourceTree = "<group>"; };
+		1974913C1C79DA6300784D09 /* FeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackController.h; path = Setting/FeedbackController.h; sourceTree = "<group>"; };
+		1974913D1C79DA6300784D09 /* FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackController.m; path = Setting/FeedbackController.m; sourceTree = "<group>"; };
+		1974913E1C79DA6300784D09 /* AssistanceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssistanceTVC.h; path = Setting/AssistanceTVC.h; sourceTree = "<group>"; };
+		1974913F1C79DA6300784D09 /* AssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssistanceTVC.m; path = Setting/AssistanceTVC.m; sourceTree = "<group>"; };
+		197491401C79DA6300784D09 /* SettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingTVC.m; path = Setting/SettingTVC.m; sourceTree = "<group>"; };
+		197491411C79DA6300784D09 /* SettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingTVC.h; path = Setting/SettingTVC.h; sourceTree = "<group>"; };
+		197491451C79DA9E00784D09 /* MeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeController.m; path = Main/MeController.m; sourceTree = "<group>"; };
+		197491461C79DA9E00784D09 /* MeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeController.h; path = Main/MeController.h; sourceTree = "<group>"; };
+		197491471C79DA9E00784D09 /* MeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeNavigationController.h; path = Main/MeNavigationController.h; sourceTree = "<group>"; };
+		197491481C79DA9E00784D09 /* MeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeNavigationController.m; path = Main/MeNavigationController.m; sourceTree = "<group>"; };
+		1974914B1C79DAB600784D09 /* VoucherDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherDetailsVC.h; path = Voucher/VoucherDetailsVC.h; sourceTree = "<group>"; };
+		1974914C1C79DAB600784D09 /* VoucherDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoucherDetailsVC.m; path = Voucher/VoucherDetailsVC.m; sourceTree = "<group>"; };
+		1974914D1C79DAB600784D09 /* VoucherTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoucherTVC.m; path = Voucher/VoucherTVC.m; sourceTree = "<group>"; };
+		1974914E1C79DAB600784D09 /* VoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherCell.h; path = Voucher/VoucherCell.h; sourceTree = "<group>"; };
+		1974914F1C79DAB600784D09 /* VoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoucherCell.m; path = Voucher/VoucherCell.m; sourceTree = "<group>"; };
+		197491501C79DAB600784D09 /* VoucherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherTVC.h; path = Voucher/VoucherTVC.h; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
 		19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityNavigationController.h; path = Merchant/Tab2/MActivityNavigationController.h; sourceTree = "<group>"; };
@@ -329,10 +337,6 @@
 		19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountIntroduceController.m; sourceTree = "<group>"; };
 		19CAA8F01C3BA9B700010F68 /* BuyDiscountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountController.h; sourceTree = "<group>"; };
 		19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountController.m; sourceTree = "<group>"; };
-		19CAA8F31C3F5BB300010F68 /* VoucherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherTVC.h; sourceTree = "<group>"; };
-		19CAA8F41C3F5BB300010F68 /* VoucherTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherTVC.m; sourceTree = "<group>"; };
-		19CAA8F61C3F5BCA00010F68 /* VoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherCell.h; sourceTree = "<group>"; };
-		19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherCell.m; sourceTree = "<group>"; };
 		19CAA8F91C3F5E1A00010F68 /* ActionVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionVoucher.h; path = Model/ActionVoucher.h; sourceTree = "<group>"; };
 		19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionVoucher.m; path = Model/ActionVoucher.m; sourceTree = "<group>"; };
 		19CBBBF61C21A62F002A920E /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/MaterialManager.h; sourceTree = "<group>"; };
@@ -357,10 +361,6 @@
 		B51C0B071C1F0F85006F344F /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPassword.m; sourceTree = "<group>"; };
 		B53D37631C6D742400AA9A93 /* FullscreenImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenImageVC.h; sourceTree = "<group>"; };
 		B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenImageVC.m; sourceTree = "<group>"; };
-		B53D37661C76047600AA9A93 /* AssistanceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceTVC.h; sourceTree = "<group>"; };
-		B53D37671C76047600AA9A93 /* AssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssistanceTVC.m; sourceTree = "<group>"; };
-		B53D37691C77056300AA9A93 /* VoucherDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherDetailsVC.h; sourceTree = "<group>"; };
-		B53D376A1C77056300AA9A93 /* VoucherDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherDetailsVC.m; sourceTree = "<group>"; };
 		B53D4BE61C79B3F400AA9A93 /* MAssistanceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAssistanceTVC.h; path = Merchant/Tab3/MAssistanceTVC.h; sourceTree = "<group>"; };
 		B53D4BE71C79B3F400AA9A93 /* MAssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAssistanceTVC.m; path = Merchant/Tab3/MAssistanceTVC.m; sourceTree = "<group>"; };
 		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
@@ -552,30 +552,16 @@
 		193C37681C1BE2B70017CC9C /* Tab3 */ = {
 			isa = PBXGroup;
 			children = (
+				1974913A1C79D97D00784D09 /* Main */,
 				19CBBBF91C21B4B9002A920E /* Model */,
-				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
-				193C376B1C1BE2B70017CC9C /* MeNavigationController.h */,
-				193C376C1C1BE2B70017CC9C /* MeNavigationController.m */,
-				193C37691C1BE2B70017CC9C /* MeController.h */,
-				193C376A1C1BE2B70017CC9C /* MeController.m */,
+				1974913B1C79D9A800784D09 /* Setting */,
+				197491381C79D92700784D09 /* Voucher */,
 				193C376D1C1BE2B70017CC9C /* MeTVC.h */,
 				193C376E1C1BE2B70017CC9C /* MeTVC.m */,
-				193C378B1C1BED3C0017CC9C /* SettingTVC.h */,
-				193C378C1C1BED3C0017CC9C /* SettingTVC.m */,
-				B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */,
-				B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */,
 				193C38061C1D90500017CC9C /* MaterialTVC.h */,
 				193C38071C1D90500017CC9C /* MaterialTVC.m */,
-				19CAA8F31C3F5BB300010F68 /* VoucherTVC.h */,
-				19CAA8F41C3F5BB300010F68 /* VoucherTVC.m */,
-				19CAA8F61C3F5BCA00010F68 /* VoucherCell.h */,
-				19CAA8F71C3F5BCA00010F68 /* VoucherCell.m */,
-				197491151C759BCC00784D09 /* FeedbackController.h */,
-				197491161C759BCC00784D09 /* FeedbackController.m */,
-				B53D37661C76047600AA9A93 /* AssistanceTVC.h */,
-				B53D37671C76047600AA9A93 /* AssistanceTVC.m */,
-				B53D37691C77056300AA9A93 /* VoucherDetailsVC.h */,
-				B53D376A1C77056300AA9A93 /* VoucherDetailsVC.m */,
+				B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */,
+				B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -920,6 +906,44 @@
 			path = DatePicker;
 			sourceTree = "<group>";
 		};
+		197491381C79D92700784D09 /* Voucher */ = {
+			isa = PBXGroup;
+			children = (
+				1974914B1C79DAB600784D09 /* VoucherDetailsVC.h */,
+				1974914C1C79DAB600784D09 /* VoucherDetailsVC.m */,
+				1974914D1C79DAB600784D09 /* VoucherTVC.m */,
+				1974914E1C79DAB600784D09 /* VoucherCell.h */,
+				1974914F1C79DAB600784D09 /* VoucherCell.m */,
+				197491501C79DAB600784D09 /* VoucherTVC.h */,
+			);
+			name = Voucher;
+			sourceTree = "<group>";
+		};
+		1974913A1C79D97D00784D09 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				197491451C79DA9E00784D09 /* MeController.m */,
+				197491461C79DA9E00784D09 /* MeController.h */,
+				197491471C79DA9E00784D09 /* MeNavigationController.h */,
+				197491481C79DA9E00784D09 /* MeNavigationController.m */,
+				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		1974913B1C79D9A800784D09 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				1974913C1C79DA6300784D09 /* FeedbackController.h */,
+				1974913D1C79DA6300784D09 /* FeedbackController.m */,
+				1974913E1C79DA6300784D09 /* AssistanceTVC.h */,
+				1974913F1C79DA6300784D09 /* AssistanceTVC.m */,
+				197491401C79DA6300784D09 /* SettingTVC.m */,
+				197491411C79DA6300784D09 /* SettingTVC.h */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		19CAA8DF1C354E2300010F68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1111,16 +1135,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197491531C79DAB600784D09 /* VoucherCell.m in Sources */,
 				195A12B21C5370DE008E7945 /* CreditExchangeInTVC.m in Sources */,
 				B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */,
 				19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */,
 				193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */,
 				195A12CB1C53BFFA008E7945 /* ApplyCreditTVC.m in Sources */,
-				B53D376B1C77056300AA9A93 /* VoucherDetailsVC.m in Sources */,
+				197491441C79DA6300784D09 /* SettingTVC.m in Sources */,
 				B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */,
 				193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */,
 				19339B0F1C2C340900791A9E /* COneAwardCell.m in Sources */,
 				1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */,
+				197491491C79DA9E00784D09 /* MeController.m in Sources */,
 				197491371C79A3D000784D09 /* QRScanViewController.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
@@ -1135,7 +1161,6 @@
 				197491351C79A3D000784D09 /* QRScanToolView.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */,
-				19CAA8F81C3F5BCA00010F68 /* VoucherCell.m in Sources */,
 				B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */,
 				B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */,
 				19339AFF1C2950BD00791A9E /* MAwardApplyTVC.m in Sources */,
@@ -1147,7 +1172,6 @@
 				B53D4BE81C79B3F400AA9A93 /* MAssistanceTVC.m in Sources */,
 				193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */,
 				193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */,
-				193C378D1C1BED3C0017CC9C /* SettingTVC.m in Sources */,
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
 				193C38341C1D94DE0017CC9C /* ImageFullscreenSVC.m in Sources */,
 				B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */,
@@ -1176,8 +1200,6 @@
 				193C38331C1D94DE0017CC9C /* ImageCheckableCell.m in Sources */,
 				197491201C79A25400784D09 /* PickView.m in Sources */,
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
-				B53D37681C76047600AA9A93 /* AssistanceTVC.m in Sources */,
-				193C37751C1BE2B70017CC9C /* MeController.m in Sources */,
 				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */,
 				195A12C31C537297008E7945 /* InterchangeController.m in Sources */,
@@ -1191,7 +1213,9 @@
 				19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */,
 				195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
+				197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
+				197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */,
 				19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */,
@@ -1199,16 +1223,17 @@
 				19CAA8E91C3A3B0C00010F68 /* BuyDiscountTVC.m in Sources */,
 				195A12C21C537297008E7945 /* CreditExchangeTVC.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
+				1974914A1C79DA9E00784D09 /* MeNavigationController.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
+				197491421C79DA6300784D09 /* FeedbackController.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
 				19339AD91C23E4C000791A9E /* AwardManagerController.m in Sources */,
 				19339AE21C257F1200791A9E /* MMaterialTVC.m in Sources */,
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
-				197491171C759BCC00784D09 /* FeedbackController.m in Sources */,
 				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
-				19CAA8F51C3F5BB300010F68 /* VoucherTVC.m in Sources */,
 				19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */,
+				197491521C79DAB600784D09 /* VoucherTVC.m in Sources */,
 				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
 				B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */,
@@ -1223,7 +1248,6 @@
 				193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */,
 				193C382B1C1D94DE0017CC9C /* NSString+Md5.m in Sources */,
 				19CAA8E51C39454A00010F68 /* ActionDiscount.m in Sources */,
-				193C37761C1BE2B70017CC9C /* MeNavigationController.m in Sources */,
 				B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
