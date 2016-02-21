@@ -63,6 +63,14 @@
 //
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"unwindUpdateMExchangeRate"]){
+        self.exchangeRate = self.consumptionRateTextView.text;
+    }
+}
+
+
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if (text.length == 0) return YES;     //支持已经输满长度按退格键删除
@@ -83,6 +91,7 @@
     }else{
         self.saveBTN.enabled = [self.exchangeRate isEqualToString:self.consumptionRateTextView.text] ? NO : YES;
         self.ratePlaceHolderLBL.text = @"";
+        
         //        self.canSubmitMask |= 0x4;
     }
 }
