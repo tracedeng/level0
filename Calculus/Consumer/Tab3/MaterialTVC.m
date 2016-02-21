@@ -212,20 +212,12 @@
             
             
         }else if (3 == indexPath.row) {
-            
-            
-            
-            
-            self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCustom target:self title:@"城市选择"];
-            //    _picker.maskViewColor = [UIColor redColor];
+            self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCustom target:self title:nil];
+//            _picker.maskViewColor = [UIColor redColor];
             _picker.pickerData = self.cities;
             
             [self.view addSubview:_picker];
             [_picker show];
-
-            
-            
-            
             
 //            //Citylist
 //            row1 = 0;
@@ -261,8 +253,7 @@
 
 - (void)alertControllerBackgroundTapped
 {
-    [self dismissViewControllerAnimated: YES
-                             completion: nil];
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 
@@ -503,18 +494,16 @@
     else {
         titleLabel.text = [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
     }
-    return titleLabel;
-
     
+    return titleLabel;
 }
 
 #pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
-        if([segue.identifier isEqualToString:@"gonickname"]){
-           // [segue.destinationViewController setValue:self.material forKey:@"material"];
-            [segue.destinationViewController setValue:[self.material objectForKey:@"ni"] forKey:@"nickName"];
-        }
+    if([segue.identifier isEqualToString:@"gonickname"]){
+        // [segue.destinationViewController setValue:self.material forKey:@"material"];
+        [segue.destinationViewController setValue:[self.material objectForKey:@"ni"] forKey:@"nickName"];
+    }
 }
 @end

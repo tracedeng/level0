@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    self.title = @"用户中心";
+    self.title = @"个人中心";
     
     self.consumerBasicMaterial.afterClickStackView = ^(id sender) {
         [self performSegueWithIdentifier:@"ConsumerMaterial" sender:self];

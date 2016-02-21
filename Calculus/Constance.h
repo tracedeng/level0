@@ -21,6 +21,8 @@
 #define DISCOUNTURL @"http://localhost:8000/activity"
 #define ACTIVITYURL @"http://localhost:8000/activity"
 #define VOUCHERURL @"http://localhost:8000/voucher"
+#define STATISTICURL @"http://localhost:8000/maintain"
+
 
 //#define ACCOUNTURL @"http://192.168.1.3:8000/account"
 //#define CONSUMERURL @"http://192.168.1.3:8000/consumer"
@@ -33,6 +35,7 @@
 //#define DISCOUNTURL @"http://192.168.1.3:8000/activity"
 //#define ACTIVITYURL @"http://192.168.1.3:8000/activity"
 //#define VOUCHERURL @"http://192.168.1.3:8000/voucher"
+//#define STATISTICURL @"http://192.168.1.3:8000/maintain"
 #else
 #define CONSUMERURL @"http://www.weijifen.me:8000/consumer"
 #define MERCHANTURL @"http://www.weijifen.me:8000/merchant"

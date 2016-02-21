@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -83,19 +83,26 @@
                         <!--2016-01-21 03:00:00 +0000-->
                     </date>
                     <locale key="locale" localeIdentifier="zh_CN"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="uzg-uD-3HD"/>
+                        </mask>
+                    </variation>
                 </datePicker>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="llI-Ns-ymD" firstAttribute="top" secondItem="pdo-Z3-zrd" secondAttribute="bottom" id="07h-cV-dAO"/>
+                <constraint firstItem="llI-Ns-ymD" firstAttribute="top" secondItem="flQ-Vm-rR4" secondAttribute="top" id="7Lg-Vx-udL"/>
+                <constraint firstItem="llI-Ns-ymD" firstAttribute="leading" secondItem="flQ-Vm-rR4" secondAttribute="leading" id="7gm-gt-f5U"/>
                 <constraint firstItem="flQ-Vm-rR4" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" id="BSZ-Na-aKh"/>
-                <constraint firstAttribute="trailing" secondItem="llI-Ns-ymD" secondAttribute="trailing" id="NZL-gp-CzE"/>
-                <constraint firstItem="llI-Ns-ymD" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" id="OqL-kF-qCb"/>
+                <constraint firstItem="llI-Ns-ymD" firstAttribute="height" secondItem="flQ-Vm-rR4" secondAttribute="height" multiplier="1:1" id="Jaa-el-NqH"/>
                 <constraint firstItem="pdo-Z3-zrd" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" id="PYQ-1n-OrY"/>
                 <constraint firstAttribute="bottom" secondItem="flQ-Vm-rR4" secondAttribute="bottom" id="Xqe-IZ-wS6"/>
+                <constraint firstItem="flQ-Vm-rR4" firstAttribute="top" secondItem="pdo-Z3-zrd" secondAttribute="bottom" id="awD-F8-bi5"/>
                 <constraint firstAttribute="trailing" secondItem="pdo-Z3-zrd" secondAttribute="trailing" id="gyJ-D7-9Ux"/>
                 <constraint firstAttribute="trailing" secondItem="flQ-Vm-rR4" secondAttribute="trailing" id="kEr-dC-Vyl"/>
-                <constraint firstAttribute="bottom" secondItem="llI-Ns-ymD" secondAttribute="bottom" id="zgC-9K-VOR"/>
+                <constraint firstItem="llI-Ns-ymD" firstAttribute="bottom" secondItem="flQ-Vm-rR4" secondAttribute="bottom" id="q7W-Vo-aro"/>
+                <constraint firstItem="llI-Ns-ymD" firstAttribute="trailing" secondItem="flQ-Vm-rR4" secondAttribute="trailing" id="qqK-4s-GSp"/>
             </constraints>
             <connections>
                 <outlet property="datepickView" destination="llI-Ns-ymD" id="EpZ-OK-hOI"/>

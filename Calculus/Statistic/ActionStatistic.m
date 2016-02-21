@@ -29,7 +29,7 @@
 //        self.merchant = [[MMaterialManager getMaterial] objectForKey:@"id"];
         self.account = [self.state objectForKey:@"account"];
         self.skey = [self.state objectForKey:@"skey"];
-        self.net = [[NetCommunication alloc] initWithHttpUrl:CREDITURL httpMethod:@"post"];
+        self.net = [[NetCommunication alloc] initWithHttpUrl:STATISTICURL httpMethod:@"post"];
         self.net.delegate = self;
     }
     return self;

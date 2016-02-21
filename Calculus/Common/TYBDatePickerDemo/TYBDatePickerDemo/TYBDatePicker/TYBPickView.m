@@ -104,7 +104,7 @@
 
 - (void)show {
     [UIView animateWithDuration:0.3 animations:^{
-        self.frame = CGRectMake(0, deviceHeight - self.height - 115 , deviceWidth, self.height);
+        self.frame = CGRectMake(0, deviceHeight - self.height - 113 , deviceWidth, self.height);
         [self.superview insertSubview:self.maskView belowSubview:self];
     }completion:^(BOOL finished) {
     }];

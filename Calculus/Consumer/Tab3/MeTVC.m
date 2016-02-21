@@ -33,7 +33,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = @"我";
+    self.title = @"个人中心";
     
     self.material = [NSMutableDictionary dictionaryWithDictionary:[MaterialManager getMaterial]];
     
@@ -156,6 +156,14 @@
     }else if (1 == section) {
         return 0.01f;
     }
+    return 0.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (0 == section) {
+        return 0.01f;
+    }
+    
     return 0.0f;
 }
 

@@ -41,8 +41,23 @@
 }
 
 - (IBAction)doUpdateNickName:(UIBarButtonItem *)sender {
-    
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"ModifyNicknameUnwind"]){
+        self.nickName = self.nickNameTextView.text;
+    }
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if (text.length == 0) return YES;     //支持已经输满长度按退格键删除
+
+    if (textView.text.length > 15) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
@@ -56,11 +71,5 @@
         self.nickNameLBL.text = @"";
         //        self.canSubmitMask |= 0x4;
     }
-    if (textView.text.length > 16) {
-        
-        self.nickNameTextView.text = [self.nickNameTextView.text substringToIndex:16];
-    }
-    self.nickName = self.nickNameTextView.text;
-
 }
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedbackController : UIViewController <UITextViewDelegate>
-@property (nonatomic ,strong) NSString *feedbackContent;
+//@property (nonatomic ,strong) NSString *feedbackContent;
 
 @end

@@ -14,12 +14,10 @@
 #import "SKeyManager.h"
 #import "MaterialManager.h"
 #import "MMaterialManager.h"
-#import <IQKeyboardManager/IQKeyboardReturnKeyHandler.h>
 
 @interface AccountController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTField;
-//@property (weak, nonatomic) IBOutlet UIStackView *accountStack;
 
 @property (weak, nonatomic) IBOutlet UIView *accountView;
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
@@ -29,7 +27,6 @@
 - (IBAction)accountRegister:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
-@property (nonatomic, strong) IQKeyboardReturnKeyHandler *returnKeyHandler;
 @end
 
 @implementation AccountController
@@ -38,9 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.accountNumberTField.delegate = self;
-    
+        
     self.accountView.layer.cornerRadius = 4.0f;
     self.accountView.clipsToBounds = YES;
     self.passwordView.layer.cornerRadius = 4.0f;
@@ -49,10 +44,6 @@
 //    self.logoImageView.layer.borderWidth = 1.0f;
 //    self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
     self.logoImageView.clipsToBounds = YES;
-    
-    self.returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
-    self.returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyDone;
-    self.returnKeyHandler.toolbarManageBehaviour = IQAutoToolbarBySubviews;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,7 +92,6 @@
     [self.accountNumberTField resignFirstResponder];
     [self.passwordTField resignFirstResponder];
 }
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
