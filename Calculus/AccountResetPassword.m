@@ -61,6 +61,14 @@
         }
     }else if (textField == self.passwordTXT){
         // TODO 密码的最长位数
+        if (textField.text.length > 15) {
+            return NO;
+        }
+    }else if(textField == self.codeTXT){
+        // TODO 密码的最长位数
+        if (textField.text.length > 5) {
+            return NO;
+        }
     }
     
     return YES;

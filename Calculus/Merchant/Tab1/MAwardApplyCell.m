@@ -63,7 +63,7 @@
 //    self.cellBackgroundView.layer.borderColor = [[UIColor colorWithHex:0x63B8FF] CGColor];
     
     self.refuseButton.clipsToBounds = YES;
-    self.refuseButton.layer.cornerRadius = 2.0f;
+    self.refuseButton.layer.cornerRadius = 4.0f;
     self.refuseButton.layer.borderWidth = 1.0f;
     self.refuseButton.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
     self.refuseButton.layer.shadowOffset = CGSizeMake(1, 1);
@@ -71,7 +71,7 @@
     self.refuseButton.layer.shadowColor =[[UIColor colorWithHex:0xDDDDDD] CGColor];
 
     self.confirmButton.clipsToBounds = YES;
-    self.confirmButton.layer.cornerRadius = 2.0f;
+    self.confirmButton.layer.cornerRadius = 4.0f;
     self.confirmButton.layer.borderWidth = 1.0f;
     self.confirmButton.layer.borderColor = [[UIColor colorWithHex:0x149BFF] CGColor];
     self.confirmButton.layer.shadowOffset = CGSizeMake(1, 1);
