@@ -128,7 +128,7 @@
 #pragma mark -NetCommunication Delegate
 //@optional http请求成功返回
 - (void)postSuccessResponseWith:(AFHTTPRequestOperation *)requestOperation responseObject:(id)responseObject {
-    if (0 == [[responseObject objectForKey:@"errcode"] integerValue]) {
+    if (0 == [[responseObject objectForKey:@"c"] integerValue]) {
         switch (self.type) {
             case EQUERYMERCHANT:
             {

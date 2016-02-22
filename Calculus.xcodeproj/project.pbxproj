@@ -922,11 +922,11 @@
 		1974913A1C79D97D00784D09 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				197491451C79DA9E00784D09 /* MeController.m */,
-				197491461C79DA9E00784D09 /* MeController.h */,
+				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
 				197491471C79DA9E00784D09 /* MeNavigationController.h */,
 				197491481C79DA9E00784D09 /* MeNavigationController.m */,
-				19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */,
+				197491451C79DA9E00784D09 /* MeController.m */,
+				197491461C79DA9E00784D09 /* MeController.h */,
 			);
 			name = Main;
 			sourceTree = "<group>";
