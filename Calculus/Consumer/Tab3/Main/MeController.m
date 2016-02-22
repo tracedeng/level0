@@ -5,6 +5,7 @@
 //  Created by tracedeng on 15/12/11.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
+//  deprecated
 
 #import "MeController.h"
 #import "AccountController.h"

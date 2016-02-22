@@ -7,10 +7,12 @@
 //
 
 #import "AssistanceTVC.h"
+#import "Constance.h"
 
 @interface AssistanceTVC ()
 @property (weak, nonatomic) IBOutlet UILabel *contactNumberLBL;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentVersionLBL;
 @end
 
 @implementation AssistanceTVC
@@ -23,6 +25,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.currentVersionLBL.text = VERSION;
 }
 
 - (void)didReceiveMemoryWarning {

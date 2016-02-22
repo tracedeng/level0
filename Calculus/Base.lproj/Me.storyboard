@@ -844,6 +844,7 @@
                     </tableView>
                     <connections>
                         <outlet property="contactNumberLBL" destination="U53-mA-Gf0" id="fAb-kR-fEs"/>
+                        <outlet property="currentVersionLBL" destination="oKC-AP-sVr" id="iI9-nb-kWi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySw-XJ-iXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
