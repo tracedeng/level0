@@ -15,19 +15,10 @@
                         <viewControllerLayoutGuide type="top" id="JPa-iJ-sTl"/>
                         <viewControllerLayoutGuide type="bottom" id="bU7-fP-SjE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="irz-fE-Bl1" customClass="TYBQRSCanView">
+                    <view key="view" contentMode="scaleToFill" id="irz-fE-Bl1" customClass="QRSCanView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将方框对准二维码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9E-f5-RTc">
-                                <rect key="frame" x="44" y="40" width="512" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5jz-Mz-XiF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="向下滑动隐藏工具栏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYL-tq-9Nj">
                                 <rect key="frame" x="224" y="479" width="153" height="21"/>
                                 <constraints>
@@ -38,7 +29,7 @@
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEK-b7-uu2" userLabel="ToolBar" customClass="TYBQRScanToolView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEK-b7-uu2" userLabel="ToolBar" customClass="QRScanToolView">
                                 <rect key="frame" x="0.0" y="500" width="600" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -185,15 +176,24 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="请将方框对准二维码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9E-f5-RTc">
+                                <rect key="frame" x="20" y="468" width="512" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5jz-Mz-XiF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="L9E-f5-RTc" firstAttribute="top" secondItem="PWH-NR-UkA" secondAttribute="bottom" constant="10" id="0Ps-M8-h63"/>
                             <constraint firstItem="PWH-NR-UkA" firstAttribute="centerX" secondItem="irz-fE-Bl1" secondAttribute="centerX" id="3Hn-wC-3p6"/>
                             <constraint firstItem="oEK-b7-uu2" firstAttribute="top" secondItem="WYL-tq-9Nj" secondAttribute="bottom" id="9Hv-Vc-BVi"/>
                             <constraint firstItem="bU7-fP-SjE" firstAttribute="top" secondItem="oEK-b7-uu2" secondAttribute="bottom" id="Aig-Ng-3uO"/>
                             <constraint firstItem="WYL-tq-9Nj" firstAttribute="centerX" secondItem="irz-fE-Bl1" secondAttribute="centerX" id="DoJ-fY-OCJ"/>
                             <constraint firstItem="oEK-b7-uu2" firstAttribute="leading" secondItem="irz-fE-Bl1" secondAttribute="leading" id="SDk-5H-X8P"/>
                             <constraint firstAttribute="trailing" secondItem="L9E-f5-RTc" secondAttribute="trailing" constant="44" id="ZZD-JD-iev"/>
-                            <constraint firstItem="L9E-f5-RTc" firstAttribute="top" secondItem="JPa-iJ-sTl" secondAttribute="bottom" constant="20" id="an8-hL-XoT"/>
                             <constraint firstAttribute="trailing" secondItem="oEK-b7-uu2" secondAttribute="trailing" id="cy8-Qt-KP3"/>
                             <constraint firstItem="L9E-f5-RTc" firstAttribute="leading" secondItem="irz-fE-Bl1" secondAttribute="leading" constant="44" id="gqO-N9-osa"/>
                             <constraint firstItem="PWH-NR-UkA" firstAttribute="width" secondItem="irz-fE-Bl1" secondAttribute="width" multiplier="5:7" id="mVb-jF-S4z"/>

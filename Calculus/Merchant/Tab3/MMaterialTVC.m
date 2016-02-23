@@ -102,11 +102,9 @@
                 //名称，right detail
                 cell.detailTextLabel.text = [self.material objectForKey:@"n"];
                 if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
-//                    cell.userInteractionEnabled = FALSE;
-                    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-                    [cell setAccessoryType:UITableViewCellAccessoryNone];
-                }
+                    cell.userInteractionEnabled = FALSE;
                 
+                }
                 break;
             }
             case 1:
@@ -172,33 +170,8 @@
             [self prepareQiniuToken];
             [self.navigationController pushViewController:album animated:YES];
         }else if (1 == indexPath.row) {
-        }
-    }else if(1 == indexPath.section){
-        
-        if (0 == indexPath.row) {
             
-            if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
-           
-                //已认证商户不能修改
-                NSString *selectButtonOKTitle = NSLocalizedString(@"确定", nil);
-                NSString *resultTitle = NSLocalizedString(@"认证商户修改名称，请联系客服", nil);
-                
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:resultTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-                
-                UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                    
-                    [self.navigationController popViewControllerAnimated:YES];
-                    
-                }];
-                
-                [alertController addAction:okAction];
-                [self presentViewController:alertController animated:YES completion:nil];
-                
-
-            }
-           
         }
-
     }
 }
 

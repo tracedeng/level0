@@ -81,7 +81,7 @@
     if (material) {
         _material = material;
         self.nicknameLabel.text = [material objectForKey:@"ni"];
-        self.numbersLabel.text = [material objectForKey:@"lo"];
+        self.numbersLabel.text = [material objectForKey:@"nu"];
         
         NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"ava"]];
         //        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
