@@ -22,20 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.bondLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bo"]] stringByAppendingString:@"元"];
-    self.businessAllLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"up"]] stringByAppendingString:@"积分"];
-    self.businessRestLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"mi"]] stringByAppendingString:@"积分"];
-    self.brtLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"brt"]] stringByAppendingString:@" : 1"];
-    self.balanceLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bal"]] stringByAppendingString:@"元"];
-
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
+        // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"认证信息";
+    self.bondLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bo"]] stringByAppendingString:@"元"];
+    self.brtLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"brt"]] stringByAppendingString:@" : 1"];
+    
+//    self.businessAllLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"up"]] stringByAppendingString:@"积分"];
+//    self.businessRestLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"mi"]] stringByAppendingString:@"积分"];
+    self.balanceLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"bal"]] stringByAppendingString:@"元"];
 }
 
 - (void)didReceiveMemoryWarning {

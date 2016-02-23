@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *merchantContactNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *merchantVerifyLable;
 
-
 @end
 
 @implementation MMeTVC
@@ -47,12 +46,6 @@
     self.merchantAvatarIMG.clipsToBounds = YES;
     //    self.avatarImageView.layer.cornerRadius = 4.0f;
     self.merchantAvatarIMG.layer.cornerRadius = self.merchantAvatarIMG.frame.size.height / 2.0;
-
-    
-    
-    
-    
-    
     
     ActionMMaterial *action = [[ActionMMaterial alloc] init];
     action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
@@ -62,10 +55,8 @@
             NSString *unverifytitle = NSLocalizedString(@"未认证", nil);
 
             if ([[material objectForKey:@"v"] isEqualToString:@"no"]) {
-
                 self.merchantVerifyLable.text = unverifytitle;
             }
-
             
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"logo"]];
             [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
@@ -78,21 +69,12 @@
     };
     [action doQueryMerchantOfAccount];
     
-    
-    
-    
-    
-    
     if (self.material) {
         ActionBusiness *action = [[ActionBusiness alloc] init];
         action.afterQueryBusinessParameters = ^(NSDictionary *business){
             if(business){
-//                self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
-                self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]];
-
                 self.business = [NSMutableDictionary dictionaryWithDictionary:business];
-//                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-
+                self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]];
             }
         };
         [action doQueryBusinessParameters:[self.material objectForKey:@"id"]];
@@ -100,11 +82,10 @@
         ActionFlow *action2 = [[ActionFlow alloc] init];
         action2.afterQqueryFlow = ^(NSDictionary *flow){
             if (flow) {
-          
-                self.merchantCreditAmountLBL.text = [ [[NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]] stringByAppendingString:@" / "] stringByAppendingString:  [NSString stringWithFormat:@"%@",[flow objectForKey:@"is"]]];
-
-//                self.merchantCreditAmountLBL.text = [NSString stringWithFormat:@"%@", [flow objectForKey:@"up"]] ;
                 self.flow = [NSMutableDictionary dictionaryWithDictionary:flow];
+//                self.merchantCreditAmountLBL.text = [ [[NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]] stringByAppendingString:@" / "] stringByAppendingString:  [NSString stringWithFormat:@"%@",[flow objectForKey:@"is"]]];
+
+                self.merchantCreditAmountLBL.text = [NSString stringWithFormat:@"%@", [flow objectForKey:@"is"]] ;
             }
         };
         [action2 doQueryFlow:[self.material objectForKey:@"id"]];
