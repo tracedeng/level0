@@ -7,9 +7,11 @@
 //
 
 #import "MAssistanceTVC.h"
+#import "Constance.h"
 
 @interface MAssistanceTVC ()
 @property (weak, nonatomic) IBOutlet UILabel *contactNumberLBL;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
@@ -17,7 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.versionLabel.text = VERSION;
+    self.contactNumberLBL.text = CONTACT_NUMBER ;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -39,7 +43,7 @@
     NSInteger rows = 0;
     switch (section) {
         case 0:
-            rows = 3;
+            rows = 2;
             break;
         case 1:
             rows = 1;
