@@ -99,9 +99,9 @@
             }
             case ECONFIRMAPPLYCREDIT:
             {
-                NSArray *creditList = [responseObject objectForKey:@"r"];
+                NSString *result = [responseObject objectForKey:@"r"];
                 if (self.afterConfirmApplyCredit) {
-                    self.afterConfirmApplyCredit(creditList);
+                    self.afterConfirmApplyCredit(result);
                 }
                 break;
             }

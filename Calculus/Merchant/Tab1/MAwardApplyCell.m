@@ -114,9 +114,16 @@
 - (IBAction)confirmApplyAction:(id)sender {
     ActionMCredit *action = [[ActionMCredit alloc] init];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:self];
-    action.afterConfirmApplyCredit = ^() {
-        if (self.afterConfirmAction) {
-            self.afterConfirmAction(YES, indexPath);
+    action.afterConfirmApplyCredit = ^(NSString *result) {
+        if ([result isEqualToString:@"yes"]) {
+            if (self.afterConfirmAction) {
+                self.afterConfirmAction(YES, indexPath);
+            }
+        }else if ([result isEqualToString:@"exceed"]) {
+//            超过可发行积分上限
+            if (self.afterConfirmAndExceedAction) {
+                self.afterConfirmAndExceedAction(YES, indexPath);
+            }
         }
     };
     action.afterConfirmApplyCreditFailed = ^(NSString *message) {

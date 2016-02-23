@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, EMCREDITOPTYPE) {
 @property (nonatomic, copy) void (^afterQueryConsumerCredit)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterQueryOneConsumerCredit)(NSArray *creditList);
 @property (nonatomic, copy) void (^afterMerchantQueryApplyCredit)(NSArray *creditList);
-@property (nonatomic, copy) void (^afterConfirmApplyCredit)();
+@property (nonatomic, copy) void (^afterConfirmApplyCredit)(NSString *result);
 @property (nonatomic, copy) void (^afterRefuseApplyCredit)();
 
 @property (nonatomic, copy) void (^afterQueryConsumerCreditFailed)(NSString *message);

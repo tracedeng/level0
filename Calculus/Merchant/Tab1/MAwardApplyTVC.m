@@ -95,6 +95,19 @@
             //
         }
     };
+    cell.afterConfirmAndExceedAction = ^(BOOL result, NSIndexPath *lastIndexPath) {
+        if (result) {
+            //超过上限
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"已发行积分到达上限" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:alert completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }else{
+            //
+        }
+    };
+
     cell.afterRefuseAction = ^(BOOL result, NSIndexPath *lastIndexPath) {
         if (result) {
             //拒绝成功

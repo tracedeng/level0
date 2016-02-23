@@ -13,6 +13,7 @@
 @property (nonatomic, retain) UITableView *tableView ;
 
 @property (nonatomic, copy) void (^afterConfirmAction)(BOOL result, NSIndexPath *indexPath);
+@property (nonatomic, copy) void (^afterConfirmAndExceedAction)(BOOL result, NSIndexPath *indexPath);
 @property (nonatomic, copy) void (^afterRefuseAction)(BOOL result, NSIndexPath *indexPath);
 
 @end
