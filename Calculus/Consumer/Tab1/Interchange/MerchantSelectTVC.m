@@ -11,6 +11,7 @@
 #import "SVProgressHUD.h"
 #import "MerchantSelectCell.h"
 #import "InterchangeController.h"
+#import "ExchangeRateTVC.h"
 
 @interface MerchantSelectTVC ()
 @property (nonatomic, retain) NSMutableArray *merchantList;
@@ -172,9 +173,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+//    if ([segue.identifier isEqualToString:@"ShowInterchange"]) {
+//        if ([segue.destinationViewController isKindOfClass:[InterchangeController class]]) {
+//            InterchangeController *destination = (InterchangeController *)segue.destinationViewController;
+//            
+//            destination.merchantOut = self.merchantOut;
+//            
+//            NSDictionary *merchant =[self.merchantList objectAtIndex:self.lastCheckedIndex.row];
+//            destination.merchantIn = @{@"name": [merchant objectForKey:@"n"], @"logo": [merchant objectForKey:@"logo"], @"identity": [merchant objectForKey:@"id"]};
+//        }
+//    }
     if ([segue.identifier isEqualToString:@"ShowInterchange"]) {
-        if ([segue.destinationViewController isKindOfClass:[InterchangeController class]]) {
-            InterchangeController *destination = (InterchangeController *)segue.destinationViewController;
+        if ([segue.destinationViewController isKindOfClass:[ExchangeRateTVC class]]) {
+            ExchangeRateTVC *destination = (ExchangeRateTVC *)segue.destinationViewController;
             
             destination.merchantOut = self.merchantOut;
             

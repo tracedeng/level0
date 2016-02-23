@@ -13,6 +13,7 @@
 #import "SVProgressHUD.h"
 #import "UIColor+Extension.h"
 #import "CreditExchangeSessionHeader.h"
+#import "ExchangeRateTVC.h"
 
 
 @interface CreditExchangeInTVC ()
@@ -150,15 +151,27 @@
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
+//     if ([segue.identifier isEqualToString:@"ShowInterchange"]) {
+//         if ([segue.destinationViewController isKindOfClass:[InterchangeController class]]) {
+//             InterchangeController *destination = (InterchangeController *)segue.destinationViewController;
+//             
+//             NSDictionary *oneMCredit =[self.creditList objectAtIndex:self.lastCheckedIndex.section];
+//             NSDictionary *oneCredit = [[oneMCredit objectForKey:@"cr"] objectAtIndex:self.lastCheckedIndex.row];
+//             destination.merchantOut = @{@"name": [oneMCredit objectForKey:@"t"], @"logo": [oneMCredit objectForKey:@"l"], @"mIdentity": [oneMCredit objectForKey:@"i"], @"cIdentity": [oneCredit objectForKey:@"id"], @"quantity": [oneCredit objectForKey:@"qu"], @"expire": [oneCredit objectForKey:@"et"]};
+//             
+//             destination.merchantIn = @{@"name": self.name, @"logo": self.logo, @"identity": self.merchant};
+//         }
+//     }
      if ([segue.identifier isEqualToString:@"ShowInterchange"]) {
-         if ([segue.destinationViewController isKindOfClass:[InterchangeController class]]) {
-             InterchangeController *destination = (InterchangeController *)segue.destinationViewController;
+         if ([segue.destinationViewController isKindOfClass:[ExchangeRateTVC class]]) {
+             ExchangeRateTVC *destination = (ExchangeRateTVC *)segue.destinationViewController;
              
              NSDictionary *oneMCredit =[self.creditList objectAtIndex:self.lastCheckedIndex.section];
              NSDictionary *oneCredit = [[oneMCredit objectForKey:@"cr"] objectAtIndex:self.lastCheckedIndex.row];
              destination.merchantOut = @{@"name": [oneMCredit objectForKey:@"t"], @"logo": [oneMCredit objectForKey:@"l"], @"mIdentity": [oneMCredit objectForKey:@"i"], @"cIdentity": [oneCredit objectForKey:@"id"], @"quantity": [oneCredit objectForKey:@"qu"], @"expire": [oneCredit objectForKey:@"et"]};
              
              destination.merchantIn = @{@"name": self.name, @"logo": self.logo, @"identity": self.merchant};
+
          }
      }
 }
