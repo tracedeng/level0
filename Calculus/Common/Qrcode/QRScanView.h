@@ -1,13 +1,13 @@
 //
-//  QRSCanView.h
+//  QRScanView.h
 //  QRCodeDemo
 //
-//  Created by tracedeng on 16/2/15.
+//  Created by tracedeng on 16/2/22.
 //  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface QRSCanView : UIView
+@interface QRScanView : UIView
 
 @end

@@ -44,6 +44,8 @@
  */
 @property(nonatomic,strong) AVCaptureVideoPreviewLayer *layer;
 
+@property (nonatomic, weak) UIView *layerView;
+
 /**
  *  toolView距离下边缘的约束
  */
@@ -61,37 +63,38 @@
 @implementation QRScanViewController
 
 + (instancetype)scanView{
-    QRScanViewController *scanVc = (QRScanViewController *)[[UIStoryboard storyboardWithName:@"QRScan" bundle:nil] instantiateViewControllerWithIdentifier:@"ScanView"];
-    if (scanVc) {
-        scanVc.scanAnimation = YES;
-    }
+    QRScanViewController *scanVc = (QRScanViewController *)[[UIStoryboard storyboardWithName:@"TYBQRScan" bundle:nil] instantiateViewControllerWithIdentifier:@"ScanView"];
+
     
     return scanVc;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
-
     [self setDownGesture];
+//    [self setTheme];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self performSelector:@selector(startScan) withObject:nil afterDelay:0];
     [self setTheme];
+    self.animationView.frame = CGRectMake(self.angleWidth.constant + 1, self.angleWidth.constant, self.scanView.frame.size.width - (self.angleWidth.constant+1) * 2, 2);
+//    [super viewWillAppear:animated];
+     self.scanAnimation = YES;
+    [self performSelector:@selector(startScan) withObject:nil afterDelay:0];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self endScan];
     _device.torchMode = AVCaptureTorchModeOff;
 }
 
-
+//- (void)dealloc {
+//    NSLog(@"dealloc");
+//    
+//}
 
 #pragma mark -- 设置初始化显示的样式
 - (void)setTheme{
@@ -184,6 +187,7 @@
 
 // 开启扫描
 - (void)startScan {
+    NSLog(@"%s",__func__);
     // 取得权限,开始扫描
     if ([self getCameraPermisson]) {
         // 1 获取设备摄像头对象
@@ -233,22 +237,20 @@
         _layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 
         UIView *view = [[UIView alloc]initWithFrame:self.view.frame];
-
         [view.layer addSublayer:_layer];
-        
         [self.view insertSubview:view atIndex:0];
+        self.layerView = view;
 
         // 设置遮罩，非扫描区域模糊
         [self setFilterOnView:view];
-       
-    
+//
         if (self.scanAnimation) {
 //            [self.scanView addSubview:self.animationView];
             [self startAnimation];
         }else{
             [self stopAnimation];
         }
-    
+//
         // 6 启动管道
         [_session startRunning];
     }else {// 提示未取得权限
@@ -262,10 +264,8 @@
     
     // 扫描成功后关闭管道
     if (metadataObjects.count > 0) {
-        [_session stopRunning];
-        _device.torchMode = AVCaptureTorchModeOff;
-        [_layer removeFromSuperlayer];
-        [self stopAnimation];
+        // 结束扫描
+        [self endScan];
             AVMetadataMachineReadableCodeObject *obj = metadataObjects.firstObject;
 //            NSLog(@"扫描到的二维码是:%@",obj.stringValue);
         [self.delegate scanView:self endScanWithResult:obj.stringValue];
@@ -276,18 +276,30 @@
         }
     }
 }
+- (void)endScan {
+    _device.torchMode = AVCaptureTorchModeOff;
+    [_session stopRunning];
+    [_layer removeFromSuperlayer];
+    [self.layerView removeFromSuperview];
+    [self stopAnimation];
+}
+
 
 #pragma mark -- 开启扫描动画
 - (void)startAnimation{
+    NSLog(@"%s",__func__);
     self.animationView.hidden = NO;
+    NSLog(@"%@",NSStringFromCGRect(self.animationView.frame));
     [UIView animateWithDuration:3 delay:0 options:UIViewAnimationOptionRepeat animations:^{
         self.animationView.frame = CGRectMake(self.angleWidth.constant + 1, self.scanView.frame.size.height - (self.angleWidth.constant+2) * 2, self.scanView.frame.size.width - (self.angleWidth.constant+1) * 2, 2);
+        NSLog(@"%@",NSStringFromCGRect(self.animationView.frame));
     } completion:nil];
 }
 
 - (void)stopAnimation {
+    NSLog(@"%s",__func__);
     self.animationView.hidden = YES;
-//    [self.animationView removeFromSuperview];
+
 }
 
 - (void)setFilterOnView:(UIView *)view {
@@ -329,7 +341,6 @@
             _device.torchMode = AVCaptureTorchModeOn;
         }
     }
- 
 }
 
 @end

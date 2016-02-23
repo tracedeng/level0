@@ -90,7 +90,7 @@
 		197491211C79A25400784D09 /* PickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1974911F1C79A25400784D09 /* PickView.xib */; };
 		197491341C79A3D000784D09 /* QRScan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1974912D1C79A3D000784D09 /* QRScan.storyboard */; };
 		197491351C79A3D000784D09 /* QRScanToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974912E1C79A3D000784D09 /* QRScanToolView.m */; };
-		197491361C79A3D000784D09 /* QRSCanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491301C79A3D000784D09 /* QRSCanView.m */; };
+		197491361C79A3D000784D09 /* QRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491301C79A3D000784D09 /* QRScanView.m */; };
 		197491371C79A3D000784D09 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197491321C79A3D000784D09 /* QRScanViewController.m */; };
 		197491421C79DA6300784D09 /* FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974913D1C79DA6300784D09 /* FeedbackController.m */; };
 		197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974913F1C79DA6300784D09 /* AssistanceTVC.m */; };
@@ -300,8 +300,8 @@
 		1974911F1C79A25400784D09 /* PickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickView.xib; sourceTree = "<group>"; };
 		1974912D1C79A3D000784D09 /* QRScan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = QRScan.storyboard; path = Qrcode/QRScan.storyboard; sourceTree = "<group>"; };
 		1974912E1C79A3D000784D09 /* QRScanToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRScanToolView.m; path = Qrcode/QRScanToolView.m; sourceTree = "<group>"; };
-		1974912F1C79A3D000784D09 /* QRSCanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRSCanView.h; path = Qrcode/QRSCanView.h; sourceTree = "<group>"; };
-		197491301C79A3D000784D09 /* QRSCanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRSCanView.m; path = Qrcode/QRSCanView.m; sourceTree = "<group>"; };
+		1974912F1C79A3D000784D09 /* QRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRScanView.h; path = Qrcode/QRScanView.h; sourceTree = "<group>"; };
+		197491301C79A3D000784D09 /* QRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRScanView.m; path = Qrcode/QRScanView.m; sourceTree = "<group>"; };
 		197491311C79A3D000784D09 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRScanViewController.h; path = Qrcode/QRScanViewController.h; sourceTree = "<group>"; };
 		197491321C79A3D000784D09 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRScanViewController.m; path = Qrcode/QRScanViewController.m; sourceTree = "<group>"; };
 		197491331C79A3D000784D09 /* QRScanToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRScanToolView.h; path = Qrcode/QRScanToolView.h; sourceTree = "<group>"; };
@@ -877,8 +877,8 @@
 				1974912D1C79A3D000784D09 /* QRScan.storyboard */,
 				197491331C79A3D000784D09 /* QRScanToolView.h */,
 				1974912E1C79A3D000784D09 /* QRScanToolView.m */,
-				1974912F1C79A3D000784D09 /* QRSCanView.h */,
-				197491301C79A3D000784D09 /* QRSCanView.m */,
+				1974912F1C79A3D000784D09 /* QRScanView.h */,
+				197491301C79A3D000784D09 /* QRScanView.m */,
 				197491311C79A3D000784D09 /* QRScanViewController.h */,
 				197491321C79A3D000784D09 /* QRScanViewController.m */,
 				195A12CE1C55259A008E7945 /* GenerateQrcode.h */,
@@ -1181,7 +1181,7 @@
 				19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */,
 				195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */,
 				B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */,
-				197491361C79A3D000784D09 /* QRSCanView.m in Sources */,
+				197491361C79A3D000784D09 /* QRScanView.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
 				19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */,
 				19339AE51C258AB500791A9E /* MMeTVC.m in Sources */,

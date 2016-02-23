@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QRScanViewController.h"
 
-@interface ScanMerchantController : UIViewController
+@interface ScanMerchantController : QRScanViewController
 
 @end
