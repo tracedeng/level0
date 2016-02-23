@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *merchantAvatarIMG;
 @property (weak, nonatomic) IBOutlet UILabel *merchantNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *merchantContactNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *merchantVerifyLable;
 
 
 @end
@@ -52,15 +53,23 @@
     
     
     
-    ///////
     
     ActionMMaterial *action = [[ActionMMaterial alloc] init];
     action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
         if (material) {
             self.merchantNameLabel.text = [material objectForKey:@"n"];
             self.merchantContactNumberLabel.text = [material objectForKey:@"con"];
+            NSString *unverifytitle = NSLocalizedString(@"未认证", nil);
+
+            if ([[material objectForKey:@"v"] isEqualToString:@"no"]) {
+
+                self.merchantVerifyLable.text = unverifytitle;
+            }
+
+            
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"logo"]];
             [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
+            
             
             //保存
             [MMaterialManager setMaterial:material];
@@ -68,7 +77,6 @@
         }
     };
     [action doQueryMerchantOfAccount];
-    /////
     
     
     
@@ -147,48 +155,80 @@
 
 
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    if (indexPath.section == 0) {
-//        switch (indexPath.row) {
-//            case 0:
-//            {
-//                break;
-//            }
-//            case 1:
-//            {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    // Configure the cell...
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                break;
+            }
+            case 1:
+            {
 //                if ([self.business objectForKey:@"crt"]  == nil) {
 //                    cell.userInteractionEnabled = FALSE;
 //                } else{
 //                    cell.userInteractionEnabled = TRUE;
 //                }
-//                break;
-//            }
-//            case 2:
-//            {
-////TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
-////                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
-////                    cell.userInteractionEnabled = TRUE;
-////                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
-////                    cell.userInteractionEnabled = FALSE;
-////                }
-//                break;
-//            }
-//            default:
-//                break;
-//        }
-//
-//       }else if (indexPath.section == 1){
-//        
-//       }else if (indexPath.section == 2){
-//        //管理员，right detail
-//        //        cell.detailTextLabel.text = [self.material objectForKey:@"lo"];
-//    }
-//    
-//    return cell;
-//}
+                break;
+            }
+            case 2:
+            {
+//TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
+                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+                    cell.userInteractionEnabled = TRUE;
+                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+                    cell.userInteractionEnabled = FALSE;
+                }
+                break;
+            }
+            default:
+                break;
+        }
+
+       }else if (indexPath.section == 1){
+           
+           switch (indexPath.row) {
+               case 0:
+               {
+                   break;
+               }
+               case 1:
+               {
+                   //                if ([self.business objectForKey:@"crt"]  == nil) {
+                   //                    cell.userInteractionEnabled = FALSE;
+                   //                } else{
+                   //                    cell.userInteractionEnabled = TRUE;
+                   //                }
+                   break;
+               }
+               case 2:
+               {
+                   cell.userInteractionEnabled = FALSE;
+
+                   
+                   //TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
+                   if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+                       cell.userInteractionEnabled = TRUE;
+                   } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+                       cell.userInteractionEnabled = FALSE;
+                   }
+                   break;
+               }
+               default:
+                   break;
+           }
+
+        
+       }else if (indexPath.section == 2){
+        //管理员，right detail
+        //        cell.detailTextLabel.text = [self.material objectForKey:@"lo"];
+    }
+    
+    return cell;
+}
 
 
 
@@ -229,6 +269,18 @@
         }else if (1 == indexPath.row) {
             
         }
+        
+    } else if(1 == indexPath.section) {
+        if (0 == indexPath.row) {
+        
+        }else  if (3 == indexPath.row) {
+        //
+
+        }else  if (4 == indexPath.row) {
+        //
+            
+        }
+
     } else if(2 == indexPath.section) {
         if (0 == indexPath.row) {
             

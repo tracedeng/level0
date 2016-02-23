@@ -44,6 +44,8 @@
 #endif
 
 #define VERSION @"v1.0"
-#endif /* Constance_h */
+#define CONTACT_NUMBER @"021-888888888"
 
+#endif
 
+/* Constance_h */
