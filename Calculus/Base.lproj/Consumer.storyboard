@@ -1318,9 +1318,9 @@
                             <mask key="constraints">
                                 <exclude reference="1ax-Ol-UV9"/>
                                 <exclude reference="3eh-HQ-Xtu"/>
-                                <exclude reference="8OS-5x-j6i"/>
                                 <exclude reference="BXO-q4-SaD"/>
                                 <exclude reference="gSF-59-F9Z"/>
+                                <exclude reference="8OS-5x-j6i"/>
                             </mask>
                         </variation>
                     </view>
@@ -1500,8 +1500,8 @@
                                     <mask key="constraints">
                                         <exclude reference="Zxt-4y-Dj4"/>
                                         <exclude reference="t2d-zq-30W"/>
-                                        <exclude reference="MXB-JD-nrB"/>
                                         <exclude reference="2OK-TI-l2a"/>
+                                        <exclude reference="MXB-JD-nrB"/>
                                         <exclude reference="Zph-lo-Xyg"/>
                                     </mask>
                                 </variation>
@@ -1513,8 +1513,8 @@
                                     <mask key="constraints">
                                         <include reference="Zxt-4y-Dj4"/>
                                         <include reference="t2d-zq-30W"/>
-                                        <include reference="MXB-JD-nrB"/>
                                         <include reference="2OK-TI-l2a"/>
+                                        <include reference="MXB-JD-nrB"/>
                                         <include reference="Zph-lo-Xyg"/>
                                     </mask>
                                 </variation>
