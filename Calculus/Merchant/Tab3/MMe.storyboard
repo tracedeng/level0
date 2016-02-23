@@ -947,7 +947,7 @@
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon-center-credit-left" id="Nc7-XY-bac">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon-center-may" id="Nc7-XY-bac">
                                                     <rect key="frame" x="15" y="6" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -975,7 +975,7 @@
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon-center-credit-grant" id="12u-CY-ckz">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon-center-already" id="12u-CY-ckz">
                                                     <rect key="frame" x="15" y="6" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -1003,7 +1003,7 @@
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon-center-ratio" id="hHc-dr-XzG">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon-center-change" id="hHc-dr-XzG">
                                                     <rect key="frame" x="15" y="6" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -1778,13 +1778,13 @@
     </scenes>
     <resources>
         <image name="icon-alipay" width="64" height="64"/>
+        <image name="icon-center-already" width="30" height="30"/>
+        <image name="icon-center-change" width="30" height="30"/>
         <image name="icon-center-coupon" width="30" height="30"/>
-        <image name="icon-center-credit-grant" width="30" height="30"/>
-        <image name="icon-center-credit-left" width="30" height="30"/>
         <image name="icon-center-help" width="30" height="30"/>
+        <image name="icon-center-may" width="30" height="30"/>
         <image name="icon-center-message" width="30" height="30"/>
         <image name="icon-center-rating" width="30" height="30"/>
-        <image name="icon-center-ratio" width="30" height="30"/>
         <image name="icon-center-reply" width="30" height="30"/>
         <image name="icon-center-setting" width="30" height="30"/>
         <image name="icon-center-verify" width="30" height="30"/>
