@@ -38,7 +38,9 @@
 //    self.prepath = @"m/logo/15216768674/Dec2715161647";
     self.path = @"default";
     self.logoImageView.clipsToBounds = YES;
-    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
+    self.logoImageView.layer.cornerRadius = 4.0f;
+
+//    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
 
 }
 

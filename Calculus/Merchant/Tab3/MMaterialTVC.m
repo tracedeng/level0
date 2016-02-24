@@ -40,7 +40,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     //TODO
     
-    
+    self.title = @"商户信息";
+
     //    圆角
     self.logoImageView.clipsToBounds = YES;
     self.logoImageView.layer.cornerRadius = 4.0f;
