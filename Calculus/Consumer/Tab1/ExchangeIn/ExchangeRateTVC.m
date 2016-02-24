@@ -39,6 +39,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    // 导出商家logo，名称，积分量
     self.merchantOutImageView.clipsToBounds = YES;
     self.merchantOutImageView.layer.cornerRadius = 4.0f;
 //    self.merchantOutImageView.layer.cornerRadius = self.merchantOutImageView.frame.size.height / 2.0f;
@@ -47,7 +48,8 @@
     
     self.merchantOutName.text = [self.merchantOut objectForKey:@"name"];
     self.merchantOutCredit.text = [[self.merchantOut objectForKey:@"quantity"] stringValue];
-    
+
+    // 导入商家logo，名称
     self.merchantInImageView.clipsToBounds = YES;
     self.merchantInImageView.layer.cornerRadius = 4.0f;
 //    self.merchantInImageView.layer.cornerRadius = self.merchantInImageView.frame.size.height / 2.0f;
@@ -56,7 +58,7 @@
     
     self.merchantInName.text = [self.merchantIn objectForKey:@"name"];
     
-    
+    // 后台计算导入积分量，手续费
     ActionCredit *action = [[ActionCredit alloc] init];
     action.afterCreditInterchange = ^(NSInteger quantity, NSInteger fee) {
         self.merchantInCredit.text = [NSString stringWithFormat:@"%ld", quantity];

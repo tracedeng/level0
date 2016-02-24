@@ -11,5 +11,6 @@
 @interface MerchantQrcodeVC : UIViewController
 @property (nonatomic ,strong) NSString *merchantQrcode;
 @property (nonatomic ,strong) NSString *merchant;   // 商家ID
+@property (nonatomic ,retain) UIImage *logo;   // 商家logo
 
 @end

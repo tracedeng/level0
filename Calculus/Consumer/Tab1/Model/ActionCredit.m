@@ -75,6 +75,14 @@
     [self.net requestHttpWithData:postData];
 }
 
+- (void)doAllowInterchangeIn:(NSString *)merchant {
+    self.type = EALLOWINTERCHANGEIN;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"allow_in", @"type", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+
 - (void)doCreditInterchange:(NSString *)credit from_merchant:(NSString *)from quantity:(NSInteger)quantity to_merchant:(NSString *)to exec_exchange:(BOOL)exec  {
     self.type = ECREDITINTERCHANGE;
     
@@ -133,6 +141,15 @@
                 }
                 break;
             }
+            case EALLOWINTERCHANGEIN:
+            {
+                NSString *allow = [[responseObject objectForKey:@"r"] stringValue];
+                DLog(@"allow %@", allow);
+                if (self.afterAllowInterchangeIn) {
+                    self.afterAllowInterchangeIn(allow);
+                }
+                break;
+            }
             case ECREDITINTERCHANGE:
             {
                 NSInteger quantity = [[responseObject valueForKeyPath:@"r.quantity"] integerValue];
@@ -179,6 +196,14 @@
                 }
                 break;
             }
+            case EALLOWINTERCHANGEIN:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterAllowInterchangeInFailed) {
+                    self.afterAllowInterchangeInFailed(message);
+                }
+                break;
+            }
             case ECREDITINTERCHANGE:
             {
                 NSString *message = [responseObject objectForKey:@"m"];
@@ -210,6 +235,13 @@
         {
             if (self.afterConsumerQueryOneCreditFailed) {
                 self.afterConsumerQueryOneCreditFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EALLOWINTERCHANGEIN:
+        {
+            if (self.afterAllowInterchangeInFailed) {
+                self.afterAllowInterchangeInFailed([responseError localizedDescription]);
             }
             break;
         }

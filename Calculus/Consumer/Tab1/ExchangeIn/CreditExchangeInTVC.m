@@ -36,6 +36,9 @@
 
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadCreditList:nil];
+    
+//    是否允许积分转入
+    
 }
 
 
@@ -70,6 +73,20 @@
     [credit doConsumerQueryCreditListWithout:self.merchant];
 }
 
+- (void)checkAllowInterchangeInt {
+    ActionCredit *credit = [[ActionCredit alloc] init];
+    credit.afterAllowInterchangeIn = ^(NSString *allow) {
+        if ([allow isEqualToString:@"yes"]) {
+            self.nextstep.enabled = YES;
+        }else{
+            self.nextstep.enabled = NO;
+        }
+    };
+    credit.afterAllowInterchangeInFailed = ^(NSString *message) {
+        self.nextstep.enabled = NO;
+    };
+    [credit doAllowInterchangeIn:self.merchant];
+}
 
 #pragma mark - Table view data source delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

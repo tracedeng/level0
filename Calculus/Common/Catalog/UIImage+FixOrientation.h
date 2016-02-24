@@ -11,4 +11,6 @@
 @interface UIImage (FixOrientation)
 - (UIImage *)fixOrientation;
 - (UIImage *)fixOrientation:(UIImageOrientation)withOrientation;
+
++ (id) createRoundedRectImage:(UIImage*)image size:(CGSize)size;    // 圆角uiimage
 @end

@@ -13,6 +13,7 @@
 #import "ActionMMaterial.h"
 #import "ActionQiniu.h"
 #import "Constance.h"
+#import "UIImage+FixOrientation.h"
 
 @interface MerchantQrcodeVC ()
 @property (nonatomic, retain) NSString *uploadToken;
@@ -28,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"商家二维码";
 
     if ([self.merchantQrcode length]) {
         //头像，right detail，修改accessory图标
@@ -38,10 +40,7 @@
         //主动生成商家Qrcode
         [self prepareQiniuToken];
         self.qrcodeImageView.afterClickImageView = ^(id sender) {
-//            self.imageView.image = [TYBQRCodeCreater createQRImage:[TYBQRCodeCreater createWithString:@"www.dansltech.com" qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(240, 240)] logoImage:[UIImage imageNamed:@"dsl"]];
-
-            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:self.merchant qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(240, 240)] logoImage:nil];
-//            self.qrcodeImage = [GenerateQrcode createNonInterpolatedUIImageFormCIImage:[GenerateQrcode createQRForString:self.merchant] withSize:500.0f];
+            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:self.merchant qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(160, 160)]];
             //先展示
             self.noticeLabel.hidden = NO;
             self.qrcodeImageView.image = self.qrcodeImage;
@@ -58,7 +57,8 @@
                 [action doModifyQrcode:path merchant:self.merchant];
 
             };
-            [action doQiniuUploadImage:self.qrcodeImage token:self.uploadToken path:self.path];
+            //测试关闭上传
+//            [action doQiniuUploadImage:self.qrcodeImage token:self.uploadToken path:self.path];
         };
     }
 }
