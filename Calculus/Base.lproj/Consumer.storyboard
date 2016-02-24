@@ -842,7 +842,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="MFa-wz-EZc">
-                        <barButtonItem key="rightBarButtonItem" title="积分转入" id="cM0-c2-MKP">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="积分转入" id="cM0-c2-MKP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="slW-BI-7Pl" kind="show" identifier="gocreditexchangein" id="7Zh-u1-IZ2"/>
@@ -1355,14 +1355,14 @@
             <objects>
                 <tableViewController id="o8E-Z2-WdQ" customClass="ExchangeRateTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5mo-lr-HRa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="M7q-Rz-rDt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="xTB-uW-uMf">
-                                        <rect key="frame" x="0.0" y="79" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="99" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTB-uW-uMf" id="PdY-V4-0Yw">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
@@ -1428,7 +1428,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="QiZ-kq-gS5">
-                                        <rect key="frame" x="0.0" y="179" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="199" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QiZ-kq-gS5" id="COi-zX-Cj7">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
@@ -1498,7 +1498,7 @@
                             <tableViewSection id="m7s-TH-kPh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Mch-oB-DEW" detailTextLabel="ABT-u2-m6w" style="IBUITableViewCellStyleValue1" id="mJv-jl-m0E">
-                                        <rect key="frame" x="0.0" y="315" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="335" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJv-jl-m0E" id="Yfb-zB-UlS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -1795,8 +1795,8 @@
         <image name="nocreditlogo" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JYd-R2-1w5"/>
         <segue reference="VW8-v9-dFh"/>
         <segue reference="Rdx-qK-x6Q"/>
+        <segue reference="hNz-Kt-Wdn"/>
     </inferredMetricsTieBreakers>
 </document>

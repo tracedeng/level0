@@ -45,8 +45,6 @@
     self.logoImageView.clipsToBounds = YES;
     self.logoImageView.layer.cornerRadius = 4.0f;
 //    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
-    
-    
 
 }
 
@@ -311,6 +309,7 @@
     }else if([segue.identifier isEqualToString:@"gomerchantqrcode"]){
         [segue.destinationViewController setValue:[self.material objectForKey:@"qr"] forKey:@"merchantQrcode"];
         [segue.destinationViewController setValue:[self.material objectForKey:@"id"] forKey:@"merchant"];
+        [segue.destinationViewController setValue:self.logoImageView.image forKey:@"logo"];
         
     }
         

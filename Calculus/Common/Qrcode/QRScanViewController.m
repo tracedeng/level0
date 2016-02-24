@@ -266,7 +266,7 @@
     if (metadataObjects.count > 0) {
         // 结束扫描
         [self endScan];
-            AVMetadataMachineReadableCodeObject *obj = metadataObjects.firstObject;
+        AVMetadataMachineReadableCodeObject *obj = metadataObjects.firstObject;
 //            NSLog(@"扫描到的二维码是:%@",obj.stringValue);
         [self.delegate scanView:self endScanWithResult:obj.stringValue];
     }else{
