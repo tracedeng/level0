@@ -331,7 +331,29 @@
             self.updateMMaterialTypeMask |= MBUSINESSTYPECONSUMPTIONRATIO;
         };
         [action doModifyConsumptionRatio:merchantvc.exchangeRate merchant:[self.material objectForKey:@"id"]];
+    
+    }else if([segue.sourceViewController isKindOfClass:[MMaterialTVC class]]){
+        MMaterialTVC *source = (MMaterialTVC *)segue.sourceViewController;
+        if(source.updateMMaterialTypeMask & MMATERIALTYPELOGO){
+//            [self.material setObject:[source.material objectForKey:@"ni"] forKey:@"ni"];
+//            self.nicknameLabel.text = [self.material objectForKey:@"ni"];
+            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [source.material objectForKey:@"logo"]];
+            [self.material setObject:[source.material objectForKey:@"logo"] forKey:@"logo"];
+            [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path]];
+        }
+        if(source.updateMMaterialTypeMask & MMATERIALTYPENAME){
+            [self.material setObject:[source.material objectForKey:@"n"] forKey:@"n"];
+            self.merchantNameLabel.text = [self.material objectForKey:@"n"];
+        }
+        if(source.updateMMaterialTypeMask & MMATERIALTYPECONTRACT){
+            [self.material setObject:[source.material objectForKey:@"con"] forKey:@"con"];
+            self.merchantContactNumberLabel.text = [self.material objectForKey:@"con"];
+        }
+        
     }
+ 
+    
+    
 }
 
 

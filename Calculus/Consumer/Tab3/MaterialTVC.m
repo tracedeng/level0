@@ -235,6 +235,8 @@
         actionlocation.afterModifyLocation = ^(NSDictionary *materail){
             [self.material setObject:location forKey:@"lo"];
             self.locationLabel.text = location;
+            self.updateMaterialTypeMask |= MATERIALTYPEADDRESS;
+            
         };
         [actionlocation doModifyLocation:location];
         

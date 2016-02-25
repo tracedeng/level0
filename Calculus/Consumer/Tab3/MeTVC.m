@@ -81,7 +81,7 @@
     if (material) {
         _material = material;
         self.nicknameLabel.text = [material objectForKey:@"ni"];
-        self.numbersLabel.text = [material objectForKey:@"nu"];
+        self.numbersLabel.text = [material objectForKey:@"lo"];
         
         NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"ava"]];
         //        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
@@ -221,9 +221,13 @@
             [self.material setObject:[source.material objectForKey:@"ava"] forKey:@"ava"];
             [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path]];
         }
-        else if(source.updateMaterialTypeMask & MATERIALTYPENICKNAME){
+        if(source.updateMaterialTypeMask & MATERIALTYPENICKNAME){
             [self.material setObject:[source.material objectForKey:@"ni"] forKey:@"ni"];
             self.nicknameLabel.text = [self.material objectForKey:@"ni"];
+        }
+        if(source.updateMaterialTypeMask & MATERIALTYPEADDRESS){
+            [self.material setObject:[source.material objectForKey:@"lo"] forKey:@"lo"];
+            self.numbersLabel.text = [self.material objectForKey:@"lo"];
         }
     }else if ([segue.sourceViewController isKindOfClass:[FeedbackController class]]){
               

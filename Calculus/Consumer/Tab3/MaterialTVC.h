@@ -12,6 +12,8 @@
 
 #define MATERIALTYPEAVATAR  0x1
 #define MATERIALTYPENICKNAME  0x2
+#define MATERIALTYPEADDRESS  0x8
+
 #define MATERIALTYPEGENDER  0x4
 
 @property (nonatomic, assign) NSInteger updateMaterialTypeMask;

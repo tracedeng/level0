@@ -57,7 +57,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
-        [self performSegueWithIdentifier:@"unwindMMeUpdateMaterial" sender:nil];
+        [self performSegueWithIdentifier:@"unwindUpdateMaterial" sender:nil];
     }
 }
 #pragma mark - Table view data source
