@@ -167,7 +167,7 @@
             {
                 //头像，right detail，修改accessory图标
                 NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.material objectForKey:@"ava"]];
-                [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"avatar-placeholder"]];
+                [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-consumer"]];
                 self.avatarImageView.layer.cornerRadius = 4.0f;
                 self.avatarImageView.clipsToBounds = YES;
                 break;
