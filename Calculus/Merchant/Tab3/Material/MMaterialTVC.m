@@ -321,8 +321,8 @@
             return NO;
         }
     }
-    return YES;}
-// Invoked immediately prior to initiating a segue. Return NO to prevent the segue from firing. The default implementation returns YES. This method is not invoked when -performSegueWithIdentifier:sender: is used.
+    return YES;
+}
 
 
 

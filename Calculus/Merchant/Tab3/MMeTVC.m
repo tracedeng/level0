@@ -235,9 +235,14 @@
         
         }else  if (3 == indexPath.row) {
         //
+            if ([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+                [self showAlert:@"确定" :@"认证请联系平台"];
+
+            }
 
         }else  if (4 == indexPath.row) {
         //
+
             
         }
 
@@ -327,6 +332,33 @@
     }
 }
 
+
+- (void)showAlert:(NSString *)title :(NSString *)info{
+    
+    NSString *selectButtonOKTitle = NSLocalizedString(title, nil);
+    NSString *selectTitle = NSLocalizedString(info, nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:selectTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([identifier isEqualToString:@"goverifiedinfo"]){
+        if ([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+            return NO;
+        }
+    }
+    return YES;
+}
 
 #pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
