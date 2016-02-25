@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *activityMerchantLBL;
 @property (weak, nonatomic) IBOutlet UILabel *activityCreditLBL;
 @property (weak, nonatomic) IBOutlet UILabel *activityIntroduceLBL;
+@property (weak, nonatomic) IBOutlet UIView *activityBackground;
+@property (weak, nonatomic) IBOutlet UILabel *activityExpireLBL;
 
 @end
 
@@ -32,16 +34,18 @@
     // Configure the view for the selected state
 }
 - (void)setActivityInfo:(NSMutableDictionary *)activityInfo {
+    self.activityBackground.clipsToBounds = YES;
+    self.activityBackground.layer.cornerRadius = 4.0f;
     if (activityInfo) {
         _activityInfo = activityInfo;
-//        self.activityPosterIMG.clipsToBounds = YES;
-//        self.activityPosterIMG.layer.cornerRadius = self.activityPosterIMG.frame.size.width / 2.0f;
-        
+        self.activityPosterIMG.clipsToBounds = YES;
+        self.activityPosterIMG.layer.cornerRadius = 4.0f;
         NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [activityInfo objectForKey:@"po"]];
         [self.activityPosterIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
         
         self.activityTitleLBL.text = [activityInfo objectForKey:@"t"];
-        self.activityMerchantLBL.text = [activityInfo objectForKey:@"et"];
+//        self.activityMerchantLBL.text = [activityInfo objectForKey:@"et"];
+        self.activityExpireLBL.text = [[activityInfo objectForKey:@"et"] substringToIndex:10];
         self.activityCreditLBL.text = [NSString stringWithFormat:@"%ld", [[activityInfo objectForKey:@"cr"] integerValue]];
         self.activityIntroduceLBL.text = [activityInfo objectForKey:@"in"];
     }
