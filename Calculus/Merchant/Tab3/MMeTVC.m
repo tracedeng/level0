@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *merchantNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *merchantContactNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *merchantVerifyLable;
+@property (weak, nonatomic) IBOutlet UILabel *merchantCreditMayIssueLabel;
 
 @end
 
@@ -84,6 +85,7 @@
             if (flow) {
                 self.flow = [NSMutableDictionary dictionaryWithDictionary:flow];
 //                self.merchantCreditAmountLBL.text = [ [[NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]] stringByAppendingString:@" / "] stringByAppendingString:  [NSString stringWithFormat:@"%@",[flow objectForKey:@"is"]]];
+                self.merchantCreditMayIssueLabel.text = [NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]];
 
                 self.merchantCreditAmountLBL.text = [NSString stringWithFormat:@"%@", [flow objectForKey:@"is"]] ;
             }

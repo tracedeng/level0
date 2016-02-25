@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *businessRestLBL;
 @property (weak, nonatomic) IBOutlet UILabel *brtLBL;
 @property (weak, nonatomic) IBOutlet UILabel *balanceLBL;
+@property (weak, nonatomic) IBOutlet UILabel *creditIssueUpBoundLabel;
 
 @end
 
@@ -30,10 +31,14 @@
     self.title = @"认证信息";
     self.bondLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"bo"]] stringByAppendingString:@"元"];
     self.brtLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"brt"]] stringByAppendingString:@" : 1"];
+    self.creditIssueUpBoundLabel.text = [NSString stringWithFormat:@"%@",[self.flow objectForKey:@"up"]];
     
 //    self.businessAllLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"up"]] stringByAppendingString:@"积分"];
 //    self.businessRestLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"mi"]] stringByAppendingString:@"积分"];
-    self.balanceLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"bal"]] stringByAppendingString:@"元"];
+//    self.balanceLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"bal"]] stringByAppendingString:@"元"];
+
+    
+    self.balanceLBL.text = [[NSString stringWithFormat:@"%ld", ([[self.flow objectForKey:@"bal"] integerValue] / [[self.business objectForKey:@"brt"] integerValue]) ] stringByAppendingString:@"元"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,7 +108,41 @@
 
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (0 == indexPath.section) {
+        if (0 == indexPath.row) {
+            [self showAlert:@"确定" :@"修改请联系平台"];
+        }else if (1 == indexPath.row) {
+            [self showAlert:@"确定" :@"修改请联系平台"];
 
+        }
+    }else if (1 == indexPath.section) {
+        if (0 == indexPath.row) {
+            
+        }else if (1 == indexPath.row) {
+            
+        }
+        
+        
+    }
+    
+}
+
+- (void)showAlert:(NSString *)title :(NSString *)info{
+    
+    NSString *selectButtonOKTitle = NSLocalizedString(title, nil);
+    NSString *selectTitle = NSLocalizedString(info, nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:selectTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+
+}
 
 
 

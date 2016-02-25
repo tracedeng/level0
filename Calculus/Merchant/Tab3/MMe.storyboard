@@ -512,7 +512,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="k9x-5O-bSR"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="保证金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="da1-qe-y8X">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="保证金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="da1-qe-y8X">
                                                             <rect key="frame" x="33" y="5" width="465" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -590,7 +590,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="i85-wR-erz"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="发行积分上限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7C-tr-uAQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="发行积分上限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7C-tr-uAQ">
                                                             <rect key="frame" x="33" y="5" width="443" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -897,6 +897,7 @@
                         <outlet property="brtLBL" destination="oa5-Sv-cHF" id="r9m-6c-ufI"/>
                         <outlet property="businessAllLBL" destination="neM-4k-wqB" id="tAm-ol-pFJ"/>
                         <outlet property="businessRestLBL" destination="lSC-qm-AAq" id="bkg-L8-q3a"/>
+                        <outlet property="creditIssueUpBoundLabel" destination="Jas-Mt-wIR" id="vdH-Vv-ym0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAx-HA-TW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -979,8 +980,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bre-yK-StK">
-                                                    <rect key="frame" x="555" y="12" width="30" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bre-yK-StK">
+                                                    <rect key="frame" x="545" y="12" width="40" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1007,8 +1008,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="9527/8765" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5e7-Jg-A3F">
-                                                    <rect key="frame" x="504" y="12" width="81" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0000/0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5e7-Jg-A3F">
+                                                    <rect key="frame" x="501" y="12" width="84" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -1035,8 +1036,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="100:1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nKO-gC-6tm">
-                                                    <rect key="frame" x="526" y="12" width="39" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="00:1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nKO-gC-6tm">
+                                                    <rect key="frame" x="533" y="12" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -1269,6 +1270,7 @@
                         <outlet property="merchantAvatarIMG" destination="hef-uu-8WX" id="TIc-1l-RfP"/>
                         <outlet property="merchantContactNumberLabel" destination="aZR-Gs-zVU" id="MQc-kN-TAK"/>
                         <outlet property="merchantCreditAmountLBL" destination="5e7-Jg-A3F" id="YTZ-D3-OVo"/>
+                        <outlet property="merchantCreditMayIssueLabel" destination="bre-yK-StK" id="Sdf-1o-16o"/>
                         <outlet property="merchantNameLabel" destination="nQi-sR-vIB" id="80z-Pi-6cb"/>
                         <outlet property="merchantVerifyLable" destination="LSc-eL-lAo" id="G07-Zc-dOv"/>
                     </connections>
@@ -1785,7 +1787,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="Cf4-O9-evf" customClass="ClickableImageView">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-qrcode-default" translatesAutoresizingMaskIntoConstraints="NO" id="Cf4-O9-evf" customClass="ClickableImageView">
                                 <rect key="frame" x="85" y="128" width="429" height="429"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cf4-O9-evf" secondAttribute="height" multiplier="1:1" id="9ki-sc-yrL"/>
@@ -1830,7 +1832,7 @@
         <image name="icon-center-setting" width="30" height="30"/>
         <image name="icon-center-verify" width="30" height="30"/>
         <image name="icon-mcd" width="64" height="64"/>
-        <image name="icon-qrcode" width="64" height="64"/>
+        <image name="icon-qrcode-default" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BVv-lD-wfU"/>

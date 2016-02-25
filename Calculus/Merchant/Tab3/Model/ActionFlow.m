@@ -68,11 +68,27 @@
     }
 }
 
+
+
 //@optional http请求失败返回
 - (void)postFailResponseWith:(AFHTTPRequestOperation *)requestOperation responseError:(NSError *)responseError {
-    DLog(@"%@", [responseError domain]);
+    //    DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
-    DLog(@"%@", [responseError localizedDescription]);
+    //    DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case EQUERYFLOW:
+        {
+            if (self.afterQqueryFlowFailed) {
+                self.afterQqueryFlowFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
+
+
+
 
 @end
