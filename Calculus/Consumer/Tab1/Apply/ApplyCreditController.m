@@ -50,7 +50,7 @@
     }else{
         self.monetaryLabel.text = @"0";
         self.applyButton.enabled = NO;
-        self.applyButton.backgroundColor = [UIColor colorWithHex:0x00e0ff alpha:1.0];
+        self.applyButton.backgroundColor = [UIColor colorWithHex:0x999999 alpha:1.0];
     }
 }
 
