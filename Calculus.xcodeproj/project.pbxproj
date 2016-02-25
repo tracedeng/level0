@@ -115,6 +115,7 @@
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
 		19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBC041C228D16002A920E /* ActionQiniu.m */; };
 		19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F4A1C7C75D800FECDF5 /* ExchangeRateTVC.m */; };
+		19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F4E1C7EAC5900FECDF5 /* ApplyCreditController.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
 		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
@@ -349,6 +350,8 @@
 		19CBBC041C228D16002A920E /* ActionQiniu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionQiniu.m; path = Model/ActionQiniu.m; sourceTree = "<group>"; };
 		19EB0F491C7C75D800FECDF5 /* ExchangeRateTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeRateTVC.h; sourceTree = "<group>"; };
 		19EB0F4A1C7C75D800FECDF5 /* ExchangeRateTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRateTVC.m; sourceTree = "<group>"; };
+		19EB0F4D1C7EAC5900FECDF5 /* ApplyCreditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyCreditController.h; sourceTree = "<group>"; };
+		19EB0F4E1C7EAC5900FECDF5 /* ApplyCreditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyCreditController.m; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeSessionHeader.h; sourceTree = "<group>"; };
 		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
@@ -869,10 +872,12 @@
 		195A12C61C53BFFA008E7945 /* Apply */ = {
 			isa = PBXGroup;
 			children = (
-				195A12C71C53BFFA008E7945 /* ApplyCreditTVC.h */,
-				195A12C81C53BFFA008E7945 /* ApplyCreditTVC.m */,
 				195A12C91C53BFFA008E7945 /* ScanMerchantController.h */,
 				195A12CA1C53BFFA008E7945 /* ScanMerchantController.m */,
+				19EB0F4D1C7EAC5900FECDF5 /* ApplyCreditController.h */,
+				19EB0F4E1C7EAC5900FECDF5 /* ApplyCreditController.m */,
+				195A12C71C53BFFA008E7945 /* ApplyCreditTVC.h */,
+				195A12C81C53BFFA008E7945 /* ApplyCreditTVC.m */,
 			);
 			path = Apply;
 			sourceTree = "<group>";
@@ -1251,6 +1256,7 @@
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
 				B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
+				19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */,
 				19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */,
 				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
 				195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */,

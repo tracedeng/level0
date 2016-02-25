@@ -7,23 +7,11 @@
 //
 
 #import "ScanMerchantController.h"
-#import "ApplyCreditTVC.h"
+#import "ApplyCreditController.h"
 #import "ActionMMaterial.h"
 #import "UIColor+Extension.h"
 
-#import <AVFoundation/AVFoundation.h>
-
-
-@interface ScanMerchantController () <AVCaptureMetadataOutputObjectsDelegate>
-
-//@property (nonatomic, retain) UIView *scanBoxView;
-//
-//@property (nonatomic) BOOL isReading;
-//@property (strong, nonatomic) CALayer *scanLayer;
-//
-//@property (nonatomic, strong) AVCaptureSession *captureSession;
-//@property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
-
+@interface ScanMerchantController ()
 @property (nonatomic, retain) NSDictionary *material;
 @property (nonatomic, retain) NSString *merchant;
 @property (nonatomic, assign) CGFloat money;
@@ -96,10 +84,14 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"ApplyCredit"]) {
-        if ([segue.destinationViewController isKindOfClass:[ApplyCreditTVC class]]) {
-            ApplyCreditTVC *destination = (ApplyCreditTVC *)segue.destinationViewController;
+        if ([segue.destinationViewController isKindOfClass:[ApplyCreditController class]]) {
+            ApplyCreditController *destination = (ApplyCreditController *)segue.destinationViewController;
+//            destination.material = self.material;
+//            destination.money = self.money;
+//            destination.merchant = self.merchant;
+            //测试
             destination.material = self.material;
-            destination.money = self.money;
+            destination.money = 10;
             destination.merchant = self.merchant;
         }
     }

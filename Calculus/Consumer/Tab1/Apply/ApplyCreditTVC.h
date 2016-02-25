@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ApplyCreditTVC : UITableViewController
-@property (nonatomic, retain) NSString *merchant;
 @property (nonatomic, assign) CGFloat money;
 @property (nonatomic, retain) NSDictionary *material;
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "QRScanViewController.h"
-#import <Photos/Photos.h>
 #import "QRScanToolView.h"
 
 @interface QRScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>

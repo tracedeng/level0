@@ -42,6 +42,7 @@ typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
 
 @property (nonatomic, copy) void (^afterConsumerQueryAllCreditFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConsumerQueryOneCreditFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterConsumerCreateConsumptionFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConsumerQueryOtherCreditListFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantListFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterCreditInterchangeFailed)(NSString *message);

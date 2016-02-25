@@ -8,19 +8,16 @@
 
 #import "ApplyCreditTVC.h"
 #import "ActionMMaterial.h"
-#import "ActionCredit.h"
 #import "ClickableImageView.h"
 #import "UIImageView+WebCache.h"
 #import "Constance.h"
 
-@interface ApplyCreditTVC ()
+@interface ApplyCreditTVC () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet ClickableImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *moneyField;
-@property (weak, nonatomic) IBOutlet UIButton *applyButton;
 
-- (IBAction)ApplyCreditAction:(id)sender;
 @end
 
 @implementation ApplyCreditTVC
@@ -42,11 +39,8 @@
     self.nameLabel.text = [self.material objectForKey:@"n"];
     
     if (self.money) {
-        self.moneyField.text = [NSString stringWithFormat:@"%f", self.money];
-        self.moneyField.enabled = NO;
+        self.moneyField.text = [NSString stringWithFormat:@"%0.0f", self.money];
     }
-     
-    self.applyButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,19 +51,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (0 == section) {
         return 0.01f;
     }
+    return 60.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (0 == section) {
+        return 0.01f;
+    }
     return 0.0f;
 }
+
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
@@ -114,6 +116,32 @@
 }
 */
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (string.length == 0){
+        // 按退格键，更新消费金额量
+        NSString *money = (textField.text.length == 1) ? @"0" : [textField.text substringWithRange:NSMakeRange(0, textField.text.length -1)];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateApplyMoney" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:money, @"money", nil]];
+
+        return YES;     //支持已经输满长度按退格键删除
+    }
+    
+    // 必须是数字，且第一个数字不能是0
+    if ((textField.text.length == 0) && [string isEqualToString:@"0"]) {
+        return NO;
+    }
+
+    if (textField == self.moneyField) {
+        // 输入金额最大
+        if (textField.text.length > 5) {
+            return NO;
+        }
+        NSString *money = [self.moneyField.text stringByAppendingString:string];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateApplyMoney" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:money, @"money", nil]];
+    }
+    
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -124,12 +152,5 @@
 }
 */
 
-- (IBAction)ApplyCreditAction:(id)sender {
-    NSInteger money = [self.moneyField.text integerValue];
-    ActionCredit *action = [[ActionCredit alloc] init];
-    action.afterConsumerCreateConsumption = ^() {
-        DLog(@"Apply credit %ld done", (long)money);
-    };
-    [action doConsumerCreateConsumption:self.merchant money:money];
-}
+
 @end

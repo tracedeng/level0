@@ -39,7 +39,7 @@
 
     if (0 == self.upperQuantity) {
         self.buyButton.enabled = YES;
-        self.buyButton.backgroundColor = [UIColor colorWithHex:0x00e0ff alpha:1.0];
+        self.buyButton.backgroundColor = [UIColor colorWithHex:0x149BFF alpha:1.0];
     }else{
         // 不可购买
         self.buyButton.enabled = NO;
@@ -54,7 +54,7 @@
     self.moreCreditLabel.text = [NSString stringWithFormat:@"%ld", self.upperQuantity - quantity];
     if (self.upperQuantity == quantity) {
         self.buyButton.enabled = YES;
-        self.buyButton.backgroundColor = [UIColor colorWithHex:0x00e0ff alpha:1.0];
+        self.buyButton.backgroundColor = [UIColor colorWithHex:0x149BFF alpha:1.0];
     }else{
         self.buyButton.enabled = NO;
         self.buyButton.backgroundColor = [UIColor colorWithHex:0xcfcfcf alpha:1.0];

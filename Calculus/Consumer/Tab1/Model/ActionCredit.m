@@ -60,6 +60,7 @@
     
     [self.net requestHttpWithData:postData];
 }
+
 - (void)doConsumerQueryCreditListWithout:(NSString *)merchant {
     self.type = ECONSUMERQUERYOTHERCREDITLIST;
     
@@ -180,6 +181,14 @@
                 }
                 break;
             }
+            case ECONSUMERCREATECONSUMPTION:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterConsumerCreateConsumptionFailed) {
+                    self.afterConsumerCreateConsumptionFailed(message);
+                }
+                break;
+            }
             case ECONSUMERQUERYOTHERCREDITLIST:
             {
                 NSString *message = [responseObject objectForKey:@"m"];
@@ -235,6 +244,13 @@
         {
             if (self.afterConsumerQueryOneCreditFailed) {
                 self.afterConsumerQueryOneCreditFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case ECONSUMERCREATECONSUMPTION:
+        {
+            if (self.afterConsumerCreateConsumptionFailed) {
+                self.afterConsumerCreateConsumptionFailed([responseError localizedDescription]);
             }
             break;
         }
