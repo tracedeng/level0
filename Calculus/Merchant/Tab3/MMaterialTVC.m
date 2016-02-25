@@ -100,10 +100,10 @@
             {
                 //名称，right detail
                 cell.detailTextLabel.text = [self.material objectForKey:@"n"];
-                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
-                    cell.userInteractionEnabled = FALSE;
-                
-                }
+//                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+//                    cell.userInteractionEnabled = FALSE;
+//                
+//                }
                 break;
             }
             case 1:
@@ -171,7 +171,31 @@
         }else if (1 == indexPath.row) {
             
         }
+    }else if (1 == indexPath.section) {
+        if (0 == indexPath.row) {
+
+            if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+
+                NSString *selectButtonOKTitle = NSLocalizedString(@"确定", nil);
+                NSString *selectTitle = NSLocalizedString(@"已认证商户修改名称，请联系客服", nil);
+                
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:selectTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+                
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                }];
+                
+                [alertController addAction:okAction];
+                
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+
+        }else if (1 == indexPath.row) {
+
+        }
+
+
     }
+
 }
 
 /*
@@ -289,6 +313,18 @@
         [action doModifyMerchantAddress:merchantvc.merchantAddress merchant:[self.material objectForKey:@"id"]];
     }
 }
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([identifier isEqualToString:@"gomerchantname"]){
+        if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+            return NO;
+        }
+    }
+    return YES;}
+// Invoked immediately prior to initiating a segue. Return NO to prevent the segue from firing. The default implementation returns YES. This method is not invoked when -performSegueWithIdentifier:sender: is used.
+
+
 
 #pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

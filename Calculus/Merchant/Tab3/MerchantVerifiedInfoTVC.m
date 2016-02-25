@@ -108,7 +108,41 @@
 
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (0 == indexPath.section) {
+        if (0 == indexPath.row) {
+            [self showAlert:@"确定" :@"修改请联系平台"];
+        }else if (1 == indexPath.row) {
+            [self showAlert:@"确定" :@"修改请联系平台"];
 
+        }
+    }else if (1 == indexPath.section) {
+        if (0 == indexPath.row) {
+            
+        }else if (1 == indexPath.row) {
+            
+        }
+        
+        
+    }
+    
+}
+
+- (void)showAlert:(NSString *)title :(NSString *)info{
+    
+    NSString *selectButtonOKTitle = NSLocalizedString(title, nil);
+    NSString *selectTitle = NSLocalizedString(info, nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:selectTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+
+}
 
 
 
