@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, EMFLOWOPTYE) {
 //@property (nonatomic, copy) void (^afterModifyConsumptionRatio)(NSDictionary *result);
 //@property (nonatomic, copy) void (^afterQueryBusinessParameters)(NSDictionary *business);
 
+@property (nonatomic, copy) void (^afterQqueryFlowFailed)(NSString *result);
+
 
 @end
 
