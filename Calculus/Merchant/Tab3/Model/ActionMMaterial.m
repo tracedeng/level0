@@ -114,7 +114,7 @@
 }
 - (void)doModifyMerchantContactNumber:(NSString *)merchantcontactnumber merchant:(NSString *)merchant{
     self.type = EUPDATEMERCHANTCONTACTNUMBER;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", merchantcontactnumber, @"contact_number", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", merchantcontactnumber, @"contact_numbers", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
     
     [self.net requestHttpWithData:postData];
 }

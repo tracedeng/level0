@@ -63,6 +63,8 @@
     }else{
         self.saveButton.enabled = [self.merchantContactNumber isEqualToString:self.contentTextView.text] ? NO : YES;
         self.placeholderLabel.text = @"";
+//        self.merchantContactNumber = self.contentTextView.text;
+
         
         //        self.canSubmitMask |= 0x4;
     }
