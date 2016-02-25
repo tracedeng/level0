@@ -36,7 +36,7 @@
     
     //    圆角
 //    self.prepath = @"m/logo/15216768674/Dec2715161647";
-    self.path = @"default";
+//    self.path = @"default";
     self.logoImageView.clipsToBounds = YES;
     self.logoImageView.layer.cornerRadius = 4.0f;
 
@@ -52,22 +52,35 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0 == section ? 2 : 1;
+//    return 1 == section ? 2 : 1;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    if ((section == 0) || (section == 1)) {
+//        return 0.01f;
+//    }
     return 0.01f;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ((0 == indexPath.row) && (0 == indexPath.section)) {
-        return 150.0f;
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 0) {
+        return 8.0f;
     }
-    return 50.0f;
+    return 0.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (0 == indexPath.section) {
+        return 150.0f;
+    }else if (1 == indexPath.section) {
+        return 50.0f;
+    }
+    return 44.0f;
 }
 
 
@@ -80,7 +93,7 @@
             //头像，right detail，修改accessory图标
             self.logoImageView.layer.cornerRadius = 4.0f;
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
-            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"merchantlogo"]];
+            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-add"]];
         }
     }
     
@@ -193,6 +206,12 @@
     NSString *name = self.nameField.text;
     if (name.length == 0) {
         //至少需要商家名称
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入商家名称" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            //
+            [self dismissViewControllerAnimated:alert completion:nil];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
     }else{
         ActionMMaterial *action = [[ActionMMaterial alloc] init];
         action.afterCreateMerchantOfAccount = ^(NSString *merchant) {
@@ -200,7 +219,7 @@
             //进入商家主页
             [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchantAfterCreate", @"destine", nil]];
         };
-        [action doCreateMerchantOfAccount:name logo:self.path];
+        [action doCreateMerchantOfAccount:name logo:(self.path ? self.path : @"default")];
     }
 }
 @end
