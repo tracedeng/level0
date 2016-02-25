@@ -53,10 +53,13 @@
         if (material) {
             self.merchantNameLabel.text = [material objectForKey:@"n"];
             self.merchantContactNumberLabel.text = [material objectForKey:@"con"];
-            NSString *unverifytitle = NSLocalizedString(@"未认证", nil);
+//            NSString *unverifytitle = NSLocalizedString(@"未认证", nil);
 
             if ([[material objectForKey:@"v"] isEqualToString:@"no"]) {
-                self.merchantVerifyLable.text = unverifytitle;
+//                self.merchantVerifyLable.text = unverifytitle;
+                self.merchantVerifyLable.hidden = NO;
+            }else{
+                self.merchantVerifyLable.hidden = YES;
             }
             
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"logo"]];
@@ -127,17 +130,6 @@
     return rows;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (0 == indexPath.section) {
-//        if (0 == indexPath.row) {
-//        }else if (1 == indexPath.row) {
-//            
-//        }
-//    }
-//}
-
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
@@ -150,11 +142,6 @@
             }
             case 1:
             {
-//                if ([self.business objectForKey:@"crt"]  == nil) {
-//                    cell.userInteractionEnabled = FALSE;
-//                } else{
-//                    cell.userInteractionEnabled = TRUE;
-//                }
                 break;
             }
             case 2:
@@ -180,18 +167,12 @@
                }
                case 1:
                {
-                   //                if ([self.business objectForKey:@"crt"]  == nil) {
-                   //                    cell.userInteractionEnabled = FALSE;
-                   //                } else{
-                   //                    cell.userInteractionEnabled = TRUE;
-                   //                }
                    break;
                }
                case 2:
                {
                    cell.userInteractionEnabled = FALSE;
 
-                   
                    //TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
                    if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
                        cell.userInteractionEnabled = TRUE;
@@ -212,10 +193,6 @@
     
     return cell;
 }
-
-
-
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
@@ -274,9 +251,6 @@
             [self.navigationController pushViewController:myView animated:YES];
 //            [self.navigationController pushViewController:[self.navigationController.viewControllers objectAtIndex:2]
 //                                                  animated:YES];
-            
-            
-            
         }else if (1 == indexPath.row) {
             //            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps ://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
@@ -351,9 +325,6 @@
         }
         
     }
- 
-    
-    
 }
 
 
@@ -373,8 +344,5 @@
     }
     
 }
-
-
-
 
 @end

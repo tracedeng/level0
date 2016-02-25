@@ -10,42 +10,22 @@
 		19339AD21C23DC6100791A9E /* CreateMerchantTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AD11C23DC6100791A9E /* CreateMerchantTVC.m */; };
 		19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AD51C23DEF800791A9E /* ActionMMaterial.m */; };
 		19339AD91C23E4C000791A9E /* AwardManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AD81C23E4C000791A9E /* AwardManagerController.m */; };
-		19339ADC1C23E74F00791A9E /* MMaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339ADB1C23E74F00791A9E /* MMaterialManager.m */; };
 		19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339ADE1C23E86F00791A9E /* MyAwardController.m */; };
-		19339AE21C257F1200791A9E /* MMaterialTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AE11C257F1200791A9E /* MMaterialTVC.m */; };
 		19339AE51C258AB500791A9E /* MMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AE41C258AB500791A9E /* MMeTVC.m */; };
-		19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AF01C269BD500791A9E /* MyOneAwardTVC.m */; };
-		19339AF41C269D0400791A9E /* MyOneAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AF31C269D0400791A9E /* MyOneAwardCell.m */; };
-		19339AF91C29403400791A9E /* MAwardDerivateCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AF81C29403400791A9E /* MAwardDerivateCVC.m */; };
-		19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AFB1C29407900791A9E /* MAwardDerivateCell.m */; };
-		19339AFF1C2950BD00791A9E /* MAwardApplyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AFE1C2950BD00791A9E /* MAwardApplyTVC.m */; };
-		19339B021C2950FA00791A9E /* MAwardApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B011C2950FA00791A9E /* MAwardApplyCell.m */; };
 		19339B061C2954C000791A9E /* ActionMCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B051C2954C000791A9E /* ActionMCredit.m */; };
-		19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B081C2ABDFF00791A9E /* ConsumerAwardTVC.m */; };
-		19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B0B1C2ABEA000791A9E /* ConsumerAwardCell.m */; };
-		19339B0F1C2C340900791A9E /* COneAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B0E1C2C340900791A9E /* COneAwardCell.m */; };
-		19339B121C2C343700791A9E /* COneAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B111C2C343700791A9E /* COneAwardTVC.m */; };
 		193C371C1C1B0D800017CC9C /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C371B1C1B0D800017CC9C /* AccountController.m */; };
 		193C371F1C1B12270017CC9C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C371E1C1B12270017CC9C /* Account.storyboard */; };
 		193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37211C1B16C60017CC9C /* ActionAccount.m */; };
 		193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37601C1BE2B70017CC9C /* ActionCredit.m */; };
-		193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37621C1BE2B70017CC9C /* MyAwardCell.m */; };
-		193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37661C1BE2B70017CC9C /* MyAwardTVC.m */; };
 		193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C376E1C1BE2B70017CC9C /* MeTVC.m */; };
 		193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */; };
 		193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37831C1BE8510017CC9C /* BootstrapController.m */; };
-		193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37861C1BE8B40017CC9C /* MerchantMain.m */; };
 		193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37881C1BE9CA0017CC9C /* Merchant.storyboard */; };
-		193C37931C1BFF560017CC9C /* MMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37921C1BFF560017CC9C /* MMe.storyboard */; };
-		193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */; };
-		193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C379E1C1C0BD70017CC9C /* MMeController.m */; };
-		193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37A11C1C0DE20017CC9C /* MSettingTVC.m */; };
 		193C37AB1C1C23460017CC9C /* Discount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37A91C1C23460017CC9C /* Discount.storyboard */; };
 		193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37AD1C1C23D90017CC9C /* DiscountNavigationController.m */; };
 		193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B01C1C24170017CC9C /* DiscountTVC.m */; };
 		193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B31C1C254C0017CC9C /* DiscountCell.m */; };
 		193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37E41C1D4A070017CC9C /* RoleManager.m */; };
-		193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C38071C1D90500017CC9C /* MaterialTVC.m */; };
 		193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380B1C1D94DE0017CC9C /* MKMapView+MapViewUtil.m */; };
 		193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380D1C1D94DE0017CC9C /* NSDate+Helpers.m */; };
 		193C382B1C1D94DE0017CC9C /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380F1C1D94DE0017CC9C /* NSString+Md5.m */; };
@@ -84,7 +64,6 @@
 		195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12CF1C55259A008E7945 /* GenerateQrcode.m */; };
 		195A12D41C5526E8008E7945 /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D21C5526E8008E7945 /* YMUtils.m */; };
 		195A12D51C5526E8008E7945 /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = 195A12D31C5526E8008E7945 /* zh_CN.json */; };
-		195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */; };
 		1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911A1C75F5D300784D09 /* ActionStatistic.m */; };
 		197491201C79A25400784D09 /* PickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911E1C79A25400784D09 /* PickView.m */; };
 		197491211C79A25400784D09 /* PickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1974911F1C79A25400784D09 /* PickView.xib */; };
@@ -110,30 +89,51 @@
 		19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */; };
 		19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */; };
 		19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */; };
-		19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBF71C21A62F002A920E /* MaterialManager.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
 		19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBC041C228D16002A920E /* ActionQiniu.m */; };
 		19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F4A1C7C75D800FECDF5 /* ExchangeRateTVC.m */; };
 		19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F4E1C7EAC5900FECDF5 /* ApplyCreditController.m */; };
+		19EB0F581C7EE55500FECDF5 /* MaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F531C7EE55500FECDF5 /* MaterialManager.m */; };
+		19EB0F591C7EE55500FECDF5 /* MMaterialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F551C7EE55500FECDF5 /* MMaterialManager.m */; };
+		19EB0F5A1C7EE55500FECDF5 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F571C7EE55500FECDF5 /* SKeyManager.m */; };
+		19EB0F5F1C7EE57300FECDF5 /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F5C1C7EE57300FECDF5 /* AccountRegisterController.m */; };
+		19EB0F601C7EE57300FECDF5 /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F5E1C7EE57300FECDF5 /* AccountResetPassword.m */; };
+		19EB0F651C7EE5D300FECDF5 /* MCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F641C7EE5D300FECDF5 /* MCouponVC.m */; };
+		19EB0F6B1C7EE5E300FECDF5 /* MAwardDerivateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F681C7EE5E300FECDF5 /* MAwardDerivateCell.m */; };
+		19EB0F6C1C7EE5E300FECDF5 /* MAwardDerivateCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F6A1C7EE5E300FECDF5 /* MAwardDerivateCVC.m */; };
+		19EB0F751C7EE61B00FECDF5 /* COneAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F6E1C7EE61B00FECDF5 /* COneAwardCell.m */; };
+		19EB0F761C7EE61B00FECDF5 /* COneAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F701C7EE61B00FECDF5 /* COneAwardTVC.m */; };
+		19EB0F771C7EE61B00FECDF5 /* ConsumerAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F721C7EE61B00FECDF5 /* ConsumerAwardCell.m */; };
+		19EB0F781C7EE61B00FECDF5 /* ConsumerAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F741C7EE61B00FECDF5 /* ConsumerAwardTVC.m */; };
+		19EB0F7D1C7EE62B00FECDF5 /* MAwardApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F7A1C7EE62B00FECDF5 /* MAwardApplyCell.m */; };
+		19EB0F7E1C7EE62B00FECDF5 /* MAwardApplyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F7C1C7EE62B00FECDF5 /* MAwardApplyTVC.m */; };
+		19EB0F811C7EE66B00FECDF5 /* MerchantMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F801C7EE66B00FECDF5 /* MerchantMain.m */; };
+		19EB0F8B1C7EE6C100FECDF5 /* MyAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F841C7EE6C100FECDF5 /* MyAwardCell.m */; };
+		19EB0F8C1C7EE6C100FECDF5 /* MyAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F861C7EE6C100FECDF5 /* MyAwardTVC.m */; };
+		19EB0F8D1C7EE6C100FECDF5 /* MyOneAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F881C7EE6C100FECDF5 /* MyOneAwardCell.m */; };
+		19EB0F8E1C7EE6C100FECDF5 /* MyOneAwardTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F8A1C7EE6C100FECDF5 /* MyOneAwardTVC.m */; };
+		19EB0FAA1C7EE7C900FECDF5 /* MMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EB0F901C7EE7C900FECDF5 /* MMe.storyboard */; };
+		19EB0FAB1C7EE7C900FECDF5 /* MMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F921C7EE7C900FECDF5 /* MMeController.m */; };
+		19EB0FAC1C7EE7C900FECDF5 /* MMeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F941C7EE7C900FECDF5 /* MMeNavigationController.m */; };
+		19EB0FAD1C7EE7C900FECDF5 /* MerchantAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F971C7EE7C900FECDF5 /* MerchantAddressVC.m */; };
+		19EB0FAE1C7EE7C900FECDF5 /* MerchantContactNumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F991C7EE7C900FECDF5 /* MerchantContactNumberVC.m */; };
+		19EB0FAF1C7EE7C900FECDF5 /* MerchantEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F9B1C7EE7C900FECDF5 /* MerchantEmailVC.m */; };
+		19EB0FB01C7EE7C900FECDF5 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F9D1C7EE7C900FECDF5 /* MerchantNameVC.m */; };
+		19EB0FB11C7EE7C900FECDF5 /* MerchantQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F9F1C7EE7C900FECDF5 /* MerchantQrcodeVC.m */; };
+		19EB0FB21C7EE7C900FECDF5 /* MMaterialTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FA11C7EE7C900FECDF5 /* MMaterialTVC.m */; };
+		19EB0FB31C7EE7C900FECDF5 /* MAssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FA41C7EE7C900FECDF5 /* MAssistanceTVC.m */; };
+		19EB0FB41C7EE7C900FECDF5 /* MSettingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FA61C7EE7C900FECDF5 /* MSettingTVC.m */; };
+		19EB0FB51C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FA91C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.m */; };
+		19EB0FBB1C7EE84800FECDF5 /* MaterialTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FB81C7EE84800FECDF5 /* MaterialTVC.m */; };
+		19EB0FBC1C7EE84800FECDF5 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FBA1C7EE84800FECDF5 /* MeNickNameVC.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
-		19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC0FC01C1F1E89008157E3 /* SKeyManager.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
-		B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9C41C4147DE00DD66B2 /* MCouponVC.m */; };
 		B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */; };
-		B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B041C1DB530006F344F /* AccountRegisterController.m */; };
-		B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C0B071C1F0F85006F344F /* AccountResetPassword.m */; };
 		B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */; };
-		B53D4BE81C79B3F400AA9A93 /* MAssistanceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D4BE71C79B3F400AA9A93 /* MAssistanceTVC.m */; };
-		B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
-		B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */; };
-		B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3221C2ED516002E2833 /* MerchantEmailVC.m */; };
-		B5EDC3261C2ED53E002E2833 /* MerchantContactNumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */; };
-		B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
-		B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
 		B5EDC37D1C3430BE002E2833 /* ActionFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC37C1C3430BE002E2833 /* ActionFlow.m */; };
 		B5EDC3981C3921EC002E2833 /* MActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3971C3921EC002E2833 /* MActivityCell.m */; };
@@ -151,37 +151,13 @@
 		19339AD51C23DEF800791A9E /* ActionMMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMMaterial.m; path = Merchant/Tab3/Model/ActionMMaterial.m; sourceTree = "<group>"; };
 		19339AD71C23E4C000791A9E /* AwardManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwardManagerController.h; path = Merchant/Tab1/AwardManagerController.h; sourceTree = "<group>"; };
 		19339AD81C23E4C000791A9E /* AwardManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwardManagerController.m; path = Merchant/Tab1/AwardManagerController.m; sourceTree = "<group>"; };
-		19339ADA1C23E74F00791A9E /* MMaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMaterialManager.h; path = Account/MMaterialManager.h; sourceTree = "<group>"; };
-		19339ADB1C23E74F00791A9E /* MMaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMaterialManager.m; path = Account/MMaterialManager.m; sourceTree = "<group>"; };
 		19339ADD1C23E86F00791A9E /* MyAwardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardController.h; sourceTree = "<group>"; };
 		19339ADE1C23E86F00791A9E /* MyAwardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardController.m; sourceTree = "<group>"; };
-		19339AE01C257F1200791A9E /* MMaterialTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMaterialTVC.h; path = Merchant/Tab3/MMaterialTVC.h; sourceTree = "<group>"; };
-		19339AE11C257F1200791A9E /* MMaterialTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMaterialTVC.m; path = Merchant/Tab3/MMaterialTVC.m; sourceTree = "<group>"; };
 		19339AE31C258AB500791A9E /* MMeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeTVC.h; path = Merchant/Tab3/MMeTVC.h; sourceTree = "<group>"; };
 		19339AE41C258AB500791A9E /* MMeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeTVC.m; path = Merchant/Tab3/MMeTVC.m; sourceTree = "<group>"; };
-		19339AEF1C269BD500791A9E /* MyOneAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneAwardTVC.h; sourceTree = "<group>"; };
-		19339AF01C269BD500791A9E /* MyOneAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneAwardTVC.m; sourceTree = "<group>"; };
-		19339AF21C269D0400791A9E /* MyOneAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneAwardCell.h; sourceTree = "<group>"; };
-		19339AF31C269D0400791A9E /* MyOneAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneAwardCell.m; sourceTree = "<group>"; };
 		19339AF61C2930E800791A9E /* Calculus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calculus.pch; sourceTree = "<group>"; };
-		19339AF71C29403400791A9E /* MAwardDerivateCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAwardDerivateCVC.h; path = Merchant/Tab1/MAwardDerivateCVC.h; sourceTree = "<group>"; };
-		19339AF81C29403400791A9E /* MAwardDerivateCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAwardDerivateCVC.m; path = Merchant/Tab1/MAwardDerivateCVC.m; sourceTree = "<group>"; };
-		19339AFA1C29407900791A9E /* MAwardDerivateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAwardDerivateCell.h; path = Merchant/Tab1/MAwardDerivateCell.h; sourceTree = "<group>"; };
-		19339AFB1C29407900791A9E /* MAwardDerivateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAwardDerivateCell.m; path = Merchant/Tab1/MAwardDerivateCell.m; sourceTree = "<group>"; };
-		19339AFD1C2950BD00791A9E /* MAwardApplyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAwardApplyTVC.h; path = Merchant/Tab1/MAwardApplyTVC.h; sourceTree = "<group>"; };
-		19339AFE1C2950BD00791A9E /* MAwardApplyTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAwardApplyTVC.m; path = Merchant/Tab1/MAwardApplyTVC.m; sourceTree = "<group>"; };
-		19339B001C2950FA00791A9E /* MAwardApplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAwardApplyCell.h; path = Merchant/Tab1/MAwardApplyCell.h; sourceTree = "<group>"; };
-		19339B011C2950FA00791A9E /* MAwardApplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAwardApplyCell.m; path = Merchant/Tab1/MAwardApplyCell.m; sourceTree = "<group>"; };
 		19339B041C2954C000791A9E /* ActionMCredit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMCredit.h; path = Merchant/Tab1/Model/ActionMCredit.h; sourceTree = "<group>"; };
 		19339B051C2954C000791A9E /* ActionMCredit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMCredit.m; path = Merchant/Tab1/Model/ActionMCredit.m; sourceTree = "<group>"; };
-		19339B071C2ABDFF00791A9E /* ConsumerAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsumerAwardTVC.h; path = Merchant/Tab1/ConsumerAwardTVC.h; sourceTree = "<group>"; };
-		19339B081C2ABDFF00791A9E /* ConsumerAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsumerAwardTVC.m; path = Merchant/Tab1/ConsumerAwardTVC.m; sourceTree = "<group>"; };
-		19339B0A1C2ABEA000791A9E /* ConsumerAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsumerAwardCell.h; path = Merchant/Tab1/ConsumerAwardCell.h; sourceTree = "<group>"; };
-		19339B0B1C2ABEA000791A9E /* ConsumerAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsumerAwardCell.m; path = Merchant/Tab1/ConsumerAwardCell.m; sourceTree = "<group>"; };
-		19339B0D1C2C340900791A9E /* COneAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COneAwardCell.h; path = Merchant/Tab1/COneAwardCell.h; sourceTree = "<group>"; };
-		19339B0E1C2C340900791A9E /* COneAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COneAwardCell.m; path = Merchant/Tab1/COneAwardCell.m; sourceTree = "<group>"; };
-		19339B101C2C343700791A9E /* COneAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COneAwardTVC.h; path = Merchant/Tab1/COneAwardTVC.h; sourceTree = "<group>"; };
-		19339B111C2C343700791A9E /* COneAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COneAwardTVC.m; path = Merchant/Tab1/COneAwardTVC.m; sourceTree = "<group>"; };
 		193C371A1C1B0D800017CC9C /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = Account/AccountController.h; sourceTree = "<group>"; };
 		193C371B1C1B0D800017CC9C /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = Account/AccountController.m; sourceTree = "<group>"; };
 		193C371E1C1B12270017CC9C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Account.storyboard; path = Account/Account.storyboard; sourceTree = "<group>"; };
@@ -189,25 +165,12 @@
 		193C37211C1B16C60017CC9C /* ActionAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionAccount.m; path = Account/Model/ActionAccount.m; sourceTree = "<group>"; };
 		193C375F1C1BE2B70017CC9C /* ActionCredit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionCredit.h; sourceTree = "<group>"; };
 		193C37601C1BE2B70017CC9C /* ActionCredit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionCredit.m; sourceTree = "<group>"; };
-		193C37611C1BE2B70017CC9C /* MyAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardCell.h; sourceTree = "<group>"; };
-		193C37621C1BE2B70017CC9C /* MyAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardCell.m; sourceTree = "<group>"; };
-		193C37651C1BE2B70017CC9C /* MyAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardTVC.h; sourceTree = "<group>"; };
-		193C37661C1BE2B70017CC9C /* MyAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardTVC.m; sourceTree = "<group>"; };
 		193C376D1C1BE2B70017CC9C /* MeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTVC.h; sourceTree = "<group>"; };
 		193C376E1C1BE2B70017CC9C /* MeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTVC.m; sourceTree = "<group>"; };
 		193C37791C1BE3EA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Bootstrap.storyboard; sourceTree = "<group>"; };
 		193C37821C1BE8510017CC9C /* BootstrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BootstrapController.h; sourceTree = "<group>"; };
 		193C37831C1BE8510017CC9C /* BootstrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BootstrapController.m; sourceTree = "<group>"; };
-		193C37851C1BE8B40017CC9C /* MerchantMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantMain.h; path = Merchant/MerchantMain.h; sourceTree = "<group>"; };
-		193C37861C1BE8B40017CC9C /* MerchantMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantMain.m; path = Merchant/MerchantMain.m; sourceTree = "<group>"; };
 		193C37891C1BE9CA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Merchant.storyboard; sourceTree = "<group>"; };
-		193C37921C1BFF560017CC9C /* MMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MMe.storyboard; path = Merchant/Tab3/MMe.storyboard; sourceTree = "<group>"; };
-		193C37971C1C0B7A0017CC9C /* MMeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeNavigationController.h; path = Merchant/Tab3/MMeNavigationController.h; sourceTree = "<group>"; };
-		193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeNavigationController.m; path = Merchant/Tab3/MMeNavigationController.m; sourceTree = "<group>"; };
-		193C379D1C1C0BD70017CC9C /* MMeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeController.h; path = Merchant/Tab3/MMeController.h; sourceTree = "<group>"; };
-		193C379E1C1C0BD70017CC9C /* MMeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeController.m; path = Merchant/Tab3/MMeController.m; sourceTree = "<group>"; };
-		193C37A01C1C0DE20017CC9C /* MSettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSettingTVC.h; path = Merchant/Tab3/MSettingTVC.h; sourceTree = "<group>"; };
-		193C37A11C1C0DE20017CC9C /* MSettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSettingTVC.m; path = Merchant/Tab3/MSettingTVC.m; sourceTree = "<group>"; };
 		193C37AA1C1C23460017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Calculus/Base.lproj/Discount.storyboard; sourceTree = SOURCE_ROOT; };
 		193C37AC1C1C23D90017CC9C /* DiscountNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountNavigationController.h; sourceTree = "<group>"; };
 		193C37AD1C1C23D90017CC9C /* DiscountNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountNavigationController.m; sourceTree = "<group>"; };
@@ -217,8 +180,6 @@
 		193C37B31C1C254C0017CC9C /* DiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCell.m; sourceTree = "<group>"; };
 		193C37E31C1D4A070017CC9C /* RoleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleManager.h; sourceTree = "<group>"; };
 		193C37E41C1D4A070017CC9C /* RoleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleManager.m; sourceTree = "<group>"; };
-		193C38061C1D90500017CC9C /* MaterialTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTVC.h; sourceTree = "<group>"; };
-		193C38071C1D90500017CC9C /* MaterialTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialTVC.m; sourceTree = "<group>"; };
 		193C380A1C1D94DE0017CC9C /* MKMapView+MapViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+MapViewUtil.h"; sourceTree = "<group>"; };
 		193C380B1C1D94DE0017CC9C /* MKMapView+MapViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+MapViewUtil.m"; sourceTree = "<group>"; };
 		193C380C1C1D94DE0017CC9C /* NSDate+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helpers.h"; sourceTree = "<group>"; };
@@ -292,8 +253,6 @@
 		195A12D11C5526E8008E7945 /* YMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMUtils.h; path = CityList/YMUtils.h; sourceTree = "<group>"; };
 		195A12D21C5526E8008E7945 /* YMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMUtils.m; path = CityList/YMUtils.m; sourceTree = "<group>"; };
 		195A12D31C5526E8008E7945 /* zh_CN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zh_CN.json; path = CityList/zh_CN.json; sourceTree = "<group>"; };
-		195A12D61C55290F008E7945 /* MerchantQrcodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantQrcodeVC.h; path = Merchant/Tab3/MerchantQrcodeVC.h; sourceTree = "<group>"; };
-		195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantQrcodeVC.m; path = Merchant/Tab3/MerchantQrcodeVC.m; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
 		197491191C75F5D300784D09 /* ActionStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionStatistic.h; path = Statistic/ActionStatistic.h; sourceTree = "<group>"; };
 		1974911A1C75F5D300784D09 /* ActionStatistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionStatistic.m; path = Statistic/ActionStatistic.m; sourceTree = "<group>"; };
@@ -341,8 +300,6 @@
 		19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountController.m; sourceTree = "<group>"; };
 		19CAA8F91C3F5E1A00010F68 /* ActionVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionVoucher.h; path = Model/ActionVoucher.h; sourceTree = "<group>"; };
 		19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionVoucher.m; path = Model/ActionVoucher.m; sourceTree = "<group>"; };
-		19CBBBF61C21A62F002A920E /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/MaterialManager.h; sourceTree = "<group>"; };
-		19CBBBF71C21A62F002A920E /* MaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialManager.m; path = Account/MaterialManager.m; sourceTree = "<group>"; };
 		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
 		19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMaterial.m; path = Model/ActionMaterial.m; sourceTree = "<group>"; };
 		19CBBBFD1C21BE13002A920E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -352,39 +309,82 @@
 		19EB0F4A1C7C75D800FECDF5 /* ExchangeRateTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRateTVC.m; sourceTree = "<group>"; };
 		19EB0F4D1C7EAC5900FECDF5 /* ApplyCreditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyCreditController.h; sourceTree = "<group>"; };
 		19EB0F4E1C7EAC5900FECDF5 /* ApplyCreditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyCreditController.m; sourceTree = "<group>"; };
+		19EB0F521C7EE55500FECDF5 /* MaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialManager.h; path = Account/Manager/MaterialManager.h; sourceTree = "<group>"; };
+		19EB0F531C7EE55500FECDF5 /* MaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialManager.m; path = Account/Manager/MaterialManager.m; sourceTree = "<group>"; };
+		19EB0F541C7EE55500FECDF5 /* MMaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMaterialManager.h; path = Account/Manager/MMaterialManager.h; sourceTree = "<group>"; };
+		19EB0F551C7EE55500FECDF5 /* MMaterialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMaterialManager.m; path = Account/Manager/MMaterialManager.m; sourceTree = "<group>"; };
+		19EB0F561C7EE55500FECDF5 /* SKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKeyManager.h; path = Account/Manager/SKeyManager.h; sourceTree = "<group>"; };
+		19EB0F571C7EE55500FECDF5 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/Manager/SKeyManager.m; sourceTree = "<group>"; };
+		19EB0F5B1C7EE57300FECDF5 /* AccountRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountRegisterController.h; path = Account/AccountRegisterController.h; sourceTree = "<group>"; };
+		19EB0F5C1C7EE57300FECDF5 /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountRegisterController.m; path = Account/AccountRegisterController.m; sourceTree = "<group>"; };
+		19EB0F5D1C7EE57300FECDF5 /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountResetPassword.h; path = Account/AccountResetPassword.h; sourceTree = "<group>"; };
+		19EB0F5E1C7EE57300FECDF5 /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountResetPassword.m; path = Account/AccountResetPassword.m; sourceTree = "<group>"; };
+		19EB0F631C7EE5D300FECDF5 /* MCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCouponVC.h; sourceTree = "<group>"; };
+		19EB0F641C7EE5D300FECDF5 /* MCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCouponVC.m; sourceTree = "<group>"; };
+		19EB0F671C7EE5E300FECDF5 /* MAwardDerivateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAwardDerivateCell.h; sourceTree = "<group>"; };
+		19EB0F681C7EE5E300FECDF5 /* MAwardDerivateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAwardDerivateCell.m; sourceTree = "<group>"; };
+		19EB0F691C7EE5E300FECDF5 /* MAwardDerivateCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAwardDerivateCVC.h; sourceTree = "<group>"; };
+		19EB0F6A1C7EE5E300FECDF5 /* MAwardDerivateCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAwardDerivateCVC.m; sourceTree = "<group>"; };
+		19EB0F6D1C7EE61B00FECDF5 /* COneAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COneAwardCell.h; sourceTree = "<group>"; };
+		19EB0F6E1C7EE61B00FECDF5 /* COneAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COneAwardCell.m; sourceTree = "<group>"; };
+		19EB0F6F1C7EE61B00FECDF5 /* COneAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COneAwardTVC.h; sourceTree = "<group>"; };
+		19EB0F701C7EE61B00FECDF5 /* COneAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COneAwardTVC.m; sourceTree = "<group>"; };
+		19EB0F711C7EE61B00FECDF5 /* ConsumerAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerAwardCell.h; sourceTree = "<group>"; };
+		19EB0F721C7EE61B00FECDF5 /* ConsumerAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumerAwardCell.m; sourceTree = "<group>"; };
+		19EB0F731C7EE61B00FECDF5 /* ConsumerAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerAwardTVC.h; sourceTree = "<group>"; };
+		19EB0F741C7EE61B00FECDF5 /* ConsumerAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumerAwardTVC.m; sourceTree = "<group>"; };
+		19EB0F791C7EE62B00FECDF5 /* MAwardApplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAwardApplyCell.h; path = Merchant/Tab1/Apply/MAwardApplyCell.h; sourceTree = "<group>"; };
+		19EB0F7A1C7EE62B00FECDF5 /* MAwardApplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAwardApplyCell.m; path = Merchant/Tab1/Apply/MAwardApplyCell.m; sourceTree = "<group>"; };
+		19EB0F7B1C7EE62B00FECDF5 /* MAwardApplyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAwardApplyTVC.h; path = Merchant/Tab1/Apply/MAwardApplyTVC.h; sourceTree = "<group>"; };
+		19EB0F7C1C7EE62B00FECDF5 /* MAwardApplyTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAwardApplyTVC.m; path = Merchant/Tab1/Apply/MAwardApplyTVC.m; sourceTree = "<group>"; };
+		19EB0F7F1C7EE66B00FECDF5 /* MerchantMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantMain.h; path = Merchant/Tab1/Main/MerchantMain.h; sourceTree = "<group>"; };
+		19EB0F801C7EE66B00FECDF5 /* MerchantMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantMain.m; path = Merchant/Tab1/Main/MerchantMain.m; sourceTree = "<group>"; };
+		19EB0F831C7EE6C100FECDF5 /* MyAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardCell.h; sourceTree = "<group>"; };
+		19EB0F841C7EE6C100FECDF5 /* MyAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardCell.m; sourceTree = "<group>"; };
+		19EB0F851C7EE6C100FECDF5 /* MyAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardTVC.h; sourceTree = "<group>"; };
+		19EB0F861C7EE6C100FECDF5 /* MyAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardTVC.m; sourceTree = "<group>"; };
+		19EB0F871C7EE6C100FECDF5 /* MyOneAwardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneAwardCell.h; sourceTree = "<group>"; };
+		19EB0F881C7EE6C100FECDF5 /* MyOneAwardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneAwardCell.m; sourceTree = "<group>"; };
+		19EB0F891C7EE6C100FECDF5 /* MyOneAwardTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneAwardTVC.h; sourceTree = "<group>"; };
+		19EB0F8A1C7EE6C100FECDF5 /* MyOneAwardTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneAwardTVC.m; sourceTree = "<group>"; };
+		19EB0F901C7EE7C900FECDF5 /* MMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MMe.storyboard; sourceTree = "<group>"; };
+		19EB0F911C7EE7C900FECDF5 /* MMeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMeController.h; sourceTree = "<group>"; };
+		19EB0F921C7EE7C900FECDF5 /* MMeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMeController.m; sourceTree = "<group>"; };
+		19EB0F931C7EE7C900FECDF5 /* MMeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMeNavigationController.h; sourceTree = "<group>"; };
+		19EB0F941C7EE7C900FECDF5 /* MMeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMeNavigationController.m; sourceTree = "<group>"; };
+		19EB0F961C7EE7C900FECDF5 /* MerchantAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantAddressVC.h; sourceTree = "<group>"; };
+		19EB0F971C7EE7C900FECDF5 /* MerchantAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantAddressVC.m; sourceTree = "<group>"; };
+		19EB0F981C7EE7C900FECDF5 /* MerchantContactNumberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantContactNumberVC.h; sourceTree = "<group>"; };
+		19EB0F991C7EE7C900FECDF5 /* MerchantContactNumberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantContactNumberVC.m; sourceTree = "<group>"; };
+		19EB0F9A1C7EE7C900FECDF5 /* MerchantEmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantEmailVC.h; sourceTree = "<group>"; };
+		19EB0F9B1C7EE7C900FECDF5 /* MerchantEmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantEmailVC.m; sourceTree = "<group>"; };
+		19EB0F9C1C7EE7C900FECDF5 /* MerchantNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantNameVC.h; sourceTree = "<group>"; };
+		19EB0F9D1C7EE7C900FECDF5 /* MerchantNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantNameVC.m; sourceTree = "<group>"; };
+		19EB0F9E1C7EE7C900FECDF5 /* MerchantQrcodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantQrcodeVC.h; sourceTree = "<group>"; };
+		19EB0F9F1C7EE7C900FECDF5 /* MerchantQrcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantQrcodeVC.m; sourceTree = "<group>"; };
+		19EB0FA01C7EE7C900FECDF5 /* MMaterialTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMaterialTVC.h; sourceTree = "<group>"; };
+		19EB0FA11C7EE7C900FECDF5 /* MMaterialTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMaterialTVC.m; sourceTree = "<group>"; };
+		19EB0FA31C7EE7C900FECDF5 /* MAssistanceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAssistanceTVC.h; sourceTree = "<group>"; };
+		19EB0FA41C7EE7C900FECDF5 /* MAssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAssistanceTVC.m; sourceTree = "<group>"; };
+		19EB0FA51C7EE7C900FECDF5 /* MSettingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSettingTVC.h; sourceTree = "<group>"; };
+		19EB0FA61C7EE7C900FECDF5 /* MSettingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSettingTVC.m; sourceTree = "<group>"; };
+		19EB0FA81C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantVerifiedInfoTVC.h; sourceTree = "<group>"; };
+		19EB0FA91C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantVerifiedInfoTVC.m; sourceTree = "<group>"; };
+		19EB0FB71C7EE84800FECDF5 /* MaterialTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialTVC.h; sourceTree = "<group>"; };
+		19EB0FB81C7EE84800FECDF5 /* MaterialTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialTVC.m; sourceTree = "<group>"; };
+		19EB0FB91C7EE84800FECDF5 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
+		19EB0FBA1C7EE84800FECDF5 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeSessionHeader.h; sourceTree = "<group>"; };
 		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
-		19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKeyManager.h; path = Account/SKeyManager.h; sourceTree = "<group>"; };
-		19FC0FC01C1F1E89008157E3 /* SKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKeyManager.m; path = Account/SKeyManager.m; sourceTree = "<group>"; };
-		B517E9C31C4147DE00DD66B2 /* MCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCouponVC.h; path = Merchant/Tab1/MCouponVC.h; sourceTree = "<group>"; };
-		B517E9C41C4147DE00DD66B2 /* MCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCouponVC.m; path = Merchant/Tab1/MCouponVC.m; sourceTree = "<group>"; };
 		B517E9DA1C59144F00DD66B2 /* DiscountDetailsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountDetailsTVC.h; sourceTree = "<group>"; };
 		B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountDetailsTVC.m; sourceTree = "<group>"; };
-		B51C0B031C1DB530006F344F /* AccountRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountRegisterController.h; sourceTree = "<group>"; };
-		B51C0B041C1DB530006F344F /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRegisterController.m; sourceTree = "<group>"; };
-		B51C0B061C1F0F85006F344F /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPassword.h; sourceTree = "<group>"; };
-		B51C0B071C1F0F85006F344F /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPassword.m; sourceTree = "<group>"; };
 		B53D37631C6D742400AA9A93 /* FullscreenImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenImageVC.h; sourceTree = "<group>"; };
 		B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenImageVC.m; sourceTree = "<group>"; };
-		B53D4BE61C79B3F400AA9A93 /* MAssistanceTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAssistanceTVC.h; path = Merchant/Tab3/MAssistanceTVC.h; sourceTree = "<group>"; };
-		B53D4BE71C79B3F400AA9A93 /* MAssistanceTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAssistanceTVC.m; path = Merchant/Tab3/MAssistanceTVC.m; sourceTree = "<group>"; };
-		B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeNickNameVC.h; sourceTree = "<group>"; };
-		B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeNickNameVC.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
-		B5EDC31E1C2D8F85002E2833 /* MerchantNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantNameVC.h; sourceTree = "<group>"; };
-		B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantNameVC.m; sourceTree = "<group>"; };
-		B5EDC3211C2ED516002E2833 /* MerchantEmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantEmailVC.h; sourceTree = "<group>"; };
-		B5EDC3221C2ED516002E2833 /* MerchantEmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantEmailVC.m; sourceTree = "<group>"; };
-		B5EDC3241C2ED53E002E2833 /* MerchantContactNumberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantContactNumberVC.h; sourceTree = "<group>"; };
-		B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantContactNumberVC.m; sourceTree = "<group>"; };
-		B5EDC3271C2ED556002E2833 /* MerchantAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantAddressVC.h; sourceTree = "<group>"; };
-		B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantAddressVC.m; sourceTree = "<group>"; };
 		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
 		B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMeExchangeRateVC.m; path = Merchant/Tab3/MMeExchangeRateVC.m; sourceTree = "<group>"; };
-		B5EDC3331C314C32002E2833 /* MerchantVerifiedInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantVerifiedInfoTVC.h; path = Merchant/Tab3/MerchantVerifiedInfoTVC.h; sourceTree = "<group>"; };
-		B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantVerifiedInfoTVC.m; path = Merchant/Tab3/MerchantVerifiedInfoTVC.m; sourceTree = "<group>"; };
 		B5EDC3751C326C9F002E2833 /* ActionBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionBusiness.h; path = Merchant/Tab3/Model/ActionBusiness.h; sourceTree = "<group>"; };
 		B5EDC3761C326C9F002E2833 /* ActionBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionBusiness.m; path = Merchant/Tab3/Model/ActionBusiness.m; sourceTree = "<group>"; };
 		B5EDC37B1C3430BE002E2833 /* ActionFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionFlow.h; path = Merchant/Tab3/Model/ActionFlow.h; sourceTree = "<group>"; };
@@ -457,20 +457,15 @@
 		193C37191C1B0D5A0017CC9C /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				19EB0F511C7EE53500FECDF5 /* Manager */,
 				193C371D1C1B0E270017CC9C /* Model */,
 				193C371E1C1B12270017CC9C /* Account.storyboard */,
+				19EB0F5B1C7EE57300FECDF5 /* AccountRegisterController.h */,
+				19EB0F5C1C7EE57300FECDF5 /* AccountRegisterController.m */,
+				19EB0F5D1C7EE57300FECDF5 /* AccountResetPassword.h */,
+				19EB0F5E1C7EE57300FECDF5 /* AccountResetPassword.m */,
 				193C371A1C1B0D800017CC9C /* AccountController.h */,
 				193C371B1C1B0D800017CC9C /* AccountController.m */,
-				B51C0B031C1DB530006F344F /* AccountRegisterController.h */,
-				B51C0B041C1DB530006F344F /* AccountRegisterController.m */,
-				B51C0B061C1F0F85006F344F /* AccountResetPassword.h */,
-				B51C0B071C1F0F85006F344F /* AccountResetPassword.m */,
-				19FC0FBF1C1F1E89008157E3 /* SKeyManager.h */,
-				19FC0FC01C1F1E89008157E3 /* SKeyManager.m */,
-				19CBBBF61C21A62F002A920E /* MaterialManager.h */,
-				19CBBBF71C21A62F002A920E /* MaterialManager.m */,
-				19339ADA1C23E74F00791A9E /* MMaterialManager.h */,
-				19339ADB1C23E74F00791A9E /* MMaterialManager.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -498,21 +493,14 @@
 			isa = PBXGroup;
 			children = (
 				193C37181C1B02200017CC9C /* Main */,
-				193C375E1C1BE2B70017CC9C /* Model */,
-				195A12A21C536FC8008E7945 /* Derivate */,
+				19EB0F821C7EE6C100FECDF5 /* Award */,
 				195A12C61C53BFFA008E7945 /* Apply */,
+				195A12A21C536FC8008E7945 /* Derivate */,
 				195A12AC1C5370DD008E7945 /* ExchangeIn */,
 				195A12B61C537297008E7945 /* Interchange */,
+				193C375E1C1BE2B70017CC9C /* Model */,
 				19339ADD1C23E86F00791A9E /* MyAwardController.h */,
 				19339ADE1C23E86F00791A9E /* MyAwardController.m */,
-				193C37651C1BE2B70017CC9C /* MyAwardTVC.h */,
-				193C37661C1BE2B70017CC9C /* MyAwardTVC.m */,
-				193C37611C1BE2B70017CC9C /* MyAwardCell.h */,
-				193C37621C1BE2B70017CC9C /* MyAwardCell.m */,
-				19339AEF1C269BD500791A9E /* MyOneAwardTVC.h */,
-				19339AF01C269BD500791A9E /* MyOneAwardTVC.m */,
-				19339AF21C269D0400791A9E /* MyOneAwardCell.h */,
-				19339AF31C269D0400791A9E /* MyOneAwardCell.m */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -559,15 +547,12 @@
 			isa = PBXGroup;
 			children = (
 				1974913A1C79D97D00784D09 /* Main */,
+				19EB0FB61C7EE84800FECDF5 /* Material */,
 				19CBBBF91C21B4B9002A920E /* Model */,
 				1974913B1C79D9A800784D09 /* Setting */,
 				197491381C79D92700784D09 /* Voucher */,
 				193C376D1C1BE2B70017CC9C /* MeTVC.h */,
 				193C376E1C1BE2B70017CC9C /* MeTVC.m */,
-				193C38061C1D90500017CC9C /* MaterialTVC.h */,
-				193C38071C1D90500017CC9C /* MaterialTVC.m */,
-				B5EDC2FD1C269580002E2833 /* MeNickNameVC.h */,
-				B5EDC2FE1C269580002E2833 /* MeNickNameVC.m */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -575,7 +560,6 @@
 		193C377E1C1BE6200017CC9C /* Merchant */ = {
 			isa = PBXGroup;
 			children = (
-				193C378F1C1BF5360017CC9C /* Main */,
 				193C378E1C1BF52E0017CC9C /* Tab1 */,
 				193C37901C1BF6CD0017CC9C /* Tab2 */,
 				193C37911C1BF6D70017CC9C /* Tab3 */,
@@ -600,27 +584,14 @@
 		193C378E1C1BF52E0017CC9C /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
+				193C378F1C1BF5360017CC9C /* Main */,
+				19EB0F611C7EE5AC00FECDF5 /* Award */,
+				19EB0F501C7EE3AF00FECDF5 /* Apply */,
+				19EB0F621C7EE5D300FECDF5 /* Coupon */,
+				19EB0F661C7EE5E300FECDF5 /* Derivate */,
 				19339B031C29548700791A9E /* Model */,
 				19339AD71C23E4C000791A9E /* AwardManagerController.h */,
 				19339AD81C23E4C000791A9E /* AwardManagerController.m */,
-				19339AF71C29403400791A9E /* MAwardDerivateCVC.h */,
-				19339AF81C29403400791A9E /* MAwardDerivateCVC.m */,
-				19339AFA1C29407900791A9E /* MAwardDerivateCell.h */,
-				19339AFB1C29407900791A9E /* MAwardDerivateCell.m */,
-				19339AFD1C2950BD00791A9E /* MAwardApplyTVC.h */,
-				19339AFE1C2950BD00791A9E /* MAwardApplyTVC.m */,
-				19339B001C2950FA00791A9E /* MAwardApplyCell.h */,
-				19339B011C2950FA00791A9E /* MAwardApplyCell.m */,
-				19339B071C2ABDFF00791A9E /* ConsumerAwardTVC.h */,
-				19339B081C2ABDFF00791A9E /* ConsumerAwardTVC.m */,
-				19339B0A1C2ABEA000791A9E /* ConsumerAwardCell.h */,
-				19339B0B1C2ABEA000791A9E /* ConsumerAwardCell.m */,
-				19339B0D1C2C340900791A9E /* COneAwardCell.h */,
-				19339B0E1C2C340900791A9E /* COneAwardCell.m */,
-				19339B101C2C343700791A9E /* COneAwardTVC.h */,
-				19339B111C2C343700791A9E /* COneAwardTVC.m */,
-				B517E9C31C4147DE00DD66B2 /* MCouponVC.h */,
-				B517E9C41C4147DE00DD66B2 /* MCouponVC.m */,
 			);
 			name = Tab1;
 			sourceTree = "<group>";
@@ -628,9 +599,9 @@
 		193C378F1C1BF5360017CC9C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				19EB0F7F1C7EE66B00FECDF5 /* MerchantMain.h */,
+				19EB0F801C7EE66B00FECDF5 /* MerchantMain.m */,
 				193C37881C1BE9CA0017CC9C /* Merchant.storyboard */,
-				193C37851C1BE8B40017CC9C /* MerchantMain.h */,
-				193C37861C1BE8B40017CC9C /* MerchantMain.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -657,34 +628,15 @@
 		193C37911C1BF6D70017CC9C /* Tab3 */ = {
 			isa = PBXGroup;
 			children = (
+				19EB0F8F1C7EE7C900FECDF5 /* Main */,
+				19EB0F951C7EE7C900FECDF5 /* Material */,
+				19EB0FA21C7EE7C900FECDF5 /* Setting */,
+				19EB0FA71C7EE7C900FECDF5 /* Verified */,
 				19339AD31C23DED000791A9E /* Model */,
-				193C37921C1BFF560017CC9C /* MMe.storyboard */,
-				193C37971C1C0B7A0017CC9C /* MMeNavigationController.h */,
-				193C37981C1C0B7A0017CC9C /* MMeNavigationController.m */,
-				193C379D1C1C0BD70017CC9C /* MMeController.h */,
-				193C379E1C1C0BD70017CC9C /* MMeController.m */,
-				193C37A01C1C0DE20017CC9C /* MSettingTVC.h */,
-				193C37A11C1C0DE20017CC9C /* MSettingTVC.m */,
-				19339AE01C257F1200791A9E /* MMaterialTVC.h */,
-				19339AE11C257F1200791A9E /* MMaterialTVC.m */,
 				19339AE31C258AB500791A9E /* MMeTVC.h */,
 				19339AE41C258AB500791A9E /* MMeTVC.m */,
 				B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */,
 				B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */,
-				B5EDC3331C314C32002E2833 /* MerchantVerifiedInfoTVC.h */,
-				B5EDC3341C314C32002E2833 /* MerchantVerifiedInfoTVC.m */,
-				B5EDC31E1C2D8F85002E2833 /* MerchantNameVC.h */,
-				B5EDC31F1C2D8F85002E2833 /* MerchantNameVC.m */,
-				B5EDC3211C2ED516002E2833 /* MerchantEmailVC.h */,
-				B5EDC3221C2ED516002E2833 /* MerchantEmailVC.m */,
-				B5EDC3241C2ED53E002E2833 /* MerchantContactNumberVC.h */,
-				B5EDC3251C2ED53E002E2833 /* MerchantContactNumberVC.m */,
-				B5EDC3271C2ED556002E2833 /* MerchantAddressVC.h */,
-				B5EDC3281C2ED556002E2833 /* MerchantAddressVC.m */,
-				195A12D61C55290F008E7945 /* MerchantQrcodeVC.h */,
-				195A12D71C55290F008E7945 /* MerchantQrcodeVC.m */,
-				B53D4BE61C79B3F400AA9A93 /* MAssistanceTVC.h */,
-				B53D4BE71C79B3F400AA9A93 /* MAssistanceTVC.m */,
 			);
 			name = Tab3;
 			sourceTree = "<group>";
@@ -1000,6 +952,149 @@
 			name = RoundRectUIImage;
 			sourceTree = "<group>";
 		};
+		19EB0F501C7EE3AF00FECDF5 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F791C7EE62B00FECDF5 /* MAwardApplyCell.h */,
+				19EB0F7A1C7EE62B00FECDF5 /* MAwardApplyCell.m */,
+				19EB0F7B1C7EE62B00FECDF5 /* MAwardApplyTVC.h */,
+				19EB0F7C1C7EE62B00FECDF5 /* MAwardApplyTVC.m */,
+			);
+			name = Apply;
+			sourceTree = "<group>";
+		};
+		19EB0F511C7EE53500FECDF5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F521C7EE55500FECDF5 /* MaterialManager.h */,
+				19EB0F531C7EE55500FECDF5 /* MaterialManager.m */,
+				19EB0F541C7EE55500FECDF5 /* MMaterialManager.h */,
+				19EB0F551C7EE55500FECDF5 /* MMaterialManager.m */,
+				19EB0F561C7EE55500FECDF5 /* SKeyManager.h */,
+				19EB0F571C7EE55500FECDF5 /* SKeyManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		19EB0F611C7EE5AC00FECDF5 /* Award */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F6D1C7EE61B00FECDF5 /* COneAwardCell.h */,
+				19EB0F6E1C7EE61B00FECDF5 /* COneAwardCell.m */,
+				19EB0F6F1C7EE61B00FECDF5 /* COneAwardTVC.h */,
+				19EB0F701C7EE61B00FECDF5 /* COneAwardTVC.m */,
+				19EB0F711C7EE61B00FECDF5 /* ConsumerAwardCell.h */,
+				19EB0F721C7EE61B00FECDF5 /* ConsumerAwardCell.m */,
+				19EB0F731C7EE61B00FECDF5 /* ConsumerAwardTVC.h */,
+				19EB0F741C7EE61B00FECDF5 /* ConsumerAwardTVC.m */,
+			);
+			name = Award;
+			path = Merchant/Tab1/Award;
+			sourceTree = "<group>";
+		};
+		19EB0F621C7EE5D300FECDF5 /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F631C7EE5D300FECDF5 /* MCouponVC.h */,
+				19EB0F641C7EE5D300FECDF5 /* MCouponVC.m */,
+			);
+			name = Coupon;
+			path = Merchant/Tab1/Coupon;
+			sourceTree = "<group>";
+		};
+		19EB0F661C7EE5E300FECDF5 /* Derivate */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F671C7EE5E300FECDF5 /* MAwardDerivateCell.h */,
+				19EB0F681C7EE5E300FECDF5 /* MAwardDerivateCell.m */,
+				19EB0F691C7EE5E300FECDF5 /* MAwardDerivateCVC.h */,
+				19EB0F6A1C7EE5E300FECDF5 /* MAwardDerivateCVC.m */,
+			);
+			name = Derivate;
+			path = Merchant/Tab1/Derivate;
+			sourceTree = "<group>";
+		};
+		19EB0F821C7EE6C100FECDF5 /* Award */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F831C7EE6C100FECDF5 /* MyAwardCell.h */,
+				19EB0F841C7EE6C100FECDF5 /* MyAwardCell.m */,
+				19EB0F851C7EE6C100FECDF5 /* MyAwardTVC.h */,
+				19EB0F861C7EE6C100FECDF5 /* MyAwardTVC.m */,
+				19EB0F871C7EE6C100FECDF5 /* MyOneAwardCell.h */,
+				19EB0F881C7EE6C100FECDF5 /* MyOneAwardCell.m */,
+				19EB0F891C7EE6C100FECDF5 /* MyOneAwardTVC.h */,
+				19EB0F8A1C7EE6C100FECDF5 /* MyOneAwardTVC.m */,
+			);
+			path = Award;
+			sourceTree = "<group>";
+		};
+		19EB0F8F1C7EE7C900FECDF5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F901C7EE7C900FECDF5 /* MMe.storyboard */,
+				19EB0F931C7EE7C900FECDF5 /* MMeNavigationController.h */,
+				19EB0F941C7EE7C900FECDF5 /* MMeNavigationController.m */,
+				19EB0F911C7EE7C900FECDF5 /* MMeController.h */,
+				19EB0F921C7EE7C900FECDF5 /* MMeController.m */,
+			);
+			name = Main;
+			path = Merchant/Tab3/Main;
+			sourceTree = "<group>";
+		};
+		19EB0F951C7EE7C900FECDF5 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0F961C7EE7C900FECDF5 /* MerchantAddressVC.h */,
+				19EB0F971C7EE7C900FECDF5 /* MerchantAddressVC.m */,
+				19EB0F981C7EE7C900FECDF5 /* MerchantContactNumberVC.h */,
+				19EB0F991C7EE7C900FECDF5 /* MerchantContactNumberVC.m */,
+				19EB0F9A1C7EE7C900FECDF5 /* MerchantEmailVC.h */,
+				19EB0F9B1C7EE7C900FECDF5 /* MerchantEmailVC.m */,
+				19EB0F9C1C7EE7C900FECDF5 /* MerchantNameVC.h */,
+				19EB0F9D1C7EE7C900FECDF5 /* MerchantNameVC.m */,
+				19EB0F9E1C7EE7C900FECDF5 /* MerchantQrcodeVC.h */,
+				19EB0F9F1C7EE7C900FECDF5 /* MerchantQrcodeVC.m */,
+				19EB0FA01C7EE7C900FECDF5 /* MMaterialTVC.h */,
+				19EB0FA11C7EE7C900FECDF5 /* MMaterialTVC.m */,
+			);
+			name = Material;
+			path = Merchant/Tab3/Material;
+			sourceTree = "<group>";
+		};
+		19EB0FA21C7EE7C900FECDF5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0FA31C7EE7C900FECDF5 /* MAssistanceTVC.h */,
+				19EB0FA41C7EE7C900FECDF5 /* MAssistanceTVC.m */,
+				19EB0FA51C7EE7C900FECDF5 /* MSettingTVC.h */,
+				19EB0FA61C7EE7C900FECDF5 /* MSettingTVC.m */,
+			);
+			name = Setting;
+			path = Merchant/Tab3/Setting;
+			sourceTree = "<group>";
+		};
+		19EB0FA71C7EE7C900FECDF5 /* Verified */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0FA81C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.h */,
+				19EB0FA91C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.m */,
+			);
+			name = Verified;
+			path = Merchant/Tab3/Verified;
+			sourceTree = "<group>";
+		};
+		19EB0FB61C7EE84800FECDF5 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0FB71C7EE84800FECDF5 /* MaterialTVC.h */,
+				19EB0FB81C7EE84800FECDF5 /* MaterialTVC.m */,
+				19EB0FB91C7EE84800FECDF5 /* MeNickNameVC.h */,
+				19EB0FBA1C7EE84800FECDF5 /* MeNickNameVC.m */,
+			);
+			path = Material;
+			sourceTree = "<group>";
+		};
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1093,7 +1188,7 @@
 				19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */,
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
 				193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */,
-				193C37931C1BFF560017CC9C /* MMe.storyboard in Resources */,
+				19EB0FAA1C7EE7C900FECDF5 /* MMe.storyboard in Resources */,
 				197491211C79A25400784D09 /* PickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1155,14 +1250,12 @@
 			files = (
 				197491531C79DAB600784D09 /* VoucherCell.m in Sources */,
 				195A12B21C5370DE008E7945 /* CreditExchangeInTVC.m in Sources */,
-				B51C0B051C1DB530006F344F /* AccountRegisterController.m in Sources */,
 				19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */,
-				193C37871C1BE8B40017CC9C /* MerchantMain.m in Sources */,
+				19EB0F7D1C7EE62B00FECDF5 /* MAwardApplyCell.m in Sources */,
 				195A12CB1C53BFFA008E7945 /* ApplyCreditTVC.m in Sources */,
 				197491441C79DA6300784D09 /* SettingTVC.m in Sources */,
-				B5EDC2FF1C269580002E2833 /* MeNickNameVC.m in Sources */,
+				19EB0F8E1C7EE6C100FECDF5 /* MyOneAwardTVC.m in Sources */,
 				193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */,
-				19339B0F1C2C340900791A9E /* COneAwardCell.m in Sources */,
 				1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */,
 				197491491C79DA9E00784D09 /* MeController.m in Sources */,
 				197491371C79A3D000784D09 /* QRScanViewController.m in Sources */,
@@ -1170,65 +1263,67 @@
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */,
 				193C38361C1D94DE0017CC9C /* ImageListCVC.m in Sources */,
+				19EB0F601C7EE57300FECDF5 /* AccountResetPassword.m in Sources */,
 				B5EDC37D1C3430BE002E2833 /* ActionFlow.m in Sources */,
 				195A12C11C537297008E7945 /* CreditExchangeCell.m in Sources */,
+				19EB0FBC1C7EE84800FECDF5 /* MeNickNameVC.m in Sources */,
+				19EB0FB11C7EE7C900FECDF5 /* MerchantQrcodeVC.m in Sources */,
+				19EB0FAD1C7EE7C900FECDF5 /* MerchantAddressVC.m in Sources */,
+				19EB0FB31C7EE7C900FECDF5 /* MAssistanceTVC.m in Sources */,
 				193C38371C1D94DE0017CC9C /* PhotoAlbum.m in Sources */,
+				19EB0F781C7EE61B00FECDF5 /* ConsumerAwardTVC.m in Sources */,
 				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
 				19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */,
+				19EB0F651C7EE5D300FECDF5 /* MCouponVC.m in Sources */,
 				197491351C79A3D000784D09 /* QRScanToolView.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
-				B517E9C51C4147DE00DD66B2 /* MCouponVC.m in Sources */,
-				B5EDC3291C2ED556002E2833 /* MerchantAddressVC.m in Sources */,
+				19EB0FBB1C7EE84800FECDF5 /* MaterialTVC.m in Sources */,
+				19EB0F761C7EE61B00FECDF5 /* COneAwardTVC.m in Sources */,
 				B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */,
-				19339AFF1C2950BD00791A9E /* MAwardApplyTVC.m in Sources */,
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				195A12AB1C5370D1008E7945 /* AwardDerivateCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,
 				193C38321C1D94DE0017CC9C /* CircleImageCVLayout.m in Sources */,
 				B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */,
-				B53D4BE81C79B3F400AA9A93 /* MAssistanceTVC.m in Sources */,
+				19EB0FAE1C7EE7C900FECDF5 /* MerchantContactNumberVC.m in Sources */,
 				193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */,
-				193C37991C1C0B7A0017CC9C /* MMeNavigationController.m in Sources */,
+				19EB0FB41C7EE7C900FECDF5 /* MSettingTVC.m in Sources */,
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
+				19EB0FB01C7EE7C900FECDF5 /* MerchantNameVC.m in Sources */,
 				193C38341C1D94DE0017CC9C /* ImageFullscreenSVC.m in Sources */,
-				B5EDC3201C2D8F85002E2833 /* MerchantNameVC.m in Sources */,
 				195A12C41C537297008E7945 /* MerchantSelectCell.m in Sources */,
+				19EB0F6C1C7EE5E300FECDF5 /* MAwardDerivateCVC.m in Sources */,
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
-				19339B121C2C343700791A9E /* COneAwardTVC.m in Sources */,
-				19339B091C2ABDFF00791A9E /* ConsumerAwardTVC.m in Sources */,
 				195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */,
 				B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */,
 				197491361C79A3D000784D09 /* QRScanView.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
 				19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */,
+				19EB0F751C7EE61B00FECDF5 /* COneAwardCell.m in Sources */,
 				19339AE51C258AB500791A9E /* MMeTVC.m in Sources */,
-				19CBBBF81C21A630002A920E /* MaterialManager.m in Sources */,
 				B5EDC3981C3921EC002E2833 /* MActivityCell.m in Sources */,
 				19339AD21C23DC6100791A9E /* CreateMerchantTVC.m in Sources */,
 				193C38351C1D94DE0017CC9C /* ImageListCell.m in Sources */,
 				193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */,
-				193C37741C1BE2B70017CC9C /* MyAwardTVC.m in Sources */,
+				19EB0F811C7EE66B00FECDF5 /* MerchantMain.m in Sources */,
 				B5EDC3B31C3E348F002E2833 /* MerchantActivityTVC.m in Sources */,
-				193C38081C1D90500017CC9C /* MaterialTVC.m in Sources */,
-				B5EDC3261C2ED53E002E2833 /* MerchantContactNumberVC.m in Sources */,
-				19339ADC1C23E74F00791A9E /* MMaterialManager.m in Sources */,
+				19EB0FAC1C7EE7C900FECDF5 /* MMeNavigationController.m in Sources */,
+				19EB0F6B1C7EE5E300FECDF5 /* MAwardDerivateCell.m in Sources */,
+				19EB0FAF1C7EE7C900FECDF5 /* MerchantEmailVC.m in Sources */,
 				195A12A91C5370D1008E7945 /* AwardDerivateCVC.m in Sources */,
+				19EB0FB51C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.m in Sources */,
 				B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */,
 				193C38331C1D94DE0017CC9C /* ImageCheckableCell.m in Sources */,
 				197491201C79A25400784D09 /* PickView.m in Sources */,
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
-				193C37721C1BE2B70017CC9C /* MyAwardCell.m in Sources */,
 				19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */,
 				195A12C31C537297008E7945 /* InterchangeController.m in Sources */,
-				B51C0B081C1F0F85006F344F /* AccountResetPassword.m in Sources */,
 				195A12C51C537297008E7945 /* MerchantSelectTVC.m in Sources */,
-				19339AF91C29403400791A9E /* MAwardDerivateCVC.m in Sources */,
 				195A12D41C5526E8008E7945 /* YMUtils.m in Sources */,
-				19339AF41C269D0400791A9E /* MyOneAwardCell.m in Sources */,
+				19EB0F591C7EE55500FECDF5 /* MMaterialManager.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
-				19339AF11C269BD500791A9E /* MyOneAwardTVC.m in Sources */,
 				195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */,
@@ -1236,39 +1331,39 @@
 				197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */,
 				19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
-				B5EDC3231C2ED516002E2833 /* MerchantEmailVC.m in Sources */,
-				19339B021C2950FA00791A9E /* MAwardApplyCell.m in Sources */,
+				19EB0FAB1C7EE7C900FECDF5 /* MMeController.m in Sources */,
+				19EB0F5F1C7EE57300FECDF5 /* AccountRegisterController.m in Sources */,
 				19CAA8E91C3A3B0C00010F68 /* BuyDiscountTVC.m in Sources */,
 				195A12C21C537297008E7945 /* CreditExchangeTVC.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
 				1974914A1C79DA9E00784D09 /* MeNavigationController.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
 				197491421C79DA6300784D09 /* FeedbackController.m in Sources */,
+				19EB0FB21C7EE7C900FECDF5 /* MMaterialTVC.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
 				19339AD91C23E4C000791A9E /* AwardManagerController.m in Sources */,
-				19339AE21C257F1200791A9E /* MMaterialTVC.m in Sources */,
+				19EB0F8D1C7EE6C100FECDF5 /* MyOneAwardCell.m in Sources */,
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
 				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
-				193C37A21C1C0DE20017CC9C /* MSettingTVC.m in Sources */,
-				19FC0FC11C1F1E89008157E3 /* SKeyManager.m in Sources */,
 				197491521C79DAB600784D09 /* VoucherTVC.m in Sources */,
 				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
+				19EB0F7E1C7EE62B00FECDF5 /* MAwardApplyTVC.m in Sources */,
+				19EB0F5A1C7EE55500FECDF5 /* SKeyManager.m in Sources */,
+				19EB0F581C7EE55500FECDF5 /* MaterialManager.m in Sources */,
+				19EB0F8C1C7EE6C100FECDF5 /* MyAwardTVC.m in Sources */,
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
 				B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
+				19EB0F8B1C7EE6C100FECDF5 /* MyAwardCell.m in Sources */,
 				19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */,
+				19EB0F771C7EE61B00FECDF5 /* ConsumerAwardCell.m in Sources */,
 				19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */,
-				19339AFC1C29407900791A9E /* MAwardDerivateCell.m in Sources */,
-				195A12D81C55290F008E7945 /* MerchantQrcodeVC.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
-				19339B0C1C2ABEA000791A9E /* ConsumerAwardCell.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,
 				193C38411C1D95920017CC9C /* GTMBase64.m in Sources */,
 				19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */,
-				193C379F1C1C0BD70017CC9C /* MMeController.m in Sources */,
 				193C382B1C1D94DE0017CC9C /* NSString+Md5.m in Sources */,
 				19CAA8E51C39454A00010F68 /* ActionDiscount.m in Sources */,
-				B5EDC3351C314C32002E2833 /* MerchantVerifiedInfoTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
