@@ -40,7 +40,8 @@
         //主动生成商家Qrcode
         [self prepareQiniuToken];
         self.qrcodeImageView.afterClickImageView = ^(id sender) {
-            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:self.merchant qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(160, 160)]];
+            NSString *qrcodeValue = [NSString stringWithFormat:@"{\"merchant\":\"%@\"", self.merchant];
+            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(160, 160)]];
             //先展示
             self.noticeLabel.hidden = NO;
             self.qrcodeImageView.image = self.qrcodeImage;
@@ -58,7 +59,7 @@
 
             };
             //测试关闭上传
-//            [action doQiniuUploadImage:self.qrcodeImage token:self.uploadToken path:self.path];
+            [action doQiniuUploadImage:self.qrcodeImage token:self.uploadToken path:self.path];
         };
     }
 }
