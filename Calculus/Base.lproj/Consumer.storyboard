@@ -152,10 +152,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WoF-a4-c7s">
-                            <rect key="frame" x="0.0" y="292" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreditExchangeCell" rowHeight="80" id="waG-yI-A5K" customClass="CreditExchangeCell">
                                 <rect key="frame" x="0.0" y="114" width="600" height="80"/>
@@ -1350,7 +1346,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-next-ccc" translatesAutoresizingMaskIntoConstraints="NO" id="wjB-kW-1Lj">
-                                                            <rect key="frame" x="65" y="29" width="20" height="20"/>
+                                                            <rect key="frame" x="65" y="30" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="0Lt-Yt-tdo"/>
                                                                 <constraint firstAttribute="width" secondItem="wjB-kW-1Lj" secondAttribute="height" multiplier="1:1" id="Xns-X4-MCj"/>
@@ -1415,7 +1411,7 @@
                                                                 <constraint firstItem="mUV-4k-cQB" firstAttribute="trailing" secondItem="gJb-am-tTz" secondAttribute="trailing" id="l6K-mg-1iL"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-next-ccc" translatesAutoresizingMaskIntoConstraints="NO" id="FEm-8l-u4W">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-next-ccc" translatesAutoresizingMaskIntoConstraints="NO" id="FEm-8l-u4W">
                                                             <rect key="frame" x="65" y="30" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="3pk-Oj-g6M"/>
