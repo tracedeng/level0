@@ -12,6 +12,7 @@
 #import "ImageListCVC.h"
 #import "ActionMActivity.h"
 #import "ActionQiniu.h"
+#import "PickView.h"
 #import "UIImageView+WebCache.h"
 #import "Constance.h"
 
@@ -20,7 +21,7 @@
 #define CANSUBMITMASK 0x1F
 #define CANUPDATEMASK 0x3F
 
-@interface MActivityCreateTVC ()
+@interface MActivityCreateTVC () <PickViewDelegate>
 @property (nonatomic, assign) NSInteger canSubmitMask;
 @property (nonatomic, assign) BOOL bEditState;
 
@@ -46,13 +47,10 @@
     
     // poster圆角
     self.path = @"default";
-//    self.posterImageView.clipsToBounds = YES;
+
+    self.posterImageView.clipsToBounds = YES;
+    self.posterImageView.layer.cornerRadius = 4.0f;
 //    self.posterImageView.layer.cornerRadius = self.posterImageView.frame.size.height / 2.0;
-//    NSDate *currentDate = [NSDate date];//获取当前时间，日期
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-//    self.aexpire_time = [dateFormatter stringFromDate:currentDate];
-//    self.aexpireTXT.text = [dateFormatter stringFromDate:currentDate];
     
     if (self.bUpdateActivity) {
         self.title = @"编辑活动";
@@ -64,9 +62,9 @@
         self.acreditTXT.text = [NSString stringWithFormat:@"%@",[self.activityInfo objectForKey:@"cr"] ];
         self.adetailsTXTPlaceHolder.text = @"";
         self.adetailsTXT.text = [self.activityInfo objectForKey:@"in"];
-        self.aexpireTXT.text = [self.activityInfo objectForKey:@"et"];
-        self.path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.activityInfo objectForKey:@"po"]];
-        [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:self.path] placeholderImage:[UIImage imageNamed:@"icon-activitytest"]];
+        self.aexpireTXT.text = [[self.activityInfo objectForKey:@"et"] substringToIndex:10];
+        self.path = [self.activityInfo objectForKey:@"po"];
+
         [self toggleEnable:NO];
     }
 }
@@ -138,7 +136,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
     if (textView.text.length == 0) {
-        self.adetailsTXTPlaceHolder.text = @"请输入活动详细描述";
+        self.adetailsTXTPlaceHolder.text = @"活动描述";
         self.canSubmitMask &= 0xfb;
 //        [textView resignFirstResponder];
     }else{
@@ -189,7 +187,7 @@
         // 购买成功
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发布活动成功" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:self.atittleTXT.text, @"t", self.adetailsTXT.text, @"in", self.acreditTXT.text, @"cr", self.path, @"po", self.aexpireTXT.text, @"et", activity, @"id", "update", @"mode", nil];
+            NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:self.atittleTXT.text, @"t", self.adetailsTXT.text, @"in", [NSString stringWithFormat:@"%@", self.acreditTXT.text], @"cr", self.path, @"po", self.aexpireTXT.text, @"et", activity, @"id", "update", @"mode", nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshNewActivity" object:nil userInfo:newActivity];
             [self.navigationController popToRootViewControllerAnimated:YES];
         }]];
@@ -221,11 +219,11 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -245,7 +243,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0.0f;
-    switch (indexPath.row) {
+    switch (indexPath.section) {
         case 0:
             height = 100.0f;
             break;
@@ -268,6 +266,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.01f;
 }
 
@@ -287,7 +289,26 @@
             [self prepareQiniuToken];
             [self.navigationController pushViewController:album animated:YES];
         }
+    }else if (4 == indexPath.section) {
+        PickView *picker = [[PickView alloc] initWithMode:PickViewTypeDate target:self title:nil];
+        //            _picker.maskViewColor = [UIColor redColor];
+//        picker.pickerData = self.cities;
+        
+        [self.view addSubview:picker];
+        [picker show];
+
     }
+}
+
+// data:NSData
+-(void)pickView:(PickView *)pickView didClickButtonConfirm:(id)data {
+    DLog(@"%@", data);
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    self.aexpireTXT.text = [dateFormatter stringFromDate:data];
+    
+    self.canSubmitMask |= 0x10;
 }
 
 #pragma mark - Navigation

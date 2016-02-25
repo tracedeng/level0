@@ -123,23 +123,24 @@
 }
 
 - (IBAction)confirm:(id)sender {
-    
-    if (self.pickerMode == PickViewTypeCustom) {
-        
-        NSMutableArray *result = [NSMutableArray array];
-        for (int i = 0; i < self.pickerData.count; i++) {
-            int index = (int)[self.pickerView selectedRowInComponent:i];
-            [result addObject:self.pickerData[i][index]];
+    if ([self.confirmDelegate respondsToSelector:@selector(pickView:didClickButtonConfirm:)]) {
+        if (self.pickerMode == PickViewTypeCustom) {
+            
+            NSMutableArray *result = [NSMutableArray array];
+            for (int i = 0; i < self.pickerData.count; i++) {
+                int index = (int)[self.pickerView selectedRowInComponent:i];
+                [result addObject:self.pickerData[i][index]];
+            }
+            
+            [self.confirmDelegate pickView:self didClickButtonConfirm:result];
+        }else{
+            // 时区转换
+            NSDate *date=[_datepickView date];
+            NSTimeZone *timeZone=[NSTimeZone systemTimeZone];
+            NSInteger seconds=[timeZone secondsFromGMTForDate:date];
+            NSDate *newDate=[date dateByAddingTimeInterval:seconds];
+            [self.confirmDelegate pickView:self didClickButtonConfirm:newDate];
         }
-        
-        [self.confirmDelegate pickView:self didClickButtonConfirm:result];
-    }else{
-        // 时区转换
-        NSDate *date=[_datepickView date];
-        NSTimeZone *timeZone=[NSTimeZone systemTimeZone];
-        NSInteger seconds=[timeZone secondsFromGMTForDate:date];
-        NSDate *newDate=[date dateByAddingTimeInterval:seconds];
-        [self.confirmDelegate pickView:self didClickButtonConfirm:newDate];
     }
     
     [self hide];

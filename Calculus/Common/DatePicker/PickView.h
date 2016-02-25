@@ -73,9 +73,6 @@ typedef enum : NSUInteger {
 - (void)hide;
 
 
-
-
-
 /**
  *  用户自定义时,获取选取的行,必须是用户自定义时,否则返回-1
  *
