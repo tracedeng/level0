@@ -80,7 +80,7 @@
             //头像，right detail，修改accessory图标
             self.logoImageView.layer.cornerRadius = 4.0f;
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
-            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-alipay"]];
+            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"merchantlogo"]];
         }
     }
     
