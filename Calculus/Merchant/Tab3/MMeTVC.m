@@ -45,8 +45,8 @@
     
     //    圆角
     self.merchantAvatarIMG.clipsToBounds = YES;
-    //    self.avatarImageView.layer.cornerRadius = 4.0f;
-    self.merchantAvatarIMG.layer.cornerRadius = self.merchantAvatarIMG.frame.size.height / 2.0;
+    self.merchantAvatarIMG.layer.cornerRadius = 4.0f;
+//    self.merchantAvatarIMG.layer.cornerRadius = self.merchantAvatarIMG.frame.size.height / 2.0;
     
     ActionMMaterial *action = [[ActionMMaterial alloc] init];
     action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
@@ -63,7 +63,7 @@
             }
             
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"logo"]];
-            [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-merchant"]];
+            [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-merchant-default"]];
             
             
             //保存
