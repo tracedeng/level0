@@ -146,12 +146,11 @@
             }
             case 2:
             {
-//TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
-                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
-                    cell.userInteractionEnabled = TRUE;
-                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
-                    cell.userInteractionEnabled = FALSE;
-                }
+//                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+//                    cell.userInteractionEnabled = TRUE;
+//                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+//                    cell.userInteractionEnabled = FALSE;
+//                }
                 break;
             }
             default:
@@ -171,7 +170,6 @@
                }
                case 2:
                {
-                   cell.userInteractionEnabled = FALSE;
 
                    //TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
                    if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
