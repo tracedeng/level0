@@ -914,7 +914,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJa-p2-eYN">
                                             <rect key="frame" x="8" y="8" width="584" height="94"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-S3-6MS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-center-coupon-bg" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-S3-6MS">
                                                     <rect key="frame" x="0.0" y="0.0" width="584" height="94"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EtT-5x-iAs">
@@ -993,7 +993,6 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="EtT-5x-iAs" secondAttribute="bottom" id="9ib-l1-kwa"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZfT-S3-6MS" secondAttribute="bottom" id="Chg-F4-2rd"/>
@@ -1292,6 +1291,7 @@
     <resources>
         <image name="icon-alipay" width="64" height="64"/>
         <image name="icon-center-coupon" width="30" height="30"/>
+        <image name="icon-center-coupon-bg" width="384" height="100"/>
         <image name="icon-center-favorate" width="30" height="30"/>
         <image name="icon-center-help" width="30" height="30"/>
         <image name="icon-center-message" width="30" height="30"/>
