@@ -19,6 +19,7 @@
 @interface MerchantActivityTVC ()
 @property (nonatomic, retain) NSMutableArray *activityList;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+@property (nonatomic, retain) NSString *merchantName;
 @end
 
 @implementation MerchantActivityTVC
@@ -39,7 +40,9 @@
 
 - (void)loadActivityList:(id)sender {
     ActionMActivity *activity = [[ActionMActivity alloc] init];
-    activity.afterQueryMerchantActivity = ^(NSArray *activityList) {
+    activity.afterQueryMerchantActivity = ^(NSDictionary *activity) {
+        self.merchantName = [activity objectForKey:@"mn"];
+        NSArray *activityList = [activity objectForKey:@"act"];
         [self.activityList removeAllObjects];
         if (activityList.count) {
             [self.activityList addObjectsFromArray:activityList];
@@ -102,6 +105,7 @@
 
     // Configure the cell...
     cell.activityInfo = [self.activityList objectAtIndex:indexPath.row];
+    cell.merchantName = self.merchantName;
     
     return cell;
 }

@@ -10,6 +10,7 @@
 #import "BuyDiscountController.h"
 #import "Constance.h"
 #import "ImageListCVC.h"
+#import "ClickableImageView.h"
 #import "UIImageView+WebCache.h"
 
 
@@ -23,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *heading;  // 活动标题
 @property (weak, nonatomic) IBOutlet UILabel *detail;   // 活动详情
 
+@property (weak, nonatomic) IBOutlet ClickableImageView *call;
+@property (weak, nonatomic) IBOutlet UILabel *volume;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @end
 
@@ -46,9 +49,15 @@
     self.heading.text = [self.discountInfo objectForKey:@"t"];
     self.detail.text = [self.discountInfo objectForKey:@"in"];
     
-    self.name.text = [self.discountInfo objectForKey:@"t"];
-    self.address.text = [self.discountInfo objectForKey:@"t"];
+    self.volume.text = [[self.discountInfo objectForKey:@"vol"] stringValue];
+    
+    self.name.text = [self.discountInfo objectForKey:@"mna"];
+    self.address.text = [self.discountInfo objectForKey:@"mlo"];
     self.credit.text = [[self.discountInfo objectForKey:@"cr"] stringValue];
+    
+    self.call.afterClickImageView = ^(id sender) {
+        // 呼起电话
+    };
     
     self.buyButton.clipsToBounds = YES;
     self.buyButton.layer.cornerRadius = 4.0f;

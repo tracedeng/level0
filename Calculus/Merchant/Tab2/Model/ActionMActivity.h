@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, EMACTIVITYOPTYPE) {
 - (void)doQueryUploadToken:(NSString *)merchant;
 
 
-@property (nonatomic, copy) void (^afterQueryMerchantActivity)(NSMutableArray *activity);
+@property (nonatomic, copy) void (^afterQueryMerchantActivity)(NSDictionary *activity);
 @property (nonatomic, copy) void (^afterDeleteMerchantActivity)();
 @property (nonatomic, copy) void (^afterUpdateMerchantActivity)();
 @property (nonatomic, copy) void (^afterAddMerchantActivity)(NSString *activity);

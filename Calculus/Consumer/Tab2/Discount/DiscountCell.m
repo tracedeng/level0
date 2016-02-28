@@ -49,7 +49,7 @@
         
 
         self.title.text = [discountInfo objectForKey:@"t"];
-//        self.name.text = [discountInfo objectForKey:@"na"];
+        self.name.text = [discountInfo objectForKey:@"mna"];
         self.expireTime.text = [[discountInfo objectForKey:@"et"] substringToIndex:10];
         self.credit.text = [[discountInfo objectForKey:@"cr"] stringValue];
         self.introduce.text = [discountInfo objectForKey:@"in"];

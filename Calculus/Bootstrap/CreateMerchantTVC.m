@@ -125,6 +125,8 @@
             //商家名称
         }
     }else if (1 == indexPath.section) {
+        [self.nameField becomeFirstResponder];
+    }else if (2 == indexPath.section) {
         // 创建商家
 //        NSString *name = self.nameField.text;
 //        if (name.length == 0) {
