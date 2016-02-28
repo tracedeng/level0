@@ -12,12 +12,19 @@
 #import "ActionQiniu.h"
 #import "UIImageView+WebCache.h"
 #import "MMaterialManager.h"
+#import <CoreLocation/CoreLocation.h>
 #import "Constance.h"
 
-@interface CreateMerchantTVC ()
+@interface CreateMerchantTVC () <UITextFieldDelegate, CLLocationManagerDelegate>
 @property (nonatomic, retain) NSString *uploadToken;
 @property (nonatomic, retain) NSString *prepath;
 @property (nonatomic, retain) NSString *path;
+
+@property (nonatomic, retain) CLLocationManager *locService;
+@property (nonatomic, assign) CLLocationCoordinate2D gps;
+//@property (nonatomic, assign) CGFloat longitude;
+//@property (nonatomic, assign) CGFloat latitude;
+
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *ratioField;
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
@@ -43,6 +50,10 @@
     self.logoImageView.layer.cornerRadius = 4.0f;
 
 //    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
+    
+    self.locService = [[CLLocationManager alloc] init];
+    self.locService.delegate = self;
+//    self.searcher = [[AMapSearchAPI alloc] initWithSearchKey:AK Delegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -203,12 +214,21 @@
     }
 }
 
+
 - (IBAction)createMerchantAction:(id)sender {
     // 创建商家
     NSString *name = self.nameField.text;
-    if (name.length == 0) {
-        //至少需要商家名称
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入商家名称" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    NSString *ratio = self.ratioField.text;
+    NSString *address = self.addressField.text;
+    if ((name.length == 0) || (ratio.length == 0) || (address.length == 0)) {
+        //至少需要商家名称，ratio，位置
+        NSString *title = @"请输入商家名称";
+        if (ratio.length == 0) {
+            title = @"请输入消费金额换积分比例";
+        }else if(address.length == 0) {
+            title = @"请输入商家地址";
+        }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             //
             [self dismissViewControllerAnimated:alert completion:nil];
@@ -221,7 +241,68 @@
             //进入商家主页
             [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchantAfterCreate", @"destine", nil]];
         };
-        [action doCreateMerchantOfAccount:name logo:(self.path ? self.path : @"default")];
+        [action doCreateMerchantOfAccount:name logo:(self.path ? self.path : @"default") ratio:[ratio integerValue] address:address longitude:self.gps.longitude latitude:self.gps.latitude];
     }
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    // 正向编码，地址 ＝> gps
+}
+
+- (IBAction)clickLocationButton:(id)sender {
+    [self.locService requestWhenInUseAuthorization];
+    if (![CLLocationManager locationServicesEnabled]) {
+        // 提示
+    }else{
+        self.locService.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locService.distanceFilter = 100.0f;
+        [self.locService startUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    self.gps = locations[0].coordinate;
+    CLGeocoder *revGeo = [[CLGeocoder alloc] init];
+    
+    //反向地理编码
+    [revGeo reverseGeocodeLocation:locations[0] completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (!error && [placemarks count] > 0) {
+            NSDictionary *dict = [[placemarks objectAtIndex:0] addressDictionary];
+            DLog(@"street address: %@",[dict objectForKey:@"Street"]);
+        }else{
+            // 反向编码失败
+            DLog(@"ERROR: %@", error);
+        }
+    }];
+}
+
+// 定位失败
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    DLog(@"heeh");
+}
+
+////实现逆地理编码的回调函数
+//- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
+//{
+//    if(response.regeocode != nil)
+//    {
+//        //通过AMapReGeocodeSearchResponse对象处理搜索结果
+//        //        NSString *result = [NSString stringWithFormat:@"ReGeocode: %@", response.regeocode];
+//        //        NSLog(@"ReGeo: %@", result);
+//        
+//        AMapAddressComponent *address = response.regeocode.addressComponent;
+//        NSString *province = address.province;
+//        if ([province isEqualToString:@"上海市"] || [province isEqualToString:@"北京市"] || [province isEqualToString:@"天津市"] || [province isEqualToString:@"重庆市"] ) {
+//            self.accuratePosition = [NSString stringWithFormat:@"%@%@", province, address.district];
+//            
+//        } else {
+//            self.accuratePosition = [NSString stringWithFormat:@"%@%@", province, address.city];
+//        }
+//        
+//    }else{
+//        self.accuratePosition = @"汪星球";
+//    }
+//    [self.positionButton setTitle:self.accuratePosition forState:UIControlStateNormal];
+//}
+
 @end

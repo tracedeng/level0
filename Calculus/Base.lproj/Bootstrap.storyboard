@@ -220,12 +220,18 @@
                                                                 <constraint firstAttribute="width" constant="30" id="jjy-I1-MUQ"/>
                                                             </constraints>
                                                             <state key="normal" title="Button" image="icon-activity"/>
+                                                            <connections>
+                                                                <action selector="clickLocationButton:" destination="h9h-JQ-jwn" eventType="touchUpInside" id="oA0-rt-LxT"/>
+                                                            </connections>
                                                         </button>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnU-QE-ydi">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnU-QE-ydi">
                                                             <rect key="frame" x="40" y="0.0" width="530" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="h9h-JQ-jwn" id="P58-6V-nHX"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
