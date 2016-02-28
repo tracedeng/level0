@@ -19,6 +19,8 @@
 @property (nonatomic, retain) NSString *prepath;
 @property (nonatomic, retain) NSString *path;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *ratioField;
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 - (IBAction)createMerchantAction:(id)sender;
 @end
@@ -41,7 +43,6 @@
     self.logoImageView.layer.cornerRadius = 4.0f;
 
 //    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,32 +53,38 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return 1 == section ? 2 : 1;
+    if (section == 1) {
+        return 2;
+    }
     return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    if ((section == 0) || (section == 1)) {
-//        return 0.01f;
-//    }
+    if (section == 3) {
+        return 0.0f;
+    }
     return 0.01f;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if (section == 0) {
-        return 8.0f;
-    }
-    return 0.0f;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return 8.0f;
+//    }
+//    return 0.0f;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         return 150.0f;
+//    }
     }else if (1 == indexPath.section) {
+        return 50.0f;
+    }else if (2 == indexPath.section) {
         return 50.0f;
     }
     return 44.0f;
@@ -125,21 +132,14 @@
             //商家名称
         }
     }else if (1 == indexPath.section) {
-        [self.nameField becomeFirstResponder];
-    }else if (2 == indexPath.section) {
-        // 创建商家
-//        NSString *name = self.nameField.text;
-//        if (name.length == 0) {
-//            //至少需要商家名称
-//        }else{
-//            ActionMMaterial *action = [[ActionMMaterial alloc] init];
-//            action.afterCreateMerchantOfAccount = ^(NSString *merchant) {
-//                //进入商家主页
-//                [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchant", @"destine", nil]];
-//            };
-//            [action doCreateMerchantOfAccount:name logo:self.path];
-//        }
-//        self.path = self.prepath;
+        if (0 == indexPath.row) {
+//            [self.ratioField resignFirstResponder];
+            [self.nameField becomeFirstResponder];
+        }else if (1 == indexPath.row) {
+//            [self.nameField resignFirstResponder];
+            [self.ratioField becomeFirstResponder];
+        }
+    }else if (3 == indexPath.section) {
         [self createMerchantAction:nil];
     }
 }
