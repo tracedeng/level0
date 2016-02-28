@@ -22,9 +22,6 @@
 		193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37831C1BE8510017CC9C /* BootstrapController.m */; };
 		193C378A1C1BE9CA0017CC9C /* Merchant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37881C1BE9CA0017CC9C /* Merchant.storyboard */; };
 		193C37AB1C1C23460017CC9C /* Discount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C37A91C1C23460017CC9C /* Discount.storyboard */; };
-		193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37AD1C1C23D90017CC9C /* DiscountNavigationController.m */; };
-		193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B01C1C24170017CC9C /* DiscountTVC.m */; };
-		193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37B31C1C254C0017CC9C /* DiscountCell.m */; };
 		193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37E41C1D4A070017CC9C /* RoleManager.m */; };
 		193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380B1C1D94DE0017CC9C /* MKMapView+MapViewUtil.m */; };
 		193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C380D1C1D94DE0017CC9C /* NSDate+Helpers.m */; };
@@ -84,10 +81,7 @@
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
 		19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */; };
 		19CAA8E51C39454A00010F68 /* ActionDiscount.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E41C39454A00010F68 /* ActionDiscount.m */; };
-		19CAA8E91C3A3B0C00010F68 /* BuyDiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */; };
-		19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */; };
 		19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */; };
-		19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */; };
 		19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */; };
 		19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CBBBFB1C21B4EC002A920E /* ActionMaterial.m */; };
 		19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CBBBFD1C21BE13002A920E /* libz.tbd */; };
@@ -130,11 +124,17 @@
 		19EB0FBF1C7EFB9D00FECDF5 /* BalanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FBE1C7EFB9D00FECDF5 /* BalanceVC.m */; };
 		19EB0FC21C7F027B00FECDF5 /* BalanceHistoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FC11C7F027B00FECDF5 /* BalanceHistoryTVC.m */; };
 		19EB0FC51C7F032500FECDF5 /* BalanceHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FC41C7F032500FECDF5 /* BalanceHistoryCell.m */; };
+		19EB0FD91C80824A00FECDF5 /* BuyDiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FC81C80824A00FECDF5 /* BuyDiscountCell.m */; };
+		19EB0FDA1C80824A00FECDF5 /* BuyDiscountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FCA1C80824A00FECDF5 /* BuyDiscountController.m */; };
+		19EB0FDB1C80824A00FECDF5 /* BuyDiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FCC1C80824A00FECDF5 /* BuyDiscountTVC.m */; };
+		19EB0FDC1C80824A00FECDF5 /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FCF1C80824A00FECDF5 /* DiscountCell.m */; };
+		19EB0FDD1C80824A00FECDF5 /* DiscountDetailsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD11C80824A00FECDF5 /* DiscountDetailsTVC.m */; };
+		19EB0FDE1C80824A00FECDF5 /* DiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD31C80824A00FECDF5 /* DiscountTVC.m */; };
+		19EB0FDF1C80824A00FECDF5 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD51C80824A00FECDF5 /* FullscreenImageVC.m */; };
+		19EB0FE01C80824A00FECDF5 /* DiscountNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD81C80824A00FECDF5 /* DiscountNavigationController.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
-		B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */; };
-		B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
@@ -175,12 +175,6 @@
 		193C37831C1BE8510017CC9C /* BootstrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BootstrapController.m; sourceTree = "<group>"; };
 		193C37891C1BE9CA0017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Merchant.storyboard; sourceTree = "<group>"; };
 		193C37AA1C1C23460017CC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Calculus/Base.lproj/Discount.storyboard; sourceTree = SOURCE_ROOT; };
-		193C37AC1C1C23D90017CC9C /* DiscountNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountNavigationController.h; sourceTree = "<group>"; };
-		193C37AD1C1C23D90017CC9C /* DiscountNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountNavigationController.m; sourceTree = "<group>"; };
-		193C37AF1C1C24170017CC9C /* DiscountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountTVC.h; sourceTree = "<group>"; };
-		193C37B01C1C24170017CC9C /* DiscountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountTVC.m; sourceTree = "<group>"; };
-		193C37B21C1C254C0017CC9C /* DiscountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountCell.h; sourceTree = "<group>"; };
-		193C37B31C1C254C0017CC9C /* DiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCell.m; sourceTree = "<group>"; };
 		193C37E31C1D4A070017CC9C /* RoleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleManager.h; sourceTree = "<group>"; };
 		193C37E41C1D4A070017CC9C /* RoleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleManager.m; sourceTree = "<group>"; };
 		193C380A1C1D94DE0017CC9C /* MKMapView+MapViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+MapViewUtil.h"; sourceTree = "<group>"; };
@@ -293,14 +287,8 @@
 		19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMActivity.m; path = Merchant/Tab2/Model/ActionMActivity.m; sourceTree = "<group>"; };
 		19CAA8E31C39454A00010F68 /* ActionDiscount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionDiscount.h; path = Model/ActionDiscount.h; sourceTree = "<group>"; };
 		19CAA8E41C39454A00010F68 /* ActionDiscount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionDiscount.m; path = Model/ActionDiscount.m; sourceTree = "<group>"; };
-		19CAA8E71C3A3B0C00010F68 /* BuyDiscountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountTVC.h; sourceTree = "<group>"; };
-		19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountTVC.m; sourceTree = "<group>"; };
-		19CAA8EA1C3A3B2200010F68 /* BuyDiscountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountCell.h; sourceTree = "<group>"; };
-		19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountCell.m; sourceTree = "<group>"; };
 		19CAA8ED1C3BA28700010F68 /* DiscountIntroduceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountIntroduceController.h; sourceTree = "<group>"; };
 		19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountIntroduceController.m; sourceTree = "<group>"; };
-		19CAA8F01C3BA9B700010F68 /* BuyDiscountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountController.h; sourceTree = "<group>"; };
-		19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountController.m; sourceTree = "<group>"; };
 		19CAA8F91C3F5E1A00010F68 /* ActionVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionVoucher.h; path = Model/ActionVoucher.h; sourceTree = "<group>"; };
 		19CAA8FA1C3F5E1A00010F68 /* ActionVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionVoucher.m; path = Model/ActionVoucher.m; sourceTree = "<group>"; };
 		19CBBBFA1C21B4EC002A920E /* ActionMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMaterial.h; path = Model/ActionMaterial.h; sourceTree = "<group>"; };
@@ -383,13 +371,25 @@
 		19EB0FC11C7F027B00FECDF5 /* BalanceHistoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceHistoryTVC.m; sourceTree = "<group>"; };
 		19EB0FC31C7F032500FECDF5 /* BalanceHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceHistoryCell.h; sourceTree = "<group>"; };
 		19EB0FC41C7F032500FECDF5 /* BalanceHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceHistoryCell.m; sourceTree = "<group>"; };
+		19EB0FC71C80824A00FECDF5 /* BuyDiscountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountCell.h; sourceTree = "<group>"; };
+		19EB0FC81C80824A00FECDF5 /* BuyDiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountCell.m; sourceTree = "<group>"; };
+		19EB0FC91C80824A00FECDF5 /* BuyDiscountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountController.h; sourceTree = "<group>"; };
+		19EB0FCA1C80824A00FECDF5 /* BuyDiscountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountController.m; sourceTree = "<group>"; };
+		19EB0FCB1C80824A00FECDF5 /* BuyDiscountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyDiscountTVC.h; sourceTree = "<group>"; };
+		19EB0FCC1C80824A00FECDF5 /* BuyDiscountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyDiscountTVC.m; sourceTree = "<group>"; };
+		19EB0FCE1C80824A00FECDF5 /* DiscountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountCell.h; sourceTree = "<group>"; };
+		19EB0FCF1C80824A00FECDF5 /* DiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCell.m; sourceTree = "<group>"; };
+		19EB0FD01C80824A00FECDF5 /* DiscountDetailsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountDetailsTVC.h; sourceTree = "<group>"; };
+		19EB0FD11C80824A00FECDF5 /* DiscountDetailsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountDetailsTVC.m; sourceTree = "<group>"; };
+		19EB0FD21C80824A00FECDF5 /* DiscountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountTVC.h; sourceTree = "<group>"; };
+		19EB0FD31C80824A00FECDF5 /* DiscountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountTVC.m; sourceTree = "<group>"; };
+		19EB0FD41C80824A00FECDF5 /* FullscreenImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenImageVC.h; sourceTree = "<group>"; };
+		19EB0FD51C80824A00FECDF5 /* FullscreenImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenImageVC.m; sourceTree = "<group>"; };
+		19EB0FD71C80824A00FECDF5 /* DiscountNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountNavigationController.h; sourceTree = "<group>"; };
+		19EB0FD81C80824A00FECDF5 /* DiscountNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountNavigationController.m; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeSessionHeader.h; sourceTree = "<group>"; };
 		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
-		B517E9DA1C59144F00DD66B2 /* DiscountDetailsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountDetailsTVC.h; sourceTree = "<group>"; };
-		B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountDetailsTVC.m; sourceTree = "<group>"; };
-		B53D37631C6D742400AA9A93 /* FullscreenImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenImageVC.h; sourceTree = "<group>"; };
-		B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenImageVC.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
 		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
@@ -528,26 +528,12 @@
 		193C37671C1BE2B70017CC9C /* Tab2 */ = {
 			isa = PBXGroup;
 			children = (
+				19EB0FD61C80824A00FECDF5 /* Main */,
 				19CAA8E61C39455000010F68 /* Model */,
-				193C37A91C1C23460017CC9C /* Discount.storyboard */,
-				193C37AC1C1C23D90017CC9C /* DiscountNavigationController.h */,
-				193C37AD1C1C23D90017CC9C /* DiscountNavigationController.m */,
-				193C37AF1C1C24170017CC9C /* DiscountTVC.h */,
-				193C37B01C1C24170017CC9C /* DiscountTVC.m */,
-				193C37B21C1C254C0017CC9C /* DiscountCell.h */,
-				193C37B31C1C254C0017CC9C /* DiscountCell.m */,
+				19EB0FC61C80824A00FECDF5 /* Buy */,
+				19EB0FCD1C80824A00FECDF5 /* Discount */,
 				19CAA8ED1C3BA28700010F68 /* DiscountIntroduceController.h */,
 				19CAA8EE1C3BA28700010F68 /* DiscountIntroduceController.m */,
-				19CAA8F01C3BA9B700010F68 /* BuyDiscountController.h */,
-				19CAA8F11C3BA9B700010F68 /* BuyDiscountController.m */,
-				19CAA8E71C3A3B0C00010F68 /* BuyDiscountTVC.h */,
-				19CAA8E81C3A3B0C00010F68 /* BuyDiscountTVC.m */,
-				19CAA8EA1C3A3B2200010F68 /* BuyDiscountCell.h */,
-				19CAA8EB1C3A3B2200010F68 /* BuyDiscountCell.m */,
-				B517E9DA1C59144F00DD66B2 /* DiscountDetailsTVC.h */,
-				B517E9DB1C59144F00DD66B2 /* DiscountDetailsTVC.m */,
-				B53D37631C6D742400AA9A93 /* FullscreenImageVC.h */,
-				B53D37641C6D742400AA9A93 /* FullscreenImageVC.m */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -1110,6 +1096,44 @@
 			path = Material;
 			sourceTree = "<group>";
 		};
+		19EB0FC61C80824A00FECDF5 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0FC71C80824A00FECDF5 /* BuyDiscountCell.h */,
+				19EB0FC81C80824A00FECDF5 /* BuyDiscountCell.m */,
+				19EB0FC91C80824A00FECDF5 /* BuyDiscountController.h */,
+				19EB0FCA1C80824A00FECDF5 /* BuyDiscountController.m */,
+				19EB0FCB1C80824A00FECDF5 /* BuyDiscountTVC.h */,
+				19EB0FCC1C80824A00FECDF5 /* BuyDiscountTVC.m */,
+			);
+			path = Buy;
+			sourceTree = "<group>";
+		};
+		19EB0FCD1C80824A00FECDF5 /* Discount */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0FD21C80824A00FECDF5 /* DiscountTVC.h */,
+				19EB0FD31C80824A00FECDF5 /* DiscountTVC.m */,
+				19EB0FCE1C80824A00FECDF5 /* DiscountCell.h */,
+				19EB0FCF1C80824A00FECDF5 /* DiscountCell.m */,
+				19EB0FD01C80824A00FECDF5 /* DiscountDetailsTVC.h */,
+				19EB0FD11C80824A00FECDF5 /* DiscountDetailsTVC.m */,
+				19EB0FD41C80824A00FECDF5 /* FullscreenImageVC.h */,
+				19EB0FD51C80824A00FECDF5 /* FullscreenImageVC.m */,
+			);
+			path = Discount;
+			sourceTree = "<group>";
+		};
+		19EB0FD61C80824A00FECDF5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				193C37A91C1C23460017CC9C /* Discount.storyboard */,
+				19EB0FD71C80824A00FECDF5 /* DiscountNavigationController.h */,
+				19EB0FD81C80824A00FECDF5 /* DiscountNavigationController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1268,6 +1292,7 @@
 				19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */,
 				19EB0F7D1C7EE62B00FECDF5 /* MAwardApplyCell.m in Sources */,
 				195A12CB1C53BFFA008E7945 /* ApplyCreditTVC.m in Sources */,
+				19EB0FDA1C80824A00FECDF5 /* BuyDiscountController.m in Sources */,
 				197491441C79DA6300784D09 /* SettingTVC.m in Sources */,
 				19EB0F8E1C7EE6C100FECDF5 /* MyOneAwardTVC.m in Sources */,
 				19EB0FC51C7F032500FECDF5 /* BalanceHistoryCell.m in Sources */,
@@ -1288,15 +1313,12 @@
 				19EB0FB31C7EE7C900FECDF5 /* MAssistanceTVC.m in Sources */,
 				193C38371C1D94DE0017CC9C /* PhotoAlbum.m in Sources */,
 				19EB0F781C7EE61B00FECDF5 /* ConsumerAwardTVC.m in Sources */,
-				193C37B41C1C254C0017CC9C /* DiscountCell.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
-				19CAA8EC1C3A3B2200010F68 /* BuyDiscountCell.m in Sources */,
 				19EB0F651C7EE5D300FECDF5 /* MCouponVC.m in Sources */,
 				197491351C79A3D000784D09 /* QRScanToolView.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				19EB0FBB1C7EE84800FECDF5 /* MaterialTVC.m in Sources */,
 				19EB0F761C7EE61B00FECDF5 /* COneAwardTVC.m in Sources */,
-				B53D37651C6D742400AA9A93 /* FullscreenImageVC.m in Sources */,
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				195A12AB1C5370D1008E7945 /* AwardDerivateCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,
@@ -1308,10 +1330,12 @@
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
 				19EB0FB01C7EE7C900FECDF5 /* MerchantNameVC.m in Sources */,
 				193C38341C1D94DE0017CC9C /* ImageFullscreenSVC.m in Sources */,
+				19EB0FD91C80824A00FECDF5 /* BuyDiscountCell.m in Sources */,
 				195A12C41C537297008E7945 /* MerchantSelectCell.m in Sources */,
 				19EB0F6C1C7EE5E300FECDF5 /* MAwardDerivateCVC.m in Sources */,
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
 				195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */,
+				19EB0FDE1C80824A00FECDF5 /* DiscountTVC.m in Sources */,
 				B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */,
 				197491361C79A3D000784D09 /* QRScanView.m in Sources */,
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
@@ -1321,10 +1345,10 @@
 				B5EDC3981C3921EC002E2833 /* MActivityCell.m in Sources */,
 				19339AD21C23DC6100791A9E /* CreateMerchantTVC.m in Sources */,
 				193C38351C1D94DE0017CC9C /* ImageListCell.m in Sources */,
-				193C37B11C1C24170017CC9C /* DiscountTVC.m in Sources */,
 				19EB0F811C7EE66B00FECDF5 /* MerchantMain.m in Sources */,
 				B5EDC3B31C3E348F002E2833 /* MerchantActivityTVC.m in Sources */,
 				19EB0FAC1C7EE7C900FECDF5 /* MMeNavigationController.m in Sources */,
+				19EB0FDC1C80824A00FECDF5 /* DiscountCell.m in Sources */,
 				19EB0F6B1C7EE5E300FECDF5 /* MAwardDerivateCell.m in Sources */,
 				19EB0FAF1C7EE7C900FECDF5 /* MerchantEmailVC.m in Sources */,
 				195A12A91C5370D1008E7945 /* AwardDerivateCVC.m in Sources */,
@@ -1344,13 +1368,12 @@
 				195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */,
+				19EB0FDF1C80824A00FECDF5 /* FullscreenImageVC.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */,
-				19CAA8F21C3BA9B700010F68 /* BuyDiscountController.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				19EB0FAB1C7EE7C900FECDF5 /* MMeController.m in Sources */,
 				19EB0F5F1C7EE57300FECDF5 /* AccountRegisterController.m in Sources */,
-				19CAA8E91C3A3B0C00010F68 /* BuyDiscountTVC.m in Sources */,
 				195A12C21C537297008E7945 /* CreditExchangeTVC.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
 				1974914A1C79DA9E00784D09 /* MeNavigationController.m in Sources */,
@@ -1361,21 +1384,22 @@
 				19339AD91C23E4C000791A9E /* AwardManagerController.m in Sources */,
 				19EB0F8D1C7EE6C100FECDF5 /* MyOneAwardCell.m in Sources */,
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
-				193C37AE1C1C23D90017CC9C /* DiscountNavigationController.m in Sources */,
 				197491521C79DAB600784D09 /* VoucherTVC.m in Sources */,
+				19EB0FDD1C80824A00FECDF5 /* DiscountDetailsTVC.m in Sources */,
 				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
 				19EB0F7E1C7EE62B00FECDF5 /* MAwardApplyTVC.m in Sources */,
 				19EB0F5A1C7EE55500FECDF5 /* SKeyManager.m in Sources */,
 				19EB0F581C7EE55500FECDF5 /* MaterialManager.m in Sources */,
 				19EB0F8C1C7EE6C100FECDF5 /* MyAwardTVC.m in Sources */,
 				19EB0FBF1C7EFB9D00FECDF5 /* BalanceVC.m in Sources */,
+				19EB0FE01C80824A00FECDF5 /* DiscountNavigationController.m in Sources */,
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
-				B517E9DC1C59144F00DD66B2 /* DiscountDetailsTVC.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19EB0F8B1C7EE6C100FECDF5 /* MyAwardCell.m in Sources */,
 				19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */,
 				19EB0F771C7EE61B00FECDF5 /* ConsumerAwardCell.m in Sources */,
 				19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */,
+				19EB0FDB1C80824A00FECDF5 /* BuyDiscountTVC.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,
 				193C38411C1D95920017CC9C /* GTMBase64.m in Sources */,
@@ -1411,6 +1435,7 @@
 				193C37AA1C1C23460017CC9C /* Base */,
 			);
 			name = Discount.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1942C3731BE89F6700C2DCF4 /* Consumer.storyboard */ = {

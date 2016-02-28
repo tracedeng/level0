@@ -46,7 +46,7 @@
         self.activityTitleLBL.text = [activityInfo objectForKey:@"t"];
 //        self.activityMerchantLBL.text = [activityInfo objectForKey:@"et"];
         self.activityExpireLBL.text = [[activityInfo objectForKey:@"et"] substringToIndex:10];
-        self.activityCreditLBL.text = [NSString stringWithFormat:@"%ld", [[activityInfo objectForKey:@"cr"] integerValue]];
+        self.activityCreditLBL.text = [[activityInfo objectForKey:@"cr"] stringValue];
         self.activityIntroduceLBL.text = [activityInfo objectForKey:@"in"];
     }
 }
