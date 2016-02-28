@@ -60,7 +60,7 @@
     };
     
     self.buyButton.clipsToBounds = YES;
-    self.buyButton.layer.cornerRadius = 4.0f;
+//    self.buyButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
