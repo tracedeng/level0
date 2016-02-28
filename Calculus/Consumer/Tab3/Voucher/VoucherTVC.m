@@ -17,6 +17,7 @@
 
 @interface VoucherTVC ()
 @property (nonatomic, retain) NSMutableArray *voucherList;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
 
 @end
 
@@ -25,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"nocoupon"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -56,12 +62,16 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        
         if ([voucherList count] == 0) {
-            UIImageView *defaultimage =[[UIImageView alloc]init];
-            defaultimage.image=[UIImage imageNamed:@"nocoupon"];
-            defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
-            [self.view addSubview:defaultimage];
+            // TODO 处理以上警告
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
         }
+
+        
     };
     voucher.afterQueryVoucherFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
