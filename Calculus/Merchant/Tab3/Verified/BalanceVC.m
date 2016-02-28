@@ -7,6 +7,8 @@
 //
 
 #import "BalanceVC.h"
+#import "UIColor+Extension.h"
+
 
 @interface BalanceVC ()
 @property (weak, nonatomic) IBOutlet UIImageView *balanceImageView;
@@ -25,7 +27,10 @@
     self.balanceImageView.layer.cornerRadius = 4.0f;
 
     self.chargeButton.layer.cornerRadius = 4.0f;
+    self.withdrawalsButton.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
+    self.withdrawalsButton.layer.borderWidth = 1.0f;
     self.withdrawalsButton.layer.cornerRadius = 4.0f;
+
 }
 
 - (void)didReceiveMemoryWarning {

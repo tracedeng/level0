@@ -92,7 +92,7 @@
         if (0 == indexPath.row) {
             //头像，right detail，修改accessory图标
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.material objectForKey:@"logo"]];
-            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
+            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-merchant-default"] ];
         }
     }else if (indexPath.section == 1){
         switch (indexPath.row) {

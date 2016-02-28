@@ -13,6 +13,8 @@
 #import "MerchantSelectTVC.h"
 #import "CreditExchangeSessionHeader.h"
 
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
 
 @interface CreditExchangeTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
@@ -54,12 +56,21 @@
     credit.afterConsumerQueryOtherCreditList = ^(NSArray *creditList) {
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
+        
         [self.tableView reloadData];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
+        }
+        if ([self.creditList count] == nil ||  [creditList count] == 0) {
+            NSLog(@"nocreditlogo");
+            
+            UIImageView *defaultimage =[[UIImageView alloc]init];
+            defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
+            defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+            [self.view addSubview:defaultimage];
         }
     };
     credit.afterConsumerQueryOtherCreditListFailed = ^(NSString *message) {

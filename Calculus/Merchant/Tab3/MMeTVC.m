@@ -45,8 +45,8 @@
     
     //    圆角
     self.merchantAvatarIMG.clipsToBounds = YES;
-    //    self.avatarImageView.layer.cornerRadius = 4.0f;
-    self.merchantAvatarIMG.layer.cornerRadius = self.merchantAvatarIMG.frame.size.height / 2.0;
+    self.merchantAvatarIMG.layer.cornerRadius = 4.0f;
+//    self.merchantAvatarIMG.layer.cornerRadius = self.merchantAvatarIMG.frame.size.height / 2.0;
     
     ActionMMaterial *action = [[ActionMMaterial alloc] init];
     action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
@@ -63,7 +63,7 @@
             }
             
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/200/h/200", QINIUURL, [material objectForKey:@"logo"]];
-            [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-merchant"]];
+            [self.merchantAvatarIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-merchant-default"]];
             
             
             //保存
@@ -146,12 +146,11 @@
             }
             case 2:
             {
-//TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
-                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
-                    cell.userInteractionEnabled = TRUE;
-                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
-                    cell.userInteractionEnabled = FALSE;
-                }
+//                if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
+//                    cell.userInteractionEnabled = TRUE;
+//                } else if([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+//                    cell.userInteractionEnabled = FALSE;
+//                }
                 break;
             }
             default:
@@ -171,7 +170,6 @@
                }
                case 2:
                {
-                   cell.userInteractionEnabled = FALSE;
 
                    //TODO CHECKOUT IF THE MERCHANT IS VERIFIED--the follow solution need capture material.v by login action
                    if ([[self.material objectForKey:@"v"] isEqualToString:@"yes"]) {
