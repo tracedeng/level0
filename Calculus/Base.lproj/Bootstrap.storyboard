@@ -134,20 +134,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-Nk-CoJ">
-                                                    <rect key="frame" x="8" y="14" width="574" height="17"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-Nk-CoJ">
+                                                    <rect key="frame" x="15" y="14" width="570" height="17"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入商家名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wap-sP-nKV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="449" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="445" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家名称" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-oB-bP3">
-                                                            <rect key="frame" x="454" y="0.0" width="120" height="17"/>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家名称" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-oB-bP3">
+                                                            <rect key="frame" x="450" y="0.0" width="120" height="17"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="Eh4-GW-GVc"/>
+                                                                <constraint firstAttribute="width" constant="120" id="oLU-R3-xuL"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -156,42 +156,76 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lJW-Nk-CoJ" secondAttribute="trailing" constant="10" id="Lyz-ni-C4s"/>
+                                                <constraint firstAttribute="trailing" secondItem="lJW-Nk-CoJ" secondAttribute="trailing" constant="15" id="Lyz-ni-C4s"/>
                                                 <constraint firstItem="lJW-Nk-CoJ" firstAttribute="centerY" secondItem="Tji-bl-Wk2" secondAttribute="centerY" id="NRu-ei-asz"/>
-                                                <constraint firstItem="lJW-Nk-CoJ" firstAttribute="leading" secondItem="Tji-bl-Wk2" secondAttribute="leadingMargin" id="xFj-L5-N60"/>
+                                                <constraint firstItem="lJW-Nk-CoJ" firstAttribute="leading" secondItem="Tji-bl-Wk2" secondAttribute="leading" constant="15" id="xFj-L5-N60"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5PO-jK-cVX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lbn-vZ-bh1">
                                         <rect key="frame" x="0.0" y="215" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lbn-vZ-bh1" id="kBx-p0-3u0">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cvC-b5-app">
+                                                    <rect key="frame" x="15" y="14" width="570" height="17"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入消费换积分比率 (元 : 1积分)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0t-m0-M1j">
+                                                            <rect key="frame" x="0.0" y="0.0" width="445" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="元" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHI-rm-lna">
+                                                            <rect key="frame" x="450" y="0.0" width="120" height="17"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="tWL-dM-qpR"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cvC-b5-app" secondAttribute="trailing" constant="15" id="1BF-92-C7E"/>
+                                                <constraint firstItem="cvC-b5-app" firstAttribute="centerY" secondItem="kBx-p0-3u0" secondAttribute="centerY" id="fIP-xF-U07"/>
+                                                <constraint firstItem="cvC-b5-app" firstAttribute="leading" secondItem="kBx-p0-3u0" secondAttribute="leading" constant="15" id="qpi-EA-4fe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="7a3-J8-XcR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5PO-jK-cVX">
+                                        <rect key="frame" x="0.0" y="295" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5PO-jK-cVX" id="Pua-DQ-i7V">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u14-aq-aFo">
-                                                    <rect key="frame" x="15" y="14" width="570" height="17"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u14-aq-aFo">
+                                                    <rect key="frame" x="15" y="7" width="570" height="30"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入商家名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccM-SS-8CF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="282.5" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家地址" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnU-QE-ydi">
-                                                            <rect key="frame" x="287.5" y="0.0" width="282.5" height="17"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-Xm-xUn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="NWk-0O-Zws"/>
+                                                                <constraint firstAttribute="height" constant="30" id="8GT-rY-vob"/>
+                                                                <constraint firstAttribute="width" constant="30" id="jjy-I1-MUQ"/>
                                                             </constraints>
+                                                            <state key="normal" title="Button" image="icon-activity"/>
+                                                        </button>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnU-QE-ydi">
+                                                            <rect key="frame" x="40" y="0.0" width="530" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="NWk-0O-Zws"/>
-                                                                </mask>
-                                                            </variation>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -204,68 +238,32 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="u3a-P4-4RQ">
-                                        <rect key="frame" x="0.0" y="259" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u3a-P4-4RQ" id="eLW-XG-PVf">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BSM-ox-jUh">
-                                                    <rect key="frame" x="8" y="14" width="574" height="17"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入消费换积分比例" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nx-hD-BDp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="449" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="商家名称" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-Ve-X2J">
-                                                            <rect key="frame" x="454" y="0.0" width="120" height="17"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="SjH-qh-LEP"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="BSM-ox-jUh" firstAttribute="leading" secondItem="eLW-XG-PVf" secondAttribute="leadingMargin" id="4e4-xR-gHX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BSM-ox-jUh" secondAttribute="trailing" constant="10" id="w1K-oK-wPp"/>
-                                                <constraint firstItem="BSM-ox-jUh" firstAttribute="centerY" secondItem="eLW-XG-PVf" secondAttribute="centerY" id="znK-rv-lRB"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="7a3-J8-XcR">
+                            <tableViewSection id="lDt-q0-i59">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tKQ-bl-aDb">
-                                        <rect key="frame" x="0.0" y="339" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZL2-ci-zqZ">
+                                        <rect key="frame" x="0.0" y="375" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKQ-bl-aDb" id="4aD-Xt-rtV">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZL2-ci-zqZ" id="ENa-sb-Fgp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK7-Sh-iYs">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49q-tZ-IiH">
                                                     <rect key="frame" x="18" y="7" width="564" height="30"/>
                                                     <state key="normal" title="创建商家">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="createMerchantAction:" destination="h9h-JQ-jwn" eventType="touchUpInside" id="o64-gf-scM"/>
+                                                        <action selector="createMerchantAction:" destination="h9h-JQ-jwn" eventType="touchUpInside" id="bad-FA-3fN"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pK7-Sh-iYs" firstAttribute="centerY" secondItem="4aD-Xt-rtV" secondAttribute="centerY" id="HlJ-Dp-K8d"/>
-                                                <constraint firstItem="pK7-Sh-iYs" firstAttribute="centerX" secondItem="4aD-Xt-rtV" secondAttribute="centerX" id="bNK-Rg-8ZK"/>
-                                                <constraint firstItem="pK7-Sh-iYs" firstAttribute="leading" secondItem="4aD-Xt-rtV" secondAttribute="leadingMargin" constant="10" id="mic-Jc-mPY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="pK7-Sh-iYs" secondAttribute="trailing" constant="10" id="u7d-EM-V8M"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="49q-tZ-IiH" secondAttribute="trailing" constant="10" id="TOp-1i-GwY"/>
+                                                <constraint firstItem="49q-tZ-IiH" firstAttribute="leading" secondItem="ENa-sb-Fgp" secondAttribute="leadingMargin" constant="10" id="VFr-Mj-nZX"/>
+                                                <constraint firstItem="49q-tZ-IiH" firstAttribute="centerY" secondItem="ENa-sb-Fgp" secondAttribute="centerY" id="bIs-NA-cyo"/>
+                                                <constraint firstItem="49q-tZ-IiH" firstAttribute="centerX" secondItem="ENa-sb-Fgp" secondAttribute="centerX" id="dNQ-l9-rs9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -278,8 +276,10 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="addressField" destination="MnU-QE-ydi" id="0UG-7v-oE2"/>
                         <outlet property="logoImageView" destination="OVB-ay-6MF" id="1iA-Ej-uNn"/>
                         <outlet property="nameField" destination="cHh-oB-bP3" id="Ja8-0o-8T4"/>
+                        <outlet property="ratioField" destination="nHI-rm-lna" id="EZf-Zi-Zgm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6V-0U-rzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,6 +340,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon-activity" width="30" height="30"/>
         <image name="icon-add" width="150" height="150"/>
         <image name="icon-cu" width="540" height="324"/>
     </resources>
