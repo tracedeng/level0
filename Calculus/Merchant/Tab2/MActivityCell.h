@@ -10,5 +10,6 @@
 
 @interface MActivityCell : UITableViewCell
 @property (nonatomic, retain) NSMutableDictionary *activityInfo;
+@property (nonatomic, retain) NSString *merchantName;
 
 @end

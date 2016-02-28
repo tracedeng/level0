@@ -44,7 +44,7 @@
         [self.activityPosterIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
         
         self.activityTitleLBL.text = [activityInfo objectForKey:@"t"];
-//        self.activityMerchantLBL.text = [activityInfo objectForKey:@"et"];
+        self.activityMerchantLBL.text = self.merchantName;
         self.activityExpireLBL.text = [[activityInfo objectForKey:@"et"] substringToIndex:10];
         self.activityCreditLBL.text = [[activityInfo objectForKey:@"cr"] stringValue];
         self.activityIntroduceLBL.text = [activityInfo objectForKey:@"in"];

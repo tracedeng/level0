@@ -459,10 +459,12 @@
                         <outlet property="activityIMG" destination="aNk-gA-576" id="QUz-Eg-sAx"/>
                         <outlet property="address" destination="RXx-M1-EbH" id="E8w-dQ-MGG"/>
                         <outlet property="buyButton" destination="DNv-qX-haO" id="BM5-On-w4o"/>
+                        <outlet property="call" destination="38b-ck-QeV" id="zu4-PE-R6U"/>
                         <outlet property="credit" destination="Ll2-vX-2db" id="eon-PV-dG8"/>
                         <outlet property="detail" destination="UY9-DD-eL3" id="VBt-fk-B9z"/>
                         <outlet property="heading" destination="G6F-Wb-vkN" id="rqV-iE-lM3"/>
                         <outlet property="name" destination="NXh-e7-XAe" id="9yG-pG-k9f"/>
+                        <outlet property="volume" destination="EG4-kx-NYV" id="Lc5-0V-tiY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jh-nt-zyn" userLabel="First Responder" sceneMemberID="firstResponder"/>

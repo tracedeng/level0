@@ -85,10 +85,10 @@
         switch (self.type) {
             case EQUERYMERCHANTACTIVITY:
             {
-                NSMutableArray *result = [responseObject objectForKey:@"r"];
+                NSDictionary *result = [responseObject objectForKey:@"r"];
                 if (self.afterQueryMerchantActivity) {
-                    NSMutableArray *activity = [result count] > 0 ? result : nil;
-                    self.afterQueryMerchantActivity(activity);
+//                    NSMutableArray *activity = [result count] > 0 ? result : nil;
+                    self.afterQueryMerchantActivity(result);
                 }
                 break;
             }
