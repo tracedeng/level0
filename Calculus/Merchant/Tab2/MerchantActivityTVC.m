@@ -104,8 +104,8 @@
     MActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MActivityCell" forIndexPath:indexPath];
 
     // Configure the cell...
-    cell.activityInfo = [self.activityList objectAtIndex:indexPath.row];
     cell.merchantName = self.merchantName;
+    cell.activityInfo = [self.activityList objectAtIndex:indexPath.row];
     
     return cell;
 }

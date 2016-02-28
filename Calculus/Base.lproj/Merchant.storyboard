@@ -372,7 +372,7 @@
                             </fragment>
                             <fragment content="...">
                                 <attributes>
-                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <font key="NSFont" metaFont="controlContent" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
                             </fragment>
@@ -524,7 +524,7 @@
                             </fragment>
                             <fragment content="......">
                                 <attributes>
-                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <font key="NSFont" metaFont="controlContent" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
                             </fragment>
@@ -764,8 +764,8 @@
                                     <mask key="constraints">
                                         <exclude reference="MBa-3L-ibc"/>
                                         <exclude reference="Y7w-UA-iVW"/>
-                                        <exclude reference="XFg-8q-5qp"/>
                                         <exclude reference="GFH-VF-YkM"/>
+                                        <exclude reference="XFg-8q-5qp"/>
                                         <exclude reference="txf-x3-XQs"/>
                                     </mask>
                                 </variation>
@@ -777,8 +777,8 @@
                                     <mask key="constraints">
                                         <include reference="MBa-3L-ibc"/>
                                         <include reference="Y7w-UA-iVW"/>
-                                        <include reference="XFg-8q-5qp"/>
                                         <include reference="GFH-VF-YkM"/>
+                                        <include reference="XFg-8q-5qp"/>
                                         <include reference="txf-x3-XQs"/>
                                     </mask>
                                 </variation>
