@@ -1,5 +1,5 @@
 //
-//  MCouponVC.h
+//  MVoucherVC.h
 //  Calculus
 //
 //  Created by ben on 16/1/9.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCouponVC : UIViewController
+@interface MVoucherVC : UIViewController
 @property (nonatomic, retain) NSDictionary *material;
 
 @end

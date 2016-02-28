@@ -56,14 +56,12 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
-        if ([self.voucherList count] == nil ||  [voucherList count] == 0) {
-            
+        if ([voucherList count] == 0) {
             UIImageView *defaultimage =[[UIImageView alloc]init];
             defaultimage.image=[UIImage imageNamed:@"nocoupon"];
             defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
             [self.view addSubview:defaultimage];
         }
-        
     };
     voucher.afterQueryVoucherFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {

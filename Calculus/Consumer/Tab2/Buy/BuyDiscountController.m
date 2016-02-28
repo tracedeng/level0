@@ -37,6 +37,8 @@
     self.upperQuantity = [[self.discountInfo objectForKey:@"cr"] integerValue];
     self.moreCreditLabel.text = [NSString stringWithFormat:@"%ld", self.upperQuantity];
 
+    self.buyButton.clipsToBounds = YES;
+    self.buyButton.layer.cornerRadius = 4.0f;
     if (0 == self.upperQuantity) {
         self.buyButton.enabled = YES;
         self.buyButton.backgroundColor = [UIColor colorWithHex:0x149BFF alpha:1.0];

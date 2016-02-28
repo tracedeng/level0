@@ -93,7 +93,6 @@
 		19EB0F5A1C7EE55500FECDF5 /* SKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F571C7EE55500FECDF5 /* SKeyManager.m */; };
 		19EB0F5F1C7EE57300FECDF5 /* AccountRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F5C1C7EE57300FECDF5 /* AccountRegisterController.m */; };
 		19EB0F601C7EE57300FECDF5 /* AccountResetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F5E1C7EE57300FECDF5 /* AccountResetPassword.m */; };
-		19EB0F651C7EE5D300FECDF5 /* MCouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F641C7EE5D300FECDF5 /* MCouponVC.m */; };
 		19EB0F6B1C7EE5E300FECDF5 /* MAwardDerivateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F681C7EE5E300FECDF5 /* MAwardDerivateCell.m */; };
 		19EB0F6C1C7EE5E300FECDF5 /* MAwardDerivateCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F6A1C7EE5E300FECDF5 /* MAwardDerivateCVC.m */; };
 		19EB0F751C7EE61B00FECDF5 /* COneAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0F6E1C7EE61B00FECDF5 /* COneAwardCell.m */; };
@@ -130,8 +129,9 @@
 		19EB0FDC1C80824A00FECDF5 /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FCF1C80824A00FECDF5 /* DiscountCell.m */; };
 		19EB0FDD1C80824A00FECDF5 /* DiscountDetailsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD11C80824A00FECDF5 /* DiscountDetailsTVC.m */; };
 		19EB0FDE1C80824A00FECDF5 /* DiscountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD31C80824A00FECDF5 /* DiscountTVC.m */; };
-		19EB0FDF1C80824A00FECDF5 /* FullscreenImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD51C80824A00FECDF5 /* FullscreenImageVC.m */; };
 		19EB0FE01C80824A00FECDF5 /* DiscountNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FD81C80824A00FECDF5 /* DiscountNavigationController.m */; };
+		19EB0FFB1C82C70F00FECDF5 /* MVoucherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FF81C82C70F00FECDF5 /* MVoucherVC.m */; };
+		19EB0FFC1C82C70F00FECDF5 /* ScanVoucherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB0FFA1C82C70F00FECDF5 /* ScanVoucherController.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
@@ -310,8 +310,6 @@
 		19EB0F5C1C7EE57300FECDF5 /* AccountRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountRegisterController.m; path = Account/AccountRegisterController.m; sourceTree = "<group>"; };
 		19EB0F5D1C7EE57300FECDF5 /* AccountResetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountResetPassword.h; path = Account/AccountResetPassword.h; sourceTree = "<group>"; };
 		19EB0F5E1C7EE57300FECDF5 /* AccountResetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountResetPassword.m; path = Account/AccountResetPassword.m; sourceTree = "<group>"; };
-		19EB0F631C7EE5D300FECDF5 /* MCouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCouponVC.h; sourceTree = "<group>"; };
-		19EB0F641C7EE5D300FECDF5 /* MCouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCouponVC.m; sourceTree = "<group>"; };
 		19EB0F671C7EE5E300FECDF5 /* MAwardDerivateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAwardDerivateCell.h; sourceTree = "<group>"; };
 		19EB0F681C7EE5E300FECDF5 /* MAwardDerivateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAwardDerivateCell.m; sourceTree = "<group>"; };
 		19EB0F691C7EE5E300FECDF5 /* MAwardDerivateCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAwardDerivateCVC.h; sourceTree = "<group>"; };
@@ -383,10 +381,12 @@
 		19EB0FD11C80824A00FECDF5 /* DiscountDetailsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountDetailsTVC.m; sourceTree = "<group>"; };
 		19EB0FD21C80824A00FECDF5 /* DiscountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountTVC.h; sourceTree = "<group>"; };
 		19EB0FD31C80824A00FECDF5 /* DiscountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountTVC.m; sourceTree = "<group>"; };
-		19EB0FD41C80824A00FECDF5 /* FullscreenImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullscreenImageVC.h; sourceTree = "<group>"; };
-		19EB0FD51C80824A00FECDF5 /* FullscreenImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullscreenImageVC.m; sourceTree = "<group>"; };
 		19EB0FD71C80824A00FECDF5 /* DiscountNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountNavigationController.h; sourceTree = "<group>"; };
 		19EB0FD81C80824A00FECDF5 /* DiscountNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountNavigationController.m; sourceTree = "<group>"; };
+		19EB0FF71C82C70F00FECDF5 /* MVoucherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVoucherVC.h; sourceTree = "<group>"; };
+		19EB0FF81C82C70F00FECDF5 /* MVoucherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVoucherVC.m; sourceTree = "<group>"; };
+		19EB0FF91C82C70F00FECDF5 /* ScanVoucherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVoucherController.h; sourceTree = "<group>"; };
+		19EB0FFA1C82C70F00FECDF5 /* ScanVoucherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanVoucherController.m; sourceTree = "<group>"; };
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeSessionHeader.h; sourceTree = "<group>"; };
 		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
@@ -582,7 +582,7 @@
 				193C378F1C1BF5360017CC9C /* Main */,
 				19EB0F611C7EE5AC00FECDF5 /* Award */,
 				19EB0F501C7EE3AF00FECDF5 /* Apply */,
-				19EB0F621C7EE5D300FECDF5 /* Coupon */,
+				19EB0FF61C82C70F00FECDF5 /* Voucher */,
 				19EB0F661C7EE5E300FECDF5 /* Derivate */,
 				19339B031C29548700791A9E /* Model */,
 				19339AD71C23E4C000791A9E /* AwardManagerController.h */,
@@ -594,9 +594,9 @@
 		193C378F1C1BF5360017CC9C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				193C37881C1BE9CA0017CC9C /* Merchant.storyboard */,
 				19EB0F7F1C7EE66B00FECDF5 /* MerchantMain.h */,
 				19EB0F801C7EE66B00FECDF5 /* MerchantMain.m */,
-				193C37881C1BE9CA0017CC9C /* Merchant.storyboard */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -867,12 +867,12 @@
 		197491381C79D92700784D09 /* Voucher */ = {
 			isa = PBXGroup;
 			children = (
-				1974914B1C79DAB600784D09 /* VoucherDetailsVC.h */,
-				1974914C1C79DAB600784D09 /* VoucherDetailsVC.m */,
+				197491501C79DAB600784D09 /* VoucherTVC.h */,
 				1974914D1C79DAB600784D09 /* VoucherTVC.m */,
 				1974914E1C79DAB600784D09 /* VoucherCell.h */,
 				1974914F1C79DAB600784D09 /* VoucherCell.m */,
-				197491501C79DAB600784D09 /* VoucherTVC.h */,
+				1974914B1C79DAB600784D09 /* VoucherDetailsVC.h */,
+				1974914C1C79DAB600784D09 /* VoucherDetailsVC.m */,
 			);
 			name = Voucher;
 			sourceTree = "<group>";
@@ -987,16 +987,6 @@
 			path = Merchant/Tab1/Award;
 			sourceTree = "<group>";
 		};
-		19EB0F621C7EE5D300FECDF5 /* Coupon */ = {
-			isa = PBXGroup;
-			children = (
-				19EB0F631C7EE5D300FECDF5 /* MCouponVC.h */,
-				19EB0F641C7EE5D300FECDF5 /* MCouponVC.m */,
-			);
-			name = Coupon;
-			path = Merchant/Tab1/Coupon;
-			sourceTree = "<group>";
-		};
 		19EB0F661C7EE5E300FECDF5 /* Derivate */ = {
 			isa = PBXGroup;
 			children = (
@@ -1099,12 +1089,12 @@
 		19EB0FC61C80824A00FECDF5 /* Buy */ = {
 			isa = PBXGroup;
 			children = (
-				19EB0FC71C80824A00FECDF5 /* BuyDiscountCell.h */,
-				19EB0FC81C80824A00FECDF5 /* BuyDiscountCell.m */,
 				19EB0FC91C80824A00FECDF5 /* BuyDiscountController.h */,
 				19EB0FCA1C80824A00FECDF5 /* BuyDiscountController.m */,
 				19EB0FCB1C80824A00FECDF5 /* BuyDiscountTVC.h */,
 				19EB0FCC1C80824A00FECDF5 /* BuyDiscountTVC.m */,
+				19EB0FC71C80824A00FECDF5 /* BuyDiscountCell.h */,
+				19EB0FC81C80824A00FECDF5 /* BuyDiscountCell.m */,
 			);
 			path = Buy;
 			sourceTree = "<group>";
@@ -1118,8 +1108,6 @@
 				19EB0FCF1C80824A00FECDF5 /* DiscountCell.m */,
 				19EB0FD01C80824A00FECDF5 /* DiscountDetailsTVC.h */,
 				19EB0FD11C80824A00FECDF5 /* DiscountDetailsTVC.m */,
-				19EB0FD41C80824A00FECDF5 /* FullscreenImageVC.h */,
-				19EB0FD51C80824A00FECDF5 /* FullscreenImageVC.m */,
 			);
 			path = Discount;
 			sourceTree = "<group>";
@@ -1132,6 +1120,18 @@
 				19EB0FD81C80824A00FECDF5 /* DiscountNavigationController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		19EB0FF61C82C70F00FECDF5 /* Voucher */ = {
+			isa = PBXGroup;
+			children = (
+				19EB0FF71C82C70F00FECDF5 /* MVoucherVC.h */,
+				19EB0FF81C82C70F00FECDF5 /* MVoucherVC.m */,
+				19EB0FF91C82C70F00FECDF5 /* ScanVoucherController.h */,
+				19EB0FFA1C82C70F00FECDF5 /* ScanVoucherController.m */,
+			);
+			name = Voucher;
+			path = Merchant/Tab1/Voucher;
 			sourceTree = "<group>";
 		};
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
@@ -1309,12 +1309,12 @@
 				195A12C11C537297008E7945 /* CreditExchangeCell.m in Sources */,
 				19EB0FBC1C7EE84800FECDF5 /* MeNickNameVC.m in Sources */,
 				19EB0FB11C7EE7C900FECDF5 /* MerchantQrcodeVC.m in Sources */,
+				19EB0FFB1C82C70F00FECDF5 /* MVoucherVC.m in Sources */,
 				19EB0FAD1C7EE7C900FECDF5 /* MerchantAddressVC.m in Sources */,
 				19EB0FB31C7EE7C900FECDF5 /* MAssistanceTVC.m in Sources */,
 				193C38371C1D94DE0017CC9C /* PhotoAlbum.m in Sources */,
 				19EB0F781C7EE61B00FECDF5 /* ConsumerAwardTVC.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
-				19EB0F651C7EE5D300FECDF5 /* MCouponVC.m in Sources */,
 				197491351C79A3D000784D09 /* QRScanToolView.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				19EB0FBB1C7EE84800FECDF5 /* MaterialTVC.m in Sources */,
@@ -1368,8 +1368,8 @@
 				195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */,
-				19EB0FDF1C80824A00FECDF5 /* FullscreenImageVC.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
+				19EB0FFC1C82C70F00FECDF5 /* ScanVoucherController.m in Sources */,
 				197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				19EB0FAB1C7EE7C900FECDF5 /* MMeController.m in Sources */,

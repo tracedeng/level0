@@ -1,24 +1,24 @@
 //
-//  MCouponVC.m
+//  MVoucherVC.m
 //  Calculus
 //
 //  Created by ben on 16/1/9.
 //  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
-#import "MCouponVC.h"
+#import "MVoucherVC.h"
 #import "ActionVoucher.h"
 #import "MMaterialManager.h"
 
-@interface MCouponVC ()
-@property (weak, nonatomic) IBOutlet UITextField *couponApplyTXT;
+@interface MVoucherVC ()
+@property (weak, nonatomic) IBOutlet UITextField *VoucherApplyTXT;
 @property (weak, nonatomic) IBOutlet UITextField *consumerIdTXT;
 
-- (IBAction)couponApplyBtn:(UIButton *)sender;
+- (IBAction)VoucherApplyBtn:(UIButton *)sender;
 
 @end
 
-@implementation MCouponVC
+@implementation MVoucherVC
 
 
 - (void)viewDidLoad {
@@ -45,7 +45,7 @@
 */
 
 
-- (IBAction)couponApplyBtn:(UIButton *)sender {
+- (IBAction)VoucherApplyBtn:(UIButton *)sender {
     
     ActionVoucher *action = [[ActionVoucher alloc] init];
     action.afterConfirmVoucher = ^(NSString *message){
@@ -73,7 +73,7 @@
         
     };
     
-    [action doConfirmVoucher:self.couponApplyTXT.text merchant_identity:[self.material objectForKey:@"id"] consumer_number:self.consumerIdTXT.text];
+    [action doConfirmVoucher:self.VoucherApplyTXT.text merchant_identity:[self.material objectForKey:@"id"] consumer_number:self.consumerIdTXT.text];
     
    
 }

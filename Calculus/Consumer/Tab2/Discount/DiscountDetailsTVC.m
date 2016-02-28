@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *name; // 商家名称
 @property (weak, nonatomic) IBOutlet UILabel *address; // 商家地址
 @property (weak, nonatomic) IBOutlet UILabel *credit;   // 活动需要多少积分
+
+@property (weak, nonatomic) IBOutlet UILabel *heading;  // 活动标题
+@property (weak, nonatomic) IBOutlet UILabel *detail;   // 活动详情
+
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @end
 
 @implementation DiscountDetailsTVC
@@ -34,11 +39,19 @@
     
     
     self.title = [self.discountInfo objectForKey:@"t"];
-    [self.activityIMG sd_setImageWithURL:[NSURL URLWithString:self.path] placeholderImage:[UIImage imageNamed:@"icon-activitytest"]];
+    
+    NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/1600/h/900", QINIUURL, [self.discountInfo objectForKey:@"po"]];
+    [self.activityIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activitytest"]];
+    
+    self.heading.text = [self.discountInfo objectForKey:@"t"];
+    self.detail.text = [self.discountInfo objectForKey:@"in"];
     
     self.name.text = [self.discountInfo objectForKey:@"t"];
     self.address.text = [self.discountInfo objectForKey:@"t"];
-    self.credit.text = [self.discountInfo objectForKey:@"t"];
+    self.credit.text = [[self.discountInfo objectForKey:@"cr"] stringValue];
+    
+    self.buyButton.clipsToBounds = YES;
+    self.buyButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +62,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -57,47 +70,40 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    
-    // Configure the cell...
-    if (indexPath.section == 0) {
-        if (0 == indexPath.row) {
-            //活动海报
-            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
-            [self.activityIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activitytest"]];
-        }
-    }
-    
-    return cell;
-}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    CGFloat height = 0.0f;
-//    switch (indexPath.row) {
-//        case 0:
-//            height = 100.0f;
-//            break;
-//        case 1:
-//            height = 200.0f;
-//            break;
-//        case 2:
-//            height = 120.0f;
-//            break;
-//        case 3:
-//            height = 44.0f;
-//            break;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 0.0f;
+    switch (indexPath.section) {
+        case 0:
+            // 16:9 展示
+            height = [UIScreen mainScreen].bounds.size.width * 9 / 16.0f;
+            break;
+        case 1:
+            height = 35.0f;
+            break;
+        case 2:
+            height = 75.0f;
+            break;
+        case 3:
+            height = 44.0f;
+            break;
 //        case 4:
 //            height = 44.0f;
 //            break;
-//        default:
-//            break;
-//    }
-//    return height;
-//}
+        default:
+            break;
+    }
+    return height;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 0.01f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0.01f;
+    }
+    return 0.0f;
 }
 
 /*

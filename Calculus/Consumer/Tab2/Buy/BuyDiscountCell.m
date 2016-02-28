@@ -41,6 +41,10 @@
     if (awardInfo) {
         _awardInfo = awardInfo;
         self.upperQuantity = [[awardInfo objectForKey:@"am"] integerValue];
+//        self.creditTextField.layer.borderColor = [UIColor grayColor].CGColor;
+//        self.creditTextField.layer.borderWidth = 1.0f;
+//        self.creditTextField.clipsToBounds = YES;
+//        self.creditTextField.layer.cornerRadius = 2.0f;
         self.creditTextField.delegate = self;
         self.checkedImage = [UIImage imageNamed:@"icon-radio-checked"];
         self.uncheckedImage = [UIImage imageNamed:@"icon-radio"];
