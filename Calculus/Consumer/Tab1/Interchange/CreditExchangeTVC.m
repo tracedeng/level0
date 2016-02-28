@@ -22,7 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
-//@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation CreditExchangeTVC
@@ -30,6 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+//    [self.view insertSubview:self.defaultimage atIndex:0];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -65,12 +72,12 @@
             [SVProgressHUD dismiss];
         }
         if ([self.creditList count] == nil ||  [creditList count] == 0) {
-            NSLog(@"nocreditlogo");
-            
-            UIImageView *defaultimage =[[UIImageView alloc]init];
-            defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
-            defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
-            [self.view addSubview:defaultimage];
+
+            // TODO 处理以上警告
+            self.defaultimage.hidden = NO;
+
+        }else{
+            self.defaultimage.hidden = YES;
         }
     };
     credit.afterConsumerQueryOtherCreditListFailed = ^(NSString *message) {

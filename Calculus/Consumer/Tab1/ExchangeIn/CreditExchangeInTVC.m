@@ -27,8 +27,10 @@
 @implementation CreditExchangeInTVC
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
 
+    
     self.title = @"选择转出积分";
     self.creditList = [[NSMutableArray alloc] init];
 
