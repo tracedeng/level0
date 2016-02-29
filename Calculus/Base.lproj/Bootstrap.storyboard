@@ -226,6 +226,9 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="h9h-JQ-jwn" id="P58-6V-nHX"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>

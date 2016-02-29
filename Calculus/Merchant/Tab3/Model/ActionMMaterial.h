@@ -27,7 +27,8 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 
 - (void)doQueryMerchantOfAccount;
 - (void)doQueryMerchantOfIdentity:(NSString *)identity;
-- (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo;
+//- (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo;
+- (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo ratio:(NSInteger)ratio address:(NSString *)address longitude:(CGFloat)longitude latitude:(CGFloat)latitude;
 //- (void)doQueryUploadToken:(NSString *)merchant;
 - (void)doQueryUploadToken:(NSString *)merchant ofResource:(NSString *)resource;
 - (void)doModifyLogo:(NSString *)logo merchant:(NSString *)merchant;
