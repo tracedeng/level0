@@ -45,6 +45,8 @@
 - (void)loadCreditList:(id)sender {
     ActionMCredit *credit = [[ActionMCredit alloc] init];
     credit.afterQueryConsumerCredit = ^(NSArray *creditList) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"toggleAwardMerchantView" object:nil userInfo:@{@"award": ([creditList count] == 0) ? @"noaward" : @"award"}];
+
         [self.creditList removeAllObjects];
         if (creditList.count) {
             [self.creditList addObjectsFromArray:creditList];

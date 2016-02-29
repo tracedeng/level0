@@ -15,17 +15,28 @@
 #import "MActivityCreateTVC.h"
 #import "SVProgressHUD.h"
 
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
 
 @interface MerchantActivityTVC ()
 @property (nonatomic, retain) NSMutableArray *activityList;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (nonatomic, retain) NSString *merchantName;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation MerchantActivityTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"noactivity"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+    
+
     
     self.activityList = [[NSMutableArray alloc] init];
     self.material = [MMaterialManager getMaterial];
@@ -47,6 +58,14 @@
         if (activityList.count) {
             [self.activityList addObjectsFromArray:activityList];
         }
+        if ( [activityList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+        }
+        
         [self.tableView reloadData];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
