@@ -250,7 +250,7 @@
 }
 
 - (IBAction)clickLocationButton:(id)sender {
-    [self.locService requestWhenInUseAuthorization];
+//    [self.locService requestWhenInUseAuthorization];
     if (![CLLocationManager locationServicesEnabled]) {
         // 提示
     }else{

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RoleManager.h"
 #import "ActionAccount.h"
+#import <CoreLocation/CoreLocation.h>
 #import <IQKeyboardManager.h>
 
 @interface AppDelegate ()
@@ -23,6 +24,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    CLLocationManager * locService= [[CLLocationManager alloc] init];
+    [locService requestWhenInUseAuthorization];
     
     // 全局修改状态栏
     UIImage *image = [UIImage imageNamed:@"icon-back"];
