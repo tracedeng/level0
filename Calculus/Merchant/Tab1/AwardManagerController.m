@@ -10,6 +10,7 @@
 #import "RoleManager.h"
 
 @interface AwardManagerController ()
+@property (weak, nonatomic) IBOutlet UIImageView *noCreditListImageView;
 
 @end
 
@@ -18,8 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleAwardMerchantView:) name:@"toggleAwardMerchantView" object:nil];
+
     self.title = @"积分";
+}
+
+// 显示积分列表或者无积分列表缺省view
+- (void)toggleAwardMerchantView:(NSNotification *)notification {
+    NSString *award = [[notification userInfo] objectForKey:@"award"];
+    if ([award isEqualToString:@"award"]) {
+        self.noCreditListImageView.hidden = YES;
+    }else{
+        self.noCreditListImageView.hidden = NO;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

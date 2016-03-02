@@ -71,9 +71,8 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
-        if ([self.creditList count] == nil ||  [creditList count] == 0) {
+        if ([creditList count] == 0) {
 
-            // TODO 处理以上警告
             self.defaultimage.hidden = NO;
 
         }else{

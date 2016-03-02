@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b5c-WK-RYL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b5c-WK-RYL">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -117,9 +117,17 @@
                                     <segue destination="Gqx-hm-b7a" kind="embed" id="aKI-M2-8km"/>
                                 </connections>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nocreditmerchant" translatesAutoresizingMaskIntoConstraints="NO" id="FvS-ow-bvv">
+                                <rect key="frame" x="199" y="247" width="202" height="203"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FvS-ow-bvv" secondAttribute="height" multiplier="1:1" id="TSj-RA-gvr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FvS-ow-bvv" firstAttribute="centerY" secondItem="383-YV-IU1" secondAttribute="centerY" id="FIJ-l0-LhM"/>
+                            <constraint firstItem="FvS-ow-bvv" firstAttribute="width" secondItem="383-YV-IU1" secondAttribute="height" multiplier="1:2" id="J0J-QI-1dE"/>
                             <constraint firstItem="383-YV-IU1" firstAttribute="leading" secondItem="55m-5E-lFR" secondAttribute="leading" id="K9p-JQ-Dud"/>
                             <constraint firstItem="383-YV-IU1" firstAttribute="trailing" secondItem="55m-5E-lFR" secondAttribute="trailing" id="XXv-IZ-cfa"/>
                             <constraint firstItem="t4g-Vf-5QU" firstAttribute="top" secondItem="mDs-CT-dgZ" secondAttribute="bottom" id="aAs-ot-3yO"/>
@@ -127,10 +135,12 @@
                             <constraint firstItem="t4g-Vf-5QU" firstAttribute="leading" secondItem="55m-5E-lFR" secondAttribute="leading" id="fiD-9w-NTv"/>
                             <constraint firstItem="383-YV-IU1" firstAttribute="bottom" secondItem="MLZ-1W-wGC" secondAttribute="top" id="li4-zj-YWY"/>
                             <constraint firstItem="t4g-Vf-5QU" firstAttribute="trailing" secondItem="55m-5E-lFR" secondAttribute="trailing" id="n5u-cr-34d"/>
+                            <constraint firstItem="FvS-ow-bvv" firstAttribute="centerX" secondItem="383-YV-IU1" secondAttribute="centerX" id="vu9-gr-IbX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zdk-rT-Jjl"/>
                     <connections>
+                        <outlet property="noCreditListImageView" destination="FvS-ow-bvv" id="Vaz-af-KbI"/>
                         <segue destination="KfD-qH-Xa6" kind="show" identifier="MApplyCredit" id="WhJ-A8-kt5"/>
                         <segue destination="KmC-9t-lDa" kind="show" id="Zbw-pP-BL8"/>
                     </connections>
@@ -208,12 +218,12 @@
             <objects>
                 <tableViewController id="KfD-qH-Xa6" customClass="MAwardApplyTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="6Hv-2Z-RvM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MAwardApplyCell" rowHeight="120" id="WUC-8z-deE" customClass="MAwardApplyCell">
-                                <rect key="frame" x="0.0" y="49.5" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" tableViewCell="WUC-8z-deE" id="3Fy-3j-iTG">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
@@ -443,10 +453,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ConsumerAwardCell" rowHeight="58" id="5hq-1r-O9i" customClass="ConsumerAwardCell">
-                                <rect key="frame" x="0.0" y="49.5" width="600" height="58"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5hq-1r-O9i" id="r5b-XQ-70m">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EfZ-Vm-3a3">
@@ -548,17 +558,17 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="COneAwardCell" rowHeight="60" id="B2x-qD-Gti" customClass="COneAwardCell">
-                                <rect key="frame" x="0.0" y="49.5" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2x-qD-Gti" id="qad-ku-BcU">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-H3-G7X">
-                                            <rect key="frame" x="15" y="15" width="77" height="31"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-H3-G7X">
+                                            <rect key="frame" x="15" y="15" width="77" height="30"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="g40-mA-pBs">
-                                                    <rect key="frame" x="0.0" y="11" width="20" height="20"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="g40-mA-pBs">
+                                                    <rect key="frame" x="0.0" y="10" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="1WQ-89-5eQ"/>
                                                         <constraint firstAttribute="height" constant="20" id="6qh-uq-EJM"/>
@@ -845,9 +855,10 @@
         <image name="icon-credit" width="30" height="30"/>
         <image name="icon-credit-select" width="30" height="30"/>
         <image name="icon-renminbi-gray" width="12" height="12"/>
+        <image name="nocreditmerchant" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fy0-wT-4ok"/>
+        <segue reference="WhJ-A8-kt5"/>
         <segue reference="Zbw-pP-BL8"/>
     </inferredMetricsTieBreakers>
 </document>
