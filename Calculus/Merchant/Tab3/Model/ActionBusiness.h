@@ -23,4 +23,7 @@ typedef NS_ENUM(NSInteger, EMBUSINESSOPTYE) {
 @property (nonatomic, copy) void (^afterModifyConsumptionRatio)(NSDictionary *result);
 @property (nonatomic, copy) void (^afterQueryBusinessParameters)(NSDictionary *business);
 
+@property (nonatomic, copy) void (^afterModifyConsumptionRatioFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterQueryBusinessParametersFailed)(NSString *message);
+
 @end

@@ -74,6 +74,30 @@
                 break;
         }
     }
+    else{
+        switch (self.type) {
+            case EQUERYBUSINESSPARAMETERS:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryBusinessParametersFailed) {
+                    self.afterQueryBusinessParametersFailed(message);
+                }
+                break;
+            }
+                
+            case EUPDATECONSUMPTIONRATIO:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyConsumptionRatioFailed) {
+                    self.afterModifyConsumptionRatioFailed(message);
+                }
+                break;
+            }
+            default:
+                break;
+        }
+
+    }
 }
 
 //@optional http请求失败返回
@@ -81,6 +105,26 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    switch (self.type) {
+        case EQUERYBUSINESSPARAMETERS:
+        {
+            if (self.afterQueryBusinessParametersFailed) {
+                self.afterQueryBusinessParametersFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EUPDATECONSUMPTIONRATIO:
+        {
+            if (self.afterModifyConsumptionRatioFailed) {
+                self.afterModifyConsumptionRatioFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        default:
+            break;
+    }
+
 }
+
 
 @end

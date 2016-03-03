@@ -220,6 +220,14 @@
         }
     }else{
         switch (self.type) {
+            case EQUERYMERCHANT:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryMerchantOfAccountFailed) {
+                    self.afterQueryMerchantOfAccountFailed(message);
+                }
+                break;
+            }
             case EQUERYMERCHANTOFIDENTITY:
             {
                 NSString *message = [responseObject objectForKey:@"m"];
@@ -228,7 +236,71 @@
                 }
                 break;
             }
-                
+            case ECREATEMERCHNAT:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterCreateMerchantOfAccountFailed) {
+                    self.afterCreateMerchantOfAccountFailed(message);
+                }
+                break;
+            }
+            case EQUERYUPLOADTOKEN:
+            {
+                //更新用户头像，上传文件代理调用uploadSuccessResponseWith
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryUploadTokenFailed) {
+                    self.afterQueryUploadTokenFailed(message);
+                }
+                break;
+            }
+            case EUPDATELOGO:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyLogoFailed) {
+                    self.afterModifyLogoFailed(message);
+                }
+                break;
+            }
+            case EUPDATEQRCODE:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyQrcodeFailed) {
+                    self.afterModifyQrcodeFailed(message);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTNAME:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyMerchantNameFailed) {
+                    self.afterModifyMerchantNameFailed(message);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTEMAIL:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyMerchantEmailFailed) {
+                    self.afterModifyMerchantEmailFailed(message);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTCONTACTNUMBER:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyMerchantContactNumberFailed) {
+                    self.afterModifyMerchantContactNumberFailed(message);
+                }
+                break;
+            }
+            case EUPDATEMERCHANTADDRESS:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyMerchantAddressFailed) {
+                    self.afterModifyMerchantAddressFailed(message);
+                }
+                break;
+            }
             default:
                 break;
         }

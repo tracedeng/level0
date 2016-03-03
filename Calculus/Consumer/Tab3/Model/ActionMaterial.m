@@ -122,6 +122,61 @@
             default:
                 break;
         }
+    }else{
+        switch (self.type) {
+            case EQUERYUPLOADTOKEN:
+            {
+                //七牛token失败操作
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryUploadTokenFailed) {
+                    self.afterQueryUploadTokenFailed(message);
+                }
+                break;
+            }
+            case EUPDATEAVATAR:
+            {
+                //修改头像失败操作
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyAvatarFailed) {
+                    self.afterModifyAvatarFailed(message);
+                }
+                break;
+            }
+            case EUPDATENICKNAME:
+            {
+                //修改昵称失败操作
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyGenderFailed) {
+                    self.afterModifyGenderFailed(message);
+                }
+                
+                break;
+            }
+            case EUPDATEGENDER:
+            {
+                //修改性别失败操作
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyNickNameFailed) {
+                    self.afterModifyNickNameFailed(message);
+                }
+                
+                break;
+            }
+            case EUPDATELOCATION:
+            {
+                //修改区域失败操作
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterModifyLocationFailed) {
+                    self.afterModifyLocationFailed(message);
+                }
+                
+                break;
+            }
+            default:
+                break;
+        }
+        
+
     }
 }
 
