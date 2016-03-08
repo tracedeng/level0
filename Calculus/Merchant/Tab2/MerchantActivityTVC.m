@@ -165,21 +165,77 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
+    //TODO 非管理员返回No
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+       
+        //删除服务器数据，返回成功后删除本地数据
+        ActionMActivity *activity = [[ActionMActivity alloc] init];
+        activity.afterDeleteMerchantActivity = ^(NSDictionary *activity) {
+            
+            [self.activityList removeObjectAtIndex:[indexPath row]];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            
+            if ( [self.activityList count] == 0) {
+                
+                self.defaultimage.hidden = NO;
+                
+            }else{
+                self.defaultimage.hidden = YES;
+            }
+            
+            [self.tableView reloadData];
+            if ([self.refreshControl isRefreshing]) {
+                [self.refreshControl endRefreshing];
+            }
+            if ([SVProgressHUD isVisible]) {
+                [SVProgressHUD dismiss];
+            }
+        };
+        activity.afterDeleteMerchantActivityFailed = ^(NSString *message) {
+            if ([self.refreshControl isRefreshing]) {
+                [self.refreshControl endRefreshing];
+            }
+            if ([SVProgressHUD isVisible]) {
+                [SVProgressHUD dismiss];
+            }
+            //错误提示
+            [self showAlert:@"确定" :@"删除失败"];
+//            [[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+             [tableView reloadData];
+            //TODO 不需要刷新，取消删除状态
+            
+        };
+        [activity doDeleteMerchantActivity:[self.material objectForKey:@"id"] activity:[[self.activityList objectAtIndex:[indexPath row]  ]  objectForKey:@"id"]];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
+
+- (void)showAlert:(NSString *)title :(NSString *)info{
+    
+    NSString *selectButtonOKTitle = NSLocalizedString(title, nil);
+    NSString *selectTitle = NSLocalizedString(info, nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:selectTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
 
 /*
 // Override to support rearranging the table view.
