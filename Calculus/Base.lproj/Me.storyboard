@@ -866,7 +866,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-gt-DeI">
                                 <rect key="frame" x="0.0" y="44" width="600" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">微积分 1.0 版本 客户版 功能介绍
+                                <string key="text">微积分 1.0 版本 客户版 功能介绍
 
 1.注册和登录
 	本软件仅限登录后使用。
@@ -889,7 +889,7 @@
 6. 我
 	个人设置页面提供用户个人信息的查看和更新，以及优惠券信息的查看。
 
- </mutableString>
+ </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1098,9 +1098,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kke-Ve-G11">
-                                <rect key="frame" x="30" y="116" width="540" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-center-voucher-bg" translatesAutoresizingMaskIntoConstraints="NO" id="bXr-Ie-FCY">
+                                <rect key="frame" x="30" y="74" width="540" height="300"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kke-Ve-G11">
+                                <rect key="frame" x="30" y="74" width="540" height="300"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eov-KU-wDM">
                                 <rect key="frame" x="30" y="74" width="540" height="300"/>
@@ -1108,7 +1110,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ll-D7-pE5">
                                         <rect key="frame" x="0.0" y="0.0" width="540" height="300"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0e-lt-dTg">
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0e-lt-dTg">
                                                 <rect key="frame" x="0.0" y="0.0" width="540" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ctQ-gK-G5L">
@@ -1123,7 +1125,6 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="ctQ-gK-G5L" firstAttribute="centerY" secondItem="N0e-lt-dTg" secondAttribute="centerY" id="3YS-8S-Wr6"/>
                                                     <constraint firstAttribute="trailing" secondItem="ctQ-gK-G5L" secondAttribute="trailing" constant="15" id="641-je-Dhm"/>
@@ -1131,7 +1132,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="xVg-EV-dt1"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBa-se-xG7">
+                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBa-se-xG7">
                                                 <rect key="frame" x="0.0" y="40" width="540" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e57-su-FE5">
@@ -1152,7 +1153,6 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="e57-su-FE5" secondAttribute="trailing" constant="15" id="0aL-rL-hIz"/>
                                                     <constraint firstAttribute="height" constant="40" id="9qm-We-oYF"/>
@@ -1182,7 +1182,6 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="KD5-xc-HxF" firstAttribute="centerY" secondItem="4zH-0J-pfP" secondAttribute="centerY" id="EW5-mB-0tN"/>
                                                     <constraint firstAttribute="height" constant="220" id="cm7-cy-uJj"/>
@@ -1203,9 +1202,13 @@
                             <constraint firstItem="eov-KU-wDM" firstAttribute="leading" secondItem="rhb-yl-wz7" secondAttribute="leading" constant="30" id="H10-bS-Hfq"/>
                             <constraint firstItem="eov-KU-wDM" firstAttribute="top" secondItem="Mh3-fm-iKa" secondAttribute="bottom" constant="30" id="OI9-TJ-1Sd"/>
                             <constraint firstItem="Kke-Ve-G11" firstAttribute="leading" secondItem="8ll-D7-pE5" secondAttribute="leading" id="Rm3-jv-KYU"/>
+                            <constraint firstItem="bXr-Ie-FCY" firstAttribute="width" secondItem="eov-KU-wDM" secondAttribute="width" id="TKK-Q7-VQa"/>
+                            <constraint firstItem="bXr-Ie-FCY" firstAttribute="top" secondItem="eov-KU-wDM" secondAttribute="top" id="VPO-ag-yLP"/>
                             <constraint firstItem="Kke-Ve-G11" firstAttribute="height" secondItem="8ll-D7-pE5" secondAttribute="height" id="Who-8m-CEU"/>
                             <constraint firstAttribute="trailing" secondItem="eov-KU-wDM" secondAttribute="trailing" constant="30" id="bv3-QB-Qp8"/>
+                            <constraint firstItem="bXr-Ie-FCY" firstAttribute="leading" secondItem="eov-KU-wDM" secondAttribute="leading" id="gLI-f8-mkB"/>
                             <constraint firstItem="Kke-Ve-G11" firstAttribute="width" secondItem="8ll-D7-pE5" secondAttribute="width" id="qKK-rA-KyV"/>
+                            <constraint firstItem="bXr-Ie-FCY" firstAttribute="height" secondItem="eov-KU-wDM" secondAttribute="height" id="wWr-cO-TAw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="优惠券" id="LIJ-Y3-1bz"/>
@@ -1312,6 +1315,7 @@
         <image name="icon-center-rating" width="30" height="30"/>
         <image name="icon-center-reply" width="30" height="30"/>
         <image name="icon-center-setting" width="30" height="30"/>
+        <image name="icon-center-voucher-bg" width="333" height="200"/>
         <image name="icon-mcd" width="64" height="64"/>
         <image name="icon-next-ccc" width="20" height="20"/>
         <image name="icon-voucher" width="64" height="64"/>
