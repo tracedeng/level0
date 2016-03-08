@@ -65,6 +65,16 @@
         self.feeCredit.text = [NSString stringWithFormat:@"%ld", fee];
         self.interchangeButton.enabled = YES;
     };
+    action.afterCreditInterchangeFailed = ^(NSString *message) {
+        // 计算互换比例失败，提示
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"计算互换比率失败，请联系平台" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //
+            [self dismissViewControllerAnimated:alert completion:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    };
     [action doCreditInterchange:[self.merchantOut objectForKey:@"cIdentity"] from_merchant:[self.merchantOut objectForKey:@"mIdentity"] quantity:[[self.merchantOut objectForKey:@"quantity"] integerValue] to_merchant:[self.merchantIn objectForKey:@"identity"] exec_exchange:NO];
 }
 

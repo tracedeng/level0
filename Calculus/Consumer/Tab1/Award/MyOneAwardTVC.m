@@ -9,12 +9,14 @@
 #import "MyOneAwardTVC.h"
 #import "MyOneAwardCell.h"
 #import "ActionCredit.h"
+#import "ActionFlow.h"
 #import "SVProgressHUD.h"
 #import "CreditExchangeInTVC.h"
 
 
 @interface MyOneAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextStepButton;
 @end
 
 @implementation MyOneAwardTVC
@@ -67,6 +69,18 @@
     };
     [credit doConsumerQueryOneCredit:self.merchant];
     
+    ActionFlow *flow = [[ActionFlow alloc] init];
+    flow.afterQueryAllowExchangeIn = ^(NSString *allow) {
+        if ([allow isEqualToString:@"yes"]) {
+            self.nextStepButton.enabled = YES;
+        }else{
+            self.nextStepButton.enabled = NO;
+        }
+    };
+    flow.afterQueryAllowExchangeInFailed = ^(NSString *message) {
+        self.nextStepButton.enabled = NO;
+    };
+    [flow doQueryAllowExchangeIn:self.merchant];
 }
 
 #pragma mark - Table view data source

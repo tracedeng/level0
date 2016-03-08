@@ -1,23 +1,22 @@
 //
-//  BalanceHistoryTVC.m
+//  WithdrawalsTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 16/2/25.
+//  Created by tracedeng on 16/3/3.
 //  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
-#import "BalanceHistoryTVC.h"
-#import "BalanceHistoryCell.h"
-#import "ActionFlow.h"
-#import "SVProgressHUD.h"
+#import "WithdrawalsTVC.h"
 
-
-@interface BalanceHistoryTVC ()
-@property (nonatomic, retain) NSMutableArray *balanceHistory;
+@interface WithdrawalsTVC ()
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+@property (weak, nonatomic) IBOutlet UITextField *withdrawalsMoneyField;
+@property (weak, nonatomic) IBOutlet UIButton *withdrawalsButton;
+@property (weak, nonatomic) IBOutlet UIView *withdrawalsMoneyView;
 
 @end
 
-@implementation BalanceHistoryTVC
+@implementation WithdrawalsTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,14 +26,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = @"充值记录";
     
-    self.balanceHistory = [[NSMutableArray alloc] init];
+    self.withdrawalsButton.layer.cornerRadius = 4.0f;
     
-    [self.refreshControl addTarget:self action:@selector(loadBalanceHistory:) forControlEvents:UIControlEventValueChanged];
-    
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
-    [self loadBalanceHistory:nil];
+    self.withdrawalsMoneyView.clipsToBounds = YES;
+    self.withdrawalsMoneyView.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,62 +38,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadBalanceHistory:(id)sender {
-    ActionFlow *flow = [[ActionFlow alloc] init];
-    flow.afterQueryBalanceHistory = ^(NSArray *history) {
-        [self.balanceHistory removeAllObjects];
-        if (history.count) {
-            [self.balanceHistory addObjectsFromArray:history];
-        }
-        [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
-        if ([SVProgressHUD isVisible]) {
-            [SVProgressHUD dismiss];
-        }
-    };
-    flow.afterQueryBalanceHistoryFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
-        if ([SVProgressHUD isVisible]) {
-            [SVProgressHUD dismiss];
-        }
-        //        TODO...错误提示
-    };
-    [flow doQueryBalanceHistory:self.merchant];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.balanceHistory count];;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0f;
+    if (0 == indexPath.section) {
+        return 70.0f;
+    }else if (1 == indexPath.section) {
+        return 60.0f;
+    }else {
+        return 80.0f;
+    }
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
     return 0.01f;
 }
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BalanceHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BalanceHistoryCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.history = [self.balanceHistory objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-
-
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
@@ -152,4 +117,6 @@
 }
 */
 
+- (IBAction)withdrawals:(id)sender {
+}
 @end

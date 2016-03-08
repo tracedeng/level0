@@ -72,7 +72,8 @@
         }
         //        TODO...错误提示
     };
-    [credit doConsumerQueryCreditListWithout:self.merchant];
+//    [credit doConsumerQueryCreditListWithout:self.merchant];
+    [credit doQueryAllowExchangeOutCredit:self.merchant];
 }
 
 - (void)checkAllowInterchangeInt {

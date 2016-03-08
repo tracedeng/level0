@@ -11,11 +11,14 @@
 
 @interface ActionMerchant : NSObject<NetCommunicationDelegate>
 //操作类型
-typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
+typedef NS_ENUM(NSInteger, EMERCHANTOPTYPE) {
     ECONSUMERQUERYMERCHANTLIST,             //查询商户列表
-    
+    EQUERYEXCHANGEINMERCHNAT,               //查询允许积分转入商家列表
+    EQUERYALLOWEXCHANGEIN,
+    EMERCHANTOPTYPEMAX
 };
 - (void)doConsumerQueryOtherMerchantList:(NSString *)merchant;
+- (void)doQueryExchangInMerchantWithout:(NSString *)merchant;
 
 @property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantList)(NSArray *merchantList);
 @property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantListFailed)(NSString *message);

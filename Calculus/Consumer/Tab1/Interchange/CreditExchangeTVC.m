@@ -88,7 +88,8 @@
         }
         //        TODO...错误提示
     };
-    [credit doConsumerQueryCreditListWithout:self.merchant];
+//    [credit doConsumerQueryCreditListWithout:self.merchant];
+    [credit doQueryAllowExchangeOutCredit:nil];
 }
 
 
@@ -208,6 +209,7 @@
             NSDictionary *oneMCredit =[self.creditList objectAtIndex:self.lastCheckedIndex.section];
             NSDictionary *oneCredit = [[oneMCredit objectForKey:@"cr"] objectAtIndex:self.lastCheckedIndex.row];
             destination.merchantOut = @{@"name": [oneMCredit objectForKey:@"t"], @"logo": [oneMCredit objectForKey:@"l"], @"mIdentity": [oneMCredit objectForKey:@"i"], @"cIdentity": [oneCredit objectForKey:@"id"], @"quantity": [oneCredit objectForKey:@"qu"], @"expire": [oneCredit objectForKey:@"et"]};
+            destination.merchant = [oneMCredit objectForKey:@"i"];
         }
     }
 }

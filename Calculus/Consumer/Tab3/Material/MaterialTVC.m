@@ -87,11 +87,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return section == 0 ? 4 : 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -207,6 +207,10 @@
             }
             default:
                 break;
+        }
+    }else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+            cell.detailTextLabel.text = [self.material objectForKey:@"nu"];
         }
     }
     

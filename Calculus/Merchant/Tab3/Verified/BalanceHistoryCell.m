@@ -28,4 +28,18 @@
     // Configure the view for the selected state
 }
 
+- (void)setHistory:(NSDictionary *)history {
+    if (history) {
+        _history = history;
+        NSString *direction = [history objectForKey:@"di"];
+        if ([direction isEqualToString:@"recharege"]) {
+            self.balanceTypeLabel.text = @"充值";
+        }else if ([direction isEqualToString:@"withdrawals"]){
+            self.balanceTypeLabel.text = @"提现";
+        }
+        self.timeLabel.text = [history objectForKey:@"ti"];
+        self.moneyLabel.text = [[history objectForKey:@"mo"] stringValue];;
+//        self.balanceLabel.text = [[history objectForKey:@"ba"] stringValue];
+    }
+}
 @end

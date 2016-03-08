@@ -20,8 +20,9 @@
 @property (nonatomic, retain) NSString *prepath;
 @property (nonatomic, retain) NSString *path;
 
-@property (nonatomic, retain) CLLocationManager *locService;
+@property (nonatomic, retain) CLLocationManager *locationService;
 @property (nonatomic, assign) CLLocationCoordinate2D gps;
+@property (nonatomic, retain) NSString *locationName;
 //@property (nonatomic, assign) CGFloat longitude;
 //@property (nonatomic, assign) CGFloat latitude;
 
@@ -51,9 +52,9 @@
 
 //    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
     
-    self.locService = [[CLLocationManager alloc] init];
-    self.locService.delegate = self;
-//    self.searcher = [[AMapSearchAPI alloc] initWithSearchKey:AK Delegate:self];
+    self.locationService = [[CLLocationManager alloc] init];
+    self.locationService.delegate = self;
+    [self.locationService requestWhenInUseAuthorization];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -245,18 +246,54 @@
     }
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.addressField.placeholder = @"商家地址";
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField.text.length <= 0) {
+        return;
+    }
     // 正向编码，地址 ＝> gps
+    CLGeocoder *geo = [[CLGeocoder alloc] init];
+    [geo geocodeAddressString:textField.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error || placemarks.count==0) {
+            // 正向编码失败，无效地址
+            self.locationName = textField.text;
+            self.gps = CLLocationCoordinate2DMake(-1, -1);
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"位置输入有误，请点击定位按钮获取地址" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:alert completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }else{
+            //取出获取的地理信息数组中的第一个显示在界面上
+            CLPlacemark *firstPlacemark=[placemarks firstObject];
+            self.locationName = firstPlacemark.name;
+            self.addressField.text = self.locationName;
+            self.gps =firstPlacemark.location.coordinate;
+            
+//            for (CLPlacemark *placemark in placemarks) {
+//                DLog(@"name=%@ locality=%@ country=%@ postalCode=%@",placemark.name, placemark.locality, placemark.country, placemark.postalCode);
+//            }
+        }
+    }];
 }
 
 - (IBAction)clickLocationButton:(id)sender {
-//    [self.locService requestWhenInUseAuthorization];
     if (![CLLocationManager locationServicesEnabled]) {
         // 提示
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请前往设置中开启定位" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:alert completion:nil];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
     }else{
-        self.locService.desiredAccuracy = kCLLocationAccuracyBest;
-        self.locService.distanceFilter = 100.0f;
-        [self.locService startUpdatingLocation];
+        self.locationService.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationService.distanceFilter = 100.0f;
+        [self.locationService startUpdatingLocation];
+        self.addressField.placeholder = @"定位中...";
     }
 }
 
@@ -268,18 +305,21 @@
     [revGeo reverseGeocodeLocation:locations[0] completionHandler:^(NSArray *placemarks, NSError *error) {
         if (!error && [placemarks count] > 0) {
             NSDictionary *dict = [[placemarks objectAtIndex:0] addressDictionary];
-            DLog(@"street address: %@",[dict objectForKey:@"Street"]);
+//            self.addressField.text = [NSString stringWithFormat:@"%@,%@,%@,%@,%@,%@,%@,%@,%@", [dict objectForKey:@"City"], [dict objectForKey:@"Name"], [dict objectForKey:@"State"], [dict objectForKey:@"Street"], [dict objectForKey:@"SubLocality"], [dict objectForKey:@"SubThoroughfare"], [dict objectForKey:@"Thoroughfare"], [dict objectForKey:@"FormattedAddressLines"], [dict objectForKey:@"Country"]];
+            self.locationName = [dict objectForKey:@"Name"];
+            self.addressField.text = self.locationName;
         }else{
             // 反向编码失败
-            DLog(@"ERROR: %@", error);
+            self.addressField.placeholder = @"定位失败";
         }
     }];
 }
 
 // 定位失败
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    DLog(@"heeh");
+    self.addressField.placeholder = @"定位失败";
 }
+
 
 ////实现逆地理编码的回调函数
 //- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response

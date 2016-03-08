@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BalanceHistoryTVC : UITableViewController
-
+@property (nonatomic, retain) NSString *merchant;
 @end

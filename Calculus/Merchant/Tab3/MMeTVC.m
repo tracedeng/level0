@@ -200,8 +200,6 @@
 }
 
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (0 == section) {
         return 0.01f;
@@ -220,7 +218,6 @@
 }
 
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
@@ -235,13 +232,9 @@
         //
             if ([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
                 [self showAlert:@"确定" :@"认证请联系平台"];
-
             }
-
         }else  if (4 == indexPath.row) {
         //
-
-            
         }
 
     } else if(2 == indexPath.section) {
@@ -363,11 +356,9 @@
 {
     if([segue.identifier isEqualToString:@"goupdatecrt"]){
         [segue.destinationViewController setValue:[NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]] forKey:@"exchangeRate"];
-        
     }else if([segue.identifier isEqualToString:@"goverifiedinfo"]){
         [segue.destinationViewController setValue:self.business forKey:@"business"];
         [segue.destinationViewController setValue:self.flow forKey:@"flow"];
-        
     }else if ([segue.identifier isEqualToString:@"MerchantMaterialUpdate"]){
         MMaterialTVC *destination = (MMaterialTVC *)segue.destinationViewController;
         destination.material = self.material;

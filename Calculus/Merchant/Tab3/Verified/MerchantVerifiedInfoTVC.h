@@ -12,4 +12,5 @@
 @property (nonatomic, retain) NSMutableDictionary *business;
 @property (nonatomic, retain) NSMutableDictionary *flow;
 
+@property (nonatomic, retain) NSString *merchant;
 @end

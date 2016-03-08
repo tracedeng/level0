@@ -8,6 +8,8 @@
 
 #import "BalanceVC.h"
 #import "UIColor+Extension.h"
+#import "BalanceHistoryTVC.h"
+#import "RechargeTVC.h"
 
 
 @interface BalanceVC ()
@@ -30,7 +32,8 @@
     self.withdrawalsButton.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
     self.withdrawalsButton.layer.borderWidth = 1.0f;
     self.withdrawalsButton.layer.cornerRadius = 4.0f;
-
+    
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", self.balance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,14 +41,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"BalanceHistory"]) {
+        if ([segue.destinationViewController isKindOfClass:[BalanceHistoryTVC class]]) {
+            BalanceHistoryTVC *destination = (BalanceHistoryTVC *)segue.destinationViewController;
+            destination.merchant = self.merchant;
+        }
+    }else if([segue.identifier isEqualToString:@"BalanceRecharge"]) {
+        if ([segue.destinationViewController isKindOfClass:[RechargeTVC class]]) {
+            RechargeTVC *destination = (RechargeTVC *)segue.destinationViewController;
+            destination.balance = self.balance;
+        }
+    }
 }
-*/
+
 
 @end

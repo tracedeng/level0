@@ -68,7 +68,9 @@
         }
         //        TODO...错误提示
     };
-    [merchant doConsumerQueryOtherMerchantList:self.merchant];
+//    [merchant doConsumerQueryOtherMerchantList:self.merchant];
+    [merchant doQueryExchangInMerchantWithout:self.merchant];
+    
 }
 
 

@@ -55,7 +55,7 @@
 - (void)doCreateMerchantOfAccount:(NSString *)name logo:(NSString *)logo ratio:(NSInteger)ratio address:(NSString *)address longitude:(CGFloat)longitude latitude:(CGFloat)latitude {
     self.type = ECREATEMERCHNAT;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"create", @"type", name, @"name", logo, @"logo", [NSString stringWithFormat:@"%ld", (long)ratio], @"ratio", [NSString stringWithFormat:@"%.2f", longitude], @"longitude", [NSString stringWithFormat:@"%.2f", latitude], @"latitude", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"create", @"type", name, @"name", logo, @"logo", [NSString stringWithFormat:@"%ld", (long)ratio], @"ratio", address, @"location", [NSString stringWithFormat:@"%.7f", longitude], @"longitude", [NSString stringWithFormat:@"%.7f", latitude], @"latitude", self.account, @"numbers", self.skey, @"session_key", nil];
     
     [self.net requestHttpWithData:postData];
 

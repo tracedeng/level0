@@ -1,23 +1,21 @@
 //
-//  BalanceHistoryTVC.m
+//  ConfirmVoucherTVC.m
 //  Calculus
 //
-//  Created by tracedeng on 16/2/25.
+//  Created by tracedeng on 16/3/5.
 //  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
-#import "BalanceHistoryTVC.h"
-#import "BalanceHistoryCell.h"
-#import "ActionFlow.h"
-#import "SVProgressHUD.h"
+#import "ConfirmVoucherTVC.h"
+#import "ActionMVoucher.h"
 
-
-@interface BalanceHistoryTVC ()
-@property (nonatomic, retain) NSMutableArray *balanceHistory;
+@interface ConfirmVoucherTVC ()
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+@property (weak, nonatomic) IBOutlet UILabel *voucherIdLabel;
 
 @end
 
-@implementation BalanceHistoryTVC
+@implementation ConfirmVoucherTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,14 +25,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = @"充值记录";
     
-    self.balanceHistory = [[NSMutableArray alloc] init];
-    
-    [self.refreshControl addTarget:self action:@selector(loadBalanceHistory:) forControlEvents:UIControlEventValueChanged];
-    
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
-    [self loadBalanceHistory:nil];
+    self.voucherIdLabel.text = self.voucher;
+    self.confirmButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,61 +35,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadBalanceHistory:(id)sender {
-    ActionFlow *flow = [[ActionFlow alloc] init];
-    flow.afterQueryBalanceHistory = ^(NSArray *history) {
-        [self.balanceHistory removeAllObjects];
-        if (history.count) {
-            [self.balanceHistory addObjectsFromArray:history];
-        }
-        [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
-        if ([SVProgressHUD isVisible]) {
-            [SVProgressHUD dismiss];
-        }
-    };
-    flow.afterQueryBalanceHistoryFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
-        if ([SVProgressHUD isVisible]) {
-            [SVProgressHUD dismiss];
-        }
-        //        TODO...错误提示
-    };
-    [flow doQueryBalanceHistory:self.merchant];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.balanceHistory count];;
+    return 1;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.01f;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BalanceHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BalanceHistoryCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    cell.history = [self.balanceHistory objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -151,5 +98,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)confirmVoucher:(id)sender {
+    ActionMVoucher *action = [[ActionMVoucher alloc] init];
+    action.afterConfirmVoucher = ^(NSString *state) {
+        if ([state isEqualToString:@"yes"]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认优惠券成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                //
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    };
+    action.afterConfirmVoucherFailed = ^(NSString *message) {
+        // 无效商家ID
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认失败，请联系平台" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            //
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    };
+    [action doConfirmVoucher:self.voucher merchant_identity:self.merchant activity_identity:self.activity consumer_number:self.number exec_confirm:NO];
+}
 
 @end

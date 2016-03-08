@@ -15,7 +15,6 @@
 ;
 @property (weak, nonatomic) IBOutlet UILabel *expireLabel;
 @property (weak, nonatomic) IBOutlet UILabel *activityMerchant;
-@property (weak, nonatomic) IBOutlet UIImageView *merchantLogo;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @end

@@ -12,7 +12,7 @@
 
 @interface ActionMerchant ()
 @property (nonatomic, retain) NetCommunication *net;
-@property (nonatomic, assign) ECREDITOPTYPE type;     //用户资料操作类型
+@property (nonatomic, assign) EMERCHANTOPTYPE type;     //用户资料操作类型
 
 @property (nonatomic, retain) NSDictionary *state;  //登录态 {"accout": @"18688982240", "skey": @"_Rjdifjwe7234876sdfD"}
 @property (nonatomic, retain) NSString *account;
@@ -35,8 +35,16 @@
 - (void)doConsumerQueryOtherMerchantList:(NSString *)merchant{
     self.type = ECONSUMERQUERYMERCHANTLIST;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"verified_merchant", @"type", @"both", @"verified",self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"verified_merchant", @"type", merchant, @"merchant_exclude", @"both", @"verified", self.account, @"numbers", self.skey, @"session_key", nil];
     
+    [self.net requestHttpWithData:postData];
+}
+
+- (void)doQueryExchangInMerchantWithout:(NSString *)merchant {
+    self.type = EQUERYEXCHANGEINMERCHNAT;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"exchange_in_merchant", @"type", merchant, @"merchant_exclude", self.account, @"numbers", self.skey, @"session_key", nil];
+
     [self.net requestHttpWithData:postData];
 }
 
@@ -48,6 +56,7 @@
     if (1 == errorCode) {
         switch (self.type) {
             case ECONSUMERQUERYMERCHANTLIST:
+            case EQUERYEXCHANGEINMERCHNAT:
             {
                 NSArray *merchantList = [responseObject objectForKey:@"r"];
                 DLog(@"credit id %@", merchantList);
@@ -62,6 +71,7 @@
     }else{
         switch (self.type) {
             case ECONSUMERQUERYMERCHANTLIST:
+            case EQUERYEXCHANGEINMERCHNAT:
             {
                 NSString *message = [responseObject objectForKey:@"m"];
                 if (self.afterConsumerQueryOtherMerchantListFailed) {
@@ -82,6 +92,7 @@
     DLog(@"%@", [responseError localizedDescription]);
     switch (self.type) {
         case ECONSUMERQUERYMERCHANTLIST:
+        case EQUERYEXCHANGEINMERCHNAT:
         {
             if (self.afterConsumerQueryOtherMerchantListFailed) {
                 self.afterConsumerQueryOtherMerchantListFailed([responseError localizedDescription]);

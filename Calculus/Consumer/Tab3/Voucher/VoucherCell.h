@@ -10,4 +10,6 @@
 
 @interface VoucherCell : UITableViewCell
 @property (nonatomic, retain) NSDictionary *voucherInfo;
+@property (weak, nonatomic) IBOutlet UIImageView *merchantLogo;
+
 @end

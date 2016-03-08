@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BalanceHistoryCell : UITableViewCell
-
+@property (nonatomic, retain) NSDictionary *history;
 @end

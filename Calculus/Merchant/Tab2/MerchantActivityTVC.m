@@ -36,8 +36,6 @@
     self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
     [self.view addSubview:self.defaultimage];
     
-
-    
     self.activityList = [[NSMutableArray alloc] init];
     self.material = [MMaterialManager getMaterial];
 
@@ -142,6 +140,27 @@
     return indexPath;
 }
 
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        ActionMActivity *action = [[ActionMActivity alloc] init];
+        action.afterDeleteMerchantActivity = ^() {
+            [self.activityList removeObjectAtIndex:indexPath.row];
+            
+            // Delete the row from the data source.
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        };
+        [action doDeleteMerchantActivity:[self.material objectForKey:@"id"] activity:[[self.activityList objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

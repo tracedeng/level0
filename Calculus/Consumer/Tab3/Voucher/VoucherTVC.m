@@ -9,6 +9,7 @@
 #import "VoucherTVC.h"
 #import "VoucherCell.h"
 #import "ActionVoucher.h"
+#import "VoucherDetailsVC.h"
 #import "SVProgressHUD.h"
 
 
@@ -18,7 +19,7 @@
 @interface VoucherTVC ()
 @property (nonatomic, retain) NSMutableArray *voucherList;
 @property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
-
+@property (nonatomic, assign) NSInteger checkedRow;
 @end
 
 @implementation VoucherTVC
@@ -106,6 +107,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.checkedRow = indexPath.row;
+    [self performSegueWithIdentifier:@"VoucherDetails" sender:nil];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 110.0f;
@@ -150,14 +155,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"VoucherDetails"]) {
+        if ([segue.destinationViewController isKindOfClass:[VoucherDetailsVC class]]) {
+            VoucherDetailsVC *destination = (VoucherDetailsVC *)segue.destinationViewController;
+//            destination.voucherInfo = [[self.creditList objectAtIndex:self.checkedRow] objectForKey:@"i"];
+            destination.voucherInfo = [self.voucherList objectAtIndex:self.checkedRow];
+            VoucherCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.checkedRow inSection:0]];
+            destination.logo = cell.merchantLogo.image;
+        }
+    }
 }
-*/
 
 @end

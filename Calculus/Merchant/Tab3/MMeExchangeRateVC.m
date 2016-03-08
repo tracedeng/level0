@@ -85,14 +85,10 @@
 - (void)textViewDidChange:(UITextView *)textView {
     if (textView.text.length == 0 ) {
         self.saveBTN.enabled = NO;
-        self.ratePlaceHolderLBL.text = @"消费换积分比例";
-        //        self.canSub21mitMask &= 0xfb;
-        //        [textView resignFirstResponder];
+        self.ratePlaceHolderLBL.text = @"元";
     }else{
         self.saveBTN.enabled = [self.exchangeRate isEqualToString:self.consumptionRateTextView.text] ? NO : YES;
         self.ratePlaceHolderLBL.text = @"";
-        
-        //        self.canSubmitMask |= 0x4;
     }
 }
 

@@ -60,7 +60,7 @@
     };
     
     self.buyButton.clipsToBounds = YES;
-//    self.buyButton.layer.cornerRadius = 4.0f;
+    self.buyButton.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,7 +93,7 @@
             height = 75.0f;
             break;
         case 3:
-            height = 44.0f;
+            height = 50.0f;
             break;
 //        case 4:
 //            height = 44.0f;

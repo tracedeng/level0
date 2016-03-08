@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
     ECONSUMERQUERYOTHERCREDITLIST,          //查询所有积分列表
     ECONSUMERQUERYMERCHANTLIST,             //查询商户列表
     EALLOWINTERCHANGEIN,                    //查询积分是否允许换入某商家
+    EQUERYALLOWEXCHANGEOUTCREDIT,           //查询允许换出的积分列表
     ECREDITINTERCHANGE,                     //积分互换
     ECREDITOPTYPEMAX,
 };
@@ -29,6 +30,7 @@ typedef NS_ENUM(NSInteger, ECREDITOPTYPE) {
 - (void)doConsumerQueryMerchantListWithout:(NSString *)merchant;
 - (void)doCreditInterchange:(NSString *)credit from_merchant:(NSString *)from quantity:(NSInteger)quantity to_merchant:(NSString *)to exec_exchange:(BOOL)exec;
 - (void)doAllowInterchangeIn:(NSString *)merchant;
+- (void)doQueryAllowExchangeOutCredit:(NSString *)merchant;
 
 
 @property (nonatomic, copy) void (^afterConsumerQueryAllCredit)(NSArray *creditList);

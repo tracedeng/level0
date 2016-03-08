@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b5c-WK-RYL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b5c-WK-RYL">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -223,7 +223,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MAwardApplyCell" rowHeight="120" id="WUC-8z-deE" customClass="MAwardApplyCell">
-                                <rect key="frame" x="0.0" y="114" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" tableViewCell="WUC-8z-deE" id="3Fy-3j-iTG">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
@@ -441,7 +441,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbe-G0-oGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2602" y="-476"/>
+            <point key="canvasLocation" x="3246" y="-1136"/>
+        </scene>
+        <!--确认优惠券-->
+        <scene sceneID="GvS-H3-h9i">
+            <objects>
+                <tableViewController id="EiD-pL-yn0" customClass="ConfirmVoucherTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1kP-cF-UzE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="doA-P8-COs">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="48v-aO-x5i">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48v-aO-x5i" id="QDg-ng-46A">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VDC-tg-lfX">
+                                                    <rect key="frame" x="15" y="19" width="570" height="51"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8wZ-0n-qIr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="21"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠券ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLo-cg-7n2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mER-JI-Xcr">
+                                                                    <rect key="frame" x="78" y="0.0" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="检查有效" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SS-ES-SRe">
+                                                            <rect key="frame" x="0.0" y="31" width="68" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VDC-tg-lfX" firstAttribute="leading" secondItem="QDg-ng-46A" secondAttribute="leading" constant="15" id="4ay-Hh-6DX"/>
+                                                <constraint firstAttribute="trailing" secondItem="VDC-tg-lfX" secondAttribute="trailing" constant="15" id="IgT-b3-vZg"/>
+                                                <constraint firstItem="VDC-tg-lfX" firstAttribute="centerY" secondItem="QDg-ng-46A" secondAttribute="centerY" id="wzz-Qq-mEc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="xRQ-51-6X5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4Ix-W1-lQ2">
+                                        <rect key="frame" x="0.0" y="223" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Ix-W1-lQ2" id="pae-Xf-mGP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyz-33-fiM">
+                                                    <rect key="frame" x="15" y="7" width="570" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.74509803919999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="确认使用">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="confirmVoucher:" destination="EiD-pL-yn0" eventType="touchUpInside" id="Cee-g4-w5o"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gyz-33-fiM" firstAttribute="leading" secondItem="pae-Xf-mGP" secondAttribute="leading" constant="15" id="7mH-qK-eeZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="gyz-33-fiM" secondAttribute="trailing" constant="15" id="kHL-RT-hQM"/>
+                                                <constraint firstItem="gyz-33-fiM" firstAttribute="centerY" secondItem="pae-Xf-mGP" secondAttribute="centerY" id="y6Q-M4-LmQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="EiD-pL-yn0" id="Wml-zN-RCa"/>
+                            <outlet property="delegate" destination="EiD-pL-yn0" id="xPT-LF-Fs9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="确认优惠券" id="7MZ-H8-Eal"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="gyz-33-fiM" id="MAc-SD-EFy"/>
+                        <outlet property="voucherIdLabel" destination="mER-JI-Xcr" id="EFb-S9-LEi"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfT-iH-pCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2832" y="-476"/>
         </scene>
         <!--Consumer AwardTVC-->
         <scene sceneID="WkP-Io-W67">
@@ -453,10 +554,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ConsumerAwardCell" rowHeight="58" id="5hq-1r-O9i" customClass="ConsumerAwardCell">
-                                <rect key="frame" x="0.0" y="50" width="600" height="58"/>
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5hq-1r-O9i" id="r5b-XQ-70m">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="57.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EfZ-Vm-3a3">
@@ -558,17 +659,17 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="COneAwardCell" rowHeight="60" id="B2x-qD-Gti" customClass="COneAwardCell">
-                                <rect key="frame" x="0.0" y="50" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2x-qD-Gti" id="qad-ku-BcU">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-H3-G7X">
-                                            <rect key="frame" x="15" y="15" width="77" height="30"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-H3-G7X">
+                                            <rect key="frame" x="15" y="15" width="77" height="31"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="g40-mA-pBs">
-                                                    <rect key="frame" x="0.0" y="10" width="20" height="20"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-credit-select" translatesAutoresizingMaskIntoConstraints="NO" id="g40-mA-pBs">
+                                                    <rect key="frame" x="0.0" y="11" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="1WQ-89-5eQ"/>
                                                         <constraint firstAttribute="height" constant="20" id="6qh-uq-EJM"/>
@@ -820,7 +921,7 @@
                     <navigationItem key="navigationItem" title="扫一扫" id="x3L-el-fC4">
                         <barButtonItem key="rightBarButtonItem" title="测试按钮" id="ka6-GK-b7I">
                             <connections>
-                                <segue destination="DlP-8d-16p" kind="show" identifier="ConfirmVoucher" id="fCA-2y-HLU"/>
+                                <segue destination="EiD-pL-yn0" kind="show" id="cyo-qX-WzX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -841,6 +942,7 @@
                         <outletCollection property="angelViews" destination="KLf-4S-nMm" id="fiQ-vi-VDx"/>
                         <outletCollection property="angelViews" destination="aDv-hg-h2Z" id="ajQ-m9-oC5"/>
                         <outletCollection property="angelViews" destination="PdY-QP-dKU" id="dy3-5C-q3u"/>
+                        <segue destination="EiD-pL-yn0" kind="show" identifier="ConfirmVoucher" id="WMR-Sx-csJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrX-fg-iAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -850,7 +952,7 @@
     </scenes>
     <resources>
         <image name="icon-activity" width="30" height="30"/>
-        <image name="icon-alipay" width="64" height="64"/>
+        <image name="icon-alipay" width="30" height="30"/>
         <image name="icon-center" width="30" height="30"/>
         <image name="icon-credit" width="30" height="30"/>
         <image name="icon-credit-select" width="30" height="30"/>
@@ -858,7 +960,8 @@
         <image name="nocreditmerchant" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WhJ-A8-kt5"/>
         <segue reference="Zbw-pP-BL8"/>
+        <segue reference="WhJ-A8-kt5"/>
+        <segue reference="WMR-Sx-csJ"/>
     </inferredMetricsTieBreakers>
 </document>

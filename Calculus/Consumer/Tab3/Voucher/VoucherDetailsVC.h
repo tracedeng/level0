@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface VoucherDetailsVC : UIViewController
-
+@property (nonatomic, retain) NSDictionary *voucherInfo;
+@property (nonatomic, retain) UIImage *logo;
 @end

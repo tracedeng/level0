@@ -46,7 +46,7 @@
         self.merchantLBL.text = [merchantInfo objectForKey:@"n"];
         
         NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [merchantInfo objectForKey:@"logo"]];
-        [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
+        [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-merchant-default"]];
         self.logoImageView.clipsToBounds = YES;
 //        self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.height / 2.0;
         self.logoImageView.layer.cornerRadius = 4.0f;

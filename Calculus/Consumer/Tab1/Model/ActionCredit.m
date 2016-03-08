@@ -68,6 +68,7 @@
     
     [self.net requestHttpWithData:postData];
 }
+
 - (void)doConsumerQueryMerchantListWithout:(NSString *)merchant {
     self.type = ECONSUMERQUERYMERCHANTLIST;
     
@@ -80,6 +81,18 @@
     self.type = EALLOWINTERCHANGEIN;
     
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"allow_in", @"type", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    
+    [self.net requestHttpWithData:postData];
+}
+
+// merchant－－不返回该商家积分
+- (void)doQueryAllowExchangeOutCredit:(NSString *)merchant {
+    self.type = EQUERYALLOWEXCHANGEOUTCREDIT;
+    
+    if (!merchant) {
+        merchant = @"";
+    }
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"allow_out_credit", @"type", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
     
     [self.net requestHttpWithData:postData];
 }
@@ -125,6 +138,7 @@
                 break;
             }
             case ECONSUMERQUERYOTHERCREDITLIST:
+            case EQUERYALLOWEXCHANGEOUTCREDIT:
             {
                 NSArray *creditList = [responseObject objectForKey:@"r"];
                 DLog(@"credit id %@", creditList);
@@ -190,6 +204,7 @@
                 break;
             }
             case ECONSUMERQUERYOTHERCREDITLIST:
+            case EQUERYALLOWEXCHANGEOUTCREDIT:
             {
                 NSString *message = [responseObject objectForKey:@"m"];
                 if (self.afterConsumerQueryOtherCreditListFailed) {
@@ -254,6 +269,14 @@
             }
             break;
         }
+        case ECONSUMERQUERYOTHERCREDITLIST:
+        case EQUERYALLOWEXCHANGEOUTCREDIT:
+        {
+            if (self.afterConsumerQueryOtherCreditListFailed) {
+                self.afterConsumerQueryOtherCreditListFailed([responseError localizedDescription]);
+            }
+            break;
+        }
         case EALLOWINTERCHANGEIN:
         {
             if (self.afterAllowInterchangeInFailed) {
@@ -261,6 +284,14 @@
             }
             break;
         }
+        case ECREDITINTERCHANGE:
+        {
+            if (self.afterCreditInterchangeFailed) {
+                self.afterCreditInterchangeFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+
         default:
             break;
     }

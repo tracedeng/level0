@@ -46,7 +46,7 @@
 - (void)doDeleteMerchantActivity:(NSString *)merchant activity:(NSString *)activity {
     self.type = EDELETEMERCHANTACTIVITY;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"delete", @"type", self.account, @"numbers",merchant, @"merchant", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"delete", @"type", self.account, @"numbers",merchant, @"merchant", activity, @"activity", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
     
 }
