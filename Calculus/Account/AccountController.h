@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EAIntroView.h"
 
-@interface AccountController : UIViewController <UITextFieldDelegate>
+
+@interface AccountController : UIViewController <UITextFieldDelegate,EAIntroDelegate>
 //@property (nonatomic, retain) NSString *userMode;     //第一版本不支持这个需求
 
 @end

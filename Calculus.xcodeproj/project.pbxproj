@@ -135,6 +135,8 @@
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
+		B52AB8301C902EFD00322CA0 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */; };
+		B52AB8311C902EFD00322CA0 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82F1C902EFD00322CA0 /* EAIntroView.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
@@ -390,6 +392,10 @@
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeSessionHeader.h; sourceTree = "<group>"; };
 		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
+		B52AB82C1C902EFD00322CA0 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroPage.h; path = Kickstart/EAIntroPage.h; sourceTree = "<group>"; };
+		B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroPage.m; path = Kickstart/EAIntroPage.m; sourceTree = "<group>"; };
+		B52AB82E1C902EFD00322CA0 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroView.h; path = Kickstart/EAIntroView.h; sourceTree = "<group>"; };
+		B52AB82F1C902EFD00322CA0 /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroView.m; path = Kickstart/EAIntroView.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
 		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
@@ -639,6 +645,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B52AB82B1C902EB200322CA0 /* Kickstart */,
 				19EB0F4C1C7D968D00FECDF5 /* RoundRectUIImage */,
 				1974911C1C79A25400784D09 /* DatePicker */,
 				195A12CD1C552560008E7945 /* Qrcode */,
@@ -1154,6 +1161,17 @@
 			name = CityList;
 			sourceTree = "<group>";
 		};
+		B52AB82B1C902EB200322CA0 /* Kickstart */ = {
+			isa = PBXGroup;
+			children = (
+				B52AB82C1C902EFD00322CA0 /* EAIntroPage.h */,
+				B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */,
+				B52AB82E1C902EFD00322CA0 /* EAIntroView.h */,
+				B52AB82F1C902EFD00322CA0 /* EAIntroView.m */,
+			);
+			name = Kickstart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1334,6 +1352,7 @@
 				195A12C41C537297008E7945 /* MerchantSelectCell.m in Sources */,
 				19EB0F6C1C7EE5E300FECDF5 /* MAwardDerivateCVC.m in Sources */,
 				193C382D1C1D94DE0017CC9C /* UIImage+FixOrientation.m in Sources */,
+				B52AB8301C902EFD00322CA0 /* EAIntroPage.m in Sources */,
 				195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */,
 				19EB0FDE1C80824A00FECDF5 /* DiscountTVC.m in Sources */,
 				B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */,
@@ -1351,6 +1370,7 @@
 				19EB0FDC1C80824A00FECDF5 /* DiscountCell.m in Sources */,
 				19EB0F6B1C7EE5E300FECDF5 /* MAwardDerivateCell.m in Sources */,
 				19EB0FAF1C7EE7C900FECDF5 /* MerchantEmailVC.m in Sources */,
+				B52AB8311C902EFD00322CA0 /* EAIntroView.m in Sources */,
 				195A12A91C5370D1008E7945 /* AwardDerivateCVC.m in Sources */,
 				19EB0FB51C7EE7C900FECDF5 /* MerchantVerifiedInfoTVC.m in Sources */,
 				B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */,
