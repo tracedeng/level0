@@ -1338,6 +1338,7 @@
         <image name="icon-center-rating" width="30" height="30"/>
         <image name="icon-center-reply" width="30" height="30"/>
         <image name="icon-center-setting" width="30" height="30"/>
+        <image name="icon-center-voucher-bg" width="333" height="200"/>
         <image name="icon-mcd" width="64" height="64"/>
         <image name="icon-next-ccc" width="20" height="20"/>
         <image name="icon-voucher" width="64" height="64"/>
