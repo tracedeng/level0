@@ -234,7 +234,7 @@
         if (0 == indexPath.row) {
             //活动海报
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
-            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activitytest"]];
+            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activity-default"]];
         }
     }
     

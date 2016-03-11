@@ -11,10 +11,15 @@
 #import "BuyDiscountCell.h"
 #import "ActionCredit.h"
 
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
+
 @interface BuyDiscountTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
 @property (nonatomic, assign) NSInteger checkedQuantity;        //已选积分量
 @property (nonatomic, retain) NSMutableArray *checkedIndexPath;        //cell选中indexpath
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation BuyDiscountTVC
@@ -22,6 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"creditless"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,6 +65,14 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        if ([creditList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+        }
+
     };
     credit.afterConsumerQueryOneCreditFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {

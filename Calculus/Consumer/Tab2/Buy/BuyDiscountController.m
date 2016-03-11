@@ -84,10 +84,12 @@
     if ([segue.identifier isEqualToString:@"EmbedCreditList"]) {
         if ([segue.destinationViewController isKindOfClass:[BuyDiscountTVC class]]) {
             BuyDiscountTVC *destination = (BuyDiscountTVC *)segue.destinationViewController;
-            destination.merchant = self.merchant;
+//            destination.merchant = self.merchant;
+            destination.merchant = [self.discountInfo objectForKey:@"mid"];
             destination.needQuantity = [[self.discountInfo objectForKey:@"cr"] integerValue];
             self.buyDiscountTVC = (BuyDiscountTVC *)segue.destinationViewController;
 //            self.buyDiscountTVC.merchant = self.merchant;
+            
         }
     }
 }
