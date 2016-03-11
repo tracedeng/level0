@@ -32,13 +32,15 @@
     if (history) {
         _history = history;
         NSString *direction = [history objectForKey:@"di"];
-        if ([direction isEqualToString:@"recharege"]) {
+        if ([direction isEqualToString:@"recharge"]) {
             self.balanceTypeLabel.text = @"充值";
+            self.moneyLabel.text = [NSString stringWithFormat:@"+%.2f", [[history objectForKey:@"mo"] floatValue]];
         }else if ([direction isEqualToString:@"withdrawals"]){
             self.balanceTypeLabel.text = @"提现";
+            self.moneyLabel.text = [NSString stringWithFormat:@"-%.2f", [[history objectForKey:@"mo"] floatValue]];
         }
         self.timeLabel.text = [history objectForKey:@"ti"];
-        self.moneyLabel.text = [[history objectForKey:@"mo"] stringValue];;
+//        self.moneyLabel.text = [[history objectForKey:@"mo"] stringValue];;
 //        self.balanceLabel.text = [[history objectForKey:@"ba"] stringValue];
     }
 }

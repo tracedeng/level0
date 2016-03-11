@@ -57,6 +57,10 @@
     
     self.call.afterClickImageView = ^(id sender) {
         // 呼起电话
+        NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@", [self.discountInfo objectForKey:@"mco"]];
+//        NSLog(@"str======%@",str);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+
     };
     
     self.buyButton.clipsToBounds = YES;

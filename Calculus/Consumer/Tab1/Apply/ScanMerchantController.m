@@ -91,7 +91,7 @@
 //            destination.merchant = self.merchant;
             //测试
             destination.material = self.material;
-            destination.money = 10;
+//            destination.money = 10;
             destination.merchant = self.merchant;
         }
     }

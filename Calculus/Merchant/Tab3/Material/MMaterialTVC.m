@@ -78,11 +78,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (0 == section) {
-        return 0.01f;
-    }
-    return 0.0f;
+    return 20.0f;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -91,7 +93,7 @@
     if (indexPath.section == 0) {
         if (0 == indexPath.row) {
             //头像，right detail，修改accessory图标
-            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, [self.material objectForKey:@"logo"]];
+            NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/320/h/320", QINIUURL, [self.material objectForKey:@"logo"]];
             [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"logo-merchant-default"] ];
         }
     }else if (indexPath.section == 1){

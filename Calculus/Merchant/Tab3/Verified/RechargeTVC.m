@@ -40,6 +40,8 @@
         __weak ClickableView *_my = view;
 
         view.afterClickView = ^(id sender) {
+            self.manualRechargeMoney.text = @"";
+            [self.manualRechargeMoney resignFirstResponder];
             if (self.lastCheckView) {
                 self.lastCheckView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
             }

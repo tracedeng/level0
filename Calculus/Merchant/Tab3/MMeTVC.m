@@ -206,15 +206,15 @@
     }else if (1 == section) {
         return 0.01f;
     }
-    return 0.0f;
+    return 20.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if (0 == section) {
-        return 0.01f;
-    }
+//    if (0 == section) {
+//        return 0.01f;
+//    }
     
-    return 0.0f;
+    return 0.01f;
 }
 
 

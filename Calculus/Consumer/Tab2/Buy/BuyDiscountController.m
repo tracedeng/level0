@@ -106,7 +106,7 @@
 
     };
     action.afterConsumerBuyDiscountFailed = ^(NSString *message) {
-        // 购买时阿白
+        // 购买失败
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"购买活动失败" message:message preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popToRootViewControllerAnimated:YES];

@@ -60,7 +60,13 @@
     return rows;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 22.01f;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
@@ -69,7 +75,7 @@
         
         if (0 == indexPath.row) {
             NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",self.contactNumberLBL.text];
-            NSLog(@"str======%@",str);
+//            DLog(@"str======%@",str);
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 
         }else if (1 == indexPath.row) {

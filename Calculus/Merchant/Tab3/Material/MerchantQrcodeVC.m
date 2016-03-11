@@ -33,15 +33,16 @@
 
     if ([self.merchantQrcode length]) {
         //头像，right detail，修改accessory图标
-        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.merchantQrcode];
+        NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/480/h/480", QINIUURL, self.merchantQrcode];
         [self.qrcodeImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
         self.noticeLabel.hidden = NO;
     }else{
         //主动生成商家Qrcode
+    }
         [self prepareQiniuToken];
         self.qrcodeImageView.afterClickImageView = ^(id sender) {
-            NSString *qrcodeValue = [NSString stringWithFormat:@"{\"merchant\":\"%@\"", self.merchant];
-            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(160, 160)]];
+            NSString *qrcodeValue = [NSString stringWithFormat:@"{\"mid\":\"%@\"}", self.merchant];
+            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
             //先展示
             self.noticeLabel.hidden = NO;
             self.qrcodeImageView.image = self.qrcodeImage;
@@ -61,7 +62,7 @@
             //测试关闭上传
             [action doQiniuUploadImage:self.qrcodeImage token:self.uploadToken path:self.path];
         };
-    }
+//    }
 }
 
 //获取7牛上传token，做好准备
@@ -72,6 +73,13 @@
         self.path = [result objectForKey:@"path"];
     };
     [action doQueryUploadToken:self.merchant ofResource:@"m_qrcode"];
+}
+
+- (IBAction)regenerateQrcode:(id)sender {
+//    [self prepareQiniuToken];
+//    if (self.qrcodeImageView.afterClickImageView) {
+//        [self.qrcodeImageView performSelector:@selector(afterClickImageView)];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {

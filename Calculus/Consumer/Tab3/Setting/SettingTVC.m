@@ -69,6 +69,14 @@
     return 0;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 22.01f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
@@ -167,14 +175,14 @@
 }
 
 // 当用户点击非picker区域时,退出
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = touches.anyObject;
-    CGPoint point = [touch locationInView:self.view];
-    
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    UITouch *touch = touches.anyObject;
+//    CGPoint point = [touch locationInView:self.view];
+//    
 //    if (CGRectContainsPoint(self.picker.frame, point)) {
 //        
 //    }else{
 //        [_picker hide];
 //    }
-}
+//}
 @end

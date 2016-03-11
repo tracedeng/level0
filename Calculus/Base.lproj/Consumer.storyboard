@@ -1734,7 +1734,7 @@
     <resources>
         <image name="bg-credit-conpon-unexchanged" width="384" height="100"/>
         <image name="icon-activity" width="30" height="30"/>
-        <image name="icon-alipay" width="64" height="64"/>
+        <image name="icon-alipay" width="30" height="30"/>
         <image name="icon-center" width="30" height="30"/>
         <image name="icon-credit" width="30" height="30"/>
         <image name="icon-credit-select" width="30" height="30"/>

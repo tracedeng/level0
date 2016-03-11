@@ -160,7 +160,7 @@
                                                                 <constraint firstAttribute="height" constant="60" id="GI5-Hh-KHC"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Rd-6T-NlX">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Rd-6T-NlX">
                                                             <rect key="frame" x="65" y="10" width="37" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5I-tu-M2r">
@@ -894,7 +894,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-gt-DeI">
                                 <rect key="frame" x="0.0" y="44" width="600" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">微积分 1.0 版本 客户版 功能介绍
+                                <string key="text">微积分 1.0 版本 客户版 功能介绍
 
 1.注册和登录
 	本软件仅限登录后使用。
@@ -917,7 +917,7 @@
 6. 我
 	个人设置页面提供用户个人信息的查看和更新，以及优惠券信息的查看。
 
- </mutableString>
+ </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

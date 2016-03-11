@@ -124,21 +124,6 @@
             default:
                 break;
         }
-    }else{
-        switch (self.type) {
-            case EQUERYFLOW:
-            {
-                NSString *message = [responseObject objectForKey:@"m"];
-                if (self.afterQqueryFlowFailed) {
-                    self.afterQqueryFlowFailed(message);
-                }
-                break;
-            }
-                
-            default:
-                break;
-        }
-
     }
 }
 
