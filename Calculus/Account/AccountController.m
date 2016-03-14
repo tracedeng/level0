@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     
     
-     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
         [super viewDidLoad];
     }else{
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
@@ -54,6 +54,7 @@
 //    self.logoImageView.layer.borderWidth = 1.0f;
 //    self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
     self.logoImageView.clipsToBounds = YES;
+    self.logoImageView.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {

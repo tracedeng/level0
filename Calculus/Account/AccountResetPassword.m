@@ -39,10 +39,11 @@
     self.passwordView.layer.cornerRadius = 4.0f;
     self.resetButton.layer.cornerRadius = 4.0f;
     
-    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.width / 2.0f;
+//    self.logoImageView.layer.cornerRadius = self.logoImageView.frame.size.width / 2.0f;
 //    self.logoImageView.layer.borderWidth = 1.0f;
 //    self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
     self.logoImageView.clipsToBounds = YES;
+    self.logoImageView.layer.cornerRadius = 4.0f;
 }
 
 - (void)didReceiveMemoryWarning {
