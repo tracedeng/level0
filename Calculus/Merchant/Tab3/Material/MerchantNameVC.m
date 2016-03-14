@@ -48,7 +48,7 @@
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if (text.length == 0) return YES;     //支持已经输满长度按退格键删除
     
-    if (textView.text.length > 15) {
+    if (textView.text.length > 32) {
         return NO;
     }
     
