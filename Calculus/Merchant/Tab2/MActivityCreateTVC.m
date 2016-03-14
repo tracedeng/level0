@@ -187,7 +187,8 @@
         // 购买成功
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发布活动成功" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@", self.atittleTXT.text], @"t", [NSString stringWithFormat:@"%@", self.adetailsTXT.text], @"in", [NSString stringWithFormat:@"%@", self.acreditTXT.text], @"cr", self.path, @"po", self.aexpireTXT.text, @"et", activity, @"id", "update", @"mode", nil];
+        NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@", self.atittleTXT.text], @"t", [NSString stringWithFormat:@"%@", self.adetailsTXT.text], @"in", [NSString stringWithFormat:@"%ld", [self.acreditTXT.text integerValue]], @"cr", self.path, @"po", self.aexpireTXT.text, @"et", [NSString stringWithFormat:@"%@", activity], @"id", @"update", @"mode", nil];
+          
             [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshNewActivity" object:nil userInfo:newActivity];
             [self.navigationController popToRootViewControllerAnimated:YES];
         }]];
