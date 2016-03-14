@@ -95,8 +95,6 @@
                     self.afterAccountLogin(material);
                 }
                 break;
-
-                
             }
             case EACCOUNTCHANGEPASSWORD:
             {

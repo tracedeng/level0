@@ -282,7 +282,7 @@
     [self.pageBgFront setAlpha:frontLayerAlpha];
 }
 
-- (UIImage *)bgForPage:(int)idx {
+- (UIImage *)bgForPage:(NSInteger)idx {
     if(idx >= _pages.count || idx < 0)
         return nil;
     
