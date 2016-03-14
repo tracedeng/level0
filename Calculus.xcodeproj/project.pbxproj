@@ -76,6 +76,7 @@
 		197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914C1C79DAB600784D09 /* VoucherDetailsVC.m */; };
 		197491521C79DAB600784D09 /* VoucherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914D1C79DAB600784D09 /* VoucherTVC.m */; };
 		197491531C79DAB600784D09 /* VoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914F1C79DAB600784D09 /* VoucherCell.m */; };
+		1982201F1C96FD7C0093C127 /* IntroduceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982201E1C96FD7C0093C127 /* IntroduceVC.m */; };
 		19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */; };
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
@@ -139,6 +140,7 @@
 		19EB100C1C8ACC2500FECDF5 /* ConfirmVoucherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EB100B1C8ACC2500FECDF5 /* ConfirmVoucherTVC.m */; };
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
+		19F7C91C1C96FEDA000EB1A4 /* MIntroduceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7C91B1C96FEDA000EB1A4 /* MIntroduceVC.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 		B52AB8301C902EFD00322CA0 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */; };
 		B52AB8311C902EFD00322CA0 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82F1C902EFD00322CA0 /* EAIntroView.m */; };
@@ -286,6 +288,8 @@
 		1974914E1C79DAB600784D09 /* VoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherCell.h; path = Voucher/VoucherCell.h; sourceTree = "<group>"; };
 		1974914F1C79DAB600784D09 /* VoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoucherCell.m; path = Voucher/VoucherCell.m; sourceTree = "<group>"; };
 		197491501C79DAB600784D09 /* VoucherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherTVC.h; path = Voucher/VoucherTVC.h; sourceTree = "<group>"; };
+		1982201D1C96FD7C0093C127 /* IntroduceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroduceVC.h; path = Setting/IntroduceVC.h; sourceTree = "<group>"; };
+		1982201E1C96FD7C0093C127 /* IntroduceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroduceVC.m; path = Setting/IntroduceVC.m; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
 		19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityNavigationController.h; path = Merchant/Tab2/MActivityNavigationController.h; sourceTree = "<group>"; };
@@ -407,6 +411,8 @@
 		19ED4C8C1C1AA77F00FE4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		19EED9601C5DC95A009E58EE /* CreditExchangeSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditExchangeSessionHeader.h; sourceTree = "<group>"; };
 		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
+		19F7C91A1C96FEDA000EB1A4 /* MIntroduceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIntroduceVC.h; sourceTree = "<group>"; };
+		19F7C91B1C96FEDA000EB1A4 /* MIntroduceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIntroduceVC.m; sourceTree = "<group>"; };
 		B52AB82C1C902EFD00322CA0 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroPage.h; path = Kickstart/EAIntroPage.h; sourceTree = "<group>"; };
 		B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroPage.m; path = Kickstart/EAIntroPage.m; sourceTree = "<group>"; };
 		B52AB82E1C902EFD00322CA0 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroView.h; path = Kickstart/EAIntroView.h; sourceTree = "<group>"; };
@@ -924,6 +930,8 @@
 				1974913F1C79DA6300784D09 /* AssistanceTVC.m */,
 				197491401C79DA6300784D09 /* SettingTVC.m */,
 				197491411C79DA6300784D09 /* SettingTVC.h */,
+				1982201D1C96FD7C0093C127 /* IntroduceVC.h */,
+				1982201E1C96FD7C0093C127 /* IntroduceVC.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -1080,6 +1088,8 @@
 				19EB0FA41C7EE7C900FECDF5 /* MAssistanceTVC.m */,
 				19EB0FA51C7EE7C900FECDF5 /* MSettingTVC.h */,
 				19EB0FA61C7EE7C900FECDF5 /* MSettingTVC.m */,
+				19F7C91A1C96FEDA000EB1A4 /* MIntroduceVC.h */,
+				19F7C91B1C96FEDA000EB1A4 /* MIntroduceVC.m */,
 			);
 			name = Setting;
 			path = Merchant/Tab3/Setting;
@@ -1388,7 +1398,9 @@
 				19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */,
 				19EB0F751C7EE61B00FECDF5 /* COneAwardCell.m in Sources */,
 				19339AE51C258AB500791A9E /* MMeTVC.m in Sources */,
+				1982201F1C96FD7C0093C127 /* IntroduceVC.m in Sources */,
 				B5EDC3981C3921EC002E2833 /* MActivityCell.m in Sources */,
+				19F7C91C1C96FEDA000EB1A4 /* MIntroduceVC.m in Sources */,
 				19339AD21C23DC6100791A9E /* CreateMerchantTVC.m in Sources */,
 				193C38351C1D94DE0017CC9C /* ImageListCell.m in Sources */,
 				19EB0F811C7EE66B00FECDF5 /* MerchantMain.m in Sources */,
