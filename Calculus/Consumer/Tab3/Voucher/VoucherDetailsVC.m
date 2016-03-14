@@ -40,14 +40,14 @@
     self.voucherBackgroundVIew.layer.borderColor = [[UIColor colorWithHex:0x555555] CGColor];
     
     self.sequence.text = [self.voucherInfo objectForKey:@"id"];
-    self.voucherNumberView.layer.borderWidth = 1.0f;
-    self.voucherNumberView.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
+//    self.voucherNumberView.layer.borderWidth = 1.0f;
+//    self.voucherNumberView.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
     
-    self.voucherQrCodeView.layer.borderWidth = 1.0f;
-    self.voucherQrCodeView.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
+//    self.voucherQrCodeView.layer.borderWidth = 1.0f;
+//    self.voucherQrCodeView.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
     self.qrcode.image = [self generateVoucherQrcode];
-    self.qrcodeBackground.layer.borderWidth = 1.0f;
-    self.qrcodeBackground.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
+//    self.qrcodeBackground.layer.borderWidth = 1.0f;
+//    self.qrcodeBackground.layer.borderColor = [[UIColor colorWithHex:0xDDDDDD] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {
