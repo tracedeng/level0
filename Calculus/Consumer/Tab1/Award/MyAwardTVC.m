@@ -26,9 +26,14 @@
 #import "SVProgressHUD.h"
 #import "MyOneAwardTVC.h"
 
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
+
 @interface MyAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
 @property (nonatomic, assign) NSInteger checkedRow;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation MyAwardTVC
@@ -36,6 +41,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -65,7 +76,8 @@
 - (void)loadCreditList:(id)sender {
     ActionCredit *credit = [[ActionCredit alloc] init];
     credit.afterConsumerQueryAllCredit = ^(NSArray *creditList) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"toggleAwardView" object:nil userInfo:@{@"award": ([creditList count] == 0) ? @"noaward" : @"award"}];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"toggleAwardView" object:nil userInfo:@{@"award": ([creditList count] == 0) ? @"noaward" : @"award"}];
+        
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
@@ -74,6 +86,13 @@
         }
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
+        }
+        if ([creditList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
         }
     };
     credit.afterConsumerQueryAllCreditFailed = ^(NSString *message) {
