@@ -13,9 +13,14 @@
 #import "SVProgressHUD.h"
 #import "DiscountDetailsTVC.h"
 
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
+
 @interface DiscountTVC ()
 @property (nonatomic, retain) NSMutableArray *discountList;
 @property (nonatomic, retain) NSIndexPath *checkedIndexPath;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation DiscountTVC
@@ -23,6 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"cuactivity-empty"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -56,6 +66,14 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        if ( [discountList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+        }
+
     };
     discount.afterConsumerQueryDiscountFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
