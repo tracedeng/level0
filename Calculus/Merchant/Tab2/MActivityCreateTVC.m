@@ -109,7 +109,7 @@
     }
     
     if (textField == self.atittleTXT) {
-        if (textField.text.length > 15) {
+        if (textField.text.length > 32) {
             return NO;
         }
         self.canSubmitMask |= 0x2;

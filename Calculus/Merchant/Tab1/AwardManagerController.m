@@ -19,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleAwardMerchantView:) name:@"toggleAwardMerchantView" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleAwardMerchantView:) name:@"toggleAwardMerchantView" object:nil];
+    self.noCreditListImageView.hidden = YES;
+
 
     self.title = @"积分";
 }
