@@ -18,10 +18,18 @@ typedef NS_ENUM(NSInteger, EMVOUCHEROPTYPE) {
     EVOUCHEROPTYPEMAX,
 };
 
+//- (void)doQueryVoucher;
+//- (void)doMerchantQueryVoucher:(NSString *)merchant;
 - (void)doConfirmVoucher:(NSString *)voucher merchant_identity:(NSString *)merchant activity_identity:(NSString *)activity consumer_number:(NSString *)consumer exec_confirm:(BOOL)exec;
+//
 
 ////操作成功后回调Blcok
-@property (nonatomic, copy) void (^afterConfirmVoucher)(NSString *state);
+//@property (nonatomic, copy) void (^afterQueryVoucher)(NSArray *voucher);
+//@property (nonatomic, copy) void (^afterMerchantQueryVoucher)(NSArray *voucher);
+@property (nonatomic, copy) void (^afterConfirmVoucher)(NSString *state); 
 
+
+//@property (nonatomic, copy) void (^afterQueryVoucherFailed)(NSString *messge);
+//@property (nonatomic, copy) void (^afterMerchantQueryVoucherFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConfirmVoucherFailed)(NSString *message);
 @end

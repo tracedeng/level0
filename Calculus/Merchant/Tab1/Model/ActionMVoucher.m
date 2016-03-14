@@ -37,7 +37,7 @@
 - (void)doConfirmVoucher:(NSString *)voucher merchant_identity:(NSString *)merchant activity_identity:(NSString *)activity consumer_number:(NSString *)consumer exec_confirm:(BOOL)exec {
     self.type = ECONFIRMVOUCHER;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"confirm", @"type", voucher, @"voucher", merchant, @"merchant", activity, @"activity", consumer, @"consumer", exec, @"exec_confirm", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"confirm", @"type", voucher, @"voucher", merchant, @"merchant", activity, @"activity", consumer, @"consumer", [NSString stringWithFormat:@"%d", exec], @"exec_confirm", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -51,6 +51,7 @@
         switch (self.type) {
             case ECONFIRMVOUCHER:
             {
+                // "invalid"-无效，"used"-已经使用，"valid"-可使用，"yes"-使用成功
                 NSString *state = [responseObject objectForKey:@"r"];
                 if (self.afterConfirmVoucher) {
                     self.afterConfirmVoucher(state);

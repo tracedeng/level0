@@ -85,6 +85,20 @@
     NSString *phoneNumber = self.accountTXT.text;
     ActionAccount *code = [[ActionAccount alloc] init];
     code.afterGetSMSCode = ^(NSString *result){
+#ifdef DEBUG
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"测试验证码" message:result preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:alert completion:nil];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+#else
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"验证码已下发，请查看短信" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:alert completion:nil];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+#endif
     };
     [code doGetSMSCode:phoneNumber];
 
