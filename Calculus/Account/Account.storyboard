@@ -613,6 +613,6 @@
         <image name="icon-lock" width="20" height="20"/>
         <image name="icon-sms" width="20" height="20"/>
         <image name="icon-user" width="20" height="20"/>
-        <image name="logo" width="134" height="134"/>
+        <image name="logo" width="90" height="90"/>
     </resources>
 </document>

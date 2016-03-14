@@ -1574,32 +1574,32 @@
                                             <constraint firstAttribute="height" constant="5" id="pME-i4-fjL"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAP-4y-Bvb" userLabel="leftBotV">
-                                        <rect key="frame" x="0.0" y="404" width="5" height="24"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAP-4y-Bvb" userLabel="leftBotV">
+                                        <rect key="frame" x="0.0" y="405" width="5" height="24"/>
                                         <color key="backgroundColor" red="0.94543511479999998" green="1" blue="0.28921956519999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="mgz-s1-dbk"/>
                                             <constraint firstAttribute="width" constant="5" id="p0L-7K-AW5"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGF-br-jFC" userLabel="leftBotH">
-                                        <rect key="frame" x="5" y="423" width="19" height="5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGF-br-jFC" userLabel="leftBotH">
+                                        <rect key="frame" x="5" y="424" width="19" height="5"/>
                                         <color key="backgroundColor" red="0.94543511479999998" green="1" blue="0.28921956519999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="19" id="Kbd-Qr-V3n"/>
                                             <constraint firstAttribute="height" constant="5" id="hhf-22-m4W"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-E8-5M9" userLabel="rightBotV">
-                                        <rect key="frame" x="424" y="404" width="5" height="24"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-E8-5M9" userLabel="rightBotV">
+                                        <rect key="frame" x="424" y="405" width="5" height="24"/>
                                         <color key="backgroundColor" red="0.94543511479999998" green="1" blue="0.28921956519999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="5" id="XJB-OY-WU2"/>
                                             <constraint firstAttribute="height" constant="24" id="dfY-8V-chm"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cea-05-DJi" userLabel="rightBotH">
-                                        <rect key="frame" x="405" y="423" width="19" height="5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cea-05-DJi" userLabel="rightBotH">
+                                        <rect key="frame" x="405" y="424" width="19" height="5"/>
                                         <color key="backgroundColor" red="0.94543511479999998" green="1" blue="0.28921956519999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="19" id="LgI-qQ-tsr"/>

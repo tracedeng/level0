@@ -349,6 +349,6 @@
 }
 
 - (void)introDidFinish {
-    NSLog(@"Intro callback");
+    DLog(@"Intro callback");
 }
 @end

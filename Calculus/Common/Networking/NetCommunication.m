@@ -24,7 +24,7 @@
     DLog(@"%@", data);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     // 网络请求超时
-    manager.requestSerializer.timeoutInterval = 15;
+    manager.requestSerializer.timeoutInterval = 10;
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
 //    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
