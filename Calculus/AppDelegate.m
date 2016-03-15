@@ -11,6 +11,8 @@
 #import "ActionAccount.h"
 #import <CoreLocation/CoreLocation.h>
 #import <IQKeyboardManager.h>
+#import "ActionStatistic.h"
+#import "Constance.h"
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UIViewController *consumerRoot;
@@ -24,9 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-//    CLLocationManager * locService= [[CLLocationManager alloc] init];
-//    [locService requestWhenInUseAuthorization];
+//    启动上报
+    ActionStatistic *statistic = [[ActionStatistic alloc] init];
+    [statistic doBootReport:VERSION];
     
     // 全局修改状态栏
     UIImage *image = [UIImage imageNamed:@"icon-back"];
@@ -50,6 +52,9 @@
     BOOL state = [ActionAccount doWeakLogin];
     if (state) {
         DLog(@"weak login success");
+//        版本上报
+        ActionStatistic *statistic = [[ActionStatistic alloc] init];
+        [statistic doReportVersion:VERSION];
         NSString * role = [RoleManager currentRole];
         DLog(@"role %@", role);
         if ([role isEqualToString:@"consumer"]) {
@@ -83,6 +88,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    活跃上报
+    ActionStatistic *action = [[ActionStatistic alloc] init];
+    [action doActiveReport];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -111,7 +119,6 @@
         [self loadBoard];
         self.window.rootViewController = self.accountRoot;
     }
-
 }
 
 - (void)loadBoard {

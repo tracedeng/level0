@@ -41,13 +41,13 @@
 }
 
 - (void)doBootReport:(NSString *)version {
-    self.type = ESTATISTICVERSIONREPORT;
+    self.type = ESTATISTICBOOTREPORT;
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"boot", @"type", version, @"version", nil];
     [self.net requestHttpWithData:postData];
 }
 
 - (void)doActiveReport {
-    self.type = ESTATISTICVERSIONREPORT;
+    self.type = ESTATISTICACTIVEREPORT;
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"active", @"type", [RoleManager currentRole], @"mode", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }

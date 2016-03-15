@@ -14,6 +14,8 @@
 #import "SKeyManager.h"
 #import "MaterialManager.h"
 #import "MMaterialManager.h"
+#import "ActionStatistic.h"
+#import "Constance.h"
 
 
 @interface AccountController ()
@@ -142,6 +144,10 @@
          
     ActionAccount *login = [[ActionAccount alloc] init];
     login.afterAccountLogin = ^(NSDictionary *material) {
+//        版本上报
+        ActionStatistic *statistic = [[ActionStatistic alloc] init];
+        [statistic doReportVersion:VERSION];
+        
 //        登录成功后手机号码、密码MD5存入cache
         [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
         [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"password"];
