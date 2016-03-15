@@ -1701,7 +1701,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="扫一扫" id="Z2g-1O-4pp">
-                        <barButtonItem key="rightBarButtonItem" title="测试按钮" id="qpJ-pK-P4j">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" id="qpJ-pK-P4j">
                             <connections>
                                 <segue destination="M5v-UD-9I9" kind="show" identifier="ApplyCredit" id="B3y-t8-z4k"/>
                             </connections>
