@@ -100,7 +100,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CF9-Be-DET">
                                             <rect key="frame" x="0.0" y="8" width="80" height="65"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-alipay" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-QS-BtH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-scan" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-QS-BtH">
                                                     <rect key="frame" x="15" y="0.0" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="sfO-QS-BtH" secondAttribute="height" multiplier="1:1" id="WZk-OB-BN1"/>
@@ -149,12 +149,12 @@
             <objects>
                 <tableViewController id="QDS-gV-Fm2" customClass="CreditExchangeTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="8cV-QI-b08">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreditExchangeCell" rowHeight="80" id="waG-yI-A5K" customClass="CreditExchangeCell">
-                                <rect key="frame" x="0.0" y="114" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waG-yI-A5K" id="5li-i5-c7T">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
@@ -235,7 +235,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreditExchangeSessionHeader" rowHeight="80" id="zxO-NU-Y2s" customClass="CreditExchangeSessionHeader">
-                                <rect key="frame" x="0.0" y="194" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="130" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zxO-NU-Y2s" id="aIa-EB-h2U">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
@@ -244,7 +244,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dwn-9E-ZgW">
                                             <rect key="frame" x="10" y="28" width="590" height="24"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-mcd" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-BH-xId">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-merchant-default" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-BH-xId">
                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="d3K-C3-8MR"/>
@@ -512,12 +512,12 @@
             <objects>
                 <tableViewController id="3Dl-Zx-WE9" customClass="MerchantSelectTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="75" sectionHeaderHeight="18" sectionFooterHeight="18" id="2Tw-1H-Not">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MerchantSelect" rowHeight="44" id="V35-aS-dRy" customClass="MerchantSelectCell">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V35-aS-dRy" id="tru-4n-gTi">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -910,7 +910,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-zk-JC4">
                                             <rect key="frame" x="10" y="28" width="590" height="24"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-mcd" translatesAutoresizingMaskIntoConstraints="NO" id="lX4-UP-2ym">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-merchant-default" translatesAutoresizingMaskIntoConstraints="NO" id="lX4-UP-2ym">
                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="Oqg-5o-s5l"/>
@@ -1310,14 +1310,14 @@
             <objects>
                 <tableViewController id="o8E-Z2-WdQ" customClass="ExchangeRateTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5mo-lr-HRa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="M7q-Rz-rDt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="xTB-uW-uMf">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="35" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTB-uW-uMf" id="PdY-V4-0Yw">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
@@ -1383,7 +1383,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="QiZ-kq-gS5">
-                                        <rect key="frame" x="0.0" y="199" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="135" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QiZ-kq-gS5" id="COi-zX-Cj7">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
@@ -1453,7 +1453,7 @@
                             <tableViewSection id="m7s-TH-kPh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Mch-oB-DEW" detailTextLabel="ABT-u2-m6w" style="IBUITableViewCellStyleValue1" id="mJv-jl-m0E">
-                                        <rect key="frame" x="0.0" y="335" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="271" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJv-jl-m0E" id="Yfb-zB-UlS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1734,24 +1734,24 @@
     <resources>
         <image name="bg-credit-conpon-unexchanged" width="384" height="100"/>
         <image name="icon-activity" width="30" height="30"/>
-        <image name="icon-alipay" width="30" height="30"/>
         <image name="icon-center" width="30" height="30"/>
         <image name="icon-credit" width="30" height="30"/>
         <image name="icon-credit-select" width="30" height="30"/>
         <image name="icon-interchange" width="64" height="64"/>
-        <image name="icon-mcd" width="64" height="64"/>
         <image name="icon-next-ccc" width="20" height="20"/>
         <image name="icon-radio" width="30" height="30"/>
         <image name="icon-renminbi-gray" width="12" height="12"/>
         <image name="icon-renminbi-white" width="30" height="30"/>
+        <image name="icon-scan" width="50" height="50"/>
         <image name="interchangebackground" width="120" height="120"/>
         <image name="interchangedestbackground" width="120" height="120"/>
         <image name="interchangefeebackground" width="120" height="120"/>
+        <image name="logo-merchant-default" width="150" height="150"/>
         <image name="nocreditlogo" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rdx-qK-x6Q"/>
         <segue reference="VW8-v9-dFh"/>
+        <segue reference="8fe-fI-aZz"/>
         <segue reference="hNz-Kt-Wdn"/>
     </inferredMetricsTieBreakers>
 </document>
