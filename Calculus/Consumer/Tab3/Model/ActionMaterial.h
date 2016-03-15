@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, EMATERIALOPTYPE) {
 //@property (nonatomic, copy) void (^afterModifySex)(NSInteger sex);
 @property (nonatomic, copy) void (^afterQueryUploadToken)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyAvatar)(NSDictionary *token);
-@property (nonatomic, copy) void (^afterModifyLocation)(NSDictionary *location);
+@property (nonatomic, copy) void (^afterModifyLocation)(NSString *result);
 @property (nonatomic, copy) void (^afterModifyGender)(NSDictionary *token);
 @property (nonatomic, copy) void (^afterModifyNickName)(NSDictionary *token);
 

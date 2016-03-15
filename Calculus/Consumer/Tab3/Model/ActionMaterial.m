@@ -112,7 +112,7 @@
             }
             case EUPDATELOCATION:
             {
-                NSDictionary *result = [responseObject objectForKey:@"r"];
+                NSString *result = [responseObject objectForKey:@"r"];
                 if (self.afterModifyLocation) {
                     self.afterModifyLocation(result);
                 }

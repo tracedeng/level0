@@ -185,4 +185,27 @@
     return self.pickerData ? self.pickerData[component][row] : nil;
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (component == 1) {
+        return;
+    }
+    if ([self.confirmDelegate respondsToSelector:@selector(pickView:didSelectRow:inComponent:)]) {
+        if (self.pickerMode == PickViewTypeCustom) {
+            
+            self.pickerData = [self.confirmDelegate pickView:self didSelectRow:row inComponent:component];
+//            NSMutableArray *result = [NSMutableArray array];
+//            for (int i = 0; i < self.pickerData.count; i++) {
+//                int index = (int)[self.pickerView selectedRowInComponent:i];
+//                [result addObject:self.pickerData[i][index]];
+//            }
+            [self reloadAllComponents];
+            
+//            [self.confirmDelegate pickView:self didClickButtonConfirm:result];
+        }else{
+            // 时区
+        }
+    }
+
+}
+
 @end

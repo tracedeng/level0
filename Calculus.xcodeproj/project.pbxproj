@@ -141,6 +141,8 @@
 		19ED4C8D1C1AA77F00FE4341 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ED4C8B1C1AA77F00FE4341 /* Me.storyboard */; };
 		19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */; };
 		19F7C91C1C96FEDA000EB1A4 /* MIntroduceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7C91B1C96FEDA000EB1A4 /* MIntroduceVC.m */; };
+		19F7C91E1C97BFA2000EB1A4 /* Provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19F7C91D1C97BFA2000EB1A4 /* Provinces.plist */; };
+		19F7C9221C97C023000EB1A4 /* ChinaCityList.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7C9211C97C023000EB1A4 /* ChinaCityList.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 		B52AB8301C902EFD00322CA0 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */; };
 		B52AB8311C902EFD00322CA0 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82F1C902EFD00322CA0 /* EAIntroView.m */; };
@@ -413,6 +415,9 @@
 		19EED9611C5DC95A009E58EE /* CreditExchangeSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditExchangeSessionHeader.m; sourceTree = "<group>"; };
 		19F7C91A1C96FEDA000EB1A4 /* MIntroduceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIntroduceVC.h; sourceTree = "<group>"; };
 		19F7C91B1C96FEDA000EB1A4 /* MIntroduceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIntroduceVC.m; sourceTree = "<group>"; };
+		19F7C91D1C97BFA2000EB1A4 /* Provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Provinces.plist; sourceTree = "<group>"; };
+		19F7C9201C97C023000EB1A4 /* ChinaCityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChinaCityList.h; path = Citys/ChinaCityList.h; sourceTree = "<group>"; };
+		19F7C9211C97C023000EB1A4 /* ChinaCityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChinaCityList.m; path = Citys/ChinaCityList.m; sourceTree = "<group>"; };
 		B52AB82C1C902EFD00322CA0 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroPage.h; path = Kickstart/EAIntroPage.h; sourceTree = "<group>"; };
 		B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroPage.m; path = Kickstart/EAIntroPage.m; sourceTree = "<group>"; };
 		B52AB82E1C902EFD00322CA0 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroView.h; path = Kickstart/EAIntroView.h; sourceTree = "<group>"; };
@@ -668,6 +673,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				19F7C91F1C97BFF0000EB1A4 /* Citys */,
 				B52AB82B1C902EB200322CA0 /* Kickstart */,
 				19EB0F4C1C7D968D00FECDF5 /* RoundRectUIImage */,
 				1974911C1C79A25400784D09 /* DatePicker */,
@@ -793,6 +799,7 @@
 		1942C36A1BE89F6700C2DCF4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19F7C91D1C97BFA2000EB1A4 /* Provinces.plist */,
 				1942C3761BE89F6700C2DCF4 /* Assets.xcassets */,
 				1942C3781BE89F6700C2DCF4 /* LaunchScreen.storyboard */,
 				1942C36D1BE89F6700C2DCF4 /* AppDelegate.h */,
@@ -1176,6 +1183,15 @@
 			path = Merchant/Tab1/Voucher;
 			sourceTree = "<group>";
 		};
+		19F7C91F1C97BFF0000EB1A4 /* Citys */ = {
+			isa = PBXGroup;
+			children = (
+				19F7C9201C97C023000EB1A4 /* ChinaCityList.h */,
+				19F7C9211C97C023000EB1A4 /* ChinaCityList.m */,
+			);
+			name = Citys;
+			sourceTree = "<group>";
+		};
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1281,6 +1297,7 @@
 				1942C3751BE89F6700C2DCF4 /* Consumer.storyboard in Resources */,
 				193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */,
 				19EB0FAA1C7EE7C900FECDF5 /* MMe.storyboard in Resources */,
+				19F7C91E1C97BFA2000EB1A4 /* Provinces.plist in Resources */,
 				197491211C79A25400784D09 /* PickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1374,6 +1391,7 @@
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
 				19EB0FBB1C7EE84800FECDF5 /* MaterialTVC.m in Sources */,
 				19EB0F761C7EE61B00FECDF5 /* COneAwardTVC.m in Sources */,
+				19F7C9221C97C023000EB1A4 /* ChinaCityList.m in Sources */,
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				195A12AB1C5370D1008E7945 /* AwardDerivateCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,

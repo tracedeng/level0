@@ -18,7 +18,7 @@
 #import "ActionQiniu.h"
 #import "YMUtils.h"
 #import "MeNickNameVC.h"
-
+#import "ChinaCityList.h"
 #import "PickView.h"
 
 
@@ -27,22 +27,12 @@
 @property (nonatomic, retain) NSString *path;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property (nonatomic, strong) PickView *picker;
-@property (nonatomic, strong) NSArray *cities;
 
 @end
 
 @implementation MaterialTVC
-
-- (NSArray *)cities{
-    if (_cities == nil) {
-        _cities = @[@[@"111",@"222",@"333",@"444",@"555"],@[@"上海",@"北京",@"广州",@"深圳"]];
-    }
-    return _cities;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -157,7 +147,7 @@
         }else if (3 == indexPath.row) {
             self.picker = [[PickView alloc] initWithMode:PickViewTypeCustom target:self title:nil];
 //            _picker.maskViewColor = [UIColor redColor];
-            _picker.pickerData = self.cities;
+            _picker.pickerData = [NSArray arrayWithObjects:[ChinaCityList readProvince], [ChinaCityList readCitysOfProvince:0], nil];
             
             [self.view addSubview:_picker];
             [_picker show];
@@ -241,12 +231,13 @@
 - (void)pickView:(PickView *)pickView didClickButtonConfirm:(id)data {
     if (self.picker.pickerMode == PickViewTypeCustom) {
         DLog(@"%@", data);
-        NSString *location = [data[0] stringByAppendingString:data[1]];;
+//        NSString *location = [data[0] stringByAppendingString:data[1]];
+        NSString *location = [NSString stringWithFormat:@"%@ %@", data[0], data[1]];
         
         ActionMaterial *actionlocation = [[ActionMaterial alloc] init];
-        actionlocation.afterModifyLocation = ^(NSDictionary *materail){
+        actionlocation.afterModifyLocation = ^(NSString *result){
             [self.material setObject:location forKey:@"lo"];
-            self.locationLabel.text = location;
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:3 inSection:0],nil] withRowAnimation:UITableViewRowAnimationNone];
             self.updateMaterialTypeMask |= MATERIALTYPEADDRESS;
             
         };
@@ -255,6 +246,10 @@
     }else{
         DLog(@"%@",data);
     }
+}
+
+- (NSArray *)pickView:(PickView *)pickView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    return [NSArray arrayWithObjects:[ChinaCityList readProvince], [ChinaCityList readCitysOfProvince:row], nil];
 }
 
 /*

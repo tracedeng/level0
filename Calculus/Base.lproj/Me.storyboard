@@ -680,7 +680,6 @@
                     <navigationItem key="navigationItem" title="个人信息" id="2Sl-Am-5c5"/>
                     <connections>
                         <outlet property="avatarImageView" destination="5EJ-vT-UZJ" id="vPf-rO-1PI"/>
-                        <outlet property="locationLabel" destination="v5M-dc-ekh" id="LIK-yK-oaN"/>
                         <outlet property="nicknameLabel" destination="gF4-w9-d0d" id="5lj-wA-tVD"/>
                         <segue destination="p6v-QS-sgg" kind="unwind" identifier="unwindMeUpdateMaterial" unwindAction="unwindMeUpdateMaterial:" id="f0i-yj-AMu"/>
                     </connections>

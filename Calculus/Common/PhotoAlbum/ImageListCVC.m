@@ -12,6 +12,7 @@
 //#import "ImageFullscreenSVC.h"
 
 #import "MWPhotoBrowser.h"
+#import "MWPhotoBrowserPrivate.h"
 
 @interface ImageListCVC () <MWPhotoBrowserDelegate> {
     NSMutableArray *_imageArrs;
@@ -180,12 +181,17 @@ static NSString * const reuseIdentifier = @"ImageListCell";
 
 - (void)showImageWithImageArr:(NSArray *)imageArr AndIndex:(NSInteger)index {
     MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.displayActionButton = NO;
     browser.displayNavArrows = NO;
     browser.zoomPhotosToFill = YES;
-    browser.enableGrid = YES;
+    browser.enableGrid = NO;
     browser.startOnGrid = NO;
     browser.enableSwipeToDismiss = NO;
     [browser setCurrentPhotoIndex:index];
+
+//    [browser.view setFrame:CGRectMake(0, -20, browser.view.frame.size.width, browser.view.frame.size.height)];
+//    [self.view addSubview:browser.view];
+    
     [self.navigationController pushViewController:browser animated:YES];
 }
 

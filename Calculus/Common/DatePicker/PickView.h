@@ -25,7 +25,7 @@ typedef enum : NSUInteger {
 
 @optional
 - (void)pickView:(PickView *)pickView didClickButtonConfirm:(id)data;
-
+- (NSArray *)pickView:(PickView *)pickView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 @end
 
 
