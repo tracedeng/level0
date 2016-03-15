@@ -44,7 +44,7 @@
     self.title = [self.discountInfo objectForKey:@"t"];
     
     NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/1600/h/900", QINIUURL, [self.discountInfo objectForKey:@"po"]];
-    [self.activityIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activity-default"]];
+    [self.activityIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activity-cache"]];
     
     self.heading.text = [self.discountInfo objectForKey:@"t"];
     self.detail.text = [self.discountInfo objectForKey:@"in"];

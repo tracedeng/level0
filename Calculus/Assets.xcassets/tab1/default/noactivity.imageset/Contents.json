@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "culogo-merchant-activity@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "culogo-merchant-activity.png",
+      "filename" : "culogo-merchant-activity@3x.png",
       "scale" : "3x"
     }
   ],
