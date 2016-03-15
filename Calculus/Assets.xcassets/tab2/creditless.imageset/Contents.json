@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "creditless@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "creditless.png",
+      "filename" : "creditless@3x.png",
       "scale" : "3x"
     }
   ],

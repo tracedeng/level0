@@ -423,7 +423,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WFB-7p-mp9" customClass="ClickableStackView">
                                                     <rect key="frame" x="260" y="13" width="80" height="103"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-default-ccc" translatesAutoresizingMaskIntoConstraints="NO" id="4kq-Fu-4ds" customClass="ClickableImageView">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4kq-Fu-4ds" customClass="ClickableImageView">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="80" id="LoM-39-k7V"/>
@@ -1310,14 +1310,14 @@
             <objects>
                 <tableViewController id="o8E-Z2-WdQ" customClass="ExchangeRateTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5mo-lr-HRa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="405"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="M7q-Rz-rDt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="xTB-uW-uMf">
-                                        <rect key="frame" x="0.0" y="79" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="99" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTB-uW-uMf" id="PdY-V4-0Yw">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
@@ -1383,7 +1383,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="QiZ-kq-gS5">
-                                        <rect key="frame" x="0.0" y="179" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="199" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QiZ-kq-gS5" id="COi-zX-Cj7">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
@@ -1453,7 +1453,7 @@
                             <tableViewSection id="m7s-TH-kPh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Mch-oB-DEW" detailTextLabel="ABT-u2-m6w" style="IBUITableViewCellStyleValue1" id="mJv-jl-m0E">
-                                        <rect key="frame" x="0.0" y="315" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="335" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJv-jl-m0E" id="Yfb-zB-UlS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1738,7 +1738,6 @@
         <image name="icon-center" width="30" height="30"/>
         <image name="icon-credit" width="30" height="30"/>
         <image name="icon-credit-select" width="30" height="30"/>
-        <image name="icon-default-ccc" width="240" height="240"/>
         <image name="icon-interchange" width="64" height="64"/>
         <image name="icon-mcd" width="64" height="64"/>
         <image name="icon-next-ccc" width="20" height="20"/>
@@ -1751,8 +1750,8 @@
         <image name="nocreditlogo" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VW8-v9-dFh"/>
         <segue reference="Rdx-qK-x6Q"/>
-        <segue reference="JYd-R2-1w5"/>
+        <segue reference="VW8-v9-dFh"/>
+        <segue reference="hNz-Kt-Wdn"/>
     </inferredMetricsTieBreakers>
 </document>
