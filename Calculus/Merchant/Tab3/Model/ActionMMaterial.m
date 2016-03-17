@@ -121,7 +121,7 @@
 
 - (void)doModifyMerchantAddress:(NSString *)address latitude:(CGFloat)latitude longitude:(CGFloat)longitude merchant:(NSString *)merchant{
     self.type = EUPDATEMERCHANTADDRESS;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", address, @"location", latitude, @"latitude", longitude, @"longitude", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"update", @"type", address, @"location", [NSString stringWithFormat:@"%.6f", latitude], @"latitude", [NSString stringWithFormat:@"%.6f", longitude], @"longitude", merchant, @"merchant", self.account, @"numbers",self.skey, @"session_key",  nil];
     
     [self.net requestHttpWithData:postData];
 }
