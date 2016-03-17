@@ -40,6 +40,8 @@
     
     if (self.money) {
         self.moneyField.text = [NSString stringWithFormat:@"%0.0f", self.money];
+    }else{
+        [self.moneyField becomeFirstResponder];
     }
 }
 

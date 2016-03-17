@@ -154,7 +154,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreditExchangeCell" rowHeight="80" id="waG-yI-A5K" customClass="CreditExchangeCell">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waG-yI-A5K" id="5li-i5-c7T">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
@@ -235,7 +235,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreditExchangeSessionHeader" rowHeight="80" id="zxO-NU-Y2s" customClass="CreditExchangeSessionHeader">
-                                <rect key="frame" x="0.0" y="193.5" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="129.5" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zxO-NU-Y2s" id="aIa-EB-h2U">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
@@ -323,13 +323,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-gx-e6B">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-gx-e6B">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <connections>
                                     <segue destination="8gX-Co-Uib" kind="embed" identifier="EmbedApplyCredit" id="bPg-9r-FnM"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBO-pb-xdT">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OBO-pb-xdT">
                                 <rect key="frame" x="0.0" y="501" width="600" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-W2-Ukn">
@@ -517,7 +517,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MerchantSelect" rowHeight="44" id="V35-aS-dRy" customClass="MerchantSelectCell">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V35-aS-dRy" id="tru-4n-gTi">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -1718,6 +1718,7 @@
                         <outletCollection property="angelViews" destination="vGF-br-jFC" id="cyH-H5-Lc0"/>
                         <outletCollection property="angelViews" destination="bbo-E8-5M9" id="eeP-ko-XAG"/>
                         <outletCollection property="angelViews" destination="cea-05-DJi" id="4HB-1a-wCw"/>
+                        <segue destination="M5v-UD-9I9" kind="show" identifier="ApplyCredit" id="Gtu-ca-6Ah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNb-SN-SIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
