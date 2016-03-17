@@ -11,6 +11,11 @@
 #import "NSString+Md5.h"
 #import "UIColor+Extension.h"
 #import "GTMBase64.h"
+#import "JRMessageView.h"
+
+#define SCREEN_W ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_H ([UIScreen mainScreen].bounds.size.height)
+
 
 @interface AccountResetPassword()
 @property (weak, nonatomic) IBOutlet UITextField *accountTXT;
@@ -22,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (nonatomic, strong) JRMessageView *message;
+
 
 - (IBAction)getSMSCode:(UIButton *)sender;
 - (IBAction)accountResetPassword:(UIButton *)sender;
@@ -44,6 +51,19 @@
 //    self.logoImageView.layer.borderColor = [[UIColor colorWithHex:0xDC1915] CGColor];
     self.logoImageView.clipsToBounds = YES;
 //    self.logoImageView.layer.cornerRadius = 4.0f;
+    
+    self.message = [[JRMessageView alloc] initWithTitle:@"重置密码失败"
+                                               subTitle:@""
+                                               iconName:@"icon-info-white"
+                                            messageType:JRMessageViewTypeCustom
+                                        messagePosition:JRMessagePositionTop
+                                                superVC:self.navigationController
+                                               duration:1];
+    
+    
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,6 +142,20 @@
 
         //跳转到登录界面
         [self.navigationController popToRootViewControllerAnimated:YES];
+        
+    };
+    resetpassword.afterAccountResetPasswordFailed = ^(NSString *message) {
+        //错误提示
+        //TODO message 赋值无效
+        
+        
+        //        self.message.subTitle = message;
+        [self.message changeSubtitle:message];
+        if (self.message.isShow) {
+            //            [self.message hidedMessageView];
+        } else {
+            [self.message showMessageView];
+        }
         
     };
 

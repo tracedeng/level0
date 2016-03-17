@@ -29,6 +29,12 @@ typedef NS_ENUM(NSInteger, EACCOUNTOPTYPE) {
 @property (nonatomic, copy) void (^afterAccountRegister)(NSString *result);
 @property (nonatomic, copy) void (^afterAccountResetPassword)(NSString *result);
 
+@property (nonatomic, copy) void (^afterGetSMSCodeFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterAccountLoginFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterAccountRegisterFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterAccountResetPasswordFailed)(NSString *message);
+
+
 + (BOOL)doWeakLogin;
 + (BOOL)doLogout;
 @end

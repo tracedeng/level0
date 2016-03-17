@@ -121,21 +121,38 @@
             case EACCOUNTGETSMSCODE:
             {
                 //TODO 返回验证码错误的原因
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterGetSMSCodeFailed) {
+                    self.afterGetSMSCodeFailed(message);
+                }
+
                 break;
             }
             case EACCOUNTLOGIN:
             {
                 //TODO 返回登录错误的原因
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterAccountLoginFailed) {
+                    self.afterAccountLoginFailed(message);
+                }
                 break;
             }
             case EACCOUNTCHANGEPASSWORD:
             {
                 //TODO 返回修改密码错误的原因
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterAccountResetPasswordFailed) {
+                    self.afterAccountResetPasswordFailed(message);
+                }
                 break;
             }
             case EACCOUNTREGISTER:
             {
                 //TODO 返回注册错误的原因
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterAccountRegisterFailed) {
+                    self.afterAccountRegisterFailed(message);
+                }
                 break;
             }
                 
@@ -150,6 +167,39 @@
     DLog(@"%@", [responseError domain]);
     DLog(@"%ld", (long)[responseError code]);
     DLog(@"%@", [responseError localizedDescription]);
+    
+    switch (self.type) {
+        case EACCOUNTGETSMSCODE:
+        {
+            if (self.afterGetSMSCodeFailed) {
+                self.afterGetSMSCodeFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EACCOUNTLOGIN:
+        {
+            if (self.afterAccountLoginFailed) {
+                self.afterAccountLoginFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EACCOUNTCHANGEPASSWORD:
+        {
+            if (self.afterAccountResetPasswordFailed) {
+                self.afterAccountResetPasswordFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EACCOUNTREGISTER:
+        {
+            if (self.afterAccountRegisterFailed) {
+                self.afterAccountRegisterFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 

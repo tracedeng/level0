@@ -11,6 +11,10 @@
 #import "NSString+Md5.h"
 #import "UIColor+Extension.h"
 #import "GTMBase64.h"
+#import "JRMessageView.h"
+
+#define SCREEN_W ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_H ([UIScreen mainScreen].bounds.size.height)
 
 @interface AccountRegisterController()
 @property (weak, nonatomic) IBOutlet UITextField *accountTXT;
@@ -22,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIView *passwordView;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (nonatomic, strong) JRMessageView *messageregister;
+
 
 - (IBAction)accountRegister:(UIButton *)sender;
 - (IBAction)getSMSCode:(UIButton *)sender;
@@ -46,6 +52,16 @@
     self.logoImageView.clipsToBounds = YES;
 //    self.logoImageView.layer.cornerRadius = 4.0f;
 
+    self.messageregister = [[JRMessageView alloc] initWithTitle:@"注册账号失败"
+                                               subTitle:@""
+                                               iconName:@"icon-info-white"
+                                            messageType:JRMessageViewTypeCustom
+                                        messagePosition:JRMessagePositionTop
+                                                superVC:self.navigationController
+                                               duration:1];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,6 +134,21 @@
         //跳转到登录界面
         [self.navigationController popToRootViewControllerAnimated:YES];
     };
+    registe.afterAccountRegisterFailed = ^(NSString *message) {
+        //错误提示
+        //TODO message 赋值无效
+        
+        
+        //        self.message.subTitle = message;
+        [self.messageregister changeSubtitle:message];
+        if (self.messageregister.isShow) {
+            //            [self.message hidedMessageView];
+        } else {
+            [self.messageregister showMessageView];
+        }
+        
+    };
+
     [registe doAccountRegister:phoneNumber password:password code:code];
     
 }
@@ -145,6 +176,7 @@
 
 #endif
     };
+
     [code doGetSMSCode:phoneNumber];
 
 }
