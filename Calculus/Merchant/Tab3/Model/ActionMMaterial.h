@@ -36,7 +36,8 @@ typedef NS_ENUM(NSInteger, EMMATERIALOPTYPE) {
 - (void)doModifyMerchantName:(NSString *)merchantname merchant:(NSString *)merchant;
 - (void)doModifyMerchantEmail:(NSString *)merchantemil merchant:(NSString *)merchant;
 - (void)doModifyMerchantContactNumber:(NSString *)merchantcontactnumber merchant:(NSString *)merchant;
-- (void)doModifyMerchantAddress:(NSString *)merchantaddress merchant:(NSString *)merchant;
+//- (void)doModifyMerchantAddress:(NSString *)merchantaddress merchant:(NSString *)merchant;
+- (void)doModifyMerchantAddress:(NSString *)address latitude:(CGFloat)latitude longitude:(CGFloat)longitude merchant:(NSString *)merchant;
 
 //- (void)doModifyLocation:(NSString *)location;
 //- (void)doReport:(NSString *)message;
