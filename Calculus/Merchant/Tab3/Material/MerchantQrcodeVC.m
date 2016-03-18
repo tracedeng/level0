@@ -14,6 +14,8 @@
 #import "ActionQiniu.h"
 #import "Constance.h"
 #import "UIImage+FixOrientation.h"
+#import "UIColor+Extension.h"
+
 
 @interface MerchantQrcodeVC ()
 @property (nonatomic, retain) NSString *uploadToken;
@@ -30,6 +32,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"商家二维码";
+    
+    //修改导航
+//    self.navigationController.navigationBar.shadowImage = nil;
+//    UIImage *image = [UIImage imageNamed:@"icon-info"];
+//    [self.navigationController.navigationBar setBackgroundImage:image
+//                                                  forBarMetrics:UIBarMetricsCompact];
+//    
 
     if ([self.merchantQrcode length]) {
         //头像，right detail，修改accessory图标
@@ -96,5 +105,43 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    // Called when the view is about to made visible. Default does nothing
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar setTranslucent:FALSE];
+    [self.tabBarController.tabBar setHidden:TRUE];
+    
+//    //去除导航栏下方的横线
+//    UIImage *image = [UIImage imageNamed:@"icon-info"];
+//    [self.navigationController.navigationBar setBackgroundImage:image
+//                                                      forBarMetrics:UIBarMetricsCompact];
+//        
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
+    //此方法出现黑条
+//    self.navigationController.navigationBar.clipsToBounds=YES;
+//    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithHex:0x39A3FF]];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithHex:0x39A3FF]];
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,CGRectGetHeight(self.navigationController.navigationBar.bounds),CGRectGetWidth(self.navigationController.navigationBar.bounds),0.5)];
+    view.backgroundColor= [UIColor colorWithHex:0x39A3FF];
+    view.opaque=YES;
+    [self.navigationController.navigationBar addSubview:view];
+
+//
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setTranslucent:TRUE];
+    [self.tabBarController.tabBar setHidden:FALSE];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithHex:0x149BFF]];
+
+    
+}
+
 
 @end

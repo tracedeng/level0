@@ -1275,7 +1275,7 @@
 				TargetAttributes = {
 					1942C3661BE89F6700C2DCF4 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 7M8VR4YC8K;
+						DevelopmentTeam = EMYS3L6339;
 					};
 				};
 			};
@@ -1657,7 +1657,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1695,7 +1695,7 @@
 					"\"UIKit\"",
 					"-DEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.www.Calculus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1713,13 +1713,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.www.Calculus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
