@@ -15,6 +15,7 @@
 #import "PickView.h"
 #import "UIImageView+WebCache.h"
 #import "Constance.h"
+#import "SVProgressHUD.h"
 
 // 填写完所有资料时才可发布活动，
 // bit0-poster，bit1-标题，bit2-活动介绍，bit3-需要积分量，bit4-有效期，bit5-编辑状态
@@ -184,7 +185,10 @@
 - (void)createActivity {
     ActionMActivity *action = [[ActionMActivity alloc] init];
     action.afterAddMerchantActivity = ^(NSString *activity){
-        // 购买成功
+        // 发布成功
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发布活动成功" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSDictionary *newActivity = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@", self.atittleTXT.text], @"t", [NSString stringWithFormat:@"%@", self.adetailsTXT.text], @"in", [NSString stringWithFormat:@"%ld", [self.acreditTXT.text integerValue]], @"cr", self.path, @"po", self.aexpireTXT.text, @"et", [NSString stringWithFormat:@"%@", activity], @"id", @"create", @"mode", nil];
@@ -196,7 +200,18 @@
     };
     action.afterAddMerchantActivityFailed = ^(NSString *message) {
         // TODO...
+        // 发布成功
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发布活动失败" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:alert completion:nil];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+
     };
+    [SVProgressHUD showWithStatus:@"发布中..." maskType:SVProgressHUDMaskTypeBlack];
     [action doAddMerchantActivity:self.atittleTXT.text introduce:self.adetailsTXT.text credit:self.acreditTXT.text poster:self.path expire_time:self.aexpireTXT.text];
 }
 

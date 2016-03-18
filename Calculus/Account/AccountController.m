@@ -52,7 +52,7 @@
     }
 
     
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
 //    
 //    self.scrollView = [[UIScrollView alloc] init];
 //    [self.view addSubview:self.scrollView];
@@ -194,8 +194,6 @@
     login.afterAccountLoginFailed = ^(NSString *message) {
         //错误提示
         //TODO message 赋值无效
-            
-        
 //        self.message.subTitle = message;
         [self.message changeSubtitle:message];
         if (self.message.isShow) {
@@ -203,11 +201,9 @@
         } else {
             [self.message showMessageView];
         }
-
     };
 
     [login doAccountLogin:phoneNumber password:password];
-    
 }
 
 - (IBAction)accountRegister:(UIButton *)sender {

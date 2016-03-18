@@ -67,12 +67,9 @@
         if ([voucherList count] == 0) {
             // TODO 处理以上警告
             self.defaultimage.hidden = NO;
-            
         }else{
             self.defaultimage.hidden = YES;
         }
-
-        
     };
     voucher.afterQueryVoucherFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {

@@ -312,7 +312,7 @@
             
             self.updateMMaterialTypeMask |= MMATERIALTYPELOCATION;
         };
-        [action doModifyMerchantAddress:merchantvc.merchantAddress merchant:[self.material objectForKey:@"id"]];
+        [action doModifyMerchantAddress:merchantvc.merchantAddress latitude:merchantvc.latitude longitude:merchantvc.longitude merchant:[self.material objectForKey:@"id"]];
     }
 }
 
