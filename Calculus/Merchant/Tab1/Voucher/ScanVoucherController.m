@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view.
     
     self.scanAngelColor = [UIColor colorWithHex:0x149BFF];
-    self.filterColor = [UIColor colorWithHex:0x149BFF alpha:1.0f];
+    self.filterColor = [UIColor colorWithHex:0x444444 alpha:0.8f];
 }
 
 - (void)didReceiveMemoryWarning {
