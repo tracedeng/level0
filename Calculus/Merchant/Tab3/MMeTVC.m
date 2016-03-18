@@ -297,7 +297,8 @@
         ActionBusiness *action = [[ActionBusiness alloc] init];
         action.afterModifyConsumptionRatio = ^(NSDictionary *result){
             [self.business setObject:merchantvc.exchangeRate forKey:@"crt"];
-            self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
+            self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]];
+//            self.exchangeRateLBL.text = [[NSString stringWithFormat:@"%@", [self.business objectForKey:@"crt"]] stringByAppendingString:@" : 1"];
             self.updateMMaterialTypeMask |= MBUSINESSTYPECONSUMPTIONRATIO;
         };
         [action doModifyConsumptionRatio:merchantvc.exchangeRate merchant:[self.material objectForKey:@"id"]];
