@@ -51,7 +51,8 @@
         [self prepareQiniuToken];
         self.qrcodeImageView.afterClickImageView = ^(id sender) {
             NSString *qrcodeValue = [NSString stringWithFormat:@"{\"mid\":\"%@\"}", self.merchant];
-            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
+//            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
+            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor colorWithHex:0xf6f6f8] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
             //先展示
             self.noticeLabel.hidden = NO;
             self.qrcodeImageView.image = self.qrcodeImage;
