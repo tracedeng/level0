@@ -61,6 +61,7 @@
 		195A12D01C55259A008E7945 /* GenerateQrcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12CF1C55259A008E7945 /* GenerateQrcode.m */; };
 		195A12D41C5526E8008E7945 /* YMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 195A12D21C5526E8008E7945 /* YMUtils.m */; };
 		195A12D51C5526E8008E7945 /* zh_CN.json in Resources */ = {isa = PBXBuildFile; fileRef = 195A12D31C5526E8008E7945 /* zh_CN.json */; };
+		196AD36C1C9BC1A3007AA1E2 /* ActivityIntroduceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 196AD36B1C9BC1A3007AA1E2 /* ActivityIntroduceVC.m */; };
 		1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911A1C75F5D300784D09 /* ActionStatistic.m */; };
 		197491201C79A25400784D09 /* PickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974911E1C79A25400784D09 /* PickView.m */; };
 		197491211C79A25400784D09 /* PickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1974911F1C79A25400784D09 /* PickView.xib */; };
@@ -264,6 +265,8 @@
 		195A12D21C5526E8008E7945 /* YMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMUtils.m; path = CityList/YMUtils.m; sourceTree = "<group>"; };
 		195A12D31C5526E8008E7945 /* zh_CN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zh_CN.json; path = CityList/zh_CN.json; sourceTree = "<group>"; };
 		1961F6F01C19C54A000928D3 /* Constance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constance.h; sourceTree = "<group>"; };
+		196AD36A1C9BC1A3007AA1E2 /* ActivityIntroduceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIntroduceVC.h; sourceTree = "<group>"; };
+		196AD36B1C9BC1A3007AA1E2 /* ActivityIntroduceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIntroduceVC.m; sourceTree = "<group>"; };
 		197491191C75F5D300784D09 /* ActionStatistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionStatistic.h; path = Statistic/ActionStatistic.h; sourceTree = "<group>"; };
 		1974911A1C75F5D300784D09 /* ActionStatistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionStatistic.m; path = Statistic/ActionStatistic.m; sourceTree = "<group>"; };
 		1974911D1C79A25400784D09 /* PickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickView.h; sourceTree = "<group>"; };
@@ -1162,6 +1165,8 @@
 				19EB0FCF1C80824A00FECDF5 /* DiscountCell.m */,
 				19EB0FD01C80824A00FECDF5 /* DiscountDetailsTVC.h */,
 				19EB0FD11C80824A00FECDF5 /* DiscountDetailsTVC.m */,
+				196AD36A1C9BC1A3007AA1E2 /* ActivityIntroduceVC.h */,
+				196AD36B1C9BC1A3007AA1E2 /* ActivityIntroduceVC.m */,
 			);
 			path = Discount;
 			sourceTree = "<group>";
@@ -1418,6 +1423,7 @@
 				19EB0FAE1C7EE7C900FECDF5 /* MerchantContactNumberVC.m in Sources */,
 				193C37E51C1D4A070017CC9C /* RoleManager.m in Sources */,
 				19EB0FB41C7EE7C900FECDF5 /* MSettingTVC.m in Sources */,
+				196AD36C1C9BC1A3007AA1E2 /* ActivityIntroduceVC.m in Sources */,
 				193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */,
 				19EB0FB01C7EE7C900FECDF5 /* MerchantNameVC.m in Sources */,
 				193C38341C1D94DE0017CC9C /* ImageFullscreenSVC.m in Sources */,

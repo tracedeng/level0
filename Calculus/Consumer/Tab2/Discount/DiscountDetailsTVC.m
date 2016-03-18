@@ -12,11 +12,13 @@
 #import "ImageListCVC.h"
 #import "ClickableImageView.h"
 #import "UIImageView+WebCache.h"
+#import "ClickableImageView.h"
+#import "ActivityIntroduceVC.h"
 
 
 @interface DiscountDetailsTVC ()
 @property (nonatomic, retain) NSString *path;
-@property (weak, nonatomic) IBOutlet UIImageView *activityIMG;
+@property (weak, nonatomic) IBOutlet ClickableImageView *activityIMG;
 @property (weak, nonatomic) IBOutlet UILabel *name; // 商家名称
 @property (weak, nonatomic) IBOutlet UILabel *address; // 商家地址
 @property (weak, nonatomic) IBOutlet UILabel *credit;   // 活动需要多少积分
@@ -41,10 +43,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    self.title = [self.discountInfo objectForKey:@"t"];
+//    self.title = [self.discountInfo objectForKey:@"t"];
+    self.title = @"活动详情";
     
     NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/1600/h/900", QINIUURL, [self.discountInfo objectForKey:@"po"]];
     [self.activityIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activity-cache"]];
+    self.activityIMG.afterClickImageView = ^(id sender) {
+        [self performSegueWithIdentifier:@"ActivityIntroduce" sender:self];
+    };
     
     self.heading.text = [self.discountInfo objectForKey:@"t"];
     self.detail.text = [self.discountInfo objectForKey:@"in"];
@@ -171,6 +177,13 @@
             BuyDiscountController *destination = (BuyDiscountController *)segue.destinationViewController;
             destination.merchant = [self.discountInfo objectForKey:@"mid"];
             destination.discountInfo = self.discountInfo;
+        }
+    }else if([segue.identifier isEqualToString:@"ActivityIntroduce"]) {
+        if ([segue.destinationViewController isKindOfClass:[ActivityIntroduceVC class]]) {
+            ActivityIntroduceVC *destination = (ActivityIntroduceVC *)segue.destinationViewController;
+            destination.path = [self.discountInfo objectForKey:@"po"];
+            destination.heading = [self.discountInfo objectForKey:@"t"];
+            destination.detail = [self.discountInfo objectForKey:@"in"];
         }
     }
 }
