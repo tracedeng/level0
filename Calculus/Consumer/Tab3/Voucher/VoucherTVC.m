@@ -42,7 +42,7 @@
     
     [self.refreshControl addTarget:self action:@selector(loadVoucherList:) forControlEvents:UIControlEventValueChanged];
     
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeClear];
     [self loadVoucherList:nil];
 }
 
