@@ -303,7 +303,7 @@
 
 - (void)setFilterOnView:(UIView *)view {
     
-    UIColor *filterColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:0.6];
+    UIColor *filterColor = self.filterColor ? self.filterColor : [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:0.6];
     //
     CGFloat scanAreaTop = self.scanView.frame.origin.y+ self.angleWidth.constant;
     CGFloat scanAreaBottom = self.scanView.frame.origin.y + self.scanView.frame.size.height - self.angleWidth.constant;
