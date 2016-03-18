@@ -52,10 +52,18 @@
 #define STATISTICURL @"http://www.weijifen.me:8000/maintain"
 
 #else
+#define ACCOUNTURL @"http://www.weijifen.me:8000/account"
 #define CONSUMERURL @"http://www.weijifen.me:8000/consumer"
 #define MERCHANTURL @"http://www.weijifen.me:8000/merchant"
 #define CREDITURL @"http://www.weijifen.me:8000/credit"
 #define FLOWTURL @"http://www.weijifen.me:8000/flow"
+#define QINIUURL @"http://7xor5x.com1.z0.glb.clouddn.com"
+#define BUSINESSURL @"http://www.weijifen.me:8000/business"
+#define FLOWURL @"http://www.weijifen.me:8000/flow"
+#define DISCOUNTURL @"http://www.weijifen.me:8000/activity"
+#define ACTIVITYURL @"http://www.weijifen.me:8000/activity"
+#define VOUCHERURL @"http://www.weijifen.me:8000/voucher"
+#define STATISTICURL @"http://www.weijifen.me:8000/maintain"
 #endif
 
 #define VERSION @"v1.0"

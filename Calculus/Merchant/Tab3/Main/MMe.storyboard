@@ -2221,17 +2221,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zTV-aj-uqU">
-                                <rect key="frame" x="287.5" y="130" width="25" height="22"/>
+                                <rect key="frame" x="10" y="130" width="78.5" height="22"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqN-Ly-TzV">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-2m-Mwh">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="22"/>
+                                        <rect key="frame" x="53.5" y="0.0" width="20" height="22"/>
                                         <state key="normal" image="icon-location"/>
                                         <connections>
                                             <action selector="clickLocationButton:" destination="PfT-Q2-UN2" eventType="touchUpInside" id="7O3-8e-POc"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqT-iB-8Oy">
-                                        <rect key="frame" x="25" y="0.0" width="0.0" height="22"/>
+                                        <rect key="frame" x="78.5" y="0.0" width="0.0" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -2242,19 +2248,13 @@
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="S09-sv-ab6" firstAttribute="top" secondItem="DRH-Yw-Q8c" secondAttribute="bottom" constant="30" id="2pg-yu-qj8"/>
-                            <constraint firstItem="zTV-aj-uqU" firstAttribute="centerX" secondItem="lbE-ZW-lDa" secondAttribute="centerX" id="2sM-Im-Z9G"/>
                             <constraint firstItem="7Vz-S0-NYc" firstAttribute="leading" secondItem="S09-sv-ab6" secondAttribute="leading" constant="6" id="Do4-Hv-REo"/>
                             <constraint firstAttribute="trailing" secondItem="S09-sv-ab6" secondAttribute="trailing" id="N8s-iM-VIq"/>
-                            <constraint firstItem="zTV-aj-uqU" firstAttribute="leading" secondItem="lbE-ZW-lDa" secondAttribute="leading" constant="10" id="Nhk-BJ-4c5"/>
+                            <constraint firstItem="zTV-aj-uqU" firstAttribute="leading" secondItem="lbE-ZW-lDa" secondAttribute="leading" constant="10" id="P7V-Si-xSI"/>
                             <constraint firstItem="zTV-aj-uqU" firstAttribute="top" secondItem="S09-sv-ab6" secondAttribute="bottom" constant="20" id="Px6-ps-n9q"/>
                             <constraint firstItem="S09-sv-ab6" firstAttribute="leading" secondItem="lbE-ZW-lDa" secondAttribute="leading" id="d3n-Q2-FWZ"/>
                             <constraint firstItem="7Vz-S0-NYc" firstAttribute="top" secondItem="S09-sv-ab6" secondAttribute="top" constant="8" id="h2c-NB-LHb"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Nhk-BJ-4c5"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="修改地址" id="cIP-rB-At5">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="保存" id="P44-8j-tyh">
