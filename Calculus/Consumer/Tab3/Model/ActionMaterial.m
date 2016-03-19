@@ -39,11 +39,11 @@
 - (void)doQueryUploadToken {
     self.type = EQUERYUPLOADTOKEN;
     
-#ifdef DEBUG
+//#ifdef DEBUG
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"c_avatar", @"resource", @"debug", @"debug", self.account, @"numbers", self.skey, @"session_key", nil];
-#else
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"c_avatar", @"resource", self.account, @"numbers", self.skey, @"session_key", nil];
-#endif
+//#else
+//    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"upload_token", @"type", @"c_avatar", @"resource", self.account, @"numbers", self.skey, @"session_key", nil];
+//#endif
     [self.net requestHttpWithData:postData];
 }
 

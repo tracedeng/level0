@@ -160,7 +160,7 @@
                                                                 <constraint firstAttribute="height" constant="60" id="GI5-Hh-KHC"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Rd-6T-NlX">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Rd-6T-NlX">
                                                             <rect key="frame" x="65" y="10" width="37" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5I-tu-M2r">
@@ -522,7 +522,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-vT-UZJ">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-consumer" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-vT-UZJ">
                                                             <rect key="frame" x="502" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="Zda-IV-W1A"/>
@@ -1265,7 +1265,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pdk-pp-dl3">
-                                <rect key="frame" x="0.0" y="104" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="84" width="600" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="l6G-U6-qBQ"/>
@@ -1277,13 +1277,13 @@
                                 </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入反馈，最多200字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0u-rS-OuB">
-                                <rect key="frame" x="6" y="112" width="152" height="17"/>
+                                <rect key="frame" x="6" y="92" width="152" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的每一个意见，对我们都很宝贵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXk-jJ-cu0">
-                                <rect key="frame" x="180" y="74" width="240" height="20"/>
+                                <rect key="frame" x="180" y="54.5" width="240" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1293,7 +1293,7 @@
                         <constraints>
                             <constraint firstItem="pdk-pp-dl3" firstAttribute="top" secondItem="rbY-bT-9lC" secondAttribute="bottom" constant="30" id="5Pv-lF-Cjr"/>
                             <constraint firstItem="sXk-jJ-cu0" firstAttribute="centerX" secondItem="q9Q-ta-j7L" secondAttribute="centerX" id="6Kl-Ot-xp6"/>
-                            <constraint firstItem="pdk-pp-dl3" firstAttribute="top" secondItem="rbY-bT-9lC" secondAttribute="bottom" constant="60" id="Cj1-SL-pK0"/>
+                            <constraint firstItem="pdk-pp-dl3" firstAttribute="top" secondItem="rbY-bT-9lC" secondAttribute="bottom" constant="40" id="Cj1-SL-pK0"/>
                             <constraint firstItem="pdk-pp-dl3" firstAttribute="top" secondItem="rbY-bT-9lC" secondAttribute="bottom" constant="20" id="L9M-ol-ghO"/>
                             <constraint firstItem="pdk-pp-dl3" firstAttribute="leading" secondItem="q9Q-ta-j7L" secondAttribute="leading" id="LdM-e0-a2i"/>
                             <constraint firstItem="f0u-rS-OuB" firstAttribute="top" secondItem="pdk-pp-dl3" secondAttribute="top" constant="8" id="YsU-j1-l7h"/>
