@@ -52,7 +52,7 @@
     self.logoImageView.clipsToBounds = YES;
 //    self.logoImageView.layer.cornerRadius = 4.0f;
     
-    self.message = [[JRMessageView alloc] initWithTitle:@"重置密码失败"
+    self.message = [[JRMessageView alloc] initWithTitle:@"手机号或验证码错误"
                                                subTitle:@""
                                                iconName:@"icon-info-white"
                                             messageType:JRMessageViewTypeCustom

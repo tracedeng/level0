@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger, JRMessageViewType) {
 typedef NS_ENUM(NSInteger, JRMessagePosition) {
 	JRMessagePositionTop = 0,
 	JRMessagePositionNavBarOverlay,
-	JRMessagePositionBottom
+	JRMessagePositionBottom,
+    JRMessagePositionCenter
 };
 
 @interface JRMessageView : UIView

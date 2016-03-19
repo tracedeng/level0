@@ -257,8 +257,11 @@
 	center.y = self.messageHeight * 0.5;
 	self.iconView.center = center;
 	
-	
-	if (self.messagePosition == JRMessagePositionTop) {
+    if (self.messagePosition == JRMessagePositionCenter) {
+        self.messageOriginY = SCREEN_H/2;
+        self.messageSimY = -self.messageHeight;
+        self.messageMaxY = SCREEN_H/2;
+    } else if (self.messagePosition == JRMessagePositionTop) {
 		self.messageOriginY = 64;
 		self.messageSimY = -self.messageHeight;
 		self.messageMaxY = 64;

@@ -57,7 +57,7 @@
 //    self.scrollView = [[UIScrollView alloc] init];
 //    [self.view addSubview:self.scrollView];
     
-    self.message = [[JRMessageView alloc] initWithTitle:@"登录失败"
+    self.message = [[JRMessageView alloc] initWithTitle:@"手机号或密码错误"
                                                subTitle:@""
                                                iconName:@"icon-info-white"
                                             messageType:JRMessageViewTypeCustom
