@@ -52,7 +52,7 @@
     self.logoImageView.clipsToBounds = YES;
 //    self.logoImageView.layer.cornerRadius = 4.0f;
 
-    self.messageregister = [[JRMessageView alloc] initWithTitle:@"注册账号失败"
+    self.messageregister = [[JRMessageView alloc] initWithTitle:@"手机号或验证码错误"
                                                subTitle:@""
                                                iconName:@"icon-info-white"
                                             messageType:JRMessageViewTypeCustom
