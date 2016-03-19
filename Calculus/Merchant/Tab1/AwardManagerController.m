@@ -22,7 +22,6 @@
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleAwardMerchantView:) name:@"toggleAwardMerchantView" object:nil];
     self.noCreditListImageView.hidden = YES;
 
-
     self.title = @"积分";
 }
 
