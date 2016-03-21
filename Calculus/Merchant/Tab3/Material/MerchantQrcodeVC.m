@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSString *uploadToken;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) UIImage *qrcodeImage;
+@property (nonatomic, assign) BOOL regenerate;
 
 @property (weak, nonatomic) IBOutlet ClickableImageView *qrcodeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *noticeLabel;
@@ -33,13 +34,6 @@
     // Do any additional setup after loading the view.
     self.title = @"商家二维码";
     
-    //修改导航
-//    self.navigationController.navigationBar.shadowImage = nil;
-//    UIImage *image = [UIImage imageNamed:@"icon-info"];
-//    [self.navigationController.navigationBar setBackgroundImage:image
-//                                                  forBarMetrics:UIBarMetricsCompact];
-//    
-
     if ([self.merchantQrcode length]) {
         //头像，right detail，修改accessory图标
         NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/480/h/480", QINIUURL, self.merchantQrcode];
@@ -48,31 +42,30 @@
     }else{
         //主动生成商家Qrcode
     }
-        [self prepareQiniuToken];
-        self.qrcodeImageView.afterClickImageView = ^(id sender) {
-            NSString *qrcodeValue = [NSString stringWithFormat:@"{\"mid\":\"%@\"}", self.merchant];
-//            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
-            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor colorWithHex:0xf6f6f8] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
-            //先展示
-            self.noticeLabel.hidden = NO;
-            self.qrcodeImageView.image = self.qrcodeImage;
-            
-            //上传
-            ActionQiniu *action = [[ActionQiniu alloc] init];
-            action.afterQiniuUpload = ^(NSString *path) {
-                self.merchantQrcode = path;
-                //更新商家资料二维码
-                ActionMMaterial *action = [[ActionMMaterial alloc] init];
-                action.afterModifyQrcode = ^() {
-//                    self.qrcodeImageView.image = self.qrcodeImage;
-                };
-                [action doModifyQrcode:path merchant:self.merchant];
-
+    [self prepareQiniuToken];
+    self.qrcodeImageView.afterClickImageView = ^(id sender) {
+        NSString *qrcodeValue = [NSString stringWithFormat:@"{\"mid\":\"%@\"}", self.merchant];
+        //            self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor whiteColor] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
+        self.qrcodeImage = [GenerateQrcode createQRImage:[GenerateQrcode createWithString:qrcodeValue qrColor:[UIColor blackColor] bgColor:[UIColor colorWithHex:0xf6f6f8] size:CGSizeMake(480, 480)] logoImage:[UIImage createRoundedRectImage:self.logo size:CGSizeMake(320, 320)]];
+        //先展示
+        self.noticeLabel.hidden = NO;
+        self.qrcodeImageView.image = self.qrcodeImage;
+        
+        //上传
+        ActionQiniu *action = [[ActionQiniu alloc] init];
+        action.afterQiniuUpload = ^(NSString *path) {
+            self.merchantQrcode = path;
+            //更新商家资料二维码
+            ActionMMaterial *action = [[ActionMMaterial alloc] init];
+            action.afterModifyQrcode = ^() {
+                self.regenerate = YES;
             };
-            //测试关闭上传
-            [action doQiniuUploadImage:self.qrcodeImage token:self.uploadToken path:self.path];
+            [action doModifyQrcode:path merchant:self.merchant];
+            
         };
-//    }
+        //测试关闭上传
+        [action doQiniuUploadImage:self.qrcodeImage token:self.uploadToken path:self.path];
+    };
 }
 
 //获取7牛上传token，做好准备
@@ -135,14 +128,16 @@
 
 //
 }
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setTranslucent:TRUE];
     [self.tabBarController.tabBar setHidden:FALSE];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithHex:0x149BFF]];
-
     
+    if (self.regenerate) {
+        [self performSegueWithIdentifier:@"UpdateMMeterialMerchantQrcode" sender:self];
+    }
 }
-
 
 @end
