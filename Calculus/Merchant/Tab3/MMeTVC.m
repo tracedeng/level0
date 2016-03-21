@@ -16,6 +16,7 @@
 
 #import "Constance.h"
 #import "MMaterialTVC.h"
+#import "MSettingTVC.h"
 
 
 @interface MMeTVC ()
@@ -227,6 +228,8 @@
         
     } else if(1 == indexPath.section) {
         if (0 == indexPath.row) {
+            [self showAlert:@"确定" :@"修改请联系平台"];
+
         
         }else  if (3 == indexPath.row) {
         //
@@ -362,6 +365,9 @@
         [segue.destinationViewController setValue:self.flow forKey:@"flow"];
     }else if ([segue.identifier isEqualToString:@"MerchantMaterialUpdate"]){
         MMaterialTVC *destination = (MMaterialTVC *)segue.destinationViewController;
+        destination.material = self.material;
+    }else if ([segue.identifier isEqualToString:@"gosetting"]){
+        MSettingTVC *destination = (MSettingTVC *)segue.destinationViewController;
         destination.material = self.material;
     }
     

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MSettingTVC : UITableViewController
+@property (nonatomic, retain) NSMutableDictionary *material;
 
 @end

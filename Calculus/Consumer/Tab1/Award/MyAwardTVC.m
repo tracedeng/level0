@@ -72,6 +72,35 @@
         [self loadCreditList:nil];
     }
 }
+//
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+//    NSLog(@"will scroll");
+//}
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    NSLog(@"end scroll");
+//    
+//}
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    
+//    
+//    
+//    CGFloat height = self.tableView.frame.size.height;
+//    CGFloat distanceFromButton = self.tableView.contentSize.height - self.tableView.contentOffset.y;
+//    //    if (distanceFromButton == height)
+//    if (scrollView.contentOffset.y + (scrollView.frame.size.height) > scrollView.contentSize.height)
+//    {
+//        NSLog(@"=====滑动到底了");
+//        [self loadCreditList:nil];
+//        
+//    }
+//    
+//    if (self.tableView.contentOffset.y == 0)
+//    {
+//        NSLog(@"=====滑动到顶了");
+//    }
+//}
 
 - (void)loadCreditList:(id)sender {
     ActionCredit *credit = [[ActionCredit alloc] init];

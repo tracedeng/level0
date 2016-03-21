@@ -1039,7 +1039,7 @@
                                                                 <constraint firstAttribute="width" constant="60" id="CGZ-xS-Dlt"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="52n-5I-KnR">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="52n-5I-KnR">
                                                             <rect key="frame" x="65" y="10" width="73" height="41"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星巴克" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQi-sR-vIB">
@@ -1300,7 +1300,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ygN-iY-3Fb" kind="show" id="mvp-zb-JBz"/>
+                                            <segue destination="ygN-iY-3Fb" kind="show" identifier="gosetting" id="mvp-zb-JBz"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1447,7 +1447,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="FZC-6n-nu9">
+                            <tableViewSection footerTitle="" id="FZC-6n-nu9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Q9s-LU-Y1I">
                                         <rect key="frame" x="0.0" y="203" width="600" height="44"/>
@@ -1476,6 +1476,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection footerTitle="" id="dgC-KY-Bxk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cNR-Rj-OgR">
+                                        <rect key="frame" x="0.0" y="283" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cNR-Rj-OgR" id="vIL-Po-xge">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="当前账号：xxx@xxx.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAd-4R-eJZ">
+                                                    <rect key="frame" x="225" y="14" width="151" height="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="AAd-4R-eJZ" firstAttribute="centerX" secondItem="vIL-Po-xge" secondAttribute="centerX" id="YN7-4b-ffL"/>
+                                                <constraint firstItem="AAd-4R-eJZ" firstAttribute="centerY" secondItem="vIL-Po-xge" secondAttribute="centerY" id="eVS-tg-XSv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="ygN-iY-3Fb" id="hqL-wp-EtP"/>
@@ -1485,6 +1510,7 @@
                     <navigationItem key="navigationItem" title="我的设置" id="Vik-u0-n2i"/>
                     <connections>
                         <outlet property="cacheSizeLabel" destination="wI3-cs-cnX" id="BrK-9B-in4"/>
+                        <outlet property="currentAccountLabel" destination="AAd-4R-eJZ" id="8Fk-7g-oN8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c11-P6-Z7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1675,10 +1701,10 @@
                                                                         <constraint firstItem="GKt-bQ-glB" firstAttribute="centerX" secondItem="Lyh-Ee-UIb" secondAttribute="centerX" id="V02-Hf-fuQ"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kt-dU-5dh" customClass="ClickableView">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kt-dU-5dh" customClass="ClickableView">
                                                                     <rect key="frame" x="197" y="0.0" width="176" height="30"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njV-lw-x0i">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2000元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njV-lw-x0i">
                                                                             <rect key="frame" x="60" y="5" width="58" height="21"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

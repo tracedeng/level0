@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *cacheSizeLabel;
 @property (nonatomic, assign) NSInteger cacheSize;
+@property (weak, nonatomic) IBOutlet UITextField *currentAccountLabel;
 
 @end
 
@@ -34,6 +35,8 @@
     NSLog(@"%@",[dict objectForKey:NSFileSize]);
 
     self.cacheSize = [[SDImageCache sharedImageCache] getSize];
+    
+    self.currentAccountLabel.text = [@"当前账号：" stringByAppendingString:[self.material objectForKey:@"fou"]];
 
 }
 
@@ -63,7 +66,7 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -71,17 +74,29 @@
         return 2;
     }else if (1 == section) {
         return 1;
+    }else if (2 == section) {
+        return 1;
     }
     return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-
-    return 20.0f;
+    if (0 == section) {
+        return 20.0f;
+    }else if (1 == section) {
+        return 20.0f;
+    }
+    return 0.01f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (0 == section) {
+        return 0.01f;
+    }else if (1 == section) {
+        return 0.01f;
+    }
     return 0.01f;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,7 +136,20 @@
     }
 }
 
+//设置Section的Footer
+//-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+//    if (0 == section) {
+//        return nil;
+//    }else if (1 == section) {
+//        return @"当前登录";
+//    }
+//    return nil;
+//}
 
+//- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+//
+//    
+//}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
