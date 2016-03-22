@@ -9,6 +9,7 @@
 #import "MSettingTVC.h"
 #import "ActionAccount.h"
 #import "UIImageView+WebCache.h"
+#import "UIColor+Extension.h"
 
 
 @interface MSettingTVC ()
@@ -36,8 +37,7 @@
 
     self.cacheSize = [[SDImageCache sharedImageCache] getSize];
     
-    self.currentAccountLabel.text = [@"当前账号：" stringByAppendingString:[self.material objectForKey:@"fou"]];
-
+    self.currentAccountLabel.text = [@"当前账号:" stringByAppendingString:[self.material objectForKey:@"fou"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +66,7 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -93,7 +93,7 @@
     if (0 == section) {
         return 0.01f;
     }else if (1 == section) {
-        return 0.01f;
+        return 44.01f;
     }
     return 0.01f;
 
@@ -112,9 +112,6 @@
                 
                 [[SDImageCache sharedImageCache] clearDisk];
                 self.cacheSize = [[SDImageCache sharedImageCache] getSize];
-                
-                
-                
             }];
             
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:selectButtonCancelTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -136,29 +133,14 @@
     }
 }
 
-//设置Section的Footer
-//-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-//    if (0 == section) {
-//        return nil;
-//    }else if (1 == section) {
-//        return @"当前登录";
-//    }
-//    return nil;
-//}
-
-//- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-//
-//    
-//}
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    if (section == 1) {
+        UITableViewCell *footer = [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+        return footer;
+    }
+    return nil;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
