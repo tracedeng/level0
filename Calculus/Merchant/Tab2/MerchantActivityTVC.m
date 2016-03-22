@@ -76,17 +76,27 @@
         }
         
         [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
     };
     activity.afterQueryMerchantActivityFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }

@@ -33,7 +33,7 @@
     [super viewDidLoad];
     
     self.defaultimage = [[UIImageView alloc] init];
-    self.defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
+    self.defaultimage.image=[UIImage imageNamed:@"credit-exchange-empty"];
     self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
     [self.view addSubview:self.defaultimage];
 //    [self.view insertSubview:self.defaultimage atIndex:0];
@@ -76,9 +76,14 @@
         [self.creditList addObjectsFromArray:creditList];
         
         [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
@@ -91,9 +96,14 @@
         }
     };
     credit.afterConsumerQueryOtherCreditListFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }

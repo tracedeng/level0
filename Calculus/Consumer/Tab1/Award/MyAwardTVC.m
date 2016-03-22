@@ -133,9 +133,9 @@
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
@@ -154,10 +154,10 @@
         }
     };
     credit.afterConsumerQueryAllCreditFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
-        
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+//        
         [self.tableView headerEndRefreshing];
         [self.tableView footerEndRefreshing];
         

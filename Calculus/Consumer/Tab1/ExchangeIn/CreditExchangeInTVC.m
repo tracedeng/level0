@@ -16,12 +16,19 @@
 #import "ExchangeRateTVC.h"
 #import "MJRefresh.h"
 
+
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
+
+
 @interface CreditExchangeInTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
 @property (nonatomic, retain) NSIndexPath *lastCheckedIndex;  //nil表示没有cell被选中
 //@property (weak, nonatomic) IBOutlet UIImageView *logoIMG;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation CreditExchangeInTVC
@@ -29,6 +36,13 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+
+    
+    
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"credit-exchange-empty"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
 
     
     self.title = @"选择转出积分";
@@ -67,17 +81,35 @@
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        if ([creditList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+        }
+
     };
     credit.afterConsumerQueryOtherCreditListFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
