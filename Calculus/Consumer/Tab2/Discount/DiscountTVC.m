@@ -12,6 +12,7 @@
 #import "ActionDiscount.h"
 #import "SVProgressHUD.h"
 #import "DiscountDetailsTVC.h"
+#import "MJRefresh.h"
 
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
@@ -43,7 +44,17 @@
     
     self.discountList = [[NSMutableArray alloc] init];
     
-    [self.refreshControl addTarget:self action:@selector(loaddiscountList:) forControlEvents:UIControlEventValueChanged];
+//    [self.refreshControl addTarget:self action:@selector(loaddiscountList:) forControlEvents:UIControlEventValueChanged];
+    //下拉刷新，上拉加载
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(loaddiscountList:)];
+    //    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(loaddiscountList:)];
+    
+    
+
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loaddiscountList:nil];

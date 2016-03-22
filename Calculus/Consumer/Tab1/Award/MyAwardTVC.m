@@ -25,6 +25,7 @@
 #import "ActionCredit.h"
 #import "SVProgressHUD.h"
 #import "MyOneAwardTVC.h"
+#import "MJRefresh.h"
 
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
@@ -54,8 +55,19 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.creditList = [[NSMutableArray alloc] init];
+    
+    //下拉刷新，上拉加载
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(loadCreditList:)];
+//    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(loadCreditList:)];
+    
+   
+    
 
-    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+//    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadCreditList:nil];
@@ -72,7 +84,9 @@
         [self loadCreditList:nil];
     }
 }
-//
+/*
+ *测试刷新代码 开始
+ */
 //- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
 //    NSLog(@"will scroll");
 //}
@@ -92,6 +106,8 @@
 //    if (scrollView.contentOffset.y + (scrollView.frame.size.height) > scrollView.contentSize.height)
 //    {
 //        NSLog(@"=====滑动到底了");
+//        [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+//
 //        [self loadCreditList:nil];
 //        
 //    }
@@ -101,6 +117,13 @@
 //        NSLog(@"=====滑动到顶了");
 //    }
 //}
+
+
+
+
+/*
+ *测试刷新代码 结束
+ */
 
 - (void)loadCreditList:(id)sender {
     ActionCredit *credit = [[ActionCredit alloc] init];
@@ -116,6 +139,12 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+
+        
         if ([creditList count] == 0) {
             
             self.defaultimage.hidden = NO;
@@ -128,10 +157,17 @@
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
         //        TODO...错误提示
+        
+
+
     };
     [credit doConsumerQueryAllCredit];
 

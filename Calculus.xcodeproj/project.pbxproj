@@ -149,6 +149,14 @@
 		B52AB8311C902EFD00322CA0 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82F1C902EFD00322CA0 /* EAIntroView.m */; };
 		B52AB8371C9AA17100322CA0 /* JRMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB8341C9AA17100322CA0 /* JRMessageManager.m */; };
 		B52AB8381C9AA17100322CA0 /* JRMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB8361C9AA17100322CA0 /* JRMessageView.m */; };
+		B540AEA51CA0E80000915098 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AE971CA0E80000915098 /* MJRefreshBaseView.m */; };
+		B540AEA61CA0E80000915098 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AE991CA0E80000915098 /* MJRefreshConst.m */; };
+		B540AEA71CA0E80000915098 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AE9B1CA0E80000915098 /* MJRefreshFooterView.m */; };
+		B540AEA81CA0E80000915098 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AE9D1CA0E80000915098 /* MJRefreshHeaderView.m */; };
+		B540AEA91CA0E80000915098 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AE9F1CA0E80000915098 /* UIScrollView+MJExtension.m */; };
+		B540AEAA1CA0E80000915098 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEA11CA0E80000915098 /* UIScrollView+MJRefresh.m */; };
+		B540AEAB1CA0E80000915098 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEA31CA0E80000915098 /* UIView+MJExtension.m */; };
+		B540AEAD1CA0F2CA00915098 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B540AEAC1CA0F2CA00915098 /* MJRefresh.bundle */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
@@ -431,6 +439,22 @@
 		B52AB8341C9AA17100322CA0 /* JRMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRMessageManager.m; path = JRMessage/JRMessageManager.m; sourceTree = "<group>"; };
 		B52AB8351C9AA17100322CA0 /* JRMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRMessageView.h; path = JRMessage/JRMessageView.h; sourceTree = "<group>"; };
 		B52AB8361C9AA17100322CA0 /* JRMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRMessageView.m; path = JRMessage/JRMessageView.m; sourceTree = "<group>"; };
+		B540AE951CA0E80000915098 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
+		B540AE961CA0E80000915098 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefreshBaseView.h; path = MJRefresh/MJRefreshBaseView.h; sourceTree = "<group>"; };
+		B540AE971CA0E80000915098 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBaseView.m; path = MJRefresh/MJRefreshBaseView.m; sourceTree = "<group>"; };
+		B540AE981CA0E80000915098 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
+		B540AE991CA0E80000915098 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConst.m; path = MJRefresh/MJRefreshConst.m; sourceTree = "<group>"; };
+		B540AE9A1CA0E80000915098 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooterView.h; path = MJRefresh/MJRefreshFooterView.h; sourceTree = "<group>"; };
+		B540AE9B1CA0E80000915098 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooterView.m; path = MJRefresh/MJRefreshFooterView.m; sourceTree = "<group>"; };
+		B540AE9C1CA0E80000915098 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeaderView.h; path = MJRefresh/MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		B540AE9D1CA0E80000915098 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeaderView.m; path = MJRefresh/MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		B540AE9E1CA0E80000915098 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		B540AE9F1CA0E80000915098 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		B540AEA01CA0E80000915098 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		B540AEA11CA0E80000915098 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		B540AEA21CA0E80000915098 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
+		B540AEA31CA0E80000915098 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
+		B540AEAC1CA0F2CA00915098 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
 		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
@@ -538,8 +562,7 @@
 				193C37671C1BE2B70017CC9C /* Tab2 */,
 				193C37681C1BE2B70017CC9C /* Tab3 */,
 			);
-			name = Consumer;
-			path = ../Consumer;
+			path = Consumer;
 			sourceTree = "<group>";
 		};
 		193C37591C1BE2B70017CC9C /* Tab1 */ = {
@@ -609,7 +632,6 @@
 		193C37811C1BE8510017CC9C /* Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C37781C1BE3EA0017CC9C /* Bootstrap.storyboard */,
 				193C37821C1BE8510017CC9C /* BootstrapController.h */,
 				193C37831C1BE8510017CC9C /* BootstrapController.m */,
@@ -684,6 +706,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B540AE931CA0E7CA00915098 /* MJRefresh */,
 				B52AB8321C9AA13A00322CA0 /* JRMessage */,
 				19F7C91F1C97BFF0000EB1A4 /* Citys */,
 				B52AB82B1C902EB200322CA0 /* Kickstart */,
@@ -801,6 +824,7 @@
 				193C37FF1C1D8D9E0017CC9C /* Common */,
 				193C37191C1B0D5A0017CC9C /* Account */,
 				193C37811C1BE8510017CC9C /* Bootstrap */,
+				193C37581C1BE2B70017CC9C /* Consumer */,
 				193C377E1C1BE6200017CC9C /* Merchant */,
 				1942C36A1BE89F6700C2DCF4 /* Supporting Files */,
 			);
@@ -1247,6 +1271,29 @@
 			name = JRMessage;
 			sourceTree = "<group>";
 		};
+		B540AE931CA0E7CA00915098 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				B540AEAC1CA0F2CA00915098 /* MJRefresh.bundle */,
+				B540AE951CA0E80000915098 /* MJRefresh.h */,
+				B540AE961CA0E80000915098 /* MJRefreshBaseView.h */,
+				B540AE971CA0E80000915098 /* MJRefreshBaseView.m */,
+				B540AE981CA0E80000915098 /* MJRefreshConst.h */,
+				B540AE991CA0E80000915098 /* MJRefreshConst.m */,
+				B540AE9A1CA0E80000915098 /* MJRefreshFooterView.h */,
+				B540AE9B1CA0E80000915098 /* MJRefreshFooterView.m */,
+				B540AE9C1CA0E80000915098 /* MJRefreshHeaderView.h */,
+				B540AE9D1CA0E80000915098 /* MJRefreshHeaderView.m */,
+				B540AE9E1CA0E80000915098 /* UIScrollView+MJExtension.h */,
+				B540AE9F1CA0E80000915098 /* UIScrollView+MJExtension.m */,
+				B540AEA01CA0E80000915098 /* UIScrollView+MJRefresh.h */,
+				B540AEA11CA0E80000915098 /* UIScrollView+MJRefresh.m */,
+				B540AEA21CA0E80000915098 /* UIView+MJExtension.h */,
+				B540AEA31CA0E80000915098 /* UIView+MJExtension.m */,
+			);
+			name = MJRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1322,6 +1369,7 @@
 				193C377A1C1BE3EA0017CC9C /* Bootstrap.storyboard in Resources */,
 				19EB0FAA1C7EE7C900FECDF5 /* MMe.storyboard in Resources */,
 				19F7C91E1C97BFA2000EB1A4 /* Provinces.plist in Resources */,
+				B540AEAD1CA0F2CA00915098 /* MJRefresh.bundle in Resources */,
 				197491211C79A25400784D09 /* PickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1383,6 +1431,7 @@
 			files = (
 				197491531C79DAB600784D09 /* VoucherCell.m in Sources */,
 				195A12B21C5370DE008E7945 /* CreditExchangeInTVC.m in Sources */,
+				B540AEA81CA0E80000915098 /* MJRefreshHeaderView.m in Sources */,
 				19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */,
 				19EB0F7D1C7EE62B00FECDF5 /* MAwardApplyCell.m in Sources */,
 				195A12CB1C53BFFA008E7945 /* ApplyCreditTVC.m in Sources */,
@@ -1393,6 +1442,7 @@
 				193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */,
 				1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */,
 				197491491C79DA9E00784D09 /* MeController.m in Sources */,
+				B540AEA71CA0E80000915098 /* MJRefreshFooterView.m in Sources */,
 				197491371C79A3D000784D09 /* QRScanViewController.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
@@ -1400,6 +1450,7 @@
 				193C38361C1D94DE0017CC9C /* ImageListCVC.m in Sources */,
 				19EB0F601C7EE57300FECDF5 /* AccountResetPassword.m in Sources */,
 				B5EDC37D1C3430BE002E2833 /* ActionFlow.m in Sources */,
+				B540AEAB1CA0E80000915098 /* UIView+MJExtension.m in Sources */,
 				195A12C11C537297008E7945 /* CreditExchangeCell.m in Sources */,
 				19EB0FBC1C7EE84800FECDF5 /* MeNickNameVC.m in Sources */,
 				19EB0FB11C7EE7C900FECDF5 /* MerchantQrcodeVC.m in Sources */,
@@ -1467,6 +1518,7 @@
 				19EB0FC21C7F027B00FECDF5 /* BalanceHistoryTVC.m in Sources */,
 				195A12C51C537297008E7945 /* MerchantSelectTVC.m in Sources */,
 				195A12D41C5526E8008E7945 /* YMUtils.m in Sources */,
+				B540AEA91CA0E80000915098 /* UIScrollView+MJExtension.m in Sources */,
 				19EB0F591C7EE55500FECDF5 /* MMaterialManager.m in Sources */,
 				1942C36F1BE89F6700C2DCF4 /* AppDelegate.m in Sources */,
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
@@ -1482,11 +1534,13 @@
 				195A12C21C537297008E7945 /* CreditExchangeTVC.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
 				1974914A1C79DA9E00784D09 /* MeNavigationController.m in Sources */,
+				B540AEA51CA0E80000915098 /* MJRefreshBaseView.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
 				197491421C79DA6300784D09 /* FeedbackController.m in Sources */,
 				19EB0FB21C7EE7C900FECDF5 /* MMaterialTVC.m in Sources */,
 				1942C36C1BE89F6700C2DCF4 /* main.m in Sources */,
 				19339AD91C23E4C000791A9E /* AwardManagerController.m in Sources */,
+				B540AEAA1CA0E80000915098 /* UIScrollView+MJRefresh.m in Sources */,
 				19EB0F8D1C7EE6C100FECDF5 /* MyOneAwardCell.m in Sources */,
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
 				197491521C79DAB600784D09 /* VoucherTVC.m in Sources */,
@@ -1504,6 +1558,7 @@
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19EB0F8B1C7EE6C100FECDF5 /* MyAwardCell.m in Sources */,
 				19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */,
+				B540AEA61CA0E80000915098 /* MJRefreshConst.m in Sources */,
 				19EB0F771C7EE61B00FECDF5 /* ConsumerAwardCell.m in Sources */,
 				19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */,
 				19EB0FDB1C80824A00FECDF5 /* BuyDiscountTVC.m in Sources */,
