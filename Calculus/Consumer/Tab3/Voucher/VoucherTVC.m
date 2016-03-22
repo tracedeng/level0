@@ -11,7 +11,7 @@
 #import "ActionVoucher.h"
 #import "VoucherDetailsVC.h"
 #import "SVProgressHUD.h"
-
+#import "MJRefresh.h"
 
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
@@ -40,7 +40,18 @@
     
     self.voucherList = [[NSMutableArray alloc] init];
     
-    [self.refreshControl addTarget:self action:@selector(loadVoucherList:) forControlEvents:UIControlEventValueChanged];
+//    [self.refreshControl addTarget:self action:@selector(loadVoucherList:) forControlEvents:UIControlEventValueChanged];
+    
+    //下拉刷新，上拉加载
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(loadVoucherList:)];
+    //    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(loadVoucherList:)];
+    
+    
+
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeClear];
     [self loadVoucherList:nil];
@@ -57,9 +68,14 @@
         [self.voucherList removeAllObjects];
         [self.voucherList addObjectsFromArray:voucherList];
         [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
@@ -72,9 +88,14 @@
         }
     };
     voucher.afterQueryVoucherFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }

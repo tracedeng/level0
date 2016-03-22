@@ -14,6 +14,11 @@
 #import "UIColor+Extension.h"
 #import "CreditExchangeSessionHeader.h"
 #import "ExchangeRateTVC.h"
+#import "MJRefresh.h"
+
+
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
 
 
 @interface CreditExchangeInTVC ()
@@ -22,6 +27,8 @@
 //@property (weak, nonatomic) IBOutlet UIImageView *logoIMG;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextstep;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation CreditExchangeInTVC
@@ -31,13 +38,31 @@
     [super viewDidLoad];
 
     
+    
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"credit-exchange-empty"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+
+    
     self.title = @"选择转出积分";
     self.creditList = [[NSMutableArray alloc] init];
 
-    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
+//    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
 
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loadCreditList:nil];
+    
+    //下拉刷新，上拉加载
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(loadCreditList:)];
+    //    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(loadCreditList:)];
+    
+    
+
     
 //    是否允许积分转入
     
@@ -56,17 +81,35 @@
         [self.creditList removeAllObjects];
         [self.creditList addObjectsFromArray:creditList];
         [self.tableView reloadData];
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        if ([creditList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+        }
+
     };
     credit.afterConsumerQueryOtherCreditListFailed = ^(NSString *message) {
-        if ([self.refreshControl isRefreshing]) {
-            [self.refreshControl endRefreshing];
-        }
+//        if ([self.refreshControl isRefreshing]) {
+//            [self.refreshControl endRefreshing];
+//        }
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
