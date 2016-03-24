@@ -17,7 +17,7 @@
 #import "Constance.h"
 #import "MMaterialTVC.h"
 #import "MSettingTVC.h"
-
+#import "UIColor+Extension.h"
 
 @interface MMeTVC ()
 #define MMATERIALEXCHANGERATE  0x1
@@ -35,6 +35,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.tableView setSeparatorColor:[UIColor colorWithHex:0xEFEFF4]];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
