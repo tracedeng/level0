@@ -8,6 +8,7 @@
 
 #import "ConfirmVoucherTVC.h"
 #import "ActionMVoucher.h"
+#import "XHToast.h"
 
 @interface ConfirmVoucherTVC ()
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
@@ -126,6 +127,17 @@
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     };
+    action.afterConfirmVoucherFailedNetConnect = ^(NSString *message) {
+        // 无效商家ID
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认失败，请联系平台" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            //
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    };
+
     [action doConfirmVoucher:self.voucher merchant_identity:self.merchant activity_identity:self.activity consumer_number:self.number exec_confirm:NO];
 }
 

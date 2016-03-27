@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 @property (nonatomic, strong) JRMessageView *message;
+@property (nonatomic, strong) JRMessageView *networkMessage;
+
 
 - (IBAction)accountLogin:(UIButton *)sender;
 - (IBAction)accountRegister:(UIButton *)sender;
@@ -65,7 +67,15 @@
                                                 superVC:self.navigationController
                                                duration:1];
     
-  
+    self.networkMessage = [[JRMessageView alloc] initWithTitle:@"网络连接失败"
+                                                      subTitle:@""
+                                                      iconName:@"icon-info-white"
+                                                   messageType:JRMessageViewTypeCustom
+                                               messagePosition:JRMessagePositionNavBarOverlay
+                                                       superVC:self.navigationController
+                                                      duration:1];
+
+    
     
     
     // Do any additional setup after loading the view.
@@ -195,13 +205,22 @@
         //错误提示
         //TODO message 赋值无效
 //        self.message.subTitle = message;
-        [self.message changeSubtitle:message];
+//        [self.message changeSubtitle:message];
         if (self.message.isShow) {
-//            [self.message hidedMessageView];
+            [self.message hidedMessageView];
         } else {
             [self.message showMessageView];
         }
     };
+    login.afterAccountLoginFailedNetConnect = ^(NSString *message) {
+        //错误提示
+        if (self.networkMessage.isShow) {
+            [self.networkMessage hidedMessageView];
+        } else {
+            [self.networkMessage showMessageView];
+        }
+    };
+
 
     [login doAccountLogin:phoneNumber password:password];
 }

@@ -205,15 +205,15 @@
     switch (self.type) {
         case ECONSUMERQUERYDISCOUNT:
         {
-            if (self.afterConsumerQueryDiscountFailed) {
-                self.afterConsumerQueryDiscountFailed([responseError localizedDescription]);
+            if (self.afterConsumerQueryDiscountFailedNetConnect) {
+                self.afterConsumerQueryDiscountFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case ECONSUMERBUYDISCOUNT:
         {
-            if (self.afterConsumerBuyDiscountFailed) {
-                self.afterConsumerBuyDiscountFailed([responseError localizedDescription]);
+            if (self.afterConsumerBuyDiscountFailedNetConnect) {
+                self.afterConsumerBuyDiscountFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }

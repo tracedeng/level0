@@ -13,6 +13,7 @@
 #import "MerchantSelectTVC.h"
 #import "CreditExchangeSessionHeader.h"
 #import "MJRefresh.h"
+#import "XHToast.h"
 
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
@@ -107,8 +108,21 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
-        //        TODO...错误提示
     };
+    credit.afterConsumerQueryOtherCreditListFailedNetConnect = ^(NSString *message) {
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+        
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+
+    };
+
+
 //    [credit doConsumerQueryCreditListWithout:self.merchant];
     [credit doQueryAllowExchangeOutCredit:nil];
 }

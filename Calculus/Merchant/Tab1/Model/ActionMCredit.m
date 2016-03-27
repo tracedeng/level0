@@ -173,22 +173,22 @@
     switch (self.type) {
         case EQUERYCONSUMERCREDIT:
         {
-            if (self.afterQueryConsumerCreditFailed) {
-                self.afterQueryConsumerCreditFailed([responseError localizedDescription]);
+            if (self.afterQueryConsumerCreditFailedNetConnect) {
+                self.afterQueryConsumerCreditFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case EQUERYONECONSUMERCREDIT:
         {
-            if (self.afterQueryOneConsumerCreditFailed) {
-                self.afterQueryOneConsumerCreditFailed([responseError localizedDescription]);
+            if (self.afterQueryOneConsumerCreditFailedNetConnect) {
+                self.afterQueryOneConsumerCreditFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case EMERCHANTQUERYAPPLYCREDIT:
         {
-            if (self.afterMerchantQueryApplyCreditFailed) {
-                self.afterMerchantQueryApplyCreditFailed([responseError localizedDescription]);
+            if (self.afterMerchantQueryApplyCreditFailedNetConnect) {
+                self.afterMerchantQueryApplyCreditFailedNetConnect([responseError localizedDescription]);
             }
             
             break;

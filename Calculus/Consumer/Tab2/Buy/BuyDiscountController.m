@@ -11,6 +11,7 @@
 #import "BuyDiscountTVC.h"
 #import "ActionDiscount.h"
 #import "UIColor+Extension.h"
+#import "XHToast.h"
 
 @interface BuyDiscountController ()
 @property (nonatomic, assign) NSInteger checkedCredit;
@@ -116,6 +117,18 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     };
+    action.afterConsumerBuyDiscountFailedNetConnect = ^(NSString *message) {
+        // 购买失败
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"购买活动失败" message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    };
+
     [action doConsumerBuyDiscount:[self.discountInfo objectForKey:@"id"] ofMerchant:self.merchant withCredit:credits];
 
 }

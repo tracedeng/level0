@@ -12,6 +12,7 @@
 #import "MerchantSelectCell.h"
 #import "InterchangeController.h"
 #import "ExchangeRateTVC.h"
+#import "XHToast.h"
 
 @interface MerchantSelectTVC ()
 @property (nonatomic, retain) NSMutableArray *merchantList;
@@ -68,6 +69,18 @@
         }
         //        TODO...错误提示
     };
+    merchant.afterConsumerQueryOtherMerchantListFailedNetConnect = ^(NSString *message) {
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+
+        
+    };
+
 //    [merchant doConsumerQueryOtherMerchantList:self.merchant];
     [merchant doQueryExchangInMerchantWithout:self.merchant];
     

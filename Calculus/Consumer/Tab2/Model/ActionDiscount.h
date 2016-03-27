@@ -44,4 +44,8 @@ typedef NS_ENUM(NSInteger, EDISCOUNTOPTYPE) {
 //@property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantListFailed)(NSString *message);
 //@property (nonatomic, copy) void (^afterCreditInterchangeFailed)(NSString *message);
 
+@property (nonatomic, copy) void (^afterConsumerQueryDiscountFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterConsumerBuyDiscountFailedNetConnect)(NSString *message);
+
+
 @end

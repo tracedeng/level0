@@ -38,6 +38,13 @@ typedef NS_ENUM(NSInteger, EMACTIVITYOPTYPE) {
 @property (nonatomic, copy) void (^afterAddMerchantActivityFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterQueryUploadTokenFailed)(NSString *message);
 
+
+@property (nonatomic, copy) void (^afterQueryMerchantActivityFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterDeleteMerchantActivityFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterUpdateMerchantActivityFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterAddMerchantActivityFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterQueryUploadTokenFailedNetConnect)(NSString *message);
+
 @end
 
 

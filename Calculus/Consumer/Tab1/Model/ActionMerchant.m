@@ -94,8 +94,8 @@
         case ECONSUMERQUERYMERCHANTLIST:
         case EQUERYEXCHANGEINMERCHNAT:
         {
-            if (self.afterConsumerQueryOtherMerchantListFailed) {
-                self.afterConsumerQueryOtherMerchantListFailed([responseError localizedDescription]);
+            if (self.afterConsumerQueryOtherMerchantListFailedNetConnect) {
+                self.afterConsumerQueryOtherMerchantListFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }

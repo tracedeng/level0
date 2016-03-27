@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 #import "ActionMCredit.h"
 #import "COneAwardCell.h"
+#import "XHToast.h"
 
 @interface COneAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
@@ -64,6 +65,17 @@
         }
         //        TODO...错误提示
     };
+    credit.afterQueryOneConsumerCreditFailedNetConnect = ^(NSString *message) {
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+    };
+
+
     [credit doQueryOneConsumerCredit:self.numbers];
     
 }

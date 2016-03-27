@@ -32,4 +32,8 @@ typedef NS_ENUM(NSInteger, EVOUCHEROPTYPE) {
 @property (nonatomic, copy) void (^afterQueryVoucherFailed)(NSString *messge);
 @property (nonatomic, copy) void (^afterMerchantQueryVoucherFailed)(NSString *message);
 @property (nonatomic, copy) void (^afterConfirmVoucherFailed)(NSString *message);
+
+@property (nonatomic, copy) void (^afterQueryVoucherFailedNetConnect)(NSString *messge);
+@property (nonatomic, copy) void (^afterMerchantQueryVoucherFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterConfirmVoucherFailedNetConnect)(NSString *message);
 @end

@@ -39,4 +39,13 @@ typedef NS_ENUM(NSInteger, EMCREDITOPTYPE) {
 @property (nonatomic, copy) void (^afterRefuseApplyCreditFailed)(NSString *message);
 
 
+@property (nonatomic, copy) void (^afterQueryConsumerCreditFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterQueryOneConsumerCreditFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterMerchantQueryApplyCreditFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterConfirmApplyCreditFailedNetConnect)(NSString *message);
+@property (nonatomic, copy) void (^afterRefuseApplyCreditFailedNetConnect)(NSString *message);
+
+
+
+
 @end

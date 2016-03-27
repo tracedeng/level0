@@ -131,25 +131,22 @@
     switch (self.type) {
         case EQUERYVOUCHER:
         {
-            //七牛token失败操作
-            if (self.afterQueryVoucherFailed) {
-                self.afterQueryVoucherFailed([responseError localizedDescription]);
+            if (self.afterQueryVoucherFailedNetConnect) {
+                self.afterQueryVoucherFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case EMERCHANTQUERYVOUCHER:
         {
-            //修改头像失败操作
-            if (self.afterMerchantQueryVoucherFailed) {
-                self.afterMerchantQueryVoucherFailed([responseError localizedDescription]);
+            if (self.afterMerchantQueryVoucherFailedNetConnect) {
+                self.afterMerchantQueryVoucherFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case ECONFIRMVOUCHER:
         {
-            //修改昵称失败操作
-            if (self.afterConfirmVoucherFailed) {
-                self.afterConfirmVoucherFailed([responseError localizedDescription]);
+            if (self.afterConfirmVoucherFailedNetConnect) {
+                self.afterConfirmVoucherFailedNetConnect([responseError localizedDescription]);
             }
             
             break;

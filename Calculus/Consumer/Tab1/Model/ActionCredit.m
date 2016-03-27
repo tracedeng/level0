@@ -250,44 +250,44 @@
     switch (self.type) {
         case ECONSUMERQUERYALLCREDIT:
         {
-            if (self.afterConsumerQueryAllCreditFailed) {
-                self.afterConsumerQueryAllCreditFailed([responseError localizedDescription]);
+            if (self.afterConsumerQueryAllCreditFailedNetConnect) {
+                self.afterConsumerQueryAllCreditFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case ECONSUMERQUERYONECREDIT:
         {
-            if (self.afterConsumerQueryOneCreditFailed) {
-                self.afterConsumerQueryOneCreditFailed([responseError localizedDescription]);
+            if (self.afterConsumerQueryOneCreditFailedNetConnect) {
+                self.afterConsumerQueryOneCreditFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case ECONSUMERCREATECONSUMPTION:
         {
-            if (self.afterConsumerCreateConsumptionFailed) {
-                self.afterConsumerCreateConsumptionFailed([responseError localizedDescription]);
+            if (self.afterConsumerCreateConsumptionFailedNetConnect) {
+                self.afterConsumerCreateConsumptionFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case ECONSUMERQUERYOTHERCREDITLIST:
         case EQUERYALLOWEXCHANGEOUTCREDIT:
         {
-            if (self.afterConsumerQueryOtherCreditListFailed) {
-                self.afterConsumerQueryOtherCreditListFailed([responseError localizedDescription]);
+            if (self.afterConsumerQueryOtherCreditListFailedNetConnect) {
+                self.afterConsumerQueryOtherCreditListFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case EALLOWINTERCHANGEIN:
         {
-            if (self.afterAllowInterchangeInFailed) {
-                self.afterAllowInterchangeInFailed([responseError localizedDescription]);
+            if (self.afterAllowInterchangeInFailedNetConnect) {
+                self.afterAllowInterchangeInFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case ECREDITINTERCHANGE:
         {
-            if (self.afterCreditInterchangeFailed) {
-                self.afterCreditInterchangeFailed([responseError localizedDescription]);
+            if (self.afterCreditInterchangeFailedNetConnect) {
+                self.afterCreditInterchangeFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }

@@ -183,8 +183,8 @@
     switch (self.type) {
         case EQUERYMERCHANTACTIVITY:
         {
-            if (self.afterQueryMerchantActivityFailed) {
-                self.afterQueryMerchantActivityFailed([responseError localizedDescription]);
+            if (self.afterQueryMerchantActivityFailedNetConnect) {
+                self.afterQueryMerchantActivityFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }

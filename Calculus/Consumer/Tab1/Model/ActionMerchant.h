@@ -22,6 +22,8 @@ typedef NS_ENUM(NSInteger, EMERCHANTOPTYPE) {
 
 @property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantList)(NSArray *merchantList);
 @property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantListFailed)(NSString *message);
+@property (nonatomic, copy) void (^afterConsumerQueryOtherMerchantListFailedNetConnect)(NSString *message);
+
 
 @end
 

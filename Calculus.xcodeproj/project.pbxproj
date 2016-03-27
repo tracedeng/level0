@@ -157,6 +157,7 @@
 		B540AEAA1CA0E80000915098 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEA11CA0E80000915098 /* UIScrollView+MJRefresh.m */; };
 		B540AEAB1CA0E80000915098 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEA31CA0E80000915098 /* UIView+MJExtension.m */; };
 		B540AEAD1CA0F2CA00915098 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B540AEAC1CA0F2CA00915098 /* MJRefresh.bundle */; };
+		B540AEB51CA7BB6100915098 /* XHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEB41CA7BB6100915098 /* XHToast.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
@@ -455,6 +456,8 @@
 		B540AEA21CA0E80000915098 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
 		B540AEA31CA0E80000915098 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
 		B540AEAC1CA0F2CA00915098 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
+		B540AEB31CA7BB6100915098 /* XHToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XHToast.h; path = XHToast/XHToast.h; sourceTree = "<group>"; };
+		B540AEB41CA7BB6100915098 /* XHToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XHToast.m; path = XHToast/XHToast.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
 		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
@@ -706,6 +709,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B540AEB21CA7BB0700915098 /* XHToast */,
 				B540AE931CA0E7CA00915098 /* MJRefresh */,
 				B52AB8321C9AA13A00322CA0 /* JRMessage */,
 				19F7C91F1C97BFF0000EB1A4 /* Citys */,
@@ -1294,6 +1298,15 @@
 			name = MJRefresh;
 			sourceTree = "<group>";
 		};
+		B540AEB21CA7BB0700915098 /* XHToast */ = {
+			isa = PBXGroup;
+			children = (
+				B540AEB31CA7BB6100915098 /* XHToast.h */,
+				B540AEB41CA7BB6100915098 /* XHToast.m */,
+			);
+			name = XHToast;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1524,6 +1537,7 @@
 				19CBBC051C228D16002A920E /* ActionQiniu.m in Sources */,
 				195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
+				B540AEB51CA7BB6100915098 /* XHToast.m in Sources */,
 				197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
 				19EB0FFC1C82C70F00FECDF5 /* ScanVoucherController.m in Sources */,

@@ -171,29 +171,29 @@
     switch (self.type) {
         case EACCOUNTGETSMSCODE:
         {
-            if (self.afterGetSMSCodeFailed) {
-                self.afterGetSMSCodeFailed([responseError localizedDescription]);
+            if (self.afterGetSMSCodeFailedNetConnect) {
+                self.afterGetSMSCodeFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case EACCOUNTLOGIN:
         {
-            if (self.afterAccountLoginFailed) {
-                self.afterAccountLoginFailed([responseError localizedDescription]);
+            if (self.afterAccountLoginFailedNetConnect) {
+                self.afterAccountLoginFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case EACCOUNTCHANGEPASSWORD:
         {
-            if (self.afterAccountResetPasswordFailed) {
-                self.afterAccountResetPasswordFailed([responseError localizedDescription]);
+            if (self.afterAccountResetPasswordFailedNetConnect) {
+                self.afterAccountResetPasswordFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }
         case EACCOUNTREGISTER:
         {
-            if (self.afterAccountRegisterFailed) {
-                self.afterAccountRegisterFailed([responseError localizedDescription]);
+            if (self.afterAccountRegisterFailedNetConnect) {
+                self.afterAccountRegisterFailedNetConnect([responseError localizedDescription]);
             }
             break;
         }

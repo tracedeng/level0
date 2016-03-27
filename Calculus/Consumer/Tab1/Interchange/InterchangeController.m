@@ -11,6 +11,7 @@
 #import "ActionCredit.h"
 #import "UIImageView+WebCache.h"
 #import "Constance.h"
+#import "XHToast.h"
 
 @interface InterchangeController ()
 @property (weak, nonatomic) IBOutlet UIView *sourceCreditView;
@@ -88,6 +89,19 @@
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     };
+    action.afterCreditInterchangeFailed = ^(NSString *message) {
+        // 计算互换比例失败，提示
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"计算互换比率失败，请联系平台" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //
+            [self dismissViewControllerAnimated:alert completion:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    };
+
     [action doCreditInterchange:[self.merchantOut objectForKey:@"cIdentity"] from_merchant:[self.merchantOut objectForKey:@"mIdentity"] quantity:[[self.merchantOut objectForKey:@"quantity"] integerValue] to_merchant:[self.merchantIn objectForKey:@"identity"] exec_exchange:NO];
 }
 

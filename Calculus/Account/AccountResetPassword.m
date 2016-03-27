@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (nonatomic, strong) JRMessageView *message;
+@property (nonatomic, strong) JRMessageView *networkMessage;
 
 
 - (IBAction)getSMSCode:(UIButton *)sender;
@@ -60,6 +61,15 @@
                                                 superVC:self.navigationController
                                                duration:1];
     
+    self.networkMessage = [[JRMessageView alloc] initWithTitle:@"网络连接失败"
+                                                      subTitle:@""
+                                                      iconName:@"icon-info-white"
+                                                   messageType:JRMessageViewTypeCustom
+                                               messagePosition:JRMessagePositionTop
+                                                       superVC:self.navigationController
+                                                      duration:1];
+    
+   
     
     
 
@@ -158,6 +168,15 @@
         }
         
     };
+    resetpassword.afterAccountResetPasswordFailedNetConnect = ^(NSString *message) {
+        //错误提示
+        if (self.networkMessage.isShow) {
+            [self.networkMessage hidedMessageView];
+        } else {
+            [self.networkMessage showMessageView];
+        }
+    };
+    
 
     [resetpassword doAccountResetPassword:phoneNumber password:password code:code];
     

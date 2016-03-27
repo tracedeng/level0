@@ -26,6 +26,7 @@
 #import "SVProgressHUD.h"
 #import "MyOneAwardTVC.h"
 #import "MJRefresh.h"
+#import "XHToast.h"
 
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
@@ -35,13 +36,14 @@
 @property (nonatomic, assign) NSInteger checkedRow;
 @property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
 
+
+
 @end
 
 @implementation MyAwardTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     self.defaultimage = [[UIImageView alloc] init];
     self.defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
@@ -63,9 +65,6 @@
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
     [self.tableView addFooterWithTarget:self action:@selector(loadCreditList:)];
-    
-   
-    
 
 //    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
     
@@ -84,46 +83,6 @@
         [self loadCreditList:nil];
     }
 }
-/*
- *测试刷新代码 开始
- */
-//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-//    NSLog(@"will scroll");
-//}
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    NSLog(@"end scroll");
-//    
-//}
-//
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    
-//    
-//    
-//    CGFloat height = self.tableView.frame.size.height;
-//    CGFloat distanceFromButton = self.tableView.contentSize.height - self.tableView.contentOffset.y;
-//    //    if (distanceFromButton == height)
-//    if (scrollView.contentOffset.y + (scrollView.frame.size.height) > scrollView.contentSize.height)
-//    {
-//        NSLog(@"=====滑动到底了");
-//        [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
-//
-//        [self loadCreditList:nil];
-//        
-//    }
-//    
-//    if (self.tableView.contentOffset.y == 0)
-//    {
-//        NSLog(@"=====滑动到顶了");
-//    }
-//}
-
-
-
-
-/*
- *测试刷新代码 结束
- */
 
 - (void)loadCreditList:(id)sender {
     ActionCredit *credit = [[ActionCredit alloc] init];
@@ -140,11 +99,9 @@
             [SVProgressHUD dismiss];
         }
         
-        
         [self.tableView headerEndRefreshing];
         [self.tableView footerEndRefreshing];
 
-        
         if ([creditList count] == 0) {
             
             self.defaultimage.hidden = NO;
@@ -152,6 +109,7 @@
         }else{
             self.defaultimage.hidden = YES;
         }
+        
     };
     credit.afterConsumerQueryAllCreditFailed = ^(NSString *message) {
 //        if ([self.refreshControl isRefreshing]) {
@@ -165,10 +123,21 @@
             [SVProgressHUD dismiss];
         }
         //        TODO...错误提示
-        
-
 
     };
+    credit.afterConsumerQueryAllCreditFailedNetConnect = ^(NSString *message) {
+        //错误提示
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+    };
+    
     [credit doConsumerQueryAllCredit];
 
 }

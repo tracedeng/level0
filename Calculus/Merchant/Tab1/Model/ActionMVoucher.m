@@ -86,8 +86,8 @@
         case ECONFIRMVOUCHER:
         {
             //修改昵称失败操作
-            if (self.afterConfirmVoucherFailed) {
-                self.afterConfirmVoucherFailed([responseError localizedDescription]);
+            if (self.afterConfirmVoucherFailedNetConnect) {
+                self.afterConfirmVoucherFailedNetConnect([responseError localizedDescription]);
             }
             
             break;
