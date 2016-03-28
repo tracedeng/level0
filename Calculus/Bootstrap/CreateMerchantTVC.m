@@ -240,7 +240,24 @@
         action.afterCreateMerchantOfAccount = ^(NSString *merchant) {
             [MMaterialManager changeMaterialOfKey:@"id" withValue:merchant];
             //进入商家主页
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchantAfterCreate", @"destine", nil]];
+            
+            
+            NSString *selectButtonOKTitle = NSLocalizedString(@"确定", nil);
+            NSString *selectTitle = NSLocalizedString(@"创建商户成功，点击确定跳转到商户主页", nil);
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:selectTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"initWindow" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"gotoMerchantAfterCreate", @"destine", nil]];
+
+            }];
+            
+            [alertController addAction:okAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+
+            
+            
         };
         [action doCreateMerchantOfAccount:name logo:(self.path ? self.path : @"default") ratio:[ratio integerValue] address:address longitude:self.gps.longitude latitude:self.gps.latitude];
     }

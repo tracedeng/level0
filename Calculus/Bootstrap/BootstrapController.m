@@ -36,7 +36,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    self.merchantButton.enabled = TRUE;
+
     [self.navigationController setNavigationBarHidden:YES];
 }
 
@@ -62,6 +63,7 @@
 }
 
 - (IBAction)EnterAsMerchant:(id)sender {
+    self.merchantButton.enabled = FALSE;
     ActionMMaterial *action = [[ActionMMaterial alloc] init];
     action.afterQueryMerchantOfAccount = ^(NSDictionary *material) {
         if (material) {

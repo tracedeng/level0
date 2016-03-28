@@ -312,6 +312,7 @@
         
         [self.view addSubview:picker];
         [picker show];
+        
 
     }
 }
@@ -328,7 +329,7 @@
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
     self.aexpireTXT.text = [dateFormatter stringFromDate:newDate];
     
-    self.canSubmitMask |= 0x10;
+    self.canSubmitMask |= 0x20;
 }
 
 #pragma mark - Navigation
