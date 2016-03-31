@@ -158,6 +158,27 @@
 		B540AEAB1CA0E80000915098 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEA31CA0E80000915098 /* UIView+MJExtension.m */; };
 		B540AEAD1CA0F2CA00915098 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B540AEAC1CA0F2CA00915098 /* MJRefresh.bundle */; };
 		B540AEB51CA7BB6100915098 /* XHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEB41CA7BB6100915098 /* XHToast.m */; };
+		B540AED91CAC1ACB00915098 /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEB81CAC1ACB00915098 /* PNBar.m */; };
+		B540AEDA1CAC1ACB00915098 /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEBA1CAC1ACB00915098 /* PNBarChart.m */; };
+		B540AEDB1CAC1ACB00915098 /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEBE1CAC1ACB00915098 /* PNChartLabel.m */; };
+		B540AEDC1CAC1ACB00915098 /* PNCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEC01CAC1ACB00915098 /* PNCircleChart.m */; };
+		B540AEDD1CAC1ACB00915098 /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEC21CAC1ACB00915098 /* PNColor.m */; };
+		B540AEDE1CAC1ACB00915098 /* PNGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEC41CAC1ACB00915098 /* PNGenericChart.m */; };
+		B540AEDF1CAC1ACB00915098 /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEC61CAC1ACB00915098 /* PNLineChart.m */; };
+		B540AEE01CAC1ACB00915098 /* PNLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEC81CAC1ACB00915098 /* PNLineChartData.m */; };
+		B540AEE11CAC1ACB00915098 /* PNLineChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AECA1CAC1ACB00915098 /* PNLineChartDataItem.m */; };
+		B540AEE21CAC1ACB00915098 /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AECC1CAC1ACB00915098 /* PNPieChart.m */; };
+		B540AEE31CAC1ACB00915098 /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AECE1CAC1ACB00915098 /* PNPieChartDataItem.m */; };
+		B540AEE41CAC1ACB00915098 /* PNRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AED01CAC1ACB00915098 /* PNRadarChart.m */; };
+		B540AEE51CAC1ACB00915098 /* PNRadarChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AED21CAC1ACB00915098 /* PNRadarChartDataItem.m */; };
+		B540AEE61CAC1ACB00915098 /* PNScatterChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AED41CAC1ACB00915098 /* PNScatterChart.m */; };
+		B540AEE71CAC1ACB00915098 /* PNScatterChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AED61CAC1ACB00915098 /* PNScatterChartData.m */; };
+		B540AEE81CAC1ACB00915098 /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AED81CAC1ACB00915098 /* PNScatterChartDataItem.m */; };
+		B540AEEE1CAC1C6C00915098 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEED1CAC1C6C00915098 /* UICountingLabel.m */; };
+		B540AEF21CAC1E6600915098 /* StatisticVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF11CAC1E6600915098 /* StatisticVC.m */; };
+		B540AEF61CAC2D3300915098 /* XFSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF51CAC2D3300915098 /* XFSegementView.m */; };
+		B540AEF91CACC3CC00915098 /* TimeLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF81CACC3CC00915098 /* TimeLineTVC.m */; };
+		B540AEFC1CACC40A00915098 /* TimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEFB1CACC40A00915098 /* TimeLineCell.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
@@ -458,6 +479,50 @@
 		B540AEAC1CA0F2CA00915098 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
 		B540AEB31CA7BB6100915098 /* XHToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XHToast.h; path = XHToast/XHToast.h; sourceTree = "<group>"; };
 		B540AEB41CA7BB6100915098 /* XHToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XHToast.m; path = XHToast/XHToast.m; sourceTree = "<group>"; };
+		B540AEB71CAC1ACB00915098 /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNBar.h; path = PNChart/PNBar.h; sourceTree = "<group>"; };
+		B540AEB81CAC1ACB00915098 /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNBar.m; path = PNChart/PNBar.m; sourceTree = "<group>"; };
+		B540AEB91CAC1ACB00915098 /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNBarChart.h; path = PNChart/PNBarChart.h; sourceTree = "<group>"; };
+		B540AEBA1CAC1ACB00915098 /* PNBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNBarChart.m; path = PNChart/PNBarChart.m; sourceTree = "<group>"; };
+		B540AEBB1CAC1ACB00915098 /* PNChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNChart.h; path = PNChart/PNChart.h; sourceTree = "<group>"; };
+		B540AEBC1CAC1ACB00915098 /* PNChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNChartDelegate.h; path = PNChart/PNChartDelegate.h; sourceTree = "<group>"; };
+		B540AEBD1CAC1ACB00915098 /* PNChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNChartLabel.h; path = PNChart/PNChartLabel.h; sourceTree = "<group>"; };
+		B540AEBE1CAC1ACB00915098 /* PNChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNChartLabel.m; path = PNChart/PNChartLabel.m; sourceTree = "<group>"; };
+		B540AEBF1CAC1ACB00915098 /* PNCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNCircleChart.h; path = PNChart/PNCircleChart.h; sourceTree = "<group>"; };
+		B540AEC01CAC1ACB00915098 /* PNCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNCircleChart.m; path = PNChart/PNCircleChart.m; sourceTree = "<group>"; };
+		B540AEC11CAC1ACB00915098 /* PNColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNColor.h; path = PNChart/PNColor.h; sourceTree = "<group>"; };
+		B540AEC21CAC1ACB00915098 /* PNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNColor.m; path = PNChart/PNColor.m; sourceTree = "<group>"; };
+		B540AEC31CAC1ACB00915098 /* PNGenericChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNGenericChart.h; path = PNChart/PNGenericChart.h; sourceTree = "<group>"; };
+		B540AEC41CAC1ACB00915098 /* PNGenericChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNGenericChart.m; path = PNChart/PNGenericChart.m; sourceTree = "<group>"; };
+		B540AEC51CAC1ACB00915098 /* PNLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNLineChart.h; path = PNChart/PNLineChart.h; sourceTree = "<group>"; };
+		B540AEC61CAC1ACB00915098 /* PNLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNLineChart.m; path = PNChart/PNLineChart.m; sourceTree = "<group>"; };
+		B540AEC71CAC1ACB00915098 /* PNLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNLineChartData.h; path = PNChart/PNLineChartData.h; sourceTree = "<group>"; };
+		B540AEC81CAC1ACB00915098 /* PNLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNLineChartData.m; path = PNChart/PNLineChartData.m; sourceTree = "<group>"; };
+		B540AEC91CAC1ACB00915098 /* PNLineChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNLineChartDataItem.h; path = PNChart/PNLineChartDataItem.h; sourceTree = "<group>"; };
+		B540AECA1CAC1ACB00915098 /* PNLineChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNLineChartDataItem.m; path = PNChart/PNLineChartDataItem.m; sourceTree = "<group>"; };
+		B540AECB1CAC1ACB00915098 /* PNPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNPieChart.h; path = PNChart/PNPieChart.h; sourceTree = "<group>"; };
+		B540AECC1CAC1ACB00915098 /* PNPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNPieChart.m; path = PNChart/PNPieChart.m; sourceTree = "<group>"; };
+		B540AECD1CAC1ACB00915098 /* PNPieChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNPieChartDataItem.h; path = PNChart/PNPieChartDataItem.h; sourceTree = "<group>"; };
+		B540AECE1CAC1ACB00915098 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNPieChartDataItem.m; path = PNChart/PNPieChartDataItem.m; sourceTree = "<group>"; };
+		B540AECF1CAC1ACB00915098 /* PNRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNRadarChart.h; path = PNChart/PNRadarChart.h; sourceTree = "<group>"; };
+		B540AED01CAC1ACB00915098 /* PNRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNRadarChart.m; path = PNChart/PNRadarChart.m; sourceTree = "<group>"; };
+		B540AED11CAC1ACB00915098 /* PNRadarChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNRadarChartDataItem.h; path = PNChart/PNRadarChartDataItem.h; sourceTree = "<group>"; };
+		B540AED21CAC1ACB00915098 /* PNRadarChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNRadarChartDataItem.m; path = PNChart/PNRadarChartDataItem.m; sourceTree = "<group>"; };
+		B540AED31CAC1ACB00915098 /* PNScatterChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNScatterChart.h; path = PNChart/PNScatterChart.h; sourceTree = "<group>"; };
+		B540AED41CAC1ACB00915098 /* PNScatterChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNScatterChart.m; path = PNChart/PNScatterChart.m; sourceTree = "<group>"; };
+		B540AED51CAC1ACB00915098 /* PNScatterChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNScatterChartData.h; path = PNChart/PNScatterChartData.h; sourceTree = "<group>"; };
+		B540AED61CAC1ACB00915098 /* PNScatterChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartData.m; path = PNChart/PNScatterChartData.m; sourceTree = "<group>"; };
+		B540AED71CAC1ACB00915098 /* PNScatterChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PNScatterChartDataItem.h; path = PNChart/PNScatterChartDataItem.h; sourceTree = "<group>"; };
+		B540AED81CAC1ACB00915098 /* PNScatterChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PNScatterChartDataItem.m; path = PNChart/PNScatterChartDataItem.m; sourceTree = "<group>"; };
+		B540AEEC1CAC1C6C00915098 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICountingLabel.h; path = PNChart/UICountingLabel/UICountingLabel.h; sourceTree = "<group>"; };
+		B540AEED1CAC1C6C00915098 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICountingLabel.m; path = PNChart/UICountingLabel/UICountingLabel.m; sourceTree = "<group>"; };
+		B540AEF01CAC1E6600915098 /* StatisticVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticVC.h; path = Statistic/StatisticVC.h; sourceTree = "<group>"; };
+		B540AEF11CAC1E6600915098 /* StatisticVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticVC.m; path = Statistic/StatisticVC.m; sourceTree = "<group>"; };
+		B540AEF41CAC2D3300915098 /* XFSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XFSegementView.h; path = XFSegementView/XFSegementView.h; sourceTree = "<group>"; };
+		B540AEF51CAC2D3300915098 /* XFSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XFSegementView.m; path = XFSegementView/XFSegementView.m; sourceTree = "<group>"; };
+		B540AEF71CACC3CC00915098 /* TimeLineTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeLineTVC.h; path = Statistic/TimeLineTVC.h; sourceTree = "<group>"; };
+		B540AEF81CACC3CC00915098 /* TimeLineTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineTVC.m; path = Statistic/TimeLineTVC.m; sourceTree = "<group>"; };
+		B540AEFA1CACC40A00915098 /* TimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeLineCell.h; path = Statistic/TimeLineCell.h; sourceTree = "<group>"; };
+		B540AEFB1CACC40A00915098 /* TimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineCell.m; path = Statistic/TimeLineCell.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
 		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
@@ -571,6 +636,7 @@
 		193C37591C1BE2B70017CC9C /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
+				B540AEEF1CAC1E1900915098 /* Statistic */,
 				193C37181C1B02200017CC9C /* Main */,
 				19EB0F821C7EE6C100FECDF5 /* Award */,
 				195A12C61C53BFFA008E7945 /* Apply */,
@@ -709,6 +775,8 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B540AEF31CAC2CA800915098 /* XFSegementView */,
+				B540AEB61CAC1A6F00915098 /* PNChart */,
 				B540AEB21CA7BB0700915098 /* XHToast */,
 				B540AE931CA0E7CA00915098 /* MJRefresh */,
 				B52AB8321C9AA13A00322CA0 /* JRMessage */,
@@ -1307,6 +1375,71 @@
 			name = XHToast;
 			sourceTree = "<group>";
 		};
+		B540AEB61CAC1A6F00915098 /* PNChart */ = {
+			isa = PBXGroup;
+			children = (
+				B540AEEC1CAC1C6C00915098 /* UICountingLabel.h */,
+				B540AEED1CAC1C6C00915098 /* UICountingLabel.m */,
+				B540AEB71CAC1ACB00915098 /* PNBar.h */,
+				B540AEB81CAC1ACB00915098 /* PNBar.m */,
+				B540AEB91CAC1ACB00915098 /* PNBarChart.h */,
+				B540AEBA1CAC1ACB00915098 /* PNBarChart.m */,
+				B540AEBB1CAC1ACB00915098 /* PNChart.h */,
+				B540AEBC1CAC1ACB00915098 /* PNChartDelegate.h */,
+				B540AEBD1CAC1ACB00915098 /* PNChartLabel.h */,
+				B540AEBE1CAC1ACB00915098 /* PNChartLabel.m */,
+				B540AEBF1CAC1ACB00915098 /* PNCircleChart.h */,
+				B540AEC01CAC1ACB00915098 /* PNCircleChart.m */,
+				B540AEC11CAC1ACB00915098 /* PNColor.h */,
+				B540AEC21CAC1ACB00915098 /* PNColor.m */,
+				B540AEC31CAC1ACB00915098 /* PNGenericChart.h */,
+				B540AEC41CAC1ACB00915098 /* PNGenericChart.m */,
+				B540AEC51CAC1ACB00915098 /* PNLineChart.h */,
+				B540AEC61CAC1ACB00915098 /* PNLineChart.m */,
+				B540AEC71CAC1ACB00915098 /* PNLineChartData.h */,
+				B540AEC81CAC1ACB00915098 /* PNLineChartData.m */,
+				B540AEC91CAC1ACB00915098 /* PNLineChartDataItem.h */,
+				B540AECA1CAC1ACB00915098 /* PNLineChartDataItem.m */,
+				B540AECB1CAC1ACB00915098 /* PNPieChart.h */,
+				B540AECC1CAC1ACB00915098 /* PNPieChart.m */,
+				B540AECD1CAC1ACB00915098 /* PNPieChartDataItem.h */,
+				B540AECE1CAC1ACB00915098 /* PNPieChartDataItem.m */,
+				B540AECF1CAC1ACB00915098 /* PNRadarChart.h */,
+				B540AED01CAC1ACB00915098 /* PNRadarChart.m */,
+				B540AED11CAC1ACB00915098 /* PNRadarChartDataItem.h */,
+				B540AED21CAC1ACB00915098 /* PNRadarChartDataItem.m */,
+				B540AED31CAC1ACB00915098 /* PNScatterChart.h */,
+				B540AED41CAC1ACB00915098 /* PNScatterChart.m */,
+				B540AED51CAC1ACB00915098 /* PNScatterChartData.h */,
+				B540AED61CAC1ACB00915098 /* PNScatterChartData.m */,
+				B540AED71CAC1ACB00915098 /* PNScatterChartDataItem.h */,
+				B540AED81CAC1ACB00915098 /* PNScatterChartDataItem.m */,
+			);
+			name = PNChart;
+			sourceTree = "<group>";
+		};
+		B540AEEF1CAC1E1900915098 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				B540AEF01CAC1E6600915098 /* StatisticVC.h */,
+				B540AEF11CAC1E6600915098 /* StatisticVC.m */,
+				B540AEF71CACC3CC00915098 /* TimeLineTVC.h */,
+				B540AEF81CACC3CC00915098 /* TimeLineTVC.m */,
+				B540AEFA1CACC40A00915098 /* TimeLineCell.h */,
+				B540AEFB1CACC40A00915098 /* TimeLineCell.m */,
+			);
+			name = Statistic;
+			sourceTree = "<group>";
+		};
+		B540AEF31CAC2CA800915098 /* XFSegementView */ = {
+			isa = PBXGroup;
+			children = (
+				B540AEF41CAC2D3300915098 /* XFSegementView.h */,
+				B540AEF51CAC2D3300915098 /* XFSegementView.m */,
+			);
+			name = XFSegementView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1452,11 +1585,13 @@
 				197491441C79DA6300784D09 /* SettingTVC.m in Sources */,
 				19EB0F8E1C7EE6C100FECDF5 /* MyOneAwardTVC.m in Sources */,
 				19EB0FC51C7F032500FECDF5 /* BalanceHistoryCell.m in Sources */,
+				B540AEDB1CAC1ACB00915098 /* PNChartLabel.m in Sources */,
 				193C382A1C1D94DE0017CC9C /* NSDate+Helpers.m in Sources */,
 				1974911B1C75F5D300784D09 /* ActionStatistic.m in Sources */,
 				197491491C79DA9E00784D09 /* MeController.m in Sources */,
 				B540AEA71CA0E80000915098 /* MJRefreshFooterView.m in Sources */,
 				197491371C79A3D000784D09 /* QRScanViewController.m in Sources */,
+				B540AEE11CAC1ACB00915098 /* PNLineChartDataItem.m in Sources */,
 				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */,
@@ -1469,11 +1604,13 @@
 				19EB0FB11C7EE7C900FECDF5 /* MerchantQrcodeVC.m in Sources */,
 				19EB10001C88489A00FECDF5 /* RechargeTVC.m in Sources */,
 				19EB0FFB1C82C70F00FECDF5 /* MVoucherVC.m in Sources */,
+				B540AEDC1CAC1ACB00915098 /* PNCircleChart.m in Sources */,
 				19EB0FAD1C7EE7C900FECDF5 /* MerchantAddressVC.m in Sources */,
 				19EB0FB31C7EE7C900FECDF5 /* MAssistanceTVC.m in Sources */,
 				193C38371C1D94DE0017CC9C /* PhotoAlbum.m in Sources */,
 				19EB0F781C7EE61B00FECDF5 /* ConsumerAwardTVC.m in Sources */,
 				193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */,
+				B540AEDD1CAC1ACB00915098 /* PNColor.m in Sources */,
 				197491351C79A3D000784D09 /* QRScanToolView.m in Sources */,
 				19EB10091C8AC0D100FECDF5 /* ActionMVoucher.m in Sources */,
 				19339B061C2954C000791A9E /* ActionMCredit.m in Sources */,
@@ -1504,15 +1641,21 @@
 				193C37841C1BE8510017CC9C /* BootstrapController.m in Sources */,
 				19CAA8FB1C3F5E1A00010F68 /* ActionVoucher.m in Sources */,
 				19EB0F751C7EE61B00FECDF5 /* COneAwardCell.m in Sources */,
+				B540AEDA1CAC1ACB00915098 /* PNBarChart.m in Sources */,
 				19339AE51C258AB500791A9E /* MMeTVC.m in Sources */,
 				1982201F1C96FD7C0093C127 /* IntroduceVC.m in Sources */,
+				B540AEDF1CAC1ACB00915098 /* PNLineChart.m in Sources */,
+				B540AEEE1CAC1C6C00915098 /* UICountingLabel.m in Sources */,
+				B540AEE81CAC1ACB00915098 /* PNScatterChartDataItem.m in Sources */,
 				B5EDC3981C3921EC002E2833 /* MActivityCell.m in Sources */,
 				19F7C91C1C96FEDA000EB1A4 /* MIntroduceVC.m in Sources */,
 				B52AB8381C9AA17100322CA0 /* JRMessageView.m in Sources */,
 				19339AD21C23DC6100791A9E /* CreateMerchantTVC.m in Sources */,
 				193C38351C1D94DE0017CC9C /* ImageListCell.m in Sources */,
+				B540AEE01CAC1ACB00915098 /* PNLineChartData.m in Sources */,
 				19EB0F811C7EE66B00FECDF5 /* MerchantMain.m in Sources */,
 				B5EDC3B31C3E348F002E2833 /* MerchantActivityTVC.m in Sources */,
+				B540AEFC1CACC40A00915098 /* TimeLineCell.m in Sources */,
 				19EB0FAC1C7EE7C900FECDF5 /* MMeNavigationController.m in Sources */,
 				19EB0FDC1C80824A00FECDF5 /* DiscountCell.m in Sources */,
 				19EB0F6B1C7EE5E300FECDF5 /* MAwardDerivateCell.m in Sources */,
@@ -1526,6 +1669,7 @@
 				193C38311C1D94DE0017CC9C /* AlbumTestController.m in Sources */,
 				B52AB8371C9AA17100322CA0 /* JRMessageManager.m in Sources */,
 				19EED9621C5DC95A009E58EE /* CreditExchangeSessionHeader.m in Sources */,
+				B540AEE51CAC1ACB00915098 /* PNRadarChartDataItem.m in Sources */,
 				19EB10031C884B9B00FECDF5 /* ClickableView.m in Sources */,
 				195A12C31C537297008E7945 /* InterchangeController.m in Sources */,
 				19EB0FC21C7F027B00FECDF5 /* BalanceHistoryTVC.m in Sources */,
@@ -1538,8 +1682,11 @@
 				195A12CC1C53BFFA008E7945 /* ScanMerchantController.m in Sources */,
 				B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */,
 				B540AEB51CA7BB6100915098 /* XHToast.m in Sources */,
+				B540AEDE1CAC1ACB00915098 /* PNGenericChart.m in Sources */,
 				197491511C79DAB600784D09 /* VoucherDetailsVC.m in Sources */,
+				B540AEF91CACC3CC00915098 /* TimeLineTVC.m in Sources */,
 				193C38461C1EEDF30017CC9C /* SyncHttp.m in Sources */,
+				B540AEE31CAC1ACB00915098 /* PNPieChartDataItem.m in Sources */,
 				19EB0FFC1C82C70F00FECDF5 /* ScanVoucherController.m in Sources */,
 				197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
@@ -1547,7 +1694,9 @@
 				19EB0F5F1C7EE57300FECDF5 /* AccountRegisterController.m in Sources */,
 				195A12C21C537297008E7945 /* CreditExchangeTVC.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
+				B540AEF21CAC1E6600915098 /* StatisticVC.m in Sources */,
 				1974914A1C79DA9E00784D09 /* MeNavigationController.m in Sources */,
+				B540AEF61CAC2D3300915098 /* XFSegementView.m in Sources */,
 				B540AEA51CA0E80000915098 /* MJRefreshBaseView.m in Sources */,
 				193C38421C1D95920017CC9C /* ClickableImageView.m in Sources */,
 				197491421C79DA6300784D09 /* FeedbackController.m in Sources */,
@@ -1563,17 +1712,22 @@
 				19EB0F7E1C7EE62B00FECDF5 /* MAwardApplyTVC.m in Sources */,
 				19EB0F5A1C7EE55500FECDF5 /* SKeyManager.m in Sources */,
 				19EB100C1C8ACC2500FECDF5 /* ConfirmVoucherTVC.m in Sources */,
+				B540AEE21CAC1ACB00915098 /* PNPieChart.m in Sources */,
+				B540AEE41CAC1ACB00915098 /* PNRadarChart.m in Sources */,
 				19EB0F581C7EE55500FECDF5 /* MaterialManager.m in Sources */,
 				19EB0F8C1C7EE6C100FECDF5 /* MyAwardTVC.m in Sources */,
 				19EB0FBF1C7EFB9D00FECDF5 /* BalanceVC.m in Sources */,
 				19EB0FE01C80824A00FECDF5 /* DiscountNavigationController.m in Sources */,
 				19EB10061C885C3700FECDF5 /* WithdrawalsTVC.m in Sources */,
+				B540AEE71CAC1ACB00915098 /* PNScatterChartData.m in Sources */,
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19EB0F8B1C7EE6C100FECDF5 /* MyAwardCell.m in Sources */,
 				19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */,
 				B540AEA61CA0E80000915098 /* MJRefreshConst.m in Sources */,
 				19EB0F771C7EE61B00FECDF5 /* ConsumerAwardCell.m in Sources */,
+				B540AED91CAC1ACB00915098 /* PNBar.m in Sources */,
+				B540AEE61CAC1ACB00915098 /* PNScatterChart.m in Sources */,
 				19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */,
 				19EB0FDB1C80824A00FECDF5 /* BuyDiscountTVC.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
