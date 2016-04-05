@@ -1,23 +1,20 @@
 //
-//  StatisticVC.m
+//  MStatisticVC.m
 //  Calculus
 //
-//  Created by ben on 16/3/30.
+//  Created by ben on 16/4/5.
 //  Copyright © 2016年 tracedeng. All rights reserved.
 //
 
-#import "StatisticVC.h"
-#define ARC4RANDOM_MAX 0x100000000
+#import "MStatisticVC.h"
+#import "XFSegementView.h"
 
-@interface StatisticVC ()
+@interface MStatisticVC ()
 
 @end
 
-
-
-
-@implementation StatisticVC
-XFSegementView *segementView;
+@implementation MStatisticVC
+XFSegementView *segementMView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,23 +22,18 @@ XFSegementView *segementView;
     
     self.title = @"统计";
     
-    segementView = [[XFSegementView alloc]initWithFrame:CGRectMake(0, 70, [UIScreen mainScreen].bounds.size.width, 50)];
-    //    [segementView setBackgroundColor:[UIColor cyanColor]];
-    //    [segementView setFrame:CGRectMake(0, 200, 320, 100)];
-    //    segementView.titleArray = @[@"设计",@"舞蹈",@"歌唱",@"达人"];
-    segementView.titleArray = @[@"积分分布",@"近半年统计"];
+    segementMView = [[XFSegementView alloc]initWithFrame:CGRectMake(0, 70, [UIScreen mainScreen].bounds.size.width, 50)];
+    segementMView.titleArray = @[@"发放积分",@"积分收发"];
     
-    //    segementView.scrollLineColor = [UIColor greenColor];
-    [segementView.scrollLine setBackgroundColor:[UIColor greenColor]];
-    segementView.titleSelectedColor = [UIColor redColor];
-    //    segementView.titleSelectedColor = [UIColor greenColor];
-    segementView.touchDelegate = self;
-    //    segementView.haveNoRightLine = NO;
-    [self.view addSubview:segementView];
-
-    
+    [segementMView.scrollLine setBackgroundColor:[UIColor greenColor]];
+    segementMView.titleSelectedColor = [UIColor redColor];
+    segementMView.touchDelegate = self;
+    [self.view addSubview:segementMView];
     
 
+    
+    
+    
     self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
     self.lineChart.yLabelFormat = @"%1.1f";
     self.lineChart.backgroundColor = [UIColor clearColor];
@@ -63,7 +55,7 @@ XFSegementView *segementView;
                                  @"300 ",
                                  ]
      ];
-
+    
     
     
     // Line Chart #1
@@ -89,35 +81,55 @@ XFSegementView *segementView;
     
     self.lineLegend = [self.lineChart getLegendWithMaxWidth:320];
     [self.lineLegend setFrame:CGRectMake(30, 340, self.lineLegend.frame.size.width, self.lineLegend.frame.size.width)];
-   
     
-    
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:10 color:PNLightGrey description:@"其他"],
-                       [PNPieChartDataItem dataItemWithValue:20 color:PNBlue description:@"肯德基"],
-                       [PNPieChartDataItem dataItemWithValue:40 color:PNDeepGreen description:@"麦当劳"],
-                       [PNPieChartDataItem dataItemWithValue:45 color:PNYellow description:@"星巴克"],
-                       ];
-    
-    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(SCREEN_WIDTH /2.0 - 100, 135, 200.0, 200.0) items:items];
-    self.pieChart.descriptionTextColor = [UIColor whiteColor];
-    self.pieChart.descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:11.0];
-    self.pieChart.descriptionTextShadowColor = [UIColor clearColor];
-    self.pieChart.showAbsoluteValues = NO;
-    self.pieChart.showOnlyValues = NO;
-    [self.pieChart strokeChart];
-    
-    
-    self.pieChart.legendStyle = PNLegendItemStyleStacked;
-    self.pieChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
-    
-    self.pieLegend = [self.pieChart getLegendWithMaxWidth:200];
-    [self.pieLegend setFrame:CGRectMake(130, 350, self.pieLegend.frame.size.width, self.pieLegend.frame.size.height)];
-    [self.view addSubview: self.pieLegend];
-    
-    [self.view addSubview:self.pieChart];
+    [self.view addSubview:self.lineChart];
+    [self.view addSubview:self.lineLegend];
 
     
     
+    
+    
+    
+    
+    static NSNumberFormatter *barChartFormatter;
+    if (!barChartFormatter){
+        barChartFormatter = [[NSNumberFormatter alloc] init];
+        barChartFormatter.numberStyle = kCFNumberFormatterDecimalStyle;
+        barChartFormatter.allowsFloats = NO;
+        barChartFormatter.maximumFractionDigits = 0;
+    }
+    
+    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
+            self.barChart.showLabel = YES;
+    self.barChart.backgroundColor = [UIColor clearColor];
+//    self.barChart.yLabelFormatter = ^(CGFloat yValue){
+//        return [barChartFormatter stringFromNumber:[NSNumber numberWithFloat:yValue]];
+//    };
+    
+    self.barChart.yChartLabelWidth = 20.0;
+    self.barChart.chartMarginLeft = 30.0;
+    self.barChart.chartMarginRight = 10.0;
+    self.barChart.chartMarginTop = 5.0;
+    self.barChart.chartMarginBottom = 10.0;
+    
+    self.barChart.labelMarginTop = 5.0;
+    self.barChart.showChartBorder = YES;
+    [self.barChart setXLabels:@[@"一月",@"二月",@"三月",@"四月",@"五月",@"六月"]];
+           self.barChart.yLabels = @[@-10,@0,@10];
+    [self.barChart setYValues:@[@10,@1,@16,@9,@-6,@8]];
+    [self.barChart setStrokeColors:@[PNGreen,PNGreen,PNGreen,PNGreen,PNRed,PNGreen]];
+    self.barChart.isGradientShow = NO;
+    self.barChart.isShowNumbers = YES;
+    self.barChart.showLevelLine = YES;
+    
+    
+    [self.barChart strokeChart];
+    
+    self.barChart.delegate = self;
+    
+    
+    
+
     
 }
 
@@ -126,34 +138,26 @@ XFSegementView *segementView;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)touchLabelWithIndex:(NSInteger)index{
     switch (index) {
         case 0:
-            [self.view addSubview:self.pieChart];
-            [self.view addSubview:self.pieLegend];
-            [self.lineChart removeFromSuperview];
-            [self.lineLegend removeFromSuperview];
-
-            break;
-        case 1:
             
             [self.view addSubview:self.lineChart];
             [self.view addSubview:self.lineLegend];
-            [self.pieChart removeFromSuperview];
-            [self.pieLegend removeFromSuperview];
-
-            break;
+            [self.barChart removeFromSuperview];
+            [self.barLegend removeFromSuperview];
             
+            break;
+        case 1:
+            [self.view addSubview:self.barChart];
+            [self.view addSubview:self.barLegend];
+            [self.lineChart removeFromSuperview];
+            [self.lineLegend removeFromSuperview];
+            
+            break;
+           
         default:
             break;
     }
@@ -188,5 +192,14 @@ XFSegementView *segementView;
     [bar.layer addAnimation:animation forKey:@"Float"];
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

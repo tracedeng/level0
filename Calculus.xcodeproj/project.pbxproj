@@ -145,6 +145,9 @@
 		19F7C91E1C97BFA2000EB1A4 /* Provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19F7C91D1C97BFA2000EB1A4 /* Provinces.plist */; };
 		19F7C9221C97C023000EB1A4 /* ChinaCityList.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7C9211C97C023000EB1A4 /* ChinaCityList.m */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
+		B51F42D81CB37BEA00A528F0 /* MStatisticVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B51F42D71CB37BEA00A528F0 /* MStatisticVC.m */; };
+		B51F42DB1CB39F4A00A528F0 /* MMemberListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B51F42DA1CB39F4A00A528F0 /* MMemberListTVC.m */; };
+		B51F42DE1CB39F9F00A528F0 /* MMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B51F42DD1CB39F9F00A528F0 /* MMemberListCell.m */; };
 		B52AB8301C902EFD00322CA0 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */; };
 		B52AB8311C902EFD00322CA0 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB82F1C902EFD00322CA0 /* EAIntroView.m */; };
 		B52AB8371C9AA17100322CA0 /* JRMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B52AB8341C9AA17100322CA0 /* JRMessageManager.m */; };
@@ -453,6 +456,12 @@
 		19F7C91D1C97BFA2000EB1A4 /* Provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Provinces.plist; sourceTree = "<group>"; };
 		19F7C9201C97C023000EB1A4 /* ChinaCityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChinaCityList.h; path = Citys/ChinaCityList.h; sourceTree = "<group>"; };
 		19F7C9211C97C023000EB1A4 /* ChinaCityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChinaCityList.m; path = Citys/ChinaCityList.m; sourceTree = "<group>"; };
+		B51F42D61CB37BEA00A528F0 /* MStatisticVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MStatisticVC.h; path = Merchant/Tab1/Statistic/MStatisticVC.h; sourceTree = "<group>"; };
+		B51F42D71CB37BEA00A528F0 /* MStatisticVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MStatisticVC.m; path = Merchant/Tab1/Statistic/MStatisticVC.m; sourceTree = "<group>"; };
+		B51F42D91CB39F4A00A528F0 /* MMemberListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMemberListTVC.h; path = Merchant/Tab1/Statistic/MMemberListTVC.h; sourceTree = "<group>"; };
+		B51F42DA1CB39F4A00A528F0 /* MMemberListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMemberListTVC.m; path = Merchant/Tab1/Statistic/MMemberListTVC.m; sourceTree = "<group>"; };
+		B51F42DC1CB39F9F00A528F0 /* MMemberListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMemberListCell.h; path = Merchant/Tab1/Statistic/MMemberListCell.h; sourceTree = "<group>"; };
+		B51F42DD1CB39F9F00A528F0 /* MMemberListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMemberListCell.m; path = Merchant/Tab1/Statistic/MMemberListCell.m; sourceTree = "<group>"; };
 		B52AB82C1C902EFD00322CA0 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroPage.h; path = Kickstart/EAIntroPage.h; sourceTree = "<group>"; };
 		B52AB82D1C902EFD00322CA0 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroPage.m; path = Kickstart/EAIntroPage.m; sourceTree = "<group>"; };
 		B52AB82E1C902EFD00322CA0 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroView.h; path = Kickstart/EAIntroView.h; sourceTree = "<group>"; };
@@ -715,6 +724,7 @@
 		193C378E1C1BF52E0017CC9C /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
+				B51F42D51CB364B400A528F0 /* Statistic */,
 				193C378F1C1BF5360017CC9C /* Main */,
 				19EB0F611C7EE5AC00FECDF5 /* Award */,
 				19EB0F501C7EE3AF00FECDF5 /* Apply */,
@@ -1321,6 +1331,19 @@
 			name = CityList;
 			sourceTree = "<group>";
 		};
+		B51F42D51CB364B400A528F0 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				B51F42D61CB37BEA00A528F0 /* MStatisticVC.h */,
+				B51F42D71CB37BEA00A528F0 /* MStatisticVC.m */,
+				B51F42D91CB39F4A00A528F0 /* MMemberListTVC.h */,
+				B51F42DA1CB39F4A00A528F0 /* MMemberListTVC.m */,
+				B51F42DC1CB39F9F00A528F0 /* MMemberListCell.h */,
+				B51F42DD1CB39F9F00A528F0 /* MMemberListCell.m */,
+			);
+			name = Statistic;
+			sourceTree = "<group>";
+		};
 		B52AB82B1C902EB200322CA0 /* Kickstart */ = {
 			isa = PBXGroup;
 			children = (
@@ -1579,6 +1602,7 @@
 				195A12B21C5370DE008E7945 /* CreditExchangeInTVC.m in Sources */,
 				B540AEA81CA0E80000915098 /* MJRefreshHeaderView.m in Sources */,
 				19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */,
+				B51F42DB1CB39F4A00A528F0 /* MMemberListTVC.m in Sources */,
 				19EB0F7D1C7EE62B00FECDF5 /* MAwardApplyCell.m in Sources */,
 				195A12CB1C53BFFA008E7945 /* ApplyCreditTVC.m in Sources */,
 				19EB0FDA1C80824A00FECDF5 /* BuyDiscountController.m in Sources */,
@@ -1691,6 +1715,7 @@
 				197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				19EB0FAB1C7EE7C900FECDF5 /* MMeController.m in Sources */,
+				B51F42DE1CB39F9F00A528F0 /* MMemberListCell.m in Sources */,
 				19EB0F5F1C7EE57300FECDF5 /* AccountRegisterController.m in Sources */,
 				195A12C21C537297008E7945 /* CreditExchangeTVC.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
@@ -1730,6 +1755,7 @@
 				B540AEE61CAC1ACB00915098 /* PNScatterChart.m in Sources */,
 				19EB0F4B1C7C75D800FECDF5 /* ExchangeRateTVC.m in Sources */,
 				19EB0FDB1C80824A00FECDF5 /* BuyDiscountTVC.m in Sources */,
+				B51F42D81CB37BEA00A528F0 /* MStatisticVC.m in Sources */,
 				193C38431C1D95920017CC9C /* ClickableStackView.m in Sources */,
 				19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */,
 				193C38411C1D95920017CC9C /* GTMBase64.m in Sources */,
@@ -1887,7 +1913,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1943,7 +1969,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
