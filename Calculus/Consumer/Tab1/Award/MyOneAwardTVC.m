@@ -15,9 +15,15 @@
 #import "XHToast.h"
 
 
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
+
+
 @interface MyOneAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextStepButton;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation MyOneAwardTVC
@@ -25,6 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,9 +66,19 @@
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
+        
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        
+        if ([creditList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+        }
+        
     };
     credit.afterConsumerQueryOneCreditFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {

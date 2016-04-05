@@ -12,14 +12,26 @@
 #import "COneAwardCell.h"
 #import "XHToast.h"
 
+
+#define deviceWidth [UIScreen mainScreen].bounds.size.width
+#define deviceHeight [UIScreen mainScreen].bounds.size.height
+
 @interface COneAwardTVC ()
 @property (nonatomic, retain) NSMutableArray *creditList;
+@property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
+
 @end
 
 @implementation COneAwardTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.defaultimage = [[UIImageView alloc] init];
+    self.defaultimage.image=[UIImage imageNamed:@"nocreditlogo"];
+    self.defaultimage.frame=CGRectMake( deviceWidth *1/8, (deviceHeight - deviceWidth *3/4) / 4,  deviceWidth *3/4, deviceWidth *3/4 );
+    [self.view addSubview:self.defaultimage];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -55,6 +67,15 @@
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
         }
+        
+        if ([creditList count] == 0) {
+            
+            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+        }
+        
     };
     credit.afterQueryOneConsumerCreditFailed = ^(NSString *message) {
         if ([self.refreshControl isRefreshing]) {
