@@ -182,6 +182,14 @@
 		B540AEF61CAC2D3300915098 /* XFSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF51CAC2D3300915098 /* XFSegementView.m */; };
 		B540AEF91CACC3CC00915098 /* TimeLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF81CACC3CC00915098 /* TimeLineTVC.m */; };
 		B540AEFC1CACC40A00915098 /* TimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEFB1CACC40A00915098 /* TimeLineCell.m */; };
+		B5E8CB1B1CBC7F1800A85629 /* FDGapLayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB0C1CBC7F1800A85629 /* FDGapLayoutGuide.m */; };
+		B5E8CB1C1CBC7F1800A85629 /* FDLayoutSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB0E1CBC7F1800A85629 /* FDLayoutSpacer.m */; };
+		B5E8CB1D1CBC7F1800A85629 /* FDStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB101CBC7F1800A85629 /* FDStackView.m */; };
+		B5E8CB1E1CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB121CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.m */; };
+		B5E8CB1F1CBC7F1800A85629 /* FDStackViewDistributionLayoutArrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB141CBC7F1800A85629 /* FDStackViewDistributionLayoutArrangement.m */; };
+		B5E8CB201CBC7F1800A85629 /* FDStackViewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB161CBC7F1800A85629 /* FDStackViewExtensions.m */; };
+		B5E8CB211CBC7F1800A85629 /* FDStackViewLayoutArrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB181CBC7F1800A85629 /* FDStackViewLayoutArrangement.m */; };
+		B5E8CB221CBC7F1800A85629 /* FDTransformLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB1A1CBC7F1800A85629 /* FDTransformLayer.m */; };
 		B5EDC31D1C2C3B6B002E2833 /* ActionMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */; };
 		B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC32E1C312EC9002E2833 /* MMeExchangeRateVC.m */; };
 		B5EDC3771C326C9F002E2833 /* ActionBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3761C326C9F002E2833 /* ActionBusiness.m */; };
@@ -532,6 +540,22 @@
 		B540AEF81CACC3CC00915098 /* TimeLineTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineTVC.m; path = Statistic/TimeLineTVC.m; sourceTree = "<group>"; };
 		B540AEFA1CACC40A00915098 /* TimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeLineCell.h; path = Statistic/TimeLineCell.h; sourceTree = "<group>"; };
 		B540AEFB1CACC40A00915098 /* TimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineCell.m; path = Statistic/TimeLineCell.m; sourceTree = "<group>"; };
+		B5E8CB0B1CBC7F1800A85629 /* FDGapLayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDGapLayoutGuide.h; path = FDStackview/FDGapLayoutGuide.h; sourceTree = "<group>"; };
+		B5E8CB0C1CBC7F1800A85629 /* FDGapLayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDGapLayoutGuide.m; path = FDStackview/FDGapLayoutGuide.m; sourceTree = "<group>"; };
+		B5E8CB0D1CBC7F1800A85629 /* FDLayoutSpacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLayoutSpacer.h; path = FDStackview/FDLayoutSpacer.h; sourceTree = "<group>"; };
+		B5E8CB0E1CBC7F1800A85629 /* FDLayoutSpacer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLayoutSpacer.m; path = FDStackview/FDLayoutSpacer.m; sourceTree = "<group>"; };
+		B5E8CB0F1CBC7F1800A85629 /* FDStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDStackView.h; path = FDStackview/FDStackView.h; sourceTree = "<group>"; };
+		B5E8CB101CBC7F1800A85629 /* FDStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDStackView.m; path = FDStackview/FDStackView.m; sourceTree = "<group>"; };
+		B5E8CB111CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDStackViewAlignmentLayoutArrangement.h; path = FDStackview/FDStackViewAlignmentLayoutArrangement.h; sourceTree = "<group>"; };
+		B5E8CB121CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDStackViewAlignmentLayoutArrangement.m; path = FDStackview/FDStackViewAlignmentLayoutArrangement.m; sourceTree = "<group>"; };
+		B5E8CB131CBC7F1800A85629 /* FDStackViewDistributionLayoutArrangement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDStackViewDistributionLayoutArrangement.h; path = FDStackview/FDStackViewDistributionLayoutArrangement.h; sourceTree = "<group>"; };
+		B5E8CB141CBC7F1800A85629 /* FDStackViewDistributionLayoutArrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDStackViewDistributionLayoutArrangement.m; path = FDStackview/FDStackViewDistributionLayoutArrangement.m; sourceTree = "<group>"; };
+		B5E8CB151CBC7F1800A85629 /* FDStackViewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDStackViewExtensions.h; path = FDStackview/FDStackViewExtensions.h; sourceTree = "<group>"; };
+		B5E8CB161CBC7F1800A85629 /* FDStackViewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDStackViewExtensions.m; path = FDStackview/FDStackViewExtensions.m; sourceTree = "<group>"; };
+		B5E8CB171CBC7F1800A85629 /* FDStackViewLayoutArrangement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDStackViewLayoutArrangement.h; path = FDStackview/FDStackViewLayoutArrangement.h; sourceTree = "<group>"; };
+		B5E8CB181CBC7F1800A85629 /* FDStackViewLayoutArrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDStackViewLayoutArrangement.m; path = FDStackview/FDStackViewLayoutArrangement.m; sourceTree = "<group>"; };
+		B5E8CB191CBC7F1800A85629 /* FDTransformLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDTransformLayer.h; path = FDStackview/FDTransformLayer.h; sourceTree = "<group>"; };
+		B5E8CB1A1CBC7F1800A85629 /* FDTransformLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDTransformLayer.m; path = FDStackview/FDTransformLayer.m; sourceTree = "<group>"; };
 		B5EDC31B1C2C3B6B002E2833 /* ActionMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMerchant.h; sourceTree = "<group>"; };
 		B5EDC31C1C2C3B6B002E2833 /* ActionMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMerchant.m; sourceTree = "<group>"; };
 		B5EDC32D1C312EC8002E2833 /* MMeExchangeRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMeExchangeRateVC.h; path = Merchant/Tab3/MMeExchangeRateVC.h; sourceTree = "<group>"; };
@@ -785,6 +809,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B5E8CB0A1CBC7EBD00A85629 /* FDStackview */,
 				B540AEF31CAC2CA800915098 /* XFSegementView */,
 				B540AEB61CAC1A6F00915098 /* PNChart */,
 				B540AEB21CA7BB0700915098 /* XHToast */,
@@ -1463,6 +1488,29 @@
 			name = XFSegementView;
 			sourceTree = "<group>";
 		};
+		B5E8CB0A1CBC7EBD00A85629 /* FDStackview */ = {
+			isa = PBXGroup;
+			children = (
+				B5E8CB0B1CBC7F1800A85629 /* FDGapLayoutGuide.h */,
+				B5E8CB0C1CBC7F1800A85629 /* FDGapLayoutGuide.m */,
+				B5E8CB0D1CBC7F1800A85629 /* FDLayoutSpacer.h */,
+				B5E8CB0E1CBC7F1800A85629 /* FDLayoutSpacer.m */,
+				B5E8CB0F1CBC7F1800A85629 /* FDStackView.h */,
+				B5E8CB101CBC7F1800A85629 /* FDStackView.m */,
+				B5E8CB111CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.h */,
+				B5E8CB121CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.m */,
+				B5E8CB131CBC7F1800A85629 /* FDStackViewDistributionLayoutArrangement.h */,
+				B5E8CB141CBC7F1800A85629 /* FDStackViewDistributionLayoutArrangement.m */,
+				B5E8CB151CBC7F1800A85629 /* FDStackViewExtensions.h */,
+				B5E8CB161CBC7F1800A85629 /* FDStackViewExtensions.m */,
+				B5E8CB171CBC7F1800A85629 /* FDStackViewLayoutArrangement.h */,
+				B5E8CB181CBC7F1800A85629 /* FDStackViewLayoutArrangement.m */,
+				B5E8CB191CBC7F1800A85629 /* FDTransformLayer.h */,
+				B5E8CB1A1CBC7F1800A85629 /* FDTransformLayer.m */,
+			);
+			name = FDStackview;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1623,6 +1671,7 @@
 				19EB0F601C7EE57300FECDF5 /* AccountResetPassword.m in Sources */,
 				B5EDC37D1C3430BE002E2833 /* ActionFlow.m in Sources */,
 				B540AEAB1CA0E80000915098 /* UIView+MJExtension.m in Sources */,
+				B5E8CB1F1CBC7F1800A85629 /* FDStackViewDistributionLayoutArrangement.m in Sources */,
 				195A12C11C537297008E7945 /* CreditExchangeCell.m in Sources */,
 				19EB0FBC1C7EE84800FECDF5 /* MeNickNameVC.m in Sources */,
 				19EB0FB11C7EE7C900FECDF5 /* MerchantQrcodeVC.m in Sources */,
@@ -1644,6 +1693,8 @@
 				193C382E1C1D94DE0017CC9C /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				195A12AB1C5370D1008E7945 /* AwardDerivateCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,
+				B5E8CB201CBC7F1800A85629 /* FDStackViewExtensions.m in Sources */,
+				B5E8CB1E1CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.m in Sources */,
 				193C38321C1D94DE0017CC9C /* CircleImageCVLayout.m in Sources */,
 				B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */,
 				19EB0FAE1C7EE7C900FECDF5 /* MerchantContactNumberVC.m in Sources */,
@@ -1675,6 +1726,7 @@
 				19F7C91C1C96FEDA000EB1A4 /* MIntroduceVC.m in Sources */,
 				B52AB8381C9AA17100322CA0 /* JRMessageView.m in Sources */,
 				19339AD21C23DC6100791A9E /* CreateMerchantTVC.m in Sources */,
+				B5E8CB221CBC7F1800A85629 /* FDTransformLayer.m in Sources */,
 				193C38351C1D94DE0017CC9C /* ImageListCell.m in Sources */,
 				B540AEE01CAC1ACB00915098 /* PNLineChartData.m in Sources */,
 				19EB0F811C7EE66B00FECDF5 /* MerchantMain.m in Sources */,
@@ -1715,9 +1767,11 @@
 				197491431C79DA6300784D09 /* AssistanceTVC.m in Sources */,
 				193C382C1C1D94DE0017CC9C /* UIColor+Extension.m in Sources */,
 				19EB0FAB1C7EE7C900FECDF5 /* MMeController.m in Sources */,
+				B5E8CB211CBC7F1800A85629 /* FDStackViewLayoutArrangement.m in Sources */,
 				B51F42DE1CB39F9F00A528F0 /* MMemberListCell.m in Sources */,
 				19EB0F5F1C7EE57300FECDF5 /* AccountRegisterController.m in Sources */,
 				195A12C21C537297008E7945 /* CreditExchangeTVC.m in Sources */,
+				B5E8CB1B1CBC7F1800A85629 /* FDGapLayoutGuide.m in Sources */,
 				19CBBBFC1C21B4EC002A920E /* ActionMaterial.m in Sources */,
 				B540AEF21CAC1E6600915098 /* StatisticVC.m in Sources */,
 				1974914A1C79DA9E00784D09 /* MeNavigationController.m in Sources */,
@@ -1734,8 +1788,10 @@
 				197491521C79DAB600784D09 /* VoucherTVC.m in Sources */,
 				19EB0FDD1C80824A00FECDF5 /* DiscountDetailsTVC.m in Sources */,
 				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
+				B5E8CB1C1CBC7F1800A85629 /* FDLayoutSpacer.m in Sources */,
 				19EB0F7E1C7EE62B00FECDF5 /* MAwardApplyTVC.m in Sources */,
 				19EB0F5A1C7EE55500FECDF5 /* SKeyManager.m in Sources */,
+				B5E8CB1D1CBC7F1800A85629 /* FDStackView.m in Sources */,
 				19EB100C1C8ACC2500FECDF5 /* ConfirmVoucherTVC.m in Sources */,
 				B540AEE21CAC1ACB00915098 /* PNPieChart.m in Sources */,
 				B540AEE41CAC1ACB00915098 /* PNRadarChart.m in Sources */,
@@ -1913,7 +1969,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1954,7 +2010,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1969,7 +2025,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1978,7 +2034,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -47,7 +47,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon-timeline-stone" translatesAutoresizingMaskIntoConstraints="NO" id="DNb-8u-9rq">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-timeline-stone" translatesAutoresizingMaskIntoConstraints="NO" id="DNb-8u-9rq">
                                                             <rect key="frame" x="264" y="0.0" width="30" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="T4S-mk-Au0"/>
@@ -117,7 +117,7 @@
                         <barButtonItem key="rightBarButtonItem" title="足迹" id="Ebf-p7-nbt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="YGr-Cy-Mic" kind="show" id="AR2-M7-sOA"/>
+                                <segue destination="YGr-Cy-Mic" kind="push" id="AR2-M7-sOA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -190,15 +190,15 @@
                         <barButtonItem key="rightBarButtonItem" title="统计" id="M5p-i6-ZL4">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="aIc-em-tIr" kind="show" id="sRi-YA-okQ"/>
+                                <segue destination="aIc-em-tIr" kind="push" id="sRi-YA-okQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="creditListView" destination="wz4-df-u8V" id="K3g-Au-zpb"/>
                         <outlet property="noCreditListView" destination="wvF-fI-SsV" id="W3V-qz-8ie"/>
-                        <segue destination="QDS-gV-Fm2" kind="show" id="Rdx-qK-x6Q"/>
-                        <segue destination="6qL-51-dl0" kind="show" id="VW8-v9-dFh"/>
+                        <segue destination="QDS-gV-Fm2" kind="push" id="Rdx-qK-x6Q"/>
+                        <segue destination="6qL-51-dl0" kind="push" id="VW8-v9-dFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWk-TZ-MNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,8 +261,8 @@
                         </connections>
                     </collectionView>
                     <connections>
-                        <segue destination="QDS-gV-Fm2" kind="show" identifier="goCreditExchange" id="8fe-fI-aZz"/>
-                        <segue destination="6qL-51-dl0" kind="show" identifier="ScanQrcode" id="J37-dR-Xao"/>
+                        <segue destination="QDS-gV-Fm2" kind="push" identifier="goCreditExchange" id="8fe-fI-aZz"/>
+                        <segue destination="6qL-51-dl0" kind="push" identifier="ScanQrcode" id="J37-dR-Xao"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1h-nX-bOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,7 +407,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="下一步" id="GFE-mH-Zq7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="3Dl-Zx-WE9" kind="show" identifier="ChooseMerchantIn" id="vR8-Sa-qpe"/>
+                                <segue destination="3Dl-Zx-WE9" kind="push" identifier="ChooseMerchantIn" id="vR8-Sa-qpe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -689,7 +689,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="下一步" id="Jlf-u7-h8w">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="o8E-Z2-WdQ" kind="show" identifier="ShowInterchange" id="hNz-Kt-Wdn"/>
+                                <segue destination="o8E-Z2-WdQ" kind="push" identifier="ShowInterchange" id="hNz-Kt-Wdn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -782,7 +782,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="d0T-VK-bMD" kind="show" identifier="OneAward" id="oqv-hi-k1h"/>
+                        <segue destination="d0T-VK-bMD" kind="push" identifier="OneAward" id="oqv-hi-k1h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0O-Cw-QQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -888,7 +888,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="积分转入" id="cM0-c2-MKP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="slW-BI-7Pl" kind="show" identifier="gocreditexchangein" id="7Zh-u1-IZ2"/>
+                                <segue destination="slW-BI-7Pl" kind="push" identifier="gocreditexchangein" id="7Zh-u1-IZ2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1039,7 +1039,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="下一步" id="Z0M-e5-nbH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="o8E-Z2-WdQ" kind="show" identifier="ShowInterchange" id="JYd-R2-1w5"/>
+                                <segue destination="o8E-Z2-WdQ" kind="push" identifier="ShowInterchange" id="JYd-R2-1w5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1792,7 +1792,7 @@
                         <outletCollection property="angelViews" destination="vGF-br-jFC" id="cyH-H5-Lc0"/>
                         <outletCollection property="angelViews" destination="bbo-E8-5M9" id="eeP-ko-XAG"/>
                         <outletCollection property="angelViews" destination="cea-05-DJi" id="4HB-1a-wCw"/>
-                        <segue destination="M5v-UD-9I9" kind="show" identifier="ApplyCredit" id="Gtu-ca-6Ah"/>
+                        <segue destination="M5v-UD-9I9" kind="push" identifier="ApplyCredit" id="Gtu-ca-6Ah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNb-SN-SIj" userLabel="First Responder" sceneMemberID="firstResponder"/>

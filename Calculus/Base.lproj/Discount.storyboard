@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2r9-gK-g7w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2r9-gK-g7w">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -158,7 +158,7 @@
                                     <outlet property="name" destination="EV3-Gu-FE9" id="XhO-mf-67W"/>
                                     <outlet property="poster" destination="TxH-cE-czg" id="MES-DT-QxH"/>
                                     <outlet property="title" destination="RL8-vm-HEj" id="ZbQ-SA-WLP"/>
-                                    <segue destination="Hdy-bU-hTS" kind="show" identifier="DiscountDetails" id="HWR-MP-B0h"/>
+                                    <segue destination="Hdy-bU-hTS" kind="push" identifier="DiscountDetails" id="HWR-MP-B0h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -443,7 +443,7 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="yjZ-oJ-Ic3" kind="show" identifier="BuyDiscount" id="8af-fG-l9v"/>
+                                                                <segue destination="yjZ-oJ-Ic3" kind="push" identifier="BuyDiscount" id="8af-fG-l9v"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -474,7 +474,7 @@
                         <outlet property="heading" destination="G6F-Wb-vkN" id="rqV-iE-lM3"/>
                         <outlet property="name" destination="NXh-e7-XAe" id="9yG-pG-k9f"/>
                         <outlet property="volume" destination="EG4-kx-NYV" id="Lc5-0V-tiY"/>
-                        <segue destination="GcA-xu-tlV" kind="show" identifier="ActivityIntroduce" id="JAJ-Yn-BLD"/>
+                        <segue destination="GcA-xu-tlV" kind="push" identifier="ActivityIntroduce" id="JAJ-Yn-BLD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jh-nt-zyn" userLabel="First Responder" sceneMemberID="firstResponder"/>

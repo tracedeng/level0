@@ -137,7 +137,7 @@
                         <barButtonItem key="rightBarButtonItem" title="会员列表" id="QdN-4J-mY7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="zy7-VI-nCP" kind="show" id="zBe-N0-tQN"/>
+                                <segue destination="zy7-VI-nCP" kind="push" id="zBe-N0-tQN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -238,14 +238,14 @@
                         <barButtonItem key="rightBarButtonItem" title="统计" id="jNh-97-ar1">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="nKU-md-Al5" kind="show" id="bnb-id-PTo"/>
+                                <segue destination="nKU-md-Al5" kind="push" id="bnb-id-PTo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="noCreditListImageView" destination="FvS-ow-bvv" id="Vaz-af-KbI"/>
-                        <segue destination="KfD-qH-Xa6" kind="show" identifier="MApplyCredit" id="WhJ-A8-kt5"/>
-                        <segue destination="KmC-9t-lDa" kind="show" id="Zbw-pP-BL8"/>
+                        <segue destination="KfD-qH-Xa6" kind="push" identifier="MApplyCredit" id="WhJ-A8-kt5"/>
+                        <segue destination="KmC-9t-lDa" kind="push" id="Zbw-pP-BL8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ig-5E-f2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,8 +308,8 @@
                         </connections>
                     </collectionView>
                     <connections>
-                        <segue destination="KfD-qH-Xa6" kind="show" identifier="MApplyCredit" id="fy0-wT-4ok"/>
-                        <segue destination="KmC-9t-lDa" kind="show" identifier="MApplyCoupon" id="8WX-nx-Plt"/>
+                        <segue destination="KfD-qH-Xa6" kind="push" identifier="MApplyCredit" id="fy0-wT-4ok"/>
+                        <segue destination="KmC-9t-lDa" kind="push" identifier="MApplyCoupon" id="8WX-nx-Plt"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hR-wU-KXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -701,7 +701,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="cRP-la-Hap" kind="show" identifier="COneAward" id="QBA-21-YkQ"/>
+                        <segue destination="cRP-la-Hap" kind="push" identifier="COneAward" id="QBA-21-YkQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5i-Uo-NYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -995,7 +995,7 @@
                         <outletCollection property="angelViews" destination="KLf-4S-nMm" id="fiQ-vi-VDx"/>
                         <outletCollection property="angelViews" destination="aDv-hg-h2Z" id="ajQ-m9-oC5"/>
                         <outletCollection property="angelViews" destination="PdY-QP-dKU" id="dy3-5C-q3u"/>
-                        <segue destination="EiD-pL-yn0" kind="show" identifier="ConfirmVoucher" id="WMR-Sx-csJ"/>
+                        <segue destination="EiD-pL-yn0" kind="push" identifier="ConfirmVoucher" id="WMR-Sx-csJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrX-fg-iAg" userLabel="First Responder" sceneMemberID="firstResponder"/>

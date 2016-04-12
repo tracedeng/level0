@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F5Q-LG-pMF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F5Q-LG-pMF">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -124,7 +124,7 @@
                         <outlet property="consumerBasicMaterial" destination="jLN-d4-N12" id="Dj2-ih-0wq"/>
                         <outlet property="locationLabel" destination="1Pv-rH-9lu" id="HfZ-5n-jfN"/>
                         <outlet property="nicknameLabel" destination="cEi-a0-HSt" id="X1u-ev-340"/>
-                        <segue destination="XJb-ao-w2A" kind="show" identifier="ConsumerMaterial" id="ny9-d9-QDR"/>
+                        <segue destination="XJb-ao-w2A" kind="push" identifier="ConsumerMaterial" id="ny9-d9-QDR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVA-4b-ALh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,7 +160,7 @@
                                                                 <constraint firstAttribute="height" constant="60" id="GI5-Hh-KHC"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Rd-6T-NlX">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Rd-6T-NlX">
                                                             <rect key="frame" x="65" y="10" width="37" height="41"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5I-tu-M2r">
@@ -193,7 +193,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="XJb-ao-w2A" kind="show" identifier="ConsumerMaterial" id="v3L-o8-gB9"/>
+                                            <segue destination="XJb-ao-w2A" kind="push" identifier="ConsumerMaterial" id="v3L-o8-gB9"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -221,7 +221,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="2LH-vB-9Tp" kind="show" id="JwK-Dk-yYM"/>
+                                            <segue destination="2LH-vB-9Tp" kind="push" id="JwK-Dk-yYM"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="hAj-RT-DUj" imageView="tNa-O3-ySv" style="IBUITableViewCellStyleDefault" id="QSi-zV-KuS">
@@ -270,7 +270,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="J8v-ZI-tF3" kind="show" id="6GU-93-MpC"/>
+                                            <segue destination="J8v-ZI-tF3" kind="push" id="6GU-93-MpC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="irA-oK-zYf" imageView="VdK-Px-E47" style="IBUITableViewCellStyleDefault" id="NK6-1Y-o9E">
@@ -319,7 +319,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="11K-Hx-DmV" kind="show" id="1IF-u7-SNb"/>
+                                            <segue destination="11K-Hx-DmV" kind="push" id="1IF-u7-SNb"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="yIt-eI-MYE" imageView="Ut6-71-RMM" style="IBUITableViewCellStyleDefault" id="dlZ-i7-QnY">
@@ -343,7 +343,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="vRD-Af-wj1" kind="show" id="D0t-Vk-7WS"/>
+                                            <segue destination="vRD-Af-wj1" kind="push" id="D0t-Vk-7WS"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -566,7 +566,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Wqf-XU-W5F" kind="show" identifier="gonickname" id="E34-e7-Qg3"/>
+                                            <segue destination="Wqf-XU-W5F" kind="push" identifier="gonickname" id="E34-e7-Qg3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ON3-Mx-3wL" detailTextLabel="0ew-ks-2YH" style="IBUITableViewCellStyleValue1" id="NvB-Ft-LfI">
@@ -785,7 +785,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Gyi-hN-wd4" kind="show" id="O1g-2T-ySZ"/>
+                                            <segue destination="Gyi-hN-wd4" kind="push" id="O1g-2T-ySZ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="0DD-vd-vCm" detailTextLabel="oKC-AP-sVr" style="IBUITableViewCellStyleValue1" id="FI1-sc-Grp">
@@ -1093,7 +1093,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="我的优惠券" id="UcN-lO-MKo"/>
                     <connections>
-                        <segue destination="fBY-ZC-cAC" kind="show" identifier="VoucherDetails" id="JRW-uT-YuF"/>
+                        <segue destination="fBY-ZC-cAC" kind="push" identifier="VoucherDetails" id="JRW-uT-YuF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lX-yc-SKX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pbd-ig-0wp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pbd-ig-0wp">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -78,7 +78,7 @@
                         <outlet property="logoImageView" destination="ZBp-XR-Kyf" id="Cwd-9e-iCP"/>
                         <outlet property="merchantBasicMaterial" destination="g6g-so-BY4" id="CZ0-gX-TFs"/>
                         <outlet property="nameLabel" destination="nh3-qv-ZMr" id="fCo-X4-9yK"/>
-                        <segue destination="3Uq-DM-AfX" kind="show" identifier="MerchantMaterial" id="WDh-7E-1d3"/>
+                        <segue destination="3Uq-DM-AfX" kind="push" identifier="MerchantMaterial" id="WDh-7E-1d3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5r-yl-eOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,7 +159,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="o9Y-CV-6gz" kind="show" identifier="gomerchantname" id="CoB-Hy-jIC"/>
+                                            <segue destination="o9Y-CV-6gz" kind="push" identifier="gomerchantname" id="CoB-Hy-jIC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="mgZ-Ir-s9Q" detailTextLabel="GAa-nM-p9C" style="IBUITableViewCellStyleValue1" id="ate-wP-jds">
@@ -210,7 +210,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="u6f-ad-H67" kind="show" identifier="gomerchantqrcode" id="Tul-0R-I1K"/>
+                                            <segue destination="u6f-ad-H67" kind="push" identifier="gomerchantqrcode" id="Tul-0R-I1K"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="a65-Xb-p1Z" detailTextLabel="s7Z-iE-yuW" style="IBUITableViewCellStyleValue1" id="GvP-7a-w2U">
@@ -237,7 +237,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1FI-5I-tBU" kind="show" identifier="gocontactnumber" id="VXf-vY-eAs"/>
+                                            <segue destination="1FI-5I-tBU" kind="push" identifier="gocontactnumber" id="VXf-vY-eAs"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="aRr-ZI-ZE3" detailTextLabel="GMd-gx-c5V" style="IBUITableViewCellStyleValue1" id="3sS-ms-Cqp">
@@ -264,7 +264,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="eH2-YY-Hsn" kind="show" identifier="gomerchantemail" id="mpo-uS-Fea"/>
+                                            <segue destination="eH2-YY-Hsn" kind="push" identifier="gomerchantemail" id="mpo-uS-Fea"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="RiW-xp-Art" detailTextLabel="3wi-Bv-FU1" style="IBUITableViewCellStyleValue1" id="wEb-9b-6ty">
@@ -291,7 +291,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="PfT-Q2-UN2" kind="show" identifier="gomerchantaddress" id="GaC-j2-eQz"/>
+                                            <segue destination="PfT-Q2-UN2" kind="push" identifier="gomerchantaddress" id="GaC-j2-eQz"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -467,7 +467,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Ewb-CP-lWr" kind="show" identifier="BalanceRecharge" id="C9L-v3-Yl5"/>
+                                                    <segue destination="Ewb-CP-lWr" kind="push" identifier="BalanceRecharge" id="C9L-v3-Yl5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vk-KL-oyG">
@@ -478,7 +478,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="gsB-ZP-4Cz" kind="show" identifier="BalanceWithdrawals" id="9wI-tX-Y5h"/>
+                                                    <segue destination="gsB-ZP-4Cz" kind="push" identifier="BalanceWithdrawals" id="9wI-tX-Y5h"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -505,7 +505,7 @@
                         <barButtonItem key="rightBarButtonItem" title="充值记录" id="Q3r-yu-WIn">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="KjR-7H-UxY" kind="show" identifier="BalanceHistory" id="ukI-qT-GeF"/>
+                                <segue destination="KjR-7H-UxY" kind="push" identifier="BalanceHistory" id="ukI-qT-GeF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -849,7 +849,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="EMT-49-z69" kind="show" identifier="Balance" id="wK0-Ne-XXD"/>
+                                            <segue destination="EMT-49-z69" kind="push" identifier="Balance" id="wK0-Ne-XXD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="si5-za-6GY">
@@ -1066,7 +1066,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="3Uq-DM-AfX" kind="show" identifier="MerchantMaterialUpdate" id="BVv-lD-wfU"/>
+                                            <segue destination="3Uq-DM-AfX" kind="push" identifier="MerchantMaterialUpdate" id="BVv-lD-wfU"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1157,7 +1157,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="GR0-t0-1e6" kind="show" identifier="goupdatecrt" id="VEg-1H-Zi7"/>
+                                            <segue destination="GR0-t0-1e6" kind="push" identifier="goupdatecrt" id="VEg-1H-Zi7"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="X4T-Jh-bwr" detailTextLabel="LSc-eL-lAo" imageView="7CI-mR-s3V" style="IBUITableViewCellStyleValue1" id="36t-qi-0hs">
@@ -1188,7 +1188,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="a7F-p1-Zhf" kind="show" identifier="goverifiedinfo" id="i4u-EU-EId"/>
+                                            <segue destination="a7F-p1-Zhf" kind="push" identifier="goverifiedinfo" id="i4u-EU-EId"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1276,7 +1276,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="fPk-6B-Khh" kind="show" id="sme-zC-6rV"/>
+                                            <segue destination="fPk-6B-Khh" kind="push" id="sme-zC-6rV"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BXX-Sc-rXH" imageView="og6-ON-zY2" style="IBUITableViewCellStyleDefault" id="U31-CE-1Vg">
@@ -1300,7 +1300,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ygN-iY-3Fb" kind="show" identifier="gosetting" id="mvp-zb-JBz"/>
+                                            <segue destination="ygN-iY-3Fb" kind="push" identifier="gosetting" id="mvp-zb-JBz"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -2329,7 +2329,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="6SG-7X-ZOf" kind="show" id="BmD-f0-bwV"/>
+                                            <segue destination="6SG-7X-ZOf" kind="push" id="BmD-f0-bwV"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="35Q-of-fY8" detailTextLabel="an2-gp-6gA" style="IBUITableViewCellStyleValue1" id="emb-by-Z3q">
