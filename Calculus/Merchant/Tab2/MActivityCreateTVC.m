@@ -369,8 +369,12 @@
                 self.canSubmitMask |= 0x20;
             }
             self.path = path;
-            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            NSString *uploadPath = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
+            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:uploadPath] placeholderImage:nil];
+
+//            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
         };
+        [self.posterImageView setImage:nil];
         [action doQiniuUpload:photo token:self.uploadToken path:self.prepath];
     }
 }
