@@ -98,7 +98,7 @@
             //取出获取的地理信息数组中的第一个显示在界面上
             CLPlacemark *firstPlacemark=[placemarks firstObject];
             self.locationName = firstPlacemark.name;
-            textView.text = self.locationName;
+//            textView.text = self.locationName;
             self.gps =firstPlacemark.location.coordinate;
             
             //            for (CLPlacemark *placemark in placemarks) {
