@@ -13,6 +13,7 @@
 #import "MaterialTVC.h"
 #import "FeedbackController.h"
 #import "ActionStatistic.h"
+#import "UIColor+Extension.h"
 
 @interface MeTVC ()
 @property (nonatomic, retain) NSMutableDictionary *material;
@@ -28,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView setSeparatorColor:[UIColor colorWithHex:0xEFEFF4]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
