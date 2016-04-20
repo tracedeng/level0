@@ -500,14 +500,14 @@
             <objects>
                 <tableViewController id="XJb-ao-w2A" customClass="MaterialTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="IpG-ku-pwe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="EAf-TI-MQg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="2zk-0n-Gtn">
-                                        <rect key="frame" x="0.0" y="79" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="99" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2zk-0n-Gtn" id="3sb-Bd-Yx0">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="59.5"/>
@@ -543,7 +543,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="hDi-wX-FNk" detailTextLabel="gF4-w9-d0d" style="IBUITableViewCellStyleValue1" id="oBW-VU-FIA">
-                                        <rect key="frame" x="0.0" y="139" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="159" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oBW-VU-FIA" id="imq-UD-5Br">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -570,7 +570,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ON3-Mx-3wL" detailTextLabel="0ew-ks-2YH" style="IBUITableViewCellStyleValue1" id="NvB-Ft-LfI">
-                                        <rect key="frame" x="0.0" y="183" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="203" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NvB-Ft-LfI" id="3qf-vQ-NFN">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -594,7 +594,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dDi-L4-uzV" detailTextLabel="v5M-dc-ekh" style="IBUITableViewCellStyleValue1" id="APd-hj-lJB">
-                                        <rect key="frame" x="0.0" y="227" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="247" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="APd-hj-lJB" id="ZRP-Bq-tM1">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -618,7 +618,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="7GT-LO-Asg" detailTextLabel="pd0-T4-fPj" style="IBUITableViewCellStyleValue1" id="aC6-yz-1CO">
-                                        <rect key="frame" x="0.0" y="271" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="291" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aC6-yz-1CO" id="LWN-4E-Mc3">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -646,7 +646,7 @@
                             <tableViewSection id="d5z-p4-eBF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="PCh-gd-yTh" detailTextLabel="34d-hJ-0TE" style="IBUITableViewCellStyleValue1" id="BsF-WE-VgD">
-                                        <rect key="frame" x="0.0" y="351" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="371" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BsF-WE-VgD" id="Rhi-IP-aEM">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -699,10 +699,10 @@
                         <viewControllerLayoutGuide type="bottom" id="jdz-Ah-QoP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="flu-P7-yQd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nO1-bI-4pV">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nO1-bI-4pV">
                                 <rect key="frame" x="0.0" y="74" width="600" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -714,7 +714,7 @@
                                     <outlet property="delegate" destination="Wqf-XU-W5F" id="2ac-qY-gaN"/>
                                 </connections>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-5w-Cmr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-5w-Cmr">
                                 <rect key="frame" x="6" y="82" width="28" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -894,30 +894,23 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-gt-DeI">
                                 <rect key="frame" x="0.0" y="44" width="600" height="335"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">微积分 1.0 版本 客户版 功能介绍
+                                <mutableString key="text">微积分V1.0(客户版)功能介绍
 
 1.注册和登录
 	本软件仅限登录后使用。
-	用户下载软件后，可以使用手机号，根据短信验证码进行注册，每个手机号只能注册一次。
-	用户注册后，使用自己设定的密码进行登录。
+	请用手机号进行注册，每个手机号只能注册一次。
 
-2. 扫一扫功能
-	用户通过扫一扫功能可以 扫描商家提供的二维码，通过商家提供的二维码可以申请商家发放的积分。
+2. 积分申请
+	点击扫一扫按钮 扫描商家的二维码，填写消费金额，申请商家的积分。
 	
-3.积分功能
-	用户登录后，可以扫描已经在本平台注册的商户提供的二维码，扫描二维码后申请积分，商家会进行积分确认，积分会发放到用户账户上。
-	用户获取积分后，可在积分页查看所拥有的积分商家列表，点击商家积分列表，可查看积分的明细。
+3.积分发放
+	商家确认消费者积分申请后，积分发放到用户账户上。消费者在积分页点击自己拥有的积分，可查看积分明细。
 
-4. 积分兑换功能
+4. 积分兑换
 	用户拥有的积分可通过“积分汇率”功能将拥有的某个积分，兑换成其他商家的积分，兑换比例根据商家的积分价值确定。积分汇率功能，仅限于兑换已经进行认证的商家，以保障用户的账户安全。
 
-5. 活动
-	用户活动页提供商家发布的最新优惠活动，用户可以通过活动页，使用积分换取商家提供的活动优惠券，换取成功后，会扣除用户相应的积分，用户可在 个人中心页面，“我的优惠券”查看拥有的优惠券信息。
-
-6. 我
-	个人设置页面提供用户个人信息的查看和更新，以及优惠券信息的查看。
-
- </string>
+5. 积分消费
+	活动展示商家发布的所有优惠活动，消费者使用拥有的积分购买商家发布的活动后，系统下发优惠券凭证，消费者向商家出示优惠券享受优惠。</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1334,6 +1327,6 @@
         <image name="qrcodetest" width="149" height="146"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="v3L-o8-gB9"/>
+        <segue reference="ny9-d9-QDR"/>
     </inferredMetricsTieBreakers>
 </document>

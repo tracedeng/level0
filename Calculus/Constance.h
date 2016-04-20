@@ -66,7 +66,7 @@
 #define STATISTICURL @"http://www.weijifen.me:8000/maintain"
 #endif
 
-#define VERSION @"v1.0"
+#define VERSION @"1.0"
 #define CONTACT_NUMBER @"021-888888888"
 
 #endif
