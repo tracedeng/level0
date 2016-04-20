@@ -17,7 +17,7 @@
     QNUploadManager *upManager = [[QNUploadManager alloc] init];
     //    NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
     ALAsset *asset = [photo objectForKey:@"asset"];
-    NSData *data = UIImageJPEGRepresentation([[UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]] fixOrientation:(UIImageOrientation)[asset defaultRepresentation].orientation], 0.0);
+    NSData *data = UIImageJPEGRepresentation([UIImage imageWithCGImage:asset.defaultRepresentation.fullResolutionImage scale:asset.defaultRepresentation.scale orientation:(UIImageOrientation)asset.defaultRepresentation.orientation], 0.0);
     
     [upManager putData:data key:path token:token complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
 //        DLog(@"%@", info);

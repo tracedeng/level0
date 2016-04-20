@@ -30,6 +30,7 @@
 
 @property (nonatomic, strong) PickView *picker;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headpic;
 @end
 
 @implementation MaterialTVC
@@ -305,7 +306,8 @@
         action.afterQiniuUpload = ^(NSString *path) {
             [self.material setObject:path forKey:@"ava"];
             [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-//            更新用户头像资料
+
+            //            更新用户头像资料
             ActionMaterial *action2 = [[ActionMaterial alloc] init];
             [action2 doModifyAvatar:path];
             self.updateMaterialTypeMask |= MATERIALTYPEAVATAR;
