@@ -1019,7 +1019,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="926-rv-m1M">
                                 <cells>
@@ -1065,7 +1064,7 @@
                                                 <constraint firstItem="c9i-Fe-72x" firstAttribute="centerX" secondItem="9dy-GL-pFq" secondAttribute="centerX" id="Osk-TZ-KtV"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="3Uq-DM-AfX" kind="push" identifier="MerchantMaterialUpdate" id="BVv-lD-wfU"/>
                                         </connections>
