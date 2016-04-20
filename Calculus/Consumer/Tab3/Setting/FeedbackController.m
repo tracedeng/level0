@@ -64,6 +64,7 @@
 
 // 提交反馈
 - (IBAction)saveBTN:(UIBarButtonItem *)sender {
+    [self.feedbackTextView resignFirstResponder];
     ActionStatistic *action = [[ActionStatistic alloc] init];
     action.afterFeedback = ^(){
         NSString *selectButtonOKTitle = NSLocalizedString(@"确定", nil);
