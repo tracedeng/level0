@@ -36,8 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [self.tableView setSeparatorColor:[UIColor colorWithHex:0xEFEFF4]];
+//    [self.tableView setSeparatorColor:[UIColor colorWithHex:0xEFEFF4]];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -204,22 +204,21 @@
 }
 
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (0 == section) {
         return 0.01f;
     }else if (1 == section) {
         return 0.01f;
     }
-    return 0.01f;
+    return 20.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if (0 == section) {
-        return 0.01f;
-    }
+//    if (0 == section) {
+//        return 0.01f;
+//    }
     
-    return 0.0f;
+    return 0.01f;
 }
 
 
