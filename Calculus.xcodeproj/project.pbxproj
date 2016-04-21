@@ -198,6 +198,9 @@
 		B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC39A1C3A05CD002E2833 /* MActivityCreateTVC.m */; };
 		B5EDC3A41C3B9BC9002E2833 /* MActivityExpireVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */; };
 		B5EDC3B31C3E348F002E2833 /* MerchantActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */; };
+		B5FD0D051CC8D616006E22A4 /* GJAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD0D001CC8D616006E22A4 /* GJAlertAction.m */; };
+		B5FD0D061CC8D616006E22A4 /* GJAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD0D021CC8D616006E22A4 /* GJAlertController.m */; };
+		B5FD0D071CC8D616006E22A4 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD0D041CC8D616006E22A4 /* UIViewController+Alert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -572,6 +575,12 @@
 		B5EDC3A31C3B9BC9002E2833 /* MActivityExpireVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityExpireVC.m; path = Merchant/Tab2/MActivityExpireVC.m; sourceTree = "<group>"; };
 		B5EDC3B11C3E348F002E2833 /* MerchantActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantActivityTVC.h; path = Merchant/Tab2/MerchantActivityTVC.h; sourceTree = "<group>"; };
 		B5EDC3B21C3E348F002E2833 /* MerchantActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantActivityTVC.m; path = Merchant/Tab2/MerchantActivityTVC.m; sourceTree = "<group>"; };
+		B5FD0CFF1CC8D616006E22A4 /* GJAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GJAlertAction.h; path = GJAlertController/GJAlertAction.h; sourceTree = "<group>"; };
+		B5FD0D001CC8D616006E22A4 /* GJAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GJAlertAction.m; path = GJAlertController/GJAlertAction.m; sourceTree = "<group>"; };
+		B5FD0D011CC8D616006E22A4 /* GJAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GJAlertController.h; path = GJAlertController/GJAlertController.h; sourceTree = "<group>"; };
+		B5FD0D021CC8D616006E22A4 /* GJAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GJAlertController.m; path = GJAlertController/GJAlertController.m; sourceTree = "<group>"; };
+		B5FD0D031CC8D616006E22A4 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Alert.h"; path = "GJAlertController/UIViewController+Alert.h"; sourceTree = "<group>"; };
+		B5FD0D041CC8D616006E22A4 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Alert.m"; path = "GJAlertController/UIViewController+Alert.m"; sourceTree = "<group>"; };
 		D01A48679F486AF32B41B766 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -809,6 +818,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B5FD0CFE1CC8D5F9006E22A4 /* GJAlertController */,
 				B5E8CB0A1CBC7EBD00A85629 /* FDStackview */,
 				B540AEF31CAC2CA800915098 /* XFSegementView */,
 				B540AEB61CAC1A6F00915098 /* PNChart */,
@@ -1511,6 +1521,19 @@
 			name = FDStackview;
 			sourceTree = "<group>";
 		};
+		B5FD0CFE1CC8D5F9006E22A4 /* GJAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				B5FD0CFF1CC8D616006E22A4 /* GJAlertAction.h */,
+				B5FD0D001CC8D616006E22A4 /* GJAlertAction.m */,
+				B5FD0D011CC8D616006E22A4 /* GJAlertController.h */,
+				B5FD0D021CC8D616006E22A4 /* GJAlertController.m */,
+				B5FD0D031CC8D616006E22A4 /* UIViewController+Alert.h */,
+				B5FD0D041CC8D616006E22A4 /* UIViewController+Alert.m */,
+			);
+			name = GJAlertController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1694,6 +1717,7 @@
 				195A12AB1C5370D1008E7945 /* AwardDerivateCell.m in Sources */,
 				193C382F1C1D94DE0017CC9C /* NetCommunication.m in Sources */,
 				B5E8CB201CBC7F1800A85629 /* FDStackViewExtensions.m in Sources */,
+				B5FD0D071CC8D616006E22A4 /* UIViewController+Alert.m in Sources */,
 				B5E8CB1E1CBC7F1800A85629 /* FDStackViewAlignmentLayoutArrangement.m in Sources */,
 				193C38321C1D94DE0017CC9C /* CircleImageCVLayout.m in Sources */,
 				B5EDC32F1C312EC9002E2833 /* MMeExchangeRateVC.m in Sources */,
@@ -1785,6 +1809,7 @@
 				B540AEAA1CA0E80000915098 /* UIScrollView+MJRefresh.m in Sources */,
 				19EB0F8D1C7EE6C100FECDF5 /* MyOneAwardCell.m in Sources */,
 				19339AD61C23DEF800791A9E /* ActionMMaterial.m in Sources */,
+				B5FD0D051CC8D616006E22A4 /* GJAlertAction.m in Sources */,
 				197491521C79DAB600784D09 /* VoucherTVC.m in Sources */,
 				19EB0FDD1C80824A00FECDF5 /* DiscountDetailsTVC.m in Sources */,
 				19CAA8EF1C3BA28700010F68 /* DiscountIntroduceController.m in Sources */,
@@ -1804,6 +1829,7 @@
 				195A12B11C5370DE008E7945 /* CreditExchangeInCell.m in Sources */,
 				193C38291C1D94DE0017CC9C /* MKMapView+MapViewUtil.m in Sources */,
 				19EB0F8B1C7EE6C100FECDF5 /* MyAwardCell.m in Sources */,
+				B5FD0D061CC8D616006E22A4 /* GJAlertController.m in Sources */,
 				19EB0F4F1C7EAC5900FECDF5 /* ApplyCreditController.m in Sources */,
 				B540AEA61CA0E80000915098 /* MJRefreshConst.m in Sources */,
 				19EB0F771C7EE61B00FECDF5 /* ConsumerAwardCell.m in Sources */,
