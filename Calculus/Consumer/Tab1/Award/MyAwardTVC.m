@@ -100,7 +100,7 @@
         }
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
 
         if ([creditList count] == 0) {
             
@@ -117,7 +117,7 @@
 //        }
 //        
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
@@ -129,7 +129,7 @@
         //错误提示
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
         if ([SVProgressHUD isVisible]) {
             [SVProgressHUD dismiss];
