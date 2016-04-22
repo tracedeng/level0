@@ -38,7 +38,10 @@
     
     self.locationService = [[CLLocationManager alloc] init];
     self.locationService.delegate = self;
-    [self.locationService requestWhenInUseAuthorization];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
+        [self.locationService requestWhenInUseAuthorization];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
