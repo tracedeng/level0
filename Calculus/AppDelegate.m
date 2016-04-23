@@ -13,6 +13,7 @@
 #import <IQKeyboardManager.h>
 #import "ActionStatistic.h"
 #import "Constance.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
 @property (nonatomic, retain) UIViewController *consumerRoot;
@@ -20,6 +21,12 @@
 @property (nonatomic, retain) UIViewController *bootstrapRoot;
 @property (nonatomic, retain) UIViewController *accountRoot;
 @end
+
+
+//SMSSDK key
+#define appkey @"11e2f73912510"
+#define app_secrect @"d625ead9d5d01706e9fbe908aecc4b0b"
+
 
 @implementation AppDelegate
 
@@ -29,7 +36,10 @@
 //    启动上报
     ActionStatistic *statistic = [[ActionStatistic alloc] init];
     [statistic doBootReport:VERSION];
-    
+
+    //短信验证码初始化
+    [SMSSDK registerApp:appkey withSecret:app_secrect];
+
     // 全局修改状态栏
     UIImage *image = [UIImage imageNamed:@"icon-back"];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[image resizableImageWithCapInsets:UIEdgeInsetsMake(0, image.size.width, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];

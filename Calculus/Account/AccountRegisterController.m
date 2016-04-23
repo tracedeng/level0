@@ -12,6 +12,7 @@
 #import "UIColor+Extension.h"
 #import "GTMBase64.h"
 #import "JRMessageView.h"
+#import <SMS_SDK/SMSSDK.h>
 
 #define SCREEN_W ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_H ([UIScreen mainScreen].bounds.size.height)
@@ -36,6 +37,12 @@
 @end
 
 @implementation AccountRegisterController
+
+//目前仅支持中国大陆地区手机号码
+NSString* zoneReg = @"86";
+//测试阶段保留原有验证码方式
+BOOL isMobReg = TRUE;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -134,36 +141,100 @@
 //    passwordData = [GTMBase64 encodeData:passwordData];
 //    password_MD5 =[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
     
-    ActionAccount *registe = [[ActionAccount alloc] init];
-    registe.afterAccountRegister = ^(NSString *result){
-        //注册成功后只保存手机号码
-        [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
+
+    if(isMobReg){
+        NSString* rule1 = @"^0{0,1}(13[0-9]|15[3-9]|15[0-2]|18[0-9]|17[5-8]|14[0-9]|170|171)[0-9]{8}$";
+        NSPredicate* pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",rule1];
         
-        //跳转到登录界面
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    };
-    registe.afterAccountRegisterFailed = ^(NSString *message) {
-        //错误提示
-        //TODO message 赋值无效
-        //        self.message.subTitle = message;
-        [self.messageregister changeSubtitle:message];
-        if (self.messageregister.isShow) {
-            //            [self.message hidedMessageView];
-        } else {
-            [self.messageregister showMessageView];
+        if ([pred evaluateWithObject:phoneNumber]) {
+            [SMSSDK commitVerificationCode:code phoneNumber:phoneNumber  zone:zoneReg result:^(NSError *error) {
+                
+                if (!error) {
+ 
+                    ActionAccount *registe = [[ActionAccount alloc] init];
+                    registe.afterAccountRegister = ^(NSString *result){
+                        //注册成功后只保存手机号码
+                        [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
+                        
+                        //跳转到登录界面
+                        [self.navigationController popToRootViewControllerAnimated:YES];
+                    };
+                    registe.afterAccountRegisterFailed = ^(NSString *message) {
+                        //错误提示
+                        //TODO message 赋值无效
+                        //        self.message.subTitle = message;
+                        [self.messageregister changeSubtitle:message];
+                        if (self.messageregister.isShow) {
+                            //            [self.message hidedMessageView];
+                        } else {
+                            [self.messageregister showMessageView];
+                        }
+                        
+                    };
+                    registe.afterAccountRegisterFailedNetConnect = ^(NSString *message) {
+                        //错误提示
+                        if (self.networkMessage.isShow) {
+                            [self.networkMessage hidedMessageView];
+                        } else {
+                            [self.networkMessage showMessageView];
+                        }
+                    };
+                    
+                    [registe doAccountRegister:phoneNumber password:password code:code];
+
+                    
+                    
+                }
+                else
+                {
+                    NSLog(@"错误信息:%@",error);
+                }
+            }];
+            
+            
+        }else{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号码格式错误" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:alert completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
         }
         
-    };
-    registe.afterAccountRegisterFailedNetConnect = ^(NSString *message) {
-        //错误提示
-        if (self.networkMessage.isShow) {
-            [self.networkMessage hidedMessageView];
-        } else {
-            [self.networkMessage showMessageView];
-        }
-    };
+    }else{
+        ActionAccount *registe = [[ActionAccount alloc] init];
+        registe.afterAccountRegister = ^(NSString *result){
+            //注册成功后只保存手机号码
+            [[NSUserDefaults standardUserDefaults] setObject:phoneNumber forKey:@"account"];
+            
+            //跳转到登录界面
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        };
+        registe.afterAccountRegisterFailed = ^(NSString *message) {
+            //错误提示
+            //TODO message 赋值无效
+            //        self.message.subTitle = message;
+            [self.messageregister changeSubtitle:message];
+            if (self.messageregister.isShow) {
+                //            [self.message hidedMessageView];
+            } else {
+                [self.messageregister showMessageView];
+            }
+            
+        };
+        registe.afterAccountRegisterFailedNetConnect = ^(NSString *message) {
+            //错误提示
+            if (self.networkMessage.isShow) {
+                [self.networkMessage hidedMessageView];
+            } else {
+                [self.networkMessage showMessageView];
+            }
+        };
+        
+        [registe doAccountRegister:phoneNumber password:password code:code];
+    }
     
-    [registe doAccountRegister:phoneNumber password:password code:code];
+    
+
     
 }
 
@@ -173,25 +244,79 @@
     [self.codeTXT resignFirstResponder];
     
     NSString *phoneNumber = self.accountTXT.text;
-    ActionAccount *code = [[ActionAccount alloc] init];
-    code.afterGetSMSCode = ^(NSString *result){
+    
+    
+    
+    /*
+     *采用Mob短信验证，将后台短信验证改到前端短信验证
+     */
+    if (isMobReg) {
+        NSString* rule1 = @"^0{0,1}(13[0-9]|15[3-9]|15[0-2]|18[0-9]|17[5-8]|14[0-9]|170|171)[0-9]{8}$";
+        NSPredicate* pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",rule1];
+        
+        if ([pred evaluateWithObject:phoneNumber]) {
+            
+            [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneNumber
+                                           zone:zoneReg
+                               customIdentifier:nil
+                                         result:^(NSError *error)
+             {
+                 
+                 if (!error) {
+                     
+                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"验证码已下发，请查看短信" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                     [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                         [self dismissViewControllerAnimated:alert completion:nil];
+                     }]];
+                     [self presentViewController:alert animated:YES completion:nil];
+                     
+                     
+                 }else{
+                     NSLog(@"验证码发送失败:%@",error);
+                     
+                 }
+                 
+             }];
+            
+            
+        }else{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号码格式错误" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:alert completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        }
+        
+    }else{
+        
+        
+        ActionAccount *code = [[ActionAccount alloc] init];
+        code.afterGetSMSCode = ^(NSString *result){
 #ifdef DEBUG
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"测试验证码" message:result preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [self dismissViewControllerAnimated:alert completion:nil];
-        }]];
-        [self presentViewController:alert animated:YES completion:nil];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"测试验证码" message:result preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:alert completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
 #else
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"验证码已下发，请查看短信" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [self dismissViewControllerAnimated:alert completion:nil];
-        }]];
-        [self presentViewController:alert animated:YES completion:nil];
-
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"验证码已下发，请查看短信" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:alert completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+            
 #endif
-    };
+        };
+        
+        [code doGetSMSCode:phoneNumber];
+        
 
-    [code doGetSMSCode:phoneNumber];
-
+    }
+    
+    
+    
+    
+    
 }
 @end

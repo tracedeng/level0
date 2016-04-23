@@ -182,6 +182,14 @@
 		B540AEF61CAC2D3300915098 /* XFSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF51CAC2D3300915098 /* XFSegementView.m */; };
 		B540AEF91CACC3CC00915098 /* TimeLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF81CACC3CC00915098 /* TimeLineTVC.m */; };
 		B540AEFC1CACC40A00915098 /* TimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEFB1CACC40A00915098 /* TimeLineCell.m */; };
+		B5D67E981CCB2CAF009DED2D /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E961CCB2CAF009DED2D /* SMS_SDK.framework */; };
+		B5D67E991CCB2CAF009DED2D /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E971CCB2CAF009DED2D /* MOBFoundation.framework */; };
+		B5D67E9B1CCB2D4F009DED2D /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E9A1CCB2D4F009DED2D /* libicucore.A.tbd */; };
+		B5D67E9D1CCB2D65009DED2D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */; };
+		B5D67E9F1CCB2D74009DED2D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */; };
+		B5D67EA11CCB2D8C009DED2D /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */; };
+		B5D67EA41CCB2DAC009DED2D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */; };
+		B5D67EA51CCB2DAC009DED2D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */; };
 		B5E8CB1B1CBC7F1800A85629 /* FDGapLayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB0C1CBC7F1800A85629 /* FDGapLayoutGuide.m */; };
 		B5E8CB1C1CBC7F1800A85629 /* FDLayoutSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB0E1CBC7F1800A85629 /* FDLayoutSpacer.m */; };
 		B5E8CB1D1CBC7F1800A85629 /* FDStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB101CBC7F1800A85629 /* FDStackView.m */; };
@@ -543,6 +551,14 @@
 		B540AEF81CACC3CC00915098 /* TimeLineTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineTVC.m; path = Statistic/TimeLineTVC.m; sourceTree = "<group>"; };
 		B540AEFA1CACC40A00915098 /* TimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeLineCell.h; path = Statistic/TimeLineCell.h; sourceTree = "<group>"; };
 		B540AEFB1CACC40A00915098 /* TimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineCell.m; path = Statistic/TimeLineCell.m; sourceTree = "<group>"; };
+		B5D67E961CCB2CAF009DED2D /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = MobSDK/SMS_SDK.framework; sourceTree = "<group>"; };
+		B5D67E971CCB2CAF009DED2D /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = MobSDK/MOBFoundation.framework; sourceTree = "<group>"; };
+		B5D67E9A1CCB2D4F009DED2D /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
+		B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		B5E8CB0B1CBC7F1800A85629 /* FDGapLayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDGapLayoutGuide.h; path = FDStackview/FDGapLayoutGuide.h; sourceTree = "<group>"; };
 		B5E8CB0C1CBC7F1800A85629 /* FDGapLayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDGapLayoutGuide.m; path = FDStackview/FDGapLayoutGuide.m; sourceTree = "<group>"; };
 		B5E8CB0D1CBC7F1800A85629 /* FDLayoutSpacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLayoutSpacer.h; path = FDStackview/FDLayoutSpacer.h; sourceTree = "<group>"; };
@@ -589,7 +605,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D67EA41CCB2DAC009DED2D /* AddressBook.framework in Frameworks */,
+				B5D67EA51CCB2DAC009DED2D /* AddressBookUI.framework in Frameworks */,
+				B5D67EA11CCB2D8C009DED2D /* libstdc++.6.0.9.tbd in Frameworks */,
+				B5D67E9F1CCB2D74009DED2D /* JavaScriptCore.framework in Frameworks */,
+				B5D67E9D1CCB2D65009DED2D /* MessageUI.framework in Frameworks */,
+				B5D67E9B1CCB2D4F009DED2D /* libicucore.A.tbd in Frameworks */,
 				19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */,
+				B5D67E981CCB2CAF009DED2D /* SMS_SDK.framework in Frameworks */,
+				B5D67E991CCB2CAF009DED2D /* MOBFoundation.framework in Frameworks */,
 				19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */,
 				9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */,
 			);
@@ -818,6 +842,7 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B5D67E951CCB2C7C009DED2D /* MobSDK */,
 				B5FD0CFE1CC8D5F9006E22A4 /* GJAlertController */,
 				B5E8CB0A1CBC7EBD00A85629 /* FDStackview */,
 				B540AEF31CAC2CA800915098 /* XFSegementView */,
@@ -1349,6 +1374,12 @@
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */,
+				B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */,
+				B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */,
+				B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */,
+				B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */,
+				B5D67E9A1CCB2D4F009DED2D /* libicucore.A.tbd */,
 				19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */,
 				19CBBBFD1C21BE13002A920E /* libz.tbd */,
 				0E77514A77D3C896A8E7F09D /* libPods.a */,
@@ -1496,6 +1527,15 @@
 				B540AEF51CAC2D3300915098 /* XFSegementView.m */,
 			);
 			name = XFSegementView;
+			sourceTree = "<group>";
+		};
+		B5D67E951CCB2C7C009DED2D /* MobSDK */ = {
+			isa = PBXGroup;
+			children = (
+				B5D67E961CCB2CAF009DED2D /* SMS_SDK.framework */,
+				B5D67E971CCB2CAF009DED2D /* MOBFoundation.framework */,
+			);
+			name = MobSDK;
 			sourceTree = "<group>";
 		};
 		B5E8CB0A1CBC7EBD00A85629 /* FDStackview */ = {
@@ -1992,6 +2032,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Calculus/Common/MobSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
@@ -2048,6 +2092,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Calculus/Common/MobSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
