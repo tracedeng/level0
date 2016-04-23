@@ -50,7 +50,7 @@
     //    [self.tableView headerBeginRefreshing];
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView addFooterWithTarget:self action:@selector(loadActivityList:)];
+//    [self.tableView addFooterWithTarget:self action:@selector(loadActivityList:)];
     
     
 
@@ -82,7 +82,7 @@
 //        }
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
 
         if ([SVProgressHUD isVisible]) {
@@ -95,7 +95,7 @@
 //        }
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
 
         if ([SVProgressHUD isVisible]) {
@@ -107,7 +107,7 @@
     activity.afterQueryMerchantActivityFailedNetConnect = ^(NSString *message) {
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
         
         if ([SVProgressHUD isVisible]) {
@@ -135,6 +135,15 @@
         [self.activityList replaceObjectAtIndex:self.selectedIndexPath.row withObject:activity];
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:self.selectedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+    
+    if ( [self.activityList count] == 0) {
+        
+        self.defaultimage.hidden = NO;
+        
+    }else{
+        self.defaultimage.hidden = YES;
+    }
+
     
 }
 

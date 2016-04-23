@@ -104,7 +104,7 @@
             }
         }
         if (self.bUpdateActivity) {
-            self.canSubmitMask |= 0x20;
+            self.canSubmitMask |= 0x10;
         }
         return YES;     //支持已经输满长度按退格键删除
     }
@@ -124,7 +124,7 @@
     }
     
     if (self.bUpdateActivity) {
-        self.canSubmitMask |= 0x20;
+        self.canSubmitMask |= 0x10;
     }
     
     return YES;
@@ -146,7 +146,7 @@
     }
     
     if (self.bUpdateActivity) {
-        self.canSubmitMask |= 0x20;
+        self.canSubmitMask |= 0x10;
     }
 }
 
@@ -155,7 +155,7 @@
     if ((_canSubmitMask & CANSUBMITMASK) == CANSUBMITMASK) {
         self.submitButton.enabled = YES;
         if (self.bUpdateActivity) {
-            if ((_canSubmitMask & CANUPDATEMASK) != CANUPDATEMASK) {
+            if ((_canSubmitMask & CANUPDATEMASK) != _canSubmitMask) {
                 self.submitButton.enabled = NO;
             }
         }
@@ -166,7 +166,7 @@
 
 - (IBAction)submitActivity:(id)sender {
     if (self.bUpdateActivity) {
-        if (self.canSubmitMask & 0x20) {
+        if (self.canSubmitMask & 0x10) {
             // 编辑完成更新
             [self updateActivity];
         }else{
@@ -329,7 +329,7 @@
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
     self.aexpireTXT.text = [dateFormatter stringFromDate:newDate];
     
-    self.canSubmitMask |= 0x20;
+    self.canSubmitMask |= 0x10;
 }
 
 #pragma mark - Navigation
@@ -366,13 +366,13 @@
         action.afterQiniuUpload = ^(NSString *path) {
             self.canSubmitMask |= 0x1;
             if (self.bUpdateActivity) {
-                self.canSubmitMask |= 0x20;
+                self.canSubmitMask |= 0x10;
             }
             self.path = path;
-            NSString *uploadPath = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
-            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:uploadPath] placeholderImage:nil];
-
-//            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+//            NSString *uploadPath = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
+//            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:uploadPath] placeholderImage:nil];
+//
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
         };
         [self.posterImageView setImage:nil];
         [action doQiniuUpload:photo token:self.uploadToken path:self.prepath];

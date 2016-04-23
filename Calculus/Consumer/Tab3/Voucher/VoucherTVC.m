@@ -49,7 +49,7 @@
     //    [self.tableView headerBeginRefreshing];
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView addFooterWithTarget:self action:@selector(loadVoucherList:)];
+//    [self.tableView addFooterWithTarget:self action:@selector(loadVoucherList:)];
     
     
 
@@ -74,7 +74,7 @@
 //        }
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
 
         if ([SVProgressHUD isVisible]) {
@@ -94,7 +94,7 @@
 //        }
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
 
         if ([SVProgressHUD isVisible]) {
@@ -105,7 +105,7 @@
     voucher.afterQueryVoucherFailedNetConnect = ^(NSString *message) {
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
         
         if ([SVProgressHUD isVisible]) {

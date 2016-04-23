@@ -54,7 +54,10 @@
     
     self.locationService = [[CLLocationManager alloc] init];
     self.locationService.delegate = self;
-    [self.locationService requestWhenInUseAuthorization];
+    //IOS8.0 启用定位请求，低于此版本不需要请求
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
+        [self.locationService requestWhenInUseAuthorization];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
