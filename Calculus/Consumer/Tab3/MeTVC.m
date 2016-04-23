@@ -110,7 +110,7 @@
             rows = 1;
             break;
         case 2:
-            rows = 2;
+            rows = 1;
             break;
         case 3:
             rows = 2;
