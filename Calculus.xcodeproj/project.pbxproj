@@ -144,6 +144,7 @@
 		19F7C91C1C96FEDA000EB1A4 /* MIntroduceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7C91B1C96FEDA000EB1A4 /* MIntroduceVC.m */; };
 		19F7C91E1C97BFA2000EB1A4 /* Provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19F7C91D1C97BFA2000EB1A4 /* Provinces.plist */; };
 		19F7C9221C97C023000EB1A4 /* ChinaCityList.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7C9211C97C023000EB1A4 /* ChinaCityList.m */; };
+		19F9DA8F1CCCC6F7000E0900 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F9DA8E1CCCC6F7000E0900 /* libicucore.tbd */; };
 		9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77514A77D3C896A8E7F09D /* libPods.a */; };
 		B51F42D81CB37BEA00A528F0 /* MStatisticVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B51F42D71CB37BEA00A528F0 /* MStatisticVC.m */; };
 		B51F42DB1CB39F4A00A528F0 /* MMemberListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B51F42DA1CB39F4A00A528F0 /* MMemberListTVC.m */; };
@@ -182,11 +183,7 @@
 		B540AEF61CAC2D3300915098 /* XFSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF51CAC2D3300915098 /* XFSegementView.m */; };
 		B540AEF91CACC3CC00915098 /* TimeLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF81CACC3CC00915098 /* TimeLineTVC.m */; };
 		B540AEFC1CACC40A00915098 /* TimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEFB1CACC40A00915098 /* TimeLineCell.m */; };
-		B5D67E981CCB2CAF009DED2D /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E961CCB2CAF009DED2D /* SMS_SDK.framework */; };
-		B5D67E991CCB2CAF009DED2D /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E971CCB2CAF009DED2D /* MOBFoundation.framework */; };
-		B5D67E9B1CCB2D4F009DED2D /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E9A1CCB2D4F009DED2D /* libicucore.A.tbd */; };
 		B5D67E9D1CCB2D65009DED2D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */; };
-		B5D67E9F1CCB2D74009DED2D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */; };
 		B5D67EA11CCB2D8C009DED2D /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */; };
 		B5D67EA41CCB2DAC009DED2D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */; };
 		B5D67EA51CCB2DAC009DED2D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */; };
@@ -349,7 +346,13 @@
 		197491501C79DAB600784D09 /* VoucherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherTVC.h; path = Voucher/VoucherTVC.h; sourceTree = "<group>"; };
 		1982201D1C96FD7C0093C127 /* IntroduceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroduceVC.h; path = Setting/IntroduceVC.h; sourceTree = "<group>"; };
 		1982201E1C96FD7C0093C127 /* IntroduceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroduceVC.m; path = Setting/IntroduceVC.m; sourceTree = "<group>"; };
+		199D41601CCCBBB300DA3168 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDK.framework; path = Pods/ShareSDK3/ShareSDK/ShareSDK.framework; sourceTree = "<group>"; };
+		199D41621CCCBBE100DA3168 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKConnector.framework; path = Pods/ShareSDK3/ShareSDK/Support/Required/ShareSDKConnector.framework; sourceTree = "<group>"; };
+		199D41641CCCBBF400DA3168 /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ShareSDK.bundle; path = Pods/ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle; sourceTree = "<group>"; };
+		199D41661CCCBC0200DA3168 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = Pods/MOBFoundation/MOBFoundation.framework; sourceTree = "<group>"; };
+		199D41681CCCBC3300DA3168 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKExtension.framework; path = Pods/ShareSDK3/ShareSDK/Support/Optional/ShareSDKExtension.framework; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
+		19BFEB761CCCBF4D00886543 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = Pods/SMSSDK/SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
 		19CAA8D91C354D9300010F68 /* MActivityNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MActivityNavigationController.h; path = Merchant/Tab2/MActivityNavigationController.h; sourceTree = "<group>"; };
 		19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MActivityNavigationController.m; path = Merchant/Tab2/MActivityNavigationController.m; sourceTree = "<group>"; };
@@ -475,6 +478,7 @@
 		19F7C91D1C97BFA2000EB1A4 /* Provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Provinces.plist; sourceTree = "<group>"; };
 		19F7C9201C97C023000EB1A4 /* ChinaCityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChinaCityList.h; path = Citys/ChinaCityList.h; sourceTree = "<group>"; };
 		19F7C9211C97C023000EB1A4 /* ChinaCityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChinaCityList.m; path = Citys/ChinaCityList.m; sourceTree = "<group>"; };
+		19F9DA8E1CCCC6F7000E0900 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B51F42D61CB37BEA00A528F0 /* MStatisticVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MStatisticVC.h; path = Merchant/Tab1/Statistic/MStatisticVC.h; sourceTree = "<group>"; };
 		B51F42D71CB37BEA00A528F0 /* MStatisticVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MStatisticVC.m; path = Merchant/Tab1/Statistic/MStatisticVC.m; sourceTree = "<group>"; };
 		B51F42D91CB39F4A00A528F0 /* MMemberListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMemberListTVC.h; path = Merchant/Tab1/Statistic/MMemberListTVC.h; sourceTree = "<group>"; };
@@ -551,8 +555,6 @@
 		B540AEF81CACC3CC00915098 /* TimeLineTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineTVC.m; path = Statistic/TimeLineTVC.m; sourceTree = "<group>"; };
 		B540AEFA1CACC40A00915098 /* TimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeLineCell.h; path = Statistic/TimeLineCell.h; sourceTree = "<group>"; };
 		B540AEFB1CACC40A00915098 /* TimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeLineCell.m; path = Statistic/TimeLineCell.m; sourceTree = "<group>"; };
-		B5D67E961CCB2CAF009DED2D /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = MobSDK/SMS_SDK.framework; sourceTree = "<group>"; };
-		B5D67E971CCB2CAF009DED2D /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = MobSDK/MOBFoundation.framework; sourceTree = "<group>"; };
 		B5D67E9A1CCB2D4F009DED2D /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
 		B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -605,15 +607,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F9DA8F1CCCC6F7000E0900 /* libicucore.tbd in Frameworks */,
 				B5D67EA41CCB2DAC009DED2D /* AddressBook.framework in Frameworks */,
 				B5D67EA51CCB2DAC009DED2D /* AddressBookUI.framework in Frameworks */,
 				B5D67EA11CCB2D8C009DED2D /* libstdc++.6.0.9.tbd in Frameworks */,
-				B5D67E9F1CCB2D74009DED2D /* JavaScriptCore.framework in Frameworks */,
 				B5D67E9D1CCB2D65009DED2D /* MessageUI.framework in Frameworks */,
-				B5D67E9B1CCB2D4F009DED2D /* libicucore.A.tbd in Frameworks */,
 				19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */,
-				B5D67E981CCB2CAF009DED2D /* SMS_SDK.framework in Frameworks */,
-				B5D67E991CCB2CAF009DED2D /* MOBFoundation.framework in Frameworks */,
 				19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */,
 				9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */,
 			);
@@ -842,7 +841,6 @@
 		193C37FF1C1D8D9E0017CC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B5D67E951CCB2C7C009DED2D /* MobSDK */,
 				B5FD0CFE1CC8D5F9006E22A4 /* GJAlertController */,
 				B5E8CB0A1CBC7EBD00A85629 /* FDStackview */,
 				B540AEF31CAC2CA800915098 /* XFSegementView */,
@@ -1374,6 +1372,13 @@
 		66B83DD9B69B598E0F33EA46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19F9DA8E1CCCC6F7000E0900 /* libicucore.tbd */,
+				19BFEB761CCCBF4D00886543 /* SMS_SDK.framework */,
+				199D41681CCCBC3300DA3168 /* ShareSDKExtension.framework */,
+				199D41661CCCBC0200DA3168 /* MOBFoundation.framework */,
+				199D41641CCCBBF400DA3168 /* ShareSDK.bundle */,
+				199D41621CCCBBE100DA3168 /* ShareSDKConnector.framework */,
+				199D41601CCCBBB300DA3168 /* ShareSDK.framework */,
 				B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */,
 				B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */,
 				B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */,
@@ -1527,15 +1532,6 @@
 				B540AEF51CAC2D3300915098 /* XFSegementView.m */,
 			);
 			name = XFSegementView;
-			sourceTree = "<group>";
-		};
-		B5D67E951CCB2C7C009DED2D /* MobSDK */ = {
-			isa = PBXGroup;
-			children = (
-				B5D67E961CCB2CAF009DED2D /* SMS_SDK.framework */,
-				B5D67E971CCB2CAF009DED2D /* MOBFoundation.framework */,
-			);
-			name = MobSDK;
 			sourceTree = "<group>";
 		};
 		B5E8CB0A1CBC7EBD00A85629 /* FDStackview */ = {
@@ -2032,10 +2028,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Calculus/Common/MobSDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
@@ -2075,6 +2068,10 @@
 					"\"SystemConfiguration\"",
 					"-framework",
 					"\"UIKit\"",
+					"-framework",
+					"\"SMS_SDK\"",
+					"-framework",
+					"\"MOBFoundation\"",
 					"-DEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
@@ -2092,10 +2089,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Calculus/Common/MobSDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Calculus/Calculus.pch";
 				INFOPLIST_FILE = Calculus/Info.plist;
@@ -2104,6 +2098,46 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DACircularProgress\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MWPhotoBrowser\"",
+					"-l\"PSTCollectionView\"",
+					"-l\"Qiniu\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"icucore\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AddressBookUI\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
