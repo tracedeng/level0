@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, EDISCOUNTOPTYPE) {
     EDISCOUNTOPTYPEMAX,
 };
 
-- (void)doConsumerQueryDiscount;
+- (void)doConsumerQueryDiscount:(NSString *)mark;
 - (void)doConsumerBuyDiscount:(NSString *)discount ofMerchant:(NSString *)merchant withCredit:(NSArray *)credits;
 //- (void)doConsumerCreateConsumption:(NSString *)merchant money:(NSInteger)money;
 //- (void)doConsumerQueryOtherdisccoutList:(NSString *)merchant;

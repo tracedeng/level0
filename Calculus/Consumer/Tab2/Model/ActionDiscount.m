@@ -40,9 +40,9 @@
  *  @param nickname <#nickname description#>
  *  type/numbers/session_key
  */
-- (void)doConsumerQueryDiscount {
+- (void)doConsumerQueryDiscount:(NSString *)mark {
     self.type = ECONSUMERQUERYDISCOUNT;
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"consumer_retrieve", @"type", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"consumer_retrieve", @"type", mark, @"mark", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }
 

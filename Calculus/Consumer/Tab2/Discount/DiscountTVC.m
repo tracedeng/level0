@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSIndexPath *checkedIndexPath;
 @property (nonatomic, retain) IBOutlet UIImageView *defaultimage;
 
+@property (nonatomic, retain) NSString *mark;   // 每次上拉刷新时间戳
 @end
 
 @implementation DiscountTVC
@@ -42,6 +43,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.title = @"活动";
+    self.mark = @"";
     
     self.discountList = [[NSMutableArray alloc] init];
     
@@ -52,10 +54,7 @@
     //    [self.tableView headerBeginRefreshing];
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView addFooterWithTarget:self action:@selector(loaddiscountList:)];
-    
-    
-
+    [self.tableView addFooterWithTarget:self action:@selector(loaddiscountListUp:)];
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
     [self loaddiscountList:nil];
@@ -77,7 +76,7 @@
 //        }
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
 
         if ([SVProgressHUD isVisible]) {
@@ -89,8 +88,9 @@
             
         }else{
             self.defaultimage.hidden = YES;
+            
+            self.mark = [[discountList lastObject] objectForKey:@"ct"];
         }
-
     };
     discount.afterConsumerQueryDiscountFailed = ^(NSString *message) {
 //        if ([self.refreshControl isRefreshing]) {
@@ -98,7 +98,7 @@
 //        }
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
 
         if ([SVProgressHUD isVisible]) {
@@ -109,7 +109,7 @@
     discount.afterConsumerQueryDiscountFailedNetConnect = ^(NSString *message) {
         
         [self.tableView headerEndRefreshing];
-        [self.tableView footerEndRefreshing];
+//        [self.tableView footerEndRefreshing];
         
         
         if ([SVProgressHUD isVisible]) {
@@ -119,9 +119,64 @@
 
     };
 
+    [discount doConsumerQueryDiscount:@""];
+}
+
+- (void)loaddiscountListUp:(id)sender {
+    ActionDiscount *discount = [[ActionDiscount alloc] init];
+    discount.afterConsumerQueryDiscount = ^(NSArray *discountList) {
+//        [self.discountList removeAllObjects];
+        [self.discountList addObjectsFromArray:discountList];
+        [self.tableView reloadData];
+        //        if ([self.refreshControl isRefreshing]) {
+        //            [self.refreshControl endRefreshing];
+        //        }
+        
+//        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+        
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        if ( [discountList count] == 0) {
+            
+//            self.defaultimage.hidden = NO;
+            
+        }else{
+            self.defaultimage.hidden = YES;
+            
+            self.mark = [[discountList lastObject] objectForKey:@"ct"];
+        }
+    };
+    discount.afterConsumerQueryDiscountFailed = ^(NSString *message) {
+        //        if ([self.refreshControl isRefreshing]) {
+        //            [self.refreshControl endRefreshing];
+        //        }
+        
+//        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+        
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        //        TODO...错误提示
+    };
+    discount.afterConsumerQueryDiscountFailedNetConnect = ^(NSString *message) {
+        
+//        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
+        
+        
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+        [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
+        
+    };
     
-    [discount doConsumerQueryDiscount];
-    
+    [discount doConsumerQueryDiscount:self.mark];
 }
 
 #pragma mark - Table view data source
