@@ -64,7 +64,7 @@
 //    [self.tableView headerBeginRefreshing];
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView addFooterWithTarget:self action:@selector(loadCreditList:)];
+//    [self.tableView addFooterWithTarget:self action:@selector(loadCreditList:)];
 
 //    [self.refreshControl addTarget:self action:@selector(loadCreditList:) forControlEvents:UIControlEventValueChanged];
     
