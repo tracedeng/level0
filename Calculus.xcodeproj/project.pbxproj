@@ -2039,6 +2039,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-l\"Pods-AFNetworking\"",
 					"-l\"Pods-DACircularProgress\"",

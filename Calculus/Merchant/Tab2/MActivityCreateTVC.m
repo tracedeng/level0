@@ -20,10 +20,10 @@
 // 填写完所有资料时才可发布活动，
 // bit0-poster，bit1-标题，bit2-活动介绍，bit3-需要积分量，bit4-有效期，bit5-编辑状态
 #define CANSUBMITMASK 0x1F
-#define CANUPDATEMASK 0x3F
 
 @interface MActivityCreateTVC () <PickViewDelegate>
 @property (nonatomic, assign) NSInteger canSubmitMask;
+
 @property (nonatomic, assign) BOOL bEditState;
 
 @property (nonatomic, retain) NSString *uploadToken;
@@ -94,38 +94,53 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    //TODO 判断各种按键是否正常
-    if (string.length == 0){
-        if (textField.text.length == 1) {
-            if (textField == self.atittleTXT) {
-                self.canSubmitMask &= 0xfd;
-            }else if (textField == self.acreditTXT){
-                self.canSubmitMask &= 0xf7;
+     if (self.bUpdateActivity) {
+         if (string.length == 0){
+             if (textField.text.length == 1) {
+                 if (textField == self.atittleTXT) {
+                     self.canSubmitMask ^= 0x2;
+                 }else if (textField == self.acreditTXT){
+                     self.canSubmitMask ^= 0x8;
+                 }
+             }else{
+                 if (textField == self.atittleTXT) {
+                     self.canSubmitMask |= 0x2;
+                 }else if (textField == self.acreditTXT){
+                     self.canSubmitMask |= 0x8;
+                 }
+             }
+             return YES;     //支持已经输满长度按退格键删除
+         }
+    
+     }else{
+         //TODO 判断各种按键是否正常
+         if (string.length == 0){
+             if (textField.text.length == 1) {
+                 if (textField == self.atittleTXT) {
+                     self.canSubmitMask &= 0xfd;
+                 }else if (textField == self.acreditTXT){
+                     self.canSubmitMask &= 0xf7;
+                 }
+
+             }
+             return YES;     //支持已经输满长度按退格键删除
+         }
+     }
+        if (textField == self.atittleTXT) {
+            if (textField.text.length > 32) {
+                return NO;
             }
-        }
-        if (self.bUpdateActivity) {
+            self.canSubmitMask |= 0x2;
+        }else if (textField == self.acreditTXT){
+            if (textField.text.length > 15) {
+                return NO;
+            }
+            self.canSubmitMask |= 0x8;
+        }else if (textField == self.aexpireTXT) {
             self.canSubmitMask |= 0x10;
         }
-        return YES;     //支持已经输满长度按退格键删除
-    }
     
-    if (textField == self.atittleTXT) {
-        if (textField.text.length > 32) {
-            return NO;
-        }
-        self.canSubmitMask |= 0x2;
-    }else if (textField == self.acreditTXT){
-        if (textField.text.length > 15) {
-            return NO;
-        }
-        self.canSubmitMask |= 0x8;
-    }else if (textField == self.aexpireTXT) {
-        self.canSubmitMask |= 0x10;
-    }
-    
-    if (self.bUpdateActivity) {
-        self.canSubmitMask |= 0x10;
-    }
+   
     
     return YES;
 }
@@ -136,17 +151,27 @@
 //}
 
 - (void)textViewDidChange:(UITextView *)textView {
-    if (textView.text.length == 0) {
-        self.adetailsTXTPlaceHolder.text = @"活动描述";
-        self.canSubmitMask &= 0xfb;
-//        [textView resignFirstResponder];
-    }else{
-        self.adetailsTXTPlaceHolder.text = @"";
-        self.canSubmitMask |= 0x4;
-    }
     
     if (self.bUpdateActivity) {
-        self.canSubmitMask |= 0x10;
+        if (textView.text.length == 0) {
+            self.adetailsTXTPlaceHolder.text = @"描述";
+            self.canSubmitMask ^= 0x4;
+            //        [textView resignFirstResponder];
+        }else{
+            self.adetailsTXTPlaceHolder.text = @"";
+            self.canSubmitMask |= 0x4;
+        }
+
+    }else{
+        
+        if (textView.text.length == 0) {
+            self.adetailsTXTPlaceHolder.text = @"描述";
+            self.canSubmitMask &= 0xfb;
+            //        [textView resignFirstResponder];
+        }else{
+            self.adetailsTXTPlaceHolder.text = @"";
+            self.canSubmitMask |= 0x4;
+        }
     }
 }
 
@@ -154,11 +179,6 @@
     _canSubmitMask = canSubmitMask;
     if ((_canSubmitMask & CANSUBMITMASK) == CANSUBMITMASK) {
         self.submitButton.enabled = YES;
-        if (self.bUpdateActivity) {
-            if ((_canSubmitMask & CANUPDATEMASK) != _canSubmitMask) {
-                self.submitButton.enabled = NO;
-            }
-        }
     }else{
         self.submitButton.enabled = NO;
     }
@@ -166,16 +186,17 @@
 
 - (IBAction)submitActivity:(id)sender {
     if (self.bUpdateActivity) {
-        if (self.canSubmitMask & 0x10) {
+        if (self.canSubmitMask & 0x1F) {
             // 编辑完成更新
             [self updateActivity];
         }else{
             // 变成编辑状态
             self.bEditState = YES;
             [self toggleEnable:YES];
-            self.submitButton.enabled = NO;
             self.submitButton.title = @"发布";
             self.canSubmitMask = CANSUBMITMASK;
+            self.submitButton.enabled = NO;
+
         }
     }else{
         [self createActivity];
@@ -253,7 +274,6 @@
             [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:[UIImage imageNamed:@"icon-activity-default"]];
         }
     }
-    
     return cell;
 }
 
@@ -330,6 +350,7 @@
     self.aexpireTXT.text = [dateFormatter stringFromDate:newDate];
     
     self.canSubmitMask |= 0x10;
+    
 }
 
 #pragma mark - Navigation
@@ -365,9 +386,7 @@
         ActionQiniu *action = [[ActionQiniu alloc] init];
         action.afterQiniuUpload = ^(NSString *path) {
             self.canSubmitMask |= 0x1;
-            if (self.bUpdateActivity) {
-                self.canSubmitMask |= 0x10;
-            }
+
             self.path = path;
 //            NSString *uploadPath = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
 //            [self.posterImageView sd_setImageWithURL:[NSURL URLWithString:uploadPath] placeholderImage:nil];
