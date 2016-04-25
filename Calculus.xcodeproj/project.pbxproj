@@ -78,7 +78,6 @@
 		197491521C79DAB600784D09 /* VoucherTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914D1C79DAB600784D09 /* VoucherTVC.m */; };
 		197491531C79DAB600784D09 /* VoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974914F1C79DAB600784D09 /* VoucherCell.m */; };
 		1982201F1C96FD7C0093C127 /* IntroduceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982201E1C96FD7C0093C127 /* IntroduceVC.m */; };
-		19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */; };
 		19CAA8D81C354D2F00010F68 /* MActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CAA8D71C354D2F00010F68 /* MActivity.storyboard */; };
 		19CAA8DB1C354D9300010F68 /* MActivityNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DA1C354D9300010F68 /* MActivityNavigationController.m */; };
 		19CAA8DE1C354E1B00010F68 /* ActionMActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAA8DD1C354E1B00010F68 /* ActionMActivity.m */; };
@@ -612,7 +611,6 @@
 				B5D67EA51CCB2DAC009DED2D /* AddressBookUI.framework in Frameworks */,
 				B5D67EA11CCB2D8C009DED2D /* libstdc++.6.0.9.tbd in Frameworks */,
 				B5D67E9D1CCB2D65009DED2D /* MessageUI.framework in Frameworks */,
-				19B111451C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a in Frameworks */,
 				19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */,
 				9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */,
 			);
@@ -1604,7 +1602,7 @@
 				TargetAttributes = {
 					1942C3661BE89F6700C2DCF4 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 7M8VR4YC8K;
+						DevelopmentTeam = EMYS3L6339;
 					};
 				};
 			};
@@ -2041,14 +2039,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"Pods-AFNetworking\"",
-					"-l\"Pods-DACircularProgress\"",
-					"-l\"Pods-MBProgressHUD\"",
-					"-l\"Pods-MWPhotoBrowser\"",
-					"-l\"Pods-PSTCollectionView\"",
-					"-l\"Pods-Qiniu\"",
-					"-l\"Pods-SDWebImage\"",
-					"-l\"Pods-SVProgressHUD\"",
 					"-framework",
 					"\"AssetsLibrary\"",
 					"-framework",
@@ -2075,7 +2065,7 @@
 					"\"MOBFoundation\"",
 					"-DEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.xxx.Calculus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2140,7 +2130,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.xxx.Calculus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.www.Calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
