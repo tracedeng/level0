@@ -182,10 +182,7 @@
 		B540AEF61CAC2D3300915098 /* XFSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF51CAC2D3300915098 /* XFSegementView.m */; };
 		B540AEF91CACC3CC00915098 /* TimeLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEF81CACC3CC00915098 /* TimeLineTVC.m */; };
 		B540AEFC1CACC40A00915098 /* TimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B540AEFB1CACC40A00915098 /* TimeLineCell.m */; };
-		B5D67E9D1CCB2D65009DED2D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */; };
 		B5D67EA11CCB2D8C009DED2D /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */; };
-		B5D67EA41CCB2DAC009DED2D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */; };
-		B5D67EA51CCB2DAC009DED2D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */; };
 		B5E8CB1B1CBC7F1800A85629 /* FDGapLayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB0C1CBC7F1800A85629 /* FDGapLayoutGuide.m */; };
 		B5E8CB1C1CBC7F1800A85629 /* FDLayoutSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB0E1CBC7F1800A85629 /* FDLayoutSpacer.m */; };
 		B5E8CB1D1CBC7F1800A85629 /* FDStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E8CB101CBC7F1800A85629 /* FDStackView.m */; };
@@ -607,10 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F9DA8F1CCCC6F7000E0900 /* libicucore.tbd in Frameworks */,
-				B5D67EA41CCB2DAC009DED2D /* AddressBook.framework in Frameworks */,
-				B5D67EA51CCB2DAC009DED2D /* AddressBookUI.framework in Frameworks */,
 				B5D67EA11CCB2D8C009DED2D /* libstdc++.6.0.9.tbd in Frameworks */,
-				B5D67E9D1CCB2D65009DED2D /* MessageUI.framework in Frameworks */,
 				19CBBBFE1C21BE13002A920E /* libz.tbd in Frameworks */,
 				9AB8F5391E69834489FF8DAD /* libPods.a in Frameworks */,
 			);
@@ -1974,7 +1968,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2011,7 +2005,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
