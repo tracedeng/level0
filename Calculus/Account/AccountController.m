@@ -260,15 +260,16 @@
     page3.bgImage = [UIImage imageNamed:@"kickstart-3"];
     page3.titleImage = [UIImage imageNamed:@"femalecodertocat"];
     
-    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3]];
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2]];
+//    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3]];
     
     [intro setDelegate:self];
     [intro showInView:self.view animateDuration:0.0];
 }
 
 
-
-- (void)introDidFinish {
-    DLog(@"Intro callback");
-}
+//
+//- (void)introDidFinish {
+//    DLog(@"Intro callback");
+//}
 @end
