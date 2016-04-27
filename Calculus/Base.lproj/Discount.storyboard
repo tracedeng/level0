@@ -543,7 +543,7 @@
             </objects>
             <point key="canvasLocation" x="1405" y="1290"/>
         </scene>
-        <!--购买优惠券-->
+        <!--获取优惠券-->
         <scene sceneID="cFH-n4-ej9">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="yjZ-oJ-Ic3" customClass="BuyDiscountController" sceneMemberID="viewController">
@@ -622,7 +622,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="IYG-cz-wzV"/>
                                 </constraints>
-                                <state key="normal" title="购买">
+                                <state key="normal" title="获取">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -649,7 +649,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="购买优惠券" id="by8-CI-yyq"/>
+                    <navigationItem key="navigationItem" title="获取优惠券" id="by8-CI-yyq"/>
                     <connections>
                         <outlet property="buyButton" destination="otD-Bs-rTj" id="PrM-VG-c8Y"/>
                         <outlet property="checkedCreditLabel" destination="NNV-3n-aiR" id="42l-2O-nRg"/>
@@ -762,7 +762,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ciZ-fV-Xuy">
-                        <barButtonItem key="rightBarButtonItem" title="购买" id="fAJ-dF-iWk"/>
+                        <barButtonItem key="rightBarButtonItem" title="获取" id="fAJ-dF-iWk"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnE-dS-LLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

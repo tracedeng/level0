@@ -44,7 +44,7 @@
         self.buyButton.enabled = YES;
         self.buyButton.backgroundColor = [UIColor colorWithHex:0x149BFF alpha:1.0];
     }else{
-        // 不可购买
+        // 不可获取
         self.buyButton.enabled = NO;
         self.buyButton.backgroundColor = [UIColor colorWithHex:0xcfcfcf alpha:1.0];
     }
@@ -100,8 +100,8 @@
     NSArray *credits = [self.buyDiscountTVC spendCredits];
     ActionDiscount *action = [[ActionDiscount alloc] init];
     action.afterConsumerBuyDiscount = ^(NSString *credit) {
-        // 购买成功
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"购买活动成功" message:@"请到个人中心查看优惠券" preferredStyle:UIAlertControllerStyleActionSheet];
+        // 获取成功
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"获取活动成功" message:@"请到个人中心查看优惠券" preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popToRootViewControllerAnimated:YES];
         }]];
@@ -109,8 +109,8 @@
 
     };
     action.afterConsumerBuyDiscountFailed = ^(NSString *message) {
-        // 购买失败
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"购买活动失败" message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        // 获取失败
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"获取活动失败" message:message preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popToRootViewControllerAnimated:YES];
         }]];
@@ -118,10 +118,10 @@
         
     };
     action.afterConsumerBuyDiscountFailedNetConnect = ^(NSString *message) {
-        // 购买失败
+        // 获取失败
         [XHToast showCenterWithText:@"网络不可用，无法与服务器通讯，请检查移动数据网络或WIFI是否开启" duration:3.0];
 
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"购买活动失败" message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"获取活动失败" message:message preferredStyle:UIAlertControllerStyleActionSheet];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popToRootViewControllerAnimated:YES];
         }]];

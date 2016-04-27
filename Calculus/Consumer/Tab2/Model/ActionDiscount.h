@@ -14,7 +14,7 @@
 //操作类型
 typedef NS_ENUM(NSInteger, EDISCOUNTOPTYPE) {
     ECONSUMERQUERYDISCOUNT = 1,              //客户查询优惠活动列表
-    ECONSUMERBUYDISCOUNT,                    //客户购买优惠
+    ECONSUMERBUYDISCOUNT,                    //客户获取优惠
 //    ECONSUMERCREATECONSUMPTION,               //客户消费创建消费记录
 //    ECONSUMERHANDLETYPEMAX,
 //    ECONSUMERQUERYOTHERdisccoutList,          //查询所有积分列表
