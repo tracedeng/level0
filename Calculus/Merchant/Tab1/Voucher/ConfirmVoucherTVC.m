@@ -138,7 +138,7 @@
         [self presentViewController:alert animated:YES completion:nil];
     };
 
-    [action doConfirmVoucher:self.voucher merchant_identity:self.merchant activity_identity:self.activity consumer_number:self.number exec_confirm:NO];
+    [action doConfirmVoucher:self.voucher merchant_identity:self.merchant activity_identity:self.activity consumer_number:self.number exec_confirm:YES];
 }
 
 @end

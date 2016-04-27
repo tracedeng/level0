@@ -33,6 +33,7 @@
 
     // Configure the view for the selected state
 }
+
 - (void)setActivityInfo:(NSMutableDictionary *)activityInfo {
     self.activityBackground.clipsToBounds = YES;
     self.activityBackground.layer.cornerRadius = 4.0f;
@@ -44,10 +45,11 @@
         [self.activityPosterIMG sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
         
         self.activityTitleLBL.text = [activityInfo objectForKey:@"t"];
-        self.activityMerchantLBL.text = self.merchantName;
+        self.activityMerchantLBL.text = [NSString stringWithFormat:@"已售 %ld", [[activityInfo objectForKey:@"vol"] integerValue]];
+//        self.activityMerchantLBL.text = self.merchantName;
         self.activityExpireLBL.text = [[activityInfo objectForKey:@"et"] substringToIndex:10];
         self.activityCreditLBL.text = [NSString stringWithFormat:@"%@", [activityInfo objectForKey:@"cr"]];
-//                                               self.activityCreditLBL.text = [[activityInfo objectForKey:@"cr"] stringValue];
+//        self.activityCreditLBL.text = [[activityInfo objectForKey:@"cr"] stringValue];
         self.activityIntroduceLBL.text = [activityInfo objectForKey:@"in"];
     }
 }
