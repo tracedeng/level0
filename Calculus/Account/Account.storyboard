@@ -367,6 +367,9 @@
                                 <exclude reference="zFX-DO-tcN"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="touchBackgroundToHideKeyboard:" destination="XbT-t8-KdW" eventType="touchDown" id="cTB-WF-ko7"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="accountTXT" destination="EIn-XJ-rmV" id="XM7-Fy-qwX"/>
@@ -568,7 +571,7 @@
                             </mask>
                         </variation>
                         <connections>
-                            <action selector="touchBackgroundToHideKeyboard:" destination="5v9-2l-wbL" eventType="valueChanged" id="cPu-9m-1NS"/>
+                            <action selector="touchBackgroundToHideKeyboard:" destination="5v9-2l-wbL" eventType="touchDown" id="wc3-AA-PdV"/>
                         </connections>
                     </view>
                     <connections>

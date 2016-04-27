@@ -87,7 +87,11 @@ BOOL isMob = TRUE;
     [super didReceiveMemoryWarning];
 }
 
-
+- (IBAction)touchBackgroundToHideKeyboard:(id)sender {
+    [self.accountTXT resignFirstResponder];
+    [self.passwordTXT resignFirstResponder];
+    [self.codeTXT resignFirstResponder];
+}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {

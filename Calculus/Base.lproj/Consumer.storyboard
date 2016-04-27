@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aDm-bs-ptl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aDm-bs-ptl">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -187,7 +187,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的积分" id="MR7-dD-paa">
-                        <barButtonItem key="rightBarButtonItem" title="统计" id="M5p-i6-ZL4">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" id="M5p-i6-ZL4">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="aIc-em-tIr" kind="push" id="sRi-YA-okQ"/>
