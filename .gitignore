@@ -56,4 +56,5 @@ docs/_build/
 # PyBuilder
 Pods/
 Podfile.lock
+.DS_Store
 Calculus.xcworkspace/xcuserdata/

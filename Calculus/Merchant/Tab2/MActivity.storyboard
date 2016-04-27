@@ -298,7 +298,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="购买本活动需要多少积分" id="xz1-67-C1a">
+                            <tableViewSection headerTitle="获取本活动需要多少积分" id="xz1-67-C1a">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="EjC-9K-CSR">
                                         <rect key="frame" x="0.0" y="471.5" width="600" height="44"/>

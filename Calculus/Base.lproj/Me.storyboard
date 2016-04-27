@@ -910,7 +910,7 @@
 	用户拥有的积分可通过“积分汇率”功能将拥有的某个积分，兑换成其他商家的积分，兑换比例根据商家的积分价值确定。积分汇率功能，仅限于兑换已经进行认证的商家，以保障用户的账户安全。
 
 5. 积分消费
-	活动展示商家发布的所有优惠活动，消费者使用拥有的积分购买商家发布的活动后，系统下发优惠券凭证，消费者向商家出示优惠券享受优惠。</mutableString>
+	活动展示商家发布的所有优惠活动，消费者使用拥有的积分获取商家发布的活动后，系统下发优惠券凭证，消费者向商家出示优惠券享受优惠。</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
