@@ -1700,7 +1700,7 @@
                                                                         <constraint firstItem="GKt-bQ-glB" firstAttribute="centerX" secondItem="Lyh-Ee-UIb" secondAttribute="centerX" id="V02-Hf-fuQ"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kt-dU-5dh" customClass="ClickableView">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kt-dU-5dh" customClass="ClickableView">
                                                                     <rect key="frame" x="197" y="0.0" width="177" height="30"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njV-lw-x0i">
@@ -2245,24 +2245,24 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zTV-aj-uqU">
-                                <rect key="frame" x="10" y="86" width="78" height="22"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zTV-aj-uqU">
+                                <rect key="frame" x="10" y="86" width="6480078" height="6480000"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqN-Ly-TzV">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="手机位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqN-Ly-TzV">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="6480000"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-2m-Mwh">
-                                        <rect key="frame" x="53" y="0.0" width="20" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-2m-Mwh">
+                                        <rect key="frame" x="53" y="0.0" width="20" height="6480000"/>
                                         <state key="normal" image="icon-location"/>
                                         <connections>
                                             <action selector="clickLocationButton:" destination="PfT-Q2-UN2" eventType="touchUpInside" id="7O3-8e-POc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqT-iB-8Oy">
-                                        <rect key="frame" x="78" y="0.0" width="0.0" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqT-iB-8Oy">
+                                        <rect key="frame" x="78" y="0.0" width="6480000" height="6480000"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -2439,27 +2439,23 @@
 	本软件仅限登录后使用。
 	请用手机号进行注册，每个手机号只能注册一次。
 
-2. “积分申请”功能
-	商户可以使用积分申请功能，来查看当前客户的积分申请列表，根据需求，确认和拒绝客户的申请。	
+2. 管理积分申请
+	商家确认客户积分申请前请谨慎检查积分申请金额，点击确认后将向客户发放消费金额对应的积分。
 	
-3.“客户优惠券”功能
-	客户购买使用积分换取优惠券后，客户版的优惠券页面会生成优惠券二维码，商户使用“客户优惠券功能”扫描，客户端生成的二维码，接受客户的优惠申请。 
+3.客户优惠券
+	客户优惠券是商家活动的唯一凭证，商家要对客户出示的有效的优惠券提供相应的服务。
 
-4. “积分”功能	
-	商户登录后，可在积分页查看到拥有积分的客户列表，以及客户的积分明细。
+4. 积分	
+	积分页展示商家发放给消费者的所有积分及明细。
 
-5. “活动”功能
-	商户登录后可以查看自己发布的活动，如果未发布活动，可以通过新增活动功能进行新增，新增活动需要输入活动基本信息，以及此次活动所消耗的积分和活动有效期。
+5. 活动
+	商家请谨慎操作新增及编辑活动，商家需对自己发布的活动负责。
 
-6. “商户中心”功能
-	商户可以在 ，商户中心查看和更新商户信息，部分信息需认证后开通。
+6. 消费换积分比例
+	商家有权决定消费换积分比例，更改该比例产生的影响由商家承担。
 
-7. “认证”功能
-	为保证客户和商户的账户安全，提供商户“认证”功能，经过认证的商户的积分可以兑换为其他认证商户的积分。
-	认证商户可以进行充值，提高可兑换积分的数量，同时认证商户会开通更多丰富的功能。
-
-	商户认证，请联系客服。
- </mutableString>
+7. 认证（敬请期待）
+	经过认证的商户的积分可以相互兑换，有任何疑问请联系客服。</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

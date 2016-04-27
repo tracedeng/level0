@@ -108,6 +108,7 @@
         }else if (1 == indexPath.row) {
             
         }else if (2 == indexPath.row) {
+//            [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
             NSString *selectButtonMaleTitle = NSLocalizedString(@"男", nil);
             NSString *selectButtonFemaleTitle = NSLocalizedString(@"女", nil);
             
@@ -117,6 +118,7 @@
             UIAlertAction *maleAction = [UIAlertAction actionWithTitle:selectButtonMaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
+                    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
                     [self.material setObject:@"male" forKey:@"sex"];
                     NSIndexPath *cell=[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
                     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:cell,nil] withRowAnimation:UITableViewRowAnimationNone];
@@ -127,11 +129,11 @@
             UIAlertAction *femaleAction = [UIAlertAction actionWithTitle:selectButtonFemaleTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 ActionMaterial *gender = [[ActionMaterial alloc] init];
                 gender.afterModifyGender = ^(NSDictionary *materail){
+                    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
                     [self.material setObject:@"female" forKey:@"sex"];
                     
                     NSIndexPath *cell=[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
                     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:cell,nil] withRowAnimation:UITableViewRowAnimationNone];
-
                 };
                 [gender doModifyGender:@"female"];
             }];
@@ -146,6 +148,7 @@
                 [alertController.view.superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(alertControllerBackgroundTapped)]];
                 }];
         }else if (3 == indexPath.row) {
+//            [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
             self.picker = [[PickView alloc] initWithMode:PickViewTypeCustom target:self title:nil];
 //            _picker.maskViewColor = [UIColor redColor];
             _picker.pickerData = [NSArray arrayWithObjects:[ChinaCityList readProvince], [ChinaCityList readCitysOfProvince:0], nil];
@@ -237,6 +240,7 @@
         
         ActionMaterial *actionlocation = [[ActionMaterial alloc] init];
         actionlocation.afterModifyLocation = ^(NSString *result){
+            [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] setSelected:NO];
             [self.material setObject:location forKey:@"lo"];
             [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:3 inSection:0],nil] withRowAnimation:UITableViewRowAnimationNone];
             self.updateMaterialTypeMask |= MATERIALTYPEADDRESS;
@@ -245,6 +249,7 @@
         [actionlocation doModifyLocation:location];
         
     }else{
+        [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] setSelected:NO];
         DLog(@"%@",data);
     }
 }

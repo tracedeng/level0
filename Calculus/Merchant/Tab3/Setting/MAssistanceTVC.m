@@ -76,6 +76,7 @@
     } else if(1 == indexPath.section) {
         
         if (0 == indexPath.row) {
+            [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
             NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",self.contactNumberLBL.text];
             NSLog(@"str======%@",str);
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];

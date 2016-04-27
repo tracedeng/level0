@@ -109,13 +109,13 @@
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
             
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                
+                [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
                 [[SDImageCache sharedImageCache] clearDisk];
                 self.cacheSize = [[SDImageCache sharedImageCache] getSize];
             }];
             
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:selectButtonCancelTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                
+                [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
             }];
             [alertController addAction:okAction];
             [alertController addAction:cancelAction];

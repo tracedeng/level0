@@ -221,22 +221,20 @@
     return 0.01f;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
         }else if (1 == indexPath.row) {
-            
-        }
         
+        }
     } else if(1 == indexPath.section) {
         if (0 == indexPath.row) {
+            [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
             [self showAlert:@"确定" :@"修改请联系平台"];
-
-        
         }else  if (3 == indexPath.row) {
         //
             if ([[self.material objectForKey:@"v"] isEqualToString:@"no"]) {
+                [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
                 [self showAlert:@"确定" :@"认证请联系平台"];
             }
         }else  if (4 == indexPath.row) {
@@ -337,6 +335,7 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:selectTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:selectButtonOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
     [alertController addAction:okAction];
