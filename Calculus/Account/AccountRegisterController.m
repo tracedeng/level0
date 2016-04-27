@@ -33,7 +33,6 @@
 
 - (IBAction)accountRegister:(UIButton *)sender;
 - (IBAction)getSMSCode:(UIButton *)sender;
-- (IBAction)touchBackgroundToHideKeyboard:(id)sender;
 @end
 
 @implementation AccountRegisterController
