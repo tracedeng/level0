@@ -56,4 +56,3 @@ docs/_build/
 # PyBuilder
 Pods/
 Podfile.lock
-xcuserdata/
