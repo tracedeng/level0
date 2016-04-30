@@ -2246,23 +2246,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zTV-aj-uqU">
-                                <rect key="frame" x="10" y="86" width="6480078" height="6480000"/>
+                                <rect key="frame" x="10" y="86" width="3600078" height="3600000"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="手机位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqN-Ly-TzV">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="6480000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="3600000"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-2m-Mwh">
-                                        <rect key="frame" x="53" y="0.0" width="20" height="6480000"/>
+                                        <rect key="frame" x="53" y="0.0" width="20" height="3600000"/>
                                         <state key="normal" image="icon-location"/>
                                         <connections>
                                             <action selector="clickLocationButton:" destination="PfT-Q2-UN2" eventType="touchUpInside" id="7O3-8e-POc"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqT-iB-8Oy">
-                                        <rect key="frame" x="78" y="0.0" width="6480000" height="6480000"/>
+                                        <rect key="frame" x="78" y="0.0" width="3600000" height="3600000"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -2433,7 +2433,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJO-9h-Bz4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">微积分V1.0(商家版)功能介绍
+                                <string key="text">微积分V1.0(商家版)功能介绍
 
 1.注册和登录
 	本软件仅限登录后使用。
@@ -2455,7 +2455,7 @@
 	商家有权决定消费换积分比例，更改该比例产生的影响由商家承担。
 
 7. 认证（敬请期待）
-	经过认证的商户的积分可以相互兑换，有任何疑问请联系客服。</mutableString>
+	经过认证的商户的积分可以相互兑换，有任何疑问请联系客服。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

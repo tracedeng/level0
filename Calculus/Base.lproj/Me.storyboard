@@ -894,7 +894,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-gt-DeI">
                                 <rect key="frame" x="0.0" y="44" width="600" height="335"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">微积分V1.0(客户版)功能介绍
+                                <string key="text">微积分V1.0(客户版)功能介绍
 
 1.注册和登录
 	本软件仅限登录后使用。
@@ -910,7 +910,7 @@
 	用户拥有的积分可通过“积分汇率”功能将拥有的某个积分，兑换成其他商家的积分，兑换比例根据商家的积分价值确定。积分汇率功能，仅限于兑换已经进行认证的商家，以保障用户的账户安全。
 
 5. 积分消费
-	活动展示商家发布的所有优惠活动，消费者使用拥有的积分获取商家发布的活动后，系统下发优惠券凭证，消费者向商家出示优惠券享受优惠。</mutableString>
+	活动展示商家发布的所有优惠活动，消费者使用拥有的积分获取商家发布的活动后，系统下发优惠券凭证，消费者向商家出示优惠券享受优惠。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1163,7 +1163,7 @@
                                                             <constraint firstAttribute="height" constant="180" id="rUh-Un-kIZ"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="向商家出示以上优惠券即可消费" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PT9-py-XEU">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="向商家出示以上优惠券进行消费" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PT9-py-XEU">
                                                         <rect key="frame" x="0.0" y="190" width="180" height="15"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
