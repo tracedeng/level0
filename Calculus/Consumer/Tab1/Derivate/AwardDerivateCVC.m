@@ -70,7 +70,13 @@ static NSString * const reuseIdentifier = @"Cell";
     if (0 == indexPath.row) {
         [self performSegueWithIdentifier:@"ScanQrcode" sender:nil];
     }else if (1 == indexPath.row) {
-        [self performSegueWithIdentifier:@"goCreditExchange" sender:nil];
+        // 期待v2.0
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"感谢您的支持，敬请期待积分汇率" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:alert completion:nil];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+//        [self performSegueWithIdentifier:@"goCreditExchange" sender:nil];
     }
 }
 
