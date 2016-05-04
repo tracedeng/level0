@@ -346,7 +346,7 @@ int res_totalsecond;
     {
         res_second--;
         NSString *title = [NSString stringWithFormat:@"%d秒",res_second];
-        [self.smsResButton setTitle:title forState:UIControlStateNormal];
+        [self.smsResButton setTitle:title forState:UIControlStateDisabled];
     }
 }
 
