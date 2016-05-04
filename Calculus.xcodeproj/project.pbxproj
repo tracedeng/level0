@@ -555,8 +555,6 @@
 		B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		B5E8CB0B1CBC7F1800A85629 /* FDGapLayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDGapLayoutGuide.h; path = FDStackview/FDGapLayoutGuide.h; sourceTree = "<group>"; };
 		B5E8CB0C1CBC7F1800A85629 /* FDGapLayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDGapLayoutGuide.m; path = FDStackview/FDGapLayoutGuide.m; sourceTree = "<group>"; };
 		B5E8CB0D1CBC7F1800A85629 /* FDLayoutSpacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLayoutSpacer.h; path = FDStackview/FDLayoutSpacer.h; sourceTree = "<group>"; };
@@ -1371,8 +1369,6 @@
 				199D41641CCCBBF400DA3168 /* ShareSDK.bundle */,
 				199D41621CCCBBE100DA3168 /* ShareSDKConnector.framework */,
 				199D41601CCCBBB300DA3168 /* ShareSDK.framework */,
-				B5D67EA21CCB2DAC009DED2D /* AddressBook.framework */,
-				B5D67EA31CCB2DAC009DED2D /* AddressBookUI.framework */,
 				B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */,
 				B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */,
 				B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */,

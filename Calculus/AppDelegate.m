@@ -24,8 +24,8 @@
 
 
 //SMSSDK key
-#define appkey @"11e2f73912510"
-#define app_secrect @"d625ead9d5d01706e9fbe908aecc4b0b"
+#define appkey @"120142ecb1ca4"
+#define app_secrect @"ee540a1d3b79cfe7e448b2a485957cc5"
 
 
 @implementation AppDelegate
