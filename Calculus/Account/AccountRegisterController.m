@@ -29,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (nonatomic, strong) JRMessageView *messageregister;
 @property (nonatomic, strong) JRMessageView *networkMessage;
+@property (weak, nonatomic) IBOutlet UIButton *smsButton;
+@property (nonatomic, strong) JRMessageView *SMSMessage;
 
 
 - (IBAction)accountRegister:(UIButton *)sender;
@@ -41,6 +43,11 @@
 NSString* zoneReg = @"86";
 //测试阶段保留原有验证码方式
 BOOL isMobReg = TRUE;
+
+
+NSTimer *reg_timer;
+int reg_second;
+int reg_totalsecond;
 
 
 - (void)viewDidLoad {
@@ -74,7 +81,14 @@ BOOL isMobReg = TRUE;
                                                messagePosition:JRMessagePositionTop
                                                        superVC:self.navigationController
                                                       duration:1];
-    
+    self.SMSMessage = [[JRMessageView alloc] initWithTitle:@"验证码错误"
+                                                       subTitle:@""
+                                                       iconName:@"icon-info-white"
+                                                    messageType:JRMessageViewTypeCustom
+                                                messagePosition:JRMessagePositionTop
+                                                        superVC:self.navigationController
+                                                       duration:1];
+
 
 }
 
@@ -186,7 +200,11 @@ BOOL isMobReg = TRUE;
                 }
                 else
                 {
-                    NSLog(@"错误信息:%@",error);
+                    if (self.SMSMessage.isShow) {
+//                        [self.SMSMessage hidedMessageView];
+                    } else {
+                        [self.SMSMessage showMessageView];
+                    }
                 }
             }];
             
@@ -244,7 +262,7 @@ BOOL isMobReg = TRUE;
     
     NSString *phoneNumber = self.accountTXT.text;
     
-    
+
     
     /*
      *采用Mob短信验证，将后台短信验证改到前端短信验证
@@ -254,6 +272,9 @@ BOOL isMobReg = TRUE;
         NSPredicate* pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",rule1];
         
         if ([pred evaluateWithObject:phoneNumber]) {
+            
+            self.smsButton.enabled = FALSE;
+            [self startWithSecond:30];
             
             [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneNumber
                                            zone:zoneReg
@@ -312,10 +333,47 @@ BOOL isMobReg = TRUE;
         
 
     }
+}
+
+/*
+ *发送验证码定时器
+ */
+-(void)startWithSecond:(int)totalSecond
+{
+
+    reg_second = totalSecond;
     
-    
-    
-    
-    
+    reg_timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerStart:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:reg_timer forMode:NSDefaultRunLoopMode];
+}
+
+-(void)timerStart:(NSTimer *)theTimer {
+    if (reg_second == 1)
+    {
+        [self stop];
+    }
+    else
+    {
+        reg_second--;
+        NSString *title = [NSString stringWithFormat:@"%d秒",reg_second];
+        [self.smsButton setTitle:title forState:UIControlStateNormal];
+    }
+}
+
+
+- (void)stop{
+    if (reg_timer) {
+        if ([reg_timer respondsToSelector:@selector(isValid)])
+        {
+            if ([reg_timer isValid])
+            {
+                [reg_timer invalidate];
+                reg_second = reg_totalsecond;
+                self.smsButton.enabled = TRUE;
+                [self.smsButton setTitle:@"重新获取" forState:UIControlStateNormal];
+
+            }
+        }
+    }
 }
 @end

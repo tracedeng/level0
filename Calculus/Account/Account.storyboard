@@ -379,6 +379,7 @@
                         <outlet property="passwordTXT" destination="Ma6-eN-lYM" id="UfL-5B-Klt"/>
                         <outlet property="passwordView" destination="rNs-GB-T8g" id="WfH-Rf-1Qc"/>
                         <outlet property="resetButton" destination="gtZ-FD-5Z3" id="wKO-QW-Pei"/>
+                        <outlet property="smsResButton" destination="ncb-pH-yN2" id="Fcw-M5-2Mr"/>
                         <outlet property="smsView" destination="t4g-iu-QYo" id="2xA-dw-v1V"/>
                     </connections>
                 </viewController>
@@ -582,6 +583,7 @@
                         <outlet property="passwordTXT" destination="AdR-VM-sgi" id="NcU-Z0-hB3"/>
                         <outlet property="passwordView" destination="5sO-nl-8yg" id="UWE-mR-Z9M"/>
                         <outlet property="registerButton" destination="jp5-J0-nyr" id="ge4-2V-eEF"/>
+                        <outlet property="smsButton" destination="yuK-jq-zqk" id="vn5-8P-snU"/>
                         <outlet property="smsView" destination="2Te-G2-2RJ" id="c6r-5N-Hko"/>
                     </connections>
                 </viewController>
