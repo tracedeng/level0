@@ -67,7 +67,7 @@
 #endif
 
 #define VERSION @"1.0"
-#define CONTACT_NUMBER @"021-888888888"
+#define CONTACT_NUMBER @"4006569551"
 
 #endif
 
