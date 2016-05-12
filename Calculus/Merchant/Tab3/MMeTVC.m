@@ -120,7 +120,7 @@
             rows = 1;
             break;
         case 1:
-            rows = 4;
+            rows = 3;
             break;
         case 2:
             rows = 1;

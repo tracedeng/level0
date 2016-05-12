@@ -96,7 +96,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         //IOS9.0 以下设备不能选择商户logo
-        if([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0){
+        if([[[UIDevice currentDevice] systemVersion] floatValue] <= 8.0){
             return 0.0f;
         }else{
             return 150.0f;
@@ -117,7 +117,7 @@
     if (indexPath.section == 0) {
         if (0 == indexPath.row) {
             //IOS9.0 以下设备不能选择商户logo
-            if([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0){
+            if([[[UIDevice currentDevice] systemVersion] floatValue] <= 8.0){
                 cell.hidden = true;
             }
             //头像，right detail，修改accessory图标
