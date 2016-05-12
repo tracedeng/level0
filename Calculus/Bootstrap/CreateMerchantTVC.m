@@ -95,8 +95,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
-        return 150.0f;
-//    }
+        //IOS9.0 以下设备不能选择商户logo
+        if([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0){
+            return 0.0f;
+        }else{
+            return 150.0f;
+        }
     }else if (1 == indexPath.section) {
         return 50.0f;
     }else if (2 == indexPath.section) {
@@ -112,6 +116,10 @@
     // Configure the cell...
     if (indexPath.section == 0) {
         if (0 == indexPath.row) {
+            //IOS9.0 以下设备不能选择商户logo
+            if([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0){
+                cell.hidden = true;
+            }
             //头像，right detail，修改accessory图标
             self.logoImageView.layer.cornerRadius = 4.0f;
             NSString *path = [NSString stringWithFormat:@"%@/%@?imageView2/1/w/300/h/300", QINIUURL, self.path];
