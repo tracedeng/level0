@@ -2433,7 +2433,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJO-9h-Bz4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">微积分V1.0(商家版)功能介绍
+                                <string key="text">积分不微V1.0(商家版)功能介绍
 
 1.注册和登录
 	本软件仅限登录后使用。
