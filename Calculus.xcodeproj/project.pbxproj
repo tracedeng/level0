@@ -342,11 +342,7 @@
 		197491501C79DAB600784D09 /* VoucherTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherTVC.h; path = Voucher/VoucherTVC.h; sourceTree = "<group>"; };
 		1982201D1C96FD7C0093C127 /* IntroduceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroduceVC.h; path = Setting/IntroduceVC.h; sourceTree = "<group>"; };
 		1982201E1C96FD7C0093C127 /* IntroduceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroduceVC.m; path = Setting/IntroduceVC.m; sourceTree = "<group>"; };
-		199D41601CCCBBB300DA3168 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDK.framework; path = Pods/ShareSDK3/ShareSDK/ShareSDK.framework; sourceTree = "<group>"; };
-		199D41621CCCBBE100DA3168 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKConnector.framework; path = Pods/ShareSDK3/ShareSDK/Support/Required/ShareSDKConnector.framework; sourceTree = "<group>"; };
-		199D41641CCCBBF400DA3168 /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ShareSDK.bundle; path = Pods/ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle; sourceTree = "<group>"; };
 		199D41661CCCBC0200DA3168 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = Pods/MOBFoundation/MOBFoundation.framework; sourceTree = "<group>"; };
-		199D41681CCCBC3300DA3168 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKExtension.framework; path = Pods/ShareSDK3/ShareSDK/Support/Optional/ShareSDKExtension.framework; sourceTree = "<group>"; };
 		19B111441C4CC36F00EB8CEA /* libPods-IQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-IQKeyboardManager.a"; path = "Pods/build/Debug-iphoneos/libPods-IQKeyboardManager.a"; sourceTree = "<group>"; };
 		19BFEB761CCCBF4D00886543 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = Pods/SMSSDK/SMS_SDK/SMS_SDK.framework; sourceTree = "<group>"; };
 		19CAA8D71C354D2F00010F68 /* MActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MActivity.storyboard; path = Merchant/Tab2/MActivity.storyboard; sourceTree = "<group>"; };
@@ -1364,11 +1360,7 @@
 			children = (
 				19F9DA8E1CCCC6F7000E0900 /* libicucore.tbd */,
 				19BFEB761CCCBF4D00886543 /* SMS_SDK.framework */,
-				199D41681CCCBC3300DA3168 /* ShareSDKExtension.framework */,
 				199D41661CCCBC0200DA3168 /* MOBFoundation.framework */,
-				199D41641CCCBBF400DA3168 /* ShareSDK.bundle */,
-				199D41621CCCBBE100DA3168 /* ShareSDKConnector.framework */,
-				199D41601CCCBBB300DA3168 /* ShareSDK.framework */,
 				B5D67EA01CCB2D8C009DED2D /* libstdc++.6.0.9.tbd */,
 				B5D67E9E1CCB2D74009DED2D /* JavaScriptCore.framework */,
 				B5D67E9C1CCB2D65009DED2D /* MessageUI.framework */,
@@ -1945,6 +1937,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1988,6 +1981,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2095,10 +2089,6 @@
 					"-l\"icucore\"",
 					"-l\"stdc++\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AddressBook\"",
-					"-framework",
-					"\"AddressBookUI\"",
 					"-framework",
 					"\"AssetsLibrary\"",
 					"-framework",

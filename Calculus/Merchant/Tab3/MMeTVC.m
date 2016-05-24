@@ -123,7 +123,7 @@
             rows = 4;
             break;
         case 2:
-            rows = 1;
+            rows = 2;
             break;
         case 3:
             rows = 2;
@@ -252,8 +252,8 @@
 //            [self.navigationController pushViewController:[self.navigationController.viewControllers objectAtIndex:2]
 //                                                  animated:YES];
         }else if (1 == indexPath.row) {
-            //            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps ://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/gb/app/yi-dong-cai-bian/id391945719?mt=8"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.apple.com/cn/app/ji-fen-bu-wei/id1113388623?mt=8"]];
+
         }
     }
     
