@@ -8,6 +8,7 @@
 
 #import "RechargeTVC.h"
 #import "ClickableView.h"
+#import "ActionFlow.h"
 
 @interface RechargeTVC () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
@@ -159,6 +160,9 @@
 {
     if (string.length == 0) return YES;     //支持已经输满长度按退格键删除
     if (textField == self.manualRechargeMoney) {
+        if ([string isEqualToString:@"0"] && (textField.text.length == 0)) {
+            return NO;
+        }
         //检查输入，只能输入4个字符
         if (textField.text.length > 3) {
             return NO;
@@ -167,6 +171,7 @@
     
     return YES;
 }
+
 /*
 #pragma mark - Navigation
 
@@ -176,6 +181,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 - (IBAction)recharge:(id)sender {
     [self.manualRechargeMoney resignFirstResponder];
     NSString *title = [NSString stringWithFormat:@"本次充值金额%ld元", (long)self.chargeMoney];
@@ -183,11 +189,47 @@
         title = @"充值金额填写错误，点击取消重新输入";
     }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
-    if (self.chargeMoney > 0) {
+    if ((self.chargeMoney > 0) && (self.chargeMoney <= 5000)) {
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //
             [self dismissViewControllerAnimated:alert completion:nil];
             //        [self.navigationController popToRootViewControllerAnimated:YES];
+            ActionFlow *flow = [[ActionFlow alloc] init];
+            flow.afterRecharge = ^(NSString *result) {
+                UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:@"充值成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [alert2 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    [self dismissViewControllerAnimated:alert completion:nil];
+                    ActionFlow *balance = [[ActionFlow alloc] init];
+                    balance.afterQueryBalance = ^(NSString *balance) {
+                        self.balance = [balance floatValue];
+                        self.balanceLabel.text = [NSString stringWithFormat:@"%.2f", self.balance];
+                        // 拉取最新的帐户余额
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshBalance" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:balance, @"money", nil]];
+                    };
+                    [balance doQueryBalance:self.merchant];
+
+                }]];
+                [self presentViewController:alert2 animated:YES completion:nil];
+//                ActionFlow *balance = [[ActionFlow alloc] init];
+//                balance.afterQueryBalance = ^(NSString *balance) {
+//                    self.balance = [balance floatValue];
+//                    self.balanceLabel.text = [NSString stringWithFormat:@"%.2f", self.balance];
+//                    // 拉取最新的帐户余额
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshBalance" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:balance, @"money", nil]];
+//                };
+//                [balance doQueryBalance:self.merchant];
+            };
+            flow.afterRechargeFailed = ^(NSString *message) {
+                UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:@"充值失败，请重新尝试" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [alert2 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    //
+                    [self dismissViewControllerAnimated:alert completion:nil];
+                    //        [self.navigationController popToRootViewControllerAnimated:YES];
+                }]];
+                
+                [self presentViewController:alert2 animated:YES completion:nil];
+            };
+            [flow doRecharge:self.merchant money:self.chargeMoney];
         }]];
     }
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -196,9 +238,7 @@
         //        [self.navigationController popToRootViewControllerAnimated:YES];
     }]];
     
-
     [self presentViewController:alert animated:YES completion:nil];
-
 }
 
 @end

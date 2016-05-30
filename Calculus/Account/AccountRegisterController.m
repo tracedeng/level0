@@ -42,7 +42,7 @@
 //目前仅支持中国大陆地区手机号码
 NSString* zoneReg = @"86";
 //测试阶段保留原有验证码方式
-BOOL isMobReg = TRUE;
+BOOL isMobReg = false;
 
 
 NSTimer *reg_timer;
@@ -161,9 +161,7 @@ int reg_totalsecond;
         
         if ([pred evaluateWithObject:phoneNumber]) {
             [SMSSDK commitVerificationCode:code phoneNumber:phoneNumber  zone:zoneReg result:^(NSError *error) {
-                
                 if (!error) {
- 
                     ActionAccount *registe = [[ActionAccount alloc] init];
                     registe.afterAccountRegister = ^(NSString *result){
                         //注册成功后只保存手机号码
@@ -207,8 +205,6 @@ int reg_totalsecond;
                     }
                 }
             }];
-            
-            
         }else{
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号码格式错误" message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -262,8 +258,6 @@ int reg_totalsecond;
     
     NSString *phoneNumber = self.accountTXT.text;
     
-
-    
     /*
      *采用Mob短信验证，将后台短信验证改到前端短信验证
      */
@@ -281,7 +275,6 @@ int reg_totalsecond;
                                customIdentifier:nil
                                          result:^(NSError *error)
              {
-                 
                  if (!error) {
                      
                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"验证码已下发，请查看短信" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -289,28 +282,18 @@ int reg_totalsecond;
                          [self dismissViewControllerAnimated:alert completion:nil];
                      }]];
                      [self presentViewController:alert animated:YES completion:nil];
-                     
-                     
                  }else{
                      NSLog(@"验证码发送失败:%@",error);
-                     
                  }
-                 
              }];
-            
-            
         }else{
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"手机号码格式错误" message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 [self dismissViewControllerAnimated:alert completion:nil];
             }]];
             [self presentViewController:alert animated:YES completion:nil];
-            
         }
-        
     }else{
-        
-        
         ActionAccount *code = [[ActionAccount alloc] init];
         code.afterGetSMSCode = ^(NSString *result){
 #ifdef DEBUG
@@ -328,10 +311,7 @@ int reg_totalsecond;
             
 #endif
         };
-        
         [code doGetSMSCode:phoneNumber];
-        
-
     }
 }
 

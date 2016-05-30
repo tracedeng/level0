@@ -48,7 +48,8 @@
     [self.merchantOutImageView sd_setImageWithURL:[NSURL URLWithString:path] placeholderImage:nil];
     
     self.merchantOutName.text = [self.merchantOut objectForKey:@"name"];
-    self.merchantOutCredit.text = [[self.merchantOut objectForKey:@"quantity"] stringValue];
+//    self.merchantOutCredit.text = [[self.merchantOut objectForKey:@"quantity"] stringValue];
+    self.merchantOutCredit.text = [NSString stringWithFormat:@"转出%ld", [[self.merchantOut objectForKey:@"quantity"] integerValue]];
 
     // 导入商家logo，名称
     self.merchantInImageView.clipsToBounds = YES;
@@ -62,8 +63,11 @@
     // 后台计算导入积分量，手续费
     ActionCredit *action = [[ActionCredit alloc] init];
     action.afterCreditInterchange = ^(NSInteger quantity, NSInteger fee) {
-        self.merchantInCredit.text = [NSString stringWithFormat:@"%ld", quantity];
+        self.merchantInCredit.text = [NSString stringWithFormat:@"转入%ld", quantity];
         self.feeCredit.text = [NSString stringWithFormat:@"%ld", fee];
+//        UITableViewCell *feeCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+//        feeCell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", fee];
+//        feeCell.textLabel.text = [NSString stringWithFormat:@"%ld", fee];
         self.interchangeButton.enabled = YES;
     };
     action.afterCreditInterchangeFailed = ^(NSString *message) {
@@ -186,10 +190,19 @@
 - (IBAction)interchangeAction:(id)sender {
     ActionCredit *action = [[ActionCredit alloc] init];
     action.afterCreditInterchange = ^(NSInteger quantity, NSInteger fee) {
-        NSString *notice = [NSString stringWithFormat:@"%@(%@) => %@(%@)", [self.merchantOut objectForKey:@"name"], [[self.merchantOut objectForKey:@"quantity"] stringValue], [self.merchantIn objectForKey:@"name"], self.merchantInCredit.text];
+        NSString *notice = [NSString stringWithFormat:@"%@(%@) => %@(%@)", [self.merchantOut objectForKey:@"name"], self.merchantOutCredit.text, [self.merchantIn objectForKey:@"name"], self.merchantInCredit.text];
+//        NSString *notice = [NSString stringWithFormat:@"%@(%@) => %@(%@)", [self.merchantOut objectForKey:@"name"], [[self.merchantOut objectForKey:@"quantity"] stringValue], [self.merchantIn objectForKey:@"name"], self.merchantInCredit.text];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"兑换成功" message:notice preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"afterInterchange" object:self];
             [self.navigationController popToRootViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    };
+    action.afterCreditInterchangeFailed = ^(NSString *message) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"兑换失败，点击确定重新尝试" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//            [self.navigationController popToRootViewControllerAnimated:YES];
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     };

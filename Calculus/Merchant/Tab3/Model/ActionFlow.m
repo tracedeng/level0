@@ -39,7 +39,6 @@
     
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"retrieve", @"type", self.account, @"numbers",merchant, @"merchant", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
-
 }
 
 - (void)doQueryAllowExchangeIn:(NSString *)merchant {
@@ -57,7 +56,27 @@
     
     NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"balance_record", @"type", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
+}
 
+- (void)doRecharge:(NSString *)merchant money:(NSInteger)money {
+    self.type = ERECHARGE;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"recharge", @"type", merchant, @"merchant", [NSString stringWithFormat:@"%ld", (long)money], @"money", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+}
+
+- (void)doWithdrawals:(NSString *)merchant money:(NSInteger)money {
+    self.type = EWITHDRAWALS;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"withdrawals", @"type", merchant, @"merchant", [NSString stringWithFormat:@"%ld", (long)money], @"money", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+}
+
+- (void)doQueryBalance:(NSString *)merchant {
+    self.type = EQUERYBALANCE;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"balance", @"type", merchant, @"merchant", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
 }
 
 #pragma mark -NetCommunication Delegate
@@ -92,6 +111,30 @@
                 }
                 break;
             }
+            case ERECHARGE:
+            {
+                NSString *result = [responseObject valueForKeyPath:@"r"];
+                if (self.afterRecharge) {
+                    self.afterRecharge(result);
+                }
+                break;
+            }
+            case EWITHDRAWALS:
+            {
+                NSString *result = [responseObject valueForKeyPath:@"r"];
+                if (self.afterWithdrawals) {
+                    self.afterWithdrawals(result);
+                }
+                break;
+            }
+            case EQUERYBALANCE:
+            {
+                NSString *result = [responseObject valueForKeyPath:@"r"];
+                if (self.afterQueryBalance) {
+                    self.afterQueryBalance(result);
+                }
+                break;
+            }
             default:
                 break;
         }
@@ -118,6 +161,30 @@
                 NSString *message = [responseObject objectForKey:@"m"];
                 if (self.afterQueryBalanceHistoryFailed) {
                     self.afterQueryBalanceHistoryFailed(message);
+                }
+                break;
+            }
+            case ERECHARGE:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterRechargeFailed) {
+                    self.afterRechargeFailed(message);
+                }
+                break;
+            }
+            case EWITHDRAWALS:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterWithdrawalsFailed) {
+                    self.afterWithdrawalsFailed(message);
+                }
+                break;
+            }
+            case EQUERYBALANCE:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryBalanceFailed) {
+                    self.afterQueryBalanceFailed(message);
                 }
                 break;
             }
@@ -151,6 +218,27 @@
         {
             if (self.afterQueryBalanceHistoryFailed) {
                 self.afterQueryBalanceHistoryFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case ERECHARGE:
+        {
+            if (self.afterRechargeFailed) {
+                self.afterRechargeFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EWITHDRAWALS:
+        {
+            if (self.afterWithdrawalsFailed) {
+                self.afterWithdrawalsFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EQUERYBALANCE:
+        {
+            if (self.afterQueryBalanceFailed) {
+                self.afterQueryBalanceFailed([responseError localizedDescription]);
             }
             break;
         }

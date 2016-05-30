@@ -18,6 +18,9 @@
 #import "MMaterialTVC.h"
 #import "MSettingTVC.h"
 #import "UIColor+Extension.h"
+#import "SVProgressHUD.h"
+#import "MJRefresh.h"
+#import "XHToast.h"
 
 @interface MMeTVC ()
 #define MMATERIALEXCHANGERATE  0x1
@@ -78,29 +81,70 @@
     [action doQueryMerchantOfAccount];
     
     if (self.material) {
-        ActionBusiness *action = [[ActionBusiness alloc] init];
-        action.afterQueryBusinessParameters = ^(NSDictionary *business){
-            if(business){
-                self.business = [NSMutableDictionary dictionaryWithDictionary:business];
-                self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]];
-            }
-        };
-        [action doQueryBusinessParameters:[self.material objectForKey:@"id"]];
-    
-        ActionFlow *action2 = [[ActionFlow alloc] init];
-        action2.afterQqueryFlow = ^(NSDictionary *flow){
-            if (flow) {
-                self.flow = [NSMutableDictionary dictionaryWithDictionary:flow];
-//                self.merchantCreditAmountLBL.text = [ [[NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]] stringByAppendingString:@" / "] stringByAppendingString:  [NSString stringWithFormat:@"%@",[flow objectForKey:@"is"]]];
-                self.merchantCreditMayIssueLabel.text = [NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]];
-
-                self.merchantCreditAmountLBL.text = [NSString stringWithFormat:@"%@", [flow objectForKey:@"is"]] ;
-            }
-        };
-        [action2 doQueryFlow:[self.material objectForKey:@"id"]];
+        [self loadFlow:nil];
+//        ActionBusiness *action = [[ActionBusiness alloc] init];
+//        action.afterQueryBusinessParameters = ^(NSDictionary *business){
+//            if(business){
+//                self.business = [NSMutableDictionary dictionaryWithDictionary:business];
+//                self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]];
+//            }
+//        };
+//        [action doQueryBusinessParameters:[self.material objectForKey:@"id"]];
+//    
+//        ActionFlow *action2 = [[ActionFlow alloc] init];
+//        action2.afterQqueryFlow = ^(NSDictionary *flow){
+//            if (flow) {
+//                self.flow = [NSMutableDictionary dictionaryWithDictionary:flow];
+////                self.merchantCreditAmountLBL.text = [ [[NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]] stringByAppendingString:@" / "] stringByAppendingString:  [NSString stringWithFormat:@"%@",[flow objectForKey:@"is"]]];
+//                self.merchantCreditMayIssueLabel.text = [NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]];
+//
+//                self.merchantCreditAmountLBL.text = [NSString stringWithFormat:@"%@", [flow objectForKey:@"is"]] ;
+//            }
+//        };
+//        [action2 doQueryFlow:[self.material objectForKey:@"id"]];
     }
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(loadFlow:)];
+    //    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    
+//    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
+//    [self loadActivityList:nil];
+
 }
 
+- (void)loadFlow:(id)sender {
+    ActionBusiness *action = [[ActionBusiness alloc] init];
+    action.afterQueryBusinessParameters = ^(NSDictionary *business){
+        if(business){
+            self.business = [NSMutableDictionary dictionaryWithDictionary:business];
+            self.exchangeRateLBL.text = [NSString stringWithFormat:@"%@", [business objectForKey:@"crt"]];
+        }
+        [self.tableView headerEndRefreshing];
+
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+
+    };
+    [action doQueryBusinessParameters:[self.material objectForKey:@"id"]];
+    
+    ActionFlow *action2 = [[ActionFlow alloc] init];
+    action2.afterQqueryFlow = ^(NSDictionary *flow){
+        if (flow) {
+            self.flow = [NSMutableDictionary dictionaryWithDictionary:flow];
+            self.merchantCreditMayIssueLabel.text = [NSString stringWithFormat:@"%@",[flow objectForKey:@"mi"]];
+            self.merchantCreditAmountLBL.text = [NSString stringWithFormat:@"%@", [flow objectForKey:@"is"]] ;
+        }
+        [self.tableView headerEndRefreshing];
+        
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
+        }
+    };
+    [action2 doQueryFlow:[self.material objectForKey:@"id"]];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -240,7 +284,6 @@
         }else  if (4 == indexPath.row) {
         //
         }
-
     } else if(2 == indexPath.section) {
         if (0 == indexPath.row) {
             

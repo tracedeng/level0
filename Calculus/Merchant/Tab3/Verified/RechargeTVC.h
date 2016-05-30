@@ -10,5 +10,5 @@
 
 @interface RechargeTVC : UITableViewController
 @property (nonatomic, assign) CGFloat balance;
-
+@property (nonatomic, retain) NSString *merchant;
 @end

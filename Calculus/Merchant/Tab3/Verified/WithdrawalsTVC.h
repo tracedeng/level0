@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WithdrawalsTVC : UITableViewController
-
+@property (nonatomic, assign) CGFloat maxWithdrawalsMoney;    // 最大可提现金额
+@property (nonatomic, retain) NSString *merchant;
 @end

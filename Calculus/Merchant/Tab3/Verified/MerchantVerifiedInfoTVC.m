@@ -39,13 +39,26 @@
 //    self.businessAllLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"up"]] stringByAppendingString:@"积分"];
 //    self.businessRestLBL.text = [[NSString stringWithFormat:@"%@", [self.flow objectForKey:@"mi"]] stringByAppendingString:@"积分"];
 
-    self.balance = [[self.flow objectForKey:@"bal"] floatValue] / [[self.business objectForKey:@"brt"] floatValue];
+    if ([[self.flow objectForKey:@"bal"] floatValue]== 0)
+    {
+        self.balance = .0f;
+    }else{
+        self.balance = [[self.flow objectForKey:@"bal"] floatValue] / [[self.business objectForKey:@"brt"] floatValue];
+    }
     self.balanceLBL.text = [NSString stringWithFormat:@"%.2f元", self.balance];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshBalance:) name:@"refreshBalance" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refreshBalance:(NSNotification *)notification {
+    NSString *money = [[notification userInfo] objectForKey:@"money"];
+    self.balance = [money floatValue];
+    self.balanceLBL.text = [NSString stringWithFormat:@"%.2f元", self.balance];
 }
 
 #pragma mark - Table view data source
@@ -123,10 +136,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
+            [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
             [self showAlert:@"确定" :@"修改请联系平台"];
         }else if (1 == indexPath.row) {
+            [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
             [self showAlert:@"确定" :@"修改请联系平台"];
-
         }
     }else if (1 == indexPath.section) {
         if (0 == indexPath.row) {
@@ -166,6 +180,5 @@
         }
     }
 }
-
 
 @end

@@ -13,6 +13,8 @@
 #import "InterchangeController.h"
 #import "ExchangeRateTVC.h"
 #import "XHToast.h"
+#import "MJRefresh.h"
+
 
 @interface MerchantSelectTVC ()
 @property (nonatomic, retain) NSMutableArray *merchantList;
@@ -35,6 +37,9 @@
     
     self.merchantList = [[NSMutableArray alloc] init];
     
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(loadMerchantList:)];
+    
     [self.refreshControl addTarget:self action:@selector(loadMerchantList:) forControlEvents:UIControlEventValueChanged];
     
     [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeBlack];
@@ -53,6 +58,8 @@
         [self.merchantList removeAllObjects];
         [self.merchantList  addObjectsFromArray:merchantList];
         [self.tableView reloadData];
+        
+        [self.tableView headerEndRefreshing];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -61,6 +68,7 @@
         }
     };
     merchant.afterConsumerQueryOtherMerchantListFailed = ^(NSString *message) {
+        [self.tableView headerEndRefreshing];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }
@@ -70,6 +78,7 @@
         //        TODO...错误提示
     };
     merchant.afterConsumerQueryOtherMerchantListFailedNetConnect = ^(NSString *message) {
+        [self.tableView headerEndRefreshing];
         if ([self.refreshControl isRefreshing]) {
             [self.refreshControl endRefreshing];
         }

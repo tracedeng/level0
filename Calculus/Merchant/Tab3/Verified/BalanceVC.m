@@ -10,6 +10,7 @@
 #import "UIColor+Extension.h"
 #import "BalanceHistoryTVC.h"
 #import "RechargeTVC.h"
+#import "WithdrawalsTVC.h"
 
 
 @interface BalanceVC ()
@@ -34,6 +35,8 @@
     self.withdrawalsButton.layer.cornerRadius = 4.0f;
     
     self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", self.balance];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshBalance:) name:@"refreshBalance" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +44,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)refreshBalance:(NSNotification *)notification {
+    NSString *money = [[notification userInfo] objectForKey:@"money"];
+    self.balance = [money floatValue];
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f元", self.balance];
+}
 
 #pragma mark - Navigation
 
@@ -57,6 +65,13 @@
         if ([segue.destinationViewController isKindOfClass:[RechargeTVC class]]) {
             RechargeTVC *destination = (RechargeTVC *)segue.destinationViewController;
             destination.balance = self.balance;
+            destination.merchant = self.merchant;
+        }
+    }else if([segue.identifier isEqualToString:@"BalanceWithdrawals"]) {
+        if ([segue.destinationViewController isKindOfClass:[WithdrawalsTVC class]]) {
+            WithdrawalsTVC *destination = (WithdrawalsTVC *)segue.destinationViewController;
+            destination.maxWithdrawalsMoney = self.balance;
+            destination.merchant = self.merchant;
         }
     }
 }

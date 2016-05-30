@@ -7,13 +7,14 @@
 //
 
 #import "WithdrawalsTVC.h"
+#import "ActionFlow.h"
 
 @interface WithdrawalsTVC ()
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (weak, nonatomic) IBOutlet UITextField *withdrawalsMoneyField;
 @property (weak, nonatomic) IBOutlet UIButton *withdrawalsButton;
 @property (weak, nonatomic) IBOutlet UIView *withdrawalsMoneyView;
-
+@property (nonatomic, assign) NSInteger withdrawalsMoney;
 @end
 
 @implementation WithdrawalsTVC
@@ -31,6 +32,8 @@
     
     self.withdrawalsMoneyView.clipsToBounds = YES;
     self.withdrawalsMoneyView.layer.cornerRadius = 4.0f;
+    
+    self.moneyLabel.text = [NSString stringWithFormat:@"最大可提现金额%.2f元", (float)self.maxWithdrawalsMoney];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,5 +121,51 @@
 */
 
 - (IBAction)withdrawals:(id)sender {
+    [self.withdrawalsMoneyField resignFirstResponder];
+    self.withdrawalsMoney = [self.withdrawalsMoneyField.text integerValue];
+    NSString *title = [NSString stringWithFormat:@"本次提现金额%ld元", (long)self.withdrawalsMoney];
+    if ((self.withdrawalsMoney <= 0) || (self.withdrawalsMoney > self.maxWithdrawalsMoney)) {
+        title = @"提现金额超出可提现范围，点击取消重新输入";
+    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    if (self.withdrawalsMoney <= self.maxWithdrawalsMoney) {
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //
+            [self dismissViewControllerAnimated:alert completion:nil];
+            //        [self.navigationController popToRootViewControllerAnimated:YES];
+            ActionFlow *flow = [[ActionFlow alloc] init];
+            flow.afterWithdrawals = ^(NSString *result) {
+                UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:@"提现成功，3-10个工作日内退回支付宝账号。" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [alert2 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    ActionFlow *balance = [[ActionFlow alloc] init];
+                    balance.afterQueryBalance = ^(NSString *balance) {
+                        //                    self.balance = [balance floatValue];
+                        //                    self.balanceLabel.text = [NSString stringWithFormat:@"%.2f", self.balance];
+                        self.moneyLabel.text = [NSString stringWithFormat:@"最大可提现金额%.2f元", [balance floatValue]];
+                        self.maxWithdrawalsMoney = [balance floatValue];
+                        // 拉取最新的帐户余额
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshBalance" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:balance, @"money", nil]];
+                    };
+                    [balance doQueryBalance:self.merchant];
+                }]];
+                [self presentViewController:alert2 animated:YES completion:nil];
+            };
+            flow.afterWithdrawalsFailed = ^(NSString *message) {
+                UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:@"今天已经提现，请明天再来" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [alert2 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    [self dismissViewControllerAnimated:alert completion:nil];
+                }]];
+                [self presentViewController:alert2 animated:YES completion:nil];
+            };
+            [flow doWithdrawals:self.merchant money:self.withdrawalsMoney];
+        }]];
+    }
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        //
+        [self dismissViewControllerAnimated:alert completion:nil];
+        //        [self.navigationController popToRootViewControllerAnimated:YES];
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

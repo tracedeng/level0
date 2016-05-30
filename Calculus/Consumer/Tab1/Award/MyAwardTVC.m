@@ -58,6 +58,8 @@
     
     self.creditList = [[NSMutableArray alloc] init];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadCreditList:) name:@"afterInterchange" object:nil];
+    
     //下拉刷新，上拉加载
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
     [self.tableView addHeaderWithTarget:self action:@selector(loadCreditList:)];
