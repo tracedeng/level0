@@ -58,10 +58,18 @@
     [self.net requestHttpWithData:postData];
 }
 
-- (void)doRecharge:(NSString *)merchant money:(NSInteger)money {
+- (void)doQueryTradeNo:(NSString *)merchant money:(NSInteger)money {
+    self.type = EQUERYTRADENO;
+    
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"trade_no", @"type", merchant, @"merchant", [NSString stringWithFormat:@"%ld", (long)money], @"money", self.account, @"numbers", self.skey, @"session_key", nil];
+    [self.net requestHttpWithData:postData];
+
+}
+
+- (void)doRecharge:(NSString *)merchant money:(NSInteger)money tradeno:(NSString *)tradeno {
     self.type = ERECHARGE;
     
-    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"recharge", @"type", merchant, @"merchant", [NSString stringWithFormat:@"%ld", (long)money], @"money", self.account, @"numbers", self.skey, @"session_key", nil];
+    NSDictionary *postData = [[NSDictionary alloc] initWithObjectsAndKeys:@"recharge", @"type", merchant, @"merchant", [NSString stringWithFormat:@"%ld", (long)money], @"money", tradeno, @"trade_no", self.account, @"numbers", self.skey, @"session_key", nil];
     [self.net requestHttpWithData:postData];
 }
 
@@ -108,6 +116,14 @@
                 NSArray *history = [[result objectAtIndex:0] objectForKey:@"a"];
                 if (self.afterQueryBalanceHistory) {
                     self.afterQueryBalanceHistory(history);
+                }
+                break;
+            }
+            case EQUERYTRADENO:
+            {
+                NSString *tradeno = [responseObject valueForKeyPath:@"r"];
+                if (self.afterQueryTradeNo) {
+                    self.afterQueryTradeNo(tradeno);
                 }
                 break;
             }
@@ -164,6 +180,15 @@
                 }
                 break;
             }
+            case EQUERYTRADENO:
+            {
+                NSString *message = [responseObject objectForKey:@"m"];
+                if (self.afterQueryTradeNoFailed) {
+                    self.afterQueryTradeNoFailed(message);
+                }
+                break;
+
+            }
             case ERECHARGE:
             {
                 NSString *message = [responseObject objectForKey:@"m"];
@@ -218,6 +243,13 @@
         {
             if (self.afterQueryBalanceHistoryFailed) {
                 self.afterQueryBalanceHistoryFailed([responseError localizedDescription]);
+            }
+            break;
+        }
+        case EQUERYTRADENO:
+        {
+            if (self.afterQueryTradeNoFailed) {
+                self.afterQueryTradeNoFailed([responseError localizedDescription]);
             }
             break;
         }
