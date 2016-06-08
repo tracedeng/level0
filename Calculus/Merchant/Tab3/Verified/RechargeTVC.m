@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *rechargeButton;
 
 @property (nonatomic, retain) NSString *tradeno;
-@property (nonatomic, retain) NSString *pkey;
 @property (nonatomic, retain) ClickableView *lastCheckView;
 @property (nonatomic, assign) NSInteger chargeMoney;
 @end
@@ -196,11 +195,10 @@
 
 - (void)askForTradeNo:(NSInteger)money {
     ActionFlow *flow = [[ActionFlow alloc] init];
-    flow.afterQueryTradeNo = ^(NSString *tradeno, NSString *key) {
+    flow.afterQueryTradeNo = ^(NSString *tradeno, NSString *sign) {
         // 呼起支付宝支付
         self.tradeno = tradeno;
-        self.pkey= key;
-        [self callAlipay:tradeno mondy:money];
+        [self callAlipay:tradeno mondy:money sign:sign];
     };
     flow.afterQueryTradeNoFailed = ^(NSString *message) {
         // 请求订单号失败
@@ -213,15 +211,18 @@
     [flow doQueryTradeNo:self.merchant money:money];
 }
 
-- (void)callAlipay:(NSString *)tradeno mondy:(NSInteger)money{
+- (void)callAlipay:(NSString *)tradeno mondy:(NSInteger)money sign:(NSString *)sign {
     //签约后，支付宝会为每个商户分配一个唯一的 parnter 和 seller。
     /*=======================需要填写商户app申请的===================================*/
     NSString *partner = @"2088221780225801";
     NSString *seller = @"biiyooit@qq.com";
     /*============================================================================*/
     
+    //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
+    NSString *appScheme = @"jfbw";
+    
     //partner和seller获取失败,提示
-    if ([partner length] == 0 || [seller length] == 0 || [self.pkey length] == 0) {
+    if ([partner length] == 0 || [seller length] == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"缺少合作者身份ID或者卖家支付宝账号或者私钥。" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self dismissViewControllerAnimated:alert completion:nil];
@@ -230,17 +231,15 @@
         return;
     }
     
-    /*
-     *生成订单信息及签名
-     */
+    //生成订单信息，值固定不变，改动时也要相应修改后台
     //将商品信息赋予AlixPayOrder的成员变量
     Order *order = [[Order alloc] init];
     order.partner = partner;
     order.sellerID = seller;
     order.outTradeNO = tradeno; //订单ID（由商家自行制定）
-    order.subject = @"商家充值"; //商品标题
-    order.body = @"商家充值"; //商品描述
-    order.totalFee = [NSString stringWithFormat:@"%.2f", (float)money]; //商品价格
+    order.subject = @"charge"; //商品标题
+    order.body = @"charge"; //商品描述
+    order.totalFee = [NSString stringWithFormat:@"%ld", (long)money]; //商品价格
 //    order.totalFee = [NSString stringWithFormat:@"%.2f", 1.00]; //测试商品价格，1毛钱
     order.notifyURL =  @"http://www.weijifen.me:8000/flow"; //回调URL
     
@@ -249,23 +248,22 @@
     order.inputCharset = @"utf-8";
     order.itBPay = @"30m";
 //    order.showURL = @"m.alipay.com";
-    
-    //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
-    NSString *appScheme = @"jfbw";
-    
+
     //将商品信息拼接成字符串
     NSString *orderSpec = [order description];
     DLog(@"orderSpec = %@",orderSpec);
     
     //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
-    id<DataSigner> signer = CreateRSADataSigner(self.pkey);
-    NSString *signedString = [signer signString:orderSpec];
+//    NSString *kk = @"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAMmWzWbHdZC4KOvxmQYmy5x8m1Q51sigKFISF3bQgN9BMeTCUk3XNQ3cX/d7nlD122wDskI/cDhX1vtRDB1GOAebs/6gifuhzDYrGGTS2dlc+iIff2ZTrVByWmLpYeoWToFSsuN8v9g9mrtz4xfM0eA8Hpsq7Pxm1sZIRW6FIAcPAgMBAAECgYEAnAcpogR9vW6c1coge79pVwynGPDPimdT7fnsyVymcqY+XOX+2BrbCIhqit3WcqlolNjjjx0U2bc7QTfA3aOs1u6WNf0CXiTOftWSnAY/L/Ycp6f+Qa2Axp8sHBMm/WqUEeRNyEBA7zoumABuTHNzqX3auz/fVZhKeXxw5cbcLYkCQQDuyv8lcJ+Qmii0suX+lHHoJKxieyLtt2xP9ns25NffiuhlVZDjCRtKM5lGdCfpfvlIbxmNjk30e9QRkpbNARPTAkEA2B2B2rGzw9B+io0dcP/DEd9l9W4ynSABmRKZevKt7PjWxiwt0GFLAMm2Tn0PBJ39MhfrYglWWzhkRbIhRIyGVQJAaosmRlU2zLULvnwnxGwFWreqNpKMZhY1/IOUPEzkyLfYswX3jGUOyQ+2rsm62SKvJRN1CkTZIWFyoJiQMk3twwJAIoJrtuFDZFRJsJQiDGY63wK+RDepi1+OAcRvj6tqzHlbyl9JnYm7sU+EdfoQSNt1j+cz5f65tG1Hzb1JBKov1QJBAJGOriPDRNKY+N61FVUcYeG4hQEmDe17fe2DYbo7ownh2OekIJKyYot7BRkudtqw8/AMqZQW/QqKHbgy4jNVJno=";
+//    id<DataSigner> signer = CreateRSADataSigner(kk);
+//    NSString *signedString2 = [signer signString:orderSpec];
+//    DLog("%@", signedString2);
+    // 后台生产
     
     //将签名成功字符串格式化为订单字符串,请严格按照该格式
-    NSString *orderString = nil;
-    if (signedString != nil) {
-        orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
-                       orderSpec, signedString, @"RSA"];
+//    NSString *orderString = nil;
+    if (sign != nil) {
+        NSString *orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"", orderSpec, sign, @"RSA"];
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
             DLog(@"reslut = %@",resultDic);
             [self afterPayOrder:resultDic];

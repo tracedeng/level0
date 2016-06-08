@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, EFLOWOPTYE) {
 @property (nonatomic, copy) void (^afterQqueryFlow)(NSDictionary *flow);
 @property (nonatomic, copy) void (^afterQueryAllowExchangeIn)(NSString *allow);
 @property (nonatomic, copy) void (^afterQueryBalanceHistory)(NSArray *history);
-@property (nonatomic, copy) void (^afterQueryTradeNo)(NSString *tradeno, NSString *key);
+@property (nonatomic, copy) void (^afterQueryTradeNo)(NSString *tradeno, NSString *sign);
 @property (nonatomic, copy) void (^afterRecharge)(NSString *result);
 @property (nonatomic, copy) void (^afterWithdrawals)(NSString *result);
 @property (nonatomic, copy) void (^afterQueryBalance)(NSString *balance);
