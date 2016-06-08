@@ -121,9 +121,10 @@
             }
             case EQUERYTRADENO:
             {
-                NSString *tradeno = [responseObject valueForKeyPath:@"r"];
+                NSString *tradeno = [responseObject valueForKeyPath:@"r.trade_no"];
+                NSString *key = [responseObject valueForKeyPath:@"r.key"];
                 if (self.afterQueryTradeNo) {
-                    self.afterQueryTradeNo(tradeno);
+                    self.afterQueryTradeNo(tradeno, key);
                 }
                 break;
             }

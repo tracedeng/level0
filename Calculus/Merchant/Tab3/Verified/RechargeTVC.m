@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *manualRechargeMoney;
 @property (weak, nonatomic) IBOutlet UIButton *rechargeButton;
 
+@property (nonatomic, retain) NSString *tradeno;
+@property (nonatomic, retain) NSString *pkey;
 @property (nonatomic, retain) ClickableView *lastCheckView;
 @property (nonatomic, assign) NSInteger chargeMoney;
 @end
@@ -64,6 +66,13 @@
     
     self.rechargeButton.clipsToBounds = YES;
     self.rechargeButton.layer.cornerRadius = 4.0f;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alipaySyncNotify:) name:@"alipaySyncNotify" object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"alipaySyncNotify" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -187,8 +196,10 @@
 
 - (void)askForTradeNo:(NSInteger)money {
     ActionFlow *flow = [[ActionFlow alloc] init];
-    flow.afterQueryTradeNo = ^(NSString *tradeno) {
+    flow.afterQueryTradeNo = ^(NSString *tradeno, NSString *key) {
         // 呼起支付宝支付
+        self.tradeno = tradeno;
+        self.pkey= key;
         [self callAlipay:tradeno mondy:money];
     };
     flow.afterQueryTradeNoFailed = ^(NSString *message) {
@@ -205,13 +216,12 @@
 - (void)callAlipay:(NSString *)tradeno mondy:(NSInteger)money{
     //签约后，支付宝会为每个商户分配一个唯一的 parnter 和 seller。
     /*=======================需要填写商户app申请的===================================*/
-    NSString *partner = @"abc";
-    NSString *seller = @"abc";
-    NSString *privateKey = @"abc";
+    NSString *partner = @"2088221780225801";
+    NSString *seller = @"biiyooit@qq.com";
     /*============================================================================*/
     
     //partner和seller获取失败,提示
-    if ([partner length] == 0 || [seller length] == 0 || [privateKey length] == 0) {
+    if ([partner length] == 0 || [seller length] == 0 || [self.pkey length] == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"缺少合作者身份ID或者卖家支付宝账号或者私钥。" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self dismissViewControllerAnimated:alert completion:nil];
@@ -230,43 +240,78 @@
     order.outTradeNO = tradeno; //订单ID（由商家自行制定）
     order.subject = @"商家充值"; //商品标题
     order.body = @"商家充值"; //商品描述
-//    order.totalFee = [NSString stringWithFormat:@"%.2f", (float)money]; //商品价格
-    order.totalFee = [NSString stringWithFormat:@"%.2f", 0.01]; //测试商品价格，1毛钱
-    order.notifyURL =  @"http://www.xxx.com"; //回调URL
+    order.totalFee = [NSString stringWithFormat:@"%.2f", (float)money]; //商品价格
+//    order.totalFee = [NSString stringWithFormat:@"%.2f", 0.01]; //测试商品价格，1毛钱
+    order.notifyURL =  @"http://www.weijifen.me:8000/flow"; //回调URL
     
     order.service = @"mobile.securitypay.pay";
     order.paymentType = @"1";
     order.inputCharset = @"utf-8";
     order.itBPay = @"30m";
-    order.showURL = @"m.alipay.com";
+//    order.showURL = @"m.alipay.com";
     
     //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
-    NSString *appScheme = @"alisdkdemo";
+    NSString *appScheme = @"jfbw";
     
     //将商品信息拼接成字符串
     NSString *orderSpec = [order description];
     DLog(@"orderSpec = %@",orderSpec);
     
     //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
-    id<DataSigner> signer = CreateRSADataSigner(privateKey);
+    id<DataSigner> signer = CreateRSADataSigner(self.pkey);
     NSString *signedString = [signer signString:orderSpec];
     
     //将签名成功字符串格式化为订单字符串,请严格按照该格式
     NSString *orderString = nil;
-    if (signedString == nil) {
+    if (signedString != nil) {
         orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
                        orderSpec, signedString, @"RSA"];
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
             DLog(@"reslut = %@",resultDic);
-            [self afterPay:tradeno];
+            [self afterPayOrder:resultDic];
         }];
     }else{
-//        [self afterPay:tradeno];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"非法充值私钥，请联系平台。" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self dismissViewControllerAnimated:alert completion:nil];
         }]];
         [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+- (void)alipaySyncNotify:(NSNotification *)notification {
+    [self afterPayOrder:[notification userInfo]];
+}
+
+- (void)afterPayOrder:(NSDictionary *)result {
+    NSInteger status = [[result objectForKey:@"resultStatus"] integerValue];
+    switch (status) {
+        case 9000:
+            //支付成功
+            [self afterPay:self.tradeno];
+            break;
+        case 8000:
+            //正在处理，暂时认为充值成功
+            [self afterPay:self.tradeno];
+            break;
+        case 4000:
+            //订单支付失败
+        case 6001:
+            //用户中途取消
+        case 6002:
+            //网络连接出错
+        default:
+        {
+            NSDictionary *message = @{@"4000": @"充值失败，订单支付失败", @"6001": @"充值失败，用户中途取消", @"6002": @"充值失败，网络连接出错"};
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:[message objectForKey:[NSString stringWithFormat:@"%ld", (long)status]] message:nil preferredStyle:UIAlertControllerStyleAlert];
+//            NSString *message = [NSString stringWithFormat:@"充值失败，%@", [result objectForKey:@"memo"]];
+//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:alert completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+            break;
+        }
     }
 }
 
