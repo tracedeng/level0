@@ -1605,7 +1605,7 @@
 				TargetAttributes = {
 					1942C3661BE89F6700C2DCF4 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 7M8VR4YC8K;
+						DevelopmentTeam = Q7XQND3YK6;
 					};
 				};
 			};
@@ -1959,8 +1959,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2003,8 +2003,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -2030,8 +2030,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Calculus/Common/Alipay",
@@ -2091,9 +2091,9 @@
 					"\"MOBFoundation\"",
 					"-DEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.xxx.Calculus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.biiyoo.www.calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "abf50080-0606-44bc-9bc7-d13f8df127d9";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2104,8 +2104,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Calculus/Common/Alipay",
@@ -2144,7 +2144,6 @@
 					"-l\"IQKeyboardManager\"",
 					"-l\"MBProgressHUD\"",
 					"-l\"MWPhotoBrowser\"",
-					"-l\"PSTCollectionView\"",
 					"-l\"Qiniu\"",
 					"-l\"SDWebImage\"",
 					"-l\"SVProgressHUD\"",
@@ -2172,9 +2171,9 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weijifen.xxx.Calculus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.biiyoo.www.calculus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "abf50080-0606-44bc-9bc7-d13f8df127d9";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
