@@ -326,7 +326,8 @@
         if (!error && [placemarks count] > 0) {
             NSDictionary *dict = [[placemarks objectAtIndex:0] addressDictionary];
 //            self.addressField.text = [NSString stringWithFormat:@"%@,%@,%@,%@,%@,%@,%@,%@,%@", [dict objectForKey:@"City"], [dict objectForKey:@"Name"], [dict objectForKey:@"State"], [dict objectForKey:@"Street"], [dict objectForKey:@"SubLocality"], [dict objectForKey:@"SubThoroughfare"], [dict objectForKey:@"Thoroughfare"], [dict objectForKey:@"FormattedAddressLines"], [dict objectForKey:@"Country"]];
-            self.locationName = [dict objectForKey:@"Name"];
+            self.locationName = [NSString stringWithFormat:@"%@%@%@", [dict objectForKey:@"State"],  [dict objectForKey:@"SubLocality"], [dict objectForKey:@"Street"]];
+//            self.locationName = [dict objectForKey:@"Name"];
             self.addressField.text = self.locationName;
         }else{
             // 反向编码失败

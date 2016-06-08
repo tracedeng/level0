@@ -1,12 +1,12 @@
 //
-//  AccountController.m
+//  AccountLoginController.m
 //  Calculus
 //
 //  Created by tracedeng on 15/12/11.
 //  Copyright © 2015年 tracedeng. All rights reserved.
 //
 
-#import "AccountController.h"
+#import "AccountLoginController.h"
 #import "ActionAccount.h"
 #import "AccountRegisterController.h"
 #import "UIColor+Extension.h"
@@ -21,7 +21,7 @@
 #define SCREEN_W ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_H ([UIScreen mainScreen].bounds.size.height)
 
-@interface AccountController ()
+@interface AccountLoginController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountNumberTField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTField;
 
@@ -39,7 +39,7 @@
 
 @end
 
-@implementation AccountController
+@implementation AccountLoginController
 
 
 - (void)viewDidLoad {

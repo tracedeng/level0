@@ -128,7 +128,7 @@
         title = @"提现金额超出可提现范围，点击取消重新输入";
     }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
-    if (self.withdrawalsMoney <= self.maxWithdrawalsMoney) {
+    if ((self.withdrawalsMoney <= self.maxWithdrawalsMoney) && (self.maxWithdrawalsMoney > 0)) {
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //
             [self dismissViewControllerAnimated:alert completion:nil];

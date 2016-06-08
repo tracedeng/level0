@@ -27,7 +27,7 @@
 		19339ADF1C23E86F00791A9E /* MyAwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339ADE1C23E86F00791A9E /* MyAwardController.m */; };
 		19339AE51C258AB500791A9E /* MMeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339AE41C258AB500791A9E /* MMeTVC.m */; };
 		19339B061C2954C000791A9E /* ActionMCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 19339B051C2954C000791A9E /* ActionMCredit.m */; };
-		193C371C1C1B0D800017CC9C /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C371B1C1B0D800017CC9C /* AccountController.m */; };
+		193C371C1C1B0D800017CC9C /* AccountLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C371B1C1B0D800017CC9C /* AccountLoginController.m */; };
 		193C371F1C1B12270017CC9C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193C371E1C1B12270017CC9C /* Account.storyboard */; };
 		193C37221C1B16C60017CC9C /* ActionAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37211C1B16C60017CC9C /* ActionAccount.m */; };
 		193C37711C1BE2B70017CC9C /* ActionCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = 193C37601C1BE2B70017CC9C /* ActionCredit.m */; };
@@ -333,8 +333,8 @@
 		19339AF61C2930E800791A9E /* Calculus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calculus.pch; sourceTree = "<group>"; };
 		19339B041C2954C000791A9E /* ActionMCredit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionMCredit.h; path = Merchant/Tab1/Model/ActionMCredit.h; sourceTree = "<group>"; };
 		19339B051C2954C000791A9E /* ActionMCredit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionMCredit.m; path = Merchant/Tab1/Model/ActionMCredit.m; sourceTree = "<group>"; };
-		193C371A1C1B0D800017CC9C /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = Account/AccountController.h; sourceTree = "<group>"; };
-		193C371B1C1B0D800017CC9C /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = Account/AccountController.m; sourceTree = "<group>"; };
+		193C371A1C1B0D800017CC9C /* AccountLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountLoginController.h; path = Account/AccountLoginController.h; sourceTree = "<group>"; };
+		193C371B1C1B0D800017CC9C /* AccountLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountLoginController.m; path = Account/AccountLoginController.m; sourceTree = "<group>"; };
 		193C371E1C1B12270017CC9C /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Account.storyboard; path = Account/Account.storyboard; sourceTree = "<group>"; };
 		193C37201C1B16C60017CC9C /* ActionAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionAccount.h; path = Account/Model/ActionAccount.h; sourceTree = "<group>"; };
 		193C37211C1B16C60017CC9C /* ActionAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionAccount.m; path = Account/Model/ActionAccount.m; sourceTree = "<group>"; };
@@ -892,8 +892,8 @@
 				19EB0F5C1C7EE57300FECDF5 /* AccountRegisterController.m */,
 				19EB0F5D1C7EE57300FECDF5 /* AccountResetPassword.h */,
 				19EB0F5E1C7EE57300FECDF5 /* AccountResetPassword.m */,
-				193C371A1C1B0D800017CC9C /* AccountController.h */,
-				193C371B1C1B0D800017CC9C /* AccountController.m */,
+				193C371A1C1B0D800017CC9C /* AccountLoginController.h */,
+				193C371B1C1B0D800017CC9C /* AccountLoginController.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -1944,7 +1944,7 @@
 				B540AEA71CA0E80000915098 /* MJRefreshFooterView.m in Sources */,
 				197491371C79A3D000784D09 /* QRScanViewController.m in Sources */,
 				B540AEE11CAC1ACB00915098 /* PNLineChartDataItem.m in Sources */,
-				193C371C1C1B0D800017CC9C /* AccountController.m in Sources */,
+				193C371C1C1B0D800017CC9C /* AccountLoginController.m in Sources */,
 				193C37771C1BE2B70017CC9C /* MeTVC.m in Sources */,
 				B5EDC39B1C3A05CE002E2833 /* MActivityCreateTVC.m in Sources */,
 				193C38361C1D94DE0017CC9C /* ImageListCVC.m in Sources */,

@@ -113,8 +113,8 @@
             case EQUERYBALANCEHISTORY:
             {
                 NSArray *result = [responseObject valueForKeyPath:@"r"];
-                NSArray *history = [[result objectAtIndex:0] objectForKey:@"a"];
                 if (self.afterQueryBalanceHistory) {
+                    NSArray *history = result.count ? [[result objectAtIndex:0] objectForKey:@"a"] : @[];
                     self.afterQueryBalanceHistory(history);
                 }
                 break;

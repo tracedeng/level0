@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     
     self.introduce.contentOffset = CGPointMake(0, 0);
-    self.introduce.selectedRange = NSMakeRange(0, 0);
+//    self.introduce.selectedRange = NSMakeRange(0, 0);
 }
 
 - (void)didReceiveMemoryWarning {

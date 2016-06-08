@@ -1,5 +1,5 @@
 //
-//  AccountController.h
+//  AccountLoginController.h
 //  Calculus
 //
 //  Created by tracedeng on 15/12/11.
@@ -10,7 +10,7 @@
 #import "EAIntroView.h"
 
 
-@interface AccountController : UIViewController <UITextFieldDelegate,EAIntroDelegate>
+@interface AccountLoginController : UIViewController <UITextFieldDelegate,EAIntroDelegate>
 //@property (nonatomic, retain) NSString *userMode;     //第一版本不支持这个需求
 
 @end

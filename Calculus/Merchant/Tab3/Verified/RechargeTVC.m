@@ -241,7 +241,7 @@
     order.subject = @"商家充值"; //商品标题
     order.body = @"商家充值"; //商品描述
     order.totalFee = [NSString stringWithFormat:@"%.2f", (float)money]; //商品价格
-//    order.totalFee = [NSString stringWithFormat:@"%.2f", 0.01]; //测试商品价格，1毛钱
+//    order.totalFee = [NSString stringWithFormat:@"%.2f", 1.00]; //测试商品价格，1毛钱
     order.notifyURL =  @"http://www.weijifen.me:8000/flow"; //回调URL
     
     order.service = @"mobile.securitypay.pay";

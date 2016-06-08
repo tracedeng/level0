@@ -8,7 +8,7 @@
 //  deprecated
 
 #import "MeController.h"
-#import "AccountController.h"
+#import "AccountLoginController.h"
 #import "ClickableStackView.h"
 #import "MaterialManager.h"
 #import "UIImageView+WebCache.h"

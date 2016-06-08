@@ -894,7 +894,22 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-gt-DeI">
                                 <rect key="frame" x="0.0" y="44" width="600" height="335"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">微积分V1.0(客户版)功能介绍
+                                <string key="text">微积分V2.0(客户版)功能介绍
+
+1.积分互换
+	支持商家间的积分互相兑换。
+
+2.资格
+	只有平台认证的商家发行的积分才有互换资格。
+
+3. 积分汇率
+	互换按照商家自定义的积分价值等价交换。
+
+4. 手续费
+	平台对积分互换收取少量手续费，手续费也是积分，不涉及现金。
+
+--------------------------
+微积分V1.0(客户版)功能介绍
 
 1.注册和登录
 	本软件仅限登录后使用。

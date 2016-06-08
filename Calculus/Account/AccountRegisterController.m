@@ -42,7 +42,7 @@
 //目前仅支持中国大陆地区手机号码
 NSString* zoneReg = @"86";
 //测试阶段保留原有验证码方式
-BOOL isMobReg = false;
+BOOL isMobReg = TRUE;
 
 
 NSTimer *reg_timer;
@@ -192,9 +192,6 @@ int reg_totalsecond;
                     };
                     
                     [registe doAccountRegister:phoneNumber password:password code:code];
-
-                    
-                    
                 }
                 else
                 {
